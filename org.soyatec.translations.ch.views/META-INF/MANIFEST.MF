@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Chinese Translations for Views
+Bundle-SymbolicName: org.soyatec.translations.ch.views
+Bundle-Version: 0.1.0.qualifier
+Bundle-Vendor: Soyatec
+Fragment-Host: org.eclipse.ui.views
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
