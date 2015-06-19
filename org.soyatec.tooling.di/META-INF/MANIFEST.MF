@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: DI Tooling
+Bundle-SymbolicName: org.soyatec.tooling.di; singleton:=true
+Bundle-Version: 0.1.0.qualifier
+Require-Bundle: org.eclipse.emf.ecore
+Bundle-Vendor: Soyatec
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
