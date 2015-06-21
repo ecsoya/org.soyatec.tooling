@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated di -->
+      <package
+            uri="http://www.soyatec.org/2015/DiagramInterchangeSpecification"
+            class="org.soyatec.tooling.di.DiPackage"
+            genModel="model/di.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated di -->
+      <parser
+            type="di"
+            class="org.soyatec.tooling.di.util.DiResourceFactoryImpl"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.edit.itemProviderAdapterFactories">
+      <!-- @generated di -->
+      <factory
+            uri="http://www.soyatec.org/2015/DiagramInterchangeSpecification"
+            class="org.soyatec.tooling.di.provider.DiItemProviderAdapterFactory"
+            supportedTypes=
+              "org.eclipse.emf.edit.provider.IEditingDomainItemProvider
+               org.eclipse.emf.edit.provider.IStructuredItemContentProvider
+               org.eclipse.emf.edit.provider.ITreeItemContentProvider
+               org.eclipse.emf.edit.provider.IItemLabelProvider
+               org.eclipse.emf.edit.provider.IItemPropertySource"/>
+   </extension>
+
+</plugin>

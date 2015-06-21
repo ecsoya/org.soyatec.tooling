@@ -84,10 +84,10 @@ public class ToolBarPalette extends Composite {
 		new ToolItem(settingsToolBar, SWT.SEPARATOR);
 		final ToolItem settingsItem = new ToolItem(settingsToolBar,
 				SWT.DROP_DOWN);
-		ImageDescriptor desc = Activator.imageDescriptorFromPlugin(Activator.PLUGIN_ID, "icons/setting.png");
+		ImageDescriptor desc = Activator.imageDescriptorFromPlugin(
+				Activator.PLUGIN_ID, "icons/setting.png");
 		image = desc.createImage(getDisplay());
-		settingsItem
-				.setImage(image);
+		settingsItem.setImage(image);
 		settingsItem.addListener(SWT.Selection, new Listener() {
 
 			public void handleEvent(Event event) {
@@ -480,7 +480,7 @@ public class ToolBarPalette extends Composite {
 			image.dispose();
 		}
 		imageMap.clear();
-		if (image != null){
+		if (image != null) {
 			image.dispose();
 		}
 	}

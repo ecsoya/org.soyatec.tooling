@@ -7,7 +7,8 @@ Bundle-Activator: org.soyatec.tooling.gef.Activator
 Bundle-Vendor: Soyatec
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
- org.eclipse.gef
+ org.eclipse.gef;visibility:=reexport,
+ org.soyatec.tooling.di;visibility:=reexport
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy
 Export-Package: org.soyatec.tooling.gef
