@@ -6,6 +6,8 @@ Bundle-Version: 0.1.0.qualifier
 Bundle-Activator: org.soyatec.tooling.gef.Activator
 Bundle-Vendor: Soyatec
 Require-Bundle: org.eclipse.ui,
- org.eclipse.core.runtime
+ org.eclipse.core.runtime,
+ org.eclipse.gef
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy
+Export-Package: org.soyatec.tooling.gef
