@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<feature
+      id="org.soyatec.tooling.gef.feature"
+      label="GEF Tooling Feature"
+      version="0.1.0.qualifier"
+      provider-name="Soyatec">
+
+   <description>
+      Soyatec Tooling Project
+
+GEF Tooling
+1. Diagram interchange model based EMF.
+2. Useful tooling for GEF graphical editors.
+   </description>
+
+   <copyright>
+      [Enter Copyright Description here.]
+   </copyright>
+
+   <license url="">
+      Eclipse Public License v1.0
+   </license>
+
+   <includes
+         id="org.eclipse.gef"
+         version="0.0.0"/>
+
+   <requires>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.emf.ecore"/>
+      <import plugin="org.eclipse.emf.ecore.xmi"/>
+      <import plugin="org.eclipse.emf.edit"/>
+      <import plugin="org.eclipse.draw2d"/>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="org.eclipse.gef"/>
+   </requires>
+
+   <plugin
+         id="org.soyatec.tooling.di"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.soyatec.tooling.gef"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+</feature>
