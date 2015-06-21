@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <feature url="features/org.soyatec.tooling.gef.feature_0.1.0.qualifier.jar" id="org.soyatec.tooling.gef.feature" version="0.1.0.qualifier">
+   <feature url="features/org.soyatec.tooling.gef.feature_0.1.0.201506211616.jar" id="org.soyatec.tooling.gef.feature" version="0.1.0.201506211616">
       <category name="Soyatec Tooling Project"/>
    </feature>
-   <feature url="features/org.soyatec.tooling.gef.toolbar.feature_0.1.0.qualifier.jar" id="org.soyatec.tooling.gef.toolbar.feature" version="0.1.0.qualifier">
+   <feature url="features/org.soyatec.tooling.gef.toolbar.feature_0.1.0.201506211616.jar" id="org.soyatec.tooling.gef.toolbar.feature" version="0.1.0.201506211616">
       <category name="Soyatec Tooling Project"/>
    </feature>
-   <feature url="features/org.soyatec.translations_0.1.0.qualifier.jar" id="org.soyatec.translations" version="0.1.0.qualifier">
+   <feature url="features/org.soyatec.translations_0.1.0.201506211616.jar" id="org.soyatec.translations" version="0.1.0.201506211616">
       <category name="Soyatec Tooling Project"/>
    </feature>
    <category-def name="Soyatec Tooling Project" label="Soyatec Tooling Project"/>
