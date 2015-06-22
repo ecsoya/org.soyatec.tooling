@@ -21,6 +21,8 @@
     <genClasses image="false" ecoreClass="di.ecore#//Diagram">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute di.ecore#//Diagram/lines"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute di.ecore#//Diagram/shapes"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference di.ecore#//Diagram/comments"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference di.ecore#//Diagram/commentLinks"/>
     </genClasses>
     <genClasses image="false" ecoreClass="di.ecore#//Shape">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute di.ecore#//Shape/background"/>

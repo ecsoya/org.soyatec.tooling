@@ -271,6 +271,24 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 	 * 
 	 * @generated
 	 */
+	public EReference getDiagram_Comments() {
+		return (EReference) diagramEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getDiagram_CommentLinks() {
+		return (EReference) diagramEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
 	public EClass getShape() {
 		return shapeEClass;
 	}
@@ -497,6 +515,8 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 		diagramEClass = createEClass(DIAGRAM);
 		createEAttribute(diagramEClass, DIAGRAM__LINES);
 		createEAttribute(diagramEClass, DIAGRAM__SHAPES);
+		createEReference(diagramEClass, DIAGRAM__COMMENTS);
+		createEReference(diagramEClass, DIAGRAM__COMMENT_LINKS);
 
 		shapeEClass = createEClass(SHAPE);
 		createEAttribute(shapeEClass, SHAPE__BACKGROUND);
@@ -608,6 +628,14 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 				"shapes", null, 0, -1, Diagram.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
+		initEReference(getDiagram_Comments(), this.getComment(), null,
+				"comments", null, 0, -1, Diagram.class, IS_TRANSIENT,
+				IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDiagram_CommentLinks(), this.getCommentLink(), null,
+				"commentLinks", null, 0, -1, Diagram.class, IS_TRANSIENT,
+				IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(shapeEClass, Shape.class, "Shape", IS_ABSTRACT,
 				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -718,6 +746,10 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 				"group" });
 		addAnnotation(getDiagram_Shapes(), source, new String[] { "kind",
 				"group" });
+		addAnnotation(getDiagram_Comments(), source, new String[] { "group",
+				"#shapes" });
+		addAnnotation(getDiagram_CommentLinks(), source, new String[] {
+				"group", "#lines" });
 		addAnnotation(getLine_SourceShape(), source, new String[] { "kind",
 				"group" });
 		addAnnotation(getLine_TargetShape(), source, new String[] { "kind",

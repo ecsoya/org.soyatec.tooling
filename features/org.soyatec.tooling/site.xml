@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
+   <description url="http://ecsoya.github.io/org.soyatec.tooling/update/luna/site.xml">
+      Soyatec Tooling Project at GitHub.
+   </description>
    <feature url="features/org.soyatec.tooling.gef.feature_0.1.0.201506211616.jar" id="org.soyatec.tooling.gef.feature" version="0.1.0.201506211616">
       <category name="Soyatec Tooling Project"/>
    </feature>

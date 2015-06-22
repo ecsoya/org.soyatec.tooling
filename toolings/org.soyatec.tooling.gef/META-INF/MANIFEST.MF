@@ -11,4 +11,12 @@ Require-Bundle: org.eclipse.ui,
  org.soyatec.tooling.di;visibility:=reexport
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy
-Export-Package: org.soyatec.tooling.gef
+Export-Package: org.soyatec.tooling.gef,
+ org.soyatec.tooling.gef.anchor,
+ org.soyatec.tooling.gef.commands,
+ org.soyatec.tooling.gef.direct_edit,
+ org.soyatec.tooling.gef.editparts,
+ org.soyatec.tooling.gef.editpolicies,
+ org.soyatec.tooling.gef.figures,
+ org.soyatec.tooling.gef.resources,
+ org.soyatec.tooling.gef.utils

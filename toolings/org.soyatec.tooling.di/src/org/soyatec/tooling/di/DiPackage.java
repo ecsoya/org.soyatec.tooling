@@ -242,13 +242,31 @@ public interface DiPackage extends EPackage {
 	int DIAGRAM__SHAPES = UI_OBJECT_FEATURE_COUNT + 1;
 
 	/**
+	 * The feature id for the '<em><b>Comments</b></em>' containment reference
+	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int DIAGRAM__COMMENTS = UI_OBJECT_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>Comment Links</b></em>' containment
+	 * reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int DIAGRAM__COMMENT_LINKS = UI_OBJECT_FEATURE_COUNT + 3;
+
+	/**
 	 * The number of structural features of the '<em>Diagram</em>' class. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int DIAGRAM_FEATURE_COUNT = UI_OBJECT_FEATURE_COUNT + 2;
+	int DIAGRAM_FEATURE_COUNT = UI_OBJECT_FEATURE_COUNT + 4;
 
 	/**
 	 * The number of operations of the '<em>Diagram</em>' class. <!--
@@ -1055,6 +1073,32 @@ public interface DiPackage extends EPackage {
 	EAttribute getDiagram_Shapes();
 
 	/**
+	 * Returns the meta object for the containment reference list '
+	 * {@link org.soyatec.tooling.di.Diagram#getComments <em>Comments</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the containment reference list '
+	 *         <em>Comments</em>'.
+	 * @see org.soyatec.tooling.di.Diagram#getComments()
+	 * @see #getDiagram()
+	 * @generated
+	 */
+	EReference getDiagram_Comments();
+
+	/**
+	 * Returns the meta object for the containment reference list '
+	 * {@link org.soyatec.tooling.di.Diagram#getCommentLinks
+	 * <em>Comment Links</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the containment reference list '
+	 *         <em>Comment Links</em>'.
+	 * @see org.soyatec.tooling.di.Diagram#getCommentLinks()
+	 * @see #getDiagram()
+	 * @generated
+	 */
+	EReference getDiagram_CommentLinks();
+
+	/**
 	 * Returns the meta object for class '{@link org.soyatec.tooling.di.Shape
 	 * <em>Shape</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -1422,6 +1466,24 @@ public interface DiPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute DIAGRAM__SHAPES = eINSTANCE.getDiagram_Shapes();
+
+		/**
+		 * The meta object literal for the '<em><b>Comments</b></em>'
+		 * containment reference list feature. <!-- begin-user-doc --> <!--
+		 * end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EReference DIAGRAM__COMMENTS = eINSTANCE.getDiagram_Comments();
+
+		/**
+		 * The meta object literal for the '<em><b>Comment Links</b></em>'
+		 * containment reference list feature. <!-- begin-user-doc --> <!--
+		 * end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EReference DIAGRAM__COMMENT_LINKS = eINSTANCE.getDiagram_CommentLinks();
 
 		/**
 		 * The meta object literal for the '

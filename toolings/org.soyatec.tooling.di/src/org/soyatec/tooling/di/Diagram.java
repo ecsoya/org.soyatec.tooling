@@ -12,6 +12,7 @@
  */
 package org.soyatec.tooling.di;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.util.FeatureMap;
 
 /**
@@ -23,6 +24,9 @@ import org.eclipse.emf.ecore.util.FeatureMap;
  * <ul>
  * <li>{@link org.soyatec.tooling.di.Diagram#getLines <em>Lines</em>}</li>
  * <li>{@link org.soyatec.tooling.di.Diagram#getShapes <em>Shapes</em>}</li>
+ * <li>{@link org.soyatec.tooling.di.Diagram#getComments <em>Comments</em>}</li>
+ * <li>{@link org.soyatec.tooling.di.Diagram#getCommentLinks <em>Comment Links
+ * </em>}</li>
  * </ul>
  * </p>
  *
@@ -67,5 +71,42 @@ public interface Diagram extends UIObject {
 	 * @generated
 	 */
 	FeatureMap getShapes();
+
+	/**
+	 * Returns the value of the '<em><b>Comments</b></em>' containment reference
+	 * list. The list contents are of type
+	 * {@link org.soyatec.tooling.di.Comment}. <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Comments</em>' containment reference list
+	 * isn't clear, there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return the value of the '<em>Comments</em>' containment reference list.
+	 * @see org.soyatec.tooling.di.DiPackage#getDiagram_Comments()
+	 * @model containment="true" transient="true" volatile="true"
+	 *        extendedMetaData="group='#shapes'"
+	 * @generated
+	 */
+	EList<Comment> getComments();
+
+	/**
+	 * Returns the value of the '<em><b>Comment Links</b></em>' containment
+	 * reference list. The list contents are of type
+	 * {@link org.soyatec.tooling.di.CommentLink}. <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Comment Links</em>' containment reference list
+	 * isn't clear, there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return the value of the '<em>Comment Links</em>' containment reference
+	 *         list.
+	 * @see org.soyatec.tooling.di.DiPackage#getDiagram_CommentLinks()
+	 * @model containment="true" transient="true" volatile="true"
+	 *        extendedMetaData="group='#lines'"
+	 * @generated
+	 */
+	EList<CommentLink> getCommentLinks();
 
 } // Diagram
