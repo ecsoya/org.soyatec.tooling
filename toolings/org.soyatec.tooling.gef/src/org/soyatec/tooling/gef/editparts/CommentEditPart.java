@@ -17,7 +17,7 @@ import org.soyatec.tooling.di.Comment;
 import org.soyatec.tooling.di.DiPackage;
 import org.soyatec.tooling.gef.figures.CommentFigure;
 import org.soyatec.tooling.gef.figures.ILabelFigure;
-import org.soyatec.tooling.gef.resources.Resources;
+import org.soyatec.tooling.gef.resources.ResourcesFactory;
 
 public class CommentEditPart extends ShapeEditPart<Comment> {
 
@@ -30,7 +30,7 @@ public class CommentEditPart extends ShapeEditPart<Comment> {
 	}
 
 	protected Color getDefaultBackgroundColor() {
-		return Resources.getColor(Resources.COLOR_COMMENT);
+		return ResourcesFactory.getColor(ResourcesFactory.COLOR_COMMENT);
 	}
 
 	protected void refreshVisuals() {

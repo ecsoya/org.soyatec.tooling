@@ -38,7 +38,7 @@ import org.eclipse.swt.graphics.Color;
 import org.soyatec.tooling.di.DiPackage;
 import org.soyatec.tooling.di.Line;
 import org.soyatec.tooling.gef.editpolicies.LineEditPolicy;
-import org.soyatec.tooling.gef.resources.Resources;
+import org.soyatec.tooling.gef.resources.ResourcesFactory;
 
 public abstract class LineEditPart<T extends Line> extends
 		UIObjectEditPart<Line> implements ConnectionEditPart, LayerConstants {
@@ -206,7 +206,7 @@ public abstract class LineEditPart<T extends Line> extends
 
 	private void refreshLineColor() {
 		int value = getUIObject().getColor();
-		Color color = value == -1 ? getDefaultLineColor() : Resources
+		Color color = value == -1 ? getDefaultLineColor() : ResourcesFactory
 				.getColor(value);
 		setLineColor(color);
 	}

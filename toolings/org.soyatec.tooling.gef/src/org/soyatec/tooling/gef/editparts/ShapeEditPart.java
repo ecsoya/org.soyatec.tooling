@@ -30,7 +30,7 @@ import org.soyatec.tooling.di.Shape;
 import org.soyatec.tooling.di.UIElement;
 import org.soyatec.tooling.gef.editpolicies.ShapeComponentEditPolicy;
 import org.soyatec.tooling.gef.figures.NodeFigure;
-import org.soyatec.tooling.gef.resources.Resources;
+import org.soyatec.tooling.gef.resources.ResourcesFactory;
 
 public abstract class ShapeEditPart<T extends Shape> extends
 		UIElementEditPart<UIElement> implements NodeEditPart {
@@ -55,7 +55,7 @@ public abstract class ShapeEditPart<T extends Shape> extends
 
 	public void refreshForeground() {
 		int foreground = getShapeModel().getForeground();
-		Color color = foreground == -1 ? getDefaultForeground() : Resources
+		Color color = foreground == -1 ? getDefaultForeground() : ResourcesFactory
 				.getColor(foreground);
 		setForegroundColor(color);
 	}
@@ -67,12 +67,12 @@ public abstract class ShapeEditPart<T extends Shape> extends
 	public void refreshBackground() {
 		int background = getShapeModel().getBackground();
 		Color color = background == -1 ? getDefaultBackgroundColor()
-				: Resources.getColor(background);
+				: ResourcesFactory.getColor(background);
 		setBackgroundColor(color);
 	}
 
 	protected Color getDefaultBackgroundColor() {
-		return Resources.getColor(Resources.COLOR_SHAPE);
+		return ResourcesFactory.getColor(ResourcesFactory.COLOR_SHAPE);
 	}
 
 	protected void setForegroundColor(Color color) {

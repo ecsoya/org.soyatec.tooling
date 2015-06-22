@@ -18,7 +18,7 @@ import org.soyatec.tooling.di.DiPackage;
 import org.soyatec.tooling.di.GradientShape;
 import org.soyatec.tooling.di.Shape;
 import org.soyatec.tooling.gef.figures.IGradientFigure;
-import org.soyatec.tooling.gef.resources.Resources;
+import org.soyatec.tooling.gef.resources.ResourcesFactory;
 
 public abstract class GradientShapeEditPart<T extends GradientShape> extends
 		ShapeEditPart<Shape> {
@@ -47,13 +47,13 @@ public abstract class GradientShapeEditPart<T extends GradientShape> extends
 					: SWT.HORIZONTAL);
 			int gradientColor = model.getGradientColor();
 			Color color = gradientColor == -1 ? getDefaultGradientColor()
-					: Resources.getColor(gradientColor);
+					: ResourcesFactory.getColor(gradientColor);
 			gf.setGradientColor(color);
 		}
 	}
 
 	protected Color getDefaultGradientColor() {
-		return Resources.getColor(Resources.COLOR_WHITE);
+		return ResourcesFactory.getColor(ResourcesFactory.COLOR_WHITE);
 	}
 
 	protected void handleNotifyChanged(Notification event) {

@@ -30,7 +30,7 @@ import org.eclipse.swt.graphics.RGB;
 import org.eclipse.swt.widgets.Display;
 import org.soyatec.tooling.gef.Activator;
 
-public class Resources {
+public class ResourcesFactory {
 
 	private static ResourceManager resources;
 	private static final ResourceBundle bundle = ResourceBundle
