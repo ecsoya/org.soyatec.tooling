@@ -1,0 +1,15 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Views Tooling
+Bundle-SymbolicName: org.soyatec.tooling.views;singleton:=true
+Bundle-Version: 0.1.0.qualifier
+Bundle-Activator: org.soyatec.tooling.views.Activator
+Bundle-Vendor: Soyatec
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.ui.forms;visibility:=reexport,
+ org.eclipse.ui.views;visibility:=reexport
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ActivationPolicy: lazy
+Export-Package: org.soyatec.tooling.views.properties,
+ org.soyatec.tooling.views.tree
