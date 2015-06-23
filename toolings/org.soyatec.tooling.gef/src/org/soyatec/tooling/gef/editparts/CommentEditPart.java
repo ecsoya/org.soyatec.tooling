@@ -12,9 +12,11 @@ package org.soyatec.tooling.gef.editparts;
 
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.gef.EditPolicy;
 import org.eclipse.swt.graphics.Color;
 import org.soyatec.tooling.di.Comment;
 import org.soyatec.tooling.di.DiPackage;
+import org.soyatec.tooling.gef.editpolicies.CommentLinkCreationEditPolicy;
 import org.soyatec.tooling.gef.figures.CommentFigure;
 import org.soyatec.tooling.gef.figures.ILabelFigure;
 import org.soyatec.tooling.gef.resources.ResourcesFactory;
@@ -53,5 +55,11 @@ public class CommentEditPart extends ShapeEditPart<Comment> {
 
 	protected ILabelFigure getDirectEditLabel() {
 		return (ILabelFigure) getPrimaryFigure();
+	}
+
+	protected void createEditPolicies() {
+		super.createEditPolicies();
+		installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE,
+				new CommentLinkCreationEditPolicy());
 	}
 }
