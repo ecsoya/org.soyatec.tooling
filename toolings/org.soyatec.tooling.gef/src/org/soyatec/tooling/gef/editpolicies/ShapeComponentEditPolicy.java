@@ -22,7 +22,7 @@ import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.ComponentEditPolicy;
 import org.eclipse.gef.requests.GroupRequest;
 import org.soyatec.tooling.di.Shape;
-import org.soyatec.tooling.gef.commands.CommandWrapper2GEF;
+import org.soyatec.tooling.gef.commands.CommandWrap2GEF;
 import org.soyatec.tooling.gef.utils.EditingDomainUtils;
 
 public class ShapeComponentEditPolicy extends ComponentEditPolicy {
@@ -49,6 +49,6 @@ public class ShapeComponentEditPolicy extends ComponentEditPolicy {
 				}
 			}
 		}
-		return new CommandWrapper2GEF(DeleteCommand.create(ed, deletingObjects));
+		return new CommandWrap2GEF(DeleteCommand.create(ed, deletingObjects));
 	}
 }

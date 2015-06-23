@@ -15,13 +15,18 @@ import java.util.Collections;
 
 import org.eclipse.emf.common.command.Command;
 
-public class CommandWrapper2EMF implements Command {
+/**
+ * Wrap GEF command to EMF Command.
+ * 
+ * @author Ecsoya
+ */
+public class CommandWrap2EMF implements Command {
 	private final org.eclipse.gef.commands.Command _command;
 
 	/**
-	 * Constructor for CommandWrap4GEF.
+	 * Constructor for CommandWrap2EMF.
 	 */
-	public CommandWrapper2EMF(final org.eclipse.gef.commands.Command command) {
+	public CommandWrap2EMF(final org.eclipse.gef.commands.Command command) {
 		this._command = command;
 	}
 
@@ -52,17 +57,17 @@ public class CommandWrapper2EMF implements Command {
 		Command chained = this;
 		if (command != null) {
 			org.eclipse.gef.commands.Command gefCommand = null;
-			if (command instanceof CommandWrapper2EMF) {
-				gefCommand = ((CommandWrapper2EMF) command).unwrap();
+			if (command instanceof CommandWrap2EMF) {
+				gefCommand = ((CommandWrap2EMF) command).unwrap();
 			} else {
-				gefCommand = new CommandWrapper2GEF(command);
+				gefCommand = new CommandWrap2GEF(command);
 			}
 			gefCommand = this._command.chain(gefCommand);
 			if (gefCommand != null) {
-				if (gefCommand instanceof CommandWrapper2GEF) {
-					chained = ((CommandWrapper2GEF) gefCommand).unwrap();
+				if (gefCommand instanceof CommandWrap2GEF) {
+					chained = ((CommandWrap2GEF) gefCommand).unwrap();
 				} else {
-					chained = new CommandWrapper2EMF(gefCommand);
+					chained = new CommandWrap2EMF(gefCommand);
 				}
 			}
 		}

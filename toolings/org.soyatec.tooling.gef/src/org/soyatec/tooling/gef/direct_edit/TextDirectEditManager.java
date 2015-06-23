@@ -22,9 +22,18 @@ import org.eclipse.swt.graphics.FontData;
 import org.eclipse.swt.graphics.GC;
 import org.eclipse.swt.graphics.Point;
 import org.eclipse.swt.widgets.Text;
+import org.soyatec.tooling.di.DiPackage;
 import org.soyatec.tooling.gef.editparts.UIObjectEditPart;
 import org.soyatec.tooling.gef.figures.ILabelFigure;
 
+/**
+ * <li>Open a <code>TextCellEditor</code> on <code>ILabelFigure</code>.</li>
+ * 
+ * <li>Try to modify the <code>label</code> of <code>UIObject</code>.</li>
+ * 
+ * @see TextCellEditorLocator
+ * @author Ecsoya
+ */
 public class TextDirectEditManager extends DirectEditManager {
 
 	private Font scaledFont;
@@ -34,7 +43,7 @@ public class TextDirectEditManager extends DirectEditManager {
 	public TextDirectEditManager(UIObjectEditPart<?> source,
 			ILabelFigure labelFigure) {
 		super(source, TextCellEditor.class, new TextCellEditorLocator(
-				labelFigure));
+				labelFigure), DiPackage.eINSTANCE.getUIObject_Label());
 		this.labelFigure = labelFigure;
 	}
 
@@ -85,4 +94,5 @@ public class TextDirectEditManager extends DirectEditManager {
 		text.removeVerifyListener(verifyListener);
 		verifyListener = null;
 	}
+
 }

@@ -15,20 +15,23 @@ import org.eclipse.gef.EditPart;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.DirectEditPolicy;
 import org.eclipse.gef.requests.DirectEditRequest;
-import org.soyatec.tooling.di.DiPackage;
-import org.soyatec.tooling.gef.commands.CommandWrapper2GEF;
+import org.soyatec.tooling.gef.commands.CommandWrap2GEF;
 import org.soyatec.tooling.gef.utils.EditingDomainUtils;
 
+/**
+ * @author Ecsoya
+ */
 public class LabelDirectEditPolicy extends DirectEditPolicy {
 
 	protected Command getDirectEditCommand(DirectEditRequest request) {
 		EditPart host = getHost();
 		Object model = host.getModel();
 		Object value = request.getCellEditor().getValue();
+		Object feature = request.getDirectEditFeature();
 		org.eclipse.emf.common.command.Command cmd = SetCommand.create(
-				EditingDomainUtils.getEditingDomain(host), model,
-				DiPackage.eINSTANCE.getUIObject_Label(), value);
-		return new CommandWrapper2GEF(cmd);
+				EditingDomainUtils.getEditingDomain(host), model, feature,
+				value);
+		return new CommandWrap2GEF(cmd);
 	}
 
 	protected void showCurrentEditValue(DirectEditRequest request) {

@@ -55,8 +55,8 @@ public abstract class ShapeEditPart<T extends Shape> extends
 
 	public void refreshForeground() {
 		int foreground = getShapeModel().getForeground();
-		Color color = foreground == -1 ? getDefaultForeground() : ResourcesFactory
-				.getColor(foreground);
+		Color color = foreground == -1 ? getDefaultForeground()
+				: ResourcesFactory.getColor(foreground);
 		setForegroundColor(color);
 	}
 

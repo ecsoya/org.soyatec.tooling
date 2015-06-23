@@ -19,6 +19,15 @@ import org.eclipse.gef.commands.CommandStack;
 import org.eclipse.gef.commands.CommandStackEvent;
 import org.eclipse.gef.commands.CommandStackEventListener;
 
+/**
+ * EMF based CommandStack, and embedded a GEF CommandStack.
+ * 
+ * @see org.eclipse.gef.commands.CommandStack
+ * @see org.eclipse.emf.common.command.CommandStack
+ * @see CommandWrap2EMF
+ * @see CommandWrap2GEF
+ * @author Ecsoya
+ */
 public class CombinedCommandStack extends BasicCommandStack {
 
 	private List<CommandStackEventListener> eventListeners = new ArrayList<CommandStackEventListener>();
@@ -57,10 +66,10 @@ public class CombinedCommandStack extends BasicCommandStack {
 		super.notifyListeners();
 		if (mostRecentCommand != null) {
 			Command command = null;
-			if (mostRecentCommand instanceof CommandWrapper2EMF) {
-				command = ((CommandWrapper2EMF) mostRecentCommand).unwrap();
+			if (mostRecentCommand instanceof CommandWrap2EMF) {
+				command = ((CommandWrap2EMF) mostRecentCommand).unwrap();
 			} else {
-				command = new CommandWrapper2GEF(mostRecentCommand);
+				command = new CommandWrap2GEF(mostRecentCommand);
 			}
 			for (CommandStackEventListener listener : eventListeners) {
 				listener.stackChanged(new CommandStackEvent(gefCommandStack,
@@ -118,10 +127,10 @@ public class CombinedCommandStack extends BasicCommandStack {
 			}
 
 			org.eclipse.emf.common.command.Command emfCommand = null;
-			if (command instanceof CommandWrapper2GEF) {
-				emfCommand = ((CommandWrapper2GEF) command).unwrap();
+			if (command instanceof CommandWrap2GEF) {
+				emfCommand = ((CommandWrap2GEF) command).unwrap();
 			} else {
-				emfCommand = new CommandWrapper2EMF(command);
+				emfCommand = new CommandWrap2EMF(command);
 			}
 			CombinedCommandStack.this.execute(emfCommand);
 		}
@@ -137,10 +146,10 @@ public class CombinedCommandStack extends BasicCommandStack {
 					.getRedoCommand();
 			Command gefCommand = null;
 			if (command != null) {
-				if (command instanceof CommandWrapper2EMF) {
-					gefCommand = ((CommandWrapper2EMF) command).unwrap();
+				if (command instanceof CommandWrap2EMF) {
+					gefCommand = ((CommandWrap2EMF) command).unwrap();
 				} else {
-					gefCommand = new CommandWrapper2GEF(command);
+					gefCommand = new CommandWrap2GEF(command);
 				}
 			}
 			return gefCommand;
@@ -152,10 +161,10 @@ public class CombinedCommandStack extends BasicCommandStack {
 					.getUndoCommand();
 			Command gefCommand = null;
 			if (command != null) {
-				if (command instanceof CommandWrapper2EMF) {
-					gefCommand = ((CommandWrapper2EMF) command).unwrap();
+				if (command instanceof CommandWrap2EMF) {
+					gefCommand = ((CommandWrap2EMF) command).unwrap();
 				} else {
-					gefCommand = new CommandWrapper2GEF(command);
+					gefCommand = new CommandWrap2GEF(command);
 				}
 			}
 			return gefCommand;

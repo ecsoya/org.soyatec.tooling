@@ -19,6 +19,12 @@ import org.eclipse.swt.graphics.Point;
 import org.eclipse.swt.widgets.Text;
 import org.soyatec.tooling.gef.figures.ILabelFigure;
 
+/**
+ * Located the <code>TextCellEditor</code> on <code>ILabelFigure</code>.
+ * 
+ * @see TextDirectEditManager
+ * @author Ecsoya
+ */
 public class TextCellEditorLocator implements CellEditorLocator {
 
 	private ILabelFigure labelFigure;

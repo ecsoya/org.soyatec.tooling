@@ -36,7 +36,10 @@ public class EditingDomainUtils {
 		if (editPart instanceof IEditingDomainProvider) {
 			return ((IEditingDomainProvider) editPart).getEditingDomain();
 		}
-		return AdapterFactoryEditingDomain.getEditingDomainFor(editPart
-				.getModel());
+		return getEditingDomain(editPart.getModel());
+	}
+
+	public static EditingDomain getEditingDomain(Object object) {
+		return AdapterFactoryEditingDomain.getEditingDomainFor(object);
 	}
 }

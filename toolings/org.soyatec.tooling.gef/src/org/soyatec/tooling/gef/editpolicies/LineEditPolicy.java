@@ -17,7 +17,7 @@ import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.ConnectionEditPolicy;
 import org.eclipse.gef.requests.GroupRequest;
-import org.soyatec.tooling.gef.commands.CommandWrapper2GEF;
+import org.soyatec.tooling.gef.commands.CommandWrap2GEF;
 import org.soyatec.tooling.gef.utils.EditingDomainUtils;
 
 public class LineEditPolicy extends ConnectionEditPolicy {
@@ -25,7 +25,7 @@ public class LineEditPolicy extends ConnectionEditPolicy {
 	protected Command getDeleteCommand(GroupRequest request) {
 		EditingDomain editingDomain = EditingDomainUtils
 				.getEditingDomain(getHost());
-		return new CommandWrapper2GEF(DeleteCommand.create(editingDomain,
+		return new CommandWrap2GEF(DeleteCommand.create(editingDomain,
 				Collections.singleton(getHost().getModel())));
 	}
 

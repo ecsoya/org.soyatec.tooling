@@ -17,6 +17,11 @@ import org.eclipse.draw2d.geometry.PrecisionPoint;
 import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.gef.handles.HandleBounds;
 
+/**
+ * Connection anchor based on a terminal value.
+ * 
+ * @author Ecsoya
+ */
 public class BaseConnectionAnchor extends AbstractConnectionAnchor {
 	final private static char TERMINAL_START_CHAR = '(';
 	final private static char TERMINAL_DELIMITER_CHAR = ',';

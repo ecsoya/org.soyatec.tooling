@@ -1,3 +1,13 @@
+/*******************************************************************************
+ * Copyright (c) 2015 Soyatec and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *    Soyatec - initial API and implementation
+ *******************************************************************************/
 package org.soyatec.tooling.gef.editpolicies;
 
 import org.eclipse.draw2d.ConnectionAnchor;
@@ -15,7 +25,7 @@ import org.soyatec.tooling.di.CommentLink;
 import org.soyatec.tooling.di.DiPackage;
 import org.soyatec.tooling.di.Diagram;
 import org.soyatec.tooling.gef.anchor.BaseConnectionAnchor;
-import org.soyatec.tooling.gef.commands.CommandWrapper2GEF;
+import org.soyatec.tooling.gef.commands.CommandWrap2GEF;
 import org.soyatec.tooling.gef.commands.CreateCommentLinkCommand;
 import org.soyatec.tooling.gef.utils.EditingDomainUtils;
 
@@ -93,7 +103,7 @@ public class CommentLinkCreationEditPolicy extends GraphicalNodeEditPolicy {
 				String terminal = ((BaseConnectionAnchor) anchor).getTerminal();
 				EditingDomain domain = EditingDomainUtils
 						.getEditingDomain(target);
-				return new CommandWrapper2GEF(SetCommand.create(domain,
+				return new CommandWrap2GEF(SetCommand.create(domain,
 						conn.getModel(),
 						DiPackage.eINSTANCE.getLine_TargetAnchor(), terminal));
 			}
@@ -112,7 +122,7 @@ public class CommentLinkCreationEditPolicy extends GraphicalNodeEditPolicy {
 				String terminal = ((BaseConnectionAnchor) anchor).getTerminal();
 				EditingDomain domain = EditingDomainUtils
 						.getEditingDomain(source);
-				return new CommandWrapper2GEF(SetCommand.create(domain,
+				return new CommandWrap2GEF(SetCommand.create(domain,
 						conn.getModel(),
 						DiPackage.eINSTANCE.getLine_SourceAnchor(), terminal));
 			}
