@@ -8,7 +8,8 @@ Bundle-Vendor: Soyatec
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.eclipse.gef;visibility:=reexport,
- org.soyatec.tooling.di;visibility:=reexport
+ org.soyatec.tooling.di;visibility:=reexport,
+ org.soyatec.tooling.views;visibility:=reexport
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy
 Export-Package: org.soyatec.tooling.gef.anchor,
@@ -17,5 +18,6 @@ Export-Package: org.soyatec.tooling.gef.anchor,
  org.soyatec.tooling.gef.editparts,
  org.soyatec.tooling.gef.editpolicies,
  org.soyatec.tooling.gef.figures,
+ org.soyatec.tooling.gef.properties,
  org.soyatec.tooling.gef.resources,
  org.soyatec.tooling.gef.utils
