@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Chinese Translations for Workbench
 Bundle-SymbolicName: org.soyatec.translations.ch.workbench
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 4.4.2
 Bundle-Vendor: Soyatec
 Fragment-Host: org.eclipse.ui.workbench
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7

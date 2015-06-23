@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="org.soyatec.tooling.gef.toolbar.feature"
-      label="GEF ToolBar Editor Feature"
+      id="org.soyatec.tooling.views.feature"
+      label="Views Tooling Feature"
       version="4.4.2"
       provider-name="Soyatec">
 
    <description url="http://ecsoya.github.io/org.soyatec.tooling/">
-      Graphical Editor with ToolBar Palette.
+      TreeViewer ViewPart and Form based PropertySheetPage.
    </description>
 
    <license url="http://www.eclipse.org/legal/epl-v10.html">
@@ -82,14 +82,8 @@ Everyone is permitted to copy and distribute copies of this Agreement, but in or
 This Agreement is governed by the laws of the State of New York and the intellectual property laws of the United States of America. No party to this Agreement will bring a legal action under this Agreement more than one year after the cause of action arose. Each party waives its rights to a jury trial in any resulting litigation.
    </license>
 
-   <requires>
-      <import plugin="org.eclipse.ui"/>
-      <import plugin="org.eclipse.core.runtime"/>
-      <import plugin="org.eclipse.gef"/>
-   </requires>
-
    <plugin
-         id="org.soyatec.tooling.gef.toolbar"
+         id="org.soyatec.tooling.views"
          download-size="0"
          install-size="0"
          version="0.0.0"
