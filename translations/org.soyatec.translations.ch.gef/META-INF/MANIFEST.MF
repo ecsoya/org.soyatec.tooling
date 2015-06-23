@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Chinese Translations for GEF
 Bundle-SymbolicName: org.soyatec.translations.ch.gef
-Bundle-Version: 4.4.2
+Bundle-Version: 4.4.2.qualifier
 Bundle-Vendor: Soyatec
 Fragment-Host: org.eclipse.gef
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7

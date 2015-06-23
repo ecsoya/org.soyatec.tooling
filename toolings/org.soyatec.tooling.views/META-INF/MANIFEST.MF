@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Views Tooling
 Bundle-SymbolicName: org.soyatec.tooling.views;singleton:=true
-Bundle-Version: 4.4.2
+Bundle-Version: 4.4.2.qualifier
 Bundle-Activator: org.soyatec.tooling.views.Activator
 Bundle-Vendor: Soyatec
 Require-Bundle: org.eclipse.ui,

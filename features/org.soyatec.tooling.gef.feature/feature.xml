@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
       id="org.soyatec.tooling.gef.feature"
-      label="GEF Tooling Feature"
-      version="4.4.2"
+      label="Soyatec GEF Tooling"
+      version="4.4.2.qualifier"
       provider-name="Soyatec">
 
    <description url="http://ecsoya.github.io/org.soyatec.tooling/">
