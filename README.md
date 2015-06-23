@@ -18,4 +18,4 @@ Soyatec Tooling Project provided some very useful toolings for developing `Eclip
 5. `org.soyatec.translations.ch.gef` -> `org.eclipse.gef`
 
 
-Please visit ![[Website]](http://ecsoya.github.io/org.soyatec.tooling/) to get more details.
+Please visit http://ecsoya.github.io/org.soyatec.tooling/ to get more details.
