@@ -14,10 +14,12 @@ package org.soyatec.tooling.di.impl;
 
 import java.util.Collection;
 
+import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
 import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.BasicFeatureMap;
 import org.eclipse.emf.ecore.util.FeatureMap;
 import org.eclipse.emf.ecore.util.InternalEList;
@@ -25,6 +27,8 @@ import org.soyatec.tooling.di.Comment;
 import org.soyatec.tooling.di.CommentLink;
 import org.soyatec.tooling.di.DiPackage;
 import org.soyatec.tooling.di.Diagram;
+import org.soyatec.tooling.di.Grid;
+import org.soyatec.tooling.di.Ruler;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '
@@ -39,6 +43,17 @@ import org.soyatec.tooling.di.Diagram;
  * </em>}</li>
  * <li>{@link org.soyatec.tooling.di.impl.DiagramImpl#getCommentLinks <em>
  * Comment Links</em>}</li>
+ * <li>{@link org.soyatec.tooling.di.impl.DiagramImpl#getRulers <em>Rulers</em>}
+ * </li>
+ * <li>{@link org.soyatec.tooling.di.impl.DiagramImpl#getHorizontalRuler <em>
+ * Horizontal Ruler</em>}</li>
+ * <li>{@link org.soyatec.tooling.di.impl.DiagramImpl#getVerticalRuler <em>
+ * Vertical Ruler</em>}</li>
+ * <li>{@link org.soyatec.tooling.di.impl.DiagramImpl#getGrid <em>Grid</em>}</li>
+ * <li>{@link org.soyatec.tooling.di.impl.DiagramImpl#isSnapToGrid <em>Snap To
+ * Grid</em>}</li>
+ * <li>{@link org.soyatec.tooling.di.impl.DiagramImpl#isSnapToGeometry <em>Snap
+ * To Geometry</em>}</li>
  * </ul>
  * </p>
  *
@@ -64,6 +79,68 @@ public abstract class DiagramImpl extends UIObjectImpl implements Diagram {
 	 * @ordered
 	 */
 	protected FeatureMap shapes;
+
+	/**
+	 * The cached value of the '{@link #getRulers() <em>Rulers</em>}' attribute
+	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see #getRulers()
+	 * @generated
+	 * @ordered
+	 */
+	protected FeatureMap rulers;
+
+	/**
+	 * The cached value of the '{@link #getGrid() <em>Grid</em>}' containment
+	 * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see #getGrid()
+	 * @generated
+	 * @ordered
+	 */
+	protected Grid grid;
+
+	/**
+	 * The default value of the '{@link #isSnapToGrid() <em>Snap To Grid</em>}'
+	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see #isSnapToGrid()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean SNAP_TO_GRID_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isSnapToGrid() <em>Snap To Grid</em>}'
+	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see #isSnapToGrid()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean snapToGrid = SNAP_TO_GRID_EDEFAULT;
+
+	/**
+	 * The default value of the '{@link #isSnapToGeometry()
+	 * <em>Snap To Geometry</em>}' attribute. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @see #isSnapToGeometry()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final boolean SNAP_TO_GEOMETRY_EDEFAULT = false;
+
+	/**
+	 * The cached value of the '{@link #isSnapToGeometry()
+	 * <em>Snap To Geometry</em>}' attribute. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @see #isSnapToGeometry()
+	 * @generated
+	 * @ordered
+	 */
+	protected boolean snapToGeometry = SNAP_TO_GEOMETRY_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -131,6 +208,180 @@ public abstract class DiagramImpl extends UIObjectImpl implements Diagram {
 	 * 
 	 * @generated
 	 */
+	public FeatureMap getRulers() {
+		if (rulers == null) {
+			rulers = new BasicFeatureMap(this, DiPackage.DIAGRAM__RULERS);
+		}
+		return rulers;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public Ruler getHorizontalRuler() {
+		return (Ruler) getRulers().get(
+				DiPackage.Literals.DIAGRAM__HORIZONTAL_RULER, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public NotificationChain basicSetHorizontalRuler(Ruler newHorizontalRuler,
+			NotificationChain msgs) {
+		return ((FeatureMap.Internal) getRulers()).basicAdd(
+				DiPackage.Literals.DIAGRAM__HORIZONTAL_RULER,
+				newHorizontalRuler, msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setHorizontalRuler(Ruler newHorizontalRuler) {
+		((FeatureMap.Internal) getRulers()).set(
+				DiPackage.Literals.DIAGRAM__HORIZONTAL_RULER,
+				newHorizontalRuler);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public Ruler getVerticalRuler() {
+		return (Ruler) getRulers().get(
+				DiPackage.Literals.DIAGRAM__VERTICAL_RULER, true);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public NotificationChain basicSetVerticalRuler(Ruler newVerticalRuler,
+			NotificationChain msgs) {
+		return ((FeatureMap.Internal) getRulers()).basicAdd(
+				DiPackage.Literals.DIAGRAM__VERTICAL_RULER, newVerticalRuler,
+				msgs);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setVerticalRuler(Ruler newVerticalRuler) {
+		((FeatureMap.Internal) getRulers()).set(
+				DiPackage.Literals.DIAGRAM__VERTICAL_RULER, newVerticalRuler);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public Grid getGrid() {
+		return grid;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public NotificationChain basicSetGrid(Grid newGrid, NotificationChain msgs) {
+		Grid oldGrid = grid;
+		grid = newGrid;
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this,
+					Notification.SET, DiPackage.DIAGRAM__GRID, oldGrid, newGrid);
+			if (msgs == null)
+				msgs = notification;
+			else
+				msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setGrid(Grid newGrid) {
+		if (newGrid != grid) {
+			NotificationChain msgs = null;
+			if (grid != null)
+				msgs = ((InternalEObject) grid).eInverseRemove(this,
+						EOPPOSITE_FEATURE_BASE - DiPackage.DIAGRAM__GRID, null,
+						msgs);
+			if (newGrid != null)
+				msgs = ((InternalEObject) newGrid).eInverseAdd(this,
+						EOPPOSITE_FEATURE_BASE - DiPackage.DIAGRAM__GRID, null,
+						msgs);
+			msgs = basicSetGrid(newGrid, msgs);
+			if (msgs != null)
+				msgs.dispatch();
+		} else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					DiPackage.DIAGRAM__GRID, newGrid, newGrid));
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public boolean isSnapToGrid() {
+		return snapToGrid;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setSnapToGrid(boolean newSnapToGrid) {
+		boolean oldSnapToGrid = snapToGrid;
+		snapToGrid = newSnapToGrid;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					DiPackage.DIAGRAM__SNAP_TO_GRID, oldSnapToGrid, snapToGrid));
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public boolean isSnapToGeometry() {
+		return snapToGeometry;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setSnapToGeometry(boolean newSnapToGeometry) {
+		boolean oldSnapToGeometry = snapToGeometry;
+		snapToGeometry = newSnapToGeometry;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					DiPackage.DIAGRAM__SNAP_TO_GEOMETRY, oldSnapToGeometry,
+					snapToGeometry));
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd,
 			int featureID, NotificationChain msgs) {
@@ -145,6 +396,14 @@ public abstract class DiagramImpl extends UIObjectImpl implements Diagram {
 		case DiPackage.DIAGRAM__COMMENT_LINKS:
 			return ((InternalEList<?>) getCommentLinks()).basicRemove(otherEnd,
 					msgs);
+		case DiPackage.DIAGRAM__RULERS:
+			return ((InternalEList<?>) getRulers()).basicRemove(otherEnd, msgs);
+		case DiPackage.DIAGRAM__HORIZONTAL_RULER:
+			return basicSetHorizontalRuler(null, msgs);
+		case DiPackage.DIAGRAM__VERTICAL_RULER:
+			return basicSetVerticalRuler(null, msgs);
+		case DiPackage.DIAGRAM__GRID:
+			return basicSetGrid(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -169,6 +428,20 @@ public abstract class DiagramImpl extends UIObjectImpl implements Diagram {
 			return getComments();
 		case DiPackage.DIAGRAM__COMMENT_LINKS:
 			return getCommentLinks();
+		case DiPackage.DIAGRAM__RULERS:
+			if (coreType)
+				return getRulers();
+			return ((FeatureMap.Internal) getRulers()).getWrapper();
+		case DiPackage.DIAGRAM__HORIZONTAL_RULER:
+			return getHorizontalRuler();
+		case DiPackage.DIAGRAM__VERTICAL_RULER:
+			return getVerticalRuler();
+		case DiPackage.DIAGRAM__GRID:
+			return getGrid();
+		case DiPackage.DIAGRAM__SNAP_TO_GRID:
+			return isSnapToGrid();
+		case DiPackage.DIAGRAM__SNAP_TO_GEOMETRY:
+			return isSnapToGeometry();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -197,6 +470,24 @@ public abstract class DiagramImpl extends UIObjectImpl implements Diagram {
 			getCommentLinks().addAll(
 					(Collection<? extends CommentLink>) newValue);
 			return;
+		case DiPackage.DIAGRAM__RULERS:
+			((FeatureMap.Internal) getRulers()).set(newValue);
+			return;
+		case DiPackage.DIAGRAM__HORIZONTAL_RULER:
+			setHorizontalRuler((Ruler) newValue);
+			return;
+		case DiPackage.DIAGRAM__VERTICAL_RULER:
+			setVerticalRuler((Ruler) newValue);
+			return;
+		case DiPackage.DIAGRAM__GRID:
+			setGrid((Grid) newValue);
+			return;
+		case DiPackage.DIAGRAM__SNAP_TO_GRID:
+			setSnapToGrid((Boolean) newValue);
+			return;
+		case DiPackage.DIAGRAM__SNAP_TO_GEOMETRY:
+			setSnapToGeometry((Boolean) newValue);
+			return;
 		}
 		super.eSet(featureID, newValue);
 	}
@@ -221,6 +512,24 @@ public abstract class DiagramImpl extends UIObjectImpl implements Diagram {
 		case DiPackage.DIAGRAM__COMMENT_LINKS:
 			getCommentLinks().clear();
 			return;
+		case DiPackage.DIAGRAM__RULERS:
+			getRulers().clear();
+			return;
+		case DiPackage.DIAGRAM__HORIZONTAL_RULER:
+			setHorizontalRuler((Ruler) null);
+			return;
+		case DiPackage.DIAGRAM__VERTICAL_RULER:
+			setVerticalRuler((Ruler) null);
+			return;
+		case DiPackage.DIAGRAM__GRID:
+			setGrid((Grid) null);
+			return;
+		case DiPackage.DIAGRAM__SNAP_TO_GRID:
+			setSnapToGrid(SNAP_TO_GRID_EDEFAULT);
+			return;
+		case DiPackage.DIAGRAM__SNAP_TO_GEOMETRY:
+			setSnapToGeometry(SNAP_TO_GEOMETRY_EDEFAULT);
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -241,6 +550,18 @@ public abstract class DiagramImpl extends UIObjectImpl implements Diagram {
 			return !getComments().isEmpty();
 		case DiPackage.DIAGRAM__COMMENT_LINKS:
 			return !getCommentLinks().isEmpty();
+		case DiPackage.DIAGRAM__RULERS:
+			return rulers != null && !rulers.isEmpty();
+		case DiPackage.DIAGRAM__HORIZONTAL_RULER:
+			return getHorizontalRuler() != null;
+		case DiPackage.DIAGRAM__VERTICAL_RULER:
+			return getVerticalRuler() != null;
+		case DiPackage.DIAGRAM__GRID:
+			return grid != null;
+		case DiPackage.DIAGRAM__SNAP_TO_GRID:
+			return snapToGrid != SNAP_TO_GRID_EDEFAULT;
+		case DiPackage.DIAGRAM__SNAP_TO_GEOMETRY:
+			return snapToGeometry != SNAP_TO_GEOMETRY_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -260,6 +581,12 @@ public abstract class DiagramImpl extends UIObjectImpl implements Diagram {
 		result.append(lines);
 		result.append(", shapes: ");
 		result.append(shapes);
+		result.append(", rulers: ");
+		result.append(rulers);
+		result.append(", snapToGrid: ");
+		result.append(snapToGrid);
+		result.append(", snapToGeometry: ");
+		result.append(snapToGeometry);
 		result.append(')');
 		return result.toString();
 	}

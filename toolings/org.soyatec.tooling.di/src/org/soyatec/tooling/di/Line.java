@@ -12,6 +12,7 @@
  */
 package org.soyatec.tooling.di;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.util.FeatureMap;
 
 /**
@@ -29,6 +30,8 @@ import org.eclipse.emf.ecore.util.FeatureMap;
  * </em>}</li>
  * <li>{@link org.soyatec.tooling.di.Line#getSourceShape <em>Source Shape</em>}</li>
  * <li>{@link org.soyatec.tooling.di.Line#getTargetShape <em>Target Shape</em>}</li>
+ * <li>{@link org.soyatec.tooling.di.Line#getStyle <em>Style</em>}</li>
+ * <li>{@link org.soyatec.tooling.di.Line#getLineDash <em>Line Dash</em>}</li>
  * </ul>
  * </p>
  *
@@ -190,5 +193,53 @@ public interface Line extends UIElement {
 	 * @generated
 	 */
 	FeatureMap getTargetShape();
+
+	/**
+	 * Returns the value of the '<em><b>Style</b></em>' attribute. The default
+	 * value is <code>"SOLID"</code>. The literals are from the enumeration
+	 * {@link org.soyatec.tooling.di.LineStyle}. <!-- begin-user-doc -->
+	 * <p>
+	 * If the meaning of the '<em>Style</em>' attribute isn't clear, there
+	 * really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return the value of the '<em>Style</em>' attribute.
+	 * @see org.soyatec.tooling.di.LineStyle
+	 * @see #setStyle(LineStyle)
+	 * @see org.soyatec.tooling.di.DiPackage#getLine_Style()
+	 * @model default="SOLID"
+	 * @generated
+	 */
+	LineStyle getStyle();
+
+	/**
+	 * Sets the value of the '{@link org.soyatec.tooling.di.Line#getStyle
+	 * <em>Style</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @param value
+	 *            the new value of the '<em>Style</em>' attribute.
+	 * @see org.soyatec.tooling.di.LineStyle
+	 * @see #getStyle()
+	 * @generated
+	 */
+	void setStyle(LineStyle value);
+
+	/**
+	 * Returns the value of the '<em><b>Line Dash</b></em>' attribute list. The
+	 * list contents are of type {@link java.lang.Integer}. <!-- begin-user-doc
+	 * -->
+	 * <p>
+	 * If the meaning of the '<em>Line Dash</em>' attribute list isn't clear,
+	 * there really should be more of a description here...
+	 * </p>
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return the value of the '<em>Line Dash</em>' attribute list.
+	 * @see org.soyatec.tooling.di.DiPackage#getLine_LineDash()
+	 * @model
+	 * @generated
+	 */
+	EList<Integer> getLineDash();
 
 } // Line

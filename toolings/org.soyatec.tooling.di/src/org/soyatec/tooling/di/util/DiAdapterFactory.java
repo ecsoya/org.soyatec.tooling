@@ -12,16 +12,22 @@
  */
 package org.soyatec.tooling.di.util;
 
+import java.util.Map;
+
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
 import org.eclipse.emf.ecore.EObject;
+import org.soyatec.tooling.di.Alignment;
 import org.soyatec.tooling.di.Comment;
 import org.soyatec.tooling.di.CommentLink;
 import org.soyatec.tooling.di.DiPackage;
 import org.soyatec.tooling.di.Diagram;
 import org.soyatec.tooling.di.GradientShape;
+import org.soyatec.tooling.di.Grid;
+import org.soyatec.tooling.di.Guide;
 import org.soyatec.tooling.di.Line;
+import org.soyatec.tooling.di.Ruler;
 import org.soyatec.tooling.di.Shape;
 import org.soyatec.tooling.di.UIElement;
 import org.soyatec.tooling.di.UIObject;
@@ -119,6 +125,26 @@ public class DiAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseCommentLink(CommentLink object) {
 			return createCommentLinkAdapter();
+		}
+
+		@Override
+		public Adapter caseGrid(Grid object) {
+			return createGridAdapter();
+		}
+
+		@Override
+		public Adapter caseRuler(Ruler object) {
+			return createRulerAdapter();
+		}
+
+		@Override
+		public Adapter caseGuide(Guide object) {
+			return createGuideAdapter();
+		}
+
+		@Override
+		public Adapter caseElementEntry(Map.Entry<UIElement, Alignment> object) {
+			return createElementEntryAdapter();
 		}
 
 		@Override
@@ -258,6 +284,66 @@ public class DiAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createCommentLinkAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '
+	 * {@link org.soyatec.tooling.di.Grid <em>Grid</em>}'. <!-- begin-user-doc
+	 * --> This default implementation returns null so that we can easily ignore
+	 * cases; it's useful to ignore a case when inheritance will catch all the
+	 * cases anyway. <!-- end-user-doc -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.soyatec.tooling.di.Grid
+	 * @generated
+	 */
+	public Adapter createGridAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '
+	 * {@link org.soyatec.tooling.di.Ruler <em>Ruler</em>}'. <!-- begin-user-doc
+	 * --> This default implementation returns null so that we can easily ignore
+	 * cases; it's useful to ignore a case when inheritance will catch all the
+	 * cases anyway. <!-- end-user-doc -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.soyatec.tooling.di.Ruler
+	 * @generated
+	 */
+	public Adapter createRulerAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '
+	 * {@link org.soyatec.tooling.di.Guide <em>Guide</em>}'. <!-- begin-user-doc
+	 * --> This default implementation returns null so that we can easily ignore
+	 * cases; it's useful to ignore a case when inheritance will catch all the
+	 * cases anyway. <!-- end-user-doc -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.soyatec.tooling.di.Guide
+	 * @generated
+	 */
+	public Adapter createGuideAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '{@link java.util.Map.Entry
+	 * <em>Element Entry</em>}'. <!-- begin-user-doc --> This default
+	 * implementation returns null so that we can easily ignore cases; it's
+	 * useful to ignore a case when inheritance will catch all the cases anyway.
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return the new adapter.
+	 * @see java.util.Map.Entry
+	 * @generated
+	 */
+	public Adapter createElementEntryAdapter() {
 		return null;
 	}
 

@@ -6,7 +6,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *     Soyatec - initial API and implementation
+ *    Soyatec - initial API and implementation
  *******************************************************************************/
 /**
  */
@@ -17,30 +17,39 @@ import java.util.List;
 
 import org.eclipse.emf.common.notify.AdapterFactory;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.ResourceLocator;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
+import org.eclipse.emf.edit.provider.IEditingDomainItemProvider;
+import org.eclipse.emf.edit.provider.IItemLabelProvider;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.IItemPropertySource;
+import org.eclipse.emf.edit.provider.IStructuredItemContentProvider;
+import org.eclipse.emf.edit.provider.ITreeItemContentProvider;
 import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
+import org.eclipse.emf.edit.provider.ItemProviderAdapter;
 import org.eclipse.emf.edit.provider.ViewerNotification;
 import org.soyatec.tooling.di.DiFactory;
 import org.soyatec.tooling.di.DiPackage;
-import org.soyatec.tooling.di.Diagram;
+import org.soyatec.tooling.di.Ruler;
+import org.soyatec.tooling.di.RulerUnit;
 
 /**
- * This is the item provider adapter for a
- * {@link org.soyatec.tooling.di.Diagram} object. <!-- begin-user-doc --> <!--
- * end-user-doc -->
+ * This is the item provider adapter for a {@link org.soyatec.tooling.di.Ruler}
+ * object. <!-- begin-user-doc --> <!-- end-user-doc -->
  * 
  * @generated
  */
-public class DiagramItemProvider extends UIObjectItemProvider {
+public class RulerItemProvider extends ItemProviderAdapter implements
+		IEditingDomainItemProvider, IStructuredItemContentProvider,
+		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
 	/**
 	 * This constructs an instance from a factory and a notifier. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
-	public DiagramItemProvider(AdapterFactory adapterFactory) {
+	public RulerItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -55,47 +64,27 @@ public class DiagramItemProvider extends UIObjectItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addSnapToGridPropertyDescriptor(object);
-			addSnapToGeometryPropertyDescriptor(object);
+			addUnitPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Snap To Grid feature. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
+	 * This adds a property descriptor for the Unit feature. <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
-	protected void addSnapToGridPropertyDescriptor(Object object) {
+	protected void addUnitPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(
 				((ComposeableAdapterFactory) adapterFactory)
 						.getRootAdapterFactory(),
 				getResourceLocator(),
-				getString("_UI_Diagram_snapToGrid_feature"),
+				getString("_UI_Ruler_unit_feature"),
 				getString("_UI_PropertyDescriptor_description",
-						"_UI_Diagram_snapToGrid_feature", "_UI_Diagram_type"),
-				DiPackage.Literals.DIAGRAM__SNAP_TO_GRID, true, false, false,
-				ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Snap To Geometry feature. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	protected void addSnapToGeometryPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_Diagram_snapToGeometry_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_Diagram_snapToGeometry_feature",
-						"_UI_Diagram_type"),
-				DiPackage.Literals.DIAGRAM__SNAP_TO_GEOMETRY, true, false,
-				false, ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
+						"_UI_Ruler_unit_feature", "_UI_Ruler_type"),
+				DiPackage.Literals.RULER__UNIT, true, false, false,
+				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
 	}
 
 	/**
@@ -113,10 +102,7 @@ public class DiagramItemProvider extends UIObjectItemProvider {
 			Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(DiPackage.Literals.DIAGRAM__LINES);
-			childrenFeatures.add(DiPackage.Literals.DIAGRAM__SHAPES);
-			childrenFeatures.add(DiPackage.Literals.DIAGRAM__RULERS);
-			childrenFeatures.add(DiPackage.Literals.DIAGRAM__GRID);
+			childrenFeatures.add(DiPackage.Literals.RULER__GUIDES);
 		}
 		return childrenFeatures;
 	}
@@ -136,6 +122,17 @@ public class DiagramItemProvider extends UIObjectItemProvider {
 	}
 
 	/**
+	 * This returns Ruler.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Object getImage(Object object) {
+		return overlayImage(object,
+				getResourceLocator().getImage("full/obj16/Ruler"));
+	}
+
+	/**
 	 * This returns the label text for the adapted class. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
 	 * 
@@ -143,9 +140,10 @@ public class DiagramItemProvider extends UIObjectItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Diagram) object).getId();
-		return label == null || label.length() == 0 ? getString("_UI_Diagram_type")
-				: getString("_UI_Diagram_type") + " " + label;
+		RulerUnit labelValue = ((Ruler) object).getUnit();
+		String label = labelValue == null ? null : labelValue.toString();
+		return label == null || label.length() == 0 ? getString("_UI_Ruler_type")
+				: getString("_UI_Ruler_type") + " " + label;
 	}
 
 	/**
@@ -160,16 +158,12 @@ public class DiagramItemProvider extends UIObjectItemProvider {
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Diagram.class)) {
-		case DiPackage.DIAGRAM__SNAP_TO_GRID:
-		case DiPackage.DIAGRAM__SNAP_TO_GEOMETRY:
+		switch (notification.getFeatureID(Ruler.class)) {
+		case DiPackage.RULER__UNIT:
 			fireNotifyChanged(new ViewerNotification(notification,
 					notification.getNotifier(), false, true));
 			return;
-		case DiPackage.DIAGRAM__LINES:
-		case DiPackage.DIAGRAM__SHAPES:
-		case DiPackage.DIAGRAM__RULERS:
-		case DiPackage.DIAGRAM__GRID:
+		case DiPackage.RULER__GUIDES:
 			fireNotifyChanged(new ViewerNotification(notification,
 					notification.getNotifier(), true, false));
 			return;
@@ -190,8 +184,19 @@ public class DiagramItemProvider extends UIObjectItemProvider {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors.add(createChildParameter(
-				DiPackage.Literals.DIAGRAM__GRID,
-				DiFactory.eINSTANCE.createGrid()));
+				DiPackage.Literals.RULER__GUIDES,
+				DiFactory.eINSTANCE.createGuide()));
+	}
+
+	/**
+	 * Return the resource locator for this item provider's resources. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+		return DiEditPlugin.INSTANCE;
 	}
 
 }

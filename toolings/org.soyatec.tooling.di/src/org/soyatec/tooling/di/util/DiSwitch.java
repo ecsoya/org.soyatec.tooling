@@ -12,15 +12,21 @@
  */
 package org.soyatec.tooling.di.util;
 
+import java.util.Map;
+
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.util.Switch;
+import org.soyatec.tooling.di.Alignment;
 import org.soyatec.tooling.di.Comment;
 import org.soyatec.tooling.di.CommentLink;
 import org.soyatec.tooling.di.DiPackage;
 import org.soyatec.tooling.di.Diagram;
 import org.soyatec.tooling.di.GradientShape;
+import org.soyatec.tooling.di.Grid;
+import org.soyatec.tooling.di.Guide;
 import org.soyatec.tooling.di.Line;
+import org.soyatec.tooling.di.Ruler;
 import org.soyatec.tooling.di.Shape;
 import org.soyatec.tooling.di.UIElement;
 import org.soyatec.tooling.di.UIObject;
@@ -167,6 +173,35 @@ public class DiSwitch<T> extends Switch<T> {
 				result = defaultCase(theEObject);
 			return result;
 		}
+		case DiPackage.GRID: {
+			Grid grid = (Grid) theEObject;
+			T result = caseGrid(grid);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DiPackage.RULER: {
+			Ruler ruler = (Ruler) theEObject;
+			T result = caseRuler(ruler);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DiPackage.GUIDE: {
+			Guide guide = (Guide) theEObject;
+			T result = caseGuide(guide);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DiPackage.ELEMENT_ENTRY: {
+			@SuppressWarnings("unchecked")
+			Map.Entry<UIElement, Alignment> elementEntry = (Map.Entry<UIElement, Alignment>) theEObject;
+			T result = caseElementEntry(elementEntry);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
 		default:
 			return defaultCase(theEObject);
 		}
@@ -305,6 +340,74 @@ public class DiSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseCommentLink(CommentLink object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '
+	 * <em>Grid</em>'. <!-- begin-user-doc --> This implementation returns null;
+	 * returning a non-null result will terminate the switch. <!-- end-user-doc
+	 * -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '
+	 *         <em>Grid</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseGrid(Grid object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '
+	 * <em>Ruler</em>'. <!-- begin-user-doc --> This implementation returns
+	 * null; returning a non-null result will terminate the switch. <!--
+	 * end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '
+	 *         <em>Ruler</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseRuler(Ruler object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '
+	 * <em>Guide</em>'. <!-- begin-user-doc --> This implementation returns
+	 * null; returning a non-null result will terminate the switch. <!--
+	 * end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '
+	 *         <em>Guide</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseGuide(Guide object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '
+	 * <em>Element Entry</em>'. <!-- begin-user-doc --> This implementation
+	 * returns null; returning a non-null result will terminate the switch. <!--
+	 * end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '
+	 *         <em>Element Entry</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseElementEntry(Map.Entry<UIElement, Alignment> object) {
 		return null;
 	}
 

@@ -53,6 +53,27 @@
         <details key="group" value="#lines"/>
       </eAnnotations>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rulers" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFeatureMapEntry">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="kind" value="group"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="horizontalRuler" eType="#//Ruler"
+        volatile="true" transient="true" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="#rulers"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="verticalRuler" eType="#//Ruler"
+        volatile="true" transient="true" containment="true">
+      <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
+        <details key="group" value="#rulers"/>
+      </eAnnotations>
+    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="grid" eType="#//Grid" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="snapToGrid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="snapToGeometry" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Shape" abstract="true" eSuperTypes="#//UIElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="background" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
@@ -86,6 +107,18 @@
         <details key="kind" value="group"/>
       </eAnnotations>
     </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="style" eType="#//LineStyle"
+        defaultValueLiteral="SOLID"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="lineDash" upperBound="-1"
+        eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="LineStyle">
+    <eLiterals name="SOLID" value="1"/>
+    <eLiterals name="DASH" value="2"/>
+    <eLiterals name="DOT" value="3"/>
+    <eLiterals name="DASHDOT" value="4"/>
+    <eLiterals name="DASHDOTDOT" value="5"/>
+    <eLiterals name="LINE_CUSTOM" value="6"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Comment" eSuperTypes="#//Shape">
     <eStructuralFeatures xsi:type="ecore:EReference" name="inputs" upperBound="-1"
@@ -108,6 +141,40 @@
         <details key="group" value="#targetShape"/>
       </eAnnotations>
     </eStructuralFeatures>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Grid">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="color" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="spacing" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="style" eType="#//LineStyle"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Ruler">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="unit" eType="#//RulerUnit"
+        defaultValueLiteral="INCHES"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="guides" upperBound="-1"
+        eType="#//Guide" containment="true" eOpposite="#//Guide/ruler"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="RulerUnit">
+    <eLiterals name="INCHES"/>
+    <eLiterals name="CENTIMETERS" value="1"/>
+    <eLiterals name="PIXELS" value="2"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Guide">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="ruler" eType="#//Ruler"
+        eOpposite="#//Ruler/guides"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="position" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="elementMap" upperBound="-1"
+        eType="#//ElementEntry" containment="true"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="ElementEntry" instanceClassName="java.util.Map$Entry">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="key" lowerBound="1" eType="#//UIElement"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value" eType="#//Alignment"/>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EEnum" name="Alignment">
+    <eLiterals name="LEFT" value="1"/>
+    <eLiterals name="CENTER" value="2"/>
+    <eLiterals name="RIGHT" value="4"/>
+    <eLiterals name="TOP" value="8"/>
+    <eLiterals name="BOTTOM" value="32"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EDataType" name="Rectangle" instanceClassName="org.eclipse.draw2d.geometry.Rectangle"/>
 </ecore:EPackage>

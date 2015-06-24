@@ -156,6 +156,102 @@ public class DiItemProviderAdapterFactory extends DiAdapterFactory implements
 	}
 
 	/**
+	 * This keeps track of the one adapter used for all
+	 * {@link org.soyatec.tooling.di.Grid} instances. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected GridItemProvider gridItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.soyatec.tooling.di.Grid}. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createGridAdapter() {
+		if (gridItemProvider == null) {
+			gridItemProvider = new GridItemProvider(this);
+		}
+
+		return gridItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all
+	 * {@link org.soyatec.tooling.di.Ruler} instances. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected RulerItemProvider rulerItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.soyatec.tooling.di.Ruler}. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createRulerAdapter() {
+		if (rulerItemProvider == null) {
+			rulerItemProvider = new RulerItemProvider(this);
+		}
+
+		return rulerItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all
+	 * {@link org.soyatec.tooling.di.Guide} instances. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected GuideItemProvider guideItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.soyatec.tooling.di.Guide}. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createGuideAdapter() {
+		if (guideItemProvider == null) {
+			guideItemProvider = new GuideItemProvider(this);
+		}
+
+		return guideItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all
+	 * {@link java.util.Map.Entry} instances. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected ElementEntryItemProvider elementEntryItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link java.util.Map.Entry}. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createElementEntryAdapter() {
+		if (elementEntryItemProvider == null) {
+			elementEntryItemProvider = new ElementEntryItemProvider(this);
+		}
+
+		return elementEntryItemProvider;
+	}
+
+	/**
 	 * This returns the root adapter factory that contains this factory. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -262,6 +358,14 @@ public class DiItemProviderAdapterFactory extends DiAdapterFactory implements
 			commentItemProvider.dispose();
 		if (commentLinkItemProvider != null)
 			commentLinkItemProvider.dispose();
+		if (gridItemProvider != null)
+			gridItemProvider.dispose();
+		if (rulerItemProvider != null)
+			rulerItemProvider.dispose();
+		if (guideItemProvider != null)
+			guideItemProvider.dispose();
+		if (elementEntryItemProvider != null)
+			elementEntryItemProvider.dispose();
 	}
 
 }

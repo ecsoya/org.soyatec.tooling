@@ -12,16 +12,21 @@
  */
 package org.soyatec.tooling.di.impl;
 
+import java.util.Collection;
+
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.BasicFeatureMap;
+import org.eclipse.emf.ecore.util.EDataTypeUniqueEList;
 import org.eclipse.emf.ecore.util.FeatureMap;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.soyatec.tooling.di.DiPackage;
 import org.soyatec.tooling.di.Line;
+import org.soyatec.tooling.di.LineStyle;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '
@@ -39,6 +44,9 @@ import org.soyatec.tooling.di.Line;
  * Shape</em>}</li>
  * <li>{@link org.soyatec.tooling.di.impl.LineImpl#getTargetShape <em>Target
  * Shape</em>}</li>
+ * <li>{@link org.soyatec.tooling.di.impl.LineImpl#getStyle <em>Style</em>}</li>
+ * <li>{@link org.soyatec.tooling.di.impl.LineImpl#getLineDash <em>Line Dash
+ * </em>}</li>
  * </ul>
  * </p>
  *
@@ -148,6 +156,36 @@ public abstract class LineImpl extends UIElementImpl implements Line {
 	 * @ordered
 	 */
 	protected FeatureMap targetShape;
+
+	/**
+	 * The default value of the '{@link #getStyle() <em>Style</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see #getStyle()
+	 * @generated
+	 * @ordered
+	 */
+	protected static final LineStyle STYLE_EDEFAULT = LineStyle.SOLID;
+
+	/**
+	 * The cached value of the '{@link #getStyle() <em>Style</em>}' attribute.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see #getStyle()
+	 * @generated
+	 * @ordered
+	 */
+	protected LineStyle style = STYLE_EDEFAULT;
+
+	/**
+	 * The cached value of the '{@link #getLineDash() <em>Line Dash</em>}'
+	 * attribute list. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see #getLineDash()
+	 * @generated
+	 * @ordered
+	 */
+	protected EList<Integer> lineDash;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -289,6 +327,41 @@ public abstract class LineImpl extends UIElementImpl implements Line {
 	 * 
 	 * @generated
 	 */
+	public LineStyle getStyle() {
+		return style;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setStyle(LineStyle newStyle) {
+		LineStyle oldStyle = style;
+		style = newStyle == null ? STYLE_EDEFAULT : newStyle;
+		if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET,
+					DiPackage.LINE__STYLE, oldStyle, style));
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EList<Integer> getLineDash() {
+		if (lineDash == null) {
+			lineDash = new EDataTypeUniqueEList<Integer>(Integer.class, this,
+					DiPackage.LINE__LINE_DASH);
+		}
+		return lineDash;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd,
 			int featureID, NotificationChain msgs) {
@@ -327,6 +400,10 @@ public abstract class LineImpl extends UIElementImpl implements Line {
 			if (coreType)
 				return getTargetShape();
 			return ((FeatureMap.Internal) getTargetShape()).getWrapper();
+		case DiPackage.LINE__STYLE:
+			return getStyle();
+		case DiPackage.LINE__LINE_DASH:
+			return getLineDash();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -336,6 +413,7 @@ public abstract class LineImpl extends UIElementImpl implements Line {
 	 * 
 	 * @generated
 	 */
+	@SuppressWarnings("unchecked")
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
@@ -356,6 +434,13 @@ public abstract class LineImpl extends UIElementImpl implements Line {
 			return;
 		case DiPackage.LINE__TARGET_SHAPE:
 			((FeatureMap.Internal) getTargetShape()).set(newValue);
+			return;
+		case DiPackage.LINE__STYLE:
+			setStyle((LineStyle) newValue);
+			return;
+		case DiPackage.LINE__LINE_DASH:
+			getLineDash().clear();
+			getLineDash().addAll((Collection<? extends Integer>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -387,6 +472,12 @@ public abstract class LineImpl extends UIElementImpl implements Line {
 		case DiPackage.LINE__TARGET_SHAPE:
 			getTargetShape().clear();
 			return;
+		case DiPackage.LINE__STYLE:
+			setStyle(STYLE_EDEFAULT);
+			return;
+		case DiPackage.LINE__LINE_DASH:
+			getLineDash().clear();
+			return;
 		}
 		super.eUnset(featureID);
 	}
@@ -413,6 +504,10 @@ public abstract class LineImpl extends UIElementImpl implements Line {
 			return sourceShape != null && !sourceShape.isEmpty();
 		case DiPackage.LINE__TARGET_SHAPE:
 			return targetShape != null && !targetShape.isEmpty();
+		case DiPackage.LINE__STYLE:
+			return style != STYLE_EDEFAULT;
+		case DiPackage.LINE__LINE_DASH:
+			return lineDash != null && !lineDash.isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -440,6 +535,10 @@ public abstract class LineImpl extends UIElementImpl implements Line {
 		result.append(sourceShape);
 		result.append(", targetShape: ");
 		result.append(targetShape);
+		result.append(", style: ");
+		result.append(style);
+		result.append(", lineDash: ");
+		result.append(lineDash);
 		result.append(')');
 		return result.toString();
 	}

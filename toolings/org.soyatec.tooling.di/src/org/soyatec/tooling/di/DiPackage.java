@@ -15,6 +15,7 @@ package org.soyatec.tooling.di;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 
@@ -260,13 +261,67 @@ public interface DiPackage extends EPackage {
 	int DIAGRAM__COMMENT_LINKS = UI_OBJECT_FEATURE_COUNT + 3;
 
 	/**
+	 * The feature id for the '<em><b>Rulers</b></em>' attribute list. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int DIAGRAM__RULERS = UI_OBJECT_FEATURE_COUNT + 4;
+
+	/**
+	 * The feature id for the '<em><b>Horizontal Ruler</b></em>' containment
+	 * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int DIAGRAM__HORIZONTAL_RULER = UI_OBJECT_FEATURE_COUNT + 5;
+
+	/**
+	 * The feature id for the '<em><b>Vertical Ruler</b></em>' containment
+	 * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int DIAGRAM__VERTICAL_RULER = UI_OBJECT_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Grid</b></em>' containment reference. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int DIAGRAM__GRID = UI_OBJECT_FEATURE_COUNT + 7;
+
+	/**
+	 * The feature id for the '<em><b>Snap To Grid</b></em>' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int DIAGRAM__SNAP_TO_GRID = UI_OBJECT_FEATURE_COUNT + 8;
+
+	/**
+	 * The feature id for the '<em><b>Snap To Geometry</b></em>' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int DIAGRAM__SNAP_TO_GEOMETRY = UI_OBJECT_FEATURE_COUNT + 9;
+
+	/**
 	 * The number of structural features of the '<em>Diagram</em>' class. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int DIAGRAM_FEATURE_COUNT = UI_OBJECT_FEATURE_COUNT + 4;
+	int DIAGRAM_FEATURE_COUNT = UI_OBJECT_FEATURE_COUNT + 10;
 
 	/**
 	 * The number of operations of the '<em>Diagram</em>' class. <!--
@@ -643,13 +698,31 @@ public interface DiPackage extends EPackage {
 	int LINE__TARGET_SHAPE = UI_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
+	 * The feature id for the '<em><b>Style</b></em>' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int LINE__STYLE = UI_ELEMENT_FEATURE_COUNT + 6;
+
+	/**
+	 * The feature id for the '<em><b>Line Dash</b></em>' attribute list. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int LINE__LINE_DASH = UI_ELEMENT_FEATURE_COUNT + 7;
+
+	/**
 	 * The number of structural features of the '<em>Line</em>' class. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int LINE_FEATURE_COUNT = UI_ELEMENT_FEATURE_COUNT + 6;
+	int LINE_FEATURE_COUNT = UI_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of operations of the '<em>Line</em>' class. <!--
@@ -899,6 +972,24 @@ public interface DiPackage extends EPackage {
 	int COMMENT_LINK__TARGET_SHAPE = LINE__TARGET_SHAPE;
 
 	/**
+	 * The feature id for the '<em><b>Style</b></em>' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int COMMENT_LINK__STYLE = LINE__STYLE;
+
+	/**
+	 * The feature id for the '<em><b>Line Dash</b></em>' attribute list. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int COMMENT_LINK__LINE_DASH = LINE__LINE_DASH;
+
+	/**
 	 * The feature id for the '<em><b>Source</b></em>' reference. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -935,6 +1026,240 @@ public interface DiPackage extends EPackage {
 	int COMMENT_LINK_OPERATION_COUNT = LINE_OPERATION_COUNT + 0;
 
 	/**
+	 * The meta object id for the '{@link org.soyatec.tooling.di.impl.GridImpl
+	 * <em>Grid</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see org.soyatec.tooling.di.impl.GridImpl
+	 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getGrid()
+	 * @generated
+	 */
+	int GRID = 8;
+
+	/**
+	 * The feature id for the '<em><b>Color</b></em>' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int GRID__COLOR = 0;
+
+	/**
+	 * The feature id for the '<em><b>Spacing</b></em>' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int GRID__SPACING = 1;
+
+	/**
+	 * The feature id for the '<em><b>Style</b></em>' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int GRID__STYLE = 2;
+
+	/**
+	 * The number of structural features of the '<em>Grid</em>' class. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int GRID_FEATURE_COUNT = 3;
+
+	/**
+	 * The number of operations of the '<em>Grid</em>' class. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int GRID_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.soyatec.tooling.di.impl.RulerImpl
+	 * <em>Ruler</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see org.soyatec.tooling.di.impl.RulerImpl
+	 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getRuler()
+	 * @generated
+	 */
+	int RULER = 9;
+
+	/**
+	 * The feature id for the '<em><b>Unit</b></em>' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RULER__UNIT = 0;
+
+	/**
+	 * The feature id for the '<em><b>Guides</b></em>' containment reference
+	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RULER__GUIDES = 1;
+
+	/**
+	 * The number of structural features of the '<em>Ruler</em>' class. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RULER_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Ruler</em>' class. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int RULER_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.soyatec.tooling.di.impl.GuideImpl
+	 * <em>Guide</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see org.soyatec.tooling.di.impl.GuideImpl
+	 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getGuide()
+	 * @generated
+	 */
+	int GUIDE = 10;
+
+	/**
+	 * The feature id for the '<em><b>Ruler</b></em>' container reference. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int GUIDE__RULER = 0;
+
+	/**
+	 * The feature id for the '<em><b>Position</b></em>' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int GUIDE__POSITION = 1;
+
+	/**
+	 * The feature id for the '<em><b>Element Map</b></em>' map. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int GUIDE__ELEMENT_MAP = 2;
+
+	/**
+	 * The number of structural features of the '<em>Guide</em>' class. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int GUIDE_FEATURE_COUNT = 3;
+
+	/**
+	 * The number of operations of the '<em>Guide</em>' class. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int GUIDE_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '
+	 * {@link org.soyatec.tooling.di.impl.ElementEntryImpl
+	 * <em>Element Entry</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 * 
+	 * @see org.soyatec.tooling.di.impl.ElementEntryImpl
+	 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getElementEntry()
+	 * @generated
+	 */
+	int ELEMENT_ENTRY = 11;
+
+	/**
+	 * The feature id for the '<em><b>Key</b></em>' reference. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT_ENTRY__KEY = 0;
+
+	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT_ENTRY__VALUE = 1;
+
+	/**
+	 * The number of structural features of the '<em>Element Entry</em>' class.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT_ENTRY_FEATURE_COUNT = 2;
+
+	/**
+	 * The number of operations of the '<em>Element Entry</em>' class. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT_ENTRY_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.soyatec.tooling.di.LineStyle
+	 * <em>Line Style</em>}' enum. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see org.soyatec.tooling.di.LineStyle
+	 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getLineStyle()
+	 * @generated
+	 */
+	int LINE_STYLE = 12;
+
+	/**
+	 * The meta object id for the '{@link org.soyatec.tooling.di.RulerUnit
+	 * <em>Ruler Unit</em>}' enum. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see org.soyatec.tooling.di.RulerUnit
+	 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getRulerUnit()
+	 * @generated
+	 */
+	int RULER_UNIT = 13;
+
+	/**
+	 * The meta object id for the '{@link org.soyatec.tooling.di.Alignment
+	 * <em>Alignment</em>}' enum. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see org.soyatec.tooling.di.Alignment
+	 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getAlignment()
+	 * @generated
+	 */
+	int ALIGNMENT = 14;
+
+	/**
 	 * The meta object id for the '<em>Rectangle</em>' data type. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -942,7 +1267,7 @@ public interface DiPackage extends EPackage {
 	 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getRectangle()
 	 * @generated
 	 */
-	int RECTANGLE = 8;
+	int RECTANGLE = 15;
 
 	/**
 	 * Returns the meta object for class '
@@ -1097,6 +1422,82 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getDiagram_CommentLinks();
+
+	/**
+	 * Returns the meta object for the attribute list '
+	 * {@link org.soyatec.tooling.di.Diagram#getRulers <em>Rulers</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the attribute list '<em>Rulers</em>'.
+	 * @see org.soyatec.tooling.di.Diagram#getRulers()
+	 * @see #getDiagram()
+	 * @generated
+	 */
+	EAttribute getDiagram_Rulers();
+
+	/**
+	 * Returns the meta object for the containment reference '
+	 * {@link org.soyatec.tooling.di.Diagram#getHorizontalRuler
+	 * <em>Horizontal Ruler</em>}'. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 * 
+	 * @return the meta object for the containment reference '
+	 *         <em>Horizontal Ruler</em>'.
+	 * @see org.soyatec.tooling.di.Diagram#getHorizontalRuler()
+	 * @see #getDiagram()
+	 * @generated
+	 */
+	EReference getDiagram_HorizontalRuler();
+
+	/**
+	 * Returns the meta object for the containment reference '
+	 * {@link org.soyatec.tooling.di.Diagram#getVerticalRuler
+	 * <em>Vertical Ruler</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the containment reference '
+	 *         <em>Vertical Ruler</em>'.
+	 * @see org.soyatec.tooling.di.Diagram#getVerticalRuler()
+	 * @see #getDiagram()
+	 * @generated
+	 */
+	EReference getDiagram_VerticalRuler();
+
+	/**
+	 * Returns the meta object for the containment reference '
+	 * {@link org.soyatec.tooling.di.Diagram#getGrid <em>Grid</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the containment reference '<em>Grid</em>'.
+	 * @see org.soyatec.tooling.di.Diagram#getGrid()
+	 * @see #getDiagram()
+	 * @generated
+	 */
+	EReference getDiagram_Grid();
+
+	/**
+	 * Returns the meta object for the attribute '
+	 * {@link org.soyatec.tooling.di.Diagram#isSnapToGrid <em>Snap To Grid</em>}
+	 * '. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the attribute '<em>Snap To Grid</em>'.
+	 * @see org.soyatec.tooling.di.Diagram#isSnapToGrid()
+	 * @see #getDiagram()
+	 * @generated
+	 */
+	EAttribute getDiagram_SnapToGrid();
+
+	/**
+	 * Returns the meta object for the attribute '
+	 * {@link org.soyatec.tooling.di.Diagram#isSnapToGeometry
+	 * <em>Snap To Geometry</em>}'. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
+	 * 
+	 * @return the meta object for the attribute '<em>Snap To Geometry</em>'.
+	 * @see org.soyatec.tooling.di.Diagram#isSnapToGeometry()
+	 * @see #getDiagram()
+	 * @generated
+	 */
+	EAttribute getDiagram_SnapToGeometry();
 
 	/**
 	 * Returns the meta object for class '{@link org.soyatec.tooling.di.Shape
@@ -1275,6 +1676,30 @@ public interface DiPackage extends EPackage {
 	EAttribute getLine_TargetShape();
 
 	/**
+	 * Returns the meta object for the attribute '
+	 * {@link org.soyatec.tooling.di.Line#getStyle <em>Style</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the attribute '<em>Style</em>'.
+	 * @see org.soyatec.tooling.di.Line#getStyle()
+	 * @see #getLine()
+	 * @generated
+	 */
+	EAttribute getLine_Style();
+
+	/**
+	 * Returns the meta object for the attribute list '
+	 * {@link org.soyatec.tooling.di.Line#getLineDash <em>Line Dash</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the attribute list '<em>Line Dash</em>'.
+	 * @see org.soyatec.tooling.di.Line#getLineDash()
+	 * @see #getLine()
+	 * @generated
+	 */
+	EAttribute getLine_LineDash();
+
+	/**
 	 * Returns the meta object for class '{@link org.soyatec.tooling.di.Comment
 	 * <em>Comment</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -1330,6 +1755,200 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getCommentLink_Target();
+
+	/**
+	 * Returns the meta object for class '{@link org.soyatec.tooling.di.Grid
+	 * <em>Grid</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for class '<em>Grid</em>'.
+	 * @see org.soyatec.tooling.di.Grid
+	 * @generated
+	 */
+	EClass getGrid();
+
+	/**
+	 * Returns the meta object for the attribute '
+	 * {@link org.soyatec.tooling.di.Grid#getColor <em>Color</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the attribute '<em>Color</em>'.
+	 * @see org.soyatec.tooling.di.Grid#getColor()
+	 * @see #getGrid()
+	 * @generated
+	 */
+	EAttribute getGrid_Color();
+
+	/**
+	 * Returns the meta object for the attribute '
+	 * {@link org.soyatec.tooling.di.Grid#getSpacing <em>Spacing</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the attribute '<em>Spacing</em>'.
+	 * @see org.soyatec.tooling.di.Grid#getSpacing()
+	 * @see #getGrid()
+	 * @generated
+	 */
+	EAttribute getGrid_Spacing();
+
+	/**
+	 * Returns the meta object for the attribute '
+	 * {@link org.soyatec.tooling.di.Grid#getStyle <em>Style</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the attribute '<em>Style</em>'.
+	 * @see org.soyatec.tooling.di.Grid#getStyle()
+	 * @see #getGrid()
+	 * @generated
+	 */
+	EAttribute getGrid_Style();
+
+	/**
+	 * Returns the meta object for class '{@link org.soyatec.tooling.di.Ruler
+	 * <em>Ruler</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for class '<em>Ruler</em>'.
+	 * @see org.soyatec.tooling.di.Ruler
+	 * @generated
+	 */
+	EClass getRuler();
+
+	/**
+	 * Returns the meta object for the attribute '
+	 * {@link org.soyatec.tooling.di.Ruler#getUnit <em>Unit</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the attribute '<em>Unit</em>'.
+	 * @see org.soyatec.tooling.di.Ruler#getUnit()
+	 * @see #getRuler()
+	 * @generated
+	 */
+	EAttribute getRuler_Unit();
+
+	/**
+	 * Returns the meta object for the containment reference list '
+	 * {@link org.soyatec.tooling.di.Ruler#getGuides <em>Guides</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the containment reference list '
+	 *         <em>Guides</em>'.
+	 * @see org.soyatec.tooling.di.Ruler#getGuides()
+	 * @see #getRuler()
+	 * @generated
+	 */
+	EReference getRuler_Guides();
+
+	/**
+	 * Returns the meta object for class '{@link org.soyatec.tooling.di.Guide
+	 * <em>Guide</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for class '<em>Guide</em>'.
+	 * @see org.soyatec.tooling.di.Guide
+	 * @generated
+	 */
+	EClass getGuide();
+
+	/**
+	 * Returns the meta object for the container reference '
+	 * {@link org.soyatec.tooling.di.Guide#getRuler <em>Ruler</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the container reference '<em>Ruler</em>'.
+	 * @see org.soyatec.tooling.di.Guide#getRuler()
+	 * @see #getGuide()
+	 * @generated
+	 */
+	EReference getGuide_Ruler();
+
+	/**
+	 * Returns the meta object for the attribute '
+	 * {@link org.soyatec.tooling.di.Guide#getPosition <em>Position</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the attribute '<em>Position</em>'.
+	 * @see org.soyatec.tooling.di.Guide#getPosition()
+	 * @see #getGuide()
+	 * @generated
+	 */
+	EAttribute getGuide_Position();
+
+	/**
+	 * Returns the meta object for the map '
+	 * {@link org.soyatec.tooling.di.Guide#getElementMap <em>Element Map</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the map '<em>Element Map</em>'.
+	 * @see org.soyatec.tooling.di.Guide#getElementMap()
+	 * @see #getGuide()
+	 * @generated
+	 */
+	EReference getGuide_ElementMap();
+
+	/**
+	 * Returns the meta object for class '{@link java.util.Map.Entry
+	 * <em>Element Entry</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for class '<em>Element Entry</em>'.
+	 * @see java.util.Map.Entry
+	 * @model keyType="org.soyatec.tooling.di.UIElement" keyRequired="true"
+	 *        valueDataType="org.soyatec.tooling.di.Alignment"
+	 * @generated
+	 */
+	EClass getElementEntry();
+
+	/**
+	 * Returns the meta object for the reference '{@link java.util.Map.Entry
+	 * <em>Key</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the reference '<em>Key</em>'.
+	 * @see java.util.Map.Entry
+	 * @see #getElementEntry()
+	 * @generated
+	 */
+	EReference getElementEntry_Key();
+
+	/**
+	 * Returns the meta object for the attribute '{@link java.util.Map.Entry
+	 * <em>Value</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see java.util.Map.Entry
+	 * @see #getElementEntry()
+	 * @generated
+	 */
+	EAttribute getElementEntry_Value();
+
+	/**
+	 * Returns the meta object for enum '
+	 * {@link org.soyatec.tooling.di.LineStyle <em>Line Style</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for enum '<em>Line Style</em>'.
+	 * @see org.soyatec.tooling.di.LineStyle
+	 * @generated
+	 */
+	EEnum getLineStyle();
+
+	/**
+	 * Returns the meta object for enum '
+	 * {@link org.soyatec.tooling.di.RulerUnit <em>Ruler Unit</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for enum '<em>Ruler Unit</em>'.
+	 * @see org.soyatec.tooling.di.RulerUnit
+	 * @generated
+	 */
+	EEnum getRulerUnit();
+
+	/**
+	 * Returns the meta object for enum '
+	 * {@link org.soyatec.tooling.di.Alignment <em>Alignment</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for enum '<em>Alignment</em>'.
+	 * @see org.soyatec.tooling.di.Alignment
+	 * @generated
+	 */
+	EEnum getAlignment();
 
 	/**
 	 * Returns the meta object for data type '
@@ -1486,6 +2105,59 @@ public interface DiPackage extends EPackage {
 		EReference DIAGRAM__COMMENT_LINKS = eINSTANCE.getDiagram_CommentLinks();
 
 		/**
+		 * The meta object literal for the '<em><b>Rulers</b></em>' attribute
+		 * list feature. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EAttribute DIAGRAM__RULERS = eINSTANCE.getDiagram_Rulers();
+
+		/**
+		 * The meta object literal for the '<em><b>Horizontal Ruler</b></em>'
+		 * containment reference feature. <!-- begin-user-doc --> <!--
+		 * end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EReference DIAGRAM__HORIZONTAL_RULER = eINSTANCE
+				.getDiagram_HorizontalRuler();
+
+		/**
+		 * The meta object literal for the '<em><b>Vertical Ruler</b></em>'
+		 * containment reference feature. <!-- begin-user-doc --> <!--
+		 * end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EReference DIAGRAM__VERTICAL_RULER = eINSTANCE
+				.getDiagram_VerticalRuler();
+
+		/**
+		 * The meta object literal for the '<em><b>Grid</b></em>' containment
+		 * reference feature. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EReference DIAGRAM__GRID = eINSTANCE.getDiagram_Grid();
+
+		/**
+		 * The meta object literal for the '<em><b>Snap To Grid</b></em>'
+		 * attribute feature. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EAttribute DIAGRAM__SNAP_TO_GRID = eINSTANCE.getDiagram_SnapToGrid();
+
+		/**
+		 * The meta object literal for the '<em><b>Snap To Geometry</b></em>'
+		 * attribute feature. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EAttribute DIAGRAM__SNAP_TO_GEOMETRY = eINSTANCE
+				.getDiagram_SnapToGeometry();
+
+		/**
 		 * The meta object literal for the '
 		 * {@link org.soyatec.tooling.di.impl.ShapeImpl <em>Shape</em>}' class.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -1619,6 +2291,22 @@ public interface DiPackage extends EPackage {
 		EAttribute LINE__TARGET_SHAPE = eINSTANCE.getLine_TargetShape();
 
 		/**
+		 * The meta object literal for the '<em><b>Style</b></em>' attribute
+		 * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EAttribute LINE__STYLE = eINSTANCE.getLine_Style();
+
+		/**
+		 * The meta object literal for the '<em><b>Line Dash</b></em>' attribute
+		 * list feature. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EAttribute LINE__LINE_DASH = eINSTANCE.getLine_LineDash();
+
+		/**
 		 * The meta object literal for the '
 		 * {@link org.soyatec.tooling.di.impl.CommentImpl <em>Comment</em>}'
 		 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -1664,6 +2352,164 @@ public interface DiPackage extends EPackage {
 		 * @generated
 		 */
 		EReference COMMENT_LINK__TARGET = eINSTANCE.getCommentLink_Target();
+
+		/**
+		 * The meta object literal for the '
+		 * {@link org.soyatec.tooling.di.impl.GridImpl <em>Grid</em>}' class.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @see org.soyatec.tooling.di.impl.GridImpl
+		 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getGrid()
+		 * @generated
+		 */
+		EClass GRID = eINSTANCE.getGrid();
+
+		/**
+		 * The meta object literal for the '<em><b>Color</b></em>' attribute
+		 * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EAttribute GRID__COLOR = eINSTANCE.getGrid_Color();
+
+		/**
+		 * The meta object literal for the '<em><b>Spacing</b></em>' attribute
+		 * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EAttribute GRID__SPACING = eINSTANCE.getGrid_Spacing();
+
+		/**
+		 * The meta object literal for the '<em><b>Style</b></em>' attribute
+		 * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EAttribute GRID__STYLE = eINSTANCE.getGrid_Style();
+
+		/**
+		 * The meta object literal for the '
+		 * {@link org.soyatec.tooling.di.impl.RulerImpl <em>Ruler</em>}' class.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @see org.soyatec.tooling.di.impl.RulerImpl
+		 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getRuler()
+		 * @generated
+		 */
+		EClass RULER = eINSTANCE.getRuler();
+
+		/**
+		 * The meta object literal for the '<em><b>Unit</b></em>' attribute
+		 * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EAttribute RULER__UNIT = eINSTANCE.getRuler_Unit();
+
+		/**
+		 * The meta object literal for the '<em><b>Guides</b></em>' containment
+		 * reference list feature. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EReference RULER__GUIDES = eINSTANCE.getRuler_Guides();
+
+		/**
+		 * The meta object literal for the '
+		 * {@link org.soyatec.tooling.di.impl.GuideImpl <em>Guide</em>}' class.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @see org.soyatec.tooling.di.impl.GuideImpl
+		 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getGuide()
+		 * @generated
+		 */
+		EClass GUIDE = eINSTANCE.getGuide();
+
+		/**
+		 * The meta object literal for the '<em><b>Ruler</b></em>' container
+		 * reference feature. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EReference GUIDE__RULER = eINSTANCE.getGuide_Ruler();
+
+		/**
+		 * The meta object literal for the '<em><b>Position</b></em>' attribute
+		 * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EAttribute GUIDE__POSITION = eINSTANCE.getGuide_Position();
+
+		/**
+		 * The meta object literal for the '<em><b>Element Map</b></em>' map
+		 * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EReference GUIDE__ELEMENT_MAP = eINSTANCE.getGuide_ElementMap();
+
+		/**
+		 * The meta object literal for the '
+		 * {@link org.soyatec.tooling.di.impl.ElementEntryImpl
+		 * <em>Element Entry</em>}' class. <!-- begin-user-doc --> <!--
+		 * end-user-doc -->
+		 * 
+		 * @see org.soyatec.tooling.di.impl.ElementEntryImpl
+		 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getElementEntry()
+		 * @generated
+		 */
+		EClass ELEMENT_ENTRY = eINSTANCE.getElementEntry();
+
+		/**
+		 * The meta object literal for the '<em><b>Key</b></em>' reference
+		 * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EReference ELEMENT_ENTRY__KEY = eINSTANCE.getElementEntry_Key();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute
+		 * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EAttribute ELEMENT_ENTRY__VALUE = eINSTANCE.getElementEntry_Value();
+
+		/**
+		 * The meta object literal for the '
+		 * {@link org.soyatec.tooling.di.LineStyle <em>Line Style</em>}' enum.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @see org.soyatec.tooling.di.LineStyle
+		 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getLineStyle()
+		 * @generated
+		 */
+		EEnum LINE_STYLE = eINSTANCE.getLineStyle();
+
+		/**
+		 * The meta object literal for the '
+		 * {@link org.soyatec.tooling.di.RulerUnit <em>Ruler Unit</em>}' enum.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @see org.soyatec.tooling.di.RulerUnit
+		 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getRulerUnit()
+		 * @generated
+		 */
+		EEnum RULER_UNIT = eINSTANCE.getRulerUnit();
+
+		/**
+		 * The meta object literal for the '
+		 * {@link org.soyatec.tooling.di.Alignment <em>Alignment</em>}' enum.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @see org.soyatec.tooling.di.Alignment
+		 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getAlignment()
+		 * @generated
+		 */
+		EEnum ALIGNMENT = eINSTANCE.getAlignment();
 
 		/**
 		 * The meta object literal for the '<em>Rectangle</em>' data type. <!--

@@ -57,6 +57,8 @@ public class LineItemProvider extends UIElementItemProvider {
 			addWidthPropertyDescriptor(object);
 			addSourceAnchorPropertyDescriptor(object);
 			addTargetAnchorPropertyDescriptor(object);
+			addStylePropertyDescriptor(object);
+			addLineDashPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
@@ -134,6 +136,42 @@ public class LineItemProvider extends UIElementItemProvider {
 	}
 
 	/**
+	 * This adds a property descriptor for the Style feature. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected void addStylePropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory)
+						.getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_Line_style_feature"),
+				getString("_UI_PropertyDescriptor_description",
+						"_UI_Line_style_feature", "_UI_Line_type"),
+				DiPackage.Literals.LINE__STYLE, true, false, false,
+				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Line Dash feature. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected void addLineDashPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory)
+						.getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_Line_lineDash_feature"),
+				getString("_UI_PropertyDescriptor_description",
+						"_UI_Line_lineDash_feature", "_UI_Line_type"),
+				DiPackage.Literals.LINE__LINE_DASH, true, false, false,
+				ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
+	}
+
+	/**
 	 * This specifies how to implement {@link #getChildren} and is used to
 	 * deduce an appropriate feature for an
 	 * {@link org.eclipse.emf.edit.command.AddCommand},
@@ -198,6 +236,8 @@ public class LineItemProvider extends UIElementItemProvider {
 		case DiPackage.LINE__WIDTH:
 		case DiPackage.LINE__SOURCE_ANCHOR:
 		case DiPackage.LINE__TARGET_ANCHOR:
+		case DiPackage.LINE__STYLE:
+		case DiPackage.LINE__LINE_DASH:
 			fireNotifyChanged(new ViewerNotification(notification,
 					notification.getNotifier(), false, true));
 			return;

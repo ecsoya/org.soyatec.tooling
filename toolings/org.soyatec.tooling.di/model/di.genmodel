@@ -7,6 +7,26 @@
   <foreignModel>di.ecore</foreignModel>
   <genPackages prefix="Di" basePackage="org.soyatec.tooling" resource="XML" disposableProviderFactory="true"
       ecorePackage="di.ecore#/">
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="di.ecore#//LineStyle">
+      <genEnumLiterals ecoreEnumLiteral="di.ecore#//LineStyle/SOLID"/>
+      <genEnumLiterals ecoreEnumLiteral="di.ecore#//LineStyle/DASH"/>
+      <genEnumLiterals ecoreEnumLiteral="di.ecore#//LineStyle/DOT"/>
+      <genEnumLiterals ecoreEnumLiteral="di.ecore#//LineStyle/DASHDOT"/>
+      <genEnumLiterals ecoreEnumLiteral="di.ecore#//LineStyle/DASHDOTDOT"/>
+      <genEnumLiterals ecoreEnumLiteral="di.ecore#//LineStyle/LINE_CUSTOM"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="di.ecore#//RulerUnit">
+      <genEnumLiterals ecoreEnumLiteral="di.ecore#//RulerUnit/INCHES"/>
+      <genEnumLiterals ecoreEnumLiteral="di.ecore#//RulerUnit/CENTIMETERS"/>
+      <genEnumLiterals ecoreEnumLiteral="di.ecore#//RulerUnit/PIXELS"/>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false" ecoreEnum="di.ecore#//Alignment">
+      <genEnumLiterals ecoreEnumLiteral="di.ecore#//Alignment/LEFT"/>
+      <genEnumLiterals ecoreEnumLiteral="di.ecore#//Alignment/CENTER"/>
+      <genEnumLiterals ecoreEnumLiteral="di.ecore#//Alignment/RIGHT"/>
+      <genEnumLiterals ecoreEnumLiteral="di.ecore#//Alignment/TOP"/>
+      <genEnumLiterals ecoreEnumLiteral="di.ecore#//Alignment/BOTTOM"/>
+    </genEnums>
     <genDataTypes ecoreDataType="di.ecore#//Rectangle"/>
     <genClasses image="false" ecoreClass="di.ecore#//UIObject">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute di.ecore#//UIObject/label"/>
@@ -23,6 +43,12 @@
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute di.ecore#//Diagram/shapes"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference di.ecore#//Diagram/comments"/>
       <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference di.ecore#//Diagram/commentLinks"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute di.ecore#//Diagram/rulers"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference di.ecore#//Diagram/horizontalRuler"/>
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference di.ecore#//Diagram/verticalRuler"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference di.ecore#//Diagram/grid"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute di.ecore#//Diagram/snapToGrid"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute di.ecore#//Diagram/snapToGeometry"/>
     </genClasses>
     <genClasses image="false" ecoreClass="di.ecore#//Shape">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute di.ecore#//Shape/background"/>
@@ -41,6 +67,8 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute di.ecore#//Line/targetAnchor"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute di.ecore#//Line/sourceShape"/>
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute di.ecore#//Line/targetShape"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute di.ecore#//Line/style"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute di.ecore#//Line/lineDash"/>
     </genClasses>
     <genClasses ecoreClass="di.ecore#//Comment">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference di.ecore#//Comment/inputs"/>
@@ -48,6 +76,24 @@
     <genClasses ecoreClass="di.ecore#//CommentLink">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference di.ecore#//CommentLink/source"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference di.ecore#//CommentLink/target"/>
+    </genClasses>
+    <genClasses ecoreClass="di.ecore#//Grid">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute di.ecore#//Grid/color"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute di.ecore#//Grid/spacing"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute di.ecore#//Grid/style"/>
+    </genClasses>
+    <genClasses ecoreClass="di.ecore#//Ruler">
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute di.ecore#//Ruler/unit"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference di.ecore#//Ruler/guides"/>
+    </genClasses>
+    <genClasses ecoreClass="di.ecore#//Guide">
+      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference di.ecore#//Guide/ruler"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute di.ecore#//Guide/position"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference di.ecore#//Guide/elementMap"/>
+    </genClasses>
+    <genClasses ecoreClass="di.ecore#//ElementEntry">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference di.ecore#//ElementEntry/key"/>
+      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute di.ecore#//ElementEntry/value"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

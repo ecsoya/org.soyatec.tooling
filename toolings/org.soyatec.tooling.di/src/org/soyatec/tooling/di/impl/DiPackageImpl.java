@@ -12,20 +12,29 @@
  */
 package org.soyatec.tooling.di.impl;
 
+import java.util.Map;
+
 import org.eclipse.draw2d.geometry.Rectangle;
 import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EDataType;
+import org.eclipse.emf.ecore.EEnum;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
+import org.soyatec.tooling.di.Alignment;
 import org.soyatec.tooling.di.Comment;
 import org.soyatec.tooling.di.CommentLink;
 import org.soyatec.tooling.di.DiFactory;
 import org.soyatec.tooling.di.DiPackage;
 import org.soyatec.tooling.di.Diagram;
 import org.soyatec.tooling.di.GradientShape;
+import org.soyatec.tooling.di.Grid;
+import org.soyatec.tooling.di.Guide;
 import org.soyatec.tooling.di.Line;
+import org.soyatec.tooling.di.LineStyle;
+import org.soyatec.tooling.di.Ruler;
+import org.soyatec.tooling.di.RulerUnit;
 import org.soyatec.tooling.di.Shape;
 import org.soyatec.tooling.di.UIElement;
 import org.soyatec.tooling.di.UIObject;
@@ -92,6 +101,55 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 	 * @generated
 	 */
 	private EClass commentLinkEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass gridEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass rulerEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass guideEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass elementEntryEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EEnum lineStyleEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EEnum rulerUnitEEnum = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EEnum alignmentEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -289,6 +347,60 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 	 * 
 	 * @generated
 	 */
+	public EAttribute getDiagram_Rulers() {
+		return (EAttribute) diagramEClass.getEStructuralFeatures().get(4);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getDiagram_HorizontalRuler() {
+		return (EReference) diagramEClass.getEStructuralFeatures().get(5);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getDiagram_VerticalRuler() {
+		return (EReference) diagramEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getDiagram_Grid() {
+		return (EReference) diagramEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EAttribute getDiagram_SnapToGrid() {
+		return (EAttribute) diagramEClass.getEStructuralFeatures().get(8);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EAttribute getDiagram_SnapToGeometry() {
+		return (EAttribute) diagramEClass.getEStructuralFeatures().get(9);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
 	public EClass getShape() {
 		return shapeEClass;
 	}
@@ -424,6 +536,24 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 	 * 
 	 * @generated
 	 */
+	public EAttribute getLine_Style() {
+		return (EAttribute) lineEClass.getEStructuralFeatures().get(6);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EAttribute getLine_LineDash() {
+		return (EAttribute) lineEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
 	public EClass getComment() {
 		return commentEClass;
 	}
@@ -462,6 +592,159 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 	 */
 	public EReference getCommentLink_Target() {
 		return (EReference) commentLinkEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EClass getGrid() {
+		return gridEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EAttribute getGrid_Color() {
+		return (EAttribute) gridEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EAttribute getGrid_Spacing() {
+		return (EAttribute) gridEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EAttribute getGrid_Style() {
+		return (EAttribute) gridEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EClass getRuler() {
+		return rulerEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EAttribute getRuler_Unit() {
+		return (EAttribute) rulerEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getRuler_Guides() {
+		return (EReference) rulerEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EClass getGuide() {
+		return guideEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getGuide_Ruler() {
+		return (EReference) guideEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EAttribute getGuide_Position() {
+		return (EAttribute) guideEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getGuide_ElementMap() {
+		return (EReference) guideEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EClass getElementEntry() {
+		return elementEntryEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getElementEntry_Key() {
+		return (EReference) elementEntryEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EAttribute getElementEntry_Value() {
+		return (EAttribute) elementEntryEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EEnum getLineStyle() {
+		return lineStyleEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EEnum getRulerUnit() {
+		return rulerUnitEEnum;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EEnum getAlignment() {
+		return alignmentEEnum;
 	}
 
 	/**
@@ -517,6 +800,12 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 		createEAttribute(diagramEClass, DIAGRAM__SHAPES);
 		createEReference(diagramEClass, DIAGRAM__COMMENTS);
 		createEReference(diagramEClass, DIAGRAM__COMMENT_LINKS);
+		createEAttribute(diagramEClass, DIAGRAM__RULERS);
+		createEReference(diagramEClass, DIAGRAM__HORIZONTAL_RULER);
+		createEReference(diagramEClass, DIAGRAM__VERTICAL_RULER);
+		createEReference(diagramEClass, DIAGRAM__GRID);
+		createEAttribute(diagramEClass, DIAGRAM__SNAP_TO_GRID);
+		createEAttribute(diagramEClass, DIAGRAM__SNAP_TO_GEOMETRY);
 
 		shapeEClass = createEClass(SHAPE);
 		createEAttribute(shapeEClass, SHAPE__BACKGROUND);
@@ -535,6 +824,8 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 		createEAttribute(lineEClass, LINE__TARGET_ANCHOR);
 		createEAttribute(lineEClass, LINE__SOURCE_SHAPE);
 		createEAttribute(lineEClass, LINE__TARGET_SHAPE);
+		createEAttribute(lineEClass, LINE__STYLE);
+		createEAttribute(lineEClass, LINE__LINE_DASH);
 
 		commentEClass = createEClass(COMMENT);
 		createEReference(commentEClass, COMMENT__INPUTS);
@@ -542,6 +833,29 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 		commentLinkEClass = createEClass(COMMENT_LINK);
 		createEReference(commentLinkEClass, COMMENT_LINK__SOURCE);
 		createEReference(commentLinkEClass, COMMENT_LINK__TARGET);
+
+		gridEClass = createEClass(GRID);
+		createEAttribute(gridEClass, GRID__COLOR);
+		createEAttribute(gridEClass, GRID__SPACING);
+		createEAttribute(gridEClass, GRID__STYLE);
+
+		rulerEClass = createEClass(RULER);
+		createEAttribute(rulerEClass, RULER__UNIT);
+		createEReference(rulerEClass, RULER__GUIDES);
+
+		guideEClass = createEClass(GUIDE);
+		createEReference(guideEClass, GUIDE__RULER);
+		createEAttribute(guideEClass, GUIDE__POSITION);
+		createEReference(guideEClass, GUIDE__ELEMENT_MAP);
+
+		elementEntryEClass = createEClass(ELEMENT_ENTRY);
+		createEReference(elementEntryEClass, ELEMENT_ENTRY__KEY);
+		createEAttribute(elementEntryEClass, ELEMENT_ENTRY__VALUE);
+
+		// Create enums
+		lineStyleEEnum = createEEnum(LINE_STYLE);
+		rulerUnitEEnum = createEEnum(RULER_UNIT);
+		alignmentEEnum = createEEnum(ALIGNMENT);
 
 		// Create data types
 		rectangleEDataType = createEDataType(RECTANGLE);
@@ -636,6 +950,30 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 				"commentLinks", null, 0, -1, Diagram.class, IS_TRANSIENT,
 				IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDiagram_Rulers(), ecorePackage.getEFeatureMapEntry(),
+				"rulers", null, 0, -1, Diagram.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEReference(getDiagram_HorizontalRuler(), this.getRuler(), null,
+				"horizontalRuler", null, 0, 1, Diagram.class, IS_TRANSIENT,
+				IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDiagram_VerticalRuler(), this.getRuler(), null,
+				"verticalRuler", null, 0, 1, Diagram.class, IS_TRANSIENT,
+				IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getDiagram_Grid(), this.getGrid(), null, "grid", null,
+				0, 1, Diagram.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDiagram_SnapToGrid(), ecorePackage.getEBoolean(),
+				"snapToGrid", null, 0, 1, Diagram.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getDiagram_SnapToGeometry(), ecorePackage.getEBoolean(),
+				"snapToGeometry", null, 0, 1, Diagram.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 
 		initEClass(shapeEClass, Shape.class, "Shape", IS_ABSTRACT,
 				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -693,6 +1031,13 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 				ecorePackage.getEFeatureMapEntry(), "targetShape", null, 0, 1,
 				Line.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLine_Style(), this.getLineStyle(), "style", "SOLID",
+				0, 1, Line.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getLine_LineDash(), ecorePackage.getEInt(), "lineDash",
+				null, 0, -1, Line.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
 
 		initEClass(commentEClass, Comment.class, "Comment", !IS_ABSTRACT,
 				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -714,6 +1059,78 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 				CommentLink.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE,
 				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
+
+		initEClass(gridEClass, Grid.class, "Grid", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getGrid_Color(), ecorePackage.getEInt(), "color", null,
+				0, 1, Grid.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getGrid_Spacing(), ecorePackage.getEInt(), "spacing",
+				null, 0, 1, Grid.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEAttribute(getGrid_Style(), this.getLineStyle(), "style", null, 0,
+				1, Grid.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(rulerEClass, Ruler.class, "Ruler", !IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getRuler_Unit(), this.getRulerUnit(), "unit", "INCHES",
+				0, 1, Ruler.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRuler_Guides(), this.getGuide(),
+				this.getGuide_Ruler(), "guides", null, 0, -1, Ruler.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+
+		initEClass(guideEClass, Guide.class, "Guide", !IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getGuide_Ruler(), this.getRuler(),
+				this.getRuler_Guides(), "ruler", null, 0, 1, Guide.class,
+				!IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE,
+				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEAttribute(getGuide_Position(), ecorePackage.getEInt(), "position",
+				null, 0, 1, Guide.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEReference(getGuide_ElementMap(), this.getElementEntry(), null,
+				"elementMap", null, 0, -1, Guide.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEClass(elementEntryEClass, Map.Entry.class, "ElementEntry",
+				!IS_ABSTRACT, !IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getElementEntry_Key(), this.getUIElement(), null, "key",
+				null, 1, 1, Map.Entry.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getElementEntry_Value(), this.getAlignment(), "value",
+				null, 0, 1, Map.Entry.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+
+		// Initialize enums and add enum literals
+		initEEnum(lineStyleEEnum, LineStyle.class, "LineStyle");
+		addEEnumLiteral(lineStyleEEnum, LineStyle.SOLID);
+		addEEnumLiteral(lineStyleEEnum, LineStyle.DASH);
+		addEEnumLiteral(lineStyleEEnum, LineStyle.DOT);
+		addEEnumLiteral(lineStyleEEnum, LineStyle.DASHDOT);
+		addEEnumLiteral(lineStyleEEnum, LineStyle.DASHDOTDOT);
+		addEEnumLiteral(lineStyleEEnum, LineStyle.LINE_CUSTOM);
+
+		initEEnum(rulerUnitEEnum, RulerUnit.class, "RulerUnit");
+		addEEnumLiteral(rulerUnitEEnum, RulerUnit.INCHES);
+		addEEnumLiteral(rulerUnitEEnum, RulerUnit.CENTIMETERS);
+		addEEnumLiteral(rulerUnitEEnum, RulerUnit.PIXELS);
+
+		initEEnum(alignmentEEnum, Alignment.class, "Alignment");
+		addEEnumLiteral(alignmentEEnum, Alignment.LEFT);
+		addEEnumLiteral(alignmentEEnum, Alignment.CENTER);
+		addEEnumLiteral(alignmentEEnum, Alignment.RIGHT);
+		addEEnumLiteral(alignmentEEnum, Alignment.TOP);
+		addEEnumLiteral(alignmentEEnum, Alignment.BOTTOM);
 
 		// Initialize data types
 		initEDataType(rectangleEDataType, Rectangle.class, "Rectangle",
@@ -750,6 +1167,12 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 				"#shapes" });
 		addAnnotation(getDiagram_CommentLinks(), source, new String[] {
 				"group", "#lines" });
+		addAnnotation(getDiagram_Rulers(), source, new String[] { "kind",
+				"group" });
+		addAnnotation(getDiagram_HorizontalRuler(), source, new String[] {
+				"group", "#rulers" });
+		addAnnotation(getDiagram_VerticalRuler(), source, new String[] {
+				"group", "#rulers" });
 		addAnnotation(getLine_SourceShape(), source, new String[] { "kind",
 				"group" });
 		addAnnotation(getLine_TargetShape(), source, new String[] { "kind",

@@ -58,6 +58,33 @@ public interface DiFactory extends EFactory {
 	CommentLink createCommentLink();
 
 	/**
+	 * Returns a new object of class '<em>Grid</em>'. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Grid</em>'.
+	 * @generated
+	 */
+	Grid createGrid();
+
+	/**
+	 * Returns a new object of class '<em>Ruler</em>'. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Ruler</em>'.
+	 * @generated
+	 */
+	Ruler createRuler();
+
+	/**
+	 * Returns a new object of class '<em>Guide</em>'. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Guide</em>'.
+	 * @generated
+	 */
+	Guide createGuide();
+
+	/**
 	 * Returns the package supported by this factory. <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * 
