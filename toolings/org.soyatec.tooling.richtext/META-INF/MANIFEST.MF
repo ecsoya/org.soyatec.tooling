@@ -1,0 +1,18 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Soyatec RichText
+Bundle-SymbolicName: org.soyatec.tooling.richtext
+Bundle-Version: 1.0.0.qualifier
+Bundle-Activator: org.soyatec.tooling.richtext.Activator
+Bundle-Vendor: Soyatec
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.epf.richtext;visibility:=reexport,
+ org.eclipse.ui.ide;visibility:=reexport
+Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-ActivationPolicy: lazy
+Export-Package: org.soyatec.tooling.richtext.editors
+Bundle-ClassPath: lib/velocity-1.7.jar,
+ .,
+ lib/commons-collections-3.2.1.jar,
+ lib/commons-lang-2.4.jar

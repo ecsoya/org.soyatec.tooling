@@ -1,0 +1,254 @@
+package org.soyatec.tooling.richtext.editors;
+
+import java.io.StringWriter;
+import java.util.Properties;
+
+import org.apache.velocity.Template;
+import org.apache.velocity.VelocityContext;
+import org.apache.velocity.app.Velocity;
+import org.apache.velocity.runtime.RuntimeConstants;
+import org.eclipse.core.resources.IFile;
+import org.eclipse.core.runtime.IProgressMonitor;
+import org.eclipse.core.runtime.IStatus;
+import org.eclipse.core.runtime.Status;
+import org.eclipse.epf.richtext.RichText;
+import org.eclipse.epf.richtext.RichTextToolBar;
+import org.eclipse.epf.richtext.actions.AddCodeAction;
+import org.eclipse.epf.richtext.actions.AddColumnAction;
+import org.eclipse.epf.richtext.actions.AddLineAction;
+import org.eclipse.epf.richtext.actions.AddLinkAction;
+import org.eclipse.epf.richtext.actions.AddOrderedListAction;
+import org.eclipse.epf.richtext.actions.AddRowAction;
+import org.eclipse.epf.richtext.actions.AddTableAction;
+import org.eclipse.epf.richtext.actions.AddUnorderedListAction;
+import org.eclipse.epf.richtext.actions.BoldAction;
+import org.eclipse.epf.richtext.actions.FontNameAction;
+import org.eclipse.epf.richtext.actions.FontSizeAction;
+import org.eclipse.epf.richtext.actions.FontStyleAction;
+import org.eclipse.epf.richtext.actions.IndentAction;
+import org.eclipse.epf.richtext.actions.ItalicAction;
+import org.eclipse.epf.richtext.actions.JustifyCenterAction;
+import org.eclipse.epf.richtext.actions.JustifyFullAction;
+import org.eclipse.epf.richtext.actions.JustifyLeftAction;
+import org.eclipse.epf.richtext.actions.JustifyRightAction;
+import org.eclipse.epf.richtext.actions.OutdentAction;
+import org.eclipse.epf.richtext.actions.SubscriptAction;
+import org.eclipse.epf.richtext.actions.SuperscriptAction;
+import org.eclipse.epf.richtext.actions.UnderlineAction;
+import org.eclipse.swt.SWT;
+import org.eclipse.swt.custom.ViewForm;
+import org.eclipse.swt.events.ModifyEvent;
+import org.eclipse.swt.events.ModifyListener;
+import org.eclipse.swt.graphics.Point;
+import org.eclipse.swt.layout.FillLayout;
+import org.eclipse.swt.widgets.Composite;
+import org.eclipse.swt.widgets.Control;
+import org.eclipse.swt.widgets.CoolBar;
+import org.eclipse.swt.widgets.CoolItem;
+import org.eclipse.swt.widgets.Event;
+import org.eclipse.swt.widgets.Listener;
+import org.eclipse.swt.widgets.ToolBar;
+import org.eclipse.ui.IEditorInput;
+import org.eclipse.ui.IEditorSite;
+import org.eclipse.ui.IFileEditorInput;
+import org.eclipse.ui.PartInitException;
+import org.eclipse.ui.part.EditorPart;
+import org.soyatec.tooling.richtext.Activator;
+import org.soyatec.tooling.richtext.actions.AddImageActionEx;
+import org.soyatec.tooling.richtext.actions.BackgroundAction;
+import org.soyatec.tooling.richtext.actions.BlockTagActionEx;
+import org.soyatec.tooling.richtext.actions.ForegroundAction;
+import org.soyatec.tooling.richtext.utils.FileUtils;
+
+public class HTMLEditor extends EditorPart {
+
+	private ViewForm partControl;
+	private RichTextToolBar toolBar;
+	private RichText richText;
+
+	private IFile file;
+	private boolean isDirty;
+
+	public void doSave(IProgressMonitor monitor) {
+		if (richText.getModified() && file != null) {
+			String text = richText.getText();
+			Properties properties = new Properties();
+			properties.put(RuntimeConstants.RESOURCE_LOADER, "class, file");
+			properties.put("class.resource.loader.class",
+					VelocityResourceLoader.class.getName());
+			Velocity.init(properties);
+			Template template = Velocity.getTemplate("template.vm");
+			VelocityContext context = new VelocityContext();
+			context.put("content", text);
+			StringWriter writer = new StringWriter();
+			template.merge(context, writer);
+			String newValue = new String(writer.getBuffer());
+			try {
+				FileUtils.saveFromString(file, newValue, monitor);
+			} catch (Exception e) {
+				Activator
+						.getDefault()
+						.getLog()
+						.log(new Status(IStatus.ERROR, Activator.PLUGIN_ID,
+								"Save file content"));
+			}
+		}
+		isDirty = false;
+		firePropertyChange(PROP_DIRTY);
+	}
+
+	public void doSaveAs() {
+
+	}
+
+	public void init(IEditorSite site, IEditorInput input)
+			throws PartInitException {
+		setSite(site);
+		setInput(input);
+		if (input instanceof IFileEditorInput) {
+			file = ((IFileEditorInput) input).getFile();
+		}
+	}
+
+	public boolean isDirty() {
+		return isDirty;
+	}
+
+	public boolean isSaveAsAllowed() {
+		return false;
+	}
+
+	public void createPartControl(Composite parent) {
+		partControl = new ViewForm(parent, SWT.NONE);
+		Composite content = new Composite(partControl, SWT.NONE);
+		content.setLayout(new FillLayout());
+		richText = new RichText(content, SWT.NONE);
+		partControl.setContent(content);
+
+		final CoolBar coolBar = new CoolBar(partControl, SWT.HORIZONTAL
+				| SWT.FLAT);
+		toolBar = new RichTextToolBar(coolBar, SWT.FLAT, richText);
+		ToolBar normalItems = toolBar.getToolbarMgr().getControl();
+		ToolBar comboItems = toolBar.getToolbarMgrCombo().getControl();
+		CoolItem item1 = new CoolItem(coolBar, SWT.NONE);
+		item1.setControl(comboItems);
+		item1.setMinimumSize(comboItems.computeSize(SWT.DEFAULT, SWT.DEFAULT));
+		CoolItem item2 = new CoolItem(coolBar, SWT.NONE);
+		item2.setMinimumSize(normalItems.computeSize(SWT.DEFAULT, SWT.DEFAULT));
+		item2.setControl(normalItems);
+		coolBar.setWrapIndices(new int[] { 1 });
+		partControl.setTopLeft(coolBar);
+
+		partControl.addListener(SWT.Resize, new Listener() {
+
+			public void handleEvent(Event event) {
+				CoolItem[] coolItems = coolBar.getItems();
+				Point parentSize = partControl.getSize();
+				for (CoolItem coolItem : coolItems) {
+					Control control = coolItem.getControl();
+					Point size = control.computeSize(parentSize.x - 4,
+							SWT.DEFAULT);
+					Point coolSize = coolItem.computeSize(size.x, size.y);
+					coolItem.setMinimumSize(size);
+					coolItem.setPreferredSize(coolSize);
+					coolItem.setSize(coolSize);
+				}
+				coolBar.getParent().layout();
+			}
+		});
+
+		configureActions();
+		configureRichText();
+
+	}
+
+	protected RichText getRichText() {
+		return richText;
+	}
+
+	protected RichTextToolBar getToolBar() {
+		return toolBar;
+	}
+
+	protected void configureRichText() {
+		if (richText == null || richText.isDisposed()) {
+			return;
+		}
+		richText.addModifyListener(new ModifyListener() {
+
+			public void modifyText(ModifyEvent e) {
+				isDirty = true;
+				firePropertyChange(PROP_DIRTY);
+			}
+		});
+
+		if (file != null && file.exists()) {
+			richText.setText(getText(file));
+		}
+	}
+
+	protected String getText(IFile file) {
+		try {
+			return FileUtils.readAsString(file);
+		} catch (Exception e) {
+			Activator
+					.getDefault()
+					.getLog()
+					.log(new Status(IStatus.ERROR, Activator.PLUGIN_ID,
+							"Load file content"));
+			return null;
+		}
+	}
+
+	protected void configureActions() {
+		final RichText richText = getRichText();
+		toolBar.addAction(new BoldAction(richText));
+		toolBar.addAction(new ItalicAction(richText));
+		toolBar.addAction(new UnderlineAction(richText));
+		toolBar.addAction(new ForegroundAction(richText));
+		toolBar.addAction(new BackgroundAction(richText));
+		toolBar.addAction(new SubscriptAction(richText));
+		toolBar.addAction(new SuperscriptAction(richText));
+		toolBar.addSeparator();
+		toolBar.addAction(new AddOrderedListAction(richText));
+		toolBar.addAction(new AddUnorderedListAction(richText));
+		toolBar.addAction(new JustifyLeftAction(richText));
+		toolBar.addAction(new JustifyCenterAction(richText));
+		toolBar.addAction(new JustifyRightAction(richText));
+		toolBar.addAction(new JustifyFullAction(richText));
+		toolBar.addSeparator();
+		toolBar.addAction(new IndentAction(richText));
+		toolBar.addAction(new OutdentAction(richText));
+		toolBar.addSeparator();
+
+		// toolBar.addAction(new TidyActionGroup(richText));
+		// toolBar.addSeparator();
+		toolBar.addAction(new AddTableAction(richText));
+		AddColumnAction addColumnAction = new AddColumnAction(richText);
+		addColumnAction.setImageDescriptor(Activator.imageDescriptorFromPlugin(
+				Activator.PLUGIN_ID, "icons/addColumn.gif"));
+		addColumnAction.setToolTipText("Add column");
+		toolBar.addAction(addColumnAction);
+		AddRowAction addRowAction = new AddRowAction(richText);
+		addRowAction.setImageDescriptor(Activator.imageDescriptorFromPlugin(
+				Activator.PLUGIN_ID, "icons/addRow.gif"));
+		addRowAction.setToolTipText("Add row.");
+		toolBar.addAction(addRowAction);
+		toolBar.addSeparator();
+		toolBar.addAction(new AddLinkAction(richText));
+		toolBar.addAction(new AddImageActionEx(richText, file));
+		toolBar.addAction(new AddCodeAction(richText));
+		toolBar.addSeparator();
+		toolBar.addAction(new AddLineAction(richText));
+
+		toolBar.addAction(new BlockTagActionEx(richText));
+		toolBar.addAction(new FontNameAction(richText));
+		toolBar.addAction(new FontSizeAction(richText));
+		toolBar.addAction(new FontStyleAction(richText));
+	}
+
+	public void setFocus() {
+		partControl.setFocus();
+	}
+
+}
