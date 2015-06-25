@@ -11,6 +11,7 @@ import org.eclipse.core.resources.IFile;
 import org.eclipse.core.runtime.IProgressMonitor;
 import org.eclipse.core.runtime.IStatus;
 import org.eclipse.core.runtime.Status;
+import org.eclipse.epf.richtext.IRichText;
 import org.eclipse.epf.richtext.RichText;
 import org.eclipse.epf.richtext.RichTextToolBar;
 import org.eclipse.epf.richtext.actions.AddCodeAction;
@@ -64,7 +65,7 @@ public class HTMLEditor extends EditorPart {
 
 	private ViewForm partControl;
 	private RichTextToolBar toolBar;
-	private RichText richText;
+	private IRichText richText;
 
 	private IFile file;
 	private boolean isDirty;
@@ -162,7 +163,7 @@ public class HTMLEditor extends EditorPart {
 
 	}
 
-	protected RichText getRichText() {
+	protected IRichText getRichText() {
 		return richText;
 	}
 
@@ -201,7 +202,7 @@ public class HTMLEditor extends EditorPart {
 	}
 
 	protected void configureActions() {
-		final RichText richText = getRichText();
+		final IRichText richText = getRichText();
 		toolBar.addAction(new BoldAction(richText));
 		toolBar.addAction(new ItalicAction(richText));
 		toolBar.addAction(new UnderlineAction(richText));
