@@ -69,6 +69,8 @@ public class ToolBarPalette extends Composite {
 	private final Map<ImageDescriptor, Image> imageMap;
 	private Image image;
 
+	private PropertyChangeListener paletteListListener;
+
 	public ToolBarPalette(Composite parent, int style) {
 		super(parent, style);
 		imageMap = new HashMap<ImageDescriptor, Image>(1);
@@ -266,9 +268,67 @@ public class ToolBarPalette extends Composite {
 		}
 		List<PaletteEntry> entries = new ArrayList<PaletteEntry>();
 		collectPaletteItems(entries, paletteRoot);
-
 		toolBar.setData(entries);
+
+		listenPaletteContainers(paletteRoot);
 		updatePalette();
+	}
+
+	private PropertyChangeListener getPaletteListListener() {
+		if (paletteListListener == null) {
+			paletteListListener = new PropertyChangeListener() {
+
+				public void propertyChange(PropertyChangeEvent evt) {
+					if (PaletteContainer.PROPERTY_CHILDREN.equals(evt
+							.getPropertyName())) {
+						if (paletteRoot == null || toolBar == null
+								|| toolBar.isDisposed()) {
+							return;
+						}
+						final List<PaletteEntry> newPaletteEntries = new ArrayList<PaletteEntry>();
+						collectPaletteItems(newPaletteEntries, paletteRoot);
+						toolBar.getDisplay().asyncExec(new Runnable() {
+
+							public void run() {
+								toolBar.setData(newPaletteEntries);
+								updatePalette();
+							}
+						});
+					}
+				}
+			};
+		}
+		return paletteListListener;
+	}
+
+	private void listenPaletteContainers(PaletteEntry entry) {
+		if (entry == null) {
+			return;
+		}
+		if (entry instanceof PaletteContainer) {
+			((PaletteContainer) entry)
+					.addPropertyChangeListener(getPaletteListListener());
+			@SuppressWarnings("rawtypes")
+			List children = ((PaletteContainer) entry).getChildren();
+			for (Object object : children) {
+				listenPaletteContainers((PaletteEntry) object);
+			}
+		}
+	}
+
+	private void unlistenPaletteContainers(PaletteEntry entry) {
+		if (entry == null) {
+			return;
+		}
+		if (entry instanceof PaletteContainer) {
+			((PaletteContainer) entry)
+					.removePropertyChangeListener(getPaletteListListener());
+			@SuppressWarnings("rawtypes")
+			List children = ((PaletteContainer) entry).getChildren();
+			for (Object object : children) {
+				unlistenPaletteContainers((PaletteEntry) object);
+			}
+		}
 	}
 
 	private void updatePalette() {
@@ -445,7 +505,8 @@ public class ToolBarPalette extends Composite {
 			return;
 		}
 		if (entry instanceof PaletteContainer) {
-			List<?> children = ((PaletteContainer) entry).getChildren();
+			PaletteContainer container = (PaletteContainer) entry;
+			List<?> children = container.getChildren();
 			List<PaletteEntry> newEntries = new ArrayList<PaletteEntry>();
 			for (Object child : children) {
 				collectPaletteItems(newEntries, (PaletteEntry) child);
@@ -474,6 +535,7 @@ public class ToolBarPalette extends Composite {
 	}
 
 	public void dispose() {
+		unlistenPaletteContainers(paletteRoot);
 		super.dispose();
 		Collection<Image> values = imageMap.values();
 		for (Image image : values) {
