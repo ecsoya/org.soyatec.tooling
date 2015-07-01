@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated exml -->
+      <package
+            uri="http://www.soyatec.org/2015/eXML"
+            class="org.soyatec.tooling.exml.EXMLPackage"
+            genModel="model/exml.genmodel"/>
+   </extension>
+
+   <extension point="org.eclipse.emf.ecore.extension_parser">
+      <!-- @generated exml -->
+      <parser
+            type="exml"
+            class="org.soyatec.tooling.exml.util.EXMLResourceFactoryImpl"/>
+   </extension>
+</plugin>
