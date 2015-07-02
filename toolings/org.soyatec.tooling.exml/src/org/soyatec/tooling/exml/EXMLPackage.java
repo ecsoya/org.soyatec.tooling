@@ -181,6 +181,35 @@ public interface EXMLPackage extends EPackage {
 	 */
 	int NODE_FEATURE_COUNT = XMLTypePackage.XML_TYPE_DOCUMENT_ROOT_FEATURE_COUNT + 1;
 
+	int XML_TYPE_DOCUMENT_ROOT_OPERATION_COUNT = 0;
+
+	/**
+	 * The operation id for the '<em>Get Comments</em>' operation. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 * @ordered
+	 */
+	int NODE___GET_COMMENTS = XML_TYPE_DOCUMENT_ROOT_OPERATION_COUNT + 0;
+
+	/**
+	 * The operation id for the '<em>Get Text</em>' operation. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 * @ordered
+	 */
+	int NODE___GET_TEXT = XML_TYPE_DOCUMENT_ROOT_OPERATION_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Get CDATA</em>' operation. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated NOT
+	 * @ordered
+	 */
+	int NODE___GET_CDATA = XML_TYPE_DOCUMENT_ROOT_OPERATION_COUNT + 2;
+
 	/**
 	 * The number of operations of the '<em>Node</em>' class. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
@@ -188,7 +217,7 @@ public interface EXMLPackage extends EPackage {
 	 * @generated NOT
 	 * @ordered
 	 */
-	int NODE_OPERATION_COUNT = 0;
+	int NODE_OPERATION_COUNT = XML_TYPE_DOCUMENT_ROOT_OPERATION_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Mixed</b></em>' attribute list. <!--
@@ -279,6 +308,33 @@ public interface EXMLPackage extends EPackage {
 	 * @ordered
 	 */
 	int DOCUMENT_FEATURE_COUNT = NODE_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Get Comments</em>' operation. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int DOCUMENT___GET_COMMENTS = NODE___GET_COMMENTS;
+
+	/**
+	 * The operation id for the '<em>Get Text</em>' operation. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int DOCUMENT___GET_TEXT = NODE___GET_TEXT;
+
+	/**
+	 * The operation id for the '<em>Get CDATA</em>' operation. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int DOCUMENT___GET_CDATA = NODE___GET_CDATA;
 
 	/**
 	 * The number of operations of the '<em>Document</em>' class. <!--
@@ -387,6 +443,33 @@ public interface EXMLPackage extends EPackage {
 	 * @ordered
 	 */
 	int ELEMENT_FEATURE_COUNT = NODE_FEATURE_COUNT + 2;
+
+	/**
+	 * The operation id for the '<em>Get Comments</em>' operation. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT___GET_COMMENTS = NODE___GET_COMMENTS;
+
+	/**
+	 * The operation id for the '<em>Get Text</em>' operation. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT___GET_TEXT = NODE___GET_TEXT;
+
+	/**
+	 * The operation id for the '<em>Get CDATA</em>' operation. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int ELEMENT___GET_CDATA = NODE___GET_CDATA;
 
 	/**
 	 * The operation id for the '<em>Get Attribute</em>' operation. <!--
@@ -504,6 +587,33 @@ public interface EXMLPackage extends EPackage {
 	 * @ordered
 	 */
 	int ATTRIBUTE_FEATURE_COUNT = NODE_FEATURE_COUNT + 1;
+
+	/**
+	 * The operation id for the '<em>Get Comments</em>' operation. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE___GET_COMMENTS = NODE___GET_COMMENTS;
+
+	/**
+	 * The operation id for the '<em>Get Text</em>' operation. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE___GET_TEXT = NODE___GET_TEXT;
+
+	/**
+	 * The operation id for the '<em>Get CDATA</em>' operation. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int ATTRIBUTE___GET_CDATA = NODE___GET_CDATA;
 
 	/**
 	 * The number of operations of the '<em>Attribute</em>' class. <!--
@@ -645,6 +755,40 @@ public interface EXMLPackage extends EPackage {
 	EAttribute getNode_Name();
 
 	/**
+	 * Returns the meta object for the '
+	 * {@link org.soyatec.tooling.exml.EXNode#getComments()
+	 * <em>Get Comments</em>}' operation. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @return the meta object for the '<em>Get Comments</em>' operation.
+	 * @see org.soyatec.tooling.exml.EXNode#getComments()
+	 * @generated
+	 */
+	EOperation getNode__GetComments();
+
+	/**
+	 * Returns the meta object for the '
+	 * {@link org.soyatec.tooling.exml.EXNode#getText() <em>Get Text</em>}'
+	 * operation. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the '<em>Get Text</em>' operation.
+	 * @see org.soyatec.tooling.exml.EXNode#getText()
+	 * @generated
+	 */
+	EOperation getNode__GetText();
+
+	/**
+	 * Returns the meta object for the '
+	 * {@link org.soyatec.tooling.exml.EXNode#getCDATA() <em>Get CDATA</em>}'
+	 * operation. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the '<em>Get CDATA</em>' operation.
+	 * @see org.soyatec.tooling.exml.EXNode#getCDATA()
+	 * @generated
+	 */
+	EOperation getNode__GetCDATA();
+
+	/**
 	 * Returns the factory that creates the instances of the model. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -773,6 +917,30 @@ public interface EXMLPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute NODE__NAME = eINSTANCE.getNode_Name();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Comments</b></em>'
+		 * operation. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EOperation NODE___GET_COMMENTS = eINSTANCE.getNode__GetComments();
+
+		/**
+		 * The meta object literal for the '<em><b>Get Text</b></em>' operation.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EOperation NODE___GET_TEXT = eINSTANCE.getNode__GetText();
+
+		/**
+		 * The meta object literal for the '<em><b>Get CDATA</b></em>'
+		 * operation. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EOperation NODE___GET_CDATA = eINSTANCE.getNode__GetCDATA();
 
 	}
 

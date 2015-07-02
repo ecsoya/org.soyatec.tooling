@@ -236,6 +236,33 @@ public class EXMLPackageImpl extends EPackageImpl implements EXMLPackage {
 	 * 
 	 * @generated
 	 */
+	public EOperation getNode__GetComments() {
+		return nodeEClass.getEOperations().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EOperation getNode__GetText() {
+		return nodeEClass.getEOperations().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EOperation getNode__GetCDATA() {
+		return nodeEClass.getEOperations().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
 	@Override
 	public EXMLFactory getMLFactory() {
 		return (EXMLFactory) getEFactoryInstance();
@@ -275,6 +302,9 @@ public class EXMLPackageImpl extends EPackageImpl implements EXMLPackage {
 
 		nodeEClass = createEClass(NODE);
 		createEAttribute(nodeEClass, NODE__NAME);
+		createEOperation(nodeEClass, NODE___GET_COMMENTS);
+		createEOperation(nodeEClass, NODE___GET_TEXT);
+		createEOperation(nodeEClass, NODE___GET_CDATA);
 	}
 
 	/**
@@ -359,6 +389,15 @@ public class EXMLPackageImpl extends EPackageImpl implements EXMLPackage {
 		initEAttribute(getNode_Name(), ecorePackage.getEString(), "name", null,
 				1, 1, EXNode.class, IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		initEOperation(getNode__GetComments(), ecorePackage.getEString(),
+				"getComments", 0, -1, IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getNode__GetText(), ecorePackage.getEString(),
+				"getText", 0, -1, IS_UNIQUE, IS_ORDERED);
+
+		initEOperation(getNode__GetCDATA(), ecorePackage.getEString(),
+				"getCDATA", 0, -1, IS_UNIQUE, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

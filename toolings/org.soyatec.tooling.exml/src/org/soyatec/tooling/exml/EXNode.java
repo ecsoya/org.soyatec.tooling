@@ -2,6 +2,7 @@
  */
 package org.soyatec.tooling.exml;
 
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.xml.type.XMLTypeDocumentRoot;
 
 /**
@@ -47,5 +48,32 @@ public interface EXNode extends XMLTypeDocumentRoot {
 	 * @generated
 	 */
 	void setName(String value);
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @model kind="operation" annotation=
+	 *        "http://www.eclipse.org/emf/2002/GenModel body='return super.getComment();'"
+	 * @generated
+	 */
+	EList<String> getComments();
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @model kind="operation" annotation=
+	 *        "http://www.eclipse.org/emf/2002/GenModel body='return super.getText();'"
+	 * @generated
+	 */
+	EList<String> getText();
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @model kind="operation" annotation=
+	 *        "http://www.eclipse.org/emf/2002/GenModel body='return super.getCDATA();'"
+	 * @generated
+	 */
+	EList<String> getCDATA();
 
 } // EXNode

@@ -2,7 +2,10 @@
  */
 package org.soyatec.tooling.exml.impl;
 
+import java.lang.reflect.InvocationTargetException;
+
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.xml.type.impl.XMLTypeDocumentRootImpl;
@@ -91,6 +94,33 @@ public abstract class EXNodeImpl extends XMLTypeDocumentRootImpl implements
 	 * 
 	 * @generated
 	 */
+	public EList<String> getComments() {
+		return super.getComment();
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EList<String> getText() {
+		return super.getText();
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EList<String> getCDATA() {
+		return super.getCDATA();
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
@@ -143,6 +173,25 @@ public abstract class EXNodeImpl extends XMLTypeDocumentRootImpl implements
 					.equals(name);
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Object eInvoke(int operationID, EList<?> arguments)
+			throws InvocationTargetException {
+		switch (operationID) {
+		case EXMLPackage.NODE___GET_COMMENTS:
+			return getComments();
+		case EXMLPackage.NODE___GET_TEXT:
+			return getText();
+		case EXMLPackage.NODE___GET_CDATA:
+			return getCDATA();
+		}
+		return super.eInvoke(operationID, arguments);
 	}
 
 	/**

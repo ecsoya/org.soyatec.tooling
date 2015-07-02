@@ -26,6 +26,9 @@
     </genClasses>
     <genClasses ecoreClass="exml.ecore#//Node">
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute exml.ecore#//Node/name"/>
+      <genOperations ecoreOperation="exml.ecore#//Node/getComments"/>
+      <genOperations ecoreOperation="exml.ecore#//Node/getText"/>
+      <genOperations ecoreOperation="exml.ecore#//Node/getCDATA"/>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>
