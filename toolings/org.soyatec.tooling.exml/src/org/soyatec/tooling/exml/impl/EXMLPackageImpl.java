@@ -1,3 +1,13 @@
+/*******************************************************************************
+ * Copyright (c) 2015 Soyatec and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *    Soyatec - initial API and implementation
+ *******************************************************************************/
 /**
  */
 package org.soyatec.tooling.exml.impl;
@@ -187,7 +197,7 @@ public class EXMLPackageImpl extends EPackageImpl implements EXMLPackage {
 	 * @generated
 	 */
 	@Override
-	public EOperation getElement__GetElements__String() {
+	public EOperation getElement__GetElementsByName__String() {
 		return elementEClass.getEOperations().get(1);
 	}
 
@@ -236,6 +246,7 @@ public class EXMLPackageImpl extends EPackageImpl implements EXMLPackage {
 	 * 
 	 * @generated
 	 */
+	@Override
 	public EOperation getNode__GetComments() {
 		return nodeEClass.getEOperations().get(0);
 	}
@@ -245,6 +256,7 @@ public class EXMLPackageImpl extends EPackageImpl implements EXMLPackage {
 	 * 
 	 * @generated
 	 */
+	@Override
 	public EOperation getNode__GetText() {
 		return nodeEClass.getEOperations().get(1);
 	}
@@ -254,6 +266,7 @@ public class EXMLPackageImpl extends EPackageImpl implements EXMLPackage {
 	 * 
 	 * @generated
 	 */
+	@Override
 	public EOperation getNode__GetCDATA() {
 		return nodeEClass.getEOperations().get(2);
 	}
@@ -295,7 +308,7 @@ public class EXMLPackageImpl extends EPackageImpl implements EXMLPackage {
 		createEReference(elementEClass, ELEMENT__ELEMENTS);
 		createEReference(elementEClass, ELEMENT__ATTRIBUTES);
 		createEOperation(elementEClass, ELEMENT___GET_ATTRIBUTE__STRING);
-		createEOperation(elementEClass, ELEMENT___GET_ELEMENTS__STRING);
+		createEOperation(elementEClass, ELEMENT___GET_ELEMENTS_BY_NAME__STRING);
 
 		attributeEClass = createEClass(ATTRIBUTE);
 		createEAttribute(attributeEClass, ATTRIBUTE__VALUE);
@@ -371,8 +384,8 @@ public class EXMLPackageImpl extends EPackageImpl implements EXMLPackage {
 		addEParameter(op, ecorePackage.getEString(), "name", 0, 1, IS_UNIQUE,
 				IS_ORDERED);
 
-		op = initEOperation(getElement__GetElements__String(),
-				this.getElement(), "getElements", 0, -1, !IS_UNIQUE,
+		op = initEOperation(getElement__GetElementsByName__String(),
+				this.getElement(), "getElementsByName", 0, -1, !IS_UNIQUE,
 				!IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "name", 0, 1, IS_UNIQUE,
 				IS_ORDERED);

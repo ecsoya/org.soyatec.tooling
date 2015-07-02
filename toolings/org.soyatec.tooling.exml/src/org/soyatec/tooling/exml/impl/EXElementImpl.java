@@ -1,3 +1,13 @@
+/*******************************************************************************
+ * Copyright (c) 2015 Soyatec and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *    Soyatec - initial API and implementation
+ *******************************************************************************/
 /**
  */
 package org.soyatec.tooling.exml.impl;
@@ -123,7 +133,7 @@ public class EXElementImpl extends EXNodeImpl implements EXElement {
 	 * @generated
 	 */
 	@Override
-	public EList<EXElement> getElements(final String name) {
+	public EList<EXElement> getElementsByName(final String name) {
 		BasicEList<EXElement> elements = new BasicEList<EXElement>();
 		if (name != null) {
 			EList<EXElement> children = getElements();
@@ -238,8 +248,8 @@ public class EXElementImpl extends EXNodeImpl implements EXElement {
 		switch (operationID) {
 		case EXMLPackage.ELEMENT___GET_ATTRIBUTE__STRING:
 			return getAttribute((String) arguments.get(0));
-		case EXMLPackage.ELEMENT___GET_ELEMENTS__STRING:
-			return getElements((String) arguments.get(0));
+		case EXMLPackage.ELEMENT___GET_ELEMENTS_BY_NAME__STRING:
+			return getElementsByName((String) arguments.get(0));
 		}
 		return super.eInvoke(operationID, arguments);
 	}

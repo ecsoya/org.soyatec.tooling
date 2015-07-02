@@ -18,7 +18,7 @@
       </eAnnotations>
       <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
-    <eOperations name="getElements" ordered="false" unique="false" upperBound="-1"
+    <eOperations name="getElementsByName" ordered="false" unique="false" upperBound="-1"
         eType="#//Element">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
         <details key="body" value="BasicEList&lt;EXElement> elements = new BasicEList&lt;EXElement>();&#xD;&#xA;if (name != null){&#xD;&#xA;&#x9;EList&lt;EXElement> children = getElements();&#xD;&#xA;&#x9;for (EXElement e : children) {&#xD;&#xA;&#x9;&#x9;if (name.equals(e.getName())) {&#xD;&#xA;&#x9;&#x9;&#x9;elements.add(e);&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#x9;}&#xD;&#xA;}&#xD;&#xA;return elements;"/>

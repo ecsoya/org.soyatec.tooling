@@ -1,3 +1,13 @@
+/*******************************************************************************
+ * Copyright (c) 2015 Soyatec and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *    Soyatec - initial API and implementation
+ *******************************************************************************/
 /**
  */
 package org.soyatec.tooling.exml;
@@ -73,6 +83,6 @@ public interface EXElement extends EXNode {
 	 *        "http://www.eclipse.org/emf/2002/GenModel body='BasicEList<EXElement> elements = new BasicEList<EXElement>();\r\nif (name != null){\r\n\tEList<EXElement> children = getElements();\r\n\tfor (EXElement e : children) {\r\n\t\tif (name.equals(e.getName())) {\r\n\t\t\telements.add(e);\r\n\t\t}\r\n\t}\r\n}\r\nreturn elements;'"
 	 * @generated
 	 */
-	EList<EXElement> getElements(String name);
+	EList<EXElement> getElementsByName(String name);
 
 } // EXElement

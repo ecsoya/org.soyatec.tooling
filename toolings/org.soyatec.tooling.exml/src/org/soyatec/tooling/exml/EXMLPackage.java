@@ -1,3 +1,13 @@
+/*******************************************************************************
+ * Copyright (c) 2015 Soyatec and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *    Soyatec - initial API and implementation
+ *******************************************************************************/
 /**
  */
 package org.soyatec.tooling.exml;
@@ -481,13 +491,13 @@ public interface EXMLPackage extends EPackage {
 	int ELEMENT___GET_ATTRIBUTE__STRING = NODE_OPERATION_COUNT + 0;
 
 	/**
-	 * The operation id for the '<em>Get Elements</em>' operation. <!--
+	 * The operation id for the '<em>Get Elements By Name</em>' operation. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int ELEMENT___GET_ELEMENTS__STRING = NODE_OPERATION_COUNT + 1;
+	int ELEMENT___GET_ELEMENTS_BY_NAME__STRING = NODE_OPERATION_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Element</em>' class. <!--
@@ -698,15 +708,16 @@ public interface EXMLPackage extends EPackage {
 
 	/**
 	 * Returns the meta object for the '
-	 * {@link org.soyatec.tooling.exml.EXElement#getElements(java.lang.String)
-	 * <em>Get Elements</em>}' operation. <!-- begin-user-doc --> <!--
+	 * {@link org.soyatec.tooling.exml.EXElement#getElementsByName(java.lang.String)
+	 * <em>Get Elements By Name</em>}' operation. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
 	 * 
-	 * @return the meta object for the '<em>Get Elements</em>' operation.
-	 * @see org.soyatec.tooling.exml.EXElement#getElements(java.lang.String)
+	 * @return the meta object for the '<em>Get Elements By Name</em>'
+	 *         operation.
+	 * @see org.soyatec.tooling.exml.EXElement#getElementsByName(java.lang.String)
 	 * @generated
 	 */
-	EOperation getElement__GetElements__String();
+	EOperation getElement__GetElementsByName__String();
 
 	/**
 	 * Returns the meta object for class '
@@ -871,13 +882,13 @@ public interface EXMLPackage extends EPackage {
 				.getElement__GetAttribute__String();
 
 		/**
-		 * The meta object literal for the '<em><b>Get Elements</b></em>'
-		 * operation. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * The meta object literal for the '<em><b>Get Elements By Name</b></em>
+		 * ' operation. <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * 
 		 * @generated
 		 */
-		EOperation ELEMENT___GET_ELEMENTS__STRING = eINSTANCE
-				.getElement__GetElements__String();
+		EOperation ELEMENT___GET_ELEMENTS_BY_NAME__STRING = eINSTANCE
+				.getElement__GetElementsByName__String();
 
 		/**
 		 * The meta object literal for the '
