@@ -12,31 +12,40 @@
   <body>
     <section class="page-header">
       <h1 class="project-name">Soyatec Tooling Project</h1>
-      <h2 class="project-tagline">Eclipse plugin development toolings.</h2>
+      <h2 class="project-tagline">Toolings for GEF Graphical Editor</h2>
       <a href="http://ecsoya.github.io/" class="btn">Ecsoya</a>
       <a href="https://github.com/ecsoya/org.soyatec.tooling" class="btn">View on GitHub</a>
-      <a href="https://github.com/ecsoya/org.soyatec.tooling/zipball/master" class="btn">Download .zip</a>
-      <a href="https://github.com/ecsoya/org.soyatec.tooling/tarball/master" class="btn">Download .tar.gz</a>
+      <a href="https://github.com/ecsoya/org.soyatec.tooling" class="btn">Soyatec Tooling Project</a>
     </section>
 
     <section class="main-content">
       <h3>Overview</h3>
-      <p>Soyatec Tooling Project provided toolings for developing GEF Graphical Editors, Eclipse Views based on Tree and externalization for Chinese.</p>
-      <ul>
-        <li>
-          <h3><a href="stp_gef.html">Toolings for GEF Graphical Editor</a></h3>
-        </li>
-        <li>
-          <h3><a href="stp_trans.html">Translation eclipse workbench to Chinese</a></h3>
-        </li>
-        <li>
-          <h3><a href="stp_views.html">Tooling for developing Views</a></h3>
-        </li>
-        <li>
-          <h3><a href="stp_exml.html">XML tooling based on EMF</a></h3>
-        </li>
-      </ul>
-      <h3>Update Site</h3>
+      <p>GEF Graphical Editor provided toolings includes diagram intergration model based on EMF, ToolBar palette diagram editor.      </p>
+      <h3> EMF based Diagram Intergration model for Graphical Editor.</h3>
+        <p><img src="images/di_overview.gif" ></p>
+        <blockquote>
+          <p><span >Notes</span>: </p>
+          <ol>
+            <li> 'FeatureMap' and 'http:///org/eclipse/emf/ecore/util/ExtendedMetaData'-&gt; 'group' used when define di models.</li>
+            <li>You need to implement them in your real model. For example:</li>
+          </ol>
+       
+        <p><img src="images/di_impl.gif" width="306" height="212"></p>
+        </blockquote>
+      <h3>Provided some useful classes for GEF.</h3>
+        <ul>
+          <ul>
+            <li>Abstract EditParts and EditPolicies classes based on DI models.</li>
+            <li>CommandStack and Commands, combined EMF commands and GEF commands.</li>
+            <li>Figures for displaying Label and drawing gradient.</li>
+            <li>Text direct edit manager based on a labeled figure.</li>
+            <li>Common connection anchor based on a string terminal value.</li>
+            <li>ResourcesFactory for managing images, fonts and colors.</li>
+          </ul>
+        </ul>
+        <h3>Provided a new graphical editor with a ToolBar Palette.</h3>
+        <p><img src="images/toolbar_editor.gif" width="901" height="583"></p>
+        <h3>Update Site</h3>
         <ul>
           <li>Luna: <a href="http://ecsoya.github.io/org.soyatec.tooling/update/luna/site.xml">http://ecsoya.github.io/org.soyatec.tooling/update/luna/site.xml</a></li>
         </ul> 
