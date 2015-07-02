@@ -24,31 +24,33 @@
       <h3>Simple Model </h3>
       <p><img src="images/exml_model.gif"></p>
       <h3>Easy Loading</h3>
-      <pre>			EXMLResourceFactoryImpl fac = new EXMLResourceFactoryImpl();<br>			XMLResource resource = (XMLResource) fac.createResource(uri);<br>			HashMap&lt;String, Object&gt; options = new HashMap&lt;String, Object&gt;();<br>			options.put(XMLResource.OPTION_ENCODING, &quot;UTF-8&quot;);<br>			resource.load(inputStream, options);</pre>
+      <div align="left">
+        <pre>EXMLResourceFactoryImpl fac = new EXMLResourceFactoryImpl();<br>XMLResource resource = (XMLResource) fac.createResource(uri);<br>HashMap&lt;String, Object&gt; options = new HashMap&lt;String, Object&gt;();<br>options.put(XMLResource.OPTION_ENCODING, &quot;UTF-8&quot;);<br>resource.load(inputStream, options);</pre>
+      </div>
       <h3>Saving XML</h3>
-      <pre> 		 EXMLResourceFactoryImpl fac = new EXMLResourceFactoryImpl();
-         Resource resource = fac.createResource(URI.createFileURI(&quot;Sample-save.xml&quot;));
-         EXDocument doc = EXMLFactory.eINSTANCE.createDocument();
-         EXElement root = EXMLFactory.eINSTANCE.createElement();
-         root.setName(&quot;Company&quot;);
-         EXAttribute nameAttr = EXMLFactory.eINSTANCE.createAttribute();
-         nameAttr.setName(&quot;name&quot;);
-         nameAttr.setValue(&quot;Soyatec&quot;);
-         root.getAttributes().add(nameAttr); 
-		 
- 		 for (int i = 0; i &lt; 5; i++) {
-         	EXElement child = EXMLFactory.eINSTANCE.createElement();
-         	child.setName(&quot;Employee&quot;);
-         	child.getText().add(&quot;Robot&quot; + i);
-         	root.getElements().add(child);
-         } 
+      <pre>EXMLResourceFactoryImpl fac = new EXMLResourceFactoryImpl();
+Resource resource = fac.createResource(URI.createFileURI(&quot;Sample-save.xml&quot;));
+EXDocument doc = EXMLFactory.eINSTANCE.createDocument();
+EXElement root = EXMLFactory.eINSTANCE.createElement();
+root.setName(&quot;Company&quot;);
+EXAttribute nameAttr = EXMLFactory.eINSTANCE.createAttribute();
+nameAttr.setName(&quot;name&quot;);
+nameAttr.setValue(&quot;Soyatec&quot;);
+root.getAttributes().add(nameAttr); 
 
-		 doc.setElement(root); resource.getContents().add(doc);
-         try {
-         	resource.save(Collections.EMPTY_MAP);
-         } catch (IOException e) {
-         	e.printStackTrace();
-         }</pre>
+for (int i = 0; i &lt; 5; i++) {
+   	EXElement child = EXMLFactory.eINSTANCE.createElement();
+   	child.setName(&quot;Employee&quot;);
+   	child.getText().add(&quot;Robot&quot; + i);
+   	root.getElements().add(child);
+} 
+
+doc.setElement(root); resource.getContents().add(doc);
+try {
+   	resource.save(Collections.EMPTY_MAP);
+} catch (IOException e) {
+   	e.printStackTrace();
+}</pre>
       
         
         <pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;ASCII&quot;?&gt;<br>&lt;Company name=&quot;Soyatec&quot;&gt;<br>	&lt;Employee&gt;Robot0&lt;/Employee&gt;<br>	&lt;Employee&gt;Robot1&lt;/Employee&gt;<br>	&lt;Employee&gt;Robot2&lt;/Employee&gt;<br>	&lt;Employee&gt;Robot3&lt;/Employee&gt;<br>	&lt;Employee&gt;Robot4&lt;/Employee&gt;<br>&lt;/Company&gt;</pre>
