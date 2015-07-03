@@ -5,7 +5,7 @@
       version="4.4.2.qualifier"
       provider-name="Soyatec">
 
-   <description url="http://ecsoya.github.io/org.soyatec.tooling/">
+   <description url="http://ecsoya.github.io/org.soyatec.tooling/stp_gef.html">
       1. Diagram interchange model based EMF.
 2. Useful tooling for GEF graphical editors.
    </description>

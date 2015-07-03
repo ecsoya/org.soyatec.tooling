@@ -5,7 +5,7 @@
       version="1.0.0.qualifier"
       provider-name="Soyatec">
 
-   <description url="http://ecsoya.github.io/org.soyatec.tooling/">
+   <description url="http://ecsoya.github.io/org.soyatec.tooling/stp_htmleditor.html">
       RichText extensions from EPF.
 HTML Editor.
    </description>
@@ -83,33 +83,18 @@ Everyone is permitted to copy and distribute copies of this Agreement, but in or
 This Agreement is governed by the laws of the State of New York and the intellectual property laws of the United States of America. No party to this Agreement will bring a legal action under this Agreement more than one year after the cause of action arose. Each party waives its rights to a jury trial in any resulting litigation.
    </license>
 
-   <includes
-         id="org.eclipse.epf.common.html.feature"
-         version="0.0.0"/>
-
-   <includes
-         id="org.eclipse.epf.richtext.feature"
-         version="0.0.0"/>
-
-   <includes
-         id="org.eclipse.epf.richtext.feature.nls1"
-         version="0.0.0"/>
-
-   <includes
-         id="org.eclipse.epf.richtext.feature.nls2"
-         version="0.0.0"/>
-
-   <includes
-         id="org.eclipse.epf.richtext.feature.nls2a"
-         version="0.0.0"/>
-
-   <includes
-         id="org.eclipse.epf.richtext.feature.nlsBidi"
-         version="0.0.0"/>
-
-   <includes
-         id="org.eclipse.epf.richtext.win32.feature"
-         version="0.0.0"/>
+   <requires>
+      <import plugin="org.eclipse.ui"/>
+      <import plugin="org.eclipse.core.runtime"/>
+      <import plugin="org.eclipse.ui.ide"/>
+      <import plugin="com.ibm.icu"/>
+      <import plugin="org.eclipse.core.resources"/>
+      <import plugin="org.apache.ant"/>
+      <import plugin="org.eclipse.ui.forms"/>
+      <import plugin="org.eclipse.jface.text"/>
+      <import plugin="org.eclipse.ui.workbench.texteditor"/>
+      <import plugin="org.eclipse.epf.richtext" version="1.5.0"/>
+   </requires>
 
    <plugin
          id="org.soyatec.tooling.richtext"
@@ -117,5 +102,58 @@ This Agreement is governed by the laws of the State of New York and the intellec
          install-size="0"
          version="0.0.0"
          unpack="false"/>
+
+   <plugin
+         id="org.eclipse.epf.common"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.eclipse.epf.common.html"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.eclipse.epf.common.ui"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.epf.richtext"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"/>
+
+   <plugin
+         id="org.eclipse.epf.richtext.nl1"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         fragment="true"/>
+
+   <plugin
+         id="org.eclipse.epf.richtext.nl2"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         fragment="true"/>
+
+   <plugin
+         id="org.eclipse.epf.richtext.nl2a"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         fragment="true"/>
+
+   <plugin
+         id="org.eclipse.epf.richtext.nlBidi"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         fragment="true"/>
 
 </feature>
