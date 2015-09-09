@@ -932,7 +932,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
 
-		initEClass(diagramEClass, Diagram.class, "Diagram", IS_ABSTRACT,
+		initEClass(diagramEClass, Diagram.class, "Diagram", !IS_ABSTRACT,
 				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getDiagram_Lines(), ecorePackage.getEFeatureMapEntry(),
 				"lines", null, 0, -1, Diagram.class, !IS_TRANSIENT,
@@ -975,7 +975,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
 
-		initEClass(shapeEClass, Shape.class, "Shape", IS_ABSTRACT,
+		initEClass(shapeEClass, Shape.class, "Shape", !IS_ABSTRACT,
 				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getShape_Background(), ecorePackage.getEInt(),
 				"background", "16777215", 0, 1, Shape.class, !IS_TRANSIENT,
@@ -990,7 +990,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(gradientShapeEClass, GradientShape.class, "GradientShape",
-				IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getGradientShape_UsingGradient(),
 				ecorePackage.getEBoolean(), "usingGradient", "true", 0, 1,
 				GradientShape.class, !IS_TRANSIENT, !IS_VOLATILE,
@@ -1007,7 +1007,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 				IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
 
-		initEClass(lineEClass, Line.class, "Line", IS_ABSTRACT, !IS_INTERFACE,
+		initEClass(lineEClass, Line.class, "Line", !IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getLine_Color(), ecorePackage.getEInt(), "color", "0",
 				0, 1, Line.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,

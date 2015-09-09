@@ -26,11 +26,15 @@ import org.soyatec.tooling.di.Comment;
 import org.soyatec.tooling.di.CommentLink;
 import org.soyatec.tooling.di.DiFactory;
 import org.soyatec.tooling.di.DiPackage;
+import org.soyatec.tooling.di.Diagram;
+import org.soyatec.tooling.di.GradientShape;
 import org.soyatec.tooling.di.Grid;
 import org.soyatec.tooling.di.Guide;
+import org.soyatec.tooling.di.Line;
 import org.soyatec.tooling.di.LineStyle;
 import org.soyatec.tooling.di.Ruler;
 import org.soyatec.tooling.di.RulerUnit;
+import org.soyatec.tooling.di.Shape;
 import org.soyatec.tooling.di.UIElement;
 
 /**
@@ -79,6 +83,14 @@ public class DiFactoryImpl extends EFactoryImpl implements DiFactory {
 		switch (eClass.getClassifierID()) {
 		case DiPackage.UI_ELEMENT:
 			return createUIElement();
+		case DiPackage.DIAGRAM:
+			return createDiagram();
+		case DiPackage.SHAPE:
+			return createShape();
+		case DiPackage.GRADIENT_SHAPE:
+			return createGradientShape();
+		case DiPackage.LINE:
+			return createLine();
 		case DiPackage.COMMENT:
 			return createComment();
 		case DiPackage.COMMENT_LINK:
@@ -149,6 +161,46 @@ public class DiFactoryImpl extends EFactoryImpl implements DiFactory {
 	public UIElement createUIElement() {
 		UIElementImpl uiElement = new UIElementImpl();
 		return uiElement;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public Diagram createDiagram() {
+		DiagramImpl diagram = new DiagramImpl();
+		return diagram;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public Shape createShape() {
+		ShapeImpl shape = new ShapeImpl();
+		return shape;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public GradientShape createGradientShape() {
+		GradientShapeImpl gradientShape = new GradientShapeImpl();
+		return gradientShape;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public Line createLine() {
+		LineImpl line = new LineImpl();
+		return line;
 	}
 
 	/**

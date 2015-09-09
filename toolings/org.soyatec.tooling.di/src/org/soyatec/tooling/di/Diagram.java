@@ -41,7 +41,7 @@ import org.eclipse.emf.ecore.util.FeatureMap;
  * </p>
  *
  * @see org.soyatec.tooling.di.DiPackage#getDiagram()
- * @model abstract="true"
+ * @model
  * @generated
  */
 public interface Diagram extends UIObject {

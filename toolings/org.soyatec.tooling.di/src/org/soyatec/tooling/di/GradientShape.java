@@ -29,7 +29,7 @@ package org.soyatec.tooling.di;
  * </p>
  *
  * @see org.soyatec.tooling.di.DiPackage#getGradientShape()
- * @model abstract="true"
+ * @model
  * @generated
  */
 public interface GradientShape extends Shape {

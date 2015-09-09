@@ -36,7 +36,7 @@ import org.eclipse.emf.ecore.util.FeatureMap;
  * </p>
  *
  * @see org.soyatec.tooling.di.DiPackage#getLine()
- * @model abstract="true"
+ * @model
  * @generated
  */
 public interface Line extends UIElement {

@@ -28,7 +28,7 @@ import org.eclipse.draw2d.geometry.Rectangle;
  * </p>
  *
  * @see org.soyatec.tooling.di.DiPackage#getShape()
- * @model abstract="true"
+ * @model
  * @generated
  */
 public interface Shape extends UIElement {

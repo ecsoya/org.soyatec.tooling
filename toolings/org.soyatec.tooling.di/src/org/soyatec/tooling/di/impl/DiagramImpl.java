@@ -59,7 +59,7 @@ import org.soyatec.tooling.di.Ruler;
  *
  * @generated
  */
-public abstract class DiagramImpl extends UIObjectImpl implements Diagram {
+public class DiagramImpl extends UIObjectImpl implements Diagram {
 	/**
 	 * The cached value of the '{@link #getLines() <em>Lines</em>}' attribute
 	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->

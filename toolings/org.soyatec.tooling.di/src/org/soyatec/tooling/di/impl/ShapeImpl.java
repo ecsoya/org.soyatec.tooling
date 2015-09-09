@@ -35,7 +35,7 @@ import org.soyatec.tooling.di.Shape;
  *
  * @generated
  */
-public abstract class ShapeImpl extends UIElementImpl implements Shape {
+public class ShapeImpl extends UIElementImpl implements Shape {
 	/**
 	 * The default value of the '{@link #getBackground() <em>Background</em>}'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->

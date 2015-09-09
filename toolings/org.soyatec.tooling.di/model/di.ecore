@@ -28,7 +28,7 @@
       </eAnnotations>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Diagram" abstract="true" eSuperTypes="#//UIObject">
+  <eClassifiers xsi:type="ecore:EClass" name="Diagram" eSuperTypes="#//UIObject">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="lines" upperBound="-1"
         eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EFeatureMapEntry">
       <eAnnotations source="http:///org/eclipse/emf/ecore/util/ExtendedMetaData">
@@ -75,14 +75,14 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="snapToGrid" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="snapToGeometry" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Shape" abstract="true" eSuperTypes="#//UIElement">
+  <eClassifiers xsi:type="ecore:EClass" name="Shape" eSuperTypes="#//UIElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="background" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
         defaultValueLiteral="16777215"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="foreground" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
         defaultValueLiteral="0"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="bounds" eType="#//Rectangle"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="GradientShape" abstract="true" eSuperTypes="#//Shape">
+  <eClassifiers xsi:type="ecore:EClass" name="GradientShape" eSuperTypes="#//Shape">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="usingGradient" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
         defaultValueLiteral="true"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="gradientColor" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
@@ -90,7 +90,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="verticalGradient" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EBoolean"
         defaultValueLiteral="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Line" abstract="true" eSuperTypes="#//UIElement">
+  <eClassifiers xsi:type="ecore:EClass" name="Line" eSuperTypes="#//UIElement">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="color" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"
         defaultValueLiteral="0"/>
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="width" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EInt"

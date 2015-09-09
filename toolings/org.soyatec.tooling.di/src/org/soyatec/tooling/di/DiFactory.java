@@ -40,6 +40,42 @@ public interface DiFactory extends EFactory {
 	UIElement createUIElement();
 
 	/**
+	 * Returns a new object of class '<em>Diagram</em>'. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Diagram</em>'.
+	 * @generated
+	 */
+	Diagram createDiagram();
+
+	/**
+	 * Returns a new object of class '<em>Shape</em>'. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Shape</em>'.
+	 * @generated
+	 */
+	Shape createShape();
+
+	/**
+	 * Returns a new object of class '<em>Gradient Shape</em>'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Gradient Shape</em>'.
+	 * @generated
+	 */
+	GradientShape createGradientShape();
+
+	/**
+	 * Returns a new object of class '<em>Line</em>'. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Line</em>'.
+	 * @generated
+	 */
+	Line createLine();
+
+	/**
 	 * Returns a new object of class '<em>Comment</em>'. <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * 

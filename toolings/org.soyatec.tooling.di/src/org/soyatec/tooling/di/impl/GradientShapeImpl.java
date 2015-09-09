@@ -35,8 +35,7 @@ import org.soyatec.tooling.di.GradientShape;
  *
  * @generated
  */
-public abstract class GradientShapeImpl extends ShapeImpl implements
-		GradientShape {
+public class GradientShapeImpl extends ShapeImpl implements GradientShape {
 	/**
 	 * The default value of the '{@link #isUsingGradient()
 	 * <em>Using Gradient</em>}' attribute. <!-- begin-user-doc --> <!--
