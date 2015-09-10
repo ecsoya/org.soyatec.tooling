@@ -44,7 +44,7 @@ import org.eclipse.emf.ecore.util.FeatureMap;
  * @model
  * @generated
  */
-public interface Diagram extends UIObject {
+public interface Diagram extends UIElement {
 	/**
 	 * Returns the value of the '<em><b>Lines</b></em>' attribute list. The list
 	 * contents are of type {@link org.eclipse.emf.ecore.util.FeatureMap.Entry}.

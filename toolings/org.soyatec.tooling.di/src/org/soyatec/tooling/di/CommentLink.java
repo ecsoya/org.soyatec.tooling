@@ -32,7 +32,7 @@ public interface CommentLink extends Line {
 	/**
 	 * Returns the value of the '<em><b>Source</b></em>' reference. It is
 	 * bidirectional and its opposite is '
-	 * {@link org.soyatec.tooling.di.UIElement#getCommentLinks
+	 * {@link org.soyatec.tooling.di.UINode#getCommentLinks
 	 * <em>Comment Links</em>}'. <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Source</em>' reference isn't clear, there
@@ -41,14 +41,14 @@ public interface CommentLink extends Line {
 	 * <!-- end-user-doc -->
 	 * 
 	 * @return the value of the '<em>Source</em>' reference.
-	 * @see #setSource(UIElement)
+	 * @see #setSource(UINode)
 	 * @see org.soyatec.tooling.di.DiPackage#getCommentLink_Source()
-	 * @see org.soyatec.tooling.di.UIElement#getCommentLinks
+	 * @see org.soyatec.tooling.di.UINode#getCommentLinks
 	 * @model opposite="commentLinks" transient="true" volatile="true"
 	 *        extendedMetaData="group='#sourceShape'"
 	 * @generated
 	 */
-	UIElement getSource();
+	UINode getSource();
 
 	/**
 	 * Sets the value of the '
@@ -60,7 +60,7 @@ public interface CommentLink extends Line {
 	 * @see #getSource()
 	 * @generated
 	 */
-	void setSource(UIElement value);
+	void setSource(UINode value);
 
 	/**
 	 * Returns the value of the '<em><b>Target</b></em>' reference. It is

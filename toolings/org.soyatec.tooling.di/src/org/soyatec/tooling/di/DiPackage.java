@@ -151,40 +151,13 @@ public interface DiPackage extends EPackage {
 	int UI_ELEMENT__ELEMENT = UI_OBJECT_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Outgoing Lines</b></em>' attribute list.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 * @ordered
-	 */
-	int UI_ELEMENT__OUTGOING_LINES = UI_OBJECT_FEATURE_COUNT + 1;
-
-	/**
-	 * The feature id for the '<em><b>Incoming Lines</b></em>' attribute list.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 * @ordered
-	 */
-	int UI_ELEMENT__INCOMING_LINES = UI_OBJECT_FEATURE_COUNT + 2;
-
-	/**
-	 * The feature id for the '<em><b>Comment Links</b></em>' reference list.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 * @ordered
-	 */
-	int UI_ELEMENT__COMMENT_LINKS = UI_OBJECT_FEATURE_COUNT + 3;
-
-	/**
 	 * The number of structural features of the '<em>UI Element</em>' class.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int UI_ELEMENT_FEATURE_COUNT = UI_OBJECT_FEATURE_COUNT + 4;
+	int UI_ELEMENT_FEATURE_COUNT = UI_OBJECT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>UI Element</em>' class. <!--
@@ -197,14 +170,14 @@ public interface DiPackage extends EPackage {
 
 	/**
 	 * The meta object id for the '
-	 * {@link org.soyatec.tooling.di.impl.DiagramImpl <em>Diagram</em>}' class.
+	 * {@link org.soyatec.tooling.di.impl.UINodeImpl <em>UI Node</em>}' class.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @see org.soyatec.tooling.di.impl.DiagramImpl
-	 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getDiagram()
+	 * @see org.soyatec.tooling.di.impl.UINodeImpl
+	 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getUINode()
 	 * @generated
 	 */
-	int DIAGRAM = 2;
+	int UI_NODE = 2;
 
 	/**
 	 * The feature id for the '<em><b>Label</b></em>' attribute. <!--
@@ -213,7 +186,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DIAGRAM__LABEL = UI_OBJECT__LABEL;
+	int UI_NODE__LABEL = UI_ELEMENT__LABEL;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute. <!--
@@ -222,7 +195,99 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DIAGRAM__ID = UI_OBJECT__ID;
+	int UI_NODE__ID = UI_ELEMENT__ID;
+
+	/**
+	 * The feature id for the '<em><b>Element</b></em>' reference. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int UI_NODE__ELEMENT = UI_ELEMENT__ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing Lines</b></em>' attribute list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int UI_NODE__OUTGOING_LINES = UI_ELEMENT_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Incoming Lines</b></em>' attribute list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int UI_NODE__INCOMING_LINES = UI_ELEMENT_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Comment Links</b></em>' reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int UI_NODE__COMMENT_LINKS = UI_ELEMENT_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>UI Node</em>' class. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int UI_NODE_FEATURE_COUNT = UI_ELEMENT_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of operations of the '<em>UI Node</em>' class. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int UI_NODE_OPERATION_COUNT = UI_ELEMENT_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '
+	 * {@link org.soyatec.tooling.di.impl.DiagramImpl <em>Diagram</em>}' class.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see org.soyatec.tooling.di.impl.DiagramImpl
+	 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getDiagram()
+	 * @generated
+	 */
+	int DIAGRAM = 3;
+
+	/**
+	 * The feature id for the '<em><b>Label</b></em>' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int DIAGRAM__LABEL = UI_ELEMENT__LABEL;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int DIAGRAM__ID = UI_ELEMENT__ID;
+
+	/**
+	 * The feature id for the '<em><b>Element</b></em>' reference. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int DIAGRAM__ELEMENT = UI_ELEMENT__ELEMENT;
 
 	/**
 	 * The feature id for the '<em><b>Lines</b></em>' attribute list. <!--
@@ -231,7 +296,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DIAGRAM__LINES = UI_OBJECT_FEATURE_COUNT + 0;
+	int DIAGRAM__LINES = UI_ELEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Shapes</b></em>' attribute list. <!--
@@ -240,7 +305,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DIAGRAM__SHAPES = UI_OBJECT_FEATURE_COUNT + 1;
+	int DIAGRAM__SHAPES = UI_ELEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Comments</b></em>' containment reference
@@ -249,7 +314,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DIAGRAM__COMMENTS = UI_OBJECT_FEATURE_COUNT + 2;
+	int DIAGRAM__COMMENTS = UI_ELEMENT_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Comment Links</b></em>' containment
@@ -258,7 +323,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DIAGRAM__COMMENT_LINKS = UI_OBJECT_FEATURE_COUNT + 3;
+	int DIAGRAM__COMMENT_LINKS = UI_ELEMENT_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Rulers</b></em>' attribute list. <!--
@@ -267,7 +332,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DIAGRAM__RULERS = UI_OBJECT_FEATURE_COUNT + 4;
+	int DIAGRAM__RULERS = UI_ELEMENT_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Horizontal Ruler</b></em>' containment
@@ -276,7 +341,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DIAGRAM__HORIZONTAL_RULER = UI_OBJECT_FEATURE_COUNT + 5;
+	int DIAGRAM__HORIZONTAL_RULER = UI_ELEMENT_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Vertical Ruler</b></em>' containment
@@ -285,7 +350,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DIAGRAM__VERTICAL_RULER = UI_OBJECT_FEATURE_COUNT + 6;
+	int DIAGRAM__VERTICAL_RULER = UI_ELEMENT_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Grid</b></em>' containment reference. <!--
@@ -294,7 +359,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DIAGRAM__GRID = UI_OBJECT_FEATURE_COUNT + 7;
+	int DIAGRAM__GRID = UI_ELEMENT_FEATURE_COUNT + 7;
 
 	/**
 	 * The feature id for the '<em><b>Snap To Grid</b></em>' attribute. <!--
@@ -303,7 +368,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DIAGRAM__SNAP_TO_GRID = UI_OBJECT_FEATURE_COUNT + 8;
+	int DIAGRAM__SNAP_TO_GRID = UI_ELEMENT_FEATURE_COUNT + 8;
 
 	/**
 	 * The feature id for the '<em><b>Snap To Geometry</b></em>' attribute. <!--
@@ -312,7 +377,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DIAGRAM__SNAP_TO_GEOMETRY = UI_OBJECT_FEATURE_COUNT + 9;
+	int DIAGRAM__SNAP_TO_GEOMETRY = UI_ELEMENT_FEATURE_COUNT + 9;
 
 	/**
 	 * The number of structural features of the '<em>Diagram</em>' class. <!--
@@ -321,7 +386,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DIAGRAM_FEATURE_COUNT = UI_OBJECT_FEATURE_COUNT + 10;
+	int DIAGRAM_FEATURE_COUNT = UI_ELEMENT_FEATURE_COUNT + 10;
 
 	/**
 	 * The number of operations of the '<em>Diagram</em>' class. <!--
@@ -330,7 +395,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DIAGRAM_OPERATION_COUNT = UI_OBJECT_OPERATION_COUNT + 0;
+	int DIAGRAM_OPERATION_COUNT = UI_ELEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.soyatec.tooling.di.impl.ShapeImpl
@@ -340,7 +405,7 @@ public interface DiPackage extends EPackage {
 	 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getShape()
 	 * @generated
 	 */
-	int SHAPE = 3;
+	int SHAPE = 4;
 
 	/**
 	 * The feature id for the '<em><b>Label</b></em>' attribute. <!--
@@ -349,7 +414,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHAPE__LABEL = UI_ELEMENT__LABEL;
+	int SHAPE__LABEL = UI_NODE__LABEL;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute. <!--
@@ -358,7 +423,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHAPE__ID = UI_ELEMENT__ID;
+	int SHAPE__ID = UI_NODE__ID;
 
 	/**
 	 * The feature id for the '<em><b>Element</b></em>' reference. <!--
@@ -367,7 +432,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHAPE__ELEMENT = UI_ELEMENT__ELEMENT;
+	int SHAPE__ELEMENT = UI_NODE__ELEMENT;
 
 	/**
 	 * The feature id for the '<em><b>Outgoing Lines</b></em>' attribute list.
@@ -376,7 +441,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHAPE__OUTGOING_LINES = UI_ELEMENT__OUTGOING_LINES;
+	int SHAPE__OUTGOING_LINES = UI_NODE__OUTGOING_LINES;
 
 	/**
 	 * The feature id for the '<em><b>Incoming Lines</b></em>' attribute list.
@@ -385,7 +450,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHAPE__INCOMING_LINES = UI_ELEMENT__INCOMING_LINES;
+	int SHAPE__INCOMING_LINES = UI_NODE__INCOMING_LINES;
 
 	/**
 	 * The feature id for the '<em><b>Comment Links</b></em>' reference list.
@@ -394,7 +459,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHAPE__COMMENT_LINKS = UI_ELEMENT__COMMENT_LINKS;
+	int SHAPE__COMMENT_LINKS = UI_NODE__COMMENT_LINKS;
 
 	/**
 	 * The feature id for the '<em><b>Background</b></em>' attribute. <!--
@@ -403,7 +468,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHAPE__BACKGROUND = UI_ELEMENT_FEATURE_COUNT + 0;
+	int SHAPE__BACKGROUND = UI_NODE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Foreground</b></em>' attribute. <!--
@@ -412,7 +477,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHAPE__FOREGROUND = UI_ELEMENT_FEATURE_COUNT + 1;
+	int SHAPE__FOREGROUND = UI_NODE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Bounds</b></em>' attribute. <!--
@@ -421,7 +486,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHAPE__BOUNDS = UI_ELEMENT_FEATURE_COUNT + 2;
+	int SHAPE__BOUNDS = UI_NODE_FEATURE_COUNT + 2;
 
 	/**
 	 * The number of structural features of the '<em>Shape</em>' class. <!--
@@ -430,7 +495,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHAPE_FEATURE_COUNT = UI_ELEMENT_FEATURE_COUNT + 3;
+	int SHAPE_FEATURE_COUNT = UI_NODE_FEATURE_COUNT + 3;
 
 	/**
 	 * The number of operations of the '<em>Shape</em>' class. <!--
@@ -439,7 +504,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHAPE_OPERATION_COUNT = UI_ELEMENT_OPERATION_COUNT + 0;
+	int SHAPE_OPERATION_COUNT = UI_NODE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '
@@ -451,7 +516,7 @@ public interface DiPackage extends EPackage {
 	 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getGradientShape()
 	 * @generated
 	 */
-	int GRADIENT_SHAPE = 4;
+	int GRADIENT_SHAPE = 5;
 
 	/**
 	 * The feature id for the '<em><b>Label</b></em>' attribute. <!--
@@ -587,7 +652,7 @@ public interface DiPackage extends EPackage {
 	 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getLine()
 	 * @generated
 	 */
-	int LINE = 5;
+	int LINE = 6;
 
 	/**
 	 * The feature id for the '<em><b>Label</b></em>' attribute. <!--
@@ -596,7 +661,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINE__LABEL = UI_ELEMENT__LABEL;
+	int LINE__LABEL = UI_NODE__LABEL;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute. <!--
@@ -605,7 +670,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINE__ID = UI_ELEMENT__ID;
+	int LINE__ID = UI_NODE__ID;
 
 	/**
 	 * The feature id for the '<em><b>Element</b></em>' reference. <!--
@@ -614,7 +679,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINE__ELEMENT = UI_ELEMENT__ELEMENT;
+	int LINE__ELEMENT = UI_NODE__ELEMENT;
 
 	/**
 	 * The feature id for the '<em><b>Outgoing Lines</b></em>' attribute list.
@@ -623,7 +688,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINE__OUTGOING_LINES = UI_ELEMENT__OUTGOING_LINES;
+	int LINE__OUTGOING_LINES = UI_NODE__OUTGOING_LINES;
 
 	/**
 	 * The feature id for the '<em><b>Incoming Lines</b></em>' attribute list.
@@ -632,7 +697,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINE__INCOMING_LINES = UI_ELEMENT__INCOMING_LINES;
+	int LINE__INCOMING_LINES = UI_NODE__INCOMING_LINES;
 
 	/**
 	 * The feature id for the '<em><b>Comment Links</b></em>' reference list.
@@ -641,7 +706,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINE__COMMENT_LINKS = UI_ELEMENT__COMMENT_LINKS;
+	int LINE__COMMENT_LINKS = UI_NODE__COMMENT_LINKS;
 
 	/**
 	 * The feature id for the '<em><b>Color</b></em>' attribute. <!--
@@ -650,7 +715,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINE__COLOR = UI_ELEMENT_FEATURE_COUNT + 0;
+	int LINE__COLOR = UI_NODE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Width</b></em>' attribute. <!--
@@ -659,7 +724,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINE__WIDTH = UI_ELEMENT_FEATURE_COUNT + 1;
+	int LINE__WIDTH = UI_NODE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Source Anchor</b></em>' attribute. <!--
@@ -668,7 +733,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINE__SOURCE_ANCHOR = UI_ELEMENT_FEATURE_COUNT + 2;
+	int LINE__SOURCE_ANCHOR = UI_NODE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Target Anchor</b></em>' attribute. <!--
@@ -677,7 +742,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINE__TARGET_ANCHOR = UI_ELEMENT_FEATURE_COUNT + 3;
+	int LINE__TARGET_ANCHOR = UI_NODE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Source Shape</b></em>' attribute list.
@@ -686,7 +751,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINE__SOURCE_SHAPE = UI_ELEMENT_FEATURE_COUNT + 4;
+	int LINE__SOURCE_SHAPE = UI_NODE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Target Shape</b></em>' attribute list.
@@ -695,7 +760,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINE__TARGET_SHAPE = UI_ELEMENT_FEATURE_COUNT + 5;
+	int LINE__TARGET_SHAPE = UI_NODE_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' attribute. <!--
@@ -704,7 +769,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINE__STYLE = UI_ELEMENT_FEATURE_COUNT + 6;
+	int LINE__STYLE = UI_NODE_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Line Dash</b></em>' attribute list. <!--
@@ -713,7 +778,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINE__LINE_DASH = UI_ELEMENT_FEATURE_COUNT + 7;
+	int LINE__LINE_DASH = UI_NODE_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>Line</em>' class. <!--
@@ -722,7 +787,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINE_FEATURE_COUNT = UI_ELEMENT_FEATURE_COUNT + 8;
+	int LINE_FEATURE_COUNT = UI_NODE_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of operations of the '<em>Line</em>' class. <!--
@@ -731,7 +796,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINE_OPERATION_COUNT = UI_ELEMENT_OPERATION_COUNT + 0;
+	int LINE_OPERATION_COUNT = UI_NODE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '
@@ -742,7 +807,7 @@ public interface DiPackage extends EPackage {
 	 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getComment()
 	 * @generated
 	 */
-	int COMMENT = 6;
+	int COMMENT = 7;
 
 	/**
 	 * The feature id for the '<em><b>Label</b></em>' attribute. <!--
@@ -861,7 +926,7 @@ public interface DiPackage extends EPackage {
 	 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getCommentLink()
 	 * @generated
 	 */
-	int COMMENT_LINK = 7;
+	int COMMENT_LINK = 8;
 
 	/**
 	 * The feature id for the '<em><b>Label</b></em>' attribute. <!--
@@ -1033,7 +1098,7 @@ public interface DiPackage extends EPackage {
 	 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getGrid()
 	 * @generated
 	 */
-	int GRID = 8;
+	int GRID = 9;
 
 	/**
 	 * The feature id for the '<em><b>Color</b></em>' attribute. <!--
@@ -1088,7 +1153,7 @@ public interface DiPackage extends EPackage {
 	 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getRuler()
 	 * @generated
 	 */
-	int RULER = 9;
+	int RULER = 10;
 
 	/**
 	 * The feature id for the '<em><b>Unit</b></em>' attribute. <!--
@@ -1134,7 +1199,7 @@ public interface DiPackage extends EPackage {
 	 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getGuide()
 	 * @generated
 	 */
-	int GUIDE = 10;
+	int GUIDE = 11;
 
 	/**
 	 * The feature id for the '<em><b>Ruler</b></em>' container reference. <!--
@@ -1191,7 +1256,7 @@ public interface DiPackage extends EPackage {
 	 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getElementEntry()
 	 * @generated
 	 */
-	int ELEMENT_ENTRY = 11;
+	int ELEMENT_ENTRY = 12;
 
 	/**
 	 * The feature id for the '<em><b>Key</b></em>' reference. <!--
@@ -1237,7 +1302,7 @@ public interface DiPackage extends EPackage {
 	 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getLineStyle()
 	 * @generated
 	 */
-	int LINE_STYLE = 12;
+	int LINE_STYLE = 13;
 
 	/**
 	 * The meta object id for the '{@link org.soyatec.tooling.di.RulerUnit
@@ -1247,7 +1312,7 @@ public interface DiPackage extends EPackage {
 	 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getRulerUnit()
 	 * @generated
 	 */
-	int RULER_UNIT = 13;
+	int RULER_UNIT = 14;
 
 	/**
 	 * The meta object id for the '{@link org.soyatec.tooling.di.Alignment
@@ -1257,7 +1322,7 @@ public interface DiPackage extends EPackage {
 	 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getAlignment()
 	 * @generated
 	 */
-	int ALIGNMENT = 14;
+	int ALIGNMENT = 15;
 
 	/**
 	 * The meta object id for the '<em>Rectangle</em>' data type. <!--
@@ -1267,7 +1332,7 @@ public interface DiPackage extends EPackage {
 	 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getRectangle()
 	 * @generated
 	 */
-	int RECTANGLE = 15;
+	int RECTANGLE = 16;
 
 	/**
 	 * Returns the meta object for class '
@@ -1328,40 +1393,50 @@ public interface DiPackage extends EPackage {
 	EReference getUIElement_Element();
 
 	/**
+	 * Returns the meta object for class '{@link org.soyatec.tooling.di.UINode
+	 * <em>UI Node</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for class '<em>UI Node</em>'.
+	 * @see org.soyatec.tooling.di.UINode
+	 * @generated
+	 */
+	EClass getUINode();
+
+	/**
 	 * Returns the meta object for the attribute list '
-	 * {@link org.soyatec.tooling.di.UIElement#getOutgoingLines
+	 * {@link org.soyatec.tooling.di.UINode#getOutgoingLines
 	 * <em>Outgoing Lines</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the meta object for the attribute list '<em>Outgoing Lines</em>'.
-	 * @see org.soyatec.tooling.di.UIElement#getOutgoingLines()
-	 * @see #getUIElement()
+	 * @see org.soyatec.tooling.di.UINode#getOutgoingLines()
+	 * @see #getUINode()
 	 * @generated
 	 */
-	EAttribute getUIElement_OutgoingLines();
+	EAttribute getUINode_OutgoingLines();
 
 	/**
 	 * Returns the meta object for the attribute list '
-	 * {@link org.soyatec.tooling.di.UIElement#getIncomingLines
+	 * {@link org.soyatec.tooling.di.UINode#getIncomingLines
 	 * <em>Incoming Lines</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the meta object for the attribute list '<em>Incoming Lines</em>'.
-	 * @see org.soyatec.tooling.di.UIElement#getIncomingLines()
-	 * @see #getUIElement()
+	 * @see org.soyatec.tooling.di.UINode#getIncomingLines()
+	 * @see #getUINode()
 	 * @generated
 	 */
-	EAttribute getUIElement_IncomingLines();
+	EAttribute getUINode_IncomingLines();
 
 	/**
 	 * Returns the meta object for the reference list '
-	 * {@link org.soyatec.tooling.di.UIElement#getCommentLinks
+	 * {@link org.soyatec.tooling.di.UINode#getCommentLinks
 	 * <em>Comment Links</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the meta object for the reference list '<em>Comment Links</em>'.
-	 * @see org.soyatec.tooling.di.UIElement#getCommentLinks()
-	 * @see #getUIElement()
+	 * @see org.soyatec.tooling.di.UINode#getCommentLinks()
+	 * @see #getUINode()
 	 * @generated
 	 */
-	EReference getUIElement_CommentLinks();
+	EReference getUINode_CommentLinks();
 
 	/**
 	 * Returns the meta object for class '{@link org.soyatec.tooling.di.Diagram
@@ -2033,13 +2108,24 @@ public interface DiPackage extends EPackage {
 		EReference UI_ELEMENT__ELEMENT = eINSTANCE.getUIElement_Element();
 
 		/**
+		 * The meta object literal for the '
+		 * {@link org.soyatec.tooling.di.impl.UINodeImpl <em>UI Node</em>}'
+		 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @see org.soyatec.tooling.di.impl.UINodeImpl
+		 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getUINode()
+		 * @generated
+		 */
+		EClass UI_NODE = eINSTANCE.getUINode();
+
+		/**
 		 * The meta object literal for the '<em><b>Outgoing Lines</b></em>'
 		 * attribute list feature. <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * 
 		 * @generated
 		 */
-		EAttribute UI_ELEMENT__OUTGOING_LINES = eINSTANCE
-				.getUIElement_OutgoingLines();
+		EAttribute UI_NODE__OUTGOING_LINES = eINSTANCE
+				.getUINode_OutgoingLines();
 
 		/**
 		 * The meta object literal for the '<em><b>Incoming Lines</b></em>'
@@ -2047,8 +2133,8 @@ public interface DiPackage extends EPackage {
 		 * 
 		 * @generated
 		 */
-		EAttribute UI_ELEMENT__INCOMING_LINES = eINSTANCE
-				.getUIElement_IncomingLines();
+		EAttribute UI_NODE__INCOMING_LINES = eINSTANCE
+				.getUINode_IncomingLines();
 
 		/**
 		 * The meta object literal for the '<em><b>Comment Links</b></em>'
@@ -2056,8 +2142,7 @@ public interface DiPackage extends EPackage {
 		 * 
 		 * @generated
 		 */
-		EReference UI_ELEMENT__COMMENT_LINKS = eINSTANCE
-				.getUIElement_CommentLinks();
+		EReference UI_NODE__COMMENT_LINKS = eINSTANCE.getUINode_CommentLinks();
 
 		/**
 		 * The meta object literal for the '

@@ -16,10 +16,11 @@ import org.soyatec.tooling.di.DiFactory;
 import org.soyatec.tooling.di.Diagram;
 import org.soyatec.tooling.di.Line;
 import org.soyatec.tooling.di.UIElement;
+import org.soyatec.tooling.di.UINode;
 
 public class CreateCommentLinkCommand extends CreateLineCommand {
 
-	private UIElement commentSource;
+	private UINode commentSource;
 	private Comment commentTarget;
 
 	public CreateCommentLinkCommand(Diagram diagram, CommentLink lineObject) {
@@ -36,7 +37,7 @@ public class CreateCommentLinkCommand extends CreateLineCommand {
 				|| !(targetModel instanceof Comment)) {
 			return false;
 		}
-		commentSource = (UIElement) sourceModel;
+		commentSource = (UINode) sourceModel;
 		commentTarget = (Comment) targetModel;
 		return true;
 	}

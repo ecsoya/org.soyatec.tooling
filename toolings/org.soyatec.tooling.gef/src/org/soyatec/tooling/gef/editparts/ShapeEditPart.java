@@ -27,13 +27,13 @@ import org.eclipse.swt.graphics.Color;
 import org.soyatec.tooling.di.DiPackage;
 import org.soyatec.tooling.di.Line;
 import org.soyatec.tooling.di.Shape;
-import org.soyatec.tooling.di.UIElement;
+import org.soyatec.tooling.di.UINode;
 import org.soyatec.tooling.gef.editpolicies.ShapeComponentEditPolicy;
 import org.soyatec.tooling.gef.figures.NodeFigure;
 import org.soyatec.tooling.gef.resources.ResourcesFactory;
 
 public abstract class ShapeEditPart<T extends Shape> extends
-		UIElementEditPart<UIElement> implements NodeEditPart {
+		UINodeEditPart<UINode> implements NodeEditPart {
 
 	private IFigure primaryFigure;
 

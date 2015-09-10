@@ -16,12 +16,12 @@ import java.util.List;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.util.FeatureMap.ValueListIterator;
 import org.soyatec.tooling.di.DiPackage;
-import org.soyatec.tooling.di.UIElement;
+import org.soyatec.tooling.di.UINode;
 
-public abstract class UIElementEditPart<T extends UIElement> extends
-		UIObjectEditPart<UIElement> {
+public abstract class UINodeEditPart<T extends UINode> extends
+		UIObjectEditPart<UINode> {
 
-	public UIElementEditPart(UIElement model) {
+	public UINodeEditPart(UINode model) {
 		super(model);
 	}
 
@@ -29,9 +29,9 @@ public abstract class UIElementEditPart<T extends UIElement> extends
 	protected void handleNotifyChanged(Notification event) {
 		super.handleNotifyChanged(event);
 		Object feature = event.getFeature();
-		if (DiPackage.eINSTANCE.getUIElement_IncomingLines() == feature) {
+		if (DiPackage.eINSTANCE.getUINode_IncomingLines() == feature) {
 			refreshTargetConnections();
-		} else if (DiPackage.eINSTANCE.getUIElement_OutgoingLines() == feature) {
+		} else if (DiPackage.eINSTANCE.getUINode_OutgoingLines() == feature) {
 			refreshSourceConnections();
 		}
 	}

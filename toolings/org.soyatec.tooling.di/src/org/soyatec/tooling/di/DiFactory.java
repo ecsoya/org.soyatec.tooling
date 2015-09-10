@@ -40,6 +40,15 @@ public interface DiFactory extends EFactory {
 	UIElement createUIElement();
 
 	/**
+	 * Returns a new object of class '<em>UI Node</em>'. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>UI Node</em>'.
+	 * @generated
+	 */
+	UINode createUINode();
+
+	/**
 	 * Returns a new object of class '<em>Diagram</em>'. <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * 

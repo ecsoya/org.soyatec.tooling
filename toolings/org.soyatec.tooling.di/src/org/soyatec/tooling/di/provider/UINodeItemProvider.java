@@ -1,13 +1,3 @@
-/*******************************************************************************
- * Copyright (c) 2015 Soyatec and others.
- * All rights reserved. This program and the accompanying materials
- * are made available under the terms of the Eclipse Public License v1.0
- * which accompanies this distribution, and is available at
- * http://www.eclipse.org/legal/epl-v10.html
- *
- * Contributors:
- *     Soyatec - initial API and implementation
- *******************************************************************************/
 /**
  */
 package org.soyatec.tooling.di.provider;
@@ -20,27 +10,24 @@ import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.EStructuralFeature;
 import org.eclipse.emf.edit.provider.ComposeableAdapterFactory;
 import org.eclipse.emf.edit.provider.IItemPropertyDescriptor;
-import org.eclipse.emf.edit.provider.ItemPropertyDescriptor;
 import org.eclipse.emf.edit.provider.ViewerNotification;
-import org.soyatec.tooling.di.DiFactory;
 import org.soyatec.tooling.di.DiPackage;
-import org.soyatec.tooling.di.Diagram;
+import org.soyatec.tooling.di.UINode;
 
 /**
- * This is the item provider adapter for a
- * {@link org.soyatec.tooling.di.Diagram} object. <!-- begin-user-doc --> <!--
- * end-user-doc -->
+ * This is the item provider adapter for a {@link org.soyatec.tooling.di.UINode}
+ * object. <!-- begin-user-doc --> <!-- end-user-doc -->
  * 
  * @generated
  */
-public class DiagramItemProvider extends UIElementItemProvider {
+public class UINodeItemProvider extends UIElementItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
-	public DiagramItemProvider(AdapterFactory adapterFactory) {
+	public UINodeItemProvider(AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
@@ -55,47 +42,27 @@ public class DiagramItemProvider extends UIElementItemProvider {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
-			addSnapToGridPropertyDescriptor(object);
-			addSnapToGeometryPropertyDescriptor(object);
+			addCommentLinksPropertyDescriptor(object);
 		}
 		return itemPropertyDescriptors;
 	}
 
 	/**
-	 * This adds a property descriptor for the Snap To Grid feature. <!--
+	 * This adds a property descriptor for the Comment Links feature. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
-	protected void addSnapToGridPropertyDescriptor(Object object) {
+	protected void addCommentLinksPropertyDescriptor(Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(
 				((ComposeableAdapterFactory) adapterFactory)
 						.getRootAdapterFactory(),
 				getResourceLocator(),
-				getString("_UI_Diagram_snapToGrid_feature"),
+				getString("_UI_UINode_commentLinks_feature"),
 				getString("_UI_PropertyDescriptor_description",
-						"_UI_Diagram_snapToGrid_feature", "_UI_Diagram_type"),
-				DiPackage.Literals.DIAGRAM__SNAP_TO_GRID, true, false, false,
-				ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
-	}
-
-	/**
-	 * This adds a property descriptor for the Snap To Geometry feature. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	protected void addSnapToGeometryPropertyDescriptor(Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_Diagram_snapToGeometry_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_Diagram_snapToGeometry_feature",
-						"_UI_Diagram_type"),
-				DiPackage.Literals.DIAGRAM__SNAP_TO_GEOMETRY, true, false,
-				false, ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
+						"_UI_UINode_commentLinks_feature", "_UI_UINode_type"),
+				DiPackage.Literals.UI_NODE__COMMENT_LINKS, true, false, true,
+				null, null, null));
 	}
 
 	/**
@@ -113,10 +80,8 @@ public class DiagramItemProvider extends UIElementItemProvider {
 			Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(DiPackage.Literals.DIAGRAM__LINES);
-			childrenFeatures.add(DiPackage.Literals.DIAGRAM__SHAPES);
-			childrenFeatures.add(DiPackage.Literals.DIAGRAM__RULERS);
-			childrenFeatures.add(DiPackage.Literals.DIAGRAM__GRID);
+			childrenFeatures.add(DiPackage.Literals.UI_NODE__OUTGOING_LINES);
+			childrenFeatures.add(DiPackage.Literals.UI_NODE__INCOMING_LINES);
 		}
 		return childrenFeatures;
 	}
@@ -136,6 +101,17 @@ public class DiagramItemProvider extends UIElementItemProvider {
 	}
 
 	/**
+	 * This returns UINode.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Object getImage(Object object) {
+		return overlayImage(object,
+				getResourceLocator().getImage("full/obj16/UINode"));
+	}
+
+	/**
 	 * This returns the label text for the adapted class. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
 	 * 
@@ -143,9 +119,9 @@ public class DiagramItemProvider extends UIElementItemProvider {
 	 */
 	@Override
 	public String getText(Object object) {
-		String label = ((Diagram) object).getId();
-		return label == null || label.length() == 0 ? getString("_UI_Diagram_type")
-				: getString("_UI_Diagram_type") + " " + label;
+		String label = ((UINode) object).getId();
+		return label == null || label.length() == 0 ? getString("_UI_UINode_type")
+				: getString("_UI_UINode_type") + " " + label;
 	}
 
 	/**
@@ -160,16 +136,9 @@ public class DiagramItemProvider extends UIElementItemProvider {
 	public void notifyChanged(Notification notification) {
 		updateChildren(notification);
 
-		switch (notification.getFeatureID(Diagram.class)) {
-		case DiPackage.DIAGRAM__SNAP_TO_GRID:
-		case DiPackage.DIAGRAM__SNAP_TO_GEOMETRY:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), false, true));
-			return;
-		case DiPackage.DIAGRAM__LINES:
-		case DiPackage.DIAGRAM__SHAPES:
-		case DiPackage.DIAGRAM__RULERS:
-		case DiPackage.DIAGRAM__GRID:
+		switch (notification.getFeatureID(UINode.class)) {
+		case DiPackage.UI_NODE__OUTGOING_LINES:
+		case DiPackage.UI_NODE__INCOMING_LINES:
 			fireNotifyChanged(new ViewerNotification(notification,
 					notification.getNotifier(), true, false));
 			return;
@@ -188,10 +157,6 @@ public class DiagramItemProvider extends UIElementItemProvider {
 	protected void collectNewChildDescriptors(
 			Collection<Object> newChildDescriptors, Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
-
-		newChildDescriptors.add(createChildParameter(
-				DiPackage.Literals.DIAGRAM__GRID,
-				DiFactory.eINSTANCE.createGrid()));
 	}
 
 }

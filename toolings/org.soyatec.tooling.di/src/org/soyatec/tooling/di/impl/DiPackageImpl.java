@@ -37,6 +37,7 @@ import org.soyatec.tooling.di.Ruler;
 import org.soyatec.tooling.di.RulerUnit;
 import org.soyatec.tooling.di.Shape;
 import org.soyatec.tooling.di.UIElement;
+import org.soyatec.tooling.di.UINode;
 import org.soyatec.tooling.di.UIObject;
 
 /**
@@ -59,6 +60,13 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 	 * @generated
 	 */
 	private EClass uiElementEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass uiNodeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -275,8 +283,8 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 	 * 
 	 * @generated
 	 */
-	public EAttribute getUIElement_OutgoingLines() {
-		return (EAttribute) uiElementEClass.getEStructuralFeatures().get(1);
+	public EClass getUINode() {
+		return uiNodeEClass;
 	}
 
 	/**
@@ -284,8 +292,8 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 	 * 
 	 * @generated
 	 */
-	public EAttribute getUIElement_IncomingLines() {
-		return (EAttribute) uiElementEClass.getEStructuralFeatures().get(2);
+	public EAttribute getUINode_OutgoingLines() {
+		return (EAttribute) uiNodeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -293,8 +301,17 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 	 * 
 	 * @generated
 	 */
-	public EReference getUIElement_CommentLinks() {
-		return (EReference) uiElementEClass.getEStructuralFeatures().get(3);
+	public EAttribute getUINode_IncomingLines() {
+		return (EAttribute) uiNodeEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getUINode_CommentLinks() {
+		return (EReference) uiNodeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -791,9 +808,11 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 
 		uiElementEClass = createEClass(UI_ELEMENT);
 		createEReference(uiElementEClass, UI_ELEMENT__ELEMENT);
-		createEAttribute(uiElementEClass, UI_ELEMENT__OUTGOING_LINES);
-		createEAttribute(uiElementEClass, UI_ELEMENT__INCOMING_LINES);
-		createEReference(uiElementEClass, UI_ELEMENT__COMMENT_LINKS);
+
+		uiNodeEClass = createEClass(UI_NODE);
+		createEAttribute(uiNodeEClass, UI_NODE__OUTGOING_LINES);
+		createEAttribute(uiNodeEClass, UI_NODE__INCOMING_LINES);
+		createEReference(uiNodeEClass, UI_NODE__COMMENT_LINKS);
 
 		diagramEClass = createEClass(DIAGRAM);
 		createEAttribute(diagramEClass, DIAGRAM__LINES);
@@ -891,10 +910,11 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 
 		// Add supertypes to classes
 		uiElementEClass.getESuperTypes().add(this.getUIObject());
-		diagramEClass.getESuperTypes().add(this.getUIObject());
-		shapeEClass.getESuperTypes().add(this.getUIElement());
+		uiNodeEClass.getESuperTypes().add(this.getUIElement());
+		diagramEClass.getESuperTypes().add(this.getUIElement());
+		shapeEClass.getESuperTypes().add(this.getUINode());
 		gradientShapeEClass.getESuperTypes().add(this.getShape());
-		lineEClass.getESuperTypes().add(this.getUIElement());
+		lineEClass.getESuperTypes().add(this.getUINode());
 		commentEClass.getESuperTypes().add(this.getShape());
 		commentLinkEClass.getESuperTypes().add(this.getLine());
 
@@ -916,19 +936,20 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 				"element", null, 0, 1, UIElement.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getUIElement_OutgoingLines(),
+
+		initEClass(uiNodeEClass, UINode.class, "UINode", !IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getUINode_OutgoingLines(),
 				ecorePackage.getEFeatureMapEntry(), "outgoingLines", null, 0,
-				-1, UIElement.class, !IS_TRANSIENT, !IS_VOLATILE,
-				IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
-		initEAttribute(getUIElement_IncomingLines(),
+				-1, UINode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getUINode_IncomingLines(),
 				ecorePackage.getEFeatureMapEntry(), "incomingLines", null, 0,
-				-1, UIElement.class, !IS_TRANSIENT, !IS_VOLATILE,
-				IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
-		initEReference(getUIElement_CommentLinks(), this.getCommentLink(),
+				-1, UINode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getUINode_CommentLinks(), this.getCommentLink(),
 				this.getCommentLink_Source(), "commentLinks", null, 0, -1,
-				UIElement.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE,
+				UINode.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE,
 				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
 
@@ -1049,8 +1070,8 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 
 		initEClass(commentLinkEClass, CommentLink.class, "CommentLink",
 				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getCommentLink_Source(), this.getUIElement(),
-				this.getUIElement_CommentLinks(), "source", null, 0, 1,
+		initEReference(getCommentLink_Source(), this.getUINode(),
+				this.getUINode_CommentLinks(), "source", null, 0, 1,
 				CommentLink.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE,
 				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
@@ -1153,12 +1174,12 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 	 */
 	protected void createExtendedMetaDataAnnotations() {
 		String source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData";
-		addAnnotation(getUIElement_OutgoingLines(), source, new String[] {
-				"kind", "group" });
-		addAnnotation(getUIElement_IncomingLines(), source, new String[] {
-				"kind", "group" });
-		addAnnotation(getUIElement_CommentLinks(), source, new String[] {
-				"group", "#outgoingLines" });
+		addAnnotation(getUINode_OutgoingLines(), source, new String[] { "kind",
+				"group" });
+		addAnnotation(getUINode_IncomingLines(), source, new String[] { "kind",
+				"group" });
+		addAnnotation(getUINode_CommentLinks(), source, new String[] { "group",
+				"#outgoingLines" });
 		addAnnotation(getDiagram_Lines(), source, new String[] { "kind",
 				"group" });
 		addAnnotation(getDiagram_Shapes(), source, new String[] { "kind",

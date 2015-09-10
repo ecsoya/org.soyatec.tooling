@@ -34,9 +34,11 @@
     </genClasses>
     <genClasses ecoreClass="di.ecore#//UIElement">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference di.ecore#//UIElement/element"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute di.ecore#//UIElement/outgoingLines"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute di.ecore#//UIElement/incomingLines"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference di.ecore#//UIElement/commentLinks"/>
+    </genClasses>
+    <genClasses ecoreClass="di.ecore#//UINode">
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute di.ecore#//UINode/outgoingLines"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute di.ecore#//UINode/incomingLines"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference di.ecore#//UINode/commentLinks"/>
     </genClasses>
     <genClasses image="false" ecoreClass="di.ecore#//Diagram">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute di.ecore#//Diagram/lines"/>

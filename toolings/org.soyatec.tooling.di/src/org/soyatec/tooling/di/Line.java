@@ -39,7 +39,7 @@ import org.eclipse.emf.ecore.util.FeatureMap;
  * @model
  * @generated
  */
-public interface Line extends UIElement {
+public interface Line extends UINode {
 	/**
 	 * Returns the value of the '<em><b>Color</b></em>' attribute. The default
 	 * value is <code>"0"</code>. <!-- begin-user-doc -->

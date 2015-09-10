@@ -31,7 +31,7 @@ import org.soyatec.tooling.di.Line;
  * 
  * @generated
  */
-public class LineItemProvider extends UIElementItemProvider {
+public class LineItemProvider extends UINodeItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->

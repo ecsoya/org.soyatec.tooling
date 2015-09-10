@@ -30,7 +30,7 @@ import org.soyatec.tooling.di.Shape;
  * 
  * @generated
  */
-public class ShapeItemProvider extends UIElementItemProvider {
+public class ShapeItemProvider extends UINodeItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->

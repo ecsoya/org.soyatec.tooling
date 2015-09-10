@@ -31,7 +31,7 @@ import org.eclipse.draw2d.geometry.Rectangle;
  * @model
  * @generated
  */
-public interface Shape extends UIElement {
+public interface Shape extends UINode {
 	/**
 	 * Returns the value of the '<em><b>Background</b></em>' attribute. The
 	 * default value is <code>"16777215"</code>. <!-- begin-user-doc -->

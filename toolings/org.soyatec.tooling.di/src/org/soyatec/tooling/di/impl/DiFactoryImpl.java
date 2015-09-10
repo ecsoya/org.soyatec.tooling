@@ -36,6 +36,7 @@ import org.soyatec.tooling.di.Ruler;
 import org.soyatec.tooling.di.RulerUnit;
 import org.soyatec.tooling.di.Shape;
 import org.soyatec.tooling.di.UIElement;
+import org.soyatec.tooling.di.UINode;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!--
@@ -83,6 +84,8 @@ public class DiFactoryImpl extends EFactoryImpl implements DiFactory {
 		switch (eClass.getClassifierID()) {
 		case DiPackage.UI_ELEMENT:
 			return createUIElement();
+		case DiPackage.UI_NODE:
+			return createUINode();
 		case DiPackage.DIAGRAM:
 			return createDiagram();
 		case DiPackage.SHAPE:
@@ -161,6 +164,16 @@ public class DiFactoryImpl extends EFactoryImpl implements DiFactory {
 	public UIElement createUIElement() {
 		UIElementImpl uiElement = new UIElementImpl();
 		return uiElement;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public UINode createUINode() {
+		UINodeImpl uiNode = new UINodeImpl();
+		return uiNode;
 	}
 
 	/**

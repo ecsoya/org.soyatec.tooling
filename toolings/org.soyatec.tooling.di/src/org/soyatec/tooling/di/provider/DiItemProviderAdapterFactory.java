@@ -109,6 +109,127 @@ public class DiItemProviderAdapterFactory extends DiAdapterFactory implements
 
 	/**
 	 * This keeps track of the one adapter used for all
+	 * {@link org.soyatec.tooling.di.UINode} instances. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected UINodeItemProvider uiNodeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.soyatec.tooling.di.UINode}. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createUINodeAdapter() {
+		if (uiNodeItemProvider == null) {
+			uiNodeItemProvider = new UINodeItemProvider(this);
+		}
+
+		return uiNodeItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all
+	 * {@link org.soyatec.tooling.di.Diagram} instances. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected DiagramItemProvider diagramItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.soyatec.tooling.di.Diagram}.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createDiagramAdapter() {
+		if (diagramItemProvider == null) {
+			diagramItemProvider = new DiagramItemProvider(this);
+		}
+
+		return diagramItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all
+	 * {@link org.soyatec.tooling.di.Shape} instances. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected ShapeItemProvider shapeItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.soyatec.tooling.di.Shape}. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createShapeAdapter() {
+		if (shapeItemProvider == null) {
+			shapeItemProvider = new ShapeItemProvider(this);
+		}
+
+		return shapeItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all
+	 * {@link org.soyatec.tooling.di.GradientShape} instances. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected GradientShapeItemProvider gradientShapeItemProvider;
+
+	/**
+	 * This creates an adapter for a
+	 * {@link org.soyatec.tooling.di.GradientShape}. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createGradientShapeAdapter() {
+		if (gradientShapeItemProvider == null) {
+			gradientShapeItemProvider = new GradientShapeItemProvider(this);
+		}
+
+		return gradientShapeItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all
+	 * {@link org.soyatec.tooling.di.Line} instances. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected LineItemProvider lineItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.soyatec.tooling.di.Line}. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createLineAdapter() {
+		if (lineItemProvider == null) {
+			lineItemProvider = new LineItemProvider(this);
+		}
+
+		return lineItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all
 	 * {@link org.soyatec.tooling.di.Comment} instances. <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * 
@@ -354,6 +475,16 @@ public class DiItemProviderAdapterFactory extends DiAdapterFactory implements
 	public void dispose() {
 		if (uiElementItemProvider != null)
 			uiElementItemProvider.dispose();
+		if (uiNodeItemProvider != null)
+			uiNodeItemProvider.dispose();
+		if (diagramItemProvider != null)
+			diagramItemProvider.dispose();
+		if (shapeItemProvider != null)
+			shapeItemProvider.dispose();
+		if (gradientShapeItemProvider != null)
+			gradientShapeItemProvider.dispose();
+		if (lineItemProvider != null)
+			lineItemProvider.dispose();
 		if (commentItemProvider != null)
 			commentItemProvider.dispose();
 		if (commentLinkItemProvider != null)

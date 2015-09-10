@@ -52,7 +52,7 @@ import org.soyatec.tooling.di.LineStyle;
  *
  * @generated
  */
-public class LineImpl extends UIElementImpl implements Line {
+public class LineImpl extends UINodeImpl implements Line {
 	/**
 	 * The default value of the '{@link #getColor() <em>Color</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
