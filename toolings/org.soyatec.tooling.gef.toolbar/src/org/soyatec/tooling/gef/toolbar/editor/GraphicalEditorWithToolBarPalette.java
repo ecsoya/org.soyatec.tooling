@@ -22,11 +22,11 @@ import org.eclipse.swt.widgets.Composite;
 /**
  * @author Ecsoya (jin.liu@soyatec.com)
  */
-public abstract class GraphiclEditorWithToolBarPalette extends GraphicalEditor {
+public abstract class GraphicalEditorWithToolBarPalette extends GraphicalEditor {
 
 	private ViewForm partControl;
 
-	public GraphiclEditorWithToolBarPalette() {
+	public GraphicalEditorWithToolBarPalette() {
 		setEditDomain(new ToolBarEditDomain(this));
 	}
 
