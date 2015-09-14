@@ -13,7 +13,6 @@ package org.soyatec.tooling.gef.commands;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.eclipse.emf.common.command.BasicCommandStack;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.commands.CommandStack;
 import org.eclipse.gef.commands.CommandStackEvent;
@@ -28,7 +27,7 @@ import org.eclipse.gef.commands.CommandStackEventListener;
  * @see CommandWrap2GEF
  * @author Ecsoya
  */
-public class CombinedCommandStack extends BasicCommandStack {
+public class CombinedCommandStack extends CancelableCommandStack {
 
 	private List<CommandStackEventListener> eventListeners = new ArrayList<CommandStackEventListener>();
 

@@ -20,7 +20,7 @@ import org.eclipse.gef.commands.Command;
  * 
  * @author Ecsoya
  */
-public class CommandWrap2GEF extends Command {
+public class CommandWrap2GEF extends Command implements ICancelCommand {
 	private final org.eclipse.emf.common.command.Command _command;
 
 	/**
@@ -165,6 +165,12 @@ public class CommandWrap2GEF extends Command {
 
 	public org.eclipse.emf.common.command.Command unwrap() {
 		return _command;
+	}
+
+	@Override
+	public boolean isCanceled() {
+		return _command instanceof ICancelCommand
+				&& ((ICancelCommand) _command).isCanceled();
 	}
 
 }
