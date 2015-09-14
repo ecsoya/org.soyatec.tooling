@@ -22,7 +22,7 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.soyatec.tooling.di.Alignment;
 import org.soyatec.tooling.di.DiPackage;
-import org.soyatec.tooling.di.UIElement;
+import org.soyatec.tooling.di.View;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '
@@ -40,7 +40,7 @@ import org.soyatec.tooling.di.UIElement;
  * @generated
  */
 public class ElementEntryImpl extends MinimalEObjectImpl.Container implements
-		BasicEMap.Entry<UIElement, Alignment> {
+		BasicEMap.Entry<View, Alignment> {
 	/**
 	 * The cached value of the '{@link #getTypedKey() <em>Key</em>}' reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -49,7 +49,7 @@ public class ElementEntryImpl extends MinimalEObjectImpl.Container implements
 	 * @generated
 	 * @ordered
 	 */
-	protected UIElement key;
+	protected View key;
 
 	/**
 	 * The default value of the '{@link #getTypedValue() <em>Value</em>}'
@@ -95,10 +95,10 @@ public class ElementEntryImpl extends MinimalEObjectImpl.Container implements
 	 * 
 	 * @generated
 	 */
-	public UIElement getTypedKey() {
+	public View getTypedKey() {
 		if (key != null && key.eIsProxy()) {
 			InternalEObject oldKey = (InternalEObject) key;
-			key = (UIElement) eResolveProxy(oldKey);
+			key = (View) eResolveProxy(oldKey);
 			if (key != oldKey) {
 				if (eNotificationRequired())
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
@@ -113,7 +113,7 @@ public class ElementEntryImpl extends MinimalEObjectImpl.Container implements
 	 * 
 	 * @generated
 	 */
-	public UIElement basicGetTypedKey() {
+	public View basicGetTypedKey() {
 		return key;
 	}
 
@@ -122,8 +122,8 @@ public class ElementEntryImpl extends MinimalEObjectImpl.Container implements
 	 * 
 	 * @generated
 	 */
-	public void setTypedKey(UIElement newKey) {
-		UIElement oldKey = key;
+	public void setTypedKey(View newKey) {
+		View oldKey = key;
 		key = newKey;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET,
@@ -179,7 +179,7 @@ public class ElementEntryImpl extends MinimalEObjectImpl.Container implements
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 		case DiPackage.ELEMENT_ENTRY__KEY:
-			setTypedKey((UIElement) newValue);
+			setTypedKey((View) newValue);
 			return;
 		case DiPackage.ELEMENT_ENTRY__VALUE:
 			setTypedValue((Alignment) newValue);
@@ -197,7 +197,7 @@ public class ElementEntryImpl extends MinimalEObjectImpl.Container implements
 	public void eUnset(int featureID) {
 		switch (featureID) {
 		case DiPackage.ELEMENT_ENTRY__KEY:
-			setTypedKey((UIElement) null);
+			setTypedKey((View) null);
 			return;
 		case DiPackage.ELEMENT_ENTRY__VALUE:
 			setTypedValue(VALUE_EDEFAULT);
@@ -273,7 +273,7 @@ public class ElementEntryImpl extends MinimalEObjectImpl.Container implements
 	 * 
 	 * @generated
 	 */
-	public UIElement getKey() {
+	public View getKey() {
 		return getTypedKey();
 	}
 
@@ -282,7 +282,7 @@ public class ElementEntryImpl extends MinimalEObjectImpl.Container implements
 	 * 
 	 * @generated
 	 */
-	public void setKey(UIElement key) {
+	public void setKey(View key) {
 		setTypedKey(key);
 	}
 
@@ -312,11 +312,10 @@ public class ElementEntryImpl extends MinimalEObjectImpl.Container implements
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
-	public EMap<UIElement, Alignment> getEMap() {
+	public EMap<View, Alignment> getEMap() {
 		EObject container = eContainer();
-		return container == null ? null
-				: (EMap<UIElement, Alignment>) container
-						.eGet(eContainmentFeature());
+		return container == null ? null : (EMap<View, Alignment>) container
+				.eGet(eContainmentFeature());
 	}
 
 } // ElementEntryImpl

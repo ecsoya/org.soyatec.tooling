@@ -66,15 +66,14 @@ public interface DiPackage extends EPackage {
 	DiPackage eINSTANCE = org.soyatec.tooling.di.impl.DiPackageImpl.init();
 
 	/**
-	 * The meta object id for the '
-	 * {@link org.soyatec.tooling.di.impl.UIObjectImpl <em>UI Object</em>}'
-	 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The meta object id for the '{@link org.soyatec.tooling.di.impl.ViewImpl
+	 * <em>View</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @see org.soyatec.tooling.di.impl.UIObjectImpl
-	 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getUIObject()
+	 * @see org.soyatec.tooling.di.impl.ViewImpl
+	 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getView()
 	 * @generated
 	 */
-	int UI_OBJECT = 0;
+	int VIEW = 0;
 
 	/**
 	 * The feature id for the '<em><b>Label</b></em>' attribute. <!--
@@ -83,7 +82,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UI_OBJECT__LABEL = 0;
+	int VIEW__LABEL = 0;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute. <!--
@@ -92,54 +91,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UI_OBJECT__ID = 1;
-
-	/**
-	 * The number of structural features of the '<em>UI Object</em>' class. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 * @ordered
-	 */
-	int UI_OBJECT_FEATURE_COUNT = 2;
-
-	/**
-	 * The number of operations of the '<em>UI Object</em>' class. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 * @ordered
-	 */
-	int UI_OBJECT_OPERATION_COUNT = 0;
-
-	/**
-	 * The meta object id for the '
-	 * {@link org.soyatec.tooling.di.impl.UIElementImpl <em>UI Element</em>}'
-	 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @see org.soyatec.tooling.di.impl.UIElementImpl
-	 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getUIElement()
-	 * @generated
-	 */
-	int UI_ELEMENT = 1;
-
-	/**
-	 * The feature id for the '<em><b>Label</b></em>' attribute. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 * @ordered
-	 */
-	int UI_ELEMENT__LABEL = UI_OBJECT__LABEL;
-
-	/**
-	 * The feature id for the '<em><b>Id</b></em>' attribute. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 * @ordered
-	 */
-	int UI_ELEMENT__ID = UI_OBJECT__ID;
+	int VIEW__ID = 1;
 
 	/**
 	 * The feature id for the '<em><b>Element</b></em>' reference. <!--
@@ -148,36 +100,35 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UI_ELEMENT__ELEMENT = UI_OBJECT_FEATURE_COUNT + 0;
+	int VIEW__ELEMENT = 2;
 
 	/**
-	 * The number of structural features of the '<em>UI Element</em>' class.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 * @ordered
-	 */
-	int UI_ELEMENT_FEATURE_COUNT = UI_OBJECT_FEATURE_COUNT + 1;
-
-	/**
-	 * The number of operations of the '<em>UI Element</em>' class. <!--
+	 * The number of structural features of the '<em>View</em>' class. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int UI_ELEMENT_OPERATION_COUNT = UI_OBJECT_OPERATION_COUNT + 0;
+	int VIEW_FEATURE_COUNT = 3;
 
 	/**
-	 * The meta object id for the '
-	 * {@link org.soyatec.tooling.di.impl.UINodeImpl <em>UI Node</em>}' class.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The number of operations of the '<em>View</em>' class. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @see org.soyatec.tooling.di.impl.UINodeImpl
-	 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getUINode()
+	 * @generated
+	 * @ordered
+	 */
+	int VIEW_OPERATION_COUNT = 0;
+
+	/**
+	 * The meta object id for the '{@link org.soyatec.tooling.di.impl.NodeImpl
+	 * <em>Node</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see org.soyatec.tooling.di.impl.NodeImpl
+	 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getNode()
 	 * @generated
 	 */
-	int UI_NODE = 2;
+	int NODE = 1;
 
 	/**
 	 * The feature id for the '<em><b>Label</b></em>' attribute. <!--
@@ -186,7 +137,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UI_NODE__LABEL = UI_ELEMENT__LABEL;
+	int NODE__LABEL = VIEW__LABEL;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute. <!--
@@ -195,7 +146,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UI_NODE__ID = UI_ELEMENT__ID;
+	int NODE__ID = VIEW__ID;
 
 	/**
 	 * The feature id for the '<em><b>Element</b></em>' reference. <!--
@@ -204,7 +155,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UI_NODE__ELEMENT = UI_ELEMENT__ELEMENT;
+	int NODE__ELEMENT = VIEW__ELEMENT;
 
 	/**
 	 * The feature id for the '<em><b>Outgoing Lines</b></em>' attribute list.
@@ -213,7 +164,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UI_NODE__OUTGOING_LINES = UI_ELEMENT_FEATURE_COUNT + 0;
+	int NODE__OUTGOING_LINES = VIEW_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Incoming Lines</b></em>' attribute list.
@@ -222,7 +173,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UI_NODE__INCOMING_LINES = UI_ELEMENT_FEATURE_COUNT + 1;
+	int NODE__INCOMING_LINES = VIEW_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Comment Links</b></em>' reference list.
@@ -231,25 +182,117 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int UI_NODE__COMMENT_LINKS = UI_ELEMENT_FEATURE_COUNT + 2;
+	int NODE__COMMENT_LINKS = VIEW_FEATURE_COUNT + 2;
 
 	/**
-	 * The number of structural features of the '<em>UI Node</em>' class. <!--
+	 * The number of structural features of the '<em>Node</em>' class. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int UI_NODE_FEATURE_COUNT = UI_ELEMENT_FEATURE_COUNT + 3;
+	int NODE_FEATURE_COUNT = VIEW_FEATURE_COUNT + 3;
 
 	/**
-	 * The number of operations of the '<em>UI Node</em>' class. <!--
+	 * The number of operations of the '<em>Node</em>' class. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int UI_NODE_OPERATION_COUNT = UI_ELEMENT_OPERATION_COUNT + 0;
+	int NODE_OPERATION_COUNT = VIEW_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '
+	 * {@link org.soyatec.tooling.di.impl.ContainerImpl <em>Container</em>}'
+	 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see org.soyatec.tooling.di.impl.ContainerImpl
+	 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getContainer()
+	 * @generated
+	 */
+	int CONTAINER = 2;
+
+	/**
+	 * The feature id for the '<em><b>Label</b></em>' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER__LABEL = VIEW__LABEL;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER__ID = VIEW__ID;
+
+	/**
+	 * The feature id for the '<em><b>Element</b></em>' reference. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER__ELEMENT = VIEW__ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Children</b></em>' containment reference
+	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER__CHILDREN = VIEW_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Lines</b></em>' containment reference
+	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER__LINES = VIEW_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>All Lines</b></em>' attribute list. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER__ALL_LINES = VIEW_FEATURE_COUNT + 2;
+
+	/**
+	 * The feature id for the '<em><b>All Shapes</b></em>' attribute list. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER__ALL_SHAPES = VIEW_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of structural features of the '<em>Container</em>' class. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER_FEATURE_COUNT = VIEW_FEATURE_COUNT + 4;
+
+	/**
+	 * The number of operations of the '<em>Container</em>' class. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CONTAINER_OPERATION_COUNT = VIEW_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '
@@ -269,7 +312,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DIAGRAM__LABEL = UI_ELEMENT__LABEL;
+	int DIAGRAM__LABEL = CONTAINER__LABEL;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute. <!--
@@ -278,7 +321,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DIAGRAM__ID = UI_ELEMENT__ID;
+	int DIAGRAM__ID = CONTAINER__ID;
 
 	/**
 	 * The feature id for the '<em><b>Element</b></em>' reference. <!--
@@ -287,7 +330,16 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DIAGRAM__ELEMENT = UI_ELEMENT__ELEMENT;
+	int DIAGRAM__ELEMENT = CONTAINER__ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Children</b></em>' containment reference
+	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int DIAGRAM__CHILDREN = CONTAINER__CHILDREN;
 
 	/**
 	 * The feature id for the '<em><b>Lines</b></em>' attribute list. <!--
@@ -296,16 +348,25 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DIAGRAM__LINES = UI_ELEMENT_FEATURE_COUNT + 0;
+	int DIAGRAM__LINES = CONTAINER__LINES;
 
 	/**
-	 * The feature id for the '<em><b>Shapes</b></em>' attribute list. <!--
+	 * The feature id for the '<em><b>All Lines</b></em>' attribute list. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int DIAGRAM__SHAPES = UI_ELEMENT_FEATURE_COUNT + 1;
+	int DIAGRAM__ALL_LINES = CONTAINER__ALL_LINES;
+
+	/**
+	 * The feature id for the '<em><b>All Shapes</b></em>' attribute list. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int DIAGRAM__ALL_SHAPES = CONTAINER__ALL_SHAPES;
 
 	/**
 	 * The feature id for the '<em><b>Comments</b></em>' containment reference
@@ -314,7 +375,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DIAGRAM__COMMENTS = UI_ELEMENT_FEATURE_COUNT + 2;
+	int DIAGRAM__COMMENTS = CONTAINER_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Comment Links</b></em>' containment
@@ -323,7 +384,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DIAGRAM__COMMENT_LINKS = UI_ELEMENT_FEATURE_COUNT + 3;
+	int DIAGRAM__COMMENT_LINKS = CONTAINER_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Rulers</b></em>' attribute list. <!--
@@ -332,7 +393,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DIAGRAM__RULERS = UI_ELEMENT_FEATURE_COUNT + 4;
+	int DIAGRAM__RULERS = CONTAINER_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Horizontal Ruler</b></em>' containment
@@ -341,7 +402,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DIAGRAM__HORIZONTAL_RULER = UI_ELEMENT_FEATURE_COUNT + 5;
+	int DIAGRAM__HORIZONTAL_RULER = CONTAINER_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Vertical Ruler</b></em>' containment
@@ -350,7 +411,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DIAGRAM__VERTICAL_RULER = UI_ELEMENT_FEATURE_COUNT + 6;
+	int DIAGRAM__VERTICAL_RULER = CONTAINER_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Grid</b></em>' containment reference. <!--
@@ -359,7 +420,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DIAGRAM__GRID = UI_ELEMENT_FEATURE_COUNT + 7;
+	int DIAGRAM__GRID = CONTAINER_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Snap To Grid</b></em>' attribute. <!--
@@ -368,7 +429,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DIAGRAM__SNAP_TO_GRID = UI_ELEMENT_FEATURE_COUNT + 8;
+	int DIAGRAM__SNAP_TO_GRID = CONTAINER_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Snap To Geometry</b></em>' attribute. <!--
@@ -377,7 +438,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DIAGRAM__SNAP_TO_GEOMETRY = UI_ELEMENT_FEATURE_COUNT + 9;
+	int DIAGRAM__SNAP_TO_GEOMETRY = CONTAINER_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>Diagram</em>' class. <!--
@@ -386,7 +447,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DIAGRAM_FEATURE_COUNT = UI_ELEMENT_FEATURE_COUNT + 10;
+	int DIAGRAM_FEATURE_COUNT = CONTAINER_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of operations of the '<em>Diagram</em>' class. <!--
@@ -395,7 +456,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int DIAGRAM_OPERATION_COUNT = UI_ELEMENT_OPERATION_COUNT + 0;
+	int DIAGRAM_OPERATION_COUNT = CONTAINER_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link org.soyatec.tooling.di.impl.ShapeImpl
@@ -414,7 +475,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHAPE__LABEL = UI_NODE__LABEL;
+	int SHAPE__LABEL = CONTAINER__LABEL;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute. <!--
@@ -423,7 +484,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHAPE__ID = UI_NODE__ID;
+	int SHAPE__ID = CONTAINER__ID;
 
 	/**
 	 * The feature id for the '<em><b>Element</b></em>' reference. <!--
@@ -432,7 +493,43 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHAPE__ELEMENT = UI_NODE__ELEMENT;
+	int SHAPE__ELEMENT = CONTAINER__ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Children</b></em>' containment reference
+	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int SHAPE__CHILDREN = CONTAINER__CHILDREN;
+
+	/**
+	 * The feature id for the '<em><b>Lines</b></em>' containment reference
+	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int SHAPE__LINES = CONTAINER__LINES;
+
+	/**
+	 * The feature id for the '<em><b>All Lines</b></em>' attribute list. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int SHAPE__ALL_LINES = CONTAINER__ALL_LINES;
+
+	/**
+	 * The feature id for the '<em><b>All Shapes</b></em>' attribute list. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int SHAPE__ALL_SHAPES = CONTAINER__ALL_SHAPES;
 
 	/**
 	 * The feature id for the '<em><b>Outgoing Lines</b></em>' attribute list.
@@ -441,7 +538,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHAPE__OUTGOING_LINES = UI_NODE__OUTGOING_LINES;
+	int SHAPE__OUTGOING_LINES = CONTAINER_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Incoming Lines</b></em>' attribute list.
@@ -450,7 +547,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHAPE__INCOMING_LINES = UI_NODE__INCOMING_LINES;
+	int SHAPE__INCOMING_LINES = CONTAINER_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Comment Links</b></em>' reference list.
@@ -459,7 +556,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHAPE__COMMENT_LINKS = UI_NODE__COMMENT_LINKS;
+	int SHAPE__COMMENT_LINKS = CONTAINER_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Background</b></em>' attribute. <!--
@@ -468,7 +565,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHAPE__BACKGROUND = UI_NODE_FEATURE_COUNT + 0;
+	int SHAPE__BACKGROUND = CONTAINER_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Foreground</b></em>' attribute. <!--
@@ -477,7 +574,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHAPE__FOREGROUND = UI_NODE_FEATURE_COUNT + 1;
+	int SHAPE__FOREGROUND = CONTAINER_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Bounds</b></em>' attribute. <!--
@@ -486,7 +583,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHAPE__BOUNDS = UI_NODE_FEATURE_COUNT + 2;
+	int SHAPE__BOUNDS = CONTAINER_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of structural features of the '<em>Shape</em>' class. <!--
@@ -495,7 +592,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHAPE_FEATURE_COUNT = UI_NODE_FEATURE_COUNT + 3;
+	int SHAPE_FEATURE_COUNT = CONTAINER_FEATURE_COUNT + 6;
 
 	/**
 	 * The number of operations of the '<em>Shape</em>' class. <!--
@@ -504,7 +601,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHAPE_OPERATION_COUNT = UI_NODE_OPERATION_COUNT + 0;
+	int SHAPE_OPERATION_COUNT = CONTAINER_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '
@@ -544,6 +641,42 @@ public interface DiPackage extends EPackage {
 	 * @ordered
 	 */
 	int GRADIENT_SHAPE__ELEMENT = SHAPE__ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Children</b></em>' containment reference
+	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int GRADIENT_SHAPE__CHILDREN = SHAPE__CHILDREN;
+
+	/**
+	 * The feature id for the '<em><b>Lines</b></em>' containment reference
+	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int GRADIENT_SHAPE__LINES = SHAPE__LINES;
+
+	/**
+	 * The feature id for the '<em><b>All Lines</b></em>' attribute list. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int GRADIENT_SHAPE__ALL_LINES = SHAPE__ALL_LINES;
+
+	/**
+	 * The feature id for the '<em><b>All Shapes</b></em>' attribute list. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int GRADIENT_SHAPE__ALL_SHAPES = SHAPE__ALL_SHAPES;
 
 	/**
 	 * The feature id for the '<em><b>Outgoing Lines</b></em>' attribute list.
@@ -661,7 +794,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINE__LABEL = UI_NODE__LABEL;
+	int LINE__LABEL = NODE__LABEL;
 
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute. <!--
@@ -670,7 +803,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINE__ID = UI_NODE__ID;
+	int LINE__ID = NODE__ID;
 
 	/**
 	 * The feature id for the '<em><b>Element</b></em>' reference. <!--
@@ -679,7 +812,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINE__ELEMENT = UI_NODE__ELEMENT;
+	int LINE__ELEMENT = NODE__ELEMENT;
 
 	/**
 	 * The feature id for the '<em><b>Outgoing Lines</b></em>' attribute list.
@@ -688,7 +821,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINE__OUTGOING_LINES = UI_NODE__OUTGOING_LINES;
+	int LINE__OUTGOING_LINES = NODE__OUTGOING_LINES;
 
 	/**
 	 * The feature id for the '<em><b>Incoming Lines</b></em>' attribute list.
@@ -697,7 +830,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINE__INCOMING_LINES = UI_NODE__INCOMING_LINES;
+	int LINE__INCOMING_LINES = NODE__INCOMING_LINES;
 
 	/**
 	 * The feature id for the '<em><b>Comment Links</b></em>' reference list.
@@ -706,7 +839,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINE__COMMENT_LINKS = UI_NODE__COMMENT_LINKS;
+	int LINE__COMMENT_LINKS = NODE__COMMENT_LINKS;
 
 	/**
 	 * The feature id for the '<em><b>Color</b></em>' attribute. <!--
@@ -715,7 +848,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINE__COLOR = UI_NODE_FEATURE_COUNT + 0;
+	int LINE__COLOR = NODE_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Width</b></em>' attribute. <!--
@@ -724,7 +857,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINE__WIDTH = UI_NODE_FEATURE_COUNT + 1;
+	int LINE__WIDTH = NODE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Source Anchor</b></em>' attribute. <!--
@@ -733,7 +866,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINE__SOURCE_ANCHOR = UI_NODE_FEATURE_COUNT + 2;
+	int LINE__SOURCE_ANCHOR = NODE_FEATURE_COUNT + 2;
 
 	/**
 	 * The feature id for the '<em><b>Target Anchor</b></em>' attribute. <!--
@@ -742,7 +875,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINE__TARGET_ANCHOR = UI_NODE_FEATURE_COUNT + 3;
+	int LINE__TARGET_ANCHOR = NODE_FEATURE_COUNT + 3;
 
 	/**
 	 * The feature id for the '<em><b>Source Shape</b></em>' attribute list.
@@ -751,7 +884,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINE__SOURCE_SHAPE = UI_NODE_FEATURE_COUNT + 4;
+	int LINE__SOURCE_SHAPE = NODE_FEATURE_COUNT + 4;
 
 	/**
 	 * The feature id for the '<em><b>Target Shape</b></em>' attribute list.
@@ -760,7 +893,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINE__TARGET_SHAPE = UI_NODE_FEATURE_COUNT + 5;
+	int LINE__TARGET_SHAPE = NODE_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' attribute. <!--
@@ -769,7 +902,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINE__STYLE = UI_NODE_FEATURE_COUNT + 6;
+	int LINE__STYLE = NODE_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Line Dash</b></em>' attribute list. <!--
@@ -778,7 +911,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINE__LINE_DASH = UI_NODE_FEATURE_COUNT + 7;
+	int LINE__LINE_DASH = NODE_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>Line</em>' class. <!--
@@ -787,7 +920,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINE_FEATURE_COUNT = UI_NODE_FEATURE_COUNT + 8;
+	int LINE_FEATURE_COUNT = NODE_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of operations of the '<em>Line</em>' class. <!--
@@ -796,7 +929,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int LINE_OPERATION_COUNT = UI_NODE_OPERATION_COUNT + 0;
+	int LINE_OPERATION_COUNT = NODE_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '
@@ -835,6 +968,42 @@ public interface DiPackage extends EPackage {
 	 * @ordered
 	 */
 	int COMMENT__ELEMENT = SHAPE__ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>Children</b></em>' containment reference
+	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int COMMENT__CHILDREN = SHAPE__CHILDREN;
+
+	/**
+	 * The feature id for the '<em><b>Lines</b></em>' containment reference
+	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int COMMENT__LINES = SHAPE__LINES;
+
+	/**
+	 * The feature id for the '<em><b>All Lines</b></em>' attribute list. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int COMMENT__ALL_LINES = SHAPE__ALL_LINES;
+
+	/**
+	 * The feature id for the '<em><b>All Shapes</b></em>' attribute list. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int COMMENT__ALL_SHAPES = SHAPE__ALL_SHAPES;
 
 	/**
 	 * The feature id for the '<em><b>Outgoing Lines</b></em>' attribute list.
@@ -1335,108 +1504,157 @@ public interface DiPackage extends EPackage {
 	int RECTANGLE = 16;
 
 	/**
-	 * Returns the meta object for class '
-	 * {@link org.soyatec.tooling.di.UIObject <em>UI Object</em>}'. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
+	 * Returns the meta object for class '{@link org.soyatec.tooling.di.View
+	 * <em>View</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @return the meta object for class '<em>UI Object</em>'.
-	 * @see org.soyatec.tooling.di.UIObject
+	 * @return the meta object for class '<em>View</em>'.
+	 * @see org.soyatec.tooling.di.View
 	 * @generated
 	 */
-	EClass getUIObject();
+	EClass getView();
 
 	/**
 	 * Returns the meta object for the attribute '
-	 * {@link org.soyatec.tooling.di.UIObject#getLabel <em>Label</em>}'. <!--
+	 * {@link org.soyatec.tooling.di.View#getLabel <em>Label</em>}'. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the meta object for the attribute '<em>Label</em>'.
-	 * @see org.soyatec.tooling.di.UIObject#getLabel()
-	 * @see #getUIObject()
+	 * @see org.soyatec.tooling.di.View#getLabel()
+	 * @see #getView()
 	 * @generated
 	 */
-	EAttribute getUIObject_Label();
+	EAttribute getView_Label();
 
 	/**
 	 * Returns the meta object for the attribute '
-	 * {@link org.soyatec.tooling.di.UIObject#getId <em>Id</em>}'. <!--
+	 * {@link org.soyatec.tooling.di.View#getId <em>Id</em>}'. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the meta object for the attribute '<em>Id</em>'.
-	 * @see org.soyatec.tooling.di.UIObject#getId()
-	 * @see #getUIObject()
+	 * @see org.soyatec.tooling.di.View#getId()
+	 * @see #getView()
 	 * @generated
 	 */
-	EAttribute getUIObject_Id();
-
-	/**
-	 * Returns the meta object for class '
-	 * {@link org.soyatec.tooling.di.UIElement <em>UI Element</em>}'. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @return the meta object for class '<em>UI Element</em>'.
-	 * @see org.soyatec.tooling.di.UIElement
-	 * @generated
-	 */
-	EClass getUIElement();
+	EAttribute getView_Id();
 
 	/**
 	 * Returns the meta object for the reference '
-	 * {@link org.soyatec.tooling.di.UIElement#getElement <em>Element</em>}'.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * {@link org.soyatec.tooling.di.View#getElement <em>Element</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the meta object for the reference '<em>Element</em>'.
-	 * @see org.soyatec.tooling.di.UIElement#getElement()
-	 * @see #getUIElement()
+	 * @see org.soyatec.tooling.di.View#getElement()
+	 * @see #getView()
 	 * @generated
 	 */
-	EReference getUIElement_Element();
+	EReference getView_Element();
 
 	/**
-	 * Returns the meta object for class '{@link org.soyatec.tooling.di.UINode
-	 * <em>UI Node</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * Returns the meta object for class '{@link org.soyatec.tooling.di.Node
+	 * <em>Node</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @return the meta object for class '<em>UI Node</em>'.
-	 * @see org.soyatec.tooling.di.UINode
+	 * @return the meta object for class '<em>Node</em>'.
+	 * @see org.soyatec.tooling.di.Node
 	 * @generated
 	 */
-	EClass getUINode();
+	EClass getNode();
 
 	/**
 	 * Returns the meta object for the attribute list '
-	 * {@link org.soyatec.tooling.di.UINode#getOutgoingLines
+	 * {@link org.soyatec.tooling.di.Node#getOutgoingLines
 	 * <em>Outgoing Lines</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the meta object for the attribute list '<em>Outgoing Lines</em>'.
-	 * @see org.soyatec.tooling.di.UINode#getOutgoingLines()
-	 * @see #getUINode()
+	 * @see org.soyatec.tooling.di.Node#getOutgoingLines()
+	 * @see #getNode()
 	 * @generated
 	 */
-	EAttribute getUINode_OutgoingLines();
+	EAttribute getNode_OutgoingLines();
 
 	/**
 	 * Returns the meta object for the attribute list '
-	 * {@link org.soyatec.tooling.di.UINode#getIncomingLines
+	 * {@link org.soyatec.tooling.di.Node#getIncomingLines
 	 * <em>Incoming Lines</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the meta object for the attribute list '<em>Incoming Lines</em>'.
-	 * @see org.soyatec.tooling.di.UINode#getIncomingLines()
-	 * @see #getUINode()
+	 * @see org.soyatec.tooling.di.Node#getIncomingLines()
+	 * @see #getNode()
 	 * @generated
 	 */
-	EAttribute getUINode_IncomingLines();
+	EAttribute getNode_IncomingLines();
 
 	/**
 	 * Returns the meta object for the reference list '
-	 * {@link org.soyatec.tooling.di.UINode#getCommentLinks
+	 * {@link org.soyatec.tooling.di.Node#getCommentLinks
 	 * <em>Comment Links</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @return the meta object for the reference list '<em>Comment Links</em>'.
-	 * @see org.soyatec.tooling.di.UINode#getCommentLinks()
-	 * @see #getUINode()
+	 * @see org.soyatec.tooling.di.Node#getCommentLinks()
+	 * @see #getNode()
 	 * @generated
 	 */
-	EReference getUINode_CommentLinks();
+	EReference getNode_CommentLinks();
+
+	/**
+	 * Returns the meta object for class '
+	 * {@link org.soyatec.tooling.di.Container <em>Container</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for class '<em>Container</em>'.
+	 * @see org.soyatec.tooling.di.Container
+	 * @generated
+	 */
+	EClass getContainer();
+
+	/**
+	 * Returns the meta object for the containment reference list '
+	 * {@link org.soyatec.tooling.di.Container#getChildren <em>Children</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the containment reference list '
+	 *         <em>Children</em>'.
+	 * @see org.soyatec.tooling.di.Container#getChildren()
+	 * @see #getContainer()
+	 * @generated
+	 */
+	EReference getContainer_Children();
+
+	/**
+	 * Returns the meta object for the containment reference list '
+	 * {@link org.soyatec.tooling.di.Container#getLines <em>Lines</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the containment reference list '
+	 *         <em>Lines</em>'.
+	 * @see org.soyatec.tooling.di.Container#getLines()
+	 * @see #getContainer()
+	 * @generated
+	 */
+	EReference getContainer_Lines();
+
+	/**
+	 * Returns the meta object for the attribute list '
+	 * {@link org.soyatec.tooling.di.Container#getAllLines <em>All Lines</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the attribute list '<em>All Lines</em>'.
+	 * @see org.soyatec.tooling.di.Container#getAllLines()
+	 * @see #getContainer()
+	 * @generated
+	 */
+	EAttribute getContainer_AllLines();
+
+	/**
+	 * Returns the meta object for the attribute list '
+	 * {@link org.soyatec.tooling.di.Container#getAllShapes <em>All Shapes</em>}
+	 * '. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the attribute list '<em>All Shapes</em>'.
+	 * @see org.soyatec.tooling.di.Container#getAllShapes()
+	 * @see #getContainer()
+	 * @generated
+	 */
+	EAttribute getContainer_AllShapes();
 
 	/**
 	 * Returns the meta object for class '{@link org.soyatec.tooling.di.Diagram
@@ -1447,30 +1665,6 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getDiagram();
-
-	/**
-	 * Returns the meta object for the attribute list '
-	 * {@link org.soyatec.tooling.di.Diagram#getLines <em>Lines</em>}'. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @return the meta object for the attribute list '<em>Lines</em>'.
-	 * @see org.soyatec.tooling.di.Diagram#getLines()
-	 * @see #getDiagram()
-	 * @generated
-	 */
-	EAttribute getDiagram_Lines();
-
-	/**
-	 * Returns the meta object for the attribute list '
-	 * {@link org.soyatec.tooling.di.Diagram#getShapes <em>Shapes</em>}'. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @return the meta object for the attribute list '<em>Shapes</em>'.
-	 * @see org.soyatec.tooling.di.Diagram#getShapes()
-	 * @see #getDiagram()
-	 * @generated
-	 */
-	EAttribute getDiagram_Shapes();
 
 	/**
 	 * Returns the meta object for the containment reference list '
@@ -1964,7 +2158,7 @@ public interface DiPackage extends EPackage {
 	 * 
 	 * @return the meta object for class '<em>Element Entry</em>'.
 	 * @see java.util.Map.Entry
-	 * @model keyType="org.soyatec.tooling.di.UIElement" keyRequired="true"
+	 * @model keyType="org.soyatec.tooling.di.View" keyRequired="true"
 	 *        valueDataType="org.soyatec.tooling.di.Alignment"
 	 * @generated
 	 */
@@ -2063,14 +2257,14 @@ public interface DiPackage extends EPackage {
 	interface Literals {
 		/**
 		 * The meta object literal for the '
-		 * {@link org.soyatec.tooling.di.impl.UIObjectImpl <em>UI Object</em>}'
-		 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * {@link org.soyatec.tooling.di.impl.ViewImpl <em>View</em>}' class.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * 
-		 * @see org.soyatec.tooling.di.impl.UIObjectImpl
-		 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getUIObject()
+		 * @see org.soyatec.tooling.di.impl.ViewImpl
+		 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getView()
 		 * @generated
 		 */
-		EClass UI_OBJECT = eINSTANCE.getUIObject();
+		EClass VIEW = eINSTANCE.getView();
 
 		/**
 		 * The meta object literal for the '<em><b>Label</b></em>' attribute
@@ -2078,7 +2272,7 @@ public interface DiPackage extends EPackage {
 		 * 
 		 * @generated
 		 */
-		EAttribute UI_OBJECT__LABEL = eINSTANCE.getUIObject_Label();
+		EAttribute VIEW__LABEL = eINSTANCE.getView_Label();
 
 		/**
 		 * The meta object literal for the '<em><b>Id</b></em>' attribute
@@ -2086,18 +2280,7 @@ public interface DiPackage extends EPackage {
 		 * 
 		 * @generated
 		 */
-		EAttribute UI_OBJECT__ID = eINSTANCE.getUIObject_Id();
-
-		/**
-		 * The meta object literal for the '
-		 * {@link org.soyatec.tooling.di.impl.UIElementImpl <em>UI Element</em>}
-		 * ' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
-		 * @see org.soyatec.tooling.di.impl.UIElementImpl
-		 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getUIElement()
-		 * @generated
-		 */
-		EClass UI_ELEMENT = eINSTANCE.getUIElement();
+		EAttribute VIEW__ID = eINSTANCE.getView_Id();
 
 		/**
 		 * The meta object literal for the '<em><b>Element</b></em>' reference
@@ -2105,18 +2288,18 @@ public interface DiPackage extends EPackage {
 		 * 
 		 * @generated
 		 */
-		EReference UI_ELEMENT__ELEMENT = eINSTANCE.getUIElement_Element();
+		EReference VIEW__ELEMENT = eINSTANCE.getView_Element();
 
 		/**
 		 * The meta object literal for the '
-		 * {@link org.soyatec.tooling.di.impl.UINodeImpl <em>UI Node</em>}'
-		 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * {@link org.soyatec.tooling.di.impl.NodeImpl <em>Node</em>}' class.
+		 * <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * 
-		 * @see org.soyatec.tooling.di.impl.UINodeImpl
-		 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getUINode()
+		 * @see org.soyatec.tooling.di.impl.NodeImpl
+		 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getNode()
 		 * @generated
 		 */
-		EClass UI_NODE = eINSTANCE.getUINode();
+		EClass NODE = eINSTANCE.getNode();
 
 		/**
 		 * The meta object literal for the '<em><b>Outgoing Lines</b></em>'
@@ -2124,8 +2307,7 @@ public interface DiPackage extends EPackage {
 		 * 
 		 * @generated
 		 */
-		EAttribute UI_NODE__OUTGOING_LINES = eINSTANCE
-				.getUINode_OutgoingLines();
+		EAttribute NODE__OUTGOING_LINES = eINSTANCE.getNode_OutgoingLines();
 
 		/**
 		 * The meta object literal for the '<em><b>Incoming Lines</b></em>'
@@ -2133,8 +2315,7 @@ public interface DiPackage extends EPackage {
 		 * 
 		 * @generated
 		 */
-		EAttribute UI_NODE__INCOMING_LINES = eINSTANCE
-				.getUINode_IncomingLines();
+		EAttribute NODE__INCOMING_LINES = eINSTANCE.getNode_IncomingLines();
 
 		/**
 		 * The meta object literal for the '<em><b>Comment Links</b></em>'
@@ -2142,7 +2323,51 @@ public interface DiPackage extends EPackage {
 		 * 
 		 * @generated
 		 */
-		EReference UI_NODE__COMMENT_LINKS = eINSTANCE.getUINode_CommentLinks();
+		EReference NODE__COMMENT_LINKS = eINSTANCE.getNode_CommentLinks();
+
+		/**
+		 * The meta object literal for the '
+		 * {@link org.soyatec.tooling.di.impl.ContainerImpl <em>Container</em>}'
+		 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @see org.soyatec.tooling.di.impl.ContainerImpl
+		 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getContainer()
+		 * @generated
+		 */
+		EClass CONTAINER = eINSTANCE.getContainer();
+
+		/**
+		 * The meta object literal for the '<em><b>Children</b></em>'
+		 * containment reference list feature. <!-- begin-user-doc --> <!--
+		 * end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EReference CONTAINER__CHILDREN = eINSTANCE.getContainer_Children();
+
+		/**
+		 * The meta object literal for the '<em><b>Lines</b></em>' containment
+		 * reference list feature. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EReference CONTAINER__LINES = eINSTANCE.getContainer_Lines();
+
+		/**
+		 * The meta object literal for the '<em><b>All Lines</b></em>' attribute
+		 * list feature. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EAttribute CONTAINER__ALL_LINES = eINSTANCE.getContainer_AllLines();
+
+		/**
+		 * The meta object literal for the '<em><b>All Shapes</b></em>'
+		 * attribute list feature. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EAttribute CONTAINER__ALL_SHAPES = eINSTANCE.getContainer_AllShapes();
 
 		/**
 		 * The meta object literal for the '
@@ -2154,22 +2379,6 @@ public interface DiPackage extends EPackage {
 		 * @generated
 		 */
 		EClass DIAGRAM = eINSTANCE.getDiagram();
-
-		/**
-		 * The meta object literal for the '<em><b>Lines</b></em>' attribute
-		 * list feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
-		 * @generated
-		 */
-		EAttribute DIAGRAM__LINES = eINSTANCE.getDiagram_Lines();
-
-		/**
-		 * The meta object literal for the '<em><b>Shapes</b></em>' attribute
-		 * list feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
-		 * @generated
-		 */
-		EAttribute DIAGRAM__SHAPES = eINSTANCE.getDiagram_Shapes();
 
 		/**
 		 * The meta object literal for the '<em><b>Comments</b></em>'

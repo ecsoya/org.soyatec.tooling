@@ -36,9 +36,6 @@ import org.soyatec.tooling.di.Ruler;
  * <p>
  * The following features are implemented:
  * <ul>
- * <li>{@link org.soyatec.tooling.di.impl.DiagramImpl#getLines <em>Lines</em>}</li>
- * <li>{@link org.soyatec.tooling.di.impl.DiagramImpl#getShapes <em>Shapes</em>}
- * </li>
  * <li>{@link org.soyatec.tooling.di.impl.DiagramImpl#getComments <em>Comments
  * </em>}</li>
  * <li>{@link org.soyatec.tooling.di.impl.DiagramImpl#getCommentLinks <em>
@@ -59,27 +56,7 @@ import org.soyatec.tooling.di.Ruler;
  *
  * @generated
  */
-public class DiagramImpl extends UIElementImpl implements Diagram {
-	/**
-	 * The cached value of the '{@link #getLines() <em>Lines</em>}' attribute
-	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @see #getLines()
-	 * @generated
-	 * @ordered
-	 */
-	protected FeatureMap lines;
-
-	/**
-	 * The cached value of the '{@link #getShapes() <em>Shapes</em>}' attribute
-	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @see #getShapes()
-	 * @generated
-	 * @ordered
-	 */
-	protected FeatureMap shapes;
-
+public class DiagramImpl extends ContainerImpl implements Diagram {
 	/**
 	 * The cached value of the '{@link #getRulers() <em>Rulers</em>}' attribute
 	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -166,32 +143,8 @@ public class DiagramImpl extends UIElementImpl implements Diagram {
 	 * 
 	 * @generated
 	 */
-	public FeatureMap getLines() {
-		if (lines == null) {
-			lines = new BasicFeatureMap(this, DiPackage.DIAGRAM__LINES);
-		}
-		return lines;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public FeatureMap getShapes() {
-		if (shapes == null) {
-			shapes = new BasicFeatureMap(this, DiPackage.DIAGRAM__SHAPES);
-		}
-		return shapes;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
 	public EList<Comment> getComments() {
-		return getShapes().list(DiPackage.Literals.DIAGRAM__COMMENTS);
+		return getAllShapes().list(DiPackage.Literals.DIAGRAM__COMMENTS);
 	}
 
 	/**
@@ -200,7 +153,7 @@ public class DiagramImpl extends UIElementImpl implements Diagram {
 	 * @generated
 	 */
 	public EList<CommentLink> getCommentLinks() {
-		return getLines().list(DiPackage.Literals.DIAGRAM__COMMENT_LINKS);
+		return getAllLines().list(DiPackage.Literals.DIAGRAM__COMMENT_LINKS);
 	}
 
 	/**
@@ -386,10 +339,6 @@ public class DiagramImpl extends UIElementImpl implements Diagram {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd,
 			int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case DiPackage.DIAGRAM__LINES:
-			return ((InternalEList<?>) getLines()).basicRemove(otherEnd, msgs);
-		case DiPackage.DIAGRAM__SHAPES:
-			return ((InternalEList<?>) getShapes()).basicRemove(otherEnd, msgs);
 		case DiPackage.DIAGRAM__COMMENTS:
 			return ((InternalEList<?>) getComments()).basicRemove(otherEnd,
 					msgs);
@@ -416,14 +365,6 @@ public class DiagramImpl extends UIElementImpl implements Diagram {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case DiPackage.DIAGRAM__LINES:
-			if (coreType)
-				return getLines();
-			return ((FeatureMap.Internal) getLines()).getWrapper();
-		case DiPackage.DIAGRAM__SHAPES:
-			if (coreType)
-				return getShapes();
-			return ((FeatureMap.Internal) getShapes()).getWrapper();
 		case DiPackage.DIAGRAM__COMMENTS:
 			return getComments();
 		case DiPackage.DIAGRAM__COMMENT_LINKS:
@@ -455,12 +396,6 @@ public class DiagramImpl extends UIElementImpl implements Diagram {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case DiPackage.DIAGRAM__LINES:
-			((FeatureMap.Internal) getLines()).set(newValue);
-			return;
-		case DiPackage.DIAGRAM__SHAPES:
-			((FeatureMap.Internal) getShapes()).set(newValue);
-			return;
 		case DiPackage.DIAGRAM__COMMENTS:
 			getComments().clear();
 			getComments().addAll((Collection<? extends Comment>) newValue);
@@ -500,12 +435,6 @@ public class DiagramImpl extends UIElementImpl implements Diagram {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
-		case DiPackage.DIAGRAM__LINES:
-			getLines().clear();
-			return;
-		case DiPackage.DIAGRAM__SHAPES:
-			getShapes().clear();
-			return;
 		case DiPackage.DIAGRAM__COMMENTS:
 			getComments().clear();
 			return;
@@ -542,10 +471,6 @@ public class DiagramImpl extends UIElementImpl implements Diagram {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case DiPackage.DIAGRAM__LINES:
-			return lines != null && !lines.isEmpty();
-		case DiPackage.DIAGRAM__SHAPES:
-			return shapes != null && !shapes.isEmpty();
 		case DiPackage.DIAGRAM__COMMENTS:
 			return !getComments().isEmpty();
 		case DiPackage.DIAGRAM__COMMENT_LINKS:
@@ -577,11 +502,7 @@ public class DiagramImpl extends UIElementImpl implements Diagram {
 			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (lines: ");
-		result.append(lines);
-		result.append(", shapes: ");
-		result.append(shapes);
-		result.append(", rulers: ");
+		result.append(" (rulers: ");
 		result.append(rulers);
 		result.append(", snapToGrid: ");
 		result.append(snapToGrid);

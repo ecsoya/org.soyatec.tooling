@@ -22,8 +22,6 @@ import org.eclipse.emf.ecore.util.FeatureMap;
  * <p>
  * The following features are supported:
  * <ul>
- * <li>{@link org.soyatec.tooling.di.Diagram#getLines <em>Lines</em>}</li>
- * <li>{@link org.soyatec.tooling.di.Diagram#getShapes <em>Shapes</em>}</li>
  * <li>{@link org.soyatec.tooling.di.Diagram#getComments <em>Comments</em>}</li>
  * <li>{@link org.soyatec.tooling.di.Diagram#getCommentLinks <em>Comment Links
  * </em>}</li>
@@ -44,44 +42,7 @@ import org.eclipse.emf.ecore.util.FeatureMap;
  * @model
  * @generated
  */
-public interface Diagram extends UIElement {
-	/**
-	 * Returns the value of the '<em><b>Lines</b></em>' attribute list. The list
-	 * contents are of type {@link org.eclipse.emf.ecore.util.FeatureMap.Entry}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Lines</em>' attribute list isn't clear, there
-	 * really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * 
-	 * @return the value of the '<em>Lines</em>' attribute list.
-	 * @see org.soyatec.tooling.di.DiPackage#getDiagram_Lines()
-	 * @model dataType="org.eclipse.emf.ecore.EFeatureMapEntry" many="true"
-	 *        extendedMetaData="kind='group'"
-	 * @generated
-	 */
-	FeatureMap getLines();
-
-	/**
-	 * Returns the value of the '<em><b>Shapes</b></em>' attribute list. The
-	 * list contents are of type
-	 * {@link org.eclipse.emf.ecore.util.FeatureMap.Entry}. <!-- begin-user-doc
-	 * -->
-	 * <p>
-	 * If the meaning of the '<em>Shapes</em>' attribute list isn't clear, there
-	 * really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 * 
-	 * @return the value of the '<em>Shapes</em>' attribute list.
-	 * @see org.soyatec.tooling.di.DiPackage#getDiagram_Shapes()
-	 * @model dataType="org.eclipse.emf.ecore.EFeatureMapEntry" many="true"
-	 *        extendedMetaData="kind='group'"
-	 * @generated
-	 */
-	FeatureMap getShapes();
-
+public interface Diagram extends Container {
 	/**
 	 * Returns the value of the '<em><b>Comments</b></em>' containment reference
 	 * list. The list contents are of type
@@ -95,7 +56,7 @@ public interface Diagram extends UIElement {
 	 * @return the value of the '<em>Comments</em>' containment reference list.
 	 * @see org.soyatec.tooling.di.DiPackage#getDiagram_Comments()
 	 * @model containment="true" transient="true" volatile="true"
-	 *        extendedMetaData="group='#shapes'"
+	 *        extendedMetaData="group='#allShapes'"
 	 * @generated
 	 */
 	EList<Comment> getComments();
@@ -114,7 +75,7 @@ public interface Diagram extends UIElement {
 	 *         list.
 	 * @see org.soyatec.tooling.di.DiPackage#getDiagram_CommentLinks()
 	 * @model containment="true" transient="true" volatile="true"
-	 *        extendedMetaData="group='#lines'"
+	 *        extendedMetaData="group='#allLines'"
 	 * @generated
 	 */
 	EList<CommentLink> getCommentLinks();

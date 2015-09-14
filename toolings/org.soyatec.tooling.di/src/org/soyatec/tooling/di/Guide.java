@@ -96,7 +96,7 @@ public interface Guide extends EObject {
 
 	/**
 	 * Returns the value of the '<em><b>Element Map</b></em>' map. The key is of
-	 * type {@link org.soyatec.tooling.di.UIElement}, and the value is of type
+	 * type {@link org.soyatec.tooling.di.View}, and the value is of type
 	 * {@link org.soyatec.tooling.di.Alignment}, <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Element Map</em>' map isn't clear, there
@@ -107,9 +107,9 @@ public interface Guide extends EObject {
 	 * @return the value of the '<em>Element Map</em>' map.
 	 * @see org.soyatec.tooling.di.DiPackage#getGuide_ElementMap()
 	 * @model mapType=
-	 *        "org.soyatec.tooling.di.ElementEntry<org.soyatec.tooling.di.UIElement, org.soyatec.tooling.di.Alignment>"
+	 *        "org.soyatec.tooling.di.ElementEntry<org.soyatec.tooling.di.View, org.soyatec.tooling.di.Alignment>"
 	 * @generated
 	 */
-	EMap<UIElement, Alignment> getElementMap();
+	EMap<View, Alignment> getElementMap();
 
 } // Guide

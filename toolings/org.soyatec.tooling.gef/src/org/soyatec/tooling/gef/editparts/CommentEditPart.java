@@ -48,7 +48,7 @@ public class CommentEditPart extends ShapeEditPart<Comment> {
 
 	protected void handleNotifyChanged(Notification event) {
 		super.handleNotifyChanged(event);
-		if (DiPackage.eINSTANCE.getUIObject_Label() == event.getFeature()) {
+		if (DiPackage.eINSTANCE.getView_Label() == event.getFeature()) {
 			refreshLabel();
 		}
 	}

@@ -23,7 +23,7 @@ import org.eclipse.swt.graphics.GC;
 import org.eclipse.swt.graphics.Point;
 import org.eclipse.swt.widgets.Text;
 import org.soyatec.tooling.di.DiPackage;
-import org.soyatec.tooling.gef.editparts.UIObjectEditPart;
+import org.soyatec.tooling.gef.editparts.ViewEditPart;
 import org.soyatec.tooling.gef.figures.ILabelFigure;
 
 /**
@@ -40,10 +40,10 @@ public class TextDirectEditManager extends DirectEditManager {
 	private VerifyListener verifyListener;
 	private ILabelFigure labelFigure;
 
-	public TextDirectEditManager(UIObjectEditPart<?> source,
+	public TextDirectEditManager(ViewEditPart<?> source,
 			ILabelFigure labelFigure) {
 		super(source, TextCellEditor.class, new TextCellEditorLocator(
-				labelFigure), DiPackage.eINSTANCE.getUIObject_Label());
+				labelFigure), DiPackage.eINSTANCE.getView_Label());
 		this.labelFigure = labelFigure;
 	}
 

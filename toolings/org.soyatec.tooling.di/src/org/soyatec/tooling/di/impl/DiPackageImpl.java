@@ -12,6 +12,8 @@
  */
 package org.soyatec.tooling.di.impl;
 
+import static org.soyatec.tooling.di.DiPackage.CONTAINER;
+
 import java.util.Map;
 
 import org.eclipse.draw2d.geometry.Rectangle;
@@ -33,12 +35,11 @@ import org.soyatec.tooling.di.Grid;
 import org.soyatec.tooling.di.Guide;
 import org.soyatec.tooling.di.Line;
 import org.soyatec.tooling.di.LineStyle;
+import org.soyatec.tooling.di.Node;
 import org.soyatec.tooling.di.Ruler;
 import org.soyatec.tooling.di.RulerUnit;
 import org.soyatec.tooling.di.Shape;
-import org.soyatec.tooling.di.UIElement;
-import org.soyatec.tooling.di.UINode;
-import org.soyatec.tooling.di.UIObject;
+import org.soyatec.tooling.di.View;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Package</b>. <!--
@@ -52,21 +53,21 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 	 * 
 	 * @generated
 	 */
-	private EClass uiObjectEClass = null;
+	private EClass viewEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
-	private EClass uiElementEClass = null;
+	private EClass nodeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
-	private EClass uiNodeEClass = null;
+	private EClass containerEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -238,8 +239,8 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 	 * 
 	 * @generated
 	 */
-	public EClass getUIObject() {
-		return uiObjectEClass;
+	public EClass getView() {
+		return viewEClass;
 	}
 
 	/**
@@ -247,8 +248,8 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 	 * 
 	 * @generated
 	 */
-	public EAttribute getUIObject_Label() {
-		return (EAttribute) uiObjectEClass.getEStructuralFeatures().get(0);
+	public EAttribute getView_Label() {
+		return (EAttribute) viewEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -256,8 +257,8 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 	 * 
 	 * @generated
 	 */
-	public EAttribute getUIObject_Id() {
-		return (EAttribute) uiObjectEClass.getEStructuralFeatures().get(1);
+	public EAttribute getView_Id() {
+		return (EAttribute) viewEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -265,8 +266,8 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 	 * 
 	 * @generated
 	 */
-	public EClass getUIElement() {
-		return uiElementEClass;
+	public EReference getView_Element() {
+		return (EReference) viewEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -274,8 +275,8 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 	 * 
 	 * @generated
 	 */
-	public EReference getUIElement_Element() {
-		return (EReference) uiElementEClass.getEStructuralFeatures().get(0);
+	public EClass getNode() {
+		return nodeEClass;
 	}
 
 	/**
@@ -283,8 +284,8 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 	 * 
 	 * @generated
 	 */
-	public EClass getUINode() {
-		return uiNodeEClass;
+	public EAttribute getNode_OutgoingLines() {
+		return (EAttribute) nodeEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -292,8 +293,8 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 	 * 
 	 * @generated
 	 */
-	public EAttribute getUINode_OutgoingLines() {
-		return (EAttribute) uiNodeEClass.getEStructuralFeatures().get(0);
+	public EAttribute getNode_IncomingLines() {
+		return (EAttribute) nodeEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -301,8 +302,8 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 	 * 
 	 * @generated
 	 */
-	public EAttribute getUINode_IncomingLines() {
-		return (EAttribute) uiNodeEClass.getEStructuralFeatures().get(1);
+	public EReference getNode_CommentLinks() {
+		return (EReference) nodeEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -310,8 +311,44 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 	 * 
 	 * @generated
 	 */
-	public EReference getUINode_CommentLinks() {
-		return (EReference) uiNodeEClass.getEStructuralFeatures().get(2);
+	public EClass getContainer() {
+		return containerEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getContainer_Children() {
+		return (EReference) containerEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getContainer_Lines() {
+		return (EReference) containerEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EAttribute getContainer_AllLines() {
+		return (EAttribute) containerEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EAttribute getContainer_AllShapes() {
+		return (EAttribute) containerEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -328,26 +365,8 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 	 * 
 	 * @generated
 	 */
-	public EAttribute getDiagram_Lines() {
-		return (EAttribute) diagramEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public EAttribute getDiagram_Shapes() {
-		return (EAttribute) diagramEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
 	public EReference getDiagram_Comments() {
-		return (EReference) diagramEClass.getEStructuralFeatures().get(2);
+		return (EReference) diagramEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -356,7 +375,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 	 * @generated
 	 */
 	public EReference getDiagram_CommentLinks() {
-		return (EReference) diagramEClass.getEStructuralFeatures().get(3);
+		return (EReference) diagramEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -365,7 +384,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 	 * @generated
 	 */
 	public EAttribute getDiagram_Rulers() {
-		return (EAttribute) diagramEClass.getEStructuralFeatures().get(4);
+		return (EAttribute) diagramEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -374,7 +393,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 	 * @generated
 	 */
 	public EReference getDiagram_HorizontalRuler() {
-		return (EReference) diagramEClass.getEStructuralFeatures().get(5);
+		return (EReference) diagramEClass.getEStructuralFeatures().get(3);
 	}
 
 	/**
@@ -383,7 +402,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 	 * @generated
 	 */
 	public EReference getDiagram_VerticalRuler() {
-		return (EReference) diagramEClass.getEStructuralFeatures().get(6);
+		return (EReference) diagramEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -392,7 +411,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 	 * @generated
 	 */
 	public EReference getDiagram_Grid() {
-		return (EReference) diagramEClass.getEStructuralFeatures().get(7);
+		return (EReference) diagramEClass.getEStructuralFeatures().get(5);
 	}
 
 	/**
@@ -401,7 +420,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 	 * @generated
 	 */
 	public EAttribute getDiagram_SnapToGrid() {
-		return (EAttribute) diagramEClass.getEStructuralFeatures().get(8);
+		return (EAttribute) diagramEClass.getEStructuralFeatures().get(6);
 	}
 
 	/**
@@ -410,7 +429,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 	 * @generated
 	 */
 	public EAttribute getDiagram_SnapToGeometry() {
-		return (EAttribute) diagramEClass.getEStructuralFeatures().get(9);
+		return (EAttribute) diagramEClass.getEStructuralFeatures().get(7);
 	}
 
 	/**
@@ -802,21 +821,23 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 		isCreated = true;
 
 		// Create classes and their features
-		uiObjectEClass = createEClass(UI_OBJECT);
-		createEAttribute(uiObjectEClass, UI_OBJECT__LABEL);
-		createEAttribute(uiObjectEClass, UI_OBJECT__ID);
+		viewEClass = createEClass(VIEW);
+		createEAttribute(viewEClass, VIEW__LABEL);
+		createEAttribute(viewEClass, VIEW__ID);
+		createEReference(viewEClass, VIEW__ELEMENT);
 
-		uiElementEClass = createEClass(UI_ELEMENT);
-		createEReference(uiElementEClass, UI_ELEMENT__ELEMENT);
+		nodeEClass = createEClass(NODE);
+		createEAttribute(nodeEClass, NODE__OUTGOING_LINES);
+		createEAttribute(nodeEClass, NODE__INCOMING_LINES);
+		createEReference(nodeEClass, NODE__COMMENT_LINKS);
 
-		uiNodeEClass = createEClass(UI_NODE);
-		createEAttribute(uiNodeEClass, UI_NODE__OUTGOING_LINES);
-		createEAttribute(uiNodeEClass, UI_NODE__INCOMING_LINES);
-		createEReference(uiNodeEClass, UI_NODE__COMMENT_LINKS);
+		containerEClass = createEClass(CONTAINER);
+		createEReference(containerEClass, CONTAINER__CHILDREN);
+		createEReference(containerEClass, CONTAINER__LINES);
+		createEAttribute(containerEClass, CONTAINER__ALL_LINES);
+		createEAttribute(containerEClass, CONTAINER__ALL_SHAPES);
 
 		diagramEClass = createEClass(DIAGRAM);
-		createEAttribute(diagramEClass, DIAGRAM__LINES);
-		createEAttribute(diagramEClass, DIAGRAM__SHAPES);
 		createEReference(diagramEClass, DIAGRAM__COMMENTS);
 		createEReference(diagramEClass, DIAGRAM__COMMENT_LINKS);
 		createEAttribute(diagramEClass, DIAGRAM__RULERS);
@@ -909,60 +930,73 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		uiElementEClass.getESuperTypes().add(this.getUIObject());
-		uiNodeEClass.getESuperTypes().add(this.getUIElement());
-		diagramEClass.getESuperTypes().add(this.getUIElement());
-		shapeEClass.getESuperTypes().add(this.getUINode());
+		nodeEClass.getESuperTypes().add(this.getView());
+		containerEClass.getESuperTypes().add(this.getView());
+		diagramEClass.getESuperTypes().add(this.getContainer());
+		shapeEClass.getESuperTypes().add(this.getContainer());
+		shapeEClass.getESuperTypes().add(this.getNode());
 		gradientShapeEClass.getESuperTypes().add(this.getShape());
-		lineEClass.getESuperTypes().add(this.getUINode());
+		lineEClass.getESuperTypes().add(this.getNode());
 		commentEClass.getESuperTypes().add(this.getShape());
 		commentLinkEClass.getESuperTypes().add(this.getLine());
 
 		// Initialize classes, features, and operations; add parameters
-		initEClass(uiObjectEClass, UIObject.class, "UIObject", IS_ABSTRACT,
-				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getUIObject_Label(), ecorePackage.getEString(), "label",
-				null, 0, 1, UIObject.class, !IS_TRANSIENT, !IS_VOLATILE,
+		initEClass(viewEClass, View.class, "View", IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getView_Label(), ecorePackage.getEString(), "label",
+				null, 0, 1, View.class, !IS_TRANSIENT, !IS_VOLATILE,
 				IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
-		initEAttribute(getUIObject_Id(), ecorePackage.getEString(), "id", null,
-				0, 1, UIObject.class, !IS_TRANSIENT, !IS_VOLATILE,
-				IS_CHANGEABLE, !IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED,
-				IS_ORDERED);
-
-		initEClass(uiElementEClass, UIElement.class, "UIElement", !IS_ABSTRACT,
-				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getUIElement_Element(), ecorePackage.getEObject(), null,
-				"element", null, 0, 1, UIElement.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
+		initEAttribute(getView_Id(), ecorePackage.getEString(), "id", null, 0,
+				1, View.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_UNSETTABLE, IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getView_Element(), ecorePackage.getEObject(), null,
+				"element", null, 0, 1, View.class, !IS_TRANSIENT, !IS_VOLATILE,
+				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(uiNodeEClass, UINode.class, "UINode", !IS_ABSTRACT,
-				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getUINode_OutgoingLines(),
+		initEClass(nodeEClass, Node.class, "Node", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getNode_OutgoingLines(),
 				ecorePackage.getEFeatureMapEntry(), "outgoingLines", null, 0,
-				-1, UINode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				-1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getUINode_IncomingLines(),
+		initEAttribute(getNode_IncomingLines(),
 				ecorePackage.getEFeatureMapEntry(), "incomingLines", null, 0,
-				-1, UINode.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				-1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getUINode_CommentLinks(), this.getCommentLink(),
+		initEReference(getNode_CommentLinks(), this.getCommentLink(),
 				this.getCommentLink_Source(), "commentLinks", null, 0, -1,
-				UINode.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE,
+				Node.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE,
 				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+
+		initEClass(containerEClass, org.soyatec.tooling.di.Container.class,
+				"Container", !IS_ABSTRACT, !IS_INTERFACE,
+				IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getContainer_Children(), this.getShape(), null,
+				"children", null, 0, -1,
+				org.soyatec.tooling.di.Container.class, IS_TRANSIENT,
+				IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
+				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getContainer_Lines(), this.getLine(), null, "lines",
+				null, 0, -1, org.soyatec.tooling.di.Container.class,
+				IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE,
+				!IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED,
+				IS_ORDERED);
+		initEAttribute(getContainer_AllLines(),
+				ecorePackage.getEFeatureMapEntry(), "allLines", null, 0, -1,
+				org.soyatec.tooling.di.Container.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEAttribute(getContainer_AllShapes(),
+				ecorePackage.getEFeatureMapEntry(), "allShapes", null, 0, -1,
+				org.soyatec.tooling.di.Container.class, !IS_TRANSIENT,
+				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
 
 		initEClass(diagramEClass, Diagram.class, "Diagram", !IS_ABSTRACT,
 				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getDiagram_Lines(), ecorePackage.getEFeatureMapEntry(),
-				"lines", null, 0, -1, Diagram.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-				!IS_DERIVED, IS_ORDERED);
-		initEAttribute(getDiagram_Shapes(), ecorePackage.getEFeatureMapEntry(),
-				"shapes", null, 0, -1, Diagram.class, !IS_TRANSIENT,
-				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
-				!IS_DERIVED, IS_ORDERED);
 		initEReference(getDiagram_Comments(), this.getComment(), null,
 				"comments", null, 0, -1, Diagram.class, IS_TRANSIENT,
 				IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES,
@@ -1070,8 +1104,8 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 
 		initEClass(commentLinkEClass, CommentLink.class, "CommentLink",
 				!IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getCommentLink_Source(), this.getUINode(),
-				this.getUINode_CommentLinks(), "source", null, 0, 1,
+		initEReference(getCommentLink_Source(), this.getNode(),
+				this.getNode_CommentLinks(), "source", null, 0, 1,
 				CommentLink.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE,
 				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
@@ -1123,7 +1157,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 
 		initEClass(elementEntryEClass, Map.Entry.class, "ElementEntry",
 				!IS_ABSTRACT, !IS_INTERFACE, !IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getElementEntry_Key(), this.getUIElement(), null, "key",
+		initEReference(getElementEntry_Key(), this.getView(), null, "key",
 				null, 1, 1, Map.Entry.class, !IS_TRANSIENT, !IS_VOLATILE,
 				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
@@ -1174,20 +1208,24 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 	 */
 	protected void createExtendedMetaDataAnnotations() {
 		String source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData";
-		addAnnotation(getUINode_OutgoingLines(), source, new String[] { "kind",
+		addAnnotation(getNode_OutgoingLines(), source, new String[] { "kind",
 				"group" });
-		addAnnotation(getUINode_IncomingLines(), source, new String[] { "kind",
+		addAnnotation(getNode_IncomingLines(), source, new String[] { "kind",
 				"group" });
-		addAnnotation(getUINode_CommentLinks(), source, new String[] { "group",
+		addAnnotation(getNode_CommentLinks(), source, new String[] { "group",
 				"#outgoingLines" });
-		addAnnotation(getDiagram_Lines(), source, new String[] { "kind",
+		addAnnotation(getContainer_Children(), source, new String[] { "group",
+				"#allShapes" });
+		addAnnotation(getContainer_Lines(), source, new String[] { "group",
+				"#allLines" });
+		addAnnotation(getContainer_AllLines(), source, new String[] { "kind",
 				"group" });
-		addAnnotation(getDiagram_Shapes(), source, new String[] { "kind",
+		addAnnotation(getContainer_AllShapes(), source, new String[] { "kind",
 				"group" });
 		addAnnotation(getDiagram_Comments(), source, new String[] { "group",
-				"#shapes" });
+				"#allShapes" });
 		addAnnotation(getDiagram_CommentLinks(), source, new String[] {
-				"group", "#lines" });
+				"group", "#allLines" });
 		addAnnotation(getDiagram_Rulers(), source, new String[] { "kind",
 				"group" });
 		addAnnotation(getDiagram_HorizontalRuler(), source, new String[] {

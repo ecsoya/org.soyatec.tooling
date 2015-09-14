@@ -21,7 +21,7 @@ import org.eclipse.emf.ecore.util.FeatureMap;
 import org.soyatec.tooling.di.Comment;
 import org.soyatec.tooling.di.CommentLink;
 import org.soyatec.tooling.di.DiPackage;
-import org.soyatec.tooling.di.UINode;
+import org.soyatec.tooling.di.Node;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '
@@ -63,9 +63,9 @@ public class CommentLinkImpl extends LineImpl implements CommentLink {
 	 * 
 	 * @generated
 	 */
-	public UINode getSource() {
-		UINode source = basicGetSource();
-		return source != null && source.eIsProxy() ? (UINode) eResolveProxy((InternalEObject) source)
+	public Node getSource() {
+		Node source = basicGetSource();
+		return source != null && source.eIsProxy() ? (Node) eResolveProxy((InternalEObject) source)
 				: source;
 	}
 
@@ -74,8 +74,8 @@ public class CommentLinkImpl extends LineImpl implements CommentLink {
 	 * 
 	 * @generated
 	 */
-	public UINode basicGetSource() {
-		return (UINode) getSourceShape().get(
+	public Node basicGetSource() {
+		return (Node) getSourceShape().get(
 				DiPackage.Literals.COMMENT_LINK__SOURCE, false);
 	}
 
@@ -84,7 +84,7 @@ public class CommentLinkImpl extends LineImpl implements CommentLink {
 	 * 
 	 * @generated
 	 */
-	public void setSource(UINode newSource) {
+	public void setSource(Node newSource) {
 		((FeatureMap.Internal) getSourceShape()).set(
 				DiPackage.Literals.COMMENT_LINK__SOURCE, newSource);
 	}
@@ -130,11 +130,11 @@ public class CommentLinkImpl extends LineImpl implements CommentLink {
 			int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case DiPackage.COMMENT_LINK__SOURCE:
-			UINode source = basicGetSource();
+			Node source = basicGetSource();
 			if (source != null)
 				msgs = ((InternalEObject) source).eInverseRemove(this,
-						DiPackage.UI_NODE__COMMENT_LINKS, UINode.class, msgs);
-			return basicSetSource((UINode) otherEnd, msgs);
+						DiPackage.NODE__COMMENT_LINKS, Node.class, msgs);
+			return basicSetSource((Node) otherEnd, msgs);
 		case DiPackage.COMMENT_LINK__TARGET:
 			Comment target = basicGetTarget();
 			if (target != null)
@@ -162,9 +162,9 @@ public class CommentLinkImpl extends LineImpl implements CommentLink {
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
-	private NotificationChain basicSetSource(UINode newSource,
+	private NotificationChain basicSetSource(Node newSource,
 			NotificationChain msgs) {
-		UINode oldSource = basicGetSource();
+		Node oldSource = basicGetSource();
 		setSource(newSource);
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this,
@@ -223,7 +223,7 @@ public class CommentLinkImpl extends LineImpl implements CommentLink {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 		case DiPackage.COMMENT_LINK__SOURCE:
-			setSource((UINode) newValue);
+			setSource((Node) newValue);
 			return;
 		case DiPackage.COMMENT_LINK__TARGET:
 			setTarget((Comment) newValue);
@@ -241,7 +241,7 @@ public class CommentLinkImpl extends LineImpl implements CommentLink {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 		case DiPackage.COMMENT_LINK__SOURCE:
-			setSource((UINode) null);
+			setSource((Node) null);
 			return;
 		case DiPackage.COMMENT_LINK__TARGET:
 			setTarget((Comment) null);

@@ -56,12 +56,12 @@ public abstract class GraphicalEditorWithToolBarPalette extends GraphicalEditor 
 
 	private void configurePalette(ToolBarPalette palette) {
 		ToolBarEditDomain editDomain = getEditDomain();
-		PaletteRoot paletteRoot = createPelatteRoot();
+		PaletteRoot paletteRoot = createPaletteRoot();
 
 		editDomain.setPaletteRoot(paletteRoot);
 		editDomain.setPalette(palette);
 		palette.init(editDomain, paletteRoot);
 	}
 
-	protected abstract PaletteRoot createPelatteRoot();
+	protected abstract PaletteRoot createPaletteRoot();
 }

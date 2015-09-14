@@ -20,17 +20,17 @@ import org.eclipse.emf.ecore.util.Switch;
 import org.soyatec.tooling.di.Alignment;
 import org.soyatec.tooling.di.Comment;
 import org.soyatec.tooling.di.CommentLink;
+import org.soyatec.tooling.di.Container;
 import org.soyatec.tooling.di.DiPackage;
 import org.soyatec.tooling.di.Diagram;
 import org.soyatec.tooling.di.GradientShape;
 import org.soyatec.tooling.di.Grid;
 import org.soyatec.tooling.di.Guide;
 import org.soyatec.tooling.di.Line;
+import org.soyatec.tooling.di.Node;
 import org.soyatec.tooling.di.Ruler;
 import org.soyatec.tooling.di.Shape;
-import org.soyatec.tooling.di.UIElement;
-import org.soyatec.tooling.di.UINode;
-import org.soyatec.tooling.di.UIObject;
+import org.soyatec.tooling.di.View;
 
 /**
  * <!-- begin-user-doc --> The <b>Switch</b> for the model's inheritance
@@ -88,29 +88,27 @@ public class DiSwitch<T> extends Switch<T> {
 	@Override
 	protected T doSwitch(int classifierID, EObject theEObject) {
 		switch (classifierID) {
-		case DiPackage.UI_OBJECT: {
-			UIObject uiObject = (UIObject) theEObject;
-			T result = caseUIObject(uiObject);
+		case DiPackage.VIEW: {
+			View view = (View) theEObject;
+			T result = caseView(view);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case DiPackage.UI_ELEMENT: {
-			UIElement uiElement = (UIElement) theEObject;
-			T result = caseUIElement(uiElement);
+		case DiPackage.NODE: {
+			Node node = (Node) theEObject;
+			T result = caseNode(node);
 			if (result == null)
-				result = caseUIObject(uiElement);
+				result = caseView(node);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
 		}
-		case DiPackage.UI_NODE: {
-			UINode uiNode = (UINode) theEObject;
-			T result = caseUINode(uiNode);
+		case DiPackage.CONTAINER: {
+			Container container = (Container) theEObject;
+			T result = caseContainer(container);
 			if (result == null)
-				result = caseUIElement(uiNode);
-			if (result == null)
-				result = caseUIObject(uiNode);
+				result = caseView(container);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -119,9 +117,9 @@ public class DiSwitch<T> extends Switch<T> {
 			Diagram diagram = (Diagram) theEObject;
 			T result = caseDiagram(diagram);
 			if (result == null)
-				result = caseUIElement(diagram);
+				result = caseContainer(diagram);
 			if (result == null)
-				result = caseUIObject(diagram);
+				result = caseView(diagram);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -130,11 +128,11 @@ public class DiSwitch<T> extends Switch<T> {
 			Shape shape = (Shape) theEObject;
 			T result = caseShape(shape);
 			if (result == null)
-				result = caseUINode(shape);
+				result = caseContainer(shape);
 			if (result == null)
-				result = caseUIElement(shape);
+				result = caseNode(shape);
 			if (result == null)
-				result = caseUIObject(shape);
+				result = caseView(shape);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -145,11 +143,11 @@ public class DiSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseShape(gradientShape);
 			if (result == null)
-				result = caseUINode(gradientShape);
+				result = caseContainer(gradientShape);
 			if (result == null)
-				result = caseUIElement(gradientShape);
+				result = caseNode(gradientShape);
 			if (result == null)
-				result = caseUIObject(gradientShape);
+				result = caseView(gradientShape);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -158,11 +156,9 @@ public class DiSwitch<T> extends Switch<T> {
 			Line line = (Line) theEObject;
 			T result = caseLine(line);
 			if (result == null)
-				result = caseUINode(line);
+				result = caseNode(line);
 			if (result == null)
-				result = caseUIElement(line);
-			if (result == null)
-				result = caseUIObject(line);
+				result = caseView(line);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -173,11 +169,11 @@ public class DiSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseShape(comment);
 			if (result == null)
-				result = caseUINode(comment);
+				result = caseContainer(comment);
 			if (result == null)
-				result = caseUIElement(comment);
+				result = caseNode(comment);
 			if (result == null)
-				result = caseUIObject(comment);
+				result = caseView(comment);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -188,11 +184,9 @@ public class DiSwitch<T> extends Switch<T> {
 			if (result == null)
 				result = caseLine(commentLink);
 			if (result == null)
-				result = caseUINode(commentLink);
+				result = caseNode(commentLink);
 			if (result == null)
-				result = caseUIElement(commentLink);
-			if (result == null)
-				result = caseUIObject(commentLink);
+				result = caseView(commentLink);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -220,7 +214,7 @@ public class DiSwitch<T> extends Switch<T> {
 		}
 		case DiPackage.ELEMENT_ENTRY: {
 			@SuppressWarnings("unchecked")
-			Map.Entry<UIElement, Alignment> elementEntry = (Map.Entry<UIElement, Alignment>) theEObject;
+			Map.Entry<View, Alignment> elementEntry = (Map.Entry<View, Alignment>) theEObject;
 			T result = caseElementEntry(elementEntry);
 			if (result == null)
 				result = defaultCase(theEObject);
@@ -233,52 +227,52 @@ public class DiSwitch<T> extends Switch<T> {
 
 	/**
 	 * Returns the result of interpreting the object as an instance of '
-	 * <em>UI Object</em>'. <!-- begin-user-doc --> This implementation returns
-	 * null; returning a non-null result will terminate the switch. <!--
-	 * end-user-doc -->
+	 * <em>View</em>'. <!-- begin-user-doc --> This implementation returns null;
+	 * returning a non-null result will terminate the switch. <!-- end-user-doc
+	 * -->
 	 * 
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '
-	 *         <em>UI Object</em>'.
+	 *         <em>View</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseUIObject(UIObject object) {
+	public T caseView(View object) {
 		return null;
 	}
 
 	/**
 	 * Returns the result of interpreting the object as an instance of '
-	 * <em>UI Element</em>'. <!-- begin-user-doc --> This implementation returns
-	 * null; returning a non-null result will terminate the switch. <!--
-	 * end-user-doc -->
+	 * <em>Node</em>'. <!-- begin-user-doc --> This implementation returns null;
+	 * returning a non-null result will terminate the switch. <!-- end-user-doc
+	 * -->
 	 * 
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '
-	 *         <em>UI Element</em>'.
+	 *         <em>Node</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseUIElement(UIElement object) {
+	public T caseNode(Node object) {
 		return null;
 	}
 
 	/**
 	 * Returns the result of interpreting the object as an instance of '
-	 * <em>UI Node</em>'. <!-- begin-user-doc --> This implementation returns
+	 * <em>Container</em>'. <!-- begin-user-doc --> This implementation returns
 	 * null; returning a non-null result will terminate the switch. <!--
 	 * end-user-doc -->
 	 * 
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '
-	 *         <em>UI Node</em>'.
+	 *         <em>Container</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseUINode(UINode object) {
+	public T caseContainer(Container object) {
 		return null;
 	}
 
@@ -448,7 +442,7 @@ public class DiSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseElementEntry(Map.Entry<UIElement, Alignment> object) {
+	public T caseElementEntry(Map.Entry<View, Alignment> object) {
 		return null;
 	}
 

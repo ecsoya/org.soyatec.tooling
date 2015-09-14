@@ -26,14 +26,15 @@ import org.eclipse.gef.requests.DropRequest;
 import org.eclipse.swt.graphics.Color;
 import org.soyatec.tooling.di.DiPackage;
 import org.soyatec.tooling.di.Line;
+import org.soyatec.tooling.di.Node;
 import org.soyatec.tooling.di.Shape;
-import org.soyatec.tooling.di.UINode;
 import org.soyatec.tooling.gef.editpolicies.ShapeComponentEditPolicy;
 import org.soyatec.tooling.gef.figures.NodeFigure;
 import org.soyatec.tooling.gef.resources.ResourcesFactory;
 
 public abstract class ShapeEditPart<T extends Shape> extends
-		UINodeEditPart<UINode> implements NodeEditPart {
+		org.soyatec.tooling.gef.editparts.NodeEditPart<Node> implements
+		NodeEditPart {
 
 	private IFigure primaryFigure;
 

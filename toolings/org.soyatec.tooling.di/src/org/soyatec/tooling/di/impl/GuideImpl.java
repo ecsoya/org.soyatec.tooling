@@ -27,7 +27,7 @@ import org.soyatec.tooling.di.Alignment;
 import org.soyatec.tooling.di.DiPackage;
 import org.soyatec.tooling.di.Guide;
 import org.soyatec.tooling.di.Ruler;
-import org.soyatec.tooling.di.UIElement;
+import org.soyatec.tooling.di.View;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model object '
@@ -74,7 +74,7 @@ public class GuideImpl extends MinimalEObjectImpl.Container implements Guide {
 	 * @generated
 	 * @ordered
 	 */
-	protected EMap<UIElement, Alignment> elementMap;
+	protected EMap<View, Alignment> elementMap;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -170,9 +170,9 @@ public class GuideImpl extends MinimalEObjectImpl.Container implements Guide {
 	 * 
 	 * @generated
 	 */
-	public EMap<UIElement, Alignment> getElementMap() {
+	public EMap<View, Alignment> getElementMap() {
 		if (elementMap == null) {
-			elementMap = new EcoreEMap<UIElement, Alignment>(
+			elementMap = new EcoreEMap<View, Alignment>(
 					DiPackage.Literals.ELEMENT_ENTRY, ElementEntryImpl.class,
 					this, DiPackage.GUIDE__ELEMENT_MAP);
 		}

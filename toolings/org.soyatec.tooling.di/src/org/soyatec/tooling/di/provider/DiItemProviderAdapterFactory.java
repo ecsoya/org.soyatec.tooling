@@ -85,50 +85,50 @@ public class DiItemProviderAdapterFactory extends DiAdapterFactory implements
 
 	/**
 	 * This keeps track of the one adapter used for all
-	 * {@link org.soyatec.tooling.di.UIElement} instances. <!-- begin-user-doc
-	 * --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	protected UIElementItemProvider uiElementItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.soyatec.tooling.di.UIElement}.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	@Override
-	public Adapter createUIElementAdapter() {
-		if (uiElementItemProvider == null) {
-			uiElementItemProvider = new UIElementItemProvider(this);
-		}
-
-		return uiElementItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all
-	 * {@link org.soyatec.tooling.di.UINode} instances. <!-- begin-user-doc -->
+	 * {@link org.soyatec.tooling.di.Node} instances. <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
-	protected UINodeItemProvider uiNodeItemProvider;
+	protected NodeItemProvider nodeItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.soyatec.tooling.di.UINode}. <!--
+	 * This creates an adapter for a {@link org.soyatec.tooling.di.Node}. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
 	@Override
-	public Adapter createUINodeAdapter() {
-		if (uiNodeItemProvider == null) {
-			uiNodeItemProvider = new UINodeItemProvider(this);
+	public Adapter createNodeAdapter() {
+		if (nodeItemProvider == null) {
+			nodeItemProvider = new NodeItemProvider(this);
 		}
 
-		return uiNodeItemProvider;
+		return nodeItemProvider;
+	}
+
+	/**
+	 * This keeps track of the one adapter used for all
+	 * {@link org.soyatec.tooling.di.Container} instances. <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected ContainerItemProvider containerItemProvider;
+
+	/**
+	 * This creates an adapter for a {@link org.soyatec.tooling.di.Container}.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Adapter createContainerAdapter() {
+		if (containerItemProvider == null) {
+			containerItemProvider = new ContainerItemProvider(this);
+		}
+
+		return containerItemProvider;
 	}
 
 	/**
@@ -473,10 +473,10 @@ public class DiItemProviderAdapterFactory extends DiAdapterFactory implements
 	 * @generated
 	 */
 	public void dispose() {
-		if (uiElementItemProvider != null)
-			uiElementItemProvider.dispose();
-		if (uiNodeItemProvider != null)
-			uiNodeItemProvider.dispose();
+		if (nodeItemProvider != null)
+			nodeItemProvider.dispose();
+		if (containerItemProvider != null)
+			containerItemProvider.dispose();
 		if (diagramItemProvider != null)
 			diagramItemProvider.dispose();
 		if (shapeItemProvider != null)

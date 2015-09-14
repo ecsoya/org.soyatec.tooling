@@ -43,7 +43,7 @@ import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.soyatec.tooling.di.CommentLink;
 import org.soyatec.tooling.di.DiPackage;
 import org.soyatec.tooling.di.GradientShape;
-import org.soyatec.tooling.di.UIObject;
+import org.soyatec.tooling.di.View;
 import org.soyatec.tooling.gef.resources.ResourcesFactory;
 
 /**
@@ -55,7 +55,7 @@ public class DiagramPropertyTab extends CommandPropertyTab implements
 		IPropertyChangeListener {
 
 	protected static final EStructuralFeature ES_LABEL = DiPackage.eINSTANCE
-			.getUIObject_Label();
+			.getView_Label();
 	protected static final EStructuralFeature ES_BACKGROUND = DiPackage.eINSTANCE
 			.getShape_Background();
 	protected static final EStructuralFeature ES_FOREGROUND = DiPackage.eINSTANCE
@@ -89,7 +89,7 @@ public class DiagramPropertyTab extends CommandPropertyTab implements
 			1);
 	private Group gradientGroup;
 	private Composite control;
-	private UIObject model;
+	private View model;
 
 	private final PreferenceStore store;
 
@@ -139,12 +139,12 @@ public class DiagramPropertyTab extends CommandPropertyTab implements
 	protected void setInput(Object newInput) {
 		super.setInput(newInput);
 		model = null;
-		if (newInput instanceof UIObject) {
-			model = ((UIObject) newInput);
+		if (newInput instanceof View) {
+			model = ((View) newInput);
 		} else if (newInput instanceof EditPart) {
 			Object mm = ((EditPart) newInput).getModel();
-			if (mm instanceof UIObject) {
-				model = (UIObject) mm;
+			if (mm instanceof View) {
+				model = (View) mm;
 			}
 		}
 		prepareStore();
@@ -215,7 +215,7 @@ public class DiagramPropertyTab extends CommandPropertyTab implements
 
 	}
 
-	protected boolean isFeatureVisible(UIObject model, EStructuralFeature sf) {
+	protected boolean isFeatureVisible(View model, EStructuralFeature sf) {
 		if (model == null || sf == null) {
 			return false;
 		}

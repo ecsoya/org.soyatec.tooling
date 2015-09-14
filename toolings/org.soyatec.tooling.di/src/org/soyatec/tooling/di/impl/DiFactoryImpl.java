@@ -32,11 +32,11 @@ import org.soyatec.tooling.di.Grid;
 import org.soyatec.tooling.di.Guide;
 import org.soyatec.tooling.di.Line;
 import org.soyatec.tooling.di.LineStyle;
+import org.soyatec.tooling.di.Node;
 import org.soyatec.tooling.di.Ruler;
 import org.soyatec.tooling.di.RulerUnit;
 import org.soyatec.tooling.di.Shape;
-import org.soyatec.tooling.di.UIElement;
-import org.soyatec.tooling.di.UINode;
+import org.soyatec.tooling.di.View;
 
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!--
@@ -82,10 +82,10 @@ public class DiFactoryImpl extends EFactoryImpl implements DiFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-		case DiPackage.UI_ELEMENT:
-			return createUIElement();
-		case DiPackage.UI_NODE:
-			return createUINode();
+		case DiPackage.NODE:
+			return createNode();
+		case DiPackage.CONTAINER:
+			return createContainer();
 		case DiPackage.DIAGRAM:
 			return createDiagram();
 		case DiPackage.SHAPE:
@@ -161,9 +161,9 @@ public class DiFactoryImpl extends EFactoryImpl implements DiFactory {
 	 * 
 	 * @generated
 	 */
-	public UIElement createUIElement() {
-		UIElementImpl uiElement = new UIElementImpl();
-		return uiElement;
+	public Node createNode() {
+		NodeImpl node = new NodeImpl();
+		return node;
 	}
 
 	/**
@@ -171,9 +171,9 @@ public class DiFactoryImpl extends EFactoryImpl implements DiFactory {
 	 * 
 	 * @generated
 	 */
-	public UINode createUINode() {
-		UINodeImpl uiNode = new UINodeImpl();
-		return uiNode;
+	public org.soyatec.tooling.di.Container createContainer() {
+		ContainerImpl container = new ContainerImpl();
+		return container;
 	}
 
 	/**
@@ -271,7 +271,7 @@ public class DiFactoryImpl extends EFactoryImpl implements DiFactory {
 	 * 
 	 * @generated
 	 */
-	public Map.Entry<UIElement, Alignment> createElementEntry() {
+	public Map.Entry<View, Alignment> createElementEntry() {
 		ElementEntryImpl elementEntry = new ElementEntryImpl();
 		return elementEntry;
 	}

@@ -21,17 +21,17 @@ import org.eclipse.emf.ecore.EObject;
 import org.soyatec.tooling.di.Alignment;
 import org.soyatec.tooling.di.Comment;
 import org.soyatec.tooling.di.CommentLink;
+import org.soyatec.tooling.di.Container;
 import org.soyatec.tooling.di.DiPackage;
 import org.soyatec.tooling.di.Diagram;
 import org.soyatec.tooling.di.GradientShape;
 import org.soyatec.tooling.di.Grid;
 import org.soyatec.tooling.di.Guide;
 import org.soyatec.tooling.di.Line;
+import org.soyatec.tooling.di.Node;
 import org.soyatec.tooling.di.Ruler;
 import org.soyatec.tooling.di.Shape;
-import org.soyatec.tooling.di.UIElement;
-import org.soyatec.tooling.di.UINode;
-import org.soyatec.tooling.di.UIObject;
+import org.soyatec.tooling.di.View;
 
 /**
  * <!-- begin-user-doc --> The <b>Adapter Factory</b> for the model. It provides
@@ -89,18 +89,18 @@ public class DiAdapterFactory extends AdapterFactoryImpl {
 	 */
 	protected DiSwitch<Adapter> modelSwitch = new DiSwitch<Adapter>() {
 		@Override
-		public Adapter caseUIObject(UIObject object) {
-			return createUIObjectAdapter();
+		public Adapter caseView(View object) {
+			return createViewAdapter();
 		}
 
 		@Override
-		public Adapter caseUIElement(UIElement object) {
-			return createUIElementAdapter();
+		public Adapter caseNode(Node object) {
+			return createNodeAdapter();
 		}
 
 		@Override
-		public Adapter caseUINode(UINode object) {
-			return createUINodeAdapter();
+		public Adapter caseContainer(Container object) {
+			return createContainerAdapter();
 		}
 
 		@Override
@@ -149,7 +149,7 @@ public class DiAdapterFactory extends AdapterFactoryImpl {
 		}
 
 		@Override
-		public Adapter caseElementEntry(Map.Entry<UIElement, Alignment> object) {
+		public Adapter caseElementEntry(Map.Entry<View, Alignment> object) {
 			return createElementEntryAdapter();
 		}
 
@@ -175,46 +175,46 @@ public class DiAdapterFactory extends AdapterFactoryImpl {
 
 	/**
 	 * Creates a new adapter for an object of class '
-	 * {@link org.soyatec.tooling.di.UIObject <em>UI Object</em>}'. <!--
-	 * begin-user-doc --> This default implementation returns null so that we
-	 * can easily ignore cases; it's useful to ignore a case when inheritance
-	 * will catch all the cases anyway. <!-- end-user-doc -->
+	 * {@link org.soyatec.tooling.di.View <em>View</em>}'. <!-- begin-user-doc
+	 * --> This default implementation returns null so that we can easily ignore
+	 * cases; it's useful to ignore a case when inheritance will catch all the
+	 * cases anyway. <!-- end-user-doc -->
 	 * 
 	 * @return the new adapter.
-	 * @see org.soyatec.tooling.di.UIObject
+	 * @see org.soyatec.tooling.di.View
 	 * @generated
 	 */
-	public Adapter createUIObjectAdapter() {
+	public Adapter createViewAdapter() {
 		return null;
 	}
 
 	/**
 	 * Creates a new adapter for an object of class '
-	 * {@link org.soyatec.tooling.di.UIElement <em>UI Element</em>}'. <!--
-	 * begin-user-doc --> This default implementation returns null so that we
-	 * can easily ignore cases; it's useful to ignore a case when inheritance
-	 * will catch all the cases anyway. <!-- end-user-doc -->
+	 * {@link org.soyatec.tooling.di.Node <em>Node</em>}'. <!-- begin-user-doc
+	 * --> This default implementation returns null so that we can easily ignore
+	 * cases; it's useful to ignore a case when inheritance will catch all the
+	 * cases anyway. <!-- end-user-doc -->
 	 * 
 	 * @return the new adapter.
-	 * @see org.soyatec.tooling.di.UIElement
+	 * @see org.soyatec.tooling.di.Node
 	 * @generated
 	 */
-	public Adapter createUIElementAdapter() {
+	public Adapter createNodeAdapter() {
 		return null;
 	}
 
 	/**
 	 * Creates a new adapter for an object of class '
-	 * {@link org.soyatec.tooling.di.UINode <em>UI Node</em>}'. <!--
+	 * {@link org.soyatec.tooling.di.Container <em>Container</em>}'. <!--
 	 * begin-user-doc --> This default implementation returns null so that we
 	 * can easily ignore cases; it's useful to ignore a case when inheritance
 	 * will catch all the cases anyway. <!-- end-user-doc -->
 	 * 
 	 * @return the new adapter.
-	 * @see org.soyatec.tooling.di.UINode
+	 * @see org.soyatec.tooling.di.Container
 	 * @generated
 	 */
-	public Adapter createUINodeAdapter() {
+	public Adapter createContainerAdapter() {
 		return null;
 	}
 

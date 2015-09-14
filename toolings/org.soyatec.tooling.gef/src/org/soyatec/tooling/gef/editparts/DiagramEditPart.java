@@ -19,12 +19,14 @@ import org.eclipse.draw2d.FreeformLayout;
 import org.eclipse.draw2d.IFigure;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.ecore.util.FeatureMap.ValueListIterator;
+import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.SnapToGeometry;
 import org.eclipse.gef.SnapToHelper;
 import org.soyatec.tooling.di.DiPackage;
 import org.soyatec.tooling.di.Diagram;
+import org.soyatec.tooling.gef.editpolicies.DiagramXYLayoutEditPolicy;
 
-public abstract class DiagramEditPart extends UIObjectEditPart<Diagram> {
+public abstract class DiagramEditPart extends ViewEditPart<Diagram> {
 
 	public DiagramEditPart(Diagram model) {
 		super(model);
@@ -40,7 +42,7 @@ public abstract class DiagramEditPart extends UIObjectEditPart<Diagram> {
 	@SuppressWarnings("rawtypes")
 	protected List getModelChildren() {
 		List<Object> modelChildren = new ArrayList<Object>();
-		ValueListIterator<Object> it = getModel().getShapes()
+		ValueListIterator<Object> it = getModel().getAllShapes()
 				.valueListIterator();
 		while (it.hasNext()) {
 			modelChildren.add(it.next());
@@ -51,9 +53,9 @@ public abstract class DiagramEditPart extends UIObjectEditPart<Diagram> {
 	protected void handleNotifyChanged(Notification event) {
 		super.handleNotifyChanged(event);
 		Object feature = event.getFeature();
-		if (DiPackage.eINSTANCE.getDiagram_Shapes() == feature) {
+		if (DiPackage.eINSTANCE.getContainer_AllShapes() == feature) {
 			refreshChildren();
-		} else if (DiPackage.eINSTANCE.getDiagram_Lines() == feature) {
+		} else if (DiPackage.eINSTANCE.getContainer_AllLines() == feature) {
 		}
 	}
 
@@ -62,5 +64,12 @@ public abstract class DiagramEditPart extends UIObjectEditPart<Diagram> {
 			return new SnapToGeometry(this);
 		}
 		return super.getAdapter(key);
+	}
+
+	@Override
+	protected void createEditPolicies() {
+		super.createEditPolicies();
+		installEditPolicy(EditPolicy.LAYOUT_ROLE,
+				new DiagramXYLayoutEditPolicy());
 	}
 }

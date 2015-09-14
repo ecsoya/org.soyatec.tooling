@@ -31,22 +31,22 @@ public interface DiFactory extends EFactory {
 	DiFactory eINSTANCE = org.soyatec.tooling.di.impl.DiFactoryImpl.init();
 
 	/**
-	 * Returns a new object of class '<em>UI Element</em>'. <!-- begin-user-doc
-	 * --> <!-- end-user-doc -->
-	 * 
-	 * @return a new object of class '<em>UI Element</em>'.
-	 * @generated
-	 */
-	UIElement createUIElement();
-
-	/**
-	 * Returns a new object of class '<em>UI Node</em>'. <!-- begin-user-doc -->
+	 * Returns a new object of class '<em>Node</em>'. <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * 
-	 * @return a new object of class '<em>UI Node</em>'.
+	 * @return a new object of class '<em>Node</em>'.
 	 * @generated
 	 */
-	UINode createUINode();
+	Node createNode();
+
+	/**
+	 * Returns a new object of class '<em>Container</em>'. <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
+	 * 
+	 * @return a new object of class '<em>Container</em>'.
+	 * @generated
+	 */
+	Container createContainer();
 
 	/**
 	 * Returns a new object of class '<em>Diagram</em>'. <!-- begin-user-doc -->

@@ -15,12 +15,11 @@ import org.soyatec.tooling.di.CommentLink;
 import org.soyatec.tooling.di.DiFactory;
 import org.soyatec.tooling.di.Diagram;
 import org.soyatec.tooling.di.Line;
-import org.soyatec.tooling.di.UIElement;
-import org.soyatec.tooling.di.UINode;
+import org.soyatec.tooling.di.Node;
 
 public class CreateCommentLinkCommand extends CreateLineCommand {
 
-	private UINode commentSource;
+	private Node commentSource;
 	private Comment commentTarget;
 
 	public CreateCommentLinkCommand(Diagram diagram, CommentLink lineObject) {
@@ -28,16 +27,15 @@ public class CreateCommentLinkCommand extends CreateLineCommand {
 	}
 
 	public boolean canExecute() {
-		if (source == null || target == null) {
+		if (source == null || target == null || source == target) {
 			return false;
 		}
 		Object sourceModel = source.getModel();
 		Object targetModel = target.getModel();
-		if (!(sourceModel instanceof UIElement)
-				|| !(targetModel instanceof Comment)) {
+		if (!(sourceModel instanceof Node) || !(targetModel instanceof Comment)) {
 			return false;
 		}
-		commentSource = (UINode) sourceModel;
+		commentSource = (Node) sourceModel;
 		commentTarget = (Comment) targetModel;
 		return true;
 	}

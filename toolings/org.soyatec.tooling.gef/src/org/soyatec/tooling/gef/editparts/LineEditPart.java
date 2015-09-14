@@ -40,8 +40,8 @@ import org.soyatec.tooling.di.Line;
 import org.soyatec.tooling.gef.editpolicies.LineEditPolicy;
 import org.soyatec.tooling.gef.resources.ResourcesFactory;
 
-public abstract class LineEditPart<T extends Line> extends
-		UIObjectEditPart<Line> implements ConnectionEditPart, LayerConstants {
+public abstract class LineEditPart<T extends Line> extends ViewEditPart<Line>
+		implements ConnectionEditPart, LayerConstants {
 	private static final ConnectionAnchor DEFAULT_SOURCE_ANCHOR = new XYAnchor(
 			new Point(10, 10));
 	private static final ConnectionAnchor DEFAULT_TARGET_ANCHOR = new XYAnchor(

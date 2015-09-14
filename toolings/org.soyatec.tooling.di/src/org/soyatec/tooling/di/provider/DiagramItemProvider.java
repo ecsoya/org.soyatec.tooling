@@ -33,7 +33,7 @@ import org.soyatec.tooling.di.Diagram;
  * 
  * @generated
  */
-public class DiagramItemProvider extends UIElementItemProvider {
+public class DiagramItemProvider extends ContainerItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
@@ -113,8 +113,6 @@ public class DiagramItemProvider extends UIElementItemProvider {
 			Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(DiPackage.Literals.DIAGRAM__LINES);
-			childrenFeatures.add(DiPackage.Literals.DIAGRAM__SHAPES);
 			childrenFeatures.add(DiPackage.Literals.DIAGRAM__RULERS);
 			childrenFeatures.add(DiPackage.Literals.DIAGRAM__GRID);
 		}
@@ -166,8 +164,6 @@ public class DiagramItemProvider extends UIElementItemProvider {
 			fireNotifyChanged(new ViewerNotification(notification,
 					notification.getNotifier(), false, true));
 			return;
-		case DiPackage.DIAGRAM__LINES:
-		case DiPackage.DIAGRAM__SHAPES:
 		case DiPackage.DIAGRAM__RULERS:
 		case DiPackage.DIAGRAM__GRID:
 			fireNotifyChanged(new ViewerNotification(notification,
