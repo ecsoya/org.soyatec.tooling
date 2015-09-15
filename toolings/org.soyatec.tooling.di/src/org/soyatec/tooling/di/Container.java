@@ -21,7 +21,7 @@ import org.eclipse.emf.ecore.util.FeatureMap;
  * </p>
  *
  * @see org.soyatec.tooling.di.DiPackage#getContainer()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface Container extends View {

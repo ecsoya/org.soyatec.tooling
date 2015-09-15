@@ -30,17 +30,17 @@ public abstract class NodeEditPart<T extends Node> extends ViewEditPart<Node> {
 	protected void handleNotifyChanged(Notification event) {
 		super.handleNotifyChanged(event);
 		Object feature = event.getFeature();
-		if (DiPackage.eINSTANCE.getNode_IncomingLines() == feature) {
+		if (DiPackage.eINSTANCE.getNode_AllIncomingLines() == feature) {
 			refreshTargetConnections();
-		} else if (DiPackage.eINSTANCE.getNode_OutgoingLines() == feature) {
+		} else if (DiPackage.eINSTANCE.getNode_AllOutgoingLines() == feature) {
 			refreshSourceConnections();
 		}
 	}
 
 	@SuppressWarnings("rawtypes")
 	protected List getModelSourceConnections() {
-		ValueListIterator<Object> valueListIterator = getUIObject()
-				.getOutgoingLines().valueListIterator();
+		ValueListIterator<Object> valueListIterator = getView()
+				.getAllOutgoingLines().valueListIterator();
 		List<Object> modelSourceConnections = new ArrayList<Object>();
 		while (valueListIterator.hasNext()) {
 			modelSourceConnections.add(valueListIterator.next());
@@ -50,8 +50,8 @@ public abstract class NodeEditPart<T extends Node> extends ViewEditPart<Node> {
 
 	@SuppressWarnings("rawtypes")
 	protected List getModelTargetConnections() {
-		ValueListIterator<Object> valueListIterator = getUIObject()
-				.getIncomingLines().valueListIterator();
+		ValueListIterator<Object> valueListIterator = getView()
+				.getAllIncomingLines().valueListIterator();
 		List<Object> modelTargetConnections = new ArrayList<Object>();
 		while (valueListIterator.hasNext()) {
 			modelTargetConnections.add(valueListIterator.next());

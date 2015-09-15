@@ -34,9 +34,11 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference di.ecore#//View/element"/>
     </genClasses>
     <genClasses ecoreClass="di.ecore#//Node">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute di.ecore#//Node/outgoingLines"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute di.ecore#//Node/incomingLines"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute di.ecore#//Node/allOutgoingLines"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute di.ecore#//Node/allIncomingLines"/>
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference di.ecore#//Node/commentLinks"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference di.ecore#//Node/outgoingLines"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference di.ecore#//Node/incomingLines"/>
     </genClasses>
     <genClasses ecoreClass="di.ecore#//Container">
       <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference di.ecore#//Container/children"/>
@@ -69,10 +71,15 @@
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute di.ecore#//Line/width"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute di.ecore#//Line/sourceAnchor"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute di.ecore#//Line/targetAnchor"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute di.ecore#//Line/sourceShape"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute di.ecore#//Line/targetShape"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute di.ecore#//Line/sourceNode"/>
+      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EAttribute di.ecore#//Line/targetNode"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute di.ecore#//Line/style"/>
       <genFeatures createChild="false" ecoreFeature="ecore:EAttribute di.ecore#//Line/lineDash"/>
+    </genClasses>
+    <genClasses ecoreClass="di.ecore#//Connector">
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference di.ecore#//Connector/target"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference di.ecore#//Connector/source"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference di.ecore#//Connector/reverseElement"/>
     </genClasses>
     <genClasses ecoreClass="di.ecore#//Comment">
       <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference di.ecore#//Comment/inputs"/>

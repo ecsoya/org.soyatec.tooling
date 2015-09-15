@@ -158,22 +158,22 @@ public interface DiPackage extends EPackage {
 	int NODE__ELEMENT = VIEW__ELEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Outgoing Lines</b></em>' attribute list.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The feature id for the '<em><b>All Outgoing Lines</b></em>' attribute
+	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int NODE__OUTGOING_LINES = VIEW_FEATURE_COUNT + 0;
+	int NODE__ALL_OUTGOING_LINES = VIEW_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Incoming Lines</b></em>' attribute list.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The feature id for the '<em><b>All Incoming Lines</b></em>' attribute
+	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int NODE__INCOMING_LINES = VIEW_FEATURE_COUNT + 1;
+	int NODE__ALL_INCOMING_LINES = VIEW_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Comment Links</b></em>' reference list.
@@ -185,13 +185,31 @@ public interface DiPackage extends EPackage {
 	int NODE__COMMENT_LINKS = VIEW_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Outgoing Lines</b></em>' reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int NODE__OUTGOING_LINES = VIEW_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Incoming Lines</b></em>' reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int NODE__INCOMING_LINES = VIEW_FEATURE_COUNT + 4;
+
+	/**
 	 * The number of structural features of the '<em>Node</em>' class. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int NODE_FEATURE_COUNT = VIEW_FEATURE_COUNT + 3;
+	int NODE_FEATURE_COUNT = VIEW_FEATURE_COUNT + 5;
 
 	/**
 	 * The number of operations of the '<em>Node</em>' class. <!--
@@ -532,22 +550,22 @@ public interface DiPackage extends EPackage {
 	int SHAPE__ALL_SHAPES = CONTAINER__ALL_SHAPES;
 
 	/**
-	 * The feature id for the '<em><b>Outgoing Lines</b></em>' attribute list.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The feature id for the '<em><b>All Outgoing Lines</b></em>' attribute
+	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int SHAPE__OUTGOING_LINES = CONTAINER_FEATURE_COUNT + 0;
+	int SHAPE__ALL_OUTGOING_LINES = CONTAINER_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Incoming Lines</b></em>' attribute list.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The feature id for the '<em><b>All Incoming Lines</b></em>' attribute
+	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int SHAPE__INCOMING_LINES = CONTAINER_FEATURE_COUNT + 1;
+	int SHAPE__ALL_INCOMING_LINES = CONTAINER_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>Comment Links</b></em>' reference list.
@@ -559,13 +577,31 @@ public interface DiPackage extends EPackage {
 	int SHAPE__COMMENT_LINKS = CONTAINER_FEATURE_COUNT + 2;
 
 	/**
+	 * The feature id for the '<em><b>Outgoing Lines</b></em>' reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int SHAPE__OUTGOING_LINES = CONTAINER_FEATURE_COUNT + 3;
+
+	/**
+	 * The feature id for the '<em><b>Incoming Lines</b></em>' reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int SHAPE__INCOMING_LINES = CONTAINER_FEATURE_COUNT + 4;
+
+	/**
 	 * The feature id for the '<em><b>Background</b></em>' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int SHAPE__BACKGROUND = CONTAINER_FEATURE_COUNT + 3;
+	int SHAPE__BACKGROUND = CONTAINER_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Foreground</b></em>' attribute. <!--
@@ -574,7 +610,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHAPE__FOREGROUND = CONTAINER_FEATURE_COUNT + 4;
+	int SHAPE__FOREGROUND = CONTAINER_FEATURE_COUNT + 6;
 
 	/**
 	 * The feature id for the '<em><b>Bounds</b></em>' attribute. <!--
@@ -583,7 +619,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHAPE__BOUNDS = CONTAINER_FEATURE_COUNT + 5;
+	int SHAPE__BOUNDS = CONTAINER_FEATURE_COUNT + 7;
 
 	/**
 	 * The number of structural features of the '<em>Shape</em>' class. <!--
@@ -592,7 +628,7 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int SHAPE_FEATURE_COUNT = CONTAINER_FEATURE_COUNT + 6;
+	int SHAPE_FEATURE_COUNT = CONTAINER_FEATURE_COUNT + 8;
 
 	/**
 	 * The number of operations of the '<em>Shape</em>' class. <!--
@@ -679,22 +715,22 @@ public interface DiPackage extends EPackage {
 	int GRADIENT_SHAPE__ALL_SHAPES = SHAPE__ALL_SHAPES;
 
 	/**
-	 * The feature id for the '<em><b>Outgoing Lines</b></em>' attribute list.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The feature id for the '<em><b>All Outgoing Lines</b></em>' attribute
+	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int GRADIENT_SHAPE__OUTGOING_LINES = SHAPE__OUTGOING_LINES;
+	int GRADIENT_SHAPE__ALL_OUTGOING_LINES = SHAPE__ALL_OUTGOING_LINES;
 
 	/**
-	 * The feature id for the '<em><b>Incoming Lines</b></em>' attribute list.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The feature id for the '<em><b>All Incoming Lines</b></em>' attribute
+	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int GRADIENT_SHAPE__INCOMING_LINES = SHAPE__INCOMING_LINES;
+	int GRADIENT_SHAPE__ALL_INCOMING_LINES = SHAPE__ALL_INCOMING_LINES;
 
 	/**
 	 * The feature id for the '<em><b>Comment Links</b></em>' reference list.
@@ -704,6 +740,24 @@ public interface DiPackage extends EPackage {
 	 * @ordered
 	 */
 	int GRADIENT_SHAPE__COMMENT_LINKS = SHAPE__COMMENT_LINKS;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing Lines</b></em>' reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int GRADIENT_SHAPE__OUTGOING_LINES = SHAPE__OUTGOING_LINES;
+
+	/**
+	 * The feature id for the '<em><b>Incoming Lines</b></em>' reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int GRADIENT_SHAPE__INCOMING_LINES = SHAPE__INCOMING_LINES;
 
 	/**
 	 * The feature id for the '<em><b>Background</b></em>' attribute. <!--
@@ -815,22 +869,22 @@ public interface DiPackage extends EPackage {
 	int LINE__ELEMENT = NODE__ELEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Outgoing Lines</b></em>' attribute list.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The feature id for the '<em><b>All Outgoing Lines</b></em>' attribute
+	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int LINE__OUTGOING_LINES = NODE__OUTGOING_LINES;
+	int LINE__ALL_OUTGOING_LINES = NODE__ALL_OUTGOING_LINES;
 
 	/**
-	 * The feature id for the '<em><b>Incoming Lines</b></em>' attribute list.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The feature id for the '<em><b>All Incoming Lines</b></em>' attribute
+	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int LINE__INCOMING_LINES = NODE__INCOMING_LINES;
+	int LINE__ALL_INCOMING_LINES = NODE__ALL_INCOMING_LINES;
 
 	/**
 	 * The feature id for the '<em><b>Comment Links</b></em>' reference list.
@@ -840,6 +894,24 @@ public interface DiPackage extends EPackage {
 	 * @ordered
 	 */
 	int LINE__COMMENT_LINKS = NODE__COMMENT_LINKS;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing Lines</b></em>' reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int LINE__OUTGOING_LINES = NODE__OUTGOING_LINES;
+
+	/**
+	 * The feature id for the '<em><b>Incoming Lines</b></em>' reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int LINE__INCOMING_LINES = NODE__INCOMING_LINES;
 
 	/**
 	 * The feature id for the '<em><b>Color</b></em>' attribute. <!--
@@ -878,22 +950,22 @@ public interface DiPackage extends EPackage {
 	int LINE__TARGET_ANCHOR = NODE_FEATURE_COUNT + 3;
 
 	/**
-	 * The feature id for the '<em><b>Source Shape</b></em>' attribute list.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The feature id for the '<em><b>Source Node</b></em>' attribute list. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int LINE__SOURCE_SHAPE = NODE_FEATURE_COUNT + 4;
+	int LINE__SOURCE_NODE = NODE_FEATURE_COUNT + 4;
 
 	/**
-	 * The feature id for the '<em><b>Target Shape</b></em>' attribute list.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The feature id for the '<em><b>Target Node</b></em>' attribute list. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int LINE__TARGET_SHAPE = NODE_FEATURE_COUNT + 5;
+	int LINE__TARGET_NODE = NODE_FEATURE_COUNT + 5;
 
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' attribute. <!--
@@ -933,6 +1005,206 @@ public interface DiPackage extends EPackage {
 
 	/**
 	 * The meta object id for the '
+	 * {@link org.soyatec.tooling.di.impl.ConnectorImpl <em>Connector</em>}'
+	 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @see org.soyatec.tooling.di.impl.ConnectorImpl
+	 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getConnector()
+	 * @generated
+	 */
+	int CONNECTOR = 7;
+
+	/**
+	 * The feature id for the '<em><b>Label</b></em>' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTOR__LABEL = LINE__LABEL;
+
+	/**
+	 * The feature id for the '<em><b>Id</b></em>' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTOR__ID = LINE__ID;
+
+	/**
+	 * The feature id for the '<em><b>Element</b></em>' reference. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTOR__ELEMENT = LINE__ELEMENT;
+
+	/**
+	 * The feature id for the '<em><b>All Outgoing Lines</b></em>' attribute
+	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTOR__ALL_OUTGOING_LINES = LINE__ALL_OUTGOING_LINES;
+
+	/**
+	 * The feature id for the '<em><b>All Incoming Lines</b></em>' attribute
+	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTOR__ALL_INCOMING_LINES = LINE__ALL_INCOMING_LINES;
+
+	/**
+	 * The feature id for the '<em><b>Comment Links</b></em>' reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTOR__COMMENT_LINKS = LINE__COMMENT_LINKS;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing Lines</b></em>' reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTOR__OUTGOING_LINES = LINE__OUTGOING_LINES;
+
+	/**
+	 * The feature id for the '<em><b>Incoming Lines</b></em>' reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTOR__INCOMING_LINES = LINE__INCOMING_LINES;
+
+	/**
+	 * The feature id for the '<em><b>Color</b></em>' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTOR__COLOR = LINE__COLOR;
+
+	/**
+	 * The feature id for the '<em><b>Width</b></em>' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTOR__WIDTH = LINE__WIDTH;
+
+	/**
+	 * The feature id for the '<em><b>Source Anchor</b></em>' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTOR__SOURCE_ANCHOR = LINE__SOURCE_ANCHOR;
+
+	/**
+	 * The feature id for the '<em><b>Target Anchor</b></em>' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTOR__TARGET_ANCHOR = LINE__TARGET_ANCHOR;
+
+	/**
+	 * The feature id for the '<em><b>Source Node</b></em>' attribute list. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTOR__SOURCE_NODE = LINE__SOURCE_NODE;
+
+	/**
+	 * The feature id for the '<em><b>Target Node</b></em>' attribute list. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTOR__TARGET_NODE = LINE__TARGET_NODE;
+
+	/**
+	 * The feature id for the '<em><b>Style</b></em>' attribute. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTOR__STYLE = LINE__STYLE;
+
+	/**
+	 * The feature id for the '<em><b>Line Dash</b></em>' attribute list. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTOR__LINE_DASH = LINE__LINE_DASH;
+
+	/**
+	 * The feature id for the '<em><b>Target</b></em>' reference. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTOR__TARGET = LINE_FEATURE_COUNT + 0;
+
+	/**
+	 * The feature id for the '<em><b>Source</b></em>' reference. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTOR__SOURCE = LINE_FEATURE_COUNT + 1;
+
+	/**
+	 * The feature id for the '<em><b>Reverse Element</b></em>' reference. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTOR__REVERSE_ELEMENT = LINE_FEATURE_COUNT + 2;
+
+	/**
+	 * The number of structural features of the '<em>Connector</em>' class. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTOR_FEATURE_COUNT = LINE_FEATURE_COUNT + 3;
+
+	/**
+	 * The number of operations of the '<em>Connector</em>' class. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int CONNECTOR_OPERATION_COUNT = LINE_OPERATION_COUNT + 0;
+
+	/**
+	 * The meta object id for the '
 	 * {@link org.soyatec.tooling.di.impl.CommentImpl <em>Comment</em>}' class.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
@@ -940,7 +1212,7 @@ public interface DiPackage extends EPackage {
 	 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getComment()
 	 * @generated
 	 */
-	int COMMENT = 7;
+	int COMMENT = 8;
 
 	/**
 	 * The feature id for the '<em><b>Label</b></em>' attribute. <!--
@@ -1006,22 +1278,22 @@ public interface DiPackage extends EPackage {
 	int COMMENT__ALL_SHAPES = SHAPE__ALL_SHAPES;
 
 	/**
-	 * The feature id for the '<em><b>Outgoing Lines</b></em>' attribute list.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The feature id for the '<em><b>All Outgoing Lines</b></em>' attribute
+	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int COMMENT__OUTGOING_LINES = SHAPE__OUTGOING_LINES;
+	int COMMENT__ALL_OUTGOING_LINES = SHAPE__ALL_OUTGOING_LINES;
 
 	/**
-	 * The feature id for the '<em><b>Incoming Lines</b></em>' attribute list.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The feature id for the '<em><b>All Incoming Lines</b></em>' attribute
+	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int COMMENT__INCOMING_LINES = SHAPE__INCOMING_LINES;
+	int COMMENT__ALL_INCOMING_LINES = SHAPE__ALL_INCOMING_LINES;
 
 	/**
 	 * The feature id for the '<em><b>Comment Links</b></em>' reference list.
@@ -1031,6 +1303,24 @@ public interface DiPackage extends EPackage {
 	 * @ordered
 	 */
 	int COMMENT__COMMENT_LINKS = SHAPE__COMMENT_LINKS;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing Lines</b></em>' reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int COMMENT__OUTGOING_LINES = SHAPE__OUTGOING_LINES;
+
+	/**
+	 * The feature id for the '<em><b>Incoming Lines</b></em>' reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int COMMENT__INCOMING_LINES = SHAPE__INCOMING_LINES;
 
 	/**
 	 * The feature id for the '<em><b>Background</b></em>' attribute. <!--
@@ -1095,7 +1385,7 @@ public interface DiPackage extends EPackage {
 	 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getCommentLink()
 	 * @generated
 	 */
-	int COMMENT_LINK = 8;
+	int COMMENT_LINK = 9;
 
 	/**
 	 * The feature id for the '<em><b>Label</b></em>' attribute. <!--
@@ -1125,22 +1415,22 @@ public interface DiPackage extends EPackage {
 	int COMMENT_LINK__ELEMENT = LINE__ELEMENT;
 
 	/**
-	 * The feature id for the '<em><b>Outgoing Lines</b></em>' attribute list.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The feature id for the '<em><b>All Outgoing Lines</b></em>' attribute
+	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int COMMENT_LINK__OUTGOING_LINES = LINE__OUTGOING_LINES;
+	int COMMENT_LINK__ALL_OUTGOING_LINES = LINE__ALL_OUTGOING_LINES;
 
 	/**
-	 * The feature id for the '<em><b>Incoming Lines</b></em>' attribute list.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The feature id for the '<em><b>All Incoming Lines</b></em>' attribute
+	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int COMMENT_LINK__INCOMING_LINES = LINE__INCOMING_LINES;
+	int COMMENT_LINK__ALL_INCOMING_LINES = LINE__ALL_INCOMING_LINES;
 
 	/**
 	 * The feature id for the '<em><b>Comment Links</b></em>' reference list.
@@ -1150,6 +1440,24 @@ public interface DiPackage extends EPackage {
 	 * @ordered
 	 */
 	int COMMENT_LINK__COMMENT_LINKS = LINE__COMMENT_LINKS;
+
+	/**
+	 * The feature id for the '<em><b>Outgoing Lines</b></em>' reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int COMMENT_LINK__OUTGOING_LINES = LINE__OUTGOING_LINES;
+
+	/**
+	 * The feature id for the '<em><b>Incoming Lines</b></em>' reference list.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 * @ordered
+	 */
+	int COMMENT_LINK__INCOMING_LINES = LINE__INCOMING_LINES;
 
 	/**
 	 * The feature id for the '<em><b>Color</b></em>' attribute. <!--
@@ -1188,22 +1496,22 @@ public interface DiPackage extends EPackage {
 	int COMMENT_LINK__TARGET_ANCHOR = LINE__TARGET_ANCHOR;
 
 	/**
-	 * The feature id for the '<em><b>Source Shape</b></em>' attribute list.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The feature id for the '<em><b>Source Node</b></em>' attribute list. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int COMMENT_LINK__SOURCE_SHAPE = LINE__SOURCE_SHAPE;
+	int COMMENT_LINK__SOURCE_NODE = LINE__SOURCE_NODE;
 
 	/**
-	 * The feature id for the '<em><b>Target Shape</b></em>' attribute list.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * The feature id for the '<em><b>Target Node</b></em>' attribute list. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 * @ordered
 	 */
-	int COMMENT_LINK__TARGET_SHAPE = LINE__TARGET_SHAPE;
+	int COMMENT_LINK__TARGET_NODE = LINE__TARGET_NODE;
 
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' attribute. <!--
@@ -1267,7 +1575,7 @@ public interface DiPackage extends EPackage {
 	 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getGrid()
 	 * @generated
 	 */
-	int GRID = 9;
+	int GRID = 10;
 
 	/**
 	 * The feature id for the '<em><b>Color</b></em>' attribute. <!--
@@ -1322,7 +1630,7 @@ public interface DiPackage extends EPackage {
 	 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getRuler()
 	 * @generated
 	 */
-	int RULER = 10;
+	int RULER = 11;
 
 	/**
 	 * The feature id for the '<em><b>Unit</b></em>' attribute. <!--
@@ -1368,7 +1676,7 @@ public interface DiPackage extends EPackage {
 	 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getGuide()
 	 * @generated
 	 */
-	int GUIDE = 11;
+	int GUIDE = 12;
 
 	/**
 	 * The feature id for the '<em><b>Ruler</b></em>' container reference. <!--
@@ -1425,7 +1733,7 @@ public interface DiPackage extends EPackage {
 	 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getElementEntry()
 	 * @generated
 	 */
-	int ELEMENT_ENTRY = 12;
+	int ELEMENT_ENTRY = 13;
 
 	/**
 	 * The feature id for the '<em><b>Key</b></em>' reference. <!--
@@ -1471,7 +1779,7 @@ public interface DiPackage extends EPackage {
 	 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getLineStyle()
 	 * @generated
 	 */
-	int LINE_STYLE = 13;
+	int LINE_STYLE = 14;
 
 	/**
 	 * The meta object id for the '{@link org.soyatec.tooling.di.RulerUnit
@@ -1481,7 +1789,7 @@ public interface DiPackage extends EPackage {
 	 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getRulerUnit()
 	 * @generated
 	 */
-	int RULER_UNIT = 14;
+	int RULER_UNIT = 15;
 
 	/**
 	 * The meta object id for the '{@link org.soyatec.tooling.di.Alignment
@@ -1491,7 +1799,7 @@ public interface DiPackage extends EPackage {
 	 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getAlignment()
 	 * @generated
 	 */
-	int ALIGNMENT = 15;
+	int ALIGNMENT = 16;
 
 	/**
 	 * The meta object id for the '<em>Rectangle</em>' data type. <!--
@@ -1501,7 +1809,7 @@ public interface DiPackage extends EPackage {
 	 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getRectangle()
 	 * @generated
 	 */
-	int RECTANGLE = 16;
+	int RECTANGLE = 17;
 
 	/**
 	 * Returns the meta object for class '{@link org.soyatec.tooling.di.View
@@ -1561,27 +1869,31 @@ public interface DiPackage extends EPackage {
 
 	/**
 	 * Returns the meta object for the attribute list '
-	 * {@link org.soyatec.tooling.di.Node#getOutgoingLines
-	 * <em>Outgoing Lines</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * {@link org.soyatec.tooling.di.Node#getAllOutgoingLines
+	 * <em>All Outgoing Lines</em>}'. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
 	 * 
-	 * @return the meta object for the attribute list '<em>Outgoing Lines</em>'.
-	 * @see org.soyatec.tooling.di.Node#getOutgoingLines()
+	 * @return the meta object for the attribute list '
+	 *         <em>All Outgoing Lines</em>'.
+	 * @see org.soyatec.tooling.di.Node#getAllOutgoingLines()
 	 * @see #getNode()
 	 * @generated
 	 */
-	EAttribute getNode_OutgoingLines();
+	EAttribute getNode_AllOutgoingLines();
 
 	/**
 	 * Returns the meta object for the attribute list '
-	 * {@link org.soyatec.tooling.di.Node#getIncomingLines
-	 * <em>Incoming Lines</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * {@link org.soyatec.tooling.di.Node#getAllIncomingLines
+	 * <em>All Incoming Lines</em>}'. <!-- begin-user-doc --> <!-- end-user-doc
+	 * -->
 	 * 
-	 * @return the meta object for the attribute list '<em>Incoming Lines</em>'.
-	 * @see org.soyatec.tooling.di.Node#getIncomingLines()
+	 * @return the meta object for the attribute list '
+	 *         <em>All Incoming Lines</em>'.
+	 * @see org.soyatec.tooling.di.Node#getAllIncomingLines()
 	 * @see #getNode()
 	 * @generated
 	 */
-	EAttribute getNode_IncomingLines();
+	EAttribute getNode_AllIncomingLines();
 
 	/**
 	 * Returns the meta object for the reference list '
@@ -1594,6 +1906,30 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getNode_CommentLinks();
+
+	/**
+	 * Returns the meta object for the reference list '
+	 * {@link org.soyatec.tooling.di.Node#getOutgoingLines
+	 * <em>Outgoing Lines</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the reference list '<em>Outgoing Lines</em>'.
+	 * @see org.soyatec.tooling.di.Node#getOutgoingLines()
+	 * @see #getNode()
+	 * @generated
+	 */
+	EReference getNode_OutgoingLines();
+
+	/**
+	 * Returns the meta object for the reference list '
+	 * {@link org.soyatec.tooling.di.Node#getIncomingLines
+	 * <em>Incoming Lines</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the reference list '<em>Incoming Lines</em>'.
+	 * @see org.soyatec.tooling.di.Node#getIncomingLines()
+	 * @see #getNode()
+	 * @generated
+	 */
+	EReference getNode_IncomingLines();
 
 	/**
 	 * Returns the meta object for class '
@@ -1922,27 +2258,27 @@ public interface DiPackage extends EPackage {
 
 	/**
 	 * Returns the meta object for the attribute list '
-	 * {@link org.soyatec.tooling.di.Line#getSourceShape <em>Source Shape</em>}
-	 * '. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * {@link org.soyatec.tooling.di.Line#getSourceNode <em>Source Node</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @return the meta object for the attribute list '<em>Source Shape</em>'.
-	 * @see org.soyatec.tooling.di.Line#getSourceShape()
+	 * @return the meta object for the attribute list '<em>Source Node</em>'.
+	 * @see org.soyatec.tooling.di.Line#getSourceNode()
 	 * @see #getLine()
 	 * @generated
 	 */
-	EAttribute getLine_SourceShape();
+	EAttribute getLine_SourceNode();
 
 	/**
 	 * Returns the meta object for the attribute list '
-	 * {@link org.soyatec.tooling.di.Line#getTargetShape <em>Target Shape</em>}
-	 * '. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * {@link org.soyatec.tooling.di.Line#getTargetNode <em>Target Node</em>}'.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @return the meta object for the attribute list '<em>Target Shape</em>'.
-	 * @see org.soyatec.tooling.di.Line#getTargetShape()
+	 * @return the meta object for the attribute list '<em>Target Node</em>'.
+	 * @see org.soyatec.tooling.di.Line#getTargetNode()
 	 * @see #getLine()
 	 * @generated
 	 */
-	EAttribute getLine_TargetShape();
+	EAttribute getLine_TargetNode();
 
 	/**
 	 * Returns the meta object for the attribute '
@@ -1967,6 +2303,53 @@ public interface DiPackage extends EPackage {
 	 * @generated
 	 */
 	EAttribute getLine_LineDash();
+
+	/**
+	 * Returns the meta object for class '
+	 * {@link org.soyatec.tooling.di.Connector <em>Connector</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for class '<em>Connector</em>'.
+	 * @see org.soyatec.tooling.di.Connector
+	 * @generated
+	 */
+	EClass getConnector();
+
+	/**
+	 * Returns the meta object for the reference '
+	 * {@link org.soyatec.tooling.di.Connector#getTarget <em>Target</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the reference '<em>Target</em>'.
+	 * @see org.soyatec.tooling.di.Connector#getTarget()
+	 * @see #getConnector()
+	 * @generated
+	 */
+	EReference getConnector_Target();
+
+	/**
+	 * Returns the meta object for the reference '
+	 * {@link org.soyatec.tooling.di.Connector#getSource <em>Source</em>}'. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the reference '<em>Source</em>'.
+	 * @see org.soyatec.tooling.di.Connector#getSource()
+	 * @see #getConnector()
+	 * @generated
+	 */
+	EReference getConnector_Source();
+
+	/**
+	 * Returns the meta object for the reference '
+	 * {@link org.soyatec.tooling.di.Connector#getReverseElement
+	 * <em>Reverse Element</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @return the meta object for the reference '<em>Reverse Element</em>'.
+	 * @see org.soyatec.tooling.di.Connector#getReverseElement()
+	 * @see #getConnector()
+	 * @generated
+	 */
+	EReference getConnector_ReverseElement();
 
 	/**
 	 * Returns the meta object for class '{@link org.soyatec.tooling.di.Comment
@@ -2302,20 +2685,22 @@ public interface DiPackage extends EPackage {
 		EClass NODE = eINSTANCE.getNode();
 
 		/**
-		 * The meta object literal for the '<em><b>Outgoing Lines</b></em>'
+		 * The meta object literal for the '<em><b>All Outgoing Lines</b></em>'
 		 * attribute list feature. <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * 
 		 * @generated
 		 */
-		EAttribute NODE__OUTGOING_LINES = eINSTANCE.getNode_OutgoingLines();
+		EAttribute NODE__ALL_OUTGOING_LINES = eINSTANCE
+				.getNode_AllOutgoingLines();
 
 		/**
-		 * The meta object literal for the '<em><b>Incoming Lines</b></em>'
+		 * The meta object literal for the '<em><b>All Incoming Lines</b></em>'
 		 * attribute list feature. <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * 
 		 * @generated
 		 */
-		EAttribute NODE__INCOMING_LINES = eINSTANCE.getNode_IncomingLines();
+		EAttribute NODE__ALL_INCOMING_LINES = eINSTANCE
+				.getNode_AllIncomingLines();
 
 		/**
 		 * The meta object literal for the '<em><b>Comment Links</b></em>'
@@ -2324,6 +2709,22 @@ public interface DiPackage extends EPackage {
 		 * @generated
 		 */
 		EReference NODE__COMMENT_LINKS = eINSTANCE.getNode_CommentLinks();
+
+		/**
+		 * The meta object literal for the '<em><b>Outgoing Lines</b></em>'
+		 * reference list feature. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EReference NODE__OUTGOING_LINES = eINSTANCE.getNode_OutgoingLines();
+
+		/**
+		 * The meta object literal for the '<em><b>Incoming Lines</b></em>'
+		 * reference list feature. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EReference NODE__INCOMING_LINES = eINSTANCE.getNode_IncomingLines();
 
 		/**
 		 * The meta object literal for the '
@@ -2569,20 +2970,20 @@ public interface DiPackage extends EPackage {
 		EAttribute LINE__TARGET_ANCHOR = eINSTANCE.getLine_TargetAnchor();
 
 		/**
-		 * The meta object literal for the '<em><b>Source Shape</b></em>'
+		 * The meta object literal for the '<em><b>Source Node</b></em>'
 		 * attribute list feature. <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * 
 		 * @generated
 		 */
-		EAttribute LINE__SOURCE_SHAPE = eINSTANCE.getLine_SourceShape();
+		EAttribute LINE__SOURCE_NODE = eINSTANCE.getLine_SourceNode();
 
 		/**
-		 * The meta object literal for the '<em><b>Target Shape</b></em>'
+		 * The meta object literal for the '<em><b>Target Node</b></em>'
 		 * attribute list feature. <!-- begin-user-doc --> <!-- end-user-doc -->
 		 * 
 		 * @generated
 		 */
-		EAttribute LINE__TARGET_SHAPE = eINSTANCE.getLine_TargetShape();
+		EAttribute LINE__TARGET_NODE = eINSTANCE.getLine_TargetNode();
 
 		/**
 		 * The meta object literal for the '<em><b>Style</b></em>' attribute
@@ -2599,6 +3000,42 @@ public interface DiPackage extends EPackage {
 		 * @generated
 		 */
 		EAttribute LINE__LINE_DASH = eINSTANCE.getLine_LineDash();
+
+		/**
+		 * The meta object literal for the '
+		 * {@link org.soyatec.tooling.di.impl.ConnectorImpl <em>Connector</em>}'
+		 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @see org.soyatec.tooling.di.impl.ConnectorImpl
+		 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getConnector()
+		 * @generated
+		 */
+		EClass CONNECTOR = eINSTANCE.getConnector();
+
+		/**
+		 * The meta object literal for the '<em><b>Target</b></em>' reference
+		 * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EReference CONNECTOR__TARGET = eINSTANCE.getConnector_Target();
+
+		/**
+		 * The meta object literal for the '<em><b>Source</b></em>' reference
+		 * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EReference CONNECTOR__SOURCE = eINSTANCE.getConnector_Source();
+
+		/**
+		 * The meta object literal for the '<em><b>Reverse Element</b></em>'
+		 * reference feature. <!-- begin-user-doc --> <!-- end-user-doc -->
+		 * 
+		 * @generated
+		 */
+		EReference CONNECTOR__REVERSE_ELEMENT = eINSTANCE
+				.getConnector_ReverseElement();
 
 		/**
 		 * The meta object literal for the '

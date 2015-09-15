@@ -13,6 +13,7 @@ package org.soyatec.tooling.gef.editparts;
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.impl.AdapterImpl;
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.SnapToHelper;
@@ -37,8 +38,12 @@ public abstract class ViewEditPart<T extends View> extends
 		return (T) super.getModel();
 	}
 
-	public T getUIObject() {
+	public T getView() {
 		return getModel();
+	}
+
+	public EObject getElement() {
+		return getView().getElement();
 	}
 
 	public void activate() {
@@ -52,6 +57,10 @@ public abstract class ViewEditPart<T extends View> extends
 				handleNotifyChanged(event);
 			}
 		});
+		EObject element = getElement();
+		if (element != null) {
+			element.eAdapters().add(notifier);
+		}
 	}
 
 	protected void handleNotifyChanged(Notification event) {
@@ -59,6 +68,10 @@ public abstract class ViewEditPart<T extends View> extends
 	}
 
 	public void deactivate() {
+		EObject element = getElement();
+		if (element != null) {
+			element.eAdapters().remove(notifier);
+		}
 		getModel().eAdapters().remove(notifier);
 		super.deactivate();
 	}

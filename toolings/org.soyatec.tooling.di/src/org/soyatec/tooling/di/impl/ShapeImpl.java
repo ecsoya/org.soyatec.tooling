@@ -25,6 +25,7 @@ import org.eclipse.emf.ecore.util.BasicFeatureMap;
 import org.eclipse.emf.ecore.util.FeatureMap;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.soyatec.tooling.di.CommentLink;
+import org.soyatec.tooling.di.Connector;
 import org.soyatec.tooling.di.DiPackage;
 import org.soyatec.tooling.di.Node;
 import org.soyatec.tooling.di.Shape;
@@ -35,12 +36,16 @@ import org.soyatec.tooling.di.Shape;
  * <p>
  * The following features are implemented:
  * <ul>
+ * <li>{@link org.soyatec.tooling.di.impl.ShapeImpl#getAllOutgoingLines <em>All
+ * Outgoing Lines</em>}</li>
+ * <li>{@link org.soyatec.tooling.di.impl.ShapeImpl#getAllIncomingLines <em>All
+ * Incoming Lines</em>}</li>
+ * <li>{@link org.soyatec.tooling.di.impl.ShapeImpl#getCommentLinks <em>Comment
+ * Links</em>}</li>
  * <li>{@link org.soyatec.tooling.di.impl.ShapeImpl#getOutgoingLines <em>
  * Outgoing Lines</em>}</li>
  * <li>{@link org.soyatec.tooling.di.impl.ShapeImpl#getIncomingLines <em>
  * Incoming Lines</em>}</li>
- * <li>{@link org.soyatec.tooling.di.impl.ShapeImpl#getCommentLinks <em>Comment
- * Links</em>}</li>
  * <li>{@link org.soyatec.tooling.di.impl.ShapeImpl#getBackground <em>Background
  * </em>}</li>
  * <li>{@link org.soyatec.tooling.di.impl.ShapeImpl#getForeground <em>Foreground
@@ -53,26 +58,26 @@ import org.soyatec.tooling.di.Shape;
  */
 public class ShapeImpl extends ContainerImpl implements Shape {
 	/**
-	 * The cached value of the '{@link #getOutgoingLines()
-	 * <em>Outgoing Lines</em>}' attribute list. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
+	 * The cached value of the '{@link #getAllOutgoingLines()
+	 * <em>All Outgoing Lines</em>}' attribute list. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * 
-	 * @see #getOutgoingLines()
+	 * @see #getAllOutgoingLines()
 	 * @generated
 	 * @ordered
 	 */
-	protected FeatureMap outgoingLines;
+	protected FeatureMap allOutgoingLines;
 
 	/**
-	 * The cached value of the '{@link #getIncomingLines()
-	 * <em>Incoming Lines</em>}' attribute list. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
+	 * The cached value of the '{@link #getAllIncomingLines()
+	 * <em>All Incoming Lines</em>}' attribute list. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * 
-	 * @see #getIncomingLines()
+	 * @see #getAllIncomingLines()
 	 * @generated
 	 * @ordered
 	 */
-	protected FeatureMap incomingLines;
+	protected FeatureMap allIncomingLines;
 
 	/**
 	 * The default value of the '{@link #getBackground() <em>Background</em>}'
@@ -158,12 +163,12 @@ public class ShapeImpl extends ContainerImpl implements Shape {
 	 * 
 	 * @generated
 	 */
-	public FeatureMap getOutgoingLines() {
-		if (outgoingLines == null) {
-			outgoingLines = new BasicFeatureMap(this,
-					DiPackage.SHAPE__OUTGOING_LINES);
+	public FeatureMap getAllOutgoingLines() {
+		if (allOutgoingLines == null) {
+			allOutgoingLines = new BasicFeatureMap(this,
+					DiPackage.SHAPE__ALL_OUTGOING_LINES);
 		}
-		return outgoingLines;
+		return allOutgoingLines;
 	}
 
 	/**
@@ -171,12 +176,12 @@ public class ShapeImpl extends ContainerImpl implements Shape {
 	 * 
 	 * @generated
 	 */
-	public FeatureMap getIncomingLines() {
-		if (incomingLines == null) {
-			incomingLines = new BasicFeatureMap(this,
-					DiPackage.SHAPE__INCOMING_LINES);
+	public FeatureMap getAllIncomingLines() {
+		if (allIncomingLines == null) {
+			allIncomingLines = new BasicFeatureMap(this,
+					DiPackage.SHAPE__ALL_INCOMING_LINES);
 		}
-		return incomingLines;
+		return allIncomingLines;
 	}
 
 	/**
@@ -185,7 +190,28 @@ public class ShapeImpl extends ContainerImpl implements Shape {
 	 * @generated
 	 */
 	public EList<CommentLink> getCommentLinks() {
-		return getOutgoingLines().list(DiPackage.Literals.NODE__COMMENT_LINKS);
+		return getAllOutgoingLines().list(
+				DiPackage.Literals.NODE__COMMENT_LINKS);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EList<Connector> getOutgoingLines() {
+		return getAllOutgoingLines().list(
+				DiPackage.Literals.NODE__OUTGOING_LINES);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EList<Connector> getIncomingLines() {
+		return getAllIncomingLines().list(
+				DiPackage.Literals.NODE__INCOMING_LINES);
 	}
 
 	/**
@@ -267,6 +293,12 @@ public class ShapeImpl extends ContainerImpl implements Shape {
 		case DiPackage.SHAPE__COMMENT_LINKS:
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getCommentLinks())
 					.basicAdd(otherEnd, msgs);
+		case DiPackage.SHAPE__OUTGOING_LINES:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getOutgoingLines())
+					.basicAdd(otherEnd, msgs);
+		case DiPackage.SHAPE__INCOMING_LINES:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getIncomingLines())
+					.basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -280,15 +312,21 @@ public class ShapeImpl extends ContainerImpl implements Shape {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd,
 			int featureID, NotificationChain msgs) {
 		switch (featureID) {
+		case DiPackage.SHAPE__ALL_OUTGOING_LINES:
+			return ((InternalEList<?>) getAllOutgoingLines()).basicRemove(
+					otherEnd, msgs);
+		case DiPackage.SHAPE__ALL_INCOMING_LINES:
+			return ((InternalEList<?>) getAllIncomingLines()).basicRemove(
+					otherEnd, msgs);
+		case DiPackage.SHAPE__COMMENT_LINKS:
+			return ((InternalEList<?>) getCommentLinks()).basicRemove(otherEnd,
+					msgs);
 		case DiPackage.SHAPE__OUTGOING_LINES:
 			return ((InternalEList<?>) getOutgoingLines()).basicRemove(
 					otherEnd, msgs);
 		case DiPackage.SHAPE__INCOMING_LINES:
 			return ((InternalEList<?>) getIncomingLines()).basicRemove(
 					otherEnd, msgs);
-		case DiPackage.SHAPE__COMMENT_LINKS:
-			return ((InternalEList<?>) getCommentLinks()).basicRemove(otherEnd,
-					msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -301,16 +339,20 @@ public class ShapeImpl extends ContainerImpl implements Shape {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case DiPackage.SHAPE__OUTGOING_LINES:
+		case DiPackage.SHAPE__ALL_OUTGOING_LINES:
 			if (coreType)
-				return getOutgoingLines();
-			return ((FeatureMap.Internal) getOutgoingLines()).getWrapper();
-		case DiPackage.SHAPE__INCOMING_LINES:
+				return getAllOutgoingLines();
+			return ((FeatureMap.Internal) getAllOutgoingLines()).getWrapper();
+		case DiPackage.SHAPE__ALL_INCOMING_LINES:
 			if (coreType)
-				return getIncomingLines();
-			return ((FeatureMap.Internal) getIncomingLines()).getWrapper();
+				return getAllIncomingLines();
+			return ((FeatureMap.Internal) getAllIncomingLines()).getWrapper();
 		case DiPackage.SHAPE__COMMENT_LINKS:
 			return getCommentLinks();
+		case DiPackage.SHAPE__OUTGOING_LINES:
+			return getOutgoingLines();
+		case DiPackage.SHAPE__INCOMING_LINES:
+			return getIncomingLines();
 		case DiPackage.SHAPE__BACKGROUND:
 			return getBackground();
 		case DiPackage.SHAPE__FOREGROUND:
@@ -330,16 +372,26 @@ public class ShapeImpl extends ContainerImpl implements Shape {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case DiPackage.SHAPE__OUTGOING_LINES:
-			((FeatureMap.Internal) getOutgoingLines()).set(newValue);
+		case DiPackage.SHAPE__ALL_OUTGOING_LINES:
+			((FeatureMap.Internal) getAllOutgoingLines()).set(newValue);
 			return;
-		case DiPackage.SHAPE__INCOMING_LINES:
-			((FeatureMap.Internal) getIncomingLines()).set(newValue);
+		case DiPackage.SHAPE__ALL_INCOMING_LINES:
+			((FeatureMap.Internal) getAllIncomingLines()).set(newValue);
 			return;
 		case DiPackage.SHAPE__COMMENT_LINKS:
 			getCommentLinks().clear();
 			getCommentLinks().addAll(
 					(Collection<? extends CommentLink>) newValue);
+			return;
+		case DiPackage.SHAPE__OUTGOING_LINES:
+			getOutgoingLines().clear();
+			getOutgoingLines().addAll(
+					(Collection<? extends Connector>) newValue);
+			return;
+		case DiPackage.SHAPE__INCOMING_LINES:
+			getIncomingLines().clear();
+			getIncomingLines().addAll(
+					(Collection<? extends Connector>) newValue);
 			return;
 		case DiPackage.SHAPE__BACKGROUND:
 			setBackground((Integer) newValue);
@@ -362,14 +414,20 @@ public class ShapeImpl extends ContainerImpl implements Shape {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+		case DiPackage.SHAPE__ALL_OUTGOING_LINES:
+			getAllOutgoingLines().clear();
+			return;
+		case DiPackage.SHAPE__ALL_INCOMING_LINES:
+			getAllIncomingLines().clear();
+			return;
+		case DiPackage.SHAPE__COMMENT_LINKS:
+			getCommentLinks().clear();
+			return;
 		case DiPackage.SHAPE__OUTGOING_LINES:
 			getOutgoingLines().clear();
 			return;
 		case DiPackage.SHAPE__INCOMING_LINES:
 			getIncomingLines().clear();
-			return;
-		case DiPackage.SHAPE__COMMENT_LINKS:
-			getCommentLinks().clear();
 			return;
 		case DiPackage.SHAPE__BACKGROUND:
 			setBackground(BACKGROUND_EDEFAULT);
@@ -392,12 +450,16 @@ public class ShapeImpl extends ContainerImpl implements Shape {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case DiPackage.SHAPE__OUTGOING_LINES:
-			return outgoingLines != null && !outgoingLines.isEmpty();
-		case DiPackage.SHAPE__INCOMING_LINES:
-			return incomingLines != null && !incomingLines.isEmpty();
+		case DiPackage.SHAPE__ALL_OUTGOING_LINES:
+			return allOutgoingLines != null && !allOutgoingLines.isEmpty();
+		case DiPackage.SHAPE__ALL_INCOMING_LINES:
+			return allIncomingLines != null && !allIncomingLines.isEmpty();
 		case DiPackage.SHAPE__COMMENT_LINKS:
 			return !getCommentLinks().isEmpty();
+		case DiPackage.SHAPE__OUTGOING_LINES:
+			return !getOutgoingLines().isEmpty();
+		case DiPackage.SHAPE__INCOMING_LINES:
+			return !getIncomingLines().isEmpty();
 		case DiPackage.SHAPE__BACKGROUND:
 			return background != BACKGROUND_EDEFAULT;
 		case DiPackage.SHAPE__FOREGROUND:
@@ -418,12 +480,16 @@ public class ShapeImpl extends ContainerImpl implements Shape {
 	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
 		if (baseClass == Node.class) {
 			switch (derivedFeatureID) {
+			case DiPackage.SHAPE__ALL_OUTGOING_LINES:
+				return DiPackage.NODE__ALL_OUTGOING_LINES;
+			case DiPackage.SHAPE__ALL_INCOMING_LINES:
+				return DiPackage.NODE__ALL_INCOMING_LINES;
+			case DiPackage.SHAPE__COMMENT_LINKS:
+				return DiPackage.NODE__COMMENT_LINKS;
 			case DiPackage.SHAPE__OUTGOING_LINES:
 				return DiPackage.NODE__OUTGOING_LINES;
 			case DiPackage.SHAPE__INCOMING_LINES:
 				return DiPackage.NODE__INCOMING_LINES;
-			case DiPackage.SHAPE__COMMENT_LINKS:
-				return DiPackage.NODE__COMMENT_LINKS;
 			default:
 				return -1;
 			}
@@ -440,12 +506,16 @@ public class ShapeImpl extends ContainerImpl implements Shape {
 	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
 		if (baseClass == Node.class) {
 			switch (baseFeatureID) {
+			case DiPackage.NODE__ALL_OUTGOING_LINES:
+				return DiPackage.SHAPE__ALL_OUTGOING_LINES;
+			case DiPackage.NODE__ALL_INCOMING_LINES:
+				return DiPackage.SHAPE__ALL_INCOMING_LINES;
+			case DiPackage.NODE__COMMENT_LINKS:
+				return DiPackage.SHAPE__COMMENT_LINKS;
 			case DiPackage.NODE__OUTGOING_LINES:
 				return DiPackage.SHAPE__OUTGOING_LINES;
 			case DiPackage.NODE__INCOMING_LINES:
 				return DiPackage.SHAPE__INCOMING_LINES;
-			case DiPackage.NODE__COMMENT_LINKS:
-				return DiPackage.SHAPE__COMMENT_LINKS;
 			default:
 				return -1;
 			}
@@ -464,10 +534,10 @@ public class ShapeImpl extends ContainerImpl implements Shape {
 			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (outgoingLines: ");
-		result.append(outgoingLines);
-		result.append(", incomingLines: ");
-		result.append(incomingLines);
+		result.append(" (allOutgoingLines: ");
+		result.append(allOutgoingLines);
+		result.append(", allIncomingLines: ");
+		result.append(allIncomingLines);
 		result.append(", background: ");
 		result.append(background);
 		result.append(", foreground: ");

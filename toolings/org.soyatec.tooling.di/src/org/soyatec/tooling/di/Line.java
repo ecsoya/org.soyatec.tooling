@@ -28,15 +28,15 @@ import org.eclipse.emf.ecore.util.FeatureMap;
  * </em>}</li>
  * <li>{@link org.soyatec.tooling.di.Line#getTargetAnchor <em>Target Anchor
  * </em>}</li>
- * <li>{@link org.soyatec.tooling.di.Line#getSourceShape <em>Source Shape</em>}</li>
- * <li>{@link org.soyatec.tooling.di.Line#getTargetShape <em>Target Shape</em>}</li>
+ * <li>{@link org.soyatec.tooling.di.Line#getSourceNode <em>Source Node</em>}</li>
+ * <li>{@link org.soyatec.tooling.di.Line#getTargetNode <em>Target Node</em>}</li>
  * <li>{@link org.soyatec.tooling.di.Line#getStyle <em>Style</em>}</li>
  * <li>{@link org.soyatec.tooling.di.Line#getLineDash <em>Line Dash</em>}</li>
  * </ul>
  * </p>
  *
  * @see org.soyatec.tooling.di.DiPackage#getLine()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface Line extends Node {
@@ -157,42 +157,42 @@ public interface Line extends Node {
 	void setTargetAnchor(String value);
 
 	/**
-	 * Returns the value of the '<em><b>Source Shape</b></em>' attribute list.
+	 * Returns the value of the '<em><b>Source Node</b></em>' attribute list.
 	 * The list contents are of type
 	 * {@link org.eclipse.emf.ecore.util.FeatureMap.Entry}. <!-- begin-user-doc
 	 * -->
 	 * <p>
-	 * If the meaning of the '<em>Source Shape</em>' attribute list isn't clear,
+	 * If the meaning of the '<em>Source Node</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * 
-	 * @return the value of the '<em>Source Shape</em>' attribute list.
-	 * @see org.soyatec.tooling.di.DiPackage#getLine_SourceShape()
+	 * @return the value of the '<em>Source Node</em>' attribute list.
+	 * @see org.soyatec.tooling.di.DiPackage#getLine_SourceNode()
 	 * @model dataType="org.eclipse.emf.ecore.EFeatureMapEntry" many="false"
 	 *        extendedMetaData="kind='group'"
 	 * @generated
 	 */
-	FeatureMap getSourceShape();
+	FeatureMap getSourceNode();
 
 	/**
-	 * Returns the value of the '<em><b>Target Shape</b></em>' attribute list.
+	 * Returns the value of the '<em><b>Target Node</b></em>' attribute list.
 	 * The list contents are of type
 	 * {@link org.eclipse.emf.ecore.util.FeatureMap.Entry}. <!-- begin-user-doc
 	 * -->
 	 * <p>
-	 * If the meaning of the '<em>Target Shape</em>' attribute list isn't clear,
+	 * If the meaning of the '<em>Target Node</em>' attribute list isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * 
-	 * @return the value of the '<em>Target Shape</em>' attribute list.
-	 * @see org.soyatec.tooling.di.DiPackage#getLine_TargetShape()
+	 * @return the value of the '<em>Target Node</em>' attribute list.
+	 * @see org.soyatec.tooling.di.DiPackage#getLine_TargetNode()
 	 * @model dataType="org.eclipse.emf.ecore.EFeatureMapEntry" many="false"
 	 *        extendedMetaData="kind='group'"
 	 * @generated
 	 */
-	FeatureMap getTargetShape();
+	FeatureMap getTargetNode();
 
 	/**
 	 * Returns the value of the '<em><b>Style</b></em>' attribute. The default

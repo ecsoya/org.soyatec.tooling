@@ -20,6 +20,7 @@ import org.eclipse.emf.ecore.util.Switch;
 import org.soyatec.tooling.di.Alignment;
 import org.soyatec.tooling.di.Comment;
 import org.soyatec.tooling.di.CommentLink;
+import org.soyatec.tooling.di.Connector;
 import org.soyatec.tooling.di.Container;
 import org.soyatec.tooling.di.DiPackage;
 import org.soyatec.tooling.di.Diagram;
@@ -159,6 +160,19 @@ public class DiSwitch<T> extends Switch<T> {
 				result = caseNode(line);
 			if (result == null)
 				result = caseView(line);
+			if (result == null)
+				result = defaultCase(theEObject);
+			return result;
+		}
+		case DiPackage.CONNECTOR: {
+			Connector connector = (Connector) theEObject;
+			T result = caseConnector(connector);
+			if (result == null)
+				result = caseLine(connector);
+			if (result == null)
+				result = caseNode(connector);
+			if (result == null)
+				result = caseView(connector);
 			if (result == null)
 				result = defaultCase(theEObject);
 			return result;
@@ -341,6 +355,23 @@ public class DiSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseLine(Line object) {
+		return null;
+	}
+
+	/**
+	 * Returns the result of interpreting the object as an instance of '
+	 * <em>Connector</em>'. <!-- begin-user-doc --> This implementation returns
+	 * null; returning a non-null result will terminate the switch. <!--
+	 * end-user-doc -->
+	 * 
+	 * @param object
+	 *            the target of the switch.
+	 * @return the result of interpreting the object as an instance of '
+	 *         <em>Connector</em>'.
+	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+	 * @generated
+	 */
+	public T caseConnector(Connector object) {
 		return null;
 	}
 

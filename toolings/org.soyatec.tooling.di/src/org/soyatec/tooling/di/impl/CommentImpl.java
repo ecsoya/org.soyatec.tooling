@@ -62,7 +62,7 @@ public class CommentImpl extends ShapeImpl implements Comment {
 	 * @generated
 	 */
 	public EList<CommentLink> getInputs() {
-		return getIncomingLines().list(DiPackage.Literals.COMMENT__INPUTS);
+		return getAllIncomingLines().list(DiPackage.Literals.COMMENT__INPUTS);
 	}
 
 	/**

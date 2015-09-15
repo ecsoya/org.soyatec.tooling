@@ -186,8 +186,8 @@ public class LineItemProvider extends NodeItemProvider {
 			Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(DiPackage.Literals.LINE__SOURCE_SHAPE);
-			childrenFeatures.add(DiPackage.Literals.LINE__TARGET_SHAPE);
+			childrenFeatures.add(DiPackage.Literals.LINE__SOURCE_NODE);
+			childrenFeatures.add(DiPackage.Literals.LINE__TARGET_NODE);
 		}
 		return childrenFeatures;
 	}
@@ -241,8 +241,8 @@ public class LineItemProvider extends NodeItemProvider {
 			fireNotifyChanged(new ViewerNotification(notification,
 					notification.getNotifier(), false, true));
 			return;
-		case DiPackage.LINE__SOURCE_SHAPE:
-		case DiPackage.LINE__TARGET_SHAPE:
+		case DiPackage.LINE__SOURCE_NODE:
+		case DiPackage.LINE__TARGET_NODE:
 			fireNotifyChanged(new ViewerNotification(notification,
 					notification.getNotifier(), true, false));
 			return;

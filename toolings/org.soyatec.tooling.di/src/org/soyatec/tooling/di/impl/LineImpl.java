@@ -40,10 +40,10 @@ import org.soyatec.tooling.di.LineStyle;
  * Anchor</em>}</li>
  * <li>{@link org.soyatec.tooling.di.impl.LineImpl#getTargetAnchor <em>Target
  * Anchor</em>}</li>
- * <li>{@link org.soyatec.tooling.di.impl.LineImpl#getSourceShape <em>Source
- * Shape</em>}</li>
- * <li>{@link org.soyatec.tooling.di.impl.LineImpl#getTargetShape <em>Target
- * Shape</em>}</li>
+ * <li>{@link org.soyatec.tooling.di.impl.LineImpl#getSourceNode <em>Source Node
+ * </em>}</li>
+ * <li>{@link org.soyatec.tooling.di.impl.LineImpl#getTargetNode <em>Target Node
+ * </em>}</li>
  * <li>{@link org.soyatec.tooling.di.impl.LineImpl#getStyle <em>Style</em>}</li>
  * <li>{@link org.soyatec.tooling.di.impl.LineImpl#getLineDash <em>Line Dash
  * </em>}</li>
@@ -52,7 +52,7 @@ import org.soyatec.tooling.di.LineStyle;
  *
  * @generated
  */
-public class LineImpl extends NodeImpl implements Line {
+public abstract class LineImpl extends NodeImpl implements Line {
 	/**
 	 * The default value of the '{@link #getColor() <em>Color</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -138,24 +138,24 @@ public class LineImpl extends NodeImpl implements Line {
 	protected String targetAnchor = TARGET_ANCHOR_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getSourceShape() <em>Source Shape</em>}'
+	 * The cached value of the '{@link #getSourceNode() <em>Source Node</em>}'
 	 * attribute list. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @see #getSourceShape()
+	 * @see #getSourceNode()
 	 * @generated
 	 * @ordered
 	 */
-	protected FeatureMap sourceShape;
+	protected FeatureMap sourceNode;
 
 	/**
-	 * The cached value of the '{@link #getTargetShape() <em>Target Shape</em>}'
+	 * The cached value of the '{@link #getTargetNode() <em>Target Node</em>}'
 	 * attribute list. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
-	 * @see #getTargetShape()
+	 * @see #getTargetNode()
 	 * @generated
 	 * @ordered
 	 */
-	protected FeatureMap targetShape;
+	protected FeatureMap targetNode;
 
 	/**
 	 * The default value of the '{@link #getStyle() <em>Style</em>}' attribute.
@@ -301,12 +301,11 @@ public class LineImpl extends NodeImpl implements Line {
 	 * 
 	 * @generated
 	 */
-	public FeatureMap getSourceShape() {
-		if (sourceShape == null) {
-			sourceShape = new BasicFeatureMap(this,
-					DiPackage.LINE__SOURCE_SHAPE);
+	public FeatureMap getSourceNode() {
+		if (sourceNode == null) {
+			sourceNode = new BasicFeatureMap(this, DiPackage.LINE__SOURCE_NODE);
 		}
-		return sourceShape;
+		return sourceNode;
 	}
 
 	/**
@@ -314,12 +313,11 @@ public class LineImpl extends NodeImpl implements Line {
 	 * 
 	 * @generated
 	 */
-	public FeatureMap getTargetShape() {
-		if (targetShape == null) {
-			targetShape = new BasicFeatureMap(this,
-					DiPackage.LINE__TARGET_SHAPE);
+	public FeatureMap getTargetNode() {
+		if (targetNode == null) {
+			targetNode = new BasicFeatureMap(this, DiPackage.LINE__TARGET_NODE);
 		}
-		return targetShape;
+		return targetNode;
 	}
 
 	/**
@@ -366,11 +364,11 @@ public class LineImpl extends NodeImpl implements Line {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd,
 			int featureID, NotificationChain msgs) {
 		switch (featureID) {
-		case DiPackage.LINE__SOURCE_SHAPE:
-			return ((InternalEList<?>) getSourceShape()).basicRemove(otherEnd,
+		case DiPackage.LINE__SOURCE_NODE:
+			return ((InternalEList<?>) getSourceNode()).basicRemove(otherEnd,
 					msgs);
-		case DiPackage.LINE__TARGET_SHAPE:
-			return ((InternalEList<?>) getTargetShape()).basicRemove(otherEnd,
+		case DiPackage.LINE__TARGET_NODE:
+			return ((InternalEList<?>) getTargetNode()).basicRemove(otherEnd,
 					msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
@@ -392,14 +390,14 @@ public class LineImpl extends NodeImpl implements Line {
 			return getSourceAnchor();
 		case DiPackage.LINE__TARGET_ANCHOR:
 			return getTargetAnchor();
-		case DiPackage.LINE__SOURCE_SHAPE:
+		case DiPackage.LINE__SOURCE_NODE:
 			if (coreType)
-				return getSourceShape();
-			return ((FeatureMap.Internal) getSourceShape()).getWrapper();
-		case DiPackage.LINE__TARGET_SHAPE:
+				return getSourceNode();
+			return ((FeatureMap.Internal) getSourceNode()).getWrapper();
+		case DiPackage.LINE__TARGET_NODE:
 			if (coreType)
-				return getTargetShape();
-			return ((FeatureMap.Internal) getTargetShape()).getWrapper();
+				return getTargetNode();
+			return ((FeatureMap.Internal) getTargetNode()).getWrapper();
 		case DiPackage.LINE__STYLE:
 			return getStyle();
 		case DiPackage.LINE__LINE_DASH:
@@ -429,11 +427,11 @@ public class LineImpl extends NodeImpl implements Line {
 		case DiPackage.LINE__TARGET_ANCHOR:
 			setTargetAnchor((String) newValue);
 			return;
-		case DiPackage.LINE__SOURCE_SHAPE:
-			((FeatureMap.Internal) getSourceShape()).set(newValue);
+		case DiPackage.LINE__SOURCE_NODE:
+			((FeatureMap.Internal) getSourceNode()).set(newValue);
 			return;
-		case DiPackage.LINE__TARGET_SHAPE:
-			((FeatureMap.Internal) getTargetShape()).set(newValue);
+		case DiPackage.LINE__TARGET_NODE:
+			((FeatureMap.Internal) getTargetNode()).set(newValue);
 			return;
 		case DiPackage.LINE__STYLE:
 			setStyle((LineStyle) newValue);
@@ -466,11 +464,11 @@ public class LineImpl extends NodeImpl implements Line {
 		case DiPackage.LINE__TARGET_ANCHOR:
 			setTargetAnchor(TARGET_ANCHOR_EDEFAULT);
 			return;
-		case DiPackage.LINE__SOURCE_SHAPE:
-			getSourceShape().clear();
+		case DiPackage.LINE__SOURCE_NODE:
+			getSourceNode().clear();
 			return;
-		case DiPackage.LINE__TARGET_SHAPE:
-			getTargetShape().clear();
+		case DiPackage.LINE__TARGET_NODE:
+			getTargetNode().clear();
 			return;
 		case DiPackage.LINE__STYLE:
 			setStyle(STYLE_EDEFAULT);
@@ -500,10 +498,10 @@ public class LineImpl extends NodeImpl implements Line {
 		case DiPackage.LINE__TARGET_ANCHOR:
 			return TARGET_ANCHOR_EDEFAULT == null ? targetAnchor != null
 					: !TARGET_ANCHOR_EDEFAULT.equals(targetAnchor);
-		case DiPackage.LINE__SOURCE_SHAPE:
-			return sourceShape != null && !sourceShape.isEmpty();
-		case DiPackage.LINE__TARGET_SHAPE:
-			return targetShape != null && !targetShape.isEmpty();
+		case DiPackage.LINE__SOURCE_NODE:
+			return sourceNode != null && !sourceNode.isEmpty();
+		case DiPackage.LINE__TARGET_NODE:
+			return targetNode != null && !targetNode.isEmpty();
 		case DiPackage.LINE__STYLE:
 			return style != STYLE_EDEFAULT;
 		case DiPackage.LINE__LINE_DASH:
@@ -531,10 +529,10 @@ public class LineImpl extends NodeImpl implements Line {
 		result.append(sourceAnchor);
 		result.append(", targetAnchor: ");
 		result.append(targetAnchor);
-		result.append(", sourceShape: ");
-		result.append(sourceShape);
-		result.append(", targetShape: ");
-		result.append(targetShape);
+		result.append(", sourceNode: ");
+		result.append(sourceNode);
+		result.append(", targetNode: ");
+		result.append(targetNode);
 		result.append(", style: ");
 		result.append(style);
 		result.append(", lineDash: ");

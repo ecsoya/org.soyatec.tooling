@@ -54,6 +54,8 @@ public class ShapeItemProvider extends ContainerItemProvider {
 			super.getPropertyDescriptors(object);
 
 			addCommentLinksPropertyDescriptor(object);
+			addOutgoingLinesPropertyDescriptor(object);
+			addIncomingLinesPropertyDescriptor(object);
 			addBackgroundPropertyDescriptor(object);
 			addForegroundPropertyDescriptor(object);
 			addBoundsPropertyDescriptor(object);
@@ -76,6 +78,42 @@ public class ShapeItemProvider extends ContainerItemProvider {
 				getString("_UI_PropertyDescriptor_description",
 						"_UI_Node_commentLinks_feature", "_UI_Node_type"),
 				DiPackage.Literals.NODE__COMMENT_LINKS, true, false, true,
+				null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Outgoing Lines feature. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected void addOutgoingLinesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory)
+						.getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_Node_outgoingLines_feature"),
+				getString("_UI_PropertyDescriptor_description",
+						"_UI_Node_outgoingLines_feature", "_UI_Node_type"),
+				DiPackage.Literals.NODE__OUTGOING_LINES, true, false, true,
+				null, null, null));
+	}
+
+	/**
+	 * This adds a property descriptor for the Incoming Lines feature. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected void addIncomingLinesPropertyDescriptor(Object object) {
+		itemPropertyDescriptors.add(createItemPropertyDescriptor(
+				((ComposeableAdapterFactory) adapterFactory)
+						.getRootAdapterFactory(),
+				getResourceLocator(),
+				getString("_UI_Node_incomingLines_feature"),
+				getString("_UI_PropertyDescriptor_description",
+						"_UI_Node_incomingLines_feature", "_UI_Node_type"),
+				DiPackage.Literals.NODE__INCOMING_LINES, true, false, true,
 				null, null, null));
 	}
 
@@ -148,8 +186,8 @@ public class ShapeItemProvider extends ContainerItemProvider {
 			Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
-			childrenFeatures.add(DiPackage.Literals.NODE__OUTGOING_LINES);
-			childrenFeatures.add(DiPackage.Literals.NODE__INCOMING_LINES);
+			childrenFeatures.add(DiPackage.Literals.NODE__ALL_OUTGOING_LINES);
+			childrenFeatures.add(DiPackage.Literals.NODE__ALL_INCOMING_LINES);
 		}
 		return childrenFeatures;
 	}
@@ -200,8 +238,8 @@ public class ShapeItemProvider extends ContainerItemProvider {
 			fireNotifyChanged(new ViewerNotification(notification,
 					notification.getNotifier(), false, true));
 			return;
-		case DiPackage.SHAPE__OUTGOING_LINES:
-		case DiPackage.SHAPE__INCOMING_LINES:
+		case DiPackage.SHAPE__ALL_OUTGOING_LINES:
+		case DiPackage.SHAPE__ALL_INCOMING_LINES:
 			fireNotifyChanged(new ViewerNotification(notification,
 					notification.getNotifier(), true, false));
 			return;

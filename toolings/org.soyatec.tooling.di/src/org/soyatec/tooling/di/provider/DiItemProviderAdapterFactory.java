@@ -85,54 +85,6 @@ public class DiItemProviderAdapterFactory extends DiAdapterFactory implements
 
 	/**
 	 * This keeps track of the one adapter used for all
-	 * {@link org.soyatec.tooling.di.Node} instances. <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	protected NodeItemProvider nodeItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.soyatec.tooling.di.Node}. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	@Override
-	public Adapter createNodeAdapter() {
-		if (nodeItemProvider == null) {
-			nodeItemProvider = new NodeItemProvider(this);
-		}
-
-		return nodeItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all
-	 * {@link org.soyatec.tooling.di.Container} instances. <!-- begin-user-doc
-	 * --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	protected ContainerItemProvider containerItemProvider;
-
-	/**
-	 * This creates an adapter for a {@link org.soyatec.tooling.di.Container}.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	@Override
-	public Adapter createContainerAdapter() {
-		if (containerItemProvider == null) {
-			containerItemProvider = new ContainerItemProvider(this);
-		}
-
-		return containerItemProvider;
-	}
-
-	/**
-	 * This keeps track of the one adapter used for all
 	 * {@link org.soyatec.tooling.di.Diagram} instances. <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * 
@@ -206,26 +158,26 @@ public class DiItemProviderAdapterFactory extends DiAdapterFactory implements
 
 	/**
 	 * This keeps track of the one adapter used for all
-	 * {@link org.soyatec.tooling.di.Line} instances. <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
+	 * {@link org.soyatec.tooling.di.Connector} instances. <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
-	protected LineItemProvider lineItemProvider;
+	protected ConnectorItemProvider connectorItemProvider;
 
 	/**
-	 * This creates an adapter for a {@link org.soyatec.tooling.di.Line}. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
+	 * This creates an adapter for a {@link org.soyatec.tooling.di.Connector}.
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @generated
 	 */
 	@Override
-	public Adapter createLineAdapter() {
-		if (lineItemProvider == null) {
-			lineItemProvider = new LineItemProvider(this);
+	public Adapter createConnectorAdapter() {
+		if (connectorItemProvider == null) {
+			connectorItemProvider = new ConnectorItemProvider(this);
 		}
 
-		return lineItemProvider;
+		return connectorItemProvider;
 	}
 
 	/**
@@ -473,18 +425,14 @@ public class DiItemProviderAdapterFactory extends DiAdapterFactory implements
 	 * @generated
 	 */
 	public void dispose() {
-		if (nodeItemProvider != null)
-			nodeItemProvider.dispose();
-		if (containerItemProvider != null)
-			containerItemProvider.dispose();
 		if (diagramItemProvider != null)
 			diagramItemProvider.dispose();
 		if (shapeItemProvider != null)
 			shapeItemProvider.dispose();
 		if (gradientShapeItemProvider != null)
 			gradientShapeItemProvider.dispose();
-		if (lineItemProvider != null)
-			lineItemProvider.dispose();
+		if (connectorItemProvider != null)
+			connectorItemProvider.dispose();
 		if (commentItemProvider != null)
 			commentItemProvider.dispose();
 		if (commentLinkItemProvider != null)

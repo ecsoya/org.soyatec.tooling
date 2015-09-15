@@ -46,7 +46,7 @@ public interface Comment extends Shape {
 	 * @see org.soyatec.tooling.di.DiPackage#getComment_Inputs()
 	 * @see org.soyatec.tooling.di.CommentLink#getTarget
 	 * @model opposite="target" transient="true" volatile="true"
-	 *        extendedMetaData="group='#incomingLines'"
+	 *        extendedMetaData="group='#allIncomingLines'"
 	 * @generated
 	 */
 	EList<CommentLink> getInputs();

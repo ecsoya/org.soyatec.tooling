@@ -12,6 +12,7 @@ import org.eclipse.emf.ecore.util.BasicFeatureMap;
 import org.eclipse.emf.ecore.util.FeatureMap;
 import org.eclipse.emf.ecore.util.InternalEList;
 import org.soyatec.tooling.di.CommentLink;
+import org.soyatec.tooling.di.Connector;
 import org.soyatec.tooling.di.DiPackage;
 import org.soyatec.tooling.di.Node;
 
@@ -21,39 +22,43 @@ import org.soyatec.tooling.di.Node;
  * <p>
  * The following features are implemented:
  * <ul>
+ * <li>{@link org.soyatec.tooling.di.impl.NodeImpl#getAllOutgoingLines <em>All
+ * Outgoing Lines</em>}</li>
+ * <li>{@link org.soyatec.tooling.di.impl.NodeImpl#getAllIncomingLines <em>All
+ * Incoming Lines</em>}</li>
+ * <li>{@link org.soyatec.tooling.di.impl.NodeImpl#getCommentLinks <em>Comment
+ * Links</em>}</li>
  * <li>{@link org.soyatec.tooling.di.impl.NodeImpl#getOutgoingLines <em>Outgoing
  * Lines</em>}</li>
  * <li>{@link org.soyatec.tooling.di.impl.NodeImpl#getIncomingLines <em>Incoming
  * Lines</em>}</li>
- * <li>{@link org.soyatec.tooling.di.impl.NodeImpl#getCommentLinks <em>Comment
- * Links</em>}</li>
  * </ul>
  * </p>
  *
  * @generated
  */
-public class NodeImpl extends ViewImpl implements Node {
+public abstract class NodeImpl extends ViewImpl implements Node {
 	/**
-	 * The cached value of the '{@link #getOutgoingLines()
-	 * <em>Outgoing Lines</em>}' attribute list. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
+	 * The cached value of the '{@link #getAllOutgoingLines()
+	 * <em>All Outgoing Lines</em>}' attribute list. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * 
-	 * @see #getOutgoingLines()
+	 * @see #getAllOutgoingLines()
 	 * @generated
 	 * @ordered
 	 */
-	protected FeatureMap outgoingLines;
+	protected FeatureMap allOutgoingLines;
 
 	/**
-	 * The cached value of the '{@link #getIncomingLines()
-	 * <em>Incoming Lines</em>}' attribute list. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
+	 * The cached value of the '{@link #getAllIncomingLines()
+	 * <em>All Incoming Lines</em>}' attribute list. <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
 	 * 
-	 * @see #getIncomingLines()
+	 * @see #getAllIncomingLines()
 	 * @generated
 	 * @ordered
 	 */
-	protected FeatureMap incomingLines;
+	protected FeatureMap allIncomingLines;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -79,12 +84,12 @@ public class NodeImpl extends ViewImpl implements Node {
 	 * 
 	 * @generated
 	 */
-	public FeatureMap getOutgoingLines() {
-		if (outgoingLines == null) {
-			outgoingLines = new BasicFeatureMap(this,
-					DiPackage.NODE__OUTGOING_LINES);
+	public FeatureMap getAllOutgoingLines() {
+		if (allOutgoingLines == null) {
+			allOutgoingLines = new BasicFeatureMap(this,
+					DiPackage.NODE__ALL_OUTGOING_LINES);
 		}
-		return outgoingLines;
+		return allOutgoingLines;
 	}
 
 	/**
@@ -92,12 +97,12 @@ public class NodeImpl extends ViewImpl implements Node {
 	 * 
 	 * @generated
 	 */
-	public FeatureMap getIncomingLines() {
-		if (incomingLines == null) {
-			incomingLines = new BasicFeatureMap(this,
-					DiPackage.NODE__INCOMING_LINES);
+	public FeatureMap getAllIncomingLines() {
+		if (allIncomingLines == null) {
+			allIncomingLines = new BasicFeatureMap(this,
+					DiPackage.NODE__ALL_INCOMING_LINES);
 		}
-		return incomingLines;
+		return allIncomingLines;
 	}
 
 	/**
@@ -106,7 +111,28 @@ public class NodeImpl extends ViewImpl implements Node {
 	 * @generated
 	 */
 	public EList<CommentLink> getCommentLinks() {
-		return getOutgoingLines().list(DiPackage.Literals.NODE__COMMENT_LINKS);
+		return getAllOutgoingLines().list(
+				DiPackage.Literals.NODE__COMMENT_LINKS);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EList<Connector> getOutgoingLines() {
+		return getAllOutgoingLines().list(
+				DiPackage.Literals.NODE__OUTGOING_LINES);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EList<Connector> getIncomingLines() {
+		return getAllIncomingLines().list(
+				DiPackage.Literals.NODE__INCOMING_LINES);
 	}
 
 	/**
@@ -122,6 +148,12 @@ public class NodeImpl extends ViewImpl implements Node {
 		case DiPackage.NODE__COMMENT_LINKS:
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getCommentLinks())
 					.basicAdd(otherEnd, msgs);
+		case DiPackage.NODE__OUTGOING_LINES:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getOutgoingLines())
+					.basicAdd(otherEnd, msgs);
+		case DiPackage.NODE__INCOMING_LINES:
+			return ((InternalEList<InternalEObject>) (InternalEList<?>) getIncomingLines())
+					.basicAdd(otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -135,15 +167,21 @@ public class NodeImpl extends ViewImpl implements Node {
 	public NotificationChain eInverseRemove(InternalEObject otherEnd,
 			int featureID, NotificationChain msgs) {
 		switch (featureID) {
+		case DiPackage.NODE__ALL_OUTGOING_LINES:
+			return ((InternalEList<?>) getAllOutgoingLines()).basicRemove(
+					otherEnd, msgs);
+		case DiPackage.NODE__ALL_INCOMING_LINES:
+			return ((InternalEList<?>) getAllIncomingLines()).basicRemove(
+					otherEnd, msgs);
+		case DiPackage.NODE__COMMENT_LINKS:
+			return ((InternalEList<?>) getCommentLinks()).basicRemove(otherEnd,
+					msgs);
 		case DiPackage.NODE__OUTGOING_LINES:
 			return ((InternalEList<?>) getOutgoingLines()).basicRemove(
 					otherEnd, msgs);
 		case DiPackage.NODE__INCOMING_LINES:
 			return ((InternalEList<?>) getIncomingLines()).basicRemove(
 					otherEnd, msgs);
-		case DiPackage.NODE__COMMENT_LINKS:
-			return ((InternalEList<?>) getCommentLinks()).basicRemove(otherEnd,
-					msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -156,16 +194,20 @@ public class NodeImpl extends ViewImpl implements Node {
 	@Override
 	public Object eGet(int featureID, boolean resolve, boolean coreType) {
 		switch (featureID) {
-		case DiPackage.NODE__OUTGOING_LINES:
+		case DiPackage.NODE__ALL_OUTGOING_LINES:
 			if (coreType)
-				return getOutgoingLines();
-			return ((FeatureMap.Internal) getOutgoingLines()).getWrapper();
-		case DiPackage.NODE__INCOMING_LINES:
+				return getAllOutgoingLines();
+			return ((FeatureMap.Internal) getAllOutgoingLines()).getWrapper();
+		case DiPackage.NODE__ALL_INCOMING_LINES:
 			if (coreType)
-				return getIncomingLines();
-			return ((FeatureMap.Internal) getIncomingLines()).getWrapper();
+				return getAllIncomingLines();
+			return ((FeatureMap.Internal) getAllIncomingLines()).getWrapper();
 		case DiPackage.NODE__COMMENT_LINKS:
 			return getCommentLinks();
+		case DiPackage.NODE__OUTGOING_LINES:
+			return getOutgoingLines();
+		case DiPackage.NODE__INCOMING_LINES:
+			return getIncomingLines();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -179,16 +221,26 @@ public class NodeImpl extends ViewImpl implements Node {
 	@Override
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
-		case DiPackage.NODE__OUTGOING_LINES:
-			((FeatureMap.Internal) getOutgoingLines()).set(newValue);
+		case DiPackage.NODE__ALL_OUTGOING_LINES:
+			((FeatureMap.Internal) getAllOutgoingLines()).set(newValue);
 			return;
-		case DiPackage.NODE__INCOMING_LINES:
-			((FeatureMap.Internal) getIncomingLines()).set(newValue);
+		case DiPackage.NODE__ALL_INCOMING_LINES:
+			((FeatureMap.Internal) getAllIncomingLines()).set(newValue);
 			return;
 		case DiPackage.NODE__COMMENT_LINKS:
 			getCommentLinks().clear();
 			getCommentLinks().addAll(
 					(Collection<? extends CommentLink>) newValue);
+			return;
+		case DiPackage.NODE__OUTGOING_LINES:
+			getOutgoingLines().clear();
+			getOutgoingLines().addAll(
+					(Collection<? extends Connector>) newValue);
+			return;
+		case DiPackage.NODE__INCOMING_LINES:
+			getIncomingLines().clear();
+			getIncomingLines().addAll(
+					(Collection<? extends Connector>) newValue);
 			return;
 		}
 		super.eSet(featureID, newValue);
@@ -202,14 +254,20 @@ public class NodeImpl extends ViewImpl implements Node {
 	@Override
 	public void eUnset(int featureID) {
 		switch (featureID) {
+		case DiPackage.NODE__ALL_OUTGOING_LINES:
+			getAllOutgoingLines().clear();
+			return;
+		case DiPackage.NODE__ALL_INCOMING_LINES:
+			getAllIncomingLines().clear();
+			return;
+		case DiPackage.NODE__COMMENT_LINKS:
+			getCommentLinks().clear();
+			return;
 		case DiPackage.NODE__OUTGOING_LINES:
 			getOutgoingLines().clear();
 			return;
 		case DiPackage.NODE__INCOMING_LINES:
 			getIncomingLines().clear();
-			return;
-		case DiPackage.NODE__COMMENT_LINKS:
-			getCommentLinks().clear();
 			return;
 		}
 		super.eUnset(featureID);
@@ -223,12 +281,16 @@ public class NodeImpl extends ViewImpl implements Node {
 	@Override
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
-		case DiPackage.NODE__OUTGOING_LINES:
-			return outgoingLines != null && !outgoingLines.isEmpty();
-		case DiPackage.NODE__INCOMING_LINES:
-			return incomingLines != null && !incomingLines.isEmpty();
+		case DiPackage.NODE__ALL_OUTGOING_LINES:
+			return allOutgoingLines != null && !allOutgoingLines.isEmpty();
+		case DiPackage.NODE__ALL_INCOMING_LINES:
+			return allIncomingLines != null && !allIncomingLines.isEmpty();
 		case DiPackage.NODE__COMMENT_LINKS:
 			return !getCommentLinks().isEmpty();
+		case DiPackage.NODE__OUTGOING_LINES:
+			return !getOutgoingLines().isEmpty();
+		case DiPackage.NODE__INCOMING_LINES:
+			return !getIncomingLines().isEmpty();
 		}
 		return super.eIsSet(featureID);
 	}
@@ -244,10 +306,10 @@ public class NodeImpl extends ViewImpl implements Node {
 			return super.toString();
 
 		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (outgoingLines: ");
-		result.append(outgoingLines);
-		result.append(", incomingLines: ");
-		result.append(incomingLines);
+		result.append(" (allOutgoingLines: ");
+		result.append(allOutgoingLines);
+		result.append(", allIncomingLines: ");
+		result.append(allIncomingLines);
 		result.append(')');
 		return result.toString();
 	}

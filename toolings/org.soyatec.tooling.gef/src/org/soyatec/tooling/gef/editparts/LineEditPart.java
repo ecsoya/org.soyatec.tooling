@@ -170,8 +170,8 @@ public abstract class LineEditPart<T extends Line> extends ViewEditPart<Line>
 			refresh();
 	}
 
-	public Line getUIObject() {
-		return super.getUIObject();
+	public Line getView() {
+		return super.getView();
 	}
 
 	@SuppressWarnings("unchecked")
@@ -186,7 +186,7 @@ public abstract class LineEditPart<T extends Line> extends ViewEditPart<Line>
 	}
 
 	private void refreshLineWidth() {
-		int width = getUIObject().getWidth();
+		int width = getView().getWidth();
 		if (width == -1) {
 			width = getDefaultLineWidth();
 		}
@@ -205,7 +205,7 @@ public abstract class LineEditPart<T extends Line> extends ViewEditPart<Line>
 	}
 
 	private void refreshLineColor() {
-		int value = getUIObject().getColor();
+		int value = getView().getColor();
 		Color color = value == -1 ? getDefaultLineColor() : ResourcesFactory
 				.getColor(value);
 		setLineColor(color);

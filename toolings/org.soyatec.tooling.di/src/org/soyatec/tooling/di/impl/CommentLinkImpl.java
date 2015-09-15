@@ -75,7 +75,7 @@ public class CommentLinkImpl extends LineImpl implements CommentLink {
 	 * @generated
 	 */
 	public Node basicGetSource() {
-		return (Node) getSourceShape().get(
+		return (Node) getSourceNode().get(
 				DiPackage.Literals.COMMENT_LINK__SOURCE, false);
 	}
 
@@ -85,7 +85,7 @@ public class CommentLinkImpl extends LineImpl implements CommentLink {
 	 * @generated
 	 */
 	public void setSource(Node newSource) {
-		((FeatureMap.Internal) getSourceShape()).set(
+		((FeatureMap.Internal) getSourceNode()).set(
 				DiPackage.Literals.COMMENT_LINK__SOURCE, newSource);
 	}
 
@@ -106,7 +106,7 @@ public class CommentLinkImpl extends LineImpl implements CommentLink {
 	 * @generated
 	 */
 	public Comment basicGetTarget() {
-		return (Comment) getTargetShape().get(
+		return (Comment) getTargetNode().get(
 				DiPackage.Literals.COMMENT_LINK__TARGET, false);
 	}
 
@@ -116,7 +116,7 @@ public class CommentLinkImpl extends LineImpl implements CommentLink {
 	 * @generated
 	 */
 	public void setTarget(Comment newTarget) {
-		((FeatureMap.Internal) getTargetShape()).set(
+		((FeatureMap.Internal) getTargetNode()).set(
 				DiPackage.Literals.COMMENT_LINK__TARGET, newTarget);
 	}
 

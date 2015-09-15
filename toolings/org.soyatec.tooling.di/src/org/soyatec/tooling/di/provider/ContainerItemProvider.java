@@ -158,7 +158,7 @@ public class ContainerItemProvider extends ViewItemProvider {
 
 		newChildDescriptors.add(createChildParameter(
 				DiPackage.Literals.CONTAINER__LINES,
-				DiFactory.eINSTANCE.createLine()));
+				DiFactory.eINSTANCE.createConnector()));
 
 		newChildDescriptors.add(createChildParameter(
 				DiPackage.Literals.CONTAINER__LINES,

@@ -24,15 +24,14 @@ import org.eclipse.emf.ecore.plugin.EcorePlugin;
 import org.soyatec.tooling.di.Alignment;
 import org.soyatec.tooling.di.Comment;
 import org.soyatec.tooling.di.CommentLink;
+import org.soyatec.tooling.di.Connector;
 import org.soyatec.tooling.di.DiFactory;
 import org.soyatec.tooling.di.DiPackage;
 import org.soyatec.tooling.di.Diagram;
 import org.soyatec.tooling.di.GradientShape;
 import org.soyatec.tooling.di.Grid;
 import org.soyatec.tooling.di.Guide;
-import org.soyatec.tooling.di.Line;
 import org.soyatec.tooling.di.LineStyle;
-import org.soyatec.tooling.di.Node;
 import org.soyatec.tooling.di.Ruler;
 import org.soyatec.tooling.di.RulerUnit;
 import org.soyatec.tooling.di.Shape;
@@ -82,18 +81,14 @@ public class DiFactoryImpl extends EFactoryImpl implements DiFactory {
 	@Override
 	public EObject create(EClass eClass) {
 		switch (eClass.getClassifierID()) {
-		case DiPackage.NODE:
-			return createNode();
-		case DiPackage.CONTAINER:
-			return createContainer();
 		case DiPackage.DIAGRAM:
 			return createDiagram();
 		case DiPackage.SHAPE:
 			return createShape();
 		case DiPackage.GRADIENT_SHAPE:
 			return createGradientShape();
-		case DiPackage.LINE:
-			return createLine();
+		case DiPackage.CONNECTOR:
+			return createConnector();
 		case DiPackage.COMMENT:
 			return createComment();
 		case DiPackage.COMMENT_LINK:
@@ -161,26 +156,6 @@ public class DiFactoryImpl extends EFactoryImpl implements DiFactory {
 	 * 
 	 * @generated
 	 */
-	public Node createNode() {
-		NodeImpl node = new NodeImpl();
-		return node;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
-	public org.soyatec.tooling.di.Container createContainer() {
-		ContainerImpl container = new ContainerImpl();
-		return container;
-	}
-
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
-	 * @generated
-	 */
 	public Diagram createDiagram() {
 		DiagramImpl diagram = new DiagramImpl();
 		return diagram;
@@ -211,9 +186,9 @@ public class DiFactoryImpl extends EFactoryImpl implements DiFactory {
 	 * 
 	 * @generated
 	 */
-	public Line createLine() {
-		LineImpl line = new LineImpl();
-		return line;
+	public Connector createConnector() {
+		ConnectorImpl connector = new ConnectorImpl();
+		return connector;
 	}
 
 	/**

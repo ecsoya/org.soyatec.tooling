@@ -34,7 +34,7 @@ import org.soyatec.tooling.di.Shape;
  *
  * @generated
  */
-public class ContainerImpl extends ViewImpl implements
+public abstract class ContainerImpl extends ViewImpl implements
 		org.soyatec.tooling.di.Container {
 	/**
 	 * The cached value of the '{@link #getAllLines() <em>All Lines</em>}'

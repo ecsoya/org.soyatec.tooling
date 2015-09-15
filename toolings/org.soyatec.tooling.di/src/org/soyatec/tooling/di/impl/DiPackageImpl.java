@@ -27,6 +27,7 @@ import org.eclipse.emf.ecore.impl.EPackageImpl;
 import org.soyatec.tooling.di.Alignment;
 import org.soyatec.tooling.di.Comment;
 import org.soyatec.tooling.di.CommentLink;
+import org.soyatec.tooling.di.Connector;
 import org.soyatec.tooling.di.DiFactory;
 import org.soyatec.tooling.di.DiPackage;
 import org.soyatec.tooling.di.Diagram;
@@ -96,6 +97,13 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 	 * @generated
 	 */
 	private EClass lineEClass = null;
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	private EClass connectorEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
@@ -284,7 +292,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 	 * 
 	 * @generated
 	 */
-	public EAttribute getNode_OutgoingLines() {
+	public EAttribute getNode_AllOutgoingLines() {
 		return (EAttribute) nodeEClass.getEStructuralFeatures().get(0);
 	}
 
@@ -293,7 +301,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 	 * 
 	 * @generated
 	 */
-	public EAttribute getNode_IncomingLines() {
+	public EAttribute getNode_AllIncomingLines() {
 		return (EAttribute) nodeEClass.getEStructuralFeatures().get(1);
 	}
 
@@ -304,6 +312,24 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 	 */
 	public EReference getNode_CommentLinks() {
 		return (EReference) nodeEClass.getEStructuralFeatures().get(2);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getNode_OutgoingLines() {
+		return (EReference) nodeEClass.getEStructuralFeatures().get(3);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getNode_IncomingLines() {
+		return (EReference) nodeEClass.getEStructuralFeatures().get(4);
 	}
 
 	/**
@@ -554,7 +580,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 	 * 
 	 * @generated
 	 */
-	public EAttribute getLine_SourceShape() {
+	public EAttribute getLine_SourceNode() {
 		return (EAttribute) lineEClass.getEStructuralFeatures().get(4);
 	}
 
@@ -563,7 +589,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 	 * 
 	 * @generated
 	 */
-	public EAttribute getLine_TargetShape() {
+	public EAttribute getLine_TargetNode() {
 		return (EAttribute) lineEClass.getEStructuralFeatures().get(5);
 	}
 
@@ -583,6 +609,42 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 	 */
 	public EAttribute getLine_LineDash() {
 		return (EAttribute) lineEClass.getEStructuralFeatures().get(7);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EClass getConnector() {
+		return connectorEClass;
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getConnector_Target() {
+		return (EReference) connectorEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getConnector_Source() {
+		return (EReference) connectorEClass.getEStructuralFeatures().get(1);
+	}
+
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public EReference getConnector_ReverseElement() {
+		return (EReference) connectorEClass.getEStructuralFeatures().get(2);
 	}
 
 	/**
@@ -827,9 +889,11 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 		createEReference(viewEClass, VIEW__ELEMENT);
 
 		nodeEClass = createEClass(NODE);
-		createEAttribute(nodeEClass, NODE__OUTGOING_LINES);
-		createEAttribute(nodeEClass, NODE__INCOMING_LINES);
+		createEAttribute(nodeEClass, NODE__ALL_OUTGOING_LINES);
+		createEAttribute(nodeEClass, NODE__ALL_INCOMING_LINES);
 		createEReference(nodeEClass, NODE__COMMENT_LINKS);
+		createEReference(nodeEClass, NODE__OUTGOING_LINES);
+		createEReference(nodeEClass, NODE__INCOMING_LINES);
 
 		containerEClass = createEClass(CONTAINER);
 		createEReference(containerEClass, CONTAINER__CHILDREN);
@@ -862,10 +926,15 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 		createEAttribute(lineEClass, LINE__WIDTH);
 		createEAttribute(lineEClass, LINE__SOURCE_ANCHOR);
 		createEAttribute(lineEClass, LINE__TARGET_ANCHOR);
-		createEAttribute(lineEClass, LINE__SOURCE_SHAPE);
-		createEAttribute(lineEClass, LINE__TARGET_SHAPE);
+		createEAttribute(lineEClass, LINE__SOURCE_NODE);
+		createEAttribute(lineEClass, LINE__TARGET_NODE);
 		createEAttribute(lineEClass, LINE__STYLE);
 		createEAttribute(lineEClass, LINE__LINE_DASH);
+
+		connectorEClass = createEClass(CONNECTOR);
+		createEReference(connectorEClass, CONNECTOR__TARGET);
+		createEReference(connectorEClass, CONNECTOR__SOURCE);
+		createEReference(connectorEClass, CONNECTOR__REVERSE_ELEMENT);
 
 		commentEClass = createEClass(COMMENT);
 		createEReference(commentEClass, COMMENT__INPUTS);
@@ -937,6 +1006,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 		shapeEClass.getESuperTypes().add(this.getNode());
 		gradientShapeEClass.getESuperTypes().add(this.getShape());
 		lineEClass.getESuperTypes().add(this.getNode());
+		connectorEClass.getESuperTypes().add(this.getLine());
 		commentEClass.getESuperTypes().add(this.getShape());
 		commentLinkEClass.getESuperTypes().add(this.getLine());
 
@@ -955,24 +1025,34 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 				IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES,
 				!IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(nodeEClass, Node.class, "Node", !IS_ABSTRACT, !IS_INTERFACE,
+		initEClass(nodeEClass, Node.class, "Node", IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getNode_OutgoingLines(),
-				ecorePackage.getEFeatureMapEntry(), "outgoingLines", null, 0,
-				-1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+		initEAttribute(getNode_AllOutgoingLines(),
+				ecorePackage.getEFeatureMapEntry(), "allOutgoingLines", null,
+				0, -1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getNode_IncomingLines(),
-				ecorePackage.getEFeatureMapEntry(), "incomingLines", null, 0,
-				-1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+		initEAttribute(getNode_AllIncomingLines(),
+				ecorePackage.getEFeatureMapEntry(), "allIncomingLines", null,
+				0, -1, Node.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getNode_CommentLinks(), this.getCommentLink(),
 				this.getCommentLink_Source(), "commentLinks", null, 0, -1,
 				Node.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE,
 				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
+		initEReference(getNode_OutgoingLines(), this.getConnector(),
+				this.getConnector_Source(), "outgoingLines", null, 0, -1,
+				Node.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEReference(getNode_IncomingLines(), this.getConnector(),
+				this.getConnector_Target(), "incomingLines", null, 0, -1,
+				Node.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 
 		initEClass(containerEClass, org.soyatec.tooling.di.Container.class,
-				"Container", !IS_ABSTRACT, !IS_INTERFACE,
+				"Container", IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getContainer_Children(), this.getShape(), null,
 				"children", null, 0, -1,
@@ -1062,7 +1142,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 				IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
 
-		initEClass(lineEClass, Line.class, "Line", !IS_ABSTRACT, !IS_INTERFACE,
+		initEClass(lineEClass, Line.class, "Line", IS_ABSTRACT, !IS_INTERFACE,
 				IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getLine_Color(), ecorePackage.getEInt(), "color", "0",
 				0, 1, Line.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
@@ -1078,12 +1158,12 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 				"targetAnchor", null, 0, 1, Line.class, !IS_TRANSIENT,
 				!IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE,
 				!IS_DERIVED, IS_ORDERED);
-		initEAttribute(getLine_SourceShape(),
-				ecorePackage.getEFeatureMapEntry(), "sourceShape", null, 0, 1,
+		initEAttribute(getLine_SourceNode(),
+				ecorePackage.getEFeatureMapEntry(), "sourceNode", null, 0, 1,
 				Line.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEAttribute(getLine_TargetShape(),
-				ecorePackage.getEFeatureMapEntry(), "targetShape", null, 0, 1,
+		initEAttribute(getLine_TargetNode(),
+				ecorePackage.getEFeatureMapEntry(), "targetNode", null, 0, 1,
 				Line.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
 				!IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEAttribute(getLine_Style(), this.getLineStyle(), "style", "SOLID",
@@ -1093,6 +1173,24 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 				null, 0, -1, Line.class, !IS_TRANSIENT, !IS_VOLATILE,
 				IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED,
 				IS_ORDERED);
+
+		initEClass(connectorEClass, Connector.class, "Connector", !IS_ABSTRACT,
+				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getConnector_Target(), this.getNode(),
+				this.getNode_IncomingLines(), "target", null, 0, 1,
+				Connector.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEReference(getConnector_Source(), this.getNode(),
+				this.getNode_OutgoingLines(), "source", null, 0, 1,
+				Connector.class, IS_TRANSIENT, IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
+		initEReference(getConnector_ReverseElement(),
+				ecorePackage.getEObject(), null, "reverseElement", null, 0, 1,
+				Connector.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE,
+				!IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE,
+				!IS_DERIVED, IS_ORDERED);
 
 		initEClass(commentEClass, Comment.class, "Comment", !IS_ABSTRACT,
 				!IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1208,12 +1306,16 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 	 */
 	protected void createExtendedMetaDataAnnotations() {
 		String source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData";
-		addAnnotation(getNode_OutgoingLines(), source, new String[] { "kind",
-				"group" });
-		addAnnotation(getNode_IncomingLines(), source, new String[] { "kind",
-				"group" });
+		addAnnotation(getNode_AllOutgoingLines(), source, new String[] {
+				"kind", "group" });
+		addAnnotation(getNode_AllIncomingLines(), source, new String[] {
+				"kind", "group" });
 		addAnnotation(getNode_CommentLinks(), source, new String[] { "group",
-				"#outgoingLines" });
+				"#allOutgoingLines" });
+		addAnnotation(getNode_OutgoingLines(), source, new String[] { "group",
+				"#allOutgoingLines" });
+		addAnnotation(getNode_IncomingLines(), source, new String[] { "group",
+				"#allIncomingLines" });
 		addAnnotation(getContainer_Children(), source, new String[] { "group",
 				"#allShapes" });
 		addAnnotation(getContainer_Lines(), source, new String[] { "group",
@@ -1232,16 +1334,20 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 				"group", "#rulers" });
 		addAnnotation(getDiagram_VerticalRuler(), source, new String[] {
 				"group", "#rulers" });
-		addAnnotation(getLine_SourceShape(), source, new String[] { "kind",
+		addAnnotation(getLine_SourceNode(), source, new String[] { "kind",
 				"group" });
-		addAnnotation(getLine_TargetShape(), source, new String[] { "kind",
+		addAnnotation(getLine_TargetNode(), source, new String[] { "kind",
 				"group" });
+		addAnnotation(getConnector_Target(), source, new String[] { "group",
+				"#targetNode" });
+		addAnnotation(getConnector_Source(), source, new String[] { "group",
+				"#sourceNode" });
 		addAnnotation(getComment_Inputs(), source, new String[] { "group",
-				"#incomingLines" });
+				"#allIncomingLines" });
 		addAnnotation(getCommentLink_Source(), source, new String[] { "group",
-				"#sourceShape" });
+				"#sourceNode" });
 		addAnnotation(getCommentLink_Target(), source, new String[] { "group",
-				"#targetShape" });
+				"#targetNode" });
 	}
 
 } // DiPackageImpl

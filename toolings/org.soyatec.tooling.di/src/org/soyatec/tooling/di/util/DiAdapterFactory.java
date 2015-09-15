@@ -21,6 +21,7 @@ import org.eclipse.emf.ecore.EObject;
 import org.soyatec.tooling.di.Alignment;
 import org.soyatec.tooling.di.Comment;
 import org.soyatec.tooling.di.CommentLink;
+import org.soyatec.tooling.di.Connector;
 import org.soyatec.tooling.di.Container;
 import org.soyatec.tooling.di.DiPackage;
 import org.soyatec.tooling.di.Diagram;
@@ -121,6 +122,11 @@ public class DiAdapterFactory extends AdapterFactoryImpl {
 		@Override
 		public Adapter caseLine(Line object) {
 			return createLineAdapter();
+		}
+
+		@Override
+		public Adapter caseConnector(Connector object) {
+			return createConnectorAdapter();
 		}
 
 		@Override
@@ -275,6 +281,21 @@ public class DiAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createLineAdapter() {
+		return null;
+	}
+
+	/**
+	 * Creates a new adapter for an object of class '
+	 * {@link org.soyatec.tooling.di.Connector <em>Connector</em>}'. <!--
+	 * begin-user-doc --> This default implementation returns null so that we
+	 * can easily ignore cases; it's useful to ignore a case when inheritance
+	 * will catch all the cases anyway. <!-- end-user-doc -->
+	 * 
+	 * @return the new adapter.
+	 * @see org.soyatec.tooling.di.Connector
+	 * @generated
+	 */
+	public Adapter createConnectorAdapter() {
 		return null;
 	}
 

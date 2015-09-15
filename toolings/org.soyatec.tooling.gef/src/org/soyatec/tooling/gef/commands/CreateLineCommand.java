@@ -27,9 +27,9 @@ public abstract class CreateLineCommand extends Command {
 	protected Line lineObject;
 	protected Diagram diagram;
 
-	public CreateLineCommand(Diagram interaction, Line lineObject) {
-		Assert.isNotNull(interaction, "Container for lines.");
-		this.diagram = interaction;
+	public CreateLineCommand(Diagram diagram, Line lineObject) {
+		Assert.isNotNull(diagram, "Container for lines.");
+		this.diagram = diagram;
 		this.lineObject = lineObject;
 	}
 
@@ -90,7 +90,7 @@ public abstract class CreateLineCommand extends Command {
 		doRemoveLine(diagram, lineObject);
 	}
 
-	protected abstract void doCreateLine(Diagram interaction, Line line);
+	protected abstract void doCreateLine(Diagram diagram, Line line);
 
-	protected abstract void doRemoveLine(Diagram interaction, Line line);
+	protected abstract void doRemoveLine(Diagram diagram, Line line);
 }

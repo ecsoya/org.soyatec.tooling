@@ -37,13 +37,13 @@ public class ShapeComponentEditPolicy extends ComponentEditPolicy {
 			if (model instanceof Shape) {
 				Shape shape = (Shape) model;
 				deletingObjects.add(shape);
-				ValueListIterator<Object> incomings = shape.getIncomingLines()
-						.valueListIterator();
+				ValueListIterator<Object> incomings = shape
+						.getAllIncomingLines().valueListIterator();
 				while (incomings.hasNext()) {
 					deletingObjects.add((EObject) incomings.next());
 				}
-				ValueListIterator<Object> outgoings = shape.getOutgoingLines()
-						.valueListIterator();
+				ValueListIterator<Object> outgoings = shape
+						.getAllOutgoingLines().valueListIterator();
 				while (outgoings.hasNext()) {
 					deletingObjects.add((EObject) outgoings.next());
 				}

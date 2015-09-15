@@ -45,7 +45,7 @@ public interface CommentLink extends Line {
 	 * @see org.soyatec.tooling.di.DiPackage#getCommentLink_Source()
 	 * @see org.soyatec.tooling.di.Node#getCommentLinks
 	 * @model opposite="commentLinks" transient="true" volatile="true"
-	 *        extendedMetaData="group='#sourceShape'"
+	 *        extendedMetaData="group='#sourceNode'"
 	 * @generated
 	 */
 	Node getSource();
