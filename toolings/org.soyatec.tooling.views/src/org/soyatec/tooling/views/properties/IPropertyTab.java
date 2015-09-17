@@ -11,9 +11,11 @@
 package org.soyatec.tooling.views.properties;
 
 import org.eclipse.jface.action.ToolBarManager;
+import org.eclipse.jface.viewers.ISelection;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.ui.ISelectionListener;
+import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 
 public interface IPropertyTab extends ISelectionListener {
@@ -29,4 +31,6 @@ public interface IPropertyTab extends ISelectionListener {
 	ToolBarManager getToolBarManager();
 
 	void dispose();
+
+	boolean isVisibleFor(IWorkbenchPart part, ISelection selection);
 }

@@ -27,7 +27,7 @@ import org.eclipse.ui.views.properties.IPropertySheetPage;
 
 public class FormPropertySheetPage implements IPropertySheetPage {
 
-	private Control control;
+	private Form control;
 	private FormToolkit factory;
 
 	private IPropertyTabProvider tabProvider;
@@ -76,7 +76,11 @@ public class FormPropertySheetPage implements IPropertySheetPage {
 						section.setTextClient(toolbar);
 					}
 				}
-				section.setLayoutData(new GridData(GridData.FILL_HORIZONTAL));
+				GridData layoutData = new GridData(GridData.FILL_HORIZONTAL);
+				layoutData.exclude = true;
+				section.setVisible(false);
+				section.setLayoutData(layoutData);
+				section.setData(tab);
 			}
 		}
 
@@ -110,9 +114,48 @@ public class FormPropertySheetPage implements IPropertySheetPage {
 		IPropertyTab[] propertyTabs = tabProvider.getPropertyTabs();
 		if (propertyTabs != null) {
 			for (IPropertyTab tab : propertyTabs) {
-				tab.selectionChanged(part, selection);
+				if (!tab.isVisibleFor(part, selection)) {
+					hideTab(tab);
+				} else {
+					showTab(tab);
+					tab.selectionChanged(part, selection);
+				}
 			}
 		}
+	}
+
+	private void showTab(final IPropertyTab tab) {
+		if (control == null || control.isDisposed() || tab == null) {
+			return;
+		}
+		Composite body = control.getBody();
+		Control[] children = body.getChildren();
+		for (Control control : children) {
+			if (tab.equals(control.getData())) {
+				GridData layoutData = (GridData) control.getLayoutData();
+				layoutData.exclude = false;
+				control.setVisible(true);
+				break;
+			}
+		}
+		body.layout();
+	}
+
+	private void hideTab(IPropertyTab tab) {
+		if (control == null || control.isDisposed() || tab == null) {
+			return;
+		}
+		Composite body = control.getBody();
+		Control[] children = body.getChildren();
+		for (Control control : children) {
+			if (tab.equals(control.getData())) {
+				GridData layoutData = (GridData) control.getLayoutData();
+				layoutData.exclude = true;
+				control.setVisible(false);
+				break;
+			}
+		}
+		body.layout();
 	}
 
 }

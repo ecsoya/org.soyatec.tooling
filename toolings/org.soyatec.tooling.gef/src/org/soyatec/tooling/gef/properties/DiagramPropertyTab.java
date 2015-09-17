@@ -32,6 +32,8 @@ import org.eclipse.jface.preference.PreferenceStore;
 import org.eclipse.jface.preference.StringFieldEditor;
 import org.eclipse.jface.util.IPropertyChangeListener;
 import org.eclipse.jface.util.PropertyChangeEvent;
+import org.eclipse.jface.viewers.ISelection;
+import org.eclipse.jface.viewers.IStructuredSelection;
 import org.eclipse.swt.SWT;
 import org.eclipse.swt.graphics.RGB;
 import org.eclipse.swt.layout.GridData;
@@ -39,6 +41,7 @@ import org.eclipse.swt.layout.GridLayout;
 import org.eclipse.swt.widgets.Composite;
 import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.Group;
+import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.soyatec.tooling.di.CommentLink;
 import org.soyatec.tooling.di.DiPackage;
@@ -369,4 +372,12 @@ public class DiagramPropertyTab extends CommandPropertyTab implements
 		return false;
 	}
 
+	@Override
+	public boolean isVisibleFor(IWorkbenchPart part, ISelection selection) {
+		Object element = ((IStructuredSelection) selection).getFirstElement();
+		if (element instanceof EditPart) {
+			element = ((EditPart) element).getModel();
+		}
+		return element instanceof View;
+	}
 }
