@@ -12,13 +12,16 @@ package org.soyatec.tooling.gef.editparts;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.Notifier;
 import org.eclipse.emf.common.notify.impl.AdapterImpl;
 import org.eclipse.emf.ecore.EObject;
+import org.eclipse.gef.EditPartViewer;
 import org.eclipse.gef.EditPolicy;
 import org.eclipse.gef.Request;
 import org.eclipse.gef.SnapToHelper;
 import org.eclipse.gef.editparts.AbstractGraphicalEditPart;
 import org.eclipse.gef.editpolicies.SnapFeedbackPolicy;
+import org.eclipse.swt.widgets.Display;
 import org.soyatec.tooling.di.View;
 import org.soyatec.tooling.gef.direct_edit.TextDirectEditManager;
 import org.soyatec.tooling.gef.editpolicies.LabelDirectEditPolicy;
@@ -46,21 +49,56 @@ public abstract class ViewEditPart<T extends View> extends
 		return getView().getElement();
 	}
 
+	protected Adapter getViewNotifier() {
+		if (notifier == null) {
+			notifier = new AdapterImpl() {
+				public void notifyChanged(final Notification event) {
+					// super.notifyChanged(event);
+					if (event.isTouch()) {
+						return;
+					}
+					EditPartViewer viewer = getViewer();
+					if (viewer == null || viewer.getControl() == null
+							|| viewer.getControl().isDisposed()) {
+						return;
+					}
+					Display display = viewer.getControl().getDisplay();
+					if (display.getThread() == Thread.currentThread()) {
+						handleNotifyChanged(event);
+					} else {
+						display.asyncExec(new Runnable() {
+
+							@Override
+							public void run() {
+								handleNotifyChanged(event);
+							}
+						});
+					}
+				}
+			};
+		}
+		return notifier;
+	}
+
+	protected void addViewNotifier(Notifier model) {
+		Adapter adapter = getViewNotifier();
+		if (model == null || model.eAdapters().contains(adapter)) {
+			return;
+		}
+		model.eAdapters().add(adapter);
+	}
+
+	protected void removeViewNotifier(Notifier model) {
+		if (model == null || notifier == null) {
+			return;
+		}
+		model.eAdapters().remove(notifier);
+	}
+
 	public void activate() {
 		super.activate();
-		getModel().eAdapters().add(notifier = new AdapterImpl() {
-			public void notifyChanged(Notification event) {
-				// super.notifyChanged(event);
-				if (event.isTouch()) {
-					return;
-				}
-				handleNotifyChanged(event);
-			}
-		});
-		EObject element = getElement();
-		if (element != null) {
-			element.eAdapters().add(notifier);
-		}
+		addViewNotifier(getModel());
+		addViewNotifier(getElement());
 	}
 
 	protected void handleNotifyChanged(Notification event) {
@@ -68,11 +106,8 @@ public abstract class ViewEditPart<T extends View> extends
 	}
 
 	public void deactivate() {
-		EObject element = getElement();
-		if (element != null) {
-			element.eAdapters().remove(notifier);
-		}
-		getModel().eAdapters().remove(notifier);
+		removeViewNotifier(getElement());
+		removeViewNotifier(getModel());
 		super.deactivate();
 	}
 

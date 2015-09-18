@@ -47,6 +47,9 @@ public class ResourcesFactory {
 	public static final int COLOR_COMMENT = 13434879;
 	public static final int COLOR_SHAPE = 14012867;
 
+	public static final int COLOR_ERROR = 255;
+	public static final int COLOR_WARNING = 13434879;
+
 	public static Display getDisplay() {
 		return Display.getCurrent();
 	}
