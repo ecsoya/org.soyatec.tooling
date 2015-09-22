@@ -119,7 +119,7 @@ public class EXElementImpl extends EXNodeImpl implements EXElement {
 		if (name != null) {
 			EList<EXAttribute> attributes = getAttributes();
 			for (EXAttribute attr : attributes) {
-				if (name.equals(attr)) {
+				if (name.equals(attr.getName())) {
 					return attr;
 				}
 			}

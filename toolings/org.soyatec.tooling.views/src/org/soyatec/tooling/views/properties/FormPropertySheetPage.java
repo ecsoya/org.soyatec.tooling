@@ -117,8 +117,8 @@ public class FormPropertySheetPage implements IPropertySheetPage {
 				if (!tab.isVisibleFor(part, selection)) {
 					hideTab(tab);
 				} else {
-					showTab(tab);
 					tab.selectionChanged(part, selection);
+					showTab(tab);
 				}
 			}
 		}
@@ -135,6 +135,17 @@ public class FormPropertySheetPage implements IPropertySheetPage {
 				GridData layoutData = (GridData) control.getLayoutData();
 				layoutData.exclude = false;
 				control.setVisible(true);
+
+				if (control instanceof Section) {
+					Section section = (Section) control;
+					if (tab.getName() != null) {
+						section.setText(tab.getName());
+					}
+					if (tab.getDescription() != null) {
+						section.setDescription(tab.getDescription());
+					}
+					section.setExpanded(tab.isExpanded());
+				}
 				break;
 			}
 		}

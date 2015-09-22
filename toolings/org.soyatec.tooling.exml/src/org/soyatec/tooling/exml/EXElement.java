@@ -71,7 +71,7 @@ public interface EXElement extends EXNode {
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 * 
 	 * @model annotation=
-	 *        "http://www.eclipse.org/emf/2002/GenModel body='if (name != null) {\r\n\tEList<EXAttribute> attributes = getAttributes();\r\n\tfor (EXAttribute attr : attributes) {\r\n\t\tif (name.equals(attr)) {\r\n\t\t\treturn attr;\r\n\t\t}\r\n\t}\r\n}\r\nreturn null;'"
+	 *        "http://www.eclipse.org/emf/2002/GenModel body='if (name != null) {\r\n\tEList<EXAttribute> attributes = getAttributes();\r\n\tfor (EXAttribute attr : attributes) {\r\n\t\tif (name.equals(attr.getName())) {\r\n\t\t\treturn attr;\r\n\t\t}\r\n\t}\r\n}\r\nreturn null;'"
 	 * @generated
 	 */
 	EXAttribute getAttribute(String name);

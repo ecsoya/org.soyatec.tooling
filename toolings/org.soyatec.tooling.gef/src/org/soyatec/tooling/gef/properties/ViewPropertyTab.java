@@ -54,7 +54,7 @@ import org.soyatec.tooling.gef.resources.ResourcesFactory;
  * 
  * @author Ecsoya
  */
-public class DiagramPropertyTab extends CommandPropertyTab implements
+public class ViewPropertyTab extends CommandPropertyTab implements
 		IPropertyChangeListener {
 
 	protected static final EStructuralFeature ES_LABEL = DiPackage.eINSTANCE
@@ -96,7 +96,7 @@ public class DiagramPropertyTab extends CommandPropertyTab implements
 
 	private final PreferenceStore store;
 
-	public DiagramPropertyTab() {
+	public ViewPropertyTab() {
 		store = new PreferenceStore();
 	}
 

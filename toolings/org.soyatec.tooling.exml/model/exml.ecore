@@ -14,7 +14,7 @@
     </eAnnotations>
     <eOperations name="getAttribute" eType="#//Attribute">
       <eAnnotations source="http://www.eclipse.org/emf/2002/GenModel">
-        <details key="body" value="if (name != null) {&#xD;&#xA;&#x9;EList&lt;EXAttribute> attributes = getAttributes();&#xD;&#xA;&#x9;for (EXAttribute attr : attributes) {&#xD;&#xA;&#x9;&#x9;if (name.equals(attr)) {&#xD;&#xA;&#x9;&#x9;&#x9;return attr;&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#x9;}&#xD;&#xA;}&#xD;&#xA;return null;"/>
+        <details key="body" value="if (name != null) {&#xD;&#xA;&#x9;EList&lt;EXAttribute> attributes = getAttributes();&#xD;&#xA;&#x9;for (EXAttribute attr : attributes) {&#xD;&#xA;&#x9;&#x9;if (name.equals(attr.getName())) {&#xD;&#xA;&#x9;&#x9;&#x9;return attr;&#xD;&#xA;&#x9;&#x9;}&#xD;&#xA;&#x9;}&#xD;&#xA;}&#xD;&#xA;return null;"/>
       </eAnnotations>
       <eParameters name="name" eType="ecore:EDataType http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
