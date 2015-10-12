@@ -117,7 +117,7 @@ public class ViewPropertyTab extends CommandPropertyTab implements
 			}
 			Object newValue = event.getNewValue();
 			if (ES_GRADIENT_VERTICAL == feature) {
-				newValue = "true".equals(newValue);
+				newValue = "true".equals(newValue); //$NON-NLS-1$
 			}
 			if (newValue instanceof RGB) {
 				newValue = ResourcesFactory.RGBToInteger((RGB) newValue);
@@ -132,11 +132,11 @@ public class ViewPropertyTab extends CommandPropertyTab implements
 	}
 
 	public String getName() {
-		return "Appearance";
+		return ResourcesFactory.getString("properties_appearance"); //$NON-NLS-1$
 	}
 
 	public String getDescription() {
-		return "Appearance settings";
+		return ResourcesFactory.getString("properties_appearance_desc"); //$NON-NLS-1$
 	}
 
 	protected void setInput(Object newInput) {
@@ -198,12 +198,12 @@ public class ViewPropertyTab extends CommandPropertyTab implements
 					}
 				}
 			} else if (String.class == instanceType) {
-				store.setDefault(key, defaultValue == null ? ""
+				store.setDefault(key, defaultValue == null ? "" //$NON-NLS-1$
 						: (String) defaultValue);
 				if (eIsSet) {
-					store.setValue(key, value == null ? "" : (String) value);
+					store.setValue(key, value == null ? "" : (String) value); //$NON-NLS-1$
 				} else {
-					store.setValue(key, defaultValue == null ? ""
+					store.setValue(key, defaultValue == null ? "" //$NON-NLS-1$
 							: (String) defaultValue);
 				}
 			} else if (boolean.class == instanceType) {
@@ -296,7 +296,8 @@ public class ViewPropertyTab extends CommandPropertyTab implements
 			}
 		}
 		gradientGroup = new Group(control, SWT.NONE);
-		gradientGroup.setText("Gradient");
+		gradientGroup
+				.setText(ResourcesFactory.getString("properties_gradient")); //$NON-NLS-1$
 		gradientGroup.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true,
 				false, numColumns, 1));
 		for (EStructuralFeature sf : gradient_features) {
@@ -333,8 +334,13 @@ public class ViewPropertyTab extends CommandPropertyTab implements
 				|| ES_GRADIENT_COLOR == feature || ES_LINE_COLOR == feature) {
 			return new ColorFieldEditor(name, label, parent);
 		} else if (ES_GRADIENT_VERTICAL == feature) {
-			return new ComboFieldEditor(name, label, new String[][] {
-					{ "Vertical", "true" }, { "Horizontal", "false" } }, parent);
+			return new ComboFieldEditor(
+					name,
+					label,
+					new String[][] {
+							{
+									ResourcesFactory
+											.getString("properties_vertical"), "true" }, { ResourcesFactory.getString("properties_horizontal"), "false" } }, parent); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
 		} else {
 			Class<?> instanceClass = feature.getEType().getInstanceClass();
 			if (boolean.class == instanceClass) {
@@ -349,21 +355,21 @@ public class ViewPropertyTab extends CommandPropertyTab implements
 
 	private String getFeatureLabel(EStructuralFeature feature) {
 		if (ES_LABEL == feature) {
-			return "Label";
+			return ResourcesFactory.getString("properties_label"); //$NON-NLS-1$
 		} else if (ES_BACKGROUND == feature) {
-			return "Background";
+			return ResourcesFactory.getString("properties_background"); //$NON-NLS-1$
 		} else if (ES_FOREGROUND == feature) {
-			return "Foreground";
+			return ResourcesFactory.getString("properties_foreground"); //$NON-NLS-1$
 		} else if (ES_GRADIENT_ACTIVED == feature) {
-			return "Active";
+			return ResourcesFactory.getString("properties_active"); //$NON-NLS-1$
 		} else if (ES_GRADIENT_COLOR == feature) {
-			return "Gradient color";
+			return ResourcesFactory.getString("properties_gradient_color"); //$NON-NLS-1$
 		} else if (ES_GRADIENT_VERTICAL == feature) {
-			return "Gradient style";
+			return ResourcesFactory.getString("properties_gradient_style"); //$NON-NLS-1$
 		} else if (ES_LINE_COLOR == feature) {
-			return "Line color";
+			return ResourcesFactory.getString("properties_line_color"); //$NON-NLS-1$
 		} else if (ES_LINE_WIDTH == feature) {
-			return "Line width";
+			return ResourcesFactory.getString("properties_line_width"); //$NON-NLS-1$
 		}
 		return feature.getName();
 	}

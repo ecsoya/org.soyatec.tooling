@@ -1,26 +1,25 @@
-/**
+/*******************************************************************************
  * Copyright (c) 2015 Soyatec and others.
- *  All rights reserved. This program and the accompanying materials
- *  are made available under the terms of the Eclipse Public License v1.0
- *  which accompanies this distribution, and is available at
- *  http://www.eclipse.org/legal/epl-v10.html
- *  
- *  Contributors:
- *      Soyatec - initial API and implementation
- *  
- */
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *    Soyatec - initial API and implementation
+ *******************************************************************************/
 package org.soyatec.tooling.exml.util;
 
 import org.eclipse.emf.common.notify.Adapter;
 import org.eclipse.emf.common.notify.Notifier;
-
 import org.eclipse.emf.common.notify.impl.AdapterFactoryImpl;
-
 import org.eclipse.emf.ecore.EObject;
-
 import org.eclipse.emf.ecore.xml.type.XMLTypeDocumentRoot;
-
-import org.soyatec.tooling.exml.*;
+import org.soyatec.tooling.exml.EXAttribute;
+import org.soyatec.tooling.exml.EXDocument;
+import org.soyatec.tooling.exml.EXElement;
+import org.soyatec.tooling.exml.EXMLPackage;
+import org.soyatec.tooling.exml.EXNode;
 
 /**
  * <!-- begin-user-doc --> The <b>Adapter Factory</b> for the model. It provides

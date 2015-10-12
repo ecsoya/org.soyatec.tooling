@@ -6,7 +6,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *     Soyatec - initial API and implementation
+ *    Soyatec - initial API and implementation
  *******************************************************************************/
 package org.soyatec.tooling.gef.toolbar.editor;
 
@@ -42,13 +42,14 @@ import org.eclipse.swt.widgets.MenuItem;
 import org.eclipse.swt.widgets.ToolBar;
 import org.eclipse.swt.widgets.ToolItem;
 import org.soyatec.tooling.gef.toolbar.Activator;
+import org.soyatec.tooling.gef.toolbar.Messages;
 
 /**
  * @author Ecsoya (jin.liu@soyatec.com)
  */
 public class ToolBarPalette extends Composite {
 
-	private static final String DATA_DROP_DOWN = "ToolBarPalette_DropDown";
+	private static final String DATA_DROP_DOWN = "ToolBarPalette_DropDown"; //$NON-NLS-1$
 	private static final int WIDTH_DROP_DOWN = 25;
 
 	private ToolBar toolBar;
@@ -87,7 +88,7 @@ public class ToolBarPalette extends Composite {
 		final ToolItem settingsItem = new ToolItem(settingsToolBar,
 				SWT.DROP_DOWN);
 		ImageDescriptor desc = Activator.imageDescriptorFromPlugin(
-				Activator.PLUGIN_ID, "icons/setting.png");
+				Activator.PLUGIN_ID, "icons/setting.png"); //$NON-NLS-1$
 		image = desc.createImage(getDisplay());
 		settingsItem.setImage(image);
 		settingsItem.addListener(SWT.Selection, new Listener() {
@@ -222,7 +223,7 @@ public class ToolBarPalette extends Composite {
 			settingsMenu = new Menu(getShell(), SWT.POP_UP);
 
 			iconsOnlyItem = new MenuItem(settingsMenu, SWT.CHECK);
-			iconsOnlyItem.setText("Icons only");
+			iconsOnlyItem.setText(Messages.tooling_palette_icons_only);
 			iconsOnlyItem.setSelection(iconsOnly);
 			iconsOnlyItem.addListener(SWT.Selection, new Listener() {
 				public void handleEvent(Event event) {
@@ -232,7 +233,7 @@ public class ToolBarPalette extends Composite {
 			});
 
 			useLargeIconsItem = new MenuItem(settingsMenu, SWT.CHECK);
-			useLargeIconsItem.setText("Large icons");
+			useLargeIconsItem.setText(Messages.tooling_palette_large_icons);
 			useLargeIconsItem.setSelection(useLargeIcons);
 			useLargeIconsItem.addListener(SWT.Selection, new Listener() {
 
@@ -470,7 +471,7 @@ public class ToolBarPalette extends Composite {
 
 	private String getText(String label) {
 		if (label == null) {
-			return "";
+			return ""; //$NON-NLS-1$
 		}
 		return label;
 	}
@@ -487,7 +488,7 @@ public class ToolBarPalette extends Composite {
 		if (!iconsOnly) {
 			item.setText(getText(entry.getLabel()));
 		} else {
-			item.setText("");
+			item.setText(""); //$NON-NLS-1$
 		}
 		item.setToolTipText(getText(entry.getDescription()));
 		item.setData(entry);

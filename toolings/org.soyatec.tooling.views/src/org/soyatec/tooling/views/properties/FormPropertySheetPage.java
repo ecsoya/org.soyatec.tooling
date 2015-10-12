@@ -34,7 +34,7 @@ public class FormPropertySheetPage implements IPropertySheetPage {
 
 	public FormPropertySheetPage(IPropertyTabProvider tabProvider) {
 		Assert.isNotNull(tabProvider,
-				"IPropertyTabProvider instance can not be null.");
+				"IPropertyTabProvider instance can not be null."); //$NON-NLS-1$
 		this.tabProvider = tabProvider;
 	}
 

@@ -32,15 +32,15 @@ import org.eclipse.ui.actions.BaseSelectionListenerAction;
 public abstract class ViewActionBarContributor implements
 		ISelectionChangedListener, IShellProvider {
 
-	public static final String GRP_QUICK = "group.quickAccess";
-	public static final String GRP_NEW = "group.new";
-	public static final String GRP_OPEN = "group.open";
-	public static final String GRP_EDIT = "group.edit";
-	public static final String GRP_REFACTOR = "group.refactor";
-	public static final String GRP_IMPORT = "group.import";
-	public static final String GRP_REFRESH = "group.refresh";
-	public static final String GRP_ADDITIONS = "group.additions";
-	public static final String GRP_PROPERTIES = "group.properties";
+	public static final String GRP_QUICK = "group.quickAccess"; //$NON-NLS-1$
+	public static final String GRP_NEW = "group.new"; //$NON-NLS-1$
+	public static final String GRP_OPEN = "group.open"; //$NON-NLS-1$
+	public static final String GRP_EDIT = "group.edit"; //$NON-NLS-1$
+	public static final String GRP_REFACTOR = "group.refactor"; //$NON-NLS-1$
+	public static final String GRP_IMPORT = "group.import"; //$NON-NLS-1$
+	public static final String GRP_REFRESH = "group.refresh"; //$NON-NLS-1$
+	public static final String GRP_ADDITIONS = "group.additions"; //$NON-NLS-1$
+	public static final String GRP_PROPERTIES = "group.properties"; //$NON-NLS-1$
 
 	private IViewPart part;
 	private IActionBars actionBars;

@@ -1,3 +1,13 @@
+/*******************************************************************************
+ * Copyright (c) 2015 Soyatec and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *    Soyatec - initial API and implementation
+ *******************************************************************************/
 package org.soyatec.tooling.gef.commands;
 
 import java.util.ArrayList;
@@ -247,7 +257,7 @@ public class CancelableCommandStack implements CommandStack {
 	 */
 	protected void handleError(Exception exception) {
 		CommonPlugin.INSTANCE.log(new WrappedException(CommonPlugin.INSTANCE
-				.getString("_UI_IgnoreException_exception"), exception)
+				.getString("_UI_IgnoreException_exception"), exception) //$NON-NLS-1$
 				.fillInStackTrace());
 	}
 

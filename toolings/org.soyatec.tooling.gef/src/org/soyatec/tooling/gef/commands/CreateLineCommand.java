@@ -28,7 +28,7 @@ public abstract class CreateLineCommand extends Command {
 	protected Diagram diagram;
 
 	public CreateLineCommand(Diagram diagram, Line lineObject) {
-		Assert.isNotNull(diagram, "Container for lines.");
+		Assert.isNotNull(diagram, "Container for lines."); //$NON-NLS-1$
 		this.diagram = diagram;
 		this.lineObject = lineObject;
 	}

@@ -6,7 +6,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *     Soyatec - initial API and implementation
+ *    Soyatec - initial API and implementation
  *******************************************************************************/
 package org.soyatec.tooling.gef.figures;
 
@@ -24,7 +24,7 @@ import org.soyatec.tooling.gef.anchor.BaseConnectionAnchor;
 
 public class NodeFigure extends Figure {
 
-	public static final String DEFAULT_TERMINAL = "";
+	public static final String DEFAULT_TERMINAL = ""; //$NON-NLS-1$
 
 	private Hashtable<String, ConnectionAnchor> connectionAnchors = new Hashtable<String, ConnectionAnchor>(
 			7);

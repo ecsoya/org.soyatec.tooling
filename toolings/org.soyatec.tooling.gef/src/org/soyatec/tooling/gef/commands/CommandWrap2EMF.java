@@ -6,7 +6,7 @@
  * http://www.eclipse.org/legal/epl-v10.html
  *
  * Contributors:
- *     Soyatec - initial API and implementation
+ *    Soyatec - initial API and implementation
  *******************************************************************************/
 package org.soyatec.tooling.gef.commands;
 
@@ -111,7 +111,7 @@ public class CommandWrap2EMF implements Command, ICancelCommand {
 	 * @see org.eclipse.emf.common.command.Command#getDescription()
 	 */
 	public String getDescription() {
-		return "CommandWrap4GEF";
+		return "CommandWrap4GEF"; //$NON-NLS-1$
 	}
 
 	/*
@@ -120,7 +120,7 @@ public class CommandWrap2EMF implements Command, ICancelCommand {
 	 * @see org.eclipse.emf.common.command.Command#getLabel()
 	 */
 	public String getLabel() {
-		return _command == null ? "CommandWrap4GEF" : _command.getLabel();
+		return _command == null ? "CommandWrap4GEF" : _command.getLabel(); //$NON-NLS-1$
 	}
 
 	/*

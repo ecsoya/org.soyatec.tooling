@@ -1,10 +1,10 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
-Bundle-Name: GEF ToolBar Tooling
+Bundle-Name: %Bundle-Name
 Bundle-SymbolicName: org.soyatec.tooling.gef.toolbar;singleton:=true
 Bundle-Version: 4.4.2.qualifier
 Bundle-Activator: org.soyatec.tooling.gef.toolbar.Activator
-Bundle-Vendor: Soyatec
+Bundle-Vendor: %Bundle-Vendor
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.eclipse.gef;visibility:=reexport

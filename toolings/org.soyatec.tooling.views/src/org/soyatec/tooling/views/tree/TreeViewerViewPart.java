@@ -107,8 +107,8 @@ public abstract class TreeViewerViewPart extends ViewPart implements
 	}
 
 	private void registerContextMenu() {
-		MenuManager manager = new MenuManager("#Menu");
-		final MenuManager standardMenu = new MenuManager("#Standard");
+		MenuManager manager = new MenuManager("#Menu"); //$NON-NLS-1$
+		final MenuManager standardMenu = new MenuManager("#Standard"); //$NON-NLS-1$
 		ViewActionBarContributor actionContributor = getActionContributor();
 		if (actionContributor != null) {
 			actionContributor.createContextMenu(standardMenu);

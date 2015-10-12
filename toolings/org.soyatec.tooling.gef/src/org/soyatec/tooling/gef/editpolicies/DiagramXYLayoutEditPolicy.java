@@ -1,3 +1,13 @@
+/*******************************************************************************
+ * Copyright (c) 2015 Soyatec and others.
+ * All rights reserved. This program and the accompanying materials
+ * are made available under the terms of the Eclipse Public License v1.0
+ * which accompanies this distribution, and is available at
+ * http://www.eclipse.org/legal/epl-v10.html
+ *
+ * Contributors:
+ *    Soyatec - initial API and implementation
+ *******************************************************************************/
 package org.soyatec.tooling.gef.editpolicies;
 
 import org.eclipse.draw2d.geometry.Dimension;
@@ -16,6 +26,7 @@ import org.soyatec.tooling.di.Diagram;
 import org.soyatec.tooling.di.Shape;
 import org.soyatec.tooling.gef.commands.CommandFactory;
 import org.soyatec.tooling.gef.commands.CommandWrap2GEF;
+import org.soyatec.tooling.gef.resources.ResourcesFactory;
 import org.soyatec.tooling.gef.utils.EditingDomainUtils;
 
 public class DiagramXYLayoutEditPolicy extends XYLayoutEditPolicy {
@@ -56,8 +67,9 @@ public class DiagramXYLayoutEditPolicy extends XYLayoutEditPolicy {
 					EditingDomainUtils.getEditingDomain(getHost()), model,
 					DiPackage.Literals.SHAPE__BOUNDS, r);
 			if (cmd instanceof AbstractCommand) {
-				String label = REQ_MOVE_CHILDREN.equals(type) ? "Move"
-						: "Resize";
+				String label = REQ_MOVE_CHILDREN.equals(type) ? ResourcesFactory
+						.getString("Move") //$NON-NLS-1$
+						: ResourcesFactory.getString("Resize"); //$NON-NLS-1$
 				((AbstractCommand) cmd).setLabel(label);
 			}
 			return new CommandWrap2GEF(cmd);
