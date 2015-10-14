@@ -29,14 +29,14 @@ import org.soyatec.tooling.exml.EXNode;
  * starting with the actual class of the object and proceeding up the
  * inheritance hierarchy until a non-null result is returned, which is the
  * result of the switch. <!-- end-user-doc -->
- * 
+ *
  * @see org.soyatec.tooling.exml.EXMLPackage
  * @generated
  */
 public class EXMLSwitch<T> extends Switch<T> {
 	/**
 	 * The cached model package <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected static EXMLPackage modelPackage;
@@ -44,7 +44,7 @@ public class EXMLSwitch<T> extends Switch<T> {
 	/**
 	 * Creates an instance of the switch. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EXMLSwitch() {
@@ -56,13 +56,13 @@ public class EXMLSwitch<T> extends Switch<T> {
 	/**
 	 * Checks whether this is a switch for the given package. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @parameter ePackage the package in question.
 	 * @return whether this is a switch for the given package.
 	 * @generated
 	 */
 	@Override
-	protected boolean isSwitchFor(EPackage ePackage) {
+	protected boolean isSwitchFor(final EPackage ePackage) {
 		return ePackage == modelPackage;
 	}
 
@@ -70,54 +70,65 @@ public class EXMLSwitch<T> extends Switch<T> {
 	 * Calls <code>caseXXX</code> for each class of the model until one returns
 	 * a non null result; it yields that result. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @return the first non-null result returned by a <code>caseXXX</code>
 	 *         call.
 	 * @generated
 	 */
 	@Override
-	protected T doSwitch(int classifierID, EObject theEObject) {
+	protected T doSwitch(final int classifierID, final EObject theEObject) {
 		switch (classifierID) {
 		case EXMLPackage.DOCUMENT: {
-			EXDocument document = (EXDocument) theEObject;
+			final EXDocument document = (EXDocument) theEObject;
 			T result = caseDocument(document);
-			if (result == null)
+			if (result == null) {
 				result = caseNode(document);
-			if (result == null)
+			}
+			if (result == null) {
 				result = caseXMLTypeDocumentRoot(document);
-			if (result == null)
+			}
+			if (result == null) {
 				result = defaultCase(theEObject);
+			}
 			return result;
 		}
 		case EXMLPackage.ELEMENT: {
-			EXElement element = (EXElement) theEObject;
+			final EXElement element = (EXElement) theEObject;
 			T result = caseElement(element);
-			if (result == null)
+			if (result == null) {
 				result = caseNode(element);
-			if (result == null)
+			}
+			if (result == null) {
 				result = caseXMLTypeDocumentRoot(element);
-			if (result == null)
+			}
+			if (result == null) {
 				result = defaultCase(theEObject);
+			}
 			return result;
 		}
 		case EXMLPackage.ATTRIBUTE: {
-			EXAttribute attribute = (EXAttribute) theEObject;
+			final EXAttribute attribute = (EXAttribute) theEObject;
 			T result = caseAttribute(attribute);
-			if (result == null)
+			if (result == null) {
 				result = caseNode(attribute);
-			if (result == null)
+			}
+			if (result == null) {
 				result = caseXMLTypeDocumentRoot(attribute);
-			if (result == null)
+			}
+			if (result == null) {
 				result = defaultCase(theEObject);
+			}
 			return result;
 		}
 		case EXMLPackage.NODE: {
-			EXNode node = (EXNode) theEObject;
+			final EXNode node = (EXNode) theEObject;
 			T result = caseNode(node);
-			if (result == null)
+			if (result == null) {
 				result = caseXMLTypeDocumentRoot(node);
-			if (result == null)
+			}
+			if (result == null) {
 				result = defaultCase(theEObject);
+			}
 			return result;
 		}
 		default:
@@ -130,7 +141,7 @@ public class EXMLSwitch<T> extends Switch<T> {
 	 * <em>Document</em>'. <!-- begin-user-doc --> This implementation returns
 	 * null; returning a non-null result will terminate the switch. <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '
@@ -138,7 +149,7 @@ public class EXMLSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseDocument(EXDocument object) {
+	public T caseDocument(final EXDocument object) {
 		return null;
 	}
 
@@ -147,7 +158,7 @@ public class EXMLSwitch<T> extends Switch<T> {
 	 * <em>Element</em>'. <!-- begin-user-doc --> This implementation returns
 	 * null; returning a non-null result will terminate the switch. <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '
@@ -155,7 +166,7 @@ public class EXMLSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseElement(EXElement object) {
+	public T caseElement(final EXElement object) {
 		return null;
 	}
 
@@ -164,7 +175,7 @@ public class EXMLSwitch<T> extends Switch<T> {
 	 * <em>Attribute</em>'. <!-- begin-user-doc --> This implementation returns
 	 * null; returning a non-null result will terminate the switch. <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '
@@ -172,7 +183,7 @@ public class EXMLSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseAttribute(EXAttribute object) {
+	public T caseAttribute(final EXAttribute object) {
 		return null;
 	}
 
@@ -181,7 +192,7 @@ public class EXMLSwitch<T> extends Switch<T> {
 	 * <em>Node</em>'. <!-- begin-user-doc --> This implementation returns null;
 	 * returning a non-null result will terminate the switch. <!-- end-user-doc
 	 * -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '
@@ -189,7 +200,7 @@ public class EXMLSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseNode(EXNode object) {
+	public T caseNode(final EXNode object) {
 		return null;
 	}
 
@@ -198,7 +209,7 @@ public class EXMLSwitch<T> extends Switch<T> {
 	 * <em>Document Root</em>'. <!-- begin-user-doc --> This implementation
 	 * returns null; returning a non-null result will terminate the switch. <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '
@@ -206,7 +217,7 @@ public class EXMLSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseXMLTypeDocumentRoot(XMLTypeDocumentRoot object) {
+	public T caseXMLTypeDocumentRoot(final XMLTypeDocumentRoot object) {
 		return null;
 	}
 
@@ -215,7 +226,7 @@ public class EXMLSwitch<T> extends Switch<T> {
 	 * <em>EObject</em>'. <!-- begin-user-doc --> This implementation returns
 	 * null; returning a non-null result will terminate the switch, but this is
 	 * the last case anyway. <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param object
 	 *            the target of the switch.
 	 * @return the result of interpreting the object as an instance of '
@@ -224,7 +235,7 @@ public class EXMLSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	@Override
-	public T defaultCase(EObject object) {
+	public T defaultCase(final EObject object) {
 		return null;
 	}
 

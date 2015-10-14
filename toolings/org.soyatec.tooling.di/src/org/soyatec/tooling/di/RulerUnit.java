@@ -22,7 +22,7 @@ import org.eclipse.emf.common.util.Enumerator;
  * <!-- begin-user-doc --> A representation of the literals of the enumeration '
  * <em><b>Ruler Unit</b></em>', and utility methods for working with them. <!--
  * end-user-doc -->
- * 
+ *
  * @see org.soyatec.tooling.di.DiPackage#getRulerUnit()
  * @model
  * @generated
@@ -31,7 +31,7 @@ public enum RulerUnit implements Enumerator {
 	/**
 	 * The '<em><b>INCHES</b></em>' literal object. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @see #INCHES_VALUE
 	 * @generated
 	 * @ordered
@@ -41,7 +41,7 @@ public enum RulerUnit implements Enumerator {
 	/**
 	 * The '<em><b>CENTIMETERS</b></em>' literal object. <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #CENTIMETERS_VALUE
 	 * @generated
 	 * @ordered
@@ -51,7 +51,7 @@ public enum RulerUnit implements Enumerator {
 	/**
 	 * The '<em><b>PIXELS</b></em>' literal object. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @see #PIXELS_VALUE
 	 * @generated
 	 * @ordered
@@ -65,7 +65,7 @@ public enum RulerUnit implements Enumerator {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #INCHES
 	 * @model
 	 * @generated
@@ -80,7 +80,7 @@ public enum RulerUnit implements Enumerator {
 	 * clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #CENTIMETERS
 	 * @model
 	 * @generated
@@ -95,7 +95,7 @@ public enum RulerUnit implements Enumerator {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #PIXELS
 	 * @model
 	 * @generated
@@ -106,7 +106,7 @@ public enum RulerUnit implements Enumerator {
 	/**
 	 * An array of all the '<em><b>Ruler Unit</b></em>' enumerators. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static final RulerUnit[] VALUES_ARRAY = new RulerUnit[] { INCHES,
@@ -115,7 +115,7 @@ public enum RulerUnit implements Enumerator {
 	/**
 	 * A public read-only list of all the '<em><b>Ruler Unit</b></em>'
 	 * enumerators. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static final List<RulerUnit> VALUES = Collections
@@ -124,12 +124,12 @@ public enum RulerUnit implements Enumerator {
 	/**
 	 * Returns the '<em><b>Ruler Unit</b></em>' literal with the specified
 	 * literal value. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	public static RulerUnit get(String literal) {
+	public static RulerUnit get(final String literal) {
 		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			RulerUnit result = VALUES_ARRAY[i];
+			final RulerUnit result = VALUES_ARRAY[i];
 			if (result.toString().equals(literal)) {
 				return result;
 			}
@@ -140,12 +140,12 @@ public enum RulerUnit implements Enumerator {
 	/**
 	 * Returns the '<em><b>Ruler Unit</b></em>' literal with the specified name.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	public static RulerUnit getByName(String name) {
+	public static RulerUnit getByName(final String name) {
 		for (int i = 0; i < VALUES_ARRAY.length; ++i) {
-			RulerUnit result = VALUES_ARRAY[i];
+			final RulerUnit result = VALUES_ARRAY[i];
 			if (result.getName().equals(name)) {
 				return result;
 			}
@@ -156,10 +156,10 @@ public enum RulerUnit implements Enumerator {
 	/**
 	 * Returns the '<em><b>Ruler Unit</b></em>' literal with the specified
 	 * integer value. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	public static RulerUnit get(int value) {
+	public static RulerUnit get(final int value) {
 		switch (value) {
 		case INCHES_VALUE:
 			return INCHES;
@@ -173,21 +173,21 @@ public enum RulerUnit implements Enumerator {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final int value;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String name;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private final String literal;
@@ -195,10 +195,10 @@ public enum RulerUnit implements Enumerator {
 	/**
 	 * Only this class can construct instances. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	private RulerUnit(int value, String name, String literal) {
+	private RulerUnit(final int value, final String name, final String literal) {
 		this.value = value;
 		this.name = name;
 		this.literal = literal;
@@ -206,7 +206,7 @@ public enum RulerUnit implements Enumerator {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public int getValue() {
@@ -215,7 +215,7 @@ public enum RulerUnit implements Enumerator {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getName() {
@@ -224,7 +224,7 @@ public enum RulerUnit implements Enumerator {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getLiteral() {
@@ -234,7 +234,7 @@ public enum RulerUnit implements Enumerator {
 	/**
 	 * Returns the literal value of the enumerator, which is its string
 	 * representation. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

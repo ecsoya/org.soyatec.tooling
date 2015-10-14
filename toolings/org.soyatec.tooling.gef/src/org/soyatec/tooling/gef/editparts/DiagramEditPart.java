@@ -28,12 +28,12 @@ import org.soyatec.tooling.gef.editpolicies.DiagramXYLayoutEditPolicy;
 
 public abstract class DiagramEditPart extends ViewEditPart<Diagram> {
 
-	public DiagramEditPart(Diagram model) {
+	public DiagramEditPart(final Diagram model) {
 		super(model);
 	}
 
 	protected IFigure createFigure() {
-		FreeformLayer layer = new FreeformLayer();
+		final FreeformLayer layer = new FreeformLayer();
 		layer.setLayoutManager(new FreeformLayout());
 		layer.setBackgroundColor(ColorConstants.blue);
 		return layer;
@@ -41,8 +41,8 @@ public abstract class DiagramEditPart extends ViewEditPart<Diagram> {
 
 	@SuppressWarnings("rawtypes")
 	protected List getModelChildren() {
-		List<Object> modelChildren = new ArrayList<Object>();
-		ValueListIterator<Object> it = getModel().getAllShapes()
+		final List<Object> modelChildren = new ArrayList<Object>();
+		final ValueListIterator<Object> it = getModel().getAllShapes()
 				.valueListIterator();
 		while (it.hasNext()) {
 			modelChildren.add(it.next());
@@ -50,16 +50,16 @@ public abstract class DiagramEditPart extends ViewEditPart<Diagram> {
 		return modelChildren;
 	}
 
-	protected void handleNotifyChanged(Notification event) {
+	protected void handleNotifyChanged(final Notification event) {
 		super.handleNotifyChanged(event);
-		Object feature = event.getFeature();
+		final Object feature = event.getFeature();
 		if (DiPackage.eINSTANCE.getContainer_AllShapes() == feature) {
 			refreshChildren();
 		} else if (DiPackage.eINSTANCE.getContainer_AllLines() == feature) {
 		}
 	}
 
-	public Object getAdapter(@SuppressWarnings("rawtypes") Class key) {
+	public Object getAdapter(@SuppressWarnings("rawtypes") final Class key) {
 		if (SnapToHelper.class == key) {
 			return new SnapToGeometry(this);
 		}

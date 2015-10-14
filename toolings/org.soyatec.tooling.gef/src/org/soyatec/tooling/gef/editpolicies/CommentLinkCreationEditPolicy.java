@@ -36,15 +36,15 @@ public class CommentLinkCreationEditPolicy extends GraphicalNodeEditPolicy {
 
 	@Override
 	protected Command getConnectionCompleteCommand(
-			CreateConnectionRequest request) {
-		Object newObjectType = request.getNewObjectType();
+			final CreateConnectionRequest request) {
+		final Object newObjectType = request.getNewObjectType();
 		if (DiPackage.eINSTANCE.getCommentLink() == newObjectType) {
 
-			CreateCommentLinkCommand cmd = (CreateCommentLinkCommand) request
+			final CreateCommentLinkCommand cmd = (CreateCommentLinkCommand) request
 					.getStartCommand();
 			cmd.setTarget(getHost());
 
-			ConnectionAnchor targetConnectionAnchor = getNodeEditPart()
+			final ConnectionAnchor targetConnectionAnchor = getNodeEditPart()
 					.getTargetConnectionAnchor(request);
 			if (targetConnectionAnchor instanceof BaseConnectionAnchor) {
 				cmd.setTargetAnchor(((BaseConnectionAnchor) targetConnectionAnchor)
@@ -57,14 +57,15 @@ public class CommentLinkCreationEditPolicy extends GraphicalNodeEditPolicy {
 	}
 
 	@Override
-	protected Command getConnectionCreateCommand(CreateConnectionRequest request) {
-		Object newObjectType = request.getNewObjectType();
+	protected Command getConnectionCreateCommand(
+			final CreateConnectionRequest request) {
+		final Object newObjectType = request.getNewObjectType();
 		if (DiPackage.eINSTANCE.getCommentLink() == newObjectType) {
-			CreateCommentLinkCommand cmd = new CreateCommentLinkCommand(
+			final CreateCommentLinkCommand cmd = new CreateCommentLinkCommand(
 					getDiagram(), (CommentLink) request.getNewObject());
 			cmd.setSource(getHost());
 
-			ConnectionAnchor sourceConnectionAnchor = getNodeEditPart()
+			final ConnectionAnchor sourceConnectionAnchor = getNodeEditPart()
 					.getSourceConnectionAnchor(request);
 			if (sourceConnectionAnchor instanceof BaseConnectionAnchor) {
 				cmd.setSourceAnchor(((BaseConnectionAnchor) sourceConnectionAnchor)
@@ -77,7 +78,7 @@ public class CommentLinkCreationEditPolicy extends GraphicalNodeEditPolicy {
 	}
 
 	protected Diagram getDiagram() {
-		Object model = getHost().getModel();
+		final Object model = getHost().getModel();
 		if (!(model instanceof EObject)) {
 			return null;
 		}
@@ -93,15 +94,16 @@ public class CommentLinkCreationEditPolicy extends GraphicalNodeEditPolicy {
 	}
 
 	@Override
-	protected Command getReconnectTargetCommand(ReconnectRequest request) {
-		ConnectionEditPart conn = request.getConnectionEditPart();
-		EditPart target = getHost();
+	protected Command getReconnectTargetCommand(final ReconnectRequest request) {
+		final ConnectionEditPart conn = request.getConnectionEditPart();
+		final EditPart target = getHost();
 		if (target == conn.getTarget()) {
-			ConnectionAnchor anchor = getNodeEditPart()
+			final ConnectionAnchor anchor = getNodeEditPart()
 					.getTargetConnectionAnchor(request);
 			if (anchor instanceof BaseConnectionAnchor) {
-				String terminal = ((BaseConnectionAnchor) anchor).getTerminal();
-				EditingDomain domain = EditingDomainUtils
+				final String terminal = ((BaseConnectionAnchor) anchor)
+						.getTerminal();
+				final EditingDomain domain = EditingDomainUtils
 						.getEditingDomain(target);
 				return new CommandWrap2GEF(SetCommand.create(domain,
 						conn.getModel(),
@@ -112,15 +114,16 @@ public class CommentLinkCreationEditPolicy extends GraphicalNodeEditPolicy {
 	}
 
 	@Override
-	protected Command getReconnectSourceCommand(ReconnectRequest request) {
-		ConnectionEditPart conn = request.getConnectionEditPart();
-		EditPart source = getHost();
+	protected Command getReconnectSourceCommand(final ReconnectRequest request) {
+		final ConnectionEditPart conn = request.getConnectionEditPart();
+		final EditPart source = getHost();
 		if (source == conn.getSource()) {
-			ConnectionAnchor anchor = getNodeEditPart()
+			final ConnectionAnchor anchor = getNodeEditPart()
 					.getSourceConnectionAnchor(request);
 			if (anchor instanceof BaseConnectionAnchor) {
-				String terminal = ((BaseConnectionAnchor) anchor).getTerminal();
-				EditingDomain domain = EditingDomainUtils
+				final String terminal = ((BaseConnectionAnchor) anchor)
+						.getTerminal();
+				final EditingDomain domain = EditingDomainUtils
 						.getEditingDomain(source);
 				return new CommandWrap2GEF(SetCommand.create(domain,
 						conn.getModel(),

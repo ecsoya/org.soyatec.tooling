@@ -17,12 +17,12 @@ import org.soyatec.tooling.di.CommentLink;
 
 public class CommentLinkEditPart extends LineEditPart<CommentLink> {
 
-	public CommentLinkEditPart(CommentLink model) {
+	public CommentLinkEditPart(final CommentLink model) {
 		super(model);
 	}
 
 	protected IFigure createFigure() {
-		PolylineConnection conn = new PolylineConnection();
+		final PolylineConnection conn = new PolylineConnection();
 		conn.setLineStyle(SWT.LINE_DOT);
 		conn.setAntialias(SWT.ON);
 		return conn;

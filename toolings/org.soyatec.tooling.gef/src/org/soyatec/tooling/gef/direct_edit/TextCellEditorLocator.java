@@ -21,22 +21,22 @@ import org.soyatec.tooling.gef.figures.ILabelFigure;
 
 /**
  * Located the <code>TextCellEditor</code> on <code>ILabelFigure</code>.
- * 
+ *
  * @see TextDirectEditManager
  * @author Ecsoya
  */
 public class TextCellEditorLocator implements CellEditorLocator {
 
-	private ILabelFigure labelFigure;
+	private final ILabelFigure labelFigure;
 
-	public TextCellEditorLocator(ILabelFigure labelFigure) {
+	public TextCellEditorLocator(final ILabelFigure labelFigure) {
 		this.labelFigure = labelFigure;
 	}
 
-	public void relocate(CellEditor celleditor) {
-		Text text = (Text) celleditor.getControl();
-		Point pref = text.computeSize(-1, -1);
-		IFigure label = labelFigure.getLabelFigure();
+	public void relocate(final CellEditor celleditor) {
+		final Text text = (Text) celleditor.getControl();
+		final Point pref = text.computeSize(-1, -1);
+		final IFigure label = labelFigure.getLabelFigure();
 		Rectangle rect = null;
 		if (label instanceof Label) {
 			rect = ((Label) label).getTextBounds().getCopy();

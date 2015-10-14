@@ -40,7 +40,7 @@ public interface Shape extends Container, Node {
 	 * really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Background</em>' attribute.
 	 * @see #setBackground(int)
 	 * @see org.soyatec.tooling.di.DiPackage#getShape_Background()
@@ -53,7 +53,7 @@ public interface Shape extends Container, Node {
 	 * Sets the value of the '{@link org.soyatec.tooling.di.Shape#getBackground
 	 * <em>Background</em>}' attribute. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Background</em>' attribute.
 	 * @see #getBackground()
@@ -69,7 +69,7 @@ public interface Shape extends Container, Node {
 	 * really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Foreground</em>' attribute.
 	 * @see #setForeground(int)
 	 * @see org.soyatec.tooling.di.DiPackage#getShape_Foreground()
@@ -82,7 +82,7 @@ public interface Shape extends Container, Node {
 	 * Sets the value of the '{@link org.soyatec.tooling.di.Shape#getForeground
 	 * <em>Foreground</em>}' attribute. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Foreground</em>' attribute.
 	 * @see #getForeground()
@@ -98,7 +98,7 @@ public interface Shape extends Container, Node {
 	 * really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Bounds</em>' attribute.
 	 * @see #setBounds(Rectangle)
 	 * @see org.soyatec.tooling.di.DiPackage#getShape_Bounds()
@@ -111,7 +111,7 @@ public interface Shape extends Container, Node {
 	 * Sets the value of the '{@link org.soyatec.tooling.di.Shape#getBounds
 	 * <em>Bounds</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Bounds</em>' attribute.
 	 * @see #getBounds()

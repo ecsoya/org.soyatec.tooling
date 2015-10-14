@@ -34,7 +34,7 @@ import org.soyatec.tooling.di.DiPackage;
 /**
  * This is the item provider adapter for a {@link java.util.Map.Entry} object.
  * <!-- begin-user-doc --> <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class ElementEntryItemProvider extends ItemProviderAdapter implements
@@ -43,21 +43,22 @@ public class ElementEntryItemProvider extends ItemProviderAdapter implements
 	/**
 	 * This constructs an instance from a factory and a notifier. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	public ElementEntryItemProvider(AdapterFactory adapterFactory) {
+	public ElementEntryItemProvider(final AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
 	/**
 	 * This returns the property descriptors for the adapted class. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
+	public List<IItemPropertyDescriptor> getPropertyDescriptors(
+			final Object object) {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
@@ -70,10 +71,10 @@ public class ElementEntryItemProvider extends ItemProviderAdapter implements
 	/**
 	 * This adds a property descriptor for the Key feature. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	protected void addKeyPropertyDescriptor(Object object) {
+	protected void addKeyPropertyDescriptor(final Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(
 						((ComposeableAdapterFactory) adapterFactory)
@@ -90,10 +91,10 @@ public class ElementEntryItemProvider extends ItemProviderAdapter implements
 	/**
 	 * This adds a property descriptor for the Value feature. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	protected void addValuePropertyDescriptor(Object object) {
+	protected void addValuePropertyDescriptor(final Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(
 				((ComposeableAdapterFactory) adapterFactory)
 						.getRootAdapterFactory(),
@@ -109,11 +110,11 @@ public class ElementEntryItemProvider extends ItemProviderAdapter implements
 	/**
 	 * This returns ElementEntry.gif. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public Object getImage(Object object) {
+	public Object getImage(final Object object) {
 		return overlayImage(object,
 				getResourceLocator().getImage("full/obj16/ElementEntry"));
 	}
@@ -121,12 +122,12 @@ public class ElementEntryItemProvider extends ItemProviderAdapter implements
 	/**
 	 * This returns the label text for the adapted class. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public String getText(Object object) {
-		Map.Entry<?, ?> elementEntry = (Map.Entry<?, ?>) object;
+	public String getText(final Object object) {
+		final Map.Entry<?, ?> elementEntry = (Map.Entry<?, ?>) object;
 		return "" + elementEntry.getKey() + " -> " + elementEntry.getValue();
 	}
 
@@ -135,11 +136,11 @@ public class ElementEntryItemProvider extends ItemProviderAdapter implements
 	 * update any cached children and by creating a viewer notification, which
 	 * it passes to {@link #fireNotifyChanged}. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public void notifyChanged(Notification notification) {
+	public void notifyChanged(final Notification notification) {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Map.Entry.class)) {
@@ -155,19 +156,19 @@ public class ElementEntryItemProvider extends ItemProviderAdapter implements
 	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s
 	 * describing the children that can be created under this object. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	protected void collectNewChildDescriptors(
-			Collection<Object> newChildDescriptors, Object object) {
+			final Collection<Object> newChildDescriptors, final Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
 
 	/**
 	 * Return the resource locator for this item provider's resources. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

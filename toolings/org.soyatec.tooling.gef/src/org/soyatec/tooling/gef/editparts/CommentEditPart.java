@@ -23,7 +23,7 @@ import org.soyatec.tooling.gef.resources.ResourcesFactory;
 
 public class CommentEditPart extends ShapeEditPart<Comment> {
 
-	public CommentEditPart(Comment model) {
+	public CommentEditPart(final Comment model) {
 		super(model);
 	}
 
@@ -41,12 +41,12 @@ public class CommentEditPart extends ShapeEditPart<Comment> {
 	}
 
 	protected void refreshLabel() {
-		CommentFigure primaryFigure = (CommentFigure) getPrimaryFigure();
-		Comment model = (Comment) getModel();
+		final CommentFigure primaryFigure = (CommentFigure) getPrimaryFigure();
+		final Comment model = (Comment) getModel();
 		primaryFigure.setText(model.getLabel());
 	}
 
-	protected void handleNotifyChanged(Notification event) {
+	protected void handleNotifyChanged(final Notification event) {
 		super.handleNotifyChanged(event);
 		if (DiPackage.eINSTANCE.getView_Label() == event.getFeature()) {
 			refreshLabel();

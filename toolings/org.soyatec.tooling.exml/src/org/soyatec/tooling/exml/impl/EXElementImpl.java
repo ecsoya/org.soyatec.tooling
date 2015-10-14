@@ -45,7 +45,7 @@ public class EXElementImpl extends EXNodeImpl implements EXElement {
 	/**
 	 * The cached value of the '{@link #getElements() <em>Elements</em>}'
 	 * containment reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getElements()
 	 * @generated
 	 * @ordered
@@ -55,7 +55,7 @@ public class EXElementImpl extends EXNodeImpl implements EXElement {
 	/**
 	 * The cached value of the '{@link #getAttributes() <em>Attributes</em>}'
 	 * containment reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAttributes()
 	 * @generated
 	 * @ordered
@@ -64,7 +64,7 @@ public class EXElementImpl extends EXNodeImpl implements EXElement {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EXElementImpl() {
@@ -73,7 +73,7 @@ public class EXElementImpl extends EXNodeImpl implements EXElement {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -83,7 +83,7 @@ public class EXElementImpl extends EXNodeImpl implements EXElement {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -97,7 +97,7 @@ public class EXElementImpl extends EXNodeImpl implements EXElement {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -111,14 +111,14 @@ public class EXElementImpl extends EXNodeImpl implements EXElement {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public EXAttribute getAttribute(final String name) {
 		if (name != null) {
-			EList<EXAttribute> attributes = getAttributes();
-			for (EXAttribute attr : attributes) {
+			final EList<EXAttribute> attributes = getAttributes();
+			for (final EXAttribute attr : attributes) {
 				if (name.equals(attr.getName())) {
 					return attr;
 				}
@@ -129,15 +129,15 @@ public class EXElementImpl extends EXNodeImpl implements EXElement {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public EList<EXElement> getElementsByName(final String name) {
-		BasicEList<EXElement> elements = new BasicEList<EXElement>();
+		final BasicEList<EXElement> elements = new BasicEList<EXElement>();
 		if (name != null) {
-			EList<EXElement> children = getElements();
-			for (EXElement e : children) {
+			final EList<EXElement> children = getElements();
+			for (final EXElement e : children) {
 				if (name.equals(e.getName())) {
 					elements.add(e);
 				}
@@ -148,12 +148,12 @@ public class EXElementImpl extends EXNodeImpl implements EXElement {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd,
-			int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseRemove(final InternalEObject otherEnd,
+			final int featureID, final NotificationChain msgs) {
 		switch (featureID) {
 		case EXMLPackage.ELEMENT__ELEMENTS:
 			return ((InternalEList<?>) getElements()).basicRemove(otherEnd,
@@ -167,11 +167,12 @@ public class EXElementImpl extends EXNodeImpl implements EXElement {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+	public Object eGet(final int featureID, final boolean resolve,
+			final boolean coreType) {
 		switch (featureID) {
 		case EXMLPackage.ELEMENT__ELEMENTS:
 			return getElements();
@@ -183,12 +184,12 @@ public class EXElementImpl extends EXNodeImpl implements EXElement {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public void eSet(int featureID, Object newValue) {
+	public void eSet(final int featureID, final Object newValue) {
 		switch (featureID) {
 		case EXMLPackage.ELEMENT__ELEMENTS:
 			getElements().clear();
@@ -205,11 +206,11 @@ public class EXElementImpl extends EXNodeImpl implements EXElement {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public void eUnset(int featureID) {
+	public void eUnset(final int featureID) {
 		switch (featureID) {
 		case EXMLPackage.ELEMENT__ELEMENTS:
 			getElements().clear();
@@ -223,11 +224,11 @@ public class EXElementImpl extends EXNodeImpl implements EXElement {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public boolean eIsSet(int featureID) {
+	public boolean eIsSet(final int featureID) {
 		switch (featureID) {
 		case EXMLPackage.ELEMENT__ELEMENTS:
 			return elements != null && !elements.isEmpty();
@@ -239,11 +240,11 @@ public class EXElementImpl extends EXNodeImpl implements EXElement {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public Object eInvoke(int operationID, EList<?> arguments)
+	public Object eInvoke(final int operationID, final EList<?> arguments)
 			throws InvocationTargetException {
 		switch (operationID) {
 		case EXMLPackage.ELEMENT___GET_ATTRIBUTE__STRING:

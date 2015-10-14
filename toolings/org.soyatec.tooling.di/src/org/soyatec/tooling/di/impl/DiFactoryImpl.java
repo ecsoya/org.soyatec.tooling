@@ -40,24 +40,24 @@ import org.soyatec.tooling.di.View;
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!--
  * end-user-doc -->
- * 
+ *
  * @generated
  */
 public class DiFactoryImpl extends EFactoryImpl implements DiFactory {
 	/**
 	 * Creates the default factory implementation. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static DiFactory init() {
 		try {
-			DiFactory theDiFactory = (DiFactory) EPackage.Registry.INSTANCE
+			final DiFactory theDiFactory = (DiFactory) EPackage.Registry.INSTANCE
 					.getEFactory(DiPackage.eNS_URI);
 			if (theDiFactory != null) {
 				return theDiFactory;
 			}
-		} catch (Exception exception) {
+		} catch (final Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new DiFactoryImpl();
@@ -66,7 +66,7 @@ public class DiFactoryImpl extends EFactoryImpl implements DiFactory {
 	/**
 	 * Creates an instance of the factory. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public DiFactoryImpl() {
@@ -75,11 +75,11 @@ public class DiFactoryImpl extends EFactoryImpl implements DiFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public EObject create(EClass eClass) {
+	public EObject create(final EClass eClass) {
 		switch (eClass.getClassifierID()) {
 		case DiPackage.DIAGRAM:
 			return createDiagram();
@@ -109,11 +109,12 @@ public class DiFactoryImpl extends EFactoryImpl implements DiFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public Object createFromString(EDataType eDataType, String initialValue) {
+	public Object createFromString(final EDataType eDataType,
+			final String initialValue) {
 		switch (eDataType.getClassifierID()) {
 		case DiPackage.LINE_STYLE:
 			return createLineStyleFromString(eDataType, initialValue);
@@ -131,11 +132,12 @@ public class DiFactoryImpl extends EFactoryImpl implements DiFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public String convertToString(EDataType eDataType, Object instanceValue) {
+	public String convertToString(final EDataType eDataType,
+			final Object instanceValue) {
 		switch (eDataType.getClassifierID()) {
 		case DiPackage.LINE_STYLE:
 			return convertLineStyleToString(eDataType, instanceValue);
@@ -153,196 +155,199 @@ public class DiFactoryImpl extends EFactoryImpl implements DiFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Diagram createDiagram() {
-		DiagramImpl diagram = new DiagramImpl();
+		final DiagramImpl diagram = new DiagramImpl();
 		return diagram;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Shape createShape() {
-		ShapeImpl shape = new ShapeImpl();
+		final ShapeImpl shape = new ShapeImpl();
 		return shape;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public GradientShape createGradientShape() {
-		GradientShapeImpl gradientShape = new GradientShapeImpl();
+		final GradientShapeImpl gradientShape = new GradientShapeImpl();
 		return gradientShape;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Connector createConnector() {
-		ConnectorImpl connector = new ConnectorImpl();
+		final ConnectorImpl connector = new ConnectorImpl();
 		return connector;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Comment createComment() {
-		CommentImpl comment = new CommentImpl();
+		final CommentImpl comment = new CommentImpl();
 		return comment;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public CommentLink createCommentLink() {
-		CommentLinkImpl commentLink = new CommentLinkImpl();
+		final CommentLinkImpl commentLink = new CommentLinkImpl();
 		return commentLink;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Grid createGrid() {
-		GridImpl grid = new GridImpl();
+		final GridImpl grid = new GridImpl();
 		return grid;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Ruler createRuler() {
-		RulerImpl ruler = new RulerImpl();
+		final RulerImpl ruler = new RulerImpl();
 		return ruler;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Guide createGuide() {
-		GuideImpl guide = new GuideImpl();
+		final GuideImpl guide = new GuideImpl();
 		return guide;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Map.Entry<View, Alignment> createElementEntry() {
-		ElementEntryImpl elementEntry = new ElementEntryImpl();
+		final ElementEntryImpl elementEntry = new ElementEntryImpl();
 		return elementEntry;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	public LineStyle createLineStyleFromString(EDataType eDataType,
-			String initialValue) {
-		LineStyle result = LineStyle.get(initialValue);
-		if (result == null)
+	public LineStyle createLineStyleFromString(final EDataType eDataType,
+			final String initialValue) {
+		final LineStyle result = LineStyle.get(initialValue);
+		if (result == null) {
 			throw new IllegalArgumentException("The value '" + initialValue
 					+ "' is not a valid enumerator of '" + eDataType.getName()
 					+ "'");
+		}
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	public String convertLineStyleToString(EDataType eDataType,
-			Object instanceValue) {
+	public String convertLineStyleToString(final EDataType eDataType,
+			final Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	public RulerUnit createRulerUnitFromString(EDataType eDataType,
-			String initialValue) {
-		RulerUnit result = RulerUnit.get(initialValue);
-		if (result == null)
+	public RulerUnit createRulerUnitFromString(final EDataType eDataType,
+			final String initialValue) {
+		final RulerUnit result = RulerUnit.get(initialValue);
+		if (result == null) {
 			throw new IllegalArgumentException("The value '" + initialValue
 					+ "' is not a valid enumerator of '" + eDataType.getName()
 					+ "'");
+		}
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	public String convertRulerUnitToString(EDataType eDataType,
-			Object instanceValue) {
+	public String convertRulerUnitToString(final EDataType eDataType,
+			final Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	public Alignment createAlignmentFromString(EDataType eDataType,
-			String initialValue) {
-		Alignment result = Alignment.get(initialValue);
-		if (result == null)
+	public Alignment createAlignmentFromString(final EDataType eDataType,
+			final String initialValue) {
+		final Alignment result = Alignment.get(initialValue);
+		if (result == null) {
 			throw new IllegalArgumentException("The value '" + initialValue
 					+ "' is not a valid enumerator of '" + eDataType.getName()
 					+ "'");
+		}
 		return result;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	public String convertAlignmentToString(EDataType eDataType,
-			Object instanceValue) {
+	public String convertAlignmentToString(final EDataType eDataType,
+			final Object instanceValue) {
 		return instanceValue == null ? null : instanceValue.toString();
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
-	public Rectangle createRectangleFromString(EDataType eDataType,
-			String initialValue) {
+	public Rectangle createRectangleFromString(final EDataType eDataType,
+			final String initialValue) {
 		if (initialValue != null) {
-			String[] splits = initialValue.split(",");
+			final String[] splits = initialValue.split(",");
 			if (splits.length == 4) {
-				Rectangle r = new Rectangle();
+				final Rectangle r = new Rectangle();
 				try {
 					r.x = Integer.parseInt(splits[0].trim());
 					r.y = Integer.parseInt(splits[1].trim());
 					r.width = Integer.parseInt(splits[2].trim());
 					r.height = Integer.parseInt(splits[3].trim());
-				} catch (NumberFormatException e) {
+				} catch (final NumberFormatException e) {
 					e.printStackTrace();
 				}
 				return r;
@@ -353,12 +358,12 @@ public class DiFactoryImpl extends EFactoryImpl implements DiFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated NOT
 	 */
-	public String convertRectangleToString(EDataType eDataType,
-			Object instanceValue) {
-		Rectangle r = (Rectangle) instanceValue;
+	public String convertRectangleToString(final EDataType eDataType,
+			final Object instanceValue) {
+		final Rectangle r = (Rectangle) instanceValue;
 		if (r != null) {
 			return r.x + "," + r.y + "," + r.width + "," + r.height;
 		}
@@ -367,7 +372,7 @@ public class DiFactoryImpl extends EFactoryImpl implements DiFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public DiPackage getDiPackage() {
@@ -376,7 +381,7 @@ public class DiFactoryImpl extends EFactoryImpl implements DiFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

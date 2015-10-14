@@ -20,7 +20,7 @@ import org.soyatec.tooling.exml.EXMLPackage;
 /**
  * This class contains helper methods to serialize and deserialize XML documents
  * <!-- begin-user-doc --> <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class MLXMLProcessor extends XMLProcessor {
@@ -28,7 +28,7 @@ public class MLXMLProcessor extends XMLProcessor {
 	/**
 	 * Public constructor to instantiate the helper. <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public MLXMLProcessor() {
@@ -39,7 +39,7 @@ public class MLXMLProcessor extends XMLProcessor {
 	/**
 	 * Register for "*" and "xml" file extensions the EXMLResourceFactoryImpl
 	 * factory. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

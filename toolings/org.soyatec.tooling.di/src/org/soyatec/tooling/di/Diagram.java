@@ -52,7 +52,7 @@ public interface Diagram extends Container {
 	 * isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Comments</em>' containment reference list.
 	 * @see org.soyatec.tooling.di.DiPackage#getDiagram_Comments()
 	 * @model containment="true" transient="true" volatile="true"
@@ -70,7 +70,7 @@ public interface Diagram extends Container {
 	 * isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Comment Links</em>' containment reference
 	 *         list.
 	 * @see org.soyatec.tooling.di.DiPackage#getDiagram_CommentLinks()
@@ -90,7 +90,7 @@ public interface Diagram extends Container {
 	 * really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Rulers</em>' attribute list.
 	 * @see org.soyatec.tooling.di.DiPackage#getDiagram_Rulers()
 	 * @model dataType="org.eclipse.emf.ecore.EFeatureMapEntry" many="true"
@@ -107,7 +107,7 @@ public interface Diagram extends Container {
 	 * isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Horizontal Ruler</em>' containment
 	 *         reference.
 	 * @see #setHorizontalRuler(Ruler)
@@ -123,7 +123,7 @@ public interface Diagram extends Container {
 	 * {@link org.soyatec.tooling.di.Diagram#getHorizontalRuler
 	 * <em>Horizontal Ruler</em>}' containment reference. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Horizontal Ruler</em>' containment
 	 *            reference.
@@ -140,7 +140,7 @@ public interface Diagram extends Container {
 	 * isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Vertical Ruler</em>' containment reference.
 	 * @see #setVerticalRuler(Ruler)
 	 * @see org.soyatec.tooling.di.DiPackage#getDiagram_VerticalRuler()
@@ -155,7 +155,7 @@ public interface Diagram extends Container {
 	 * {@link org.soyatec.tooling.di.Diagram#getVerticalRuler
 	 * <em>Vertical Ruler</em>}' containment reference. <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Vertical Ruler</em>' containment
 	 *            reference.
@@ -172,7 +172,7 @@ public interface Diagram extends Container {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Grid</em>' containment reference.
 	 * @see #setGrid(Grid)
 	 * @see org.soyatec.tooling.di.DiPackage#getDiagram_Grid()
@@ -185,7 +185,7 @@ public interface Diagram extends Container {
 	 * Sets the value of the '{@link org.soyatec.tooling.di.Diagram#getGrid
 	 * <em>Grid</em>}' containment reference. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Grid</em>' containment reference.
 	 * @see #getGrid()
@@ -201,7 +201,7 @@ public interface Diagram extends Container {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Snap To Grid</em>' attribute.
 	 * @see #setSnapToGrid(boolean)
 	 * @see org.soyatec.tooling.di.DiPackage#getDiagram_SnapToGrid()
@@ -214,7 +214,7 @@ public interface Diagram extends Container {
 	 * Sets the value of the '
 	 * {@link org.soyatec.tooling.di.Diagram#isSnapToGrid <em>Snap To Grid</em>}
 	 * ' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Snap To Grid</em>' attribute.
 	 * @see #isSnapToGrid()
@@ -230,7 +230,7 @@ public interface Diagram extends Container {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Snap To Geometry</em>' attribute.
 	 * @see #setSnapToGeometry(boolean)
 	 * @see org.soyatec.tooling.di.DiPackage#getDiagram_SnapToGeometry()
@@ -244,7 +244,7 @@ public interface Diagram extends Container {
 	 * {@link org.soyatec.tooling.di.Diagram#isSnapToGeometry
 	 * <em>Snap To Geometry</em>}' attribute. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Snap To Geometry</em>' attribute.
 	 * @see #isSnapToGeometry()

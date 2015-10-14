@@ -51,7 +51,7 @@ import org.soyatec.tooling.gef.resources.ResourcesFactory;
 
 /**
  * Form PropertyTab for display diagram elements.
- * 
+ *
  * @author Ecsoya
  */
 public class ViewPropertyTab extends CommandPropertyTab implements
@@ -88,7 +88,7 @@ public class ViewPropertyTab extends CommandPropertyTab implements
 		gradient_features.add(ES_GRADIENT_VERTICAL);
 	}
 
-	private Map<EStructuralFeature, FieldEditor> editorMap = new HashMap<EStructuralFeature, FieldEditor>(
+	private final Map<EStructuralFeature, FieldEditor> editorMap = new HashMap<EStructuralFeature, FieldEditor>(
 			1);
 	private Group gradientGroup;
 	private Composite control;
@@ -100,18 +100,18 @@ public class ViewPropertyTab extends CommandPropertyTab implements
 		store = new PreferenceStore();
 	}
 
-	public void propertyChange(PropertyChangeEvent event) {
-		String property = event.getProperty();
+	public void propertyChange(final PropertyChangeEvent event) {
+		final String property = event.getProperty();
 		if (FieldEditor.IS_VALID.equals(property)) {
 			// valid
 		} else if (model != null) {
-			Object source = event.getSource();
+			final Object source = event.getSource();
 			if (!(source instanceof FieldEditor)) {
 				return;
 			}
-			String name = ((FieldEditor) source).getPreferenceName();
-			EStructuralFeature feature = model.eClass().getEStructuralFeature(
-					name);
+			final String name = ((FieldEditor) source).getPreferenceName();
+			final EStructuralFeature feature = model.eClass()
+					.getEStructuralFeature(name);
 			if (feature == null) {
 				return;
 			}
@@ -122,10 +122,10 @@ public class ViewPropertyTab extends CommandPropertyTab implements
 			if (newValue instanceof RGB) {
 				newValue = ResourcesFactory.RGBToInteger((RGB) newValue);
 			}
-			EditingDomain domain = getEditingDomain();
+			final EditingDomain domain = getEditingDomain();
 			if (domain != null) {
-				Command command = SetCommand.create(domain, model, feature,
-						newValue);
+				final Command command = SetCommand.create(domain, model,
+						feature, newValue);
 				executeCommand(command);
 			}
 		}
@@ -139,13 +139,13 @@ public class ViewPropertyTab extends CommandPropertyTab implements
 		return ResourcesFactory.getString("properties_appearance_desc"); //$NON-NLS-1$
 	}
 
-	protected void setInput(Object newInput) {
+	protected void setInput(final Object newInput) {
 		super.setInput(newInput);
 		model = null;
 		if (newInput instanceof View) {
 			model = ((View) newInput);
 		} else if (newInput instanceof EditPart) {
-			Object mm = ((EditPart) newInput).getModel();
+			final Object mm = ((EditPart) newInput).getModel();
 			if (mm instanceof View) {
 				model = (View) mm;
 			}
@@ -154,19 +154,19 @@ public class ViewPropertyTab extends CommandPropertyTab implements
 	}
 
 	private void prepareStore() {
-		List<EStructuralFeature> all = new ArrayList<EStructuralFeature>(
+		final List<EStructuralFeature> all = new ArrayList<EStructuralFeature>(
 				common_features);
 		all.addAll(gradient_features);
-		for (EStructuralFeature sf : all) {
+		for (final EStructuralFeature sf : all) {
 			if (!isFeatureVisible(model, sf)) {
 				continue;
 			}
-			String key = sf.getName();
-			Object defaultValue = sf.getDefaultValue();
-			EDataType eType = (EDataType) sf.getEType();
-			Class<?> instanceType = eType.getInstanceClass();
-			boolean eIsSet = model.eIsSet(sf);
-			Object value = model.eGet(sf);
+			final String key = sf.getName();
+			final Object defaultValue = sf.getDefaultValue();
+			final EDataType eType = (EDataType) sf.getEType();
+			final Class<?> instanceType = eType.getInstanceClass();
+			final boolean eIsSet = model.eIsSet(sf);
+			final Object value = model.eGet(sf);
 
 			if (ES_BACKGROUND == sf || ES_FOREGROUND == sf
 					|| ES_GRADIENT_COLOR == sf || ES_LINE_COLOR == sf) {
@@ -218,7 +218,8 @@ public class ViewPropertyTab extends CommandPropertyTab implements
 
 	}
 
-	protected boolean isFeatureVisible(View model, EStructuralFeature sf) {
+	protected boolean isFeatureVisible(final View model,
+			final EStructuralFeature sf) {
 		if (model == null || sf == null) {
 			return false;
 		}
@@ -234,32 +235,32 @@ public class ViewPropertyTab extends CommandPropertyTab implements
 			return;
 		}
 		if (model == null) {
-			Control[] children = control.getChildren();
-			for (Control child : children) {
+			final Control[] children = control.getChildren();
+			for (final Control child : children) {
 				child.setVisible(false);
-				Object layoutData = child.getLayoutData();
+				final Object layoutData = child.getLayoutData();
 				if (layoutData instanceof GridData) {
 					((GridData) layoutData).exclude = true;
 				}
 			}
 		} else {
-			Set<Entry<EStructuralFeature, FieldEditor>> entrySet = editorMap
+			final Set<Entry<EStructuralFeature, FieldEditor>> entrySet = editorMap
 					.entrySet();
-			List<FieldEditor> visibleEditors = new ArrayList<FieldEditor>();
-			for (Entry<EStructuralFeature, FieldEditor> entry : entrySet) {
-				EStructuralFeature feature = entry.getKey();
-				FieldEditor editor = entry.getValue();
-				boolean enabled = isFeatureVisible(model, feature);
+			final List<FieldEditor> visibleEditors = new ArrayList<FieldEditor>();
+			for (final Entry<EStructuralFeature, FieldEditor> entry : entrySet) {
+				final EStructuralFeature feature = entry.getKey();
+				final FieldEditor editor = entry.getValue();
+				final boolean enabled = isFeatureVisible(model, feature);
 				editor.setEnabled(enabled, getEditorParent(feature));
 				if (enabled) {
 					visibleEditors.add(editor);
 				}
 			}
 
-			Control[] children = control.getChildren();
-			for (Control child : children) {
+			final Control[] children = control.getChildren();
+			for (final Control child : children) {
 				child.setVisible(child.isEnabled());
-				Object layoutData = child.getLayoutData();
+				final Object layoutData = child.getLayoutData();
 				if (layoutData instanceof GridData) {
 					((GridData) layoutData).exclude = !child.isVisible();
 				}
@@ -268,7 +269,7 @@ public class ViewPropertyTab extends CommandPropertyTab implements
 			((GridData) gradientGroup.getLayoutData()).exclude = !(model instanceof GradientShape);
 
 			// load values for editors
-			for (FieldEditor editor : visibleEditors) {
+			for (final FieldEditor editor : visibleEditors) {
 				editor.load();
 			}
 		}
@@ -277,20 +278,21 @@ public class ViewPropertyTab extends CommandPropertyTab implements
 		control.getParent().getParent().layout();
 	}
 
-	private Composite getEditorParent(EStructuralFeature feature) {
+	private Composite getEditorParent(final EStructuralFeature feature) {
 		if (gradient_features.contains(feature)) {
 			return gradientGroup;
 		}
 		return control;
 	}
 
-	public Control createControl(FormToolkit factory, Composite parent) {
+	public Control createControl(final FormToolkit factory,
+			final Composite parent) {
 		control = factory.createComposite(parent, SWT.NONE);
-		int numColumns = 2;
+		final int numColumns = 2;
 		control.setLayout(new GridLayout(numColumns, false));
 
-		for (EStructuralFeature sf : common_features) {
-			FieldEditor editor = createFieldEditor(control, sf);
+		for (final EStructuralFeature sf : common_features) {
+			final FieldEditor editor = createFieldEditor(control, sf);
 			if (editor != null) {
 				editorMap.put(sf, editor);
 			}
@@ -300,25 +302,25 @@ public class ViewPropertyTab extends CommandPropertyTab implements
 				.setText(ResourcesFactory.getString("properties_gradient")); //$NON-NLS-1$
 		gradientGroup.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true,
 				false, numColumns, 1));
-		for (EStructuralFeature sf : gradient_features) {
-			FieldEditor editor = createFieldEditor(gradientGroup, sf);
+		for (final EStructuralFeature sf : gradient_features) {
+			final FieldEditor editor = createFieldEditor(gradientGroup, sf);
 			if (editor != null) {
 				editorMap.put(sf, editor);
 			}
 		}
 		gradientGroup.setLayout(new GridLayout(numColumns, false));
 
-		Set<Entry<EStructuralFeature, FieldEditor>> entrySet = editorMap
+		final Set<Entry<EStructuralFeature, FieldEditor>> entrySet = editorMap
 				.entrySet();
-		for (Entry<EStructuralFeature, FieldEditor> entry : entrySet) {
-			EStructuralFeature feature = entry.getKey();
-			FieldEditor editor = entry.getValue();
+		for (final Entry<EStructuralFeature, FieldEditor> entry : entrySet) {
+			final EStructuralFeature feature = entry.getKey();
+			final FieldEditor editor = entry.getValue();
 			editor.fillIntoGrid(getEditorParent(feature), numColumns);
 			editor.setPreferenceStore(store);
 			editor.setPropertyChangeListener(this);
 		}
-		Control[] children = control.getChildren();
-		for (Control child : children) {
+		final Control[] children = control.getChildren();
+		for (final Control child : children) {
 			factory.adapt(child, true, true);
 		}
 		// control.layout();
@@ -326,10 +328,10 @@ public class ViewPropertyTab extends CommandPropertyTab implements
 		return control;
 	}
 
-	private FieldEditor createFieldEditor(Composite parent,
-			EStructuralFeature feature) {
-		String name = feature.getName();
-		String label = getFeatureLabel(feature);
+	private FieldEditor createFieldEditor(final Composite parent,
+			final EStructuralFeature feature) {
+		final String name = feature.getName();
+		final String label = getFeatureLabel(feature);
 		if (ES_BACKGROUND == feature || ES_FOREGROUND == feature
 				|| ES_GRADIENT_COLOR == feature || ES_LINE_COLOR == feature) {
 			return new ColorFieldEditor(name, label, parent);
@@ -342,7 +344,8 @@ public class ViewPropertyTab extends CommandPropertyTab implements
 									ResourcesFactory
 											.getString("properties_vertical"), "true" }, { ResourcesFactory.getString("properties_horizontal"), "false" } }, parent); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
 		} else {
-			Class<?> instanceClass = feature.getEType().getInstanceClass();
+			final Class<?> instanceClass = feature.getEType()
+					.getInstanceClass();
 			if (boolean.class == instanceClass) {
 				return new BooleanFieldEditor(name, label, parent);
 			} else if (int.class == instanceClass) {
@@ -353,7 +356,7 @@ public class ViewPropertyTab extends CommandPropertyTab implements
 				StringFieldEditor.VALIDATE_ON_KEY_STROKE, parent);
 	}
 
-	private String getFeatureLabel(EStructuralFeature feature) {
+	private String getFeatureLabel(final EStructuralFeature feature) {
 		if (ES_LABEL == feature) {
 			return ResourcesFactory.getString("properties_label"); //$NON-NLS-1$
 		} else if (ES_BACKGROUND == feature) {
@@ -379,7 +382,8 @@ public class ViewPropertyTab extends CommandPropertyTab implements
 	}
 
 	@Override
-	public boolean isVisibleFor(IWorkbenchPart part, ISelection selection) {
+	public boolean isVisibleFor(final IWorkbenchPart part,
+			final ISelection selection) {
 		Object element = ((IStructuredSelection) selection).getFirstElement();
 		if (element instanceof EditPart) {
 			element = ((EditPart) element).getModel();

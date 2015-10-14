@@ -27,22 +27,22 @@ import org.soyatec.tooling.gef.utils.EditingDomainUtils;
 
 public class ShapeComponentEditPolicy extends ComponentEditPolicy {
 
-	protected Command createDeleteCommand(GroupRequest deleteRequest) {
+	protected Command createDeleteCommand(final GroupRequest deleteRequest) {
 		@SuppressWarnings("rawtypes")
-		List editParts = deleteRequest.getEditParts();
+		final List editParts = deleteRequest.getEditParts();
 		final EditingDomain ed = EditingDomainUtils.getEditingDomain(getHost());
-		List<EObject> deletingObjects = new ArrayList<EObject>();
-		for (Object object : editParts) {
-			Object model = ((EditPart) object).getModel();
+		final List<EObject> deletingObjects = new ArrayList<EObject>();
+		for (final Object object : editParts) {
+			final Object model = ((EditPart) object).getModel();
 			if (model instanceof Shape) {
-				Shape shape = (Shape) model;
+				final Shape shape = (Shape) model;
 				deletingObjects.add(shape);
-				ValueListIterator<Object> incomings = shape
+				final ValueListIterator<Object> incomings = shape
 						.getAllIncomingLines().valueListIterator();
 				while (incomings.hasNext()) {
 					deletingObjects.add((EObject) incomings.next());
 				}
-				ValueListIterator<Object> outgoings = shape
+				final ValueListIterator<Object> outgoings = shape
 						.getAllOutgoingLines().valueListIterator();
 				while (outgoings.hasNext()) {
 					deletingObjects.add((EObject) outgoings.next());

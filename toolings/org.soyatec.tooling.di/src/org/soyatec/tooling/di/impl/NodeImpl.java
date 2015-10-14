@@ -52,7 +52,7 @@ public abstract class NodeImpl extends ViewImpl implements Node {
 	 * The cached value of the '{@link #getAllOutgoingLines()
 	 * <em>All Outgoing Lines</em>}' attribute list. <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAllOutgoingLines()
 	 * @generated
 	 * @ordered
@@ -63,7 +63,7 @@ public abstract class NodeImpl extends ViewImpl implements Node {
 	 * The cached value of the '{@link #getAllIncomingLines()
 	 * <em>All Incoming Lines</em>}' attribute list. <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAllIncomingLines()
 	 * @generated
 	 * @ordered
@@ -72,7 +72,7 @@ public abstract class NodeImpl extends ViewImpl implements Node {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected NodeImpl() {
@@ -81,7 +81,7 @@ public abstract class NodeImpl extends ViewImpl implements Node {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -91,7 +91,7 @@ public abstract class NodeImpl extends ViewImpl implements Node {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public FeatureMap getAllOutgoingLines() {
@@ -104,7 +104,7 @@ public abstract class NodeImpl extends ViewImpl implements Node {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public FeatureMap getAllIncomingLines() {
@@ -117,7 +117,7 @@ public abstract class NodeImpl extends ViewImpl implements Node {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<CommentLink> getCommentLinks() {
@@ -127,7 +127,7 @@ public abstract class NodeImpl extends ViewImpl implements Node {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<Connector> getOutgoingLines() {
@@ -137,7 +137,7 @@ public abstract class NodeImpl extends ViewImpl implements Node {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<Connector> getIncomingLines() {
@@ -147,13 +147,13 @@ public abstract class NodeImpl extends ViewImpl implements Node {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd,
-			int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseAdd(final InternalEObject otherEnd,
+			final int featureID, final NotificationChain msgs) {
 		switch (featureID) {
 		case DiPackage.NODE__COMMENT_LINKS:
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getCommentLinks())
@@ -170,12 +170,12 @@ public abstract class NodeImpl extends ViewImpl implements Node {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd,
-			int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseRemove(final InternalEObject otherEnd,
+			final int featureID, final NotificationChain msgs) {
 		switch (featureID) {
 		case DiPackage.NODE__ALL_OUTGOING_LINES:
 			return ((InternalEList<?>) getAllOutgoingLines()).basicRemove(
@@ -198,19 +198,22 @@ public abstract class NodeImpl extends ViewImpl implements Node {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+	public Object eGet(final int featureID, final boolean resolve,
+			final boolean coreType) {
 		switch (featureID) {
 		case DiPackage.NODE__ALL_OUTGOING_LINES:
-			if (coreType)
+			if (coreType) {
 				return getAllOutgoingLines();
+			}
 			return ((FeatureMap.Internal) getAllOutgoingLines()).getWrapper();
 		case DiPackage.NODE__ALL_INCOMING_LINES:
-			if (coreType)
+			if (coreType) {
 				return getAllIncomingLines();
+			}
 			return ((FeatureMap.Internal) getAllIncomingLines()).getWrapper();
 		case DiPackage.NODE__COMMENT_LINKS:
 			return getCommentLinks();
@@ -224,12 +227,12 @@ public abstract class NodeImpl extends ViewImpl implements Node {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public void eSet(int featureID, Object newValue) {
+	public void eSet(final int featureID, final Object newValue) {
 		switch (featureID) {
 		case DiPackage.NODE__ALL_OUTGOING_LINES:
 			((FeatureMap.Internal) getAllOutgoingLines()).set(newValue);
@@ -258,11 +261,11 @@ public abstract class NodeImpl extends ViewImpl implements Node {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public void eUnset(int featureID) {
+	public void eUnset(final int featureID) {
 		switch (featureID) {
 		case DiPackage.NODE__ALL_OUTGOING_LINES:
 			getAllOutgoingLines().clear();
@@ -285,11 +288,11 @@ public abstract class NodeImpl extends ViewImpl implements Node {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public boolean eIsSet(int featureID) {
+	public boolean eIsSet(final int featureID) {
 		switch (featureID) {
 		case DiPackage.NODE__ALL_OUTGOING_LINES:
 			return allOutgoingLines != null && !allOutgoingLines.isEmpty();
@@ -307,15 +310,16 @@ public abstract class NodeImpl extends ViewImpl implements Node {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy())
+		if (eIsProxy()) {
 			return super.toString();
+		}
 
-		StringBuffer result = new StringBuffer(super.toString());
+		final StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (allOutgoingLines: ");
 		result.append(allOutgoingLines);
 		result.append(", allIncomingLines: ");

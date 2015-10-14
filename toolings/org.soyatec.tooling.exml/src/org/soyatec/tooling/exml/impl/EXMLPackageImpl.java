@@ -29,34 +29,34 @@ import org.soyatec.tooling.exml.EXNode;
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Package</b>. <!--
  * end-user-doc -->
- * 
+ *
  * @generated
  */
 public class EXMLPackageImpl extends EPackageImpl implements EXMLPackage {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass documentEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass elementEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass attributeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass nodeEClass = null;
@@ -70,7 +70,7 @@ public class EXMLPackageImpl extends EPackageImpl implements EXMLPackage {
 	 * method {@link #init init()}, which also performs initialization of the
 	 * package, or returns the registered package, if one already exists. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.soyatec.tooling.exml.EXMLPackage#eNS_URI
 	 * @see #init()
@@ -82,7 +82,7 @@ public class EXMLPackageImpl extends EPackageImpl implements EXMLPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
@@ -90,25 +90,26 @@ public class EXMLPackageImpl extends EPackageImpl implements EXMLPackage {
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model,
 	 * and for any others upon which it depends.
-	 * 
+	 *
 	 * <p>
 	 * This method is used to initialize {@link EXMLPackage#eINSTANCE} when that
 	 * field is accessed. Clients should not invoke it directly. Instead, they
 	 * should simply access that field to obtain the package. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
 	public static EXMLPackage init() {
-		if (isInited)
+		if (isInited) {
 			return (EXMLPackage) EPackage.Registry.INSTANCE
 					.getEPackage(EXMLPackage.eNS_URI);
+		}
 
 		// Obtain or create and register package
-		EXMLPackageImpl theMLPackage = (EXMLPackageImpl) (EPackage.Registry.INSTANCE
+		final EXMLPackageImpl theMLPackage = (EXMLPackageImpl) (EPackage.Registry.INSTANCE
 				.get(eNS_URI) instanceof EXMLPackageImpl ? EPackage.Registry.INSTANCE
 				.get(eNS_URI) : new EXMLPackageImpl());
 
@@ -133,7 +134,7 @@ public class EXMLPackageImpl extends EPackageImpl implements EXMLPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -143,7 +144,7 @@ public class EXMLPackageImpl extends EPackageImpl implements EXMLPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -153,7 +154,7 @@ public class EXMLPackageImpl extends EPackageImpl implements EXMLPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -163,7 +164,7 @@ public class EXMLPackageImpl extends EPackageImpl implements EXMLPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -173,7 +174,7 @@ public class EXMLPackageImpl extends EPackageImpl implements EXMLPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -183,7 +184,7 @@ public class EXMLPackageImpl extends EPackageImpl implements EXMLPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -193,7 +194,7 @@ public class EXMLPackageImpl extends EPackageImpl implements EXMLPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -203,7 +204,7 @@ public class EXMLPackageImpl extends EPackageImpl implements EXMLPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -213,7 +214,7 @@ public class EXMLPackageImpl extends EPackageImpl implements EXMLPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -223,7 +224,7 @@ public class EXMLPackageImpl extends EPackageImpl implements EXMLPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -233,7 +234,7 @@ public class EXMLPackageImpl extends EPackageImpl implements EXMLPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -243,7 +244,7 @@ public class EXMLPackageImpl extends EPackageImpl implements EXMLPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -253,7 +254,7 @@ public class EXMLPackageImpl extends EPackageImpl implements EXMLPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -263,7 +264,7 @@ public class EXMLPackageImpl extends EPackageImpl implements EXMLPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -273,7 +274,7 @@ public class EXMLPackageImpl extends EPackageImpl implements EXMLPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -283,7 +284,7 @@ public class EXMLPackageImpl extends EPackageImpl implements EXMLPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
@@ -292,12 +293,13 @@ public class EXMLPackageImpl extends EPackageImpl implements EXMLPackage {
 	 * Creates the meta-model objects for the package. This method is guarded to
 	 * have no affect on any invocation but its first. <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void createPackageContents() {
-		if (isCreated)
+		if (isCreated) {
 			return;
+		}
 		isCreated = true;
 
 		// Create classes and their features
@@ -322,7 +324,7 @@ public class EXMLPackageImpl extends EPackageImpl implements EXMLPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
@@ -331,12 +333,13 @@ public class EXMLPackageImpl extends EPackageImpl implements EXMLPackage {
 	 * Complete the initialization of the package and its meta-model. This
 	 * method is guarded to have no affect on any invocation but its first. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void initializePackageContents() {
-		if (isInitialized)
+		if (isInitialized) {
 			return;
+		}
 		isInitialized = true;
 
 		// Initialize package
@@ -345,7 +348,7 @@ public class EXMLPackageImpl extends EPackageImpl implements EXMLPackage {
 		setNsURI(eNS_URI);
 
 		// Obtain other dependent packages
-		XMLTypePackage theXMLTypePackage = (XMLTypePackage) EPackage.Registry.INSTANCE
+		final XMLTypePackage theXMLTypePackage = (XMLTypePackage) EPackage.Registry.INSTANCE
 				.getEPackage(XMLTypePackage.eNS_URI);
 
 		// Create type parameters
@@ -424,11 +427,11 @@ public class EXMLPackageImpl extends EPackageImpl implements EXMLPackage {
 	 * Initializes the annotations for
 	 * <b>http:///org/eclipse/emf/ecore/util/ExtendedMetaData</b>. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void createExtendedMetaDataAnnotations() {
-		String source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData";
+		final String source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData";
 		addAnnotation(documentEClass, source, new String[] { "kind", "mixed" });
 		addAnnotation(elementEClass, source, new String[] { "kind", "mixed" });
 		addAnnotation(nodeEClass, source, new String[] { "kind", "mixed" });

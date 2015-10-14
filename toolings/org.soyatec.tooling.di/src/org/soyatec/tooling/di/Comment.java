@@ -41,7 +41,7 @@ public interface Comment extends Shape {
 	 * really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Inputs</em>' reference list.
 	 * @see org.soyatec.tooling.di.DiPackage#getComment_Inputs()
 	 * @see org.soyatec.tooling.di.CommentLink#getTarget

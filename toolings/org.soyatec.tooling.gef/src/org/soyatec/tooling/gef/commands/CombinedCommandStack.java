@@ -20,7 +20,7 @@ import org.eclipse.gef.commands.CommandStackEventListener;
 
 /**
  * EMF based CommandStack, and embedded a GEF CommandStack.
- * 
+ *
  * @see org.eclipse.gef.commands.CommandStack
  * @see org.eclipse.emf.common.command.CommandStack
  * @see CommandWrap2EMF
@@ -29,9 +29,9 @@ import org.eclipse.gef.commands.CommandStackEventListener;
  */
 public class CombinedCommandStack extends CancelableCommandStack {
 
-	private List<CommandStackEventListener> eventListeners = new ArrayList<CommandStackEventListener>();
+	private final List<CommandStackEventListener> eventListeners = new ArrayList<CommandStackEventListener>();
 
-	private CommandStackImpl gefCommandStack = new CommandStackImpl();
+	private final CommandStackImpl gefCommandStack = new CommandStackImpl();
 
 	private int detail;
 
@@ -43,7 +43,7 @@ public class CombinedCommandStack extends CancelableCommandStack {
 	}
 
 	@Override
-	public void execute(org.eclipse.emf.common.command.Command command) {
+	public void execute(final org.eclipse.emf.common.command.Command command) {
 		detail = CommandStack.PRE_EXECUTE;
 		super.execute(command);
 	}
@@ -70,7 +70,7 @@ public class CombinedCommandStack extends CancelableCommandStack {
 			} else {
 				command = new CommandWrap2GEF(mostRecentCommand);
 			}
-			for (CommandStackEventListener listener : eventListeners) {
+			for (final CommandStackEventListener listener : eventListeners) {
 				listener.stackChanged(new CommandStackEvent(gefCommandStack,
 						command, detail));
 			}
@@ -100,7 +100,7 @@ public class CombinedCommandStack extends CancelableCommandStack {
 
 		@Override
 		public void addCommandStackEventListener(
-				CommandStackEventListener listener) {
+				final CommandStackEventListener listener) {
 			eventListeners.add(listener);
 		}
 
@@ -120,7 +120,7 @@ public class CombinedCommandStack extends CancelableCommandStack {
 		}
 
 		@Override
-		public void execute(Command command) {
+		public void execute(final Command command) {
 			if (command == null) {
 				return;
 			}
@@ -176,7 +176,7 @@ public class CombinedCommandStack extends CancelableCommandStack {
 
 		@Override
 		public void removeCommandStackEventListener(
-				CommandStackEventListener listener) {
+				final CommandStackEventListener listener) {
 			eventListeners.remove(listener);
 		}
 

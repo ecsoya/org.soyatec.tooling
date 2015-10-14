@@ -49,7 +49,7 @@ public class GuideImpl extends MinimalEObjectImpl.Container implements Guide {
 	/**
 	 * The default value of the '{@link #getPosition() <em>Position</em>}'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPosition()
 	 * @generated
 	 * @ordered
@@ -59,7 +59,7 @@ public class GuideImpl extends MinimalEObjectImpl.Container implements Guide {
 	/**
 	 * The cached value of the '{@link #getPosition() <em>Position</em>}'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getPosition()
 	 * @generated
 	 * @ordered
@@ -69,7 +69,7 @@ public class GuideImpl extends MinimalEObjectImpl.Container implements Guide {
 	/**
 	 * The cached value of the '{@link #getElementMap() <em>Element Map</em>}'
 	 * map. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getElementMap()
 	 * @generated
 	 * @ordered
@@ -78,7 +78,7 @@ public class GuideImpl extends MinimalEObjectImpl.Container implements Guide {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected GuideImpl() {
@@ -87,7 +87,7 @@ public class GuideImpl extends MinimalEObjectImpl.Container implements Guide {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -97,21 +97,22 @@ public class GuideImpl extends MinimalEObjectImpl.Container implements Guide {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Ruler getRuler() {
-		if (eContainerFeatureID() != DiPackage.GUIDE__RULER)
+		if (eContainerFeatureID() != DiPackage.GUIDE__RULER) {
 			return null;
+		}
 		return (Ruler) eInternalContainer();
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	public NotificationChain basicSetRuler(Ruler newRuler,
+	public NotificationChain basicSetRuler(final Ruler newRuler,
 			NotificationChain msgs) {
 		msgs = eBasicSetContainer((InternalEObject) newRuler,
 				DiPackage.GUIDE__RULER, msgs);
@@ -120,32 +121,37 @@ public class GuideImpl extends MinimalEObjectImpl.Container implements Guide {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	public void setRuler(Ruler newRuler) {
+	public void setRuler(final Ruler newRuler) {
 		if (newRuler != eInternalContainer()
 				|| (eContainerFeatureID() != DiPackage.GUIDE__RULER && newRuler != null)) {
-			if (EcoreUtil.isAncestor(this, newRuler))
+			if (EcoreUtil.isAncestor(this, newRuler)) {
 				throw new IllegalArgumentException(
 						"Recursive containment not allowed for " + toString());
+			}
 			NotificationChain msgs = null;
-			if (eInternalContainer() != null)
+			if (eInternalContainer() != null) {
 				msgs = eBasicRemoveFromContainer(msgs);
-			if (newRuler != null)
+			}
+			if (newRuler != null) {
 				msgs = ((InternalEObject) newRuler).eInverseAdd(this,
 						DiPackage.RULER__GUIDES, Ruler.class, msgs);
+			}
 			msgs = basicSetRuler(newRuler, msgs);
-			if (msgs != null)
+			if (msgs != null) {
 				msgs.dispatch();
-		} else if (eNotificationRequired())
+			}
+		} else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET,
 					DiPackage.GUIDE__RULER, newRuler, newRuler));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public int getPosition() {
@@ -154,20 +160,21 @@ public class GuideImpl extends MinimalEObjectImpl.Container implements Guide {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	public void setPosition(int newPosition) {
-		int oldPosition = position;
+	public void setPosition(final int newPosition) {
+		final int oldPosition = position;
 		position = newPosition;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET,
 					DiPackage.GUIDE__POSITION, oldPosition, position));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EMap<View, Alignment> getElementMap() {
@@ -181,16 +188,17 @@ public class GuideImpl extends MinimalEObjectImpl.Container implements Guide {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd,
-			int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseAdd(final InternalEObject otherEnd,
+			final int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case DiPackage.GUIDE__RULER:
-			if (eInternalContainer() != null)
+			if (eInternalContainer() != null) {
 				msgs = eBasicRemoveFromContainer(msgs);
+			}
 			return basicSetRuler((Ruler) otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
@@ -198,12 +206,12 @@ public class GuideImpl extends MinimalEObjectImpl.Container implements Guide {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd,
-			int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseRemove(final InternalEObject otherEnd,
+			final int featureID, final NotificationChain msgs) {
 		switch (featureID) {
 		case DiPackage.GUIDE__RULER:
 			return basicSetRuler(null, msgs);
@@ -216,12 +224,12 @@ public class GuideImpl extends MinimalEObjectImpl.Container implements Guide {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public NotificationChain eBasicRemoveFromContainerFeature(
-			NotificationChain msgs) {
+			final NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 		case DiPackage.GUIDE__RULER:
 			return eInternalContainer().eInverseRemove(this,
@@ -232,32 +240,34 @@ public class GuideImpl extends MinimalEObjectImpl.Container implements Guide {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+	public Object eGet(final int featureID, final boolean resolve,
+			final boolean coreType) {
 		switch (featureID) {
 		case DiPackage.GUIDE__RULER:
 			return getRuler();
 		case DiPackage.GUIDE__POSITION:
 			return getPosition();
 		case DiPackage.GUIDE__ELEMENT_MAP:
-			if (coreType)
+			if (coreType) {
 				return getElementMap();
-			else
+			} else {
 				return getElementMap().map();
+			}
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public void eSet(int featureID, Object newValue) {
+	public void eSet(final int featureID, final Object newValue) {
 		switch (featureID) {
 		case DiPackage.GUIDE__RULER:
 			setRuler((Ruler) newValue);
@@ -274,11 +284,11 @@ public class GuideImpl extends MinimalEObjectImpl.Container implements Guide {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public void eUnset(int featureID) {
+	public void eUnset(final int featureID) {
 		switch (featureID) {
 		case DiPackage.GUIDE__RULER:
 			setRuler((Ruler) null);
@@ -295,11 +305,11 @@ public class GuideImpl extends MinimalEObjectImpl.Container implements Guide {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public boolean eIsSet(int featureID) {
+	public boolean eIsSet(final int featureID) {
 		switch (featureID) {
 		case DiPackage.GUIDE__RULER:
 			return getRuler() != null;
@@ -313,15 +323,16 @@ public class GuideImpl extends MinimalEObjectImpl.Container implements Guide {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy())
+		if (eIsProxy()) {
 			return super.toString();
+		}
 
-		StringBuffer result = new StringBuffer(super.toString());
+		final StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (position: ");
 		result.append(position);
 		result.append(')');

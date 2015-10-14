@@ -40,7 +40,7 @@ public abstract class ViewImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * The default value of the '{@link #getLabel() <em>Label</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLabel()
 	 * @generated
 	 * @ordered
@@ -50,7 +50,7 @@ public abstract class ViewImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * The cached value of the '{@link #getLabel() <em>Label</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLabel()
 	 * @generated
 	 * @ordered
@@ -60,7 +60,7 @@ public abstract class ViewImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * The default value of the '{@link #getId() <em>Id</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getId()
 	 * @generated
 	 * @ordered
@@ -70,7 +70,7 @@ public abstract class ViewImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * The cached value of the '{@link #getId() <em>Id</em>}' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getId()
 	 * @generated
 	 * @ordered
@@ -80,7 +80,7 @@ public abstract class ViewImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * The cached value of the '{@link #getElement() <em>Element</em>}'
 	 * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getElement()
 	 * @generated
 	 * @ordered
@@ -89,7 +89,7 @@ public abstract class ViewImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ViewImpl() {
@@ -98,7 +98,7 @@ public abstract class ViewImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -108,7 +108,7 @@ public abstract class ViewImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getLabel() {
@@ -117,20 +117,21 @@ public abstract class ViewImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	public void setLabel(String newLabel) {
-		String oldLabel = label;
+	public void setLabel(final String newLabel) {
+		final String oldLabel = label;
 		label = newLabel;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET,
 					DiPackage.VIEW__LABEL, oldLabel, label));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getId() {
@@ -139,30 +140,32 @@ public abstract class ViewImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	public void setId(String newId) {
-		String oldId = id;
+	public void setId(final String newId) {
+		final String oldId = id;
 		id = newId;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET,
 					DiPackage.VIEW__ID, oldId, id));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EObject getElement() {
 		if (element != null && element.eIsProxy()) {
-			InternalEObject oldElement = (InternalEObject) element;
+			final InternalEObject oldElement = (InternalEObject) element;
 			element = eResolveProxy(oldElement);
 			if (element != oldElement) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
 							DiPackage.VIEW__ELEMENT, oldElement, element));
+				}
 			}
 		}
 		return element;
@@ -170,7 +173,7 @@ public abstract class ViewImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EObject basicGetElement() {
@@ -179,32 +182,35 @@ public abstract class ViewImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	public void setElement(EObject newElement) {
-		EObject oldElement = element;
+	public void setElement(final EObject newElement) {
+		final EObject oldElement = element;
 		element = newElement;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET,
 					DiPackage.VIEW__ELEMENT, oldElement, element));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+	public Object eGet(final int featureID, final boolean resolve,
+			final boolean coreType) {
 		switch (featureID) {
 		case DiPackage.VIEW__LABEL:
 			return getLabel();
 		case DiPackage.VIEW__ID:
 			return getId();
 		case DiPackage.VIEW__ELEMENT:
-			if (resolve)
+			if (resolve) {
 				return getElement();
+			}
 			return basicGetElement();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -212,11 +218,11 @@ public abstract class ViewImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public void eSet(int featureID, Object newValue) {
+	public void eSet(final int featureID, final Object newValue) {
 		switch (featureID) {
 		case DiPackage.VIEW__LABEL:
 			setLabel((String) newValue);
@@ -233,11 +239,11 @@ public abstract class ViewImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public void eUnset(int featureID) {
+	public void eUnset(final int featureID) {
 		switch (featureID) {
 		case DiPackage.VIEW__LABEL:
 			setLabel(LABEL_EDEFAULT);
@@ -254,11 +260,11 @@ public abstract class ViewImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public boolean eIsSet(int featureID) {
+	public boolean eIsSet(final int featureID) {
 		switch (featureID) {
 		case DiPackage.VIEW__LABEL:
 			return LABEL_EDEFAULT == null ? label != null : !LABEL_EDEFAULT
@@ -273,15 +279,16 @@ public abstract class ViewImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy())
+		if (eIsProxy()) {
 			return super.toString();
+		}
 
-		StringBuffer result = new StringBuffer(super.toString());
+		final StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (label: ");
 		result.append(label);
 		result.append(", id: ");

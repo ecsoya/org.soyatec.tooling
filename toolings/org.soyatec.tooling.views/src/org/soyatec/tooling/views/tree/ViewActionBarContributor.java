@@ -42,13 +42,13 @@ public abstract class ViewActionBarContributor implements
 	public static final String GRP_ADDITIONS = "group.additions"; //$NON-NLS-1$
 	public static final String GRP_PROPERTIES = "group.properties"; //$NON-NLS-1$
 
-	private IViewPart part;
+	private final IViewPart part;
 	private IActionBars actionBars;
 	private final ActionRegistry actionRegistry;
 
 	private final List<BaseSelectionListenerAction> selectionActions;
 
-	public ViewActionBarContributor(IViewPart part) {
+	public ViewActionBarContributor(final IViewPart part) {
 		this.part = part;
 		actionRegistry = new ActionRegistry();
 		selectionActions = new ArrayList<BaseSelectionListenerAction>();
@@ -67,14 +67,14 @@ public abstract class ViewActionBarContributor implements
 		return part.getSite().getShell();
 	}
 
-	protected void addAction(IAction action) {
+	protected void addAction(final IAction action) {
 		getActionRegistry().registerAction(action);
 		if (action instanceof BaseSelectionListenerAction) {
 			selectionActions.add((BaseSelectionListenerAction) action);
 		}
 	}
 
-	protected IAction getAction(String key) {
+	protected IAction getAction(final String key) {
 		return getActionRegistry().getAction(key);
 	}
 
@@ -86,7 +86,7 @@ public abstract class ViewActionBarContributor implements
 		return actionRegistry;
 	}
 
-	final public void contributeActionBars(IActionBars actionBars) {
+	final public void contributeActionBars(final IActionBars actionBars) {
 		this.actionBars = actionBars;
 		if (actionBars == null) {
 			return;
@@ -98,22 +98,22 @@ public abstract class ViewActionBarContributor implements
 		actionBars.updateActionBars();
 	}
 
-	protected void buildRetargetActions(IActionBars actionBars) {
+	protected void buildRetargetActions(final IActionBars actionBars) {
 
 	}
 
-	protected void contributeToolBar(IToolBarManager toolBarManager) {
+	protected void contributeToolBar(final IToolBarManager toolBarManager) {
 	}
 
-	protected void contributeMenu(IMenuManager menuManager) {
+	protected void contributeMenu(final IMenuManager menuManager) {
 
 	}
 
-	public void setSelectionProvider(ISelectionProvider selectionProvider) {
+	public void setSelectionProvider(final ISelectionProvider selectionProvider) {
 		if (selectionProvider != null) {
 			selectionProvider.addSelectionChangedListener(this);
 		}
-		for (BaseSelectionListenerAction actionListener : selectionActions) {
+		for (final BaseSelectionListenerAction actionListener : selectionActions) {
 			selectionProvider.addSelectionChangedListener(actionListener);
 		}
 	}
@@ -122,12 +122,12 @@ public abstract class ViewActionBarContributor implements
 		SafeRunner.run(new ISafeRunnable() {
 
 			public void run() throws Exception {
-				for (BaseSelectionListenerAction action : selectionActions) {
+				for (final BaseSelectionListenerAction action : selectionActions) {
 					action.selectionChanged(event);
 				}
 			}
 
-			public void handleException(Throwable exception) {
+			public void handleException(final Throwable exception) {
 
 			}
 		});
@@ -137,7 +137,7 @@ public abstract class ViewActionBarContributor implements
 		}
 	}
 
-	public void createContextMenu(IMenuManager manager) {
+	public void createContextMenu(final IMenuManager manager) {
 		if (actionBars != null) {
 			actionBars.updateActionBars();
 		}
@@ -148,7 +148,7 @@ public abstract class ViewActionBarContributor implements
 		actionRegistry.dispose();
 	}
 
-	public static void addStandardGroups(IMenuManager manager) {
+	public static void addStandardGroups(final IMenuManager manager) {
 		manager.add(new Separator(GRP_QUICK));
 		manager.add(new Separator(GRP_NEW));
 		manager.add(new Separator(GRP_OPEN));

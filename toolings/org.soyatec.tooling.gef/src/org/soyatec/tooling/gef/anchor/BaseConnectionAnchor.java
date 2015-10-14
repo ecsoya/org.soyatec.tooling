@@ -19,7 +19,7 @@ import org.eclipse.gef.handles.HandleBounds;
 
 /**
  * Connection anchor based on a terminal value.
- * 
+ *
  * @author Ecsoya
  */
 public class BaseConnectionAnchor extends AbstractConnectionAnchor {
@@ -27,9 +27,9 @@ public class BaseConnectionAnchor extends AbstractConnectionAnchor {
 	final private static char TERMINAL_DELIMITER_CHAR = ',';
 	final private static char TERMINAL_END_CHAR = ')';
 
-	private String terminal;
+	private final String terminal;
 
-	public BaseConnectionAnchor(IFigure owner, String terminal) {
+	public BaseConnectionAnchor(final IFigure owner, final String terminal) {
 		super(owner);
 		this.terminal = terminal;
 	}
@@ -38,11 +38,11 @@ public class BaseConnectionAnchor extends AbstractConnectionAnchor {
 		return terminal;
 	}
 
-	public Point getLocation(Point reference) {
+	public Point getLocation(final Point reference) {
 		Point location = getTerminalRefLocation();
 		if (location == null) {
-			IFigure owner = getOwner();
-			Rectangle r = getBox(owner);
+			final IFigure owner = getOwner();
+			final Rectangle r = getBox(owner);
 			r.translate(-1, -1);
 			r.resize(1, 1);
 
@@ -59,7 +59,7 @@ public class BaseConnectionAnchor extends AbstractConnectionAnchor {
 				float dy = reference.y - centerY;
 
 				// r.width, r.height, dx, and dy are guaranteed to be non-zero.
-				float scale = 0.5f / Math.max(Math.abs(dx) / r.width,
+				final float scale = 0.5f / Math.max(Math.abs(dx) / r.width,
 						Math.abs(dy) / r.height);
 
 				dx *= scale;
@@ -75,28 +75,28 @@ public class BaseConnectionAnchor extends AbstractConnectionAnchor {
 	}
 
 	protected Point getTerminalRefLocation() {
-		IFigure owner = getOwner();
+		final IFigure owner = getOwner();
 		if (owner == null) {
 			return null;
 		}
-		PrecisionPoint terminalRef = getTerminalRef();
+		final PrecisionPoint terminalRef = getTerminalRef();
 		if (terminalRef != null) {
-			Rectangle rect = getBox(owner);
+			final Rectangle rect = getBox(owner);
 
 			return getTerminalRefLocation(terminalRef, rect);
 		}
 		return null;
 	}
 
-	protected Point getTerminalRefLocation(PrecisionPoint terminalRef,
-			Rectangle rect) {
-		Point location = new Point();
+	protected Point getTerminalRefLocation(final PrecisionPoint terminalRef,
+			final Rectangle rect) {
+		final Point location = new Point();
 		location.x = (int) (rect.x + rect.width * terminalRef.preciseX());
 		location.y = (int) (rect.y + rect.height * terminalRef.preciseY());
 		return location;
 	}
 
-	protected Rectangle getBox(IFigure owner) {
+	protected Rectangle getBox(final IFigure owner) {
 		Rectangle rect = owner.getBounds().getCopy();
 		if (owner instanceof HandleBounds) {
 			rect = ((HandleBounds) owner).getHandleBounds().getCopy();
@@ -105,13 +105,13 @@ public class BaseConnectionAnchor extends AbstractConnectionAnchor {
 	}
 
 	public Point getReferencePoint() {
-		IFigure owner = getOwner();
+		final IFigure owner = getOwner();
 		if (owner == null) {
 			return null;
 		} else {
-			Rectangle rect = getBox(owner);
+			final Rectangle rect = getBox(owner);
 			Point refPt = rect.getCenter();
-			PrecisionPoint terminalRef = getTerminalRef();
+			final PrecisionPoint terminalRef = getTerminalRef();
 			if (terminalRef != null) {
 				refPt = getTerminalRefLocation();
 			}
@@ -127,7 +127,7 @@ public class BaseConnectionAnchor extends AbstractConnectionAnchor {
 		return null;
 	}
 
-	public static PrecisionPoint parseTerminal(String terminal) {
+	public static PrecisionPoint parseTerminal(final String terminal) {
 		try {
 			return new PrecisionPoint(Double.parseDouble(terminal.substring(
 					terminal.indexOf(TERMINAL_START_CHAR) + 1,
@@ -135,13 +135,13 @@ public class BaseConnectionAnchor extends AbstractConnectionAnchor {
 					Double.parseDouble(terminal.substring(
 							terminal.indexOf(TERMINAL_DELIMITER_CHAR) + 1,
 							terminal.indexOf(TERMINAL_END_CHAR))));
-		} catch (Exception e) {
+		} catch (final Exception e) {
 			return null;
 		}
 	}
 
-	public static String composeTerminalString(PrecisionPoint p) {
-		StringBuffer s = new StringBuffer(24);
+	public static String composeTerminalString(final PrecisionPoint p) {
+		final StringBuffer s = new StringBuffer(24);
 		s.append(TERMINAL_START_CHAR); // 1 char
 		s.append(p.preciseX()); // 10 chars
 		s.append(TERMINAL_DELIMITER_CHAR); // 1 char

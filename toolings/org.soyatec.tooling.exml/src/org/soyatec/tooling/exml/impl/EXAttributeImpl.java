@@ -35,7 +35,7 @@ public class EXAttributeImpl extends EXNodeImpl implements EXAttribute {
 	/**
 	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getValue()
 	 * @generated
 	 * @ordered
@@ -45,7 +45,7 @@ public class EXAttributeImpl extends EXNodeImpl implements EXAttribute {
 	/**
 	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getValue()
 	 * @generated
 	 * @ordered
@@ -54,7 +54,7 @@ public class EXAttributeImpl extends EXNodeImpl implements EXAttribute {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EXAttributeImpl() {
@@ -63,7 +63,7 @@ public class EXAttributeImpl extends EXNodeImpl implements EXAttribute {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -73,7 +73,7 @@ public class EXAttributeImpl extends EXNodeImpl implements EXAttribute {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -83,25 +83,27 @@ public class EXAttributeImpl extends EXNodeImpl implements EXAttribute {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public void setValue(String newValue) {
-		String oldValue = value;
+	public void setValue(final String newValue) {
+		final String oldValue = value;
 		value = newValue;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET,
 					EXMLPackage.ATTRIBUTE__VALUE, oldValue, value));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+	public Object eGet(final int featureID, final boolean resolve,
+			final boolean coreType) {
 		switch (featureID) {
 		case EXMLPackage.ATTRIBUTE__VALUE:
 			return getValue();
@@ -111,11 +113,11 @@ public class EXAttributeImpl extends EXNodeImpl implements EXAttribute {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public void eSet(int featureID, Object newValue) {
+	public void eSet(final int featureID, final Object newValue) {
 		switch (featureID) {
 		case EXMLPackage.ATTRIBUTE__VALUE:
 			setValue((String) newValue);
@@ -126,11 +128,11 @@ public class EXAttributeImpl extends EXNodeImpl implements EXAttribute {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public void eUnset(int featureID) {
+	public void eUnset(final int featureID) {
 		switch (featureID) {
 		case EXMLPackage.ATTRIBUTE__VALUE:
 			setValue(VALUE_EDEFAULT);
@@ -141,11 +143,11 @@ public class EXAttributeImpl extends EXNodeImpl implements EXAttribute {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public boolean eIsSet(int featureID) {
+	public boolean eIsSet(final int featureID) {
 		switch (featureID) {
 		case EXMLPackage.ATTRIBUTE__VALUE:
 			return VALUE_EDEFAULT == null ? value != null : !VALUE_EDEFAULT
@@ -156,15 +158,16 @@ public class EXAttributeImpl extends EXNodeImpl implements EXAttribute {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy())
+		if (eIsProxy()) {
 			return super.toString();
+		}
 
-		StringBuffer result = new StringBuffer(super.toString());
+		final StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (value: ");
 		result.append(value);
 		result.append(')');

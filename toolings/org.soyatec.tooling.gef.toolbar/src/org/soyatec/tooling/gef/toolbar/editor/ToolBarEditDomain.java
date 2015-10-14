@@ -20,7 +20,7 @@ public class ToolBarEditDomain extends DefaultEditDomain {
 
 	private ToolBarPalette palette;
 
-	public ToolBarEditDomain(IEditorPart editorPart) {
+	public ToolBarEditDomain(final IEditorPart editorPart) {
 		super(editorPart);
 	}
 
@@ -31,7 +31,7 @@ public class ToolBarEditDomain extends DefaultEditDomain {
 		}
 	}
 
-	public void setPalette(ToolBarPalette palette) {
+	public void setPalette(final ToolBarPalette palette) {
 		this.palette = palette;
 	}
 }

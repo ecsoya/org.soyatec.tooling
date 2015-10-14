@@ -33,7 +33,7 @@ public class DiagramXYLayoutEditPolicy extends XYLayoutEditPolicy {
 
 	public static final Dimension SIZE_COMMENT_DEFAULT = new Dimension(100, 80);
 
-	protected Command getCreateCommand(CreateRequest request) {
+	protected Command getCreateCommand(final CreateRequest request) {
 		final Object newObjectType = request.getNewObjectType();
 		final Object newObject = request.getNewObject();
 		final Rectangle rect = (Rectangle) getConstraintFor(request);
@@ -45,7 +45,7 @@ public class DiagramXYLayoutEditPolicy extends XYLayoutEditPolicy {
 			} else {
 				comment = DiFactory.eINSTANCE.createComment();
 			}
-			Rectangle bounds = rect.getCopy();
+			final Rectangle bounds = rect.getCopy();
 			if (bounds.isEmpty()) {
 				bounds.setSize(SIZE_COMMENT_DEFAULT);
 			}
@@ -57,17 +57,18 @@ public class DiagramXYLayoutEditPolicy extends XYLayoutEditPolicy {
 	}
 
 	protected Command createChangeConstraintCommand(
-			ChangeBoundsRequest request, EditPart child, Object constraint) {
-		Object model = child.getModel();
-		Object type = request.getType();
+			final ChangeBoundsRequest request, final EditPart child,
+			final Object constraint) {
+		final Object model = child.getModel();
+		final Object type = request.getType();
 		if (model instanceof Shape) {
-			Rectangle r = (Rectangle) constraint;
+			final Rectangle r = (Rectangle) constraint;
 
-			org.eclipse.emf.common.command.Command cmd = SetCommand.create(
-					EditingDomainUtils.getEditingDomain(getHost()), model,
-					DiPackage.Literals.SHAPE__BOUNDS, r);
+			final org.eclipse.emf.common.command.Command cmd = SetCommand
+					.create(EditingDomainUtils.getEditingDomain(getHost()),
+							model, DiPackage.Literals.SHAPE__BOUNDS, r);
 			if (cmd instanceof AbstractCommand) {
-				String label = REQ_MOVE_CHILDREN.equals(type) ? ResourcesFactory
+				final String label = REQ_MOVE_CHILDREN.equals(type) ? ResourcesFactory
 						.getString("Move") //$NON-NLS-1$
 						: ResourcesFactory.getString("Resize"); //$NON-NLS-1$
 				((AbstractCommand) cmd).setLabel(label);

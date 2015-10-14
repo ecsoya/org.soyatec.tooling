@@ -25,7 +25,7 @@ public class BlockTagActionEx extends BlockTagAction {
 			BlockTag.HEADING_3, BlockTag.HEADING_4, BlockTag.HEADING_5,
 			BlockTag.HEADING_6, BlockTag.ADDRESS, BlockTag.PREFORMATTED_TEXT };
 
-	public BlockTagActionEx(IRichText richText) {
+	public BlockTagActionEx(final IRichText richText) {
 		super(richText);
 		if (richText != null) {
 			richText.executeCommand(RichTextCommand.FORMAT_BLOCK,
@@ -34,17 +34,17 @@ public class BlockTagActionEx extends BlockTagAction {
 	}
 
 	public Collection<String> getInput() {
-		Collection<String> returnList = new ArrayList<String>();
-		for (BlockTag bt : BLOCK_TAGS) {
+		final Collection<String> returnList = new ArrayList<String>();
+		for (final BlockTag bt : BLOCK_TAGS) {
 			returnList.add(bt.getName());
 		}
 		return returnList;
 	}
 
-	public void execute(IRichText richText) {
+	public void execute(final IRichText richText) {
 		if (richText != null) {
-			int index = getCCombo().getSelectionIndex();
-			BlockTag blockTag = BLOCK_TAGS[index];
+			final int index = getCCombo().getSelectionIndex();
+			final BlockTag blockTag = BLOCK_TAGS[index];
 			richText.executeCommand(RichTextCommand.FORMAT_BLOCK,
 					blockTag.getValue());
 		}

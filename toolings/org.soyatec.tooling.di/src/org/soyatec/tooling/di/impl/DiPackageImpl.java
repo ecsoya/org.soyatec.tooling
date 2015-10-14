@@ -45,132 +45,132 @@ import org.soyatec.tooling.di.View;
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Package</b>. <!--
  * end-user-doc -->
- * 
+ *
  * @generated
  */
 public class DiPackageImpl extends EPackageImpl implements DiPackage {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass viewEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass nodeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass containerEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass diagramEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass shapeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass gradientShapeEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass lineEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass connectorEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass commentEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass commentLinkEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass gridEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass rulerEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass guideEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EClass elementEntryEClass = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EEnum lineStyleEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EEnum rulerUnitEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EEnum alignmentEEnum = null;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private EDataType rectangleEDataType = null;
@@ -184,7 +184,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 	 * method {@link #init init()}, which also performs initialization of the
 	 * package, or returns the registered package, if one already exists. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.emf.ecore.EPackage.Registry
 	 * @see org.soyatec.tooling.di.DiPackage#eNS_URI
 	 * @see #init()
@@ -196,7 +196,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private static boolean isInited = false;
@@ -204,25 +204,26 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 	/**
 	 * Creates, registers, and initializes the <b>Package</b> for this model,
 	 * and for any others upon which it depends.
-	 * 
+	 *
 	 * <p>
 	 * This method is used to initialize {@link DiPackage#eINSTANCE} when that
 	 * field is accessed. Clients should not invoke it directly. Instead, they
 	 * should simply access that field to obtain the package. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #eNS_URI
 	 * @see #createPackageContents()
 	 * @see #initializePackageContents()
 	 * @generated
 	 */
 	public static DiPackage init() {
-		if (isInited)
+		if (isInited) {
 			return (DiPackage) EPackage.Registry.INSTANCE
 					.getEPackage(DiPackage.eNS_URI);
+		}
 
 		// Obtain or create and register package
-		DiPackageImpl theDiPackage = (DiPackageImpl) (EPackage.Registry.INSTANCE
+		final DiPackageImpl theDiPackage = (DiPackageImpl) (EPackage.Registry.INSTANCE
 				.get(eNS_URI) instanceof DiPackageImpl ? EPackage.Registry.INSTANCE
 				.get(eNS_URI) : new DiPackageImpl());
 
@@ -244,7 +245,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getView() {
@@ -253,7 +254,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getView_Label() {
@@ -262,7 +263,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getView_Id() {
@@ -271,7 +272,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getView_Element() {
@@ -280,7 +281,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getNode() {
@@ -289,7 +290,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getNode_AllOutgoingLines() {
@@ -298,7 +299,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getNode_AllIncomingLines() {
@@ -307,7 +308,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getNode_CommentLinks() {
@@ -316,7 +317,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getNode_OutgoingLines() {
@@ -325,7 +326,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getNode_IncomingLines() {
@@ -334,7 +335,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getContainer() {
@@ -343,7 +344,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getContainer_Children() {
@@ -352,7 +353,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getContainer_Lines() {
@@ -361,7 +362,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getContainer_AllLines() {
@@ -370,7 +371,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getContainer_AllShapes() {
@@ -379,7 +380,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getDiagram() {
@@ -388,7 +389,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getDiagram_Comments() {
@@ -397,7 +398,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getDiagram_CommentLinks() {
@@ -406,7 +407,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getDiagram_Rulers() {
@@ -415,7 +416,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getDiagram_HorizontalRuler() {
@@ -424,7 +425,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getDiagram_VerticalRuler() {
@@ -433,7 +434,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getDiagram_Grid() {
@@ -442,7 +443,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getDiagram_SnapToGrid() {
@@ -451,7 +452,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getDiagram_SnapToGeometry() {
@@ -460,7 +461,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getShape() {
@@ -469,7 +470,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getShape_Background() {
@@ -478,7 +479,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getShape_Foreground() {
@@ -487,7 +488,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getShape_Bounds() {
@@ -496,7 +497,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getGradientShape() {
@@ -505,7 +506,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getGradientShape_UsingGradient() {
@@ -514,7 +515,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getGradientShape_GradientColor() {
@@ -523,7 +524,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getGradientShape_VerticalGradient() {
@@ -532,7 +533,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getLine() {
@@ -541,7 +542,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getLine_Color() {
@@ -550,7 +551,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getLine_Width() {
@@ -559,7 +560,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getLine_SourceAnchor() {
@@ -568,7 +569,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getLine_TargetAnchor() {
@@ -577,7 +578,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getLine_SourceNode() {
@@ -586,7 +587,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getLine_TargetNode() {
@@ -595,7 +596,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getLine_Style() {
@@ -604,7 +605,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getLine_LineDash() {
@@ -613,7 +614,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getConnector() {
@@ -622,7 +623,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getConnector_Target() {
@@ -631,7 +632,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getConnector_Source() {
@@ -640,7 +641,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getConnector_ReverseElement() {
@@ -649,7 +650,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getComment() {
@@ -658,7 +659,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getComment_Inputs() {
@@ -667,7 +668,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getCommentLink() {
@@ -676,7 +677,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getCommentLink_Source() {
@@ -685,7 +686,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getCommentLink_Target() {
@@ -694,7 +695,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getGrid() {
@@ -703,7 +704,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getGrid_Color() {
@@ -712,7 +713,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getGrid_Spacing() {
@@ -721,7 +722,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getGrid_Style() {
@@ -730,7 +731,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getRuler() {
@@ -739,7 +740,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getRuler_Unit() {
@@ -748,7 +749,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getRuler_Guides() {
@@ -757,7 +758,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getGuide() {
@@ -766,7 +767,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getGuide_Ruler() {
@@ -775,7 +776,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getGuide_Position() {
@@ -784,7 +785,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getGuide_ElementMap() {
@@ -793,7 +794,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EClass getElementEntry() {
@@ -802,7 +803,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EReference getElementEntry_Key() {
@@ -811,7 +812,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EAttribute getElementEntry_Value() {
@@ -820,7 +821,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EEnum getLineStyle() {
@@ -829,7 +830,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EEnum getRulerUnit() {
@@ -838,7 +839,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EEnum getAlignment() {
@@ -847,7 +848,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EDataType getRectangle() {
@@ -856,7 +857,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public DiFactory getDiFactory() {
@@ -865,7 +866,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isCreated = false;
@@ -874,12 +875,13 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 	 * Creates the meta-model objects for the package. This method is guarded to
 	 * have no affect on any invocation but its first. <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void createPackageContents() {
-		if (isCreated)
+		if (isCreated) {
 			return;
+		}
 		isCreated = true;
 
 		// Create classes and their features
@@ -972,7 +974,7 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	private boolean isInitialized = false;
@@ -981,12 +983,13 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 	 * Complete the initialization of the package and its meta-model. This
 	 * method is guarded to have no affect on any invocation but its first. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void initializePackageContents() {
-		if (isInitialized)
+		if (isInitialized) {
 			return;
+		}
 		isInitialized = true;
 
 		// Initialize package
@@ -1301,11 +1304,11 @@ public class DiPackageImpl extends EPackageImpl implements DiPackage {
 	 * Initializes the annotations for
 	 * <b>http:///org/eclipse/emf/ecore/util/ExtendedMetaData</b>. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected void createExtendedMetaDataAnnotations() {
-		String source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData";
+		final String source = "http:///org/eclipse/emf/ecore/util/ExtendedMetaData";
 		addAnnotation(getNode_AllOutgoingLines(), source, new String[] {
 				"kind", "group" });
 		addAnnotation(getNode_AllIncomingLines(), source, new String[] {

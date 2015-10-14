@@ -38,14 +38,14 @@ import org.soyatec.tooling.di.View;
  * <!-- begin-user-doc --> The <b>Adapter Factory</b> for the model. It provides
  * an adapter <code>createXXX</code> method for each class of the model. <!--
  * end-user-doc -->
- * 
+ *
  * @see org.soyatec.tooling.di.DiPackage
  * @generated
  */
 public class DiAdapterFactory extends AdapterFactoryImpl {
 	/**
 	 * The cached model package. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected static DiPackage modelPackage;
@@ -53,7 +53,7 @@ public class DiAdapterFactory extends AdapterFactoryImpl {
 	/**
 	 * Creates an instance of the adapter factory. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public DiAdapterFactory() {
@@ -67,12 +67,12 @@ public class DiAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc --> This implementation returns <code>true</code> if
 	 * the object is either the model's package or is an instance object of the
 	 * model. <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return whether this factory is applicable for the type of the object.
 	 * @generated
 	 */
 	@Override
-	public boolean isFactoryForType(Object object) {
+	public boolean isFactoryForType(final Object object) {
 		if (object == modelPackage) {
 			return true;
 		}
@@ -85,82 +85,82 @@ public class DiAdapterFactory extends AdapterFactoryImpl {
 	/**
 	 * The switch that delegates to the <code>createXXX</code> methods. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected DiSwitch<Adapter> modelSwitch = new DiSwitch<Adapter>() {
 		@Override
-		public Adapter caseView(View object) {
+		public Adapter caseView(final View object) {
 			return createViewAdapter();
 		}
 
 		@Override
-		public Adapter caseNode(Node object) {
+		public Adapter caseNode(final Node object) {
 			return createNodeAdapter();
 		}
 
 		@Override
-		public Adapter caseContainer(Container object) {
+		public Adapter caseContainer(final Container object) {
 			return createContainerAdapter();
 		}
 
 		@Override
-		public Adapter caseDiagram(Diagram object) {
+		public Adapter caseDiagram(final Diagram object) {
 			return createDiagramAdapter();
 		}
 
 		@Override
-		public Adapter caseShape(Shape object) {
+		public Adapter caseShape(final Shape object) {
 			return createShapeAdapter();
 		}
 
 		@Override
-		public Adapter caseGradientShape(GradientShape object) {
+		public Adapter caseGradientShape(final GradientShape object) {
 			return createGradientShapeAdapter();
 		}
 
 		@Override
-		public Adapter caseLine(Line object) {
+		public Adapter caseLine(final Line object) {
 			return createLineAdapter();
 		}
 
 		@Override
-		public Adapter caseConnector(Connector object) {
+		public Adapter caseConnector(final Connector object) {
 			return createConnectorAdapter();
 		}
 
 		@Override
-		public Adapter caseComment(Comment object) {
+		public Adapter caseComment(final Comment object) {
 			return createCommentAdapter();
 		}
 
 		@Override
-		public Adapter caseCommentLink(CommentLink object) {
+		public Adapter caseCommentLink(final CommentLink object) {
 			return createCommentLinkAdapter();
 		}
 
 		@Override
-		public Adapter caseGrid(Grid object) {
+		public Adapter caseGrid(final Grid object) {
 			return createGridAdapter();
 		}
 
 		@Override
-		public Adapter caseRuler(Ruler object) {
+		public Adapter caseRuler(final Ruler object) {
 			return createRulerAdapter();
 		}
 
 		@Override
-		public Adapter caseGuide(Guide object) {
+		public Adapter caseGuide(final Guide object) {
 			return createGuideAdapter();
 		}
 
 		@Override
-		public Adapter caseElementEntry(Map.Entry<View, Alignment> object) {
+		public Adapter caseElementEntry(final Map.Entry<View, Alignment> object) {
 			return createElementEntryAdapter();
 		}
 
 		@Override
-		public Adapter defaultCase(EObject object) {
+		public Adapter defaultCase(final EObject object) {
 			return createEObjectAdapter();
 		}
 	};
@@ -168,14 +168,14 @@ public class DiAdapterFactory extends AdapterFactoryImpl {
 	/**
 	 * Creates an adapter for the <code>target</code>. <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param target
 	 *            the object to adapt.
 	 * @return the adapter for the <code>target</code>.
 	 * @generated
 	 */
 	@Override
-	public Adapter createAdapter(Notifier target) {
+	public Adapter createAdapter(final Notifier target) {
 		return modelSwitch.doSwitch((EObject) target);
 	}
 
@@ -185,7 +185,7 @@ public class DiAdapterFactory extends AdapterFactoryImpl {
 	 * --> This default implementation returns null so that we can easily ignore
 	 * cases; it's useful to ignore a case when inheritance will catch all the
 	 * cases anyway. <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.soyatec.tooling.di.View
 	 * @generated
@@ -200,7 +200,7 @@ public class DiAdapterFactory extends AdapterFactoryImpl {
 	 * --> This default implementation returns null so that we can easily ignore
 	 * cases; it's useful to ignore a case when inheritance will catch all the
 	 * cases anyway. <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.soyatec.tooling.di.Node
 	 * @generated
@@ -215,7 +215,7 @@ public class DiAdapterFactory extends AdapterFactoryImpl {
 	 * begin-user-doc --> This default implementation returns null so that we
 	 * can easily ignore cases; it's useful to ignore a case when inheritance
 	 * will catch all the cases anyway. <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.soyatec.tooling.di.Container
 	 * @generated
@@ -230,7 +230,7 @@ public class DiAdapterFactory extends AdapterFactoryImpl {
 	 * begin-user-doc --> This default implementation returns null so that we
 	 * can easily ignore cases; it's useful to ignore a case when inheritance
 	 * will catch all the cases anyway. <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.soyatec.tooling.di.Diagram
 	 * @generated
@@ -245,7 +245,7 @@ public class DiAdapterFactory extends AdapterFactoryImpl {
 	 * --> This default implementation returns null so that we can easily ignore
 	 * cases; it's useful to ignore a case when inheritance will catch all the
 	 * cases anyway. <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.soyatec.tooling.di.Shape
 	 * @generated
@@ -260,7 +260,7 @@ public class DiAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc --> This default implementation returns null so that
 	 * we can easily ignore cases; it's useful to ignore a case when inheritance
 	 * will catch all the cases anyway. <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.soyatec.tooling.di.GradientShape
 	 * @generated
@@ -275,7 +275,7 @@ public class DiAdapterFactory extends AdapterFactoryImpl {
 	 * --> This default implementation returns null so that we can easily ignore
 	 * cases; it's useful to ignore a case when inheritance will catch all the
 	 * cases anyway. <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.soyatec.tooling.di.Line
 	 * @generated
@@ -290,7 +290,7 @@ public class DiAdapterFactory extends AdapterFactoryImpl {
 	 * begin-user-doc --> This default implementation returns null so that we
 	 * can easily ignore cases; it's useful to ignore a case when inheritance
 	 * will catch all the cases anyway. <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.soyatec.tooling.di.Connector
 	 * @generated
@@ -305,7 +305,7 @@ public class DiAdapterFactory extends AdapterFactoryImpl {
 	 * begin-user-doc --> This default implementation returns null so that we
 	 * can easily ignore cases; it's useful to ignore a case when inheritance
 	 * will catch all the cases anyway. <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.soyatec.tooling.di.Comment
 	 * @generated
@@ -320,7 +320,7 @@ public class DiAdapterFactory extends AdapterFactoryImpl {
 	 * begin-user-doc --> This default implementation returns null so that we
 	 * can easily ignore cases; it's useful to ignore a case when inheritance
 	 * will catch all the cases anyway. <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.soyatec.tooling.di.CommentLink
 	 * @generated
@@ -335,7 +335,7 @@ public class DiAdapterFactory extends AdapterFactoryImpl {
 	 * --> This default implementation returns null so that we can easily ignore
 	 * cases; it's useful to ignore a case when inheritance will catch all the
 	 * cases anyway. <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.soyatec.tooling.di.Grid
 	 * @generated
@@ -350,7 +350,7 @@ public class DiAdapterFactory extends AdapterFactoryImpl {
 	 * --> This default implementation returns null so that we can easily ignore
 	 * cases; it's useful to ignore a case when inheritance will catch all the
 	 * cases anyway. <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.soyatec.tooling.di.Ruler
 	 * @generated
@@ -365,7 +365,7 @@ public class DiAdapterFactory extends AdapterFactoryImpl {
 	 * --> This default implementation returns null so that we can easily ignore
 	 * cases; it's useful to ignore a case when inheritance will catch all the
 	 * cases anyway. <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.soyatec.tooling.di.Guide
 	 * @generated
@@ -380,7 +380,7 @@ public class DiAdapterFactory extends AdapterFactoryImpl {
 	 * implementation returns null so that we can easily ignore cases; it's
 	 * useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see java.util.Map.Entry
 	 * @generated
@@ -392,7 +392,7 @@ public class DiAdapterFactory extends AdapterFactoryImpl {
 	/**
 	 * Creates a new adapter for the default case. <!-- begin-user-doc --> This
 	 * default implementation returns null. <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @generated
 	 */

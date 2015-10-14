@@ -41,7 +41,7 @@ import org.soyatec.tooling.di.Node;
 public class CommentLinkImpl extends LineImpl implements CommentLink {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected CommentLinkImpl() {
@@ -50,7 +50,7 @@ public class CommentLinkImpl extends LineImpl implements CommentLink {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -60,18 +60,18 @@ public class CommentLinkImpl extends LineImpl implements CommentLink {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Node getSource() {
-		Node source = basicGetSource();
+		final Node source = basicGetSource();
 		return source != null && source.eIsProxy() ? (Node) eResolveProxy((InternalEObject) source)
 				: source;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Node basicGetSource() {
@@ -81,28 +81,28 @@ public class CommentLinkImpl extends LineImpl implements CommentLink {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	public void setSource(Node newSource) {
+	public void setSource(final Node newSource) {
 		((FeatureMap.Internal) getSourceNode()).set(
 				DiPackage.Literals.COMMENT_LINK__SOURCE, newSource);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Comment getTarget() {
-		Comment target = basicGetTarget();
+		final Comment target = basicGetTarget();
 		return target != null && target.eIsProxy() ? (Comment) eResolveProxy((InternalEObject) target)
 				: target;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Comment basicGetTarget() {
@@ -112,34 +112,36 @@ public class CommentLinkImpl extends LineImpl implements CommentLink {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	public void setTarget(Comment newTarget) {
+	public void setTarget(final Comment newTarget) {
 		((FeatureMap.Internal) getTargetNode()).set(
 				DiPackage.Literals.COMMENT_LINK__TARGET, newTarget);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd,
-			int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseAdd(final InternalEObject otherEnd,
+			final int featureID, NotificationChain msgs) {
 		switch (featureID) {
 		case DiPackage.COMMENT_LINK__SOURCE:
-			Node source = basicGetSource();
-			if (source != null)
+			final Node source = basicGetSource();
+			if (source != null) {
 				msgs = ((InternalEObject) source).eInverseRemove(this,
 						DiPackage.NODE__COMMENT_LINKS, Node.class, msgs);
+			}
 			return basicSetSource((Node) otherEnd, msgs);
 		case DiPackage.COMMENT_LINK__TARGET:
-			Comment target = basicGetTarget();
-			if (target != null)
+			final Comment target = basicGetTarget();
+			if (target != null) {
 				msgs = ((InternalEObject) target).eInverseRemove(this,
 						DiPackage.COMMENT__INPUTS, Comment.class, msgs);
+			}
 			return basicSetTarget((Comment) otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
@@ -147,12 +149,12 @@ public class CommentLinkImpl extends LineImpl implements CommentLink {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd,
-			int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseRemove(final InternalEObject otherEnd,
+			final int featureID, final NotificationChain msgs) {
 		switch (featureID) {
 		case DiPackage.COMMENT_LINK__SOURCE:
 			return basicSetSource(null, msgs);
@@ -162,53 +164,58 @@ public class CommentLinkImpl extends LineImpl implements CommentLink {
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
-	private NotificationChain basicSetSource(Node newSource,
+	private NotificationChain basicSetSource(final Node newSource,
 			NotificationChain msgs) {
-		Node oldSource = basicGetSource();
+		final Node oldSource = basicGetSource();
 		setSource(newSource);
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this,
+			final ENotificationImpl notification = new ENotificationImpl(this,
 					Notification.SET, DiPackage.COMMENT_LINK__SOURCE,
 					oldSource, newSource);
-			if (msgs == null)
+			if (msgs == null) {
 				msgs = notification;
-			else
+			} else {
 				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
 
-	private NotificationChain basicSetTarget(Comment newTarget,
+	private NotificationChain basicSetTarget(final Comment newTarget,
 			NotificationChain msgs) {
-		Comment oldTarget = basicGetTarget();
+		final Comment oldTarget = basicGetTarget();
 		setTarget(newTarget);
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this,
+			final ENotificationImpl notification = new ENotificationImpl(this,
 					Notification.SET, DiPackage.COMMENT_LINK__TARGET,
 					oldTarget, newTarget);
-			if (msgs == null)
+			if (msgs == null) {
 				msgs = notification;
-			else
+			} else {
 				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+	public Object eGet(final int featureID, final boolean resolve,
+			final boolean coreType) {
 		switch (featureID) {
 		case DiPackage.COMMENT_LINK__SOURCE:
-			if (resolve)
+			if (resolve) {
 				return getSource();
+			}
 			return basicGetSource();
 		case DiPackage.COMMENT_LINK__TARGET:
-			if (resolve)
+			if (resolve) {
 				return getTarget();
+			}
 			return basicGetTarget();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -216,11 +223,11 @@ public class CommentLinkImpl extends LineImpl implements CommentLink {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public void eSet(int featureID, Object newValue) {
+	public void eSet(final int featureID, final Object newValue) {
 		switch (featureID) {
 		case DiPackage.COMMENT_LINK__SOURCE:
 			setSource((Node) newValue);
@@ -234,11 +241,11 @@ public class CommentLinkImpl extends LineImpl implements CommentLink {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public void eUnset(int featureID) {
+	public void eUnset(final int featureID) {
 		switch (featureID) {
 		case DiPackage.COMMENT_LINK__SOURCE:
 			setSource((Node) null);
@@ -252,11 +259,11 @@ public class CommentLinkImpl extends LineImpl implements CommentLink {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public boolean eIsSet(int featureID) {
+	public boolean eIsSet(final int featureID) {
 		switch (featureID) {
 		case DiPackage.COMMENT_LINK__SOURCE:
 			return basicGetSource() != null;

@@ -32,7 +32,7 @@ public abstract class ViewEditPart<T extends View> extends
 
 	private Adapter notifier;
 
-	public ViewEditPart(T model) {
+	public ViewEditPart(final T model) {
 		setModel(model);
 	}
 
@@ -57,12 +57,12 @@ public abstract class ViewEditPart<T extends View> extends
 					if (event.isTouch()) {
 						return;
 					}
-					EditPartViewer viewer = getViewer();
+					final EditPartViewer viewer = getViewer();
 					if (viewer == null || viewer.getControl() == null
 							|| viewer.getControl().isDisposed()) {
 						return;
 					}
-					Display display = viewer.getControl().getDisplay();
+					final Display display = viewer.getControl().getDisplay();
 					if (display.getThread() == Thread.currentThread()) {
 						handleNotifyChanged(event);
 					} else {
@@ -80,15 +80,15 @@ public abstract class ViewEditPart<T extends View> extends
 		return notifier;
 	}
 
-	protected void addViewNotifier(Notifier model) {
-		Adapter adapter = getViewNotifier();
+	protected void addViewNotifier(final Notifier model) {
+		final Adapter adapter = getViewNotifier();
 		if (model == null || model.eAdapters().contains(adapter)) {
 			return;
 		}
 		model.eAdapters().add(adapter);
 	}
 
-	protected void removeViewNotifier(Notifier model) {
+	protected void removeViewNotifier(final Notifier model) {
 		if (model == null || notifier == null) {
 			return;
 		}
@@ -101,7 +101,7 @@ public abstract class ViewEditPart<T extends View> extends
 		addViewNotifier(getElement());
 	}
 
-	protected void handleNotifyChanged(Notification event) {
+	protected void handleNotifyChanged(final Notification event) {
 
 	}
 
@@ -118,7 +118,7 @@ public abstract class ViewEditPart<T extends View> extends
 				new SnapFeedbackPolicy());
 	}
 
-	public void performRequest(Request req) {
+	public void performRequest(final Request req) {
 		super.performRequest(req);
 		if (REQ_OPEN.equals(req.getType())) {
 			performOpen();
@@ -132,7 +132,7 @@ public abstract class ViewEditPart<T extends View> extends
 	}
 
 	protected void performDirectEdit() {
-		ILabelFigure directEditLabel = getDirectEditLabel();
+		final ILabelFigure directEditLabel = getDirectEditLabel();
 		if (directEditLabel == null) {
 			return;
 		}
@@ -143,7 +143,7 @@ public abstract class ViewEditPart<T extends View> extends
 		return null;
 	}
 
-	public Object getAdapter(@SuppressWarnings("rawtypes") Class key) {
+	public Object getAdapter(@SuppressWarnings("rawtypes") final Class key) {
 		if (SnapToHelper.class == key) {
 			return getParent().getAdapter(key);
 		}

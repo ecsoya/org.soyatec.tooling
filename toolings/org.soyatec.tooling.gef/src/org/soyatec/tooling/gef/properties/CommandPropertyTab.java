@@ -20,7 +20,7 @@ import org.soyatec.tooling.views.properties.IPropertyTab;
 
 /**
  * PropertyTab which based on GEF Commands.
- * 
+ *
  * @author Ecsoya
  */
 public abstract class CommandPropertyTab extends AbstractPropertyTab implements
@@ -38,11 +38,11 @@ public abstract class CommandPropertyTab extends AbstractPropertyTab implements
 		return domain;
 	}
 
-	protected void executeCommand(Command command) {
+	protected void executeCommand(final Command command) {
 		if (command == null || !command.canExecute()) {
 			return;
 		}
-		EditingDomain editingDomain = getEditingDomain();
+		final EditingDomain editingDomain = getEditingDomain();
 		if (editingDomain == null || editingDomain.getCommandStack() == null) {
 			executeCommand(new CommandWrap2GEF(command));
 		} else {
@@ -50,11 +50,11 @@ public abstract class CommandPropertyTab extends AbstractPropertyTab implements
 		}
 	}
 
-	protected void executeCommand(org.eclipse.gef.commands.Command command) {
+	protected void executeCommand(final org.eclipse.gef.commands.Command command) {
 		if (command == null || !command.canExecute()) {
 			return;
 		}
-		CommandStack commandStack = getCommandStack();
+		final CommandStack commandStack = getCommandStack();
 		if (commandStack != null) {
 			commandStack.execute(command);
 		} else {

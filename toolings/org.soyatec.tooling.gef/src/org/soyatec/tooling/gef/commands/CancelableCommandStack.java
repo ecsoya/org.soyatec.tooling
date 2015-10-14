@@ -68,7 +68,7 @@ public class CancelableCommandStack implements CommandStack {
 	/*
 	 * Javadoc copied from interface.
 	 */
-	public void execute(Command command) {
+	public void execute(final Command command) {
 		// If the command is executable, record and execute it.
 		//
 		if (command != null) {
@@ -83,10 +83,10 @@ public class CancelableCommandStack implements CommandStack {
 					}
 					// Clear the list past the top.
 					//
-					for (Iterator<Command> commands = commandList
+					for (final Iterator<Command> commands = commandList
 							.listIterator(top + 1); commands.hasNext(); commands
 							.remove()) {
-						Command otherCommand = commands.next();
+						final Command otherCommand = commands.next();
 						otherCommand.dispose();
 					}
 
@@ -109,9 +109,9 @@ public class CancelableCommandStack implements CommandStack {
 						saveIndex = -2;
 					}
 					notifyListeners();
-				} catch (AbortExecutionException exception) {
+				} catch (final AbortExecutionException exception) {
 					command.dispose();
-				} catch (RuntimeException exception) {
+				} catch (final RuntimeException exception) {
 					handleError(exception);
 					mostRecentCommand = null;
 					command.dispose();
@@ -135,11 +135,11 @@ public class CancelableCommandStack implements CommandStack {
 	 */
 	public void undo() {
 		if (canUndo()) {
-			Command command = commandList.get(top--);
+			final Command command = commandList.get(top--);
 			try {
 				command.undo();
 				mostRecentCommand = command;
-			} catch (RuntimeException exception) {
+			} catch (final RuntimeException exception) {
 				handleError(exception);
 
 				mostRecentCommand = null;
@@ -162,21 +162,21 @@ public class CancelableCommandStack implements CommandStack {
 	 */
 	public void redo() {
 		if (canRedo()) {
-			Command command = commandList.get(++top);
+			final Command command = commandList.get(++top);
 			try {
 				command.redo();
 				mostRecentCommand = command;
-			} catch (RuntimeException exception) {
+			} catch (final RuntimeException exception) {
 				handleError(exception);
 
 				mostRecentCommand = null;
 
 				// Clear the list past the top.
 				//
-				for (Iterator<Command> commands = commandList
+				for (final Iterator<Command> commands = commandList
 						.listIterator(top--); commands.hasNext(); commands
 						.remove()) {
-					Command otherCommand = commands.next();
+					final Command otherCommand = commands.next();
 					otherCommand.dispose();
 				}
 			}
@@ -191,9 +191,9 @@ public class CancelableCommandStack implements CommandStack {
 	public void flush() {
 		// Clear the list.
 		//
-		for (Iterator<Command> commands = commandList.listIterator(); commands
+		for (final Iterator<Command> commands = commandList.listIterator(); commands
 				.hasNext(); commands.remove()) {
-			Command command = commands.next();
+			final Command command = commands.next();
 			command.dispose();
 		}
 		commandList.clear();
@@ -229,14 +229,14 @@ public class CancelableCommandStack implements CommandStack {
 	/*
 	 * Javadoc copied from interface.
 	 */
-	public void addCommandStackListener(CommandStackListener listener) {
+	public void addCommandStackListener(final CommandStackListener listener) {
 		listeners.add(listener);
 	}
 
 	/*
 	 * Javadoc copied from interface.
 	 */
-	public void removeCommandStackListener(CommandStackListener listener) {
+	public void removeCommandStackListener(final CommandStackListener listener) {
 		listeners.remove(listener);
 	}
 
@@ -246,7 +246,7 @@ public class CancelableCommandStack implements CommandStack {
 	 * listener.
 	 */
 	protected void notifyListeners() {
-		for (CommandStackListener commandStackListener : listeners) {
+		for (final CommandStackListener commandStackListener : listeners) {
 			commandStackListener.commandStackChanged(new EventObject(this));
 		}
 	}
@@ -255,7 +255,7 @@ public class CancelableCommandStack implements CommandStack {
 	 * Handles an exception thrown during command execution by logging it with
 	 * the plugin.
 	 */
-	protected void handleError(Exception exception) {
+	protected void handleError(final Exception exception) {
 		CommonPlugin.INSTANCE.log(new WrappedException(CommonPlugin.INSTANCE
 				.getString("_UI_IgnoreException_exception"), exception) //$NON-NLS-1$
 				.fillInStackTrace());
@@ -273,7 +273,7 @@ public class CancelableCommandStack implements CommandStack {
 	/**
 	 * Returns whether the model has changes since {@link #saveIsDone} was call
 	 * the last.
-	 * 
+	 *
 	 * @return whether the model has changes since <code>saveIsDone</code> was
 	 *         call the last.
 	 */

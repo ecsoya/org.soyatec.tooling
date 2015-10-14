@@ -44,7 +44,7 @@ public class ElementEntryImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * The cached value of the '{@link #getTypedKey() <em>Key</em>}' reference.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTypedKey()
 	 * @generated
 	 * @ordered
@@ -54,7 +54,7 @@ public class ElementEntryImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * The default value of the '{@link #getTypedValue() <em>Value</em>}'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTypedValue()
 	 * @generated
 	 * @ordered
@@ -64,7 +64,7 @@ public class ElementEntryImpl extends MinimalEObjectImpl.Container implements
 	/**
 	 * The cached value of the '{@link #getTypedValue() <em>Value</em>}'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTypedValue()
 	 * @generated
 	 * @ordered
@@ -73,7 +73,7 @@ public class ElementEntryImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ElementEntryImpl() {
@@ -82,7 +82,7 @@ public class ElementEntryImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -92,17 +92,18 @@ public class ElementEntryImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public View getTypedKey() {
 		if (key != null && key.eIsProxy()) {
-			InternalEObject oldKey = (InternalEObject) key;
+			final InternalEObject oldKey = (InternalEObject) key;
 			key = (View) eResolveProxy(oldKey);
 			if (key != oldKey) {
-				if (eNotificationRequired())
+				if (eNotificationRequired()) {
 					eNotify(new ENotificationImpl(this, Notification.RESOLVE,
 							DiPackage.ELEMENT_ENTRY__KEY, oldKey, key));
+				}
 			}
 		}
 		return key;
@@ -110,7 +111,7 @@ public class ElementEntryImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public View basicGetTypedKey() {
@@ -119,20 +120,21 @@ public class ElementEntryImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	public void setTypedKey(View newKey) {
-		View oldKey = key;
+	public void setTypedKey(final View newKey) {
+		final View oldKey = key;
 		key = newKey;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET,
 					DiPackage.ELEMENT_ENTRY__KEY, oldKey, key));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Alignment getTypedValue() {
@@ -141,28 +143,31 @@ public class ElementEntryImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	public void setTypedValue(Alignment newValue) {
-		Alignment oldValue = value;
+	public void setTypedValue(final Alignment newValue) {
+		final Alignment oldValue = value;
 		value = newValue == null ? VALUE_EDEFAULT : newValue;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET,
 					DiPackage.ELEMENT_ENTRY__VALUE, oldValue, value));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+	public Object eGet(final int featureID, final boolean resolve,
+			final boolean coreType) {
 		switch (featureID) {
 		case DiPackage.ELEMENT_ENTRY__KEY:
-			if (resolve)
+			if (resolve) {
 				return getTypedKey();
+			}
 			return basicGetTypedKey();
 		case DiPackage.ELEMENT_ENTRY__VALUE:
 			return getTypedValue();
@@ -172,11 +177,11 @@ public class ElementEntryImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public void eSet(int featureID, Object newValue) {
+	public void eSet(final int featureID, final Object newValue) {
 		switch (featureID) {
 		case DiPackage.ELEMENT_ENTRY__KEY:
 			setTypedKey((View) newValue);
@@ -190,11 +195,11 @@ public class ElementEntryImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public void eUnset(int featureID) {
+	public void eUnset(final int featureID) {
 		switch (featureID) {
 		case DiPackage.ELEMENT_ENTRY__KEY:
 			setTypedKey((View) null);
@@ -208,11 +213,11 @@ public class ElementEntryImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public boolean eIsSet(int featureID) {
+	public boolean eIsSet(final int featureID) {
 		switch (featureID) {
 		case DiPackage.ELEMENT_ENTRY__KEY:
 			return key != null;
@@ -224,15 +229,16 @@ public class ElementEntryImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy())
+		if (eIsProxy()) {
 			return super.toString();
+		}
 
-		StringBuffer result = new StringBuffer(super.toString());
+		final StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (value: ");
 		result.append(value);
 		result.append(')');
@@ -241,19 +247,19 @@ public class ElementEntryImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected int hash = -1;
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public int getHash() {
 		if (hash == -1) {
-			Object theKey = getKey();
+			final Object theKey = getKey();
 			hash = (theKey == null ? 0 : theKey.hashCode());
 		}
 		return hash;
@@ -261,16 +267,16 @@ public class ElementEntryImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	public void setHash(int hash) {
+	public void setHash(final int hash) {
 		this.hash = hash;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public View getKey() {
@@ -279,16 +285,16 @@ public class ElementEntryImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	public void setKey(View key) {
+	public void setKey(final View key) {
 		setTypedKey(key);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Alignment getValue() {
@@ -297,23 +303,23 @@ public class ElementEntryImpl extends MinimalEObjectImpl.Container implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	public Alignment setValue(Alignment value) {
-		Alignment oldValue = getValue();
+	public Alignment setValue(final Alignment value) {
+		final Alignment oldValue = getValue();
 		setTypedValue(value);
 		return oldValue;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	public EMap<View, Alignment> getEMap() {
-		EObject container = eContainer();
+		final EObject container = eContainer();
 		return container == null ? null : (EMap<View, Alignment>) container
 				.eGet(eContainmentFeature());
 	}

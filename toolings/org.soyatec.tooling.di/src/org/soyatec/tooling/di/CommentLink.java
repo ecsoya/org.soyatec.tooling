@@ -39,7 +39,7 @@ public interface CommentLink extends Line {
 	 * really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Source</em>' reference.
 	 * @see #setSource(Node)
 	 * @see org.soyatec.tooling.di.DiPackage#getCommentLink_Source()
@@ -54,7 +54,7 @@ public interface CommentLink extends Line {
 	 * Sets the value of the '
 	 * {@link org.soyatec.tooling.di.CommentLink#getSource <em>Source</em>}'
 	 * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Source</em>' reference.
 	 * @see #getSource()
@@ -72,7 +72,7 @@ public interface CommentLink extends Line {
 	 * really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Target</em>' reference.
 	 * @see #setTarget(Comment)
 	 * @see org.soyatec.tooling.di.DiPackage#getCommentLink_Target()
@@ -87,7 +87,7 @@ public interface CommentLink extends Line {
 	 * Sets the value of the '
 	 * {@link org.soyatec.tooling.di.CommentLink#getTarget <em>Target</em>}'
 	 * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Target</em>' reference.
 	 * @see #getTarget()

@@ -28,28 +28,29 @@ import org.soyatec.tooling.di.GradientShape;
  * This is the item provider adapter for a
  * {@link org.soyatec.tooling.di.GradientShape} object. <!-- begin-user-doc -->
  * <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class GradientShapeItemProvider extends ShapeItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	public GradientShapeItemProvider(AdapterFactory adapterFactory) {
+	public GradientShapeItemProvider(final AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
 	/**
 	 * This returns the property descriptors for the adapted class. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
+	public List<IItemPropertyDescriptor> getPropertyDescriptors(
+			final Object object) {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
@@ -63,10 +64,10 @@ public class GradientShapeItemProvider extends ShapeItemProvider {
 	/**
 	 * This adds a property descriptor for the Using Gradient feature. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	protected void addUsingGradientPropertyDescriptor(Object object) {
+	protected void addUsingGradientPropertyDescriptor(final Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(
 				((ComposeableAdapterFactory) adapterFactory)
 						.getRootAdapterFactory(),
@@ -82,10 +83,10 @@ public class GradientShapeItemProvider extends ShapeItemProvider {
 	/**
 	 * This adds a property descriptor for the Gradient Color feature. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	protected void addGradientColorPropertyDescriptor(Object object) {
+	protected void addGradientColorPropertyDescriptor(final Object object) {
 		itemPropertyDescriptors
 				.add(createItemPropertyDescriptor(
 						((ComposeableAdapterFactory) adapterFactory)
@@ -103,10 +104,10 @@ public class GradientShapeItemProvider extends ShapeItemProvider {
 	/**
 	 * This adds a property descriptor for the Vertical Gradient feature. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	protected void addVerticalGradientPropertyDescriptor(Object object) {
+	protected void addVerticalGradientPropertyDescriptor(final Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(
 				((ComposeableAdapterFactory) adapterFactory)
 						.getRootAdapterFactory(),
@@ -123,12 +124,12 @@ public class GradientShapeItemProvider extends ShapeItemProvider {
 	/**
 	 * This returns the label text for the adapted class. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public String getText(Object object) {
-		String label = ((GradientShape) object).getId();
+	public String getText(final Object object) {
+		final String label = ((GradientShape) object).getId();
 		return label == null || label.length() == 0 ? getString("_UI_GradientShape_type")
 				: getString("_UI_GradientShape_type") + " " + label;
 	}
@@ -138,11 +139,11 @@ public class GradientShapeItemProvider extends ShapeItemProvider {
 	 * update any cached children and by creating a viewer notification, which
 	 * it passes to {@link #fireNotifyChanged}. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public void notifyChanged(Notification notification) {
+	public void notifyChanged(final Notification notification) {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(GradientShape.class)) {
@@ -160,12 +161,12 @@ public class GradientShapeItemProvider extends ShapeItemProvider {
 	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s
 	 * describing the children that can be created under this object. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	protected void collectNewChildDescriptors(
-			Collection<Object> newChildDescriptors, Object object) {
+			final Collection<Object> newChildDescriptors, final Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
 

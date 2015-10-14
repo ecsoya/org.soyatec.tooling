@@ -41,7 +41,7 @@ public interface Ruler extends EObject {
 	 * should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Unit</em>' attribute.
 	 * @see org.soyatec.tooling.di.RulerUnit
 	 * @see #setUnit(RulerUnit)
@@ -54,7 +54,7 @@ public interface Ruler extends EObject {
 	/**
 	 * Sets the value of the '{@link org.soyatec.tooling.di.Ruler#getUnit
 	 * <em>Unit</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Unit</em>' attribute.
 	 * @see org.soyatec.tooling.di.RulerUnit
@@ -74,7 +74,7 @@ public interface Ruler extends EObject {
 	 * clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Guides</em>' containment reference list.
 	 * @see org.soyatec.tooling.di.DiPackage#getRuler_Guides()
 	 * @see org.soyatec.tooling.di.Guide#getRuler

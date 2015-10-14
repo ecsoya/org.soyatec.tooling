@@ -22,14 +22,14 @@ import org.soyatec.tooling.gef.editpolicies.CommentLinkCreationEditPolicy;
 
 public abstract class NodeEditPart<T extends Node> extends ViewEditPart<Node> {
 
-	public NodeEditPart(Node model) {
+	public NodeEditPart(final Node model) {
 		super(model);
 	}
 
 	@Override
-	protected void handleNotifyChanged(Notification event) {
+	protected void handleNotifyChanged(final Notification event) {
 		super.handleNotifyChanged(event);
-		Object feature = event.getFeature();
+		final Object feature = event.getFeature();
 		if (DiPackage.eINSTANCE.getNode_AllIncomingLines() == feature) {
 			refreshTargetConnections();
 		} else if (DiPackage.eINSTANCE.getNode_AllOutgoingLines() == feature) {
@@ -39,9 +39,9 @@ public abstract class NodeEditPart<T extends Node> extends ViewEditPart<Node> {
 
 	@SuppressWarnings("rawtypes")
 	protected List getModelSourceConnections() {
-		ValueListIterator<Object> valueListIterator = getView()
+		final ValueListIterator<Object> valueListIterator = getView()
 				.getAllOutgoingLines().valueListIterator();
-		List<Object> modelSourceConnections = new ArrayList<Object>();
+		final List<Object> modelSourceConnections = new ArrayList<Object>();
 		while (valueListIterator.hasNext()) {
 			modelSourceConnections.add(valueListIterator.next());
 		}
@@ -50,9 +50,9 @@ public abstract class NodeEditPart<T extends Node> extends ViewEditPart<Node> {
 
 	@SuppressWarnings("rawtypes")
 	protected List getModelTargetConnections() {
-		ValueListIterator<Object> valueListIterator = getView()
+		final ValueListIterator<Object> valueListIterator = getView()
 				.getAllIncomingLines().valueListIterator();
-		List<Object> modelTargetConnections = new ArrayList<Object>();
+		final List<Object> modelTargetConnections = new ArrayList<Object>();
 		while (valueListIterator.hasNext()) {
 			modelTargetConnections.add(valueListIterator.next());
 		}

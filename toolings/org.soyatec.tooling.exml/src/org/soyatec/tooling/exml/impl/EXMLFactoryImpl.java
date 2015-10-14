@@ -26,24 +26,24 @@ import org.soyatec.tooling.exml.EXMLPackage;
 /**
  * <!-- begin-user-doc --> An implementation of the model <b>Factory</b>. <!--
  * end-user-doc -->
- * 
+ *
  * @generated
  */
 public class EXMLFactoryImpl extends EFactoryImpl implements EXMLFactory {
 	/**
 	 * Creates the default factory implementation. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public static EXMLFactory init() {
 		try {
-			EXMLFactory theMLFactory = (EXMLFactory) EPackage.Registry.INSTANCE
+			final EXMLFactory theMLFactory = (EXMLFactory) EPackage.Registry.INSTANCE
 					.getEFactory(EXMLPackage.eNS_URI);
 			if (theMLFactory != null) {
 				return theMLFactory;
 			}
-		} catch (Exception exception) {
+		} catch (final Exception exception) {
 			EcorePlugin.INSTANCE.log(exception);
 		}
 		return new EXMLFactoryImpl();
@@ -52,7 +52,7 @@ public class EXMLFactoryImpl extends EFactoryImpl implements EXMLFactory {
 	/**
 	 * Creates an instance of the factory. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EXMLFactoryImpl() {
@@ -61,11 +61,11 @@ public class EXMLFactoryImpl extends EFactoryImpl implements EXMLFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public EObject create(EClass eClass) {
+	public EObject create(final EClass eClass) {
 		switch (eClass.getClassifierID()) {
 		case EXMLPackage.DOCUMENT:
 			return createDocument();
@@ -81,40 +81,40 @@ public class EXMLFactoryImpl extends EFactoryImpl implements EXMLFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public EXDocument createDocument() {
-		EXDocumentImpl document = new EXDocumentImpl();
+		final EXDocumentImpl document = new EXDocumentImpl();
 		return document;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public EXElement createElement() {
-		EXElementImpl element = new EXElementImpl();
+		final EXElementImpl element = new EXElementImpl();
 		return element;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public EXAttribute createAttribute() {
-		EXAttributeImpl attribute = new EXAttributeImpl();
+		final EXAttributeImpl attribute = new EXAttributeImpl();
 		return attribute;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -124,7 +124,7 @@ public class EXMLFactoryImpl extends EFactoryImpl implements EXMLFactory {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @deprecated
 	 * @generated
 	 */

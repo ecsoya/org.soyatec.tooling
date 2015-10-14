@@ -20,6 +20,7 @@ import org.eclipse.swt.widgets.Control;
 import org.eclipse.swt.widgets.ToolBar;
 import org.eclipse.ui.IActionBars;
 import org.eclipse.ui.IWorkbenchPart;
+import org.eclipse.ui.forms.widgets.ExpandableComposite;
 import org.eclipse.ui.forms.widgets.Form;
 import org.eclipse.ui.forms.widgets.FormToolkit;
 import org.eclipse.ui.forms.widgets.Section;
@@ -30,53 +31,54 @@ public class FormPropertySheetPage implements IPropertySheetPage {
 	private Form control;
 	private FormToolkit factory;
 
-	private IPropertyTabProvider tabProvider;
+	private final IPropertyTabProvider tabProvider;
 
-	public FormPropertySheetPage(IPropertyTabProvider tabProvider) {
+	public FormPropertySheetPage(final IPropertyTabProvider tabProvider) {
 		Assert.isNotNull(tabProvider,
 				"IPropertyTabProvider instance can not be null."); //$NON-NLS-1$
 		this.tabProvider = tabProvider;
 	}
 
-	final public void createControl(Composite parent) {
+	final public void createControl(final Composite parent) {
 		factory = new FormToolkit(parent.getDisplay());
-		Form form = factory.createForm(parent);
-		Composite body = form.getBody();
-		GridLayout layout = new GridLayout();
+		final Form form = factory.createForm(parent);
+		final Composite body = form.getBody();
+		final GridLayout layout = new GridLayout();
 		body.setLayout(layout);
 
-		IPropertyTab[] propertyTabs = tabProvider.getPropertyTabs();
+		final IPropertyTab[] propertyTabs = tabProvider.getPropertyTabs();
 		if (propertyTabs != null) {
-			for (IPropertyTab tab : propertyTabs) {
-				int style = Section.TWISTIE;
+			for (final IPropertyTab tab : propertyTabs) {
+				int style = ExpandableComposite.TWISTIE;
 				if (tab.isExpanded()) {
-					style |= Section.EXPANDED;
+					style |= ExpandableComposite.EXPANDED;
 				}
 				if (tab.getName() != null) {
-					style |= Section.TITLE_BAR;
+					style |= ExpandableComposite.TITLE_BAR;
 				}
 				if (tab.getDescription() != null) {
 					style |= Section.DESCRIPTION;
 				}
-				Section section = factory.createSection(body, style);
+				final Section section = factory.createSection(body, style);
 				if (tab.getName() != null) {
 					section.setText(tab.getName());
 				}
 				if (tab.getDescription() != null) {
 					section.setDescription(tab.getDescription());
 				}
-				Control control = tab.createControl(factory, section);
+				final Control control = tab.createControl(factory, section);
 				if (control != null && !control.isDisposed()) {
 					section.setClient(control);
 				}
-				ToolBarManager tbm = tab.getToolBarManager();
+				final ToolBarManager tbm = tab.getToolBarManager();
 				if (tbm != null) {
-					ToolBar toolbar = tbm.createControl(section);
+					final ToolBar toolbar = tbm.createControl(section);
 					if (toolbar != null) {
 						section.setTextClient(toolbar);
 					}
 				}
-				GridData layoutData = new GridData(GridData.FILL_HORIZONTAL);
+				final GridData layoutData = new GridData(
+						GridData.FILL_HORIZONTAL);
 				layoutData.exclude = true;
 				section.setVisible(false);
 				section.setLayoutData(layoutData);
@@ -88,9 +90,9 @@ public class FormPropertySheetPage implements IPropertySheetPage {
 	}
 
 	public void dispose() {
-		IPropertyTab[] propertyTabs = tabProvider.getPropertyTabs();
+		final IPropertyTab[] propertyTabs = tabProvider.getPropertyTabs();
 		if (propertyTabs != null) {
-			for (IPropertyTab tab : propertyTabs) {
+			for (final IPropertyTab tab : propertyTabs) {
 				tab.dispose();
 			}
 		}
@@ -101,7 +103,7 @@ public class FormPropertySheetPage implements IPropertySheetPage {
 		return control;
 	}
 
-	public void setActionBars(IActionBars actionBars) {
+	public void setActionBars(final IActionBars actionBars) {
 	}
 
 	public void setFocus() {
@@ -110,10 +112,11 @@ public class FormPropertySheetPage implements IPropertySheetPage {
 		}
 	}
 
-	public void selectionChanged(IWorkbenchPart part, ISelection selection) {
-		IPropertyTab[] propertyTabs = tabProvider.getPropertyTabs();
+	public void selectionChanged(final IWorkbenchPart part,
+			final ISelection selection) {
+		final IPropertyTab[] propertyTabs = tabProvider.getPropertyTabs();
 		if (propertyTabs != null) {
-			for (IPropertyTab tab : propertyTabs) {
+			for (final IPropertyTab tab : propertyTabs) {
 				if (!tab.isVisibleFor(part, selection)) {
 					hideTab(tab);
 				} else {
@@ -128,16 +131,16 @@ public class FormPropertySheetPage implements IPropertySheetPage {
 		if (control == null || control.isDisposed() || tab == null) {
 			return;
 		}
-		Composite body = control.getBody();
-		Control[] children = body.getChildren();
-		for (Control control : children) {
+		final Composite body = control.getBody();
+		final Control[] children = body.getChildren();
+		for (final Control control : children) {
 			if (tab.equals(control.getData())) {
-				GridData layoutData = (GridData) control.getLayoutData();
+				final GridData layoutData = (GridData) control.getLayoutData();
 				layoutData.exclude = false;
 				control.setVisible(true);
 
 				if (control instanceof Section) {
-					Section section = (Section) control;
+					final Section section = (Section) control;
 					if (tab.getName() != null) {
 						section.setText(tab.getName());
 					}
@@ -152,15 +155,15 @@ public class FormPropertySheetPage implements IPropertySheetPage {
 		body.layout();
 	}
 
-	private void hideTab(IPropertyTab tab) {
+	private void hideTab(final IPropertyTab tab) {
 		if (control == null || control.isDisposed() || tab == null) {
 			return;
 		}
-		Composite body = control.getBody();
-		Control[] children = body.getChildren();
-		for (Control control : children) {
+		final Composite body = control.getBody();
+		final Control[] children = body.getChildren();
+		for (final Control control : children) {
 			if (tab.equals(control.getData())) {
-				GridData layoutData = (GridData) control.getLayoutData();
+				final GridData layoutData = (GridData) control.getLayoutData();
 				layoutData.exclude = true;
 				control.setVisible(false);
 				break;

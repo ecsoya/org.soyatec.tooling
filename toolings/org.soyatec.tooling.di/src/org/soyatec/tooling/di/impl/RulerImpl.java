@@ -45,7 +45,7 @@ public class RulerImpl extends MinimalEObjectImpl.Container implements Ruler {
 	/**
 	 * The default value of the '{@link #getUnit() <em>Unit</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getUnit()
 	 * @generated
 	 * @ordered
@@ -55,7 +55,7 @@ public class RulerImpl extends MinimalEObjectImpl.Container implements Ruler {
 	/**
 	 * The cached value of the '{@link #getUnit() <em>Unit</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getUnit()
 	 * @generated
 	 * @ordered
@@ -65,7 +65,7 @@ public class RulerImpl extends MinimalEObjectImpl.Container implements Ruler {
 	/**
 	 * The cached value of the '{@link #getGuides() <em>Guides</em>}'
 	 * containment reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getGuides()
 	 * @generated
 	 * @ordered
@@ -74,7 +74,7 @@ public class RulerImpl extends MinimalEObjectImpl.Container implements Ruler {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected RulerImpl() {
@@ -83,7 +83,7 @@ public class RulerImpl extends MinimalEObjectImpl.Container implements Ruler {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -93,7 +93,7 @@ public class RulerImpl extends MinimalEObjectImpl.Container implements Ruler {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public RulerUnit getUnit() {
@@ -102,20 +102,21 @@ public class RulerImpl extends MinimalEObjectImpl.Container implements Ruler {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	public void setUnit(RulerUnit newUnit) {
-		RulerUnit oldUnit = unit;
+	public void setUnit(final RulerUnit newUnit) {
+		final RulerUnit oldUnit = unit;
 		unit = newUnit == null ? UNIT_EDEFAULT : newUnit;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET,
 					DiPackage.RULER__UNIT, oldUnit, unit));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<Guide> getGuides() {
@@ -128,13 +129,13 @@ public class RulerImpl extends MinimalEObjectImpl.Container implements Ruler {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd,
-			int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseAdd(final InternalEObject otherEnd,
+			final int featureID, final NotificationChain msgs) {
 		switch (featureID) {
 		case DiPackage.RULER__GUIDES:
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getGuides())
@@ -145,12 +146,12 @@ public class RulerImpl extends MinimalEObjectImpl.Container implements Ruler {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd,
-			int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseRemove(final InternalEObject otherEnd,
+			final int featureID, final NotificationChain msgs) {
 		switch (featureID) {
 		case DiPackage.RULER__GUIDES:
 			return ((InternalEList<?>) getGuides()).basicRemove(otherEnd, msgs);
@@ -160,11 +161,12 @@ public class RulerImpl extends MinimalEObjectImpl.Container implements Ruler {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+	public Object eGet(final int featureID, final boolean resolve,
+			final boolean coreType) {
 		switch (featureID) {
 		case DiPackage.RULER__UNIT:
 			return getUnit();
@@ -176,12 +178,12 @@ public class RulerImpl extends MinimalEObjectImpl.Container implements Ruler {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public void eSet(int featureID, Object newValue) {
+	public void eSet(final int featureID, final Object newValue) {
 		switch (featureID) {
 		case DiPackage.RULER__UNIT:
 			setUnit((RulerUnit) newValue);
@@ -196,11 +198,11 @@ public class RulerImpl extends MinimalEObjectImpl.Container implements Ruler {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public void eUnset(int featureID) {
+	public void eUnset(final int featureID) {
 		switch (featureID) {
 		case DiPackage.RULER__UNIT:
 			setUnit(UNIT_EDEFAULT);
@@ -214,11 +216,11 @@ public class RulerImpl extends MinimalEObjectImpl.Container implements Ruler {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public boolean eIsSet(int featureID) {
+	public boolean eIsSet(final int featureID) {
 		switch (featureID) {
 		case DiPackage.RULER__UNIT:
 			return unit != UNIT_EDEFAULT;
@@ -230,15 +232,16 @@ public class RulerImpl extends MinimalEObjectImpl.Container implements Ruler {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy())
+		if (eIsProxy()) {
 			return super.toString();
+		}
 
-		StringBuffer result = new StringBuffer(super.toString());
+		final StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (unit: ");
 		result.append(unit);
 		result.append(')');

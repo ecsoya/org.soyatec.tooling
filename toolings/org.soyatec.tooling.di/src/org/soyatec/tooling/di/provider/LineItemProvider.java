@@ -28,28 +28,29 @@ import org.soyatec.tooling.di.Line;
 /**
  * This is the item provider adapter for a {@link org.soyatec.tooling.di.Line}
  * object. <!-- begin-user-doc --> <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class LineItemProvider extends NodeItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	public LineItemProvider(AdapterFactory adapterFactory) {
+	public LineItemProvider(final AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
 	/**
 	 * This returns the property descriptors for the adapted class. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
+	public List<IItemPropertyDescriptor> getPropertyDescriptors(
+			final Object object) {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
@@ -66,10 +67,10 @@ public class LineItemProvider extends NodeItemProvider {
 	/**
 	 * This adds a property descriptor for the Color feature. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	protected void addColorPropertyDescriptor(Object object) {
+	protected void addColorPropertyDescriptor(final Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(
 				((ComposeableAdapterFactory) adapterFactory)
 						.getRootAdapterFactory(),
@@ -84,10 +85,10 @@ public class LineItemProvider extends NodeItemProvider {
 	/**
 	 * This adds a property descriptor for the Width feature. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	protected void addWidthPropertyDescriptor(Object object) {
+	protected void addWidthPropertyDescriptor(final Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(
 				((ComposeableAdapterFactory) adapterFactory)
 						.getRootAdapterFactory(),
@@ -102,10 +103,10 @@ public class LineItemProvider extends NodeItemProvider {
 	/**
 	 * This adds a property descriptor for the Source Anchor feature. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	protected void addSourceAnchorPropertyDescriptor(Object object) {
+	protected void addSourceAnchorPropertyDescriptor(final Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(
 				((ComposeableAdapterFactory) adapterFactory)
 						.getRootAdapterFactory(),
@@ -120,10 +121,10 @@ public class LineItemProvider extends NodeItemProvider {
 	/**
 	 * This adds a property descriptor for the Target Anchor feature. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	protected void addTargetAnchorPropertyDescriptor(Object object) {
+	protected void addTargetAnchorPropertyDescriptor(final Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(
 				((ComposeableAdapterFactory) adapterFactory)
 						.getRootAdapterFactory(),
@@ -138,10 +139,10 @@ public class LineItemProvider extends NodeItemProvider {
 	/**
 	 * This adds a property descriptor for the Style feature. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	protected void addStylePropertyDescriptor(Object object) {
+	protected void addStylePropertyDescriptor(final Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(
 				((ComposeableAdapterFactory) adapterFactory)
 						.getRootAdapterFactory(),
@@ -156,10 +157,10 @@ public class LineItemProvider extends NodeItemProvider {
 	/**
 	 * This adds a property descriptor for the Line Dash feature. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	protected void addLineDashPropertyDescriptor(Object object) {
+	protected void addLineDashPropertyDescriptor(final Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(
 				((ComposeableAdapterFactory) adapterFactory)
 						.getRootAdapterFactory(),
@@ -178,12 +179,12 @@ public class LineItemProvider extends NodeItemProvider {
 	 * {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in
 	 * {@link #createCommand}. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(
-			Object object) {
+			final Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(DiPackage.Literals.LINE__SOURCE_NODE);
@@ -194,11 +195,12 @@ public class LineItemProvider extends NodeItemProvider {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	protected EStructuralFeature getChildFeature(Object object, Object child) {
+	protected EStructuralFeature getChildFeature(final Object object,
+			final Object child) {
 		// Check the type of the specified child object and return the proper
 		// feature to use for
 		// adding (see {@link AddCommand}) it as a child.
@@ -209,12 +211,12 @@ public class LineItemProvider extends NodeItemProvider {
 	/**
 	 * This returns the label text for the adapted class. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public String getText(Object object) {
-		String label = ((Line) object).getId();
+	public String getText(final Object object) {
+		final String label = ((Line) object).getId();
 		return label == null || label.length() == 0 ? getString("_UI_Line_type")
 				: getString("_UI_Line_type") + " " + label;
 	}
@@ -224,11 +226,11 @@ public class LineItemProvider extends NodeItemProvider {
 	 * update any cached children and by creating a viewer notification, which
 	 * it passes to {@link #fireNotifyChanged}. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public void notifyChanged(Notification notification) {
+	public void notifyChanged(final Notification notification) {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Line.class)) {
@@ -254,12 +256,12 @@ public class LineItemProvider extends NodeItemProvider {
 	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s
 	 * describing the children that can be created under this object. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	protected void collectNewChildDescriptors(
-			Collection<Object> newChildDescriptors, Object object) {
+			final Collection<Object> newChildDescriptors, final Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
 

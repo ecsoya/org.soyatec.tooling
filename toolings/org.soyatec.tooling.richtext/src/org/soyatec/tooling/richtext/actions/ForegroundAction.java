@@ -12,13 +12,14 @@ package org.soyatec.tooling.richtext.actions;
 
 import org.eclipse.epf.richtext.IRichText;
 import org.eclipse.epf.richtext.RichTextCommand;
+import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.soyatec.tooling.richtext.Activator;
 
 public class ForegroundAction extends ColorAction {
 
-	public ForegroundAction(IRichText richText) {
+	public ForegroundAction(final IRichText richText) {
 		super(richText);
-		setImageDescriptor(Activator.imageDescriptorFromPlugin(
+		setImageDescriptor(AbstractUIPlugin.imageDescriptorFromPlugin(
 				Activator.PLUGIN_ID, "icons/textForeground.ico"));
 		setToolTipText("Text Foreground");
 	}

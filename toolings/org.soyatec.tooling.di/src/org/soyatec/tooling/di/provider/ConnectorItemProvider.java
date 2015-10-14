@@ -26,28 +26,29 @@ import org.soyatec.tooling.di.DiPackage;
  * This is the item provider adapter for a
  * {@link org.soyatec.tooling.di.Connector} object. <!-- begin-user-doc --> <!--
  * end-user-doc -->
- * 
+ *
  * @generated
  */
 public class ConnectorItemProvider extends LineItemProvider {
 	/**
 	 * This constructs an instance from a factory and a notifier. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	public ConnectorItemProvider(AdapterFactory adapterFactory) {
+	public ConnectorItemProvider(final AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
 	/**
 	 * This returns the property descriptors for the adapted class. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
+	public List<IItemPropertyDescriptor> getPropertyDescriptors(
+			final Object object) {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
@@ -61,10 +62,10 @@ public class ConnectorItemProvider extends LineItemProvider {
 	/**
 	 * This adds a property descriptor for the Target feature. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	protected void addTargetPropertyDescriptor(Object object) {
+	protected void addTargetPropertyDescriptor(final Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(
 				((ComposeableAdapterFactory) adapterFactory)
 						.getRootAdapterFactory(),
@@ -79,10 +80,10 @@ public class ConnectorItemProvider extends LineItemProvider {
 	/**
 	 * This adds a property descriptor for the Source feature. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	protected void addSourcePropertyDescriptor(Object object) {
+	protected void addSourcePropertyDescriptor(final Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(
 				((ComposeableAdapterFactory) adapterFactory)
 						.getRootAdapterFactory(),
@@ -97,10 +98,10 @@ public class ConnectorItemProvider extends LineItemProvider {
 	/**
 	 * This adds a property descriptor for the Reverse Element feature. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	protected void addReverseElementPropertyDescriptor(Object object) {
+	protected void addReverseElementPropertyDescriptor(final Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(
 				((ComposeableAdapterFactory) adapterFactory)
 						.getRootAdapterFactory(),
@@ -115,11 +116,11 @@ public class ConnectorItemProvider extends LineItemProvider {
 
 	/**
 	 * This returns Connector.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public Object getImage(Object object) {
+	public Object getImage(final Object object) {
 		return overlayImage(object,
 				getResourceLocator().getImage("full/obj16/Connector"));
 	}
@@ -127,12 +128,12 @@ public class ConnectorItemProvider extends LineItemProvider {
 	/**
 	 * This returns the label text for the adapted class. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public String getText(Object object) {
-		String label = ((Connector) object).getId();
+	public String getText(final Object object) {
+		final String label = ((Connector) object).getId();
 		return label == null || label.length() == 0 ? getString("_UI_Connector_type")
 				: getString("_UI_Connector_type") + " " + label;
 	}
@@ -142,11 +143,11 @@ public class ConnectorItemProvider extends LineItemProvider {
 	 * update any cached children and by creating a viewer notification, which
 	 * it passes to {@link #fireNotifyChanged}. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public void notifyChanged(Notification notification) {
+	public void notifyChanged(final Notification notification) {
 		updateChildren(notification);
 		super.notifyChanged(notification);
 	}
@@ -155,12 +156,12 @@ public class ConnectorItemProvider extends LineItemProvider {
 	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s
 	 * describing the children that can be created under this object. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	protected void collectNewChildDescriptors(
-			Collection<Object> newChildDescriptors, Object object) {
+			final Collection<Object> newChildDescriptors, final Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
 

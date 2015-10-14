@@ -40,7 +40,7 @@ public interface Grid extends EObject {
 	 * really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Color</em>' attribute.
 	 * @see #setColor(int)
 	 * @see org.soyatec.tooling.di.DiPackage#getGrid_Color()
@@ -52,7 +52,7 @@ public interface Grid extends EObject {
 	/**
 	 * Sets the value of the '{@link org.soyatec.tooling.di.Grid#getColor
 	 * <em>Color</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Color</em>' attribute.
 	 * @see #getColor()
@@ -68,7 +68,7 @@ public interface Grid extends EObject {
 	 * really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Spacing</em>' attribute.
 	 * @see #setSpacing(int)
 	 * @see org.soyatec.tooling.di.DiPackage#getGrid_Spacing()
@@ -81,7 +81,7 @@ public interface Grid extends EObject {
 	 * Sets the value of the '{@link org.soyatec.tooling.di.Grid#getSpacing
 	 * <em>Spacing</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Spacing</em>' attribute.
 	 * @see #getSpacing()
@@ -98,7 +98,7 @@ public interface Grid extends EObject {
 	 * really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Style</em>' attribute.
 	 * @see org.soyatec.tooling.di.LineStyle
 	 * @see #setStyle(LineStyle)
@@ -111,7 +111,7 @@ public interface Grid extends EObject {
 	/**
 	 * Sets the value of the '{@link org.soyatec.tooling.di.Grid#getStyle
 	 * <em>Style</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Style</em>' attribute.
 	 * @see org.soyatec.tooling.di.LineStyle

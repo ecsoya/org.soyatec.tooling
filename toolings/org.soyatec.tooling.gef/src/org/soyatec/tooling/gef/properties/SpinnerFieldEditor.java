@@ -23,7 +23,7 @@ import org.eclipse.swt.widgets.Spinner;
 
 /**
  * FieldEditor for integer values.
- * 
+ *
  * @author Ecsoya
  */
 public class SpinnerFieldEditor extends FieldEditor {
@@ -60,7 +60,7 @@ public class SpinnerFieldEditor extends FieldEditor {
 
 	/**
 	 * Creates a scale field editor.
-	 * 
+	 *
 	 * @param name
 	 *            the name of the preference this field editor works on
 	 * @param labelText
@@ -68,14 +68,15 @@ public class SpinnerFieldEditor extends FieldEditor {
 	 * @param parent
 	 *            the parent of the field editor's control
 	 */
-	public SpinnerFieldEditor(String name, String labelText, Composite parent) {
+	public SpinnerFieldEditor(final String name, final String labelText,
+			final Composite parent) {
 		super(name, labelText, parent);
 		setDefaultValues();
 	}
 
 	/**
 	 * Creates a scale field editor with particular scale values.
-	 * 
+	 *
 	 * @param name
 	 *            the name of the preference this field editor works on
 	 * @param labelText
@@ -91,32 +92,33 @@ public class SpinnerFieldEditor extends FieldEditor {
 	 * @param pageIncrement
 	 *            the value used for Scale.setPageIncrement(int).
 	 */
-	public SpinnerFieldEditor(String name, String labelText, Composite parent,
-			int min, int max, int increment, int pageIncrement) {
+	public SpinnerFieldEditor(final String name, final String labelText,
+			final Composite parent, final int min, final int max,
+			final int increment, final int pageIncrement) {
 		super(name, labelText, parent);
 		setValues(min, max, increment, pageIncrement);
 	}
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.preference.FieldEditor#adjustForNumColumns(int)
 	 */
 	@Override
-	protected void adjustForNumColumns(int numColumns) {
+	protected void adjustForNumColumns(final int numColumns) {
 		((GridData) spinner.getLayoutData()).horizontalSpan = numColumns - 1;
 	}
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see
 	 * org.eclipse.jface.preference.FieldEditor#doFillIntoGrid(org.eclipse.swt
 	 * .widgets.Composite, int)
 	 */
 	@Override
-	protected void doFillIntoGrid(Composite parent, int numColumns) {
-		Control control = getLabelControl(parent);
+	protected void doFillIntoGrid(final Composite parent, final int numColumns) {
+		final Control control = getLabelControl(parent);
 		GridData gd = new GridData();
 		control.setLayoutData(gd);
 
@@ -131,13 +133,13 @@ public class SpinnerFieldEditor extends FieldEditor {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.preference.FieldEditor#doLoad()
 	 */
 	@Override
 	protected void doLoad() {
 		if (spinner != null) {
-			int value = getPreferenceStore().getInt(getPreferenceName());
+			final int value = getPreferenceStore().getInt(getPreferenceName());
 			spinner.setSelection(value);
 			oldValue = value;
 		}
@@ -145,13 +147,14 @@ public class SpinnerFieldEditor extends FieldEditor {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.preference.FieldEditor#doLoadDefault()
 	 */
 	@Override
 	protected void doLoadDefault() {
 		if (spinner != null) {
-			int value = getPreferenceStore().getDefaultInt(getPreferenceName());
+			final int value = getPreferenceStore().getDefaultInt(
+					getPreferenceName());
 			spinner.setSelection(value);
 		}
 		valueChanged();
@@ -159,7 +162,7 @@ public class SpinnerFieldEditor extends FieldEditor {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.preference.FieldEditor#doStore()
 	 */
 	@Override
@@ -170,7 +173,7 @@ public class SpinnerFieldEditor extends FieldEditor {
 
 	/**
 	 * Returns the value that will be used for Scale.setIncrement(int).
-	 * 
+	 *
 	 * @return the value.
 	 * @see org.eclipse.swt.widgets.Scale#setIncrement(int)
 	 */
@@ -180,7 +183,7 @@ public class SpinnerFieldEditor extends FieldEditor {
 
 	/**
 	 * Returns the value that will be used for Scale.setMaximum(int).
-	 * 
+	 *
 	 * @return the value.
 	 * @see org.eclipse.swt.widgets.Scale#setMaximum(int)
 	 */
@@ -190,7 +193,7 @@ public class SpinnerFieldEditor extends FieldEditor {
 
 	/**
 	 * Returns the value that will be used for Scale.setMinimum(int).
-	 * 
+	 *
 	 * @return the value.
 	 * @see org.eclipse.swt.widgets.Scale#setMinimum(int)
 	 */
@@ -200,7 +203,7 @@ public class SpinnerFieldEditor extends FieldEditor {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.preference.FieldEditor#getNumberOfControls()
 	 */
 	@Override
@@ -210,7 +213,7 @@ public class SpinnerFieldEditor extends FieldEditor {
 
 	/**
 	 * Returns the value that will be used for Scale.setPageIncrement(int).
-	 * 
+	 *
 	 * @return the value.
 	 * @see org.eclipse.swt.widgets.Scale#setPageIncrement(int)
 	 */
@@ -220,7 +223,7 @@ public class SpinnerFieldEditor extends FieldEditor {
 
 	/**
 	 * Returns this field editor's scale control.
-	 * 
+	 *
 	 * @return the scale control, or <code>null</code> if no scale field is
 	 *         created yet
 	 */
@@ -231,22 +234,22 @@ public class SpinnerFieldEditor extends FieldEditor {
 	/**
 	 * Returns this field editor's scale control. The control is created if it
 	 * does not yet exist.
-	 * 
+	 *
 	 * @param parent
 	 *            the parent
 	 * @return the scale control
 	 */
-	private Spinner getSpinnerControl(Composite parent) {
+	private Spinner getSpinnerControl(final Composite parent) {
 		if (spinner == null) {
 			spinner = new Spinner(parent, SWT.READ_ONLY | SWT.BORDER);
 			spinner.setFont(parent.getFont());
 			spinner.addSelectionListener(new SelectionAdapter() {
-				public void widgetSelected(SelectionEvent event) {
+				public void widgetSelected(final SelectionEvent event) {
 					valueChanged();
 				}
 			});
 			spinner.addDisposeListener(new DisposeListener() {
-				public void widgetDisposed(DisposeEvent event) {
+				public void widgetDisposed(final DisposeEvent event) {
 					spinner = null;
 				}
 			});
@@ -271,7 +274,7 @@ public class SpinnerFieldEditor extends FieldEditor {
 
 	/*
 	 * (non-Javadoc)
-	 * 
+	 *
 	 * @see org.eclipse.jface.preference.FieldEditor#setFocus()
 	 */
 	@Override
@@ -284,36 +287,36 @@ public class SpinnerFieldEditor extends FieldEditor {
 	/**
 	 * Set the value to be used for Scale.setIncrement(int) and update the
 	 * scale.
-	 * 
+	 *
 	 * @param increment
 	 *            a value greater than 0.
 	 * @see org.eclipse.swt.widgets.Scale#setIncrement(int)
 	 */
-	public void setIncrement(int increment) {
+	public void setIncrement(final int increment) {
 		this.incrementValue = increment;
 		updateSpinner();
 	}
 
 	/**
 	 * Set the value to be used for Scale.setMaximum(int) and update the scale.
-	 * 
+	 *
 	 * @param max
 	 *            a value greater than 0.
 	 * @see org.eclipse.swt.widgets.Scale#setMaximum(int)
 	 */
-	public void setMaximum(int max) {
+	public void setMaximum(final int max) {
 		this.maxValue = max;
 		updateSpinner();
 	}
 
 	/**
 	 * Set the value to be used for Scale.setMinumum(int) and update the scale.
-	 * 
+	 *
 	 * @param min
 	 *            a value greater than 0.
 	 * @see org.eclipse.swt.widgets.Scale#setMinimum(int)
 	 */
-	public void setMinimum(int min) {
+	public void setMinimum(final int min) {
 		this.minValue = min;
 		updateSpinner();
 	}
@@ -321,19 +324,19 @@ public class SpinnerFieldEditor extends FieldEditor {
 	/**
 	 * Set the value to be used for Scale.setPageIncrement(int) and update the
 	 * scale.
-	 * 
+	 *
 	 * @param pageIncrement
 	 *            a value greater than 0.
 	 * @see org.eclipse.swt.widgets.Scale#setPageIncrement(int)
 	 */
-	public void setPageIncrement(int pageIncrement) {
+	public void setPageIncrement(final int pageIncrement) {
 		this.pageIncrementValue = pageIncrement;
 		updateSpinner();
 	}
 
 	/**
 	 * Set all Scale values.
-	 * 
+	 *
 	 * @param min
 	 *            the value used for Scale.setMinimum(int).
 	 * @param max
@@ -343,7 +346,8 @@ public class SpinnerFieldEditor extends FieldEditor {
 	 * @param pageIncrement
 	 *            the value used for Scale.setPageIncrement(int).
 	 */
-	private void setValues(int min, int max, int increment, int pageIncrement) {
+	private void setValues(final int min, final int max, final int increment,
+			final int pageIncrement) {
 		this.incrementValue = increment;
 		this.maxValue = max;
 		this.minValue = min;
@@ -375,7 +379,7 @@ public class SpinnerFieldEditor extends FieldEditor {
 	protected void valueChanged() {
 		setPresentsDefaultValue(false);
 
-		int newValue = spinner.getSelection();
+		final int newValue = spinner.getSelection();
 		if (newValue != oldValue) {
 			fireStateChanged(IS_VALID, false, true);
 			fireValueChanged(VALUE, new Integer(oldValue),
@@ -384,7 +388,7 @@ public class SpinnerFieldEditor extends FieldEditor {
 		}
 	}
 
-	public void setEnabled(boolean enabled, Composite parent) {
+	public void setEnabled(final boolean enabled, final Composite parent) {
 		super.setEnabled(enabled, parent);
 		getSpinnerControl(parent).setEnabled(enabled);
 	}

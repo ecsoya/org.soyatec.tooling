@@ -33,7 +33,7 @@ import org.soyatec.tooling.gef.utils.EditingDomainUtils;
 
 /**
  * Create GEF commands based EMF commands.
- * 
+ *
  * @author Ecsoya
  */
 public class CommandFactory {
@@ -154,7 +154,7 @@ public class CommandFactory {
 	}
 
 	public static Command move(final Object owner, final Object feature,
-			final Object value, int index) {
+			final Object value, final int index) {
 		final EditingDomain domain = EditingDomainUtils.getEditingDomain(owner);
 		if (domain == null || owner == null || feature == null) {
 			return FAILED_CMD;

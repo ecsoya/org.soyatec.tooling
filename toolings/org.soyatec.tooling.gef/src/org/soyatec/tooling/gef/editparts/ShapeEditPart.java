@@ -38,7 +38,7 @@ public abstract class ShapeEditPart<T extends Shape> extends
 
 	private IFigure primaryFigure;
 
-	public ShapeEditPart(Shape model) {
+	public ShapeEditPart(final Shape model) {
 		super(model);
 	}
 
@@ -55,8 +55,8 @@ public abstract class ShapeEditPart<T extends Shape> extends
 	}
 
 	public void refreshForeground() {
-		int foreground = getShapeModel().getForeground();
-		Color color = foreground == -1 ? getDefaultForeground()
+		final int foreground = getShapeModel().getForeground();
+		final Color color = foreground == -1 ? getDefaultForeground()
 				: ResourcesFactory.getColor(foreground);
 		setForegroundColor(color);
 	}
@@ -66,8 +66,8 @@ public abstract class ShapeEditPart<T extends Shape> extends
 	}
 
 	public void refreshBackground() {
-		int background = getShapeModel().getBackground();
-		Color color = background == -1 ? getDefaultBackgroundColor()
+		final int background = getShapeModel().getBackground();
+		final Color color = background == -1 ? getDefaultBackgroundColor()
 				: ResourcesFactory.getColor(background);
 		setBackgroundColor(color);
 	}
@@ -76,24 +76,24 @@ public abstract class ShapeEditPart<T extends Shape> extends
 		return ResourcesFactory.getColor(ResourcesFactory.COLOR_SHAPE);
 	}
 
-	protected void setForegroundColor(Color color) {
+	protected void setForegroundColor(final Color color) {
 		getPrimaryFigure().setForegroundColor(color);
 	}
 
-	protected void setBackgroundColor(Color color) {
+	protected void setBackgroundColor(final Color color) {
 		getPrimaryFigure().setBackgroundColor(color);
 	}
 
 	protected void refreshBounds() {
-		Rectangle rect = getShapeModel().getBounds();
+		final Rectangle rect = getShapeModel().getBounds();
 		if (rect != null) {
 			setLayoutConstraint(this, getFigure(), rect);
 		}
 	}
 
-	protected void handleNotifyChanged(Notification event) {
+	protected void handleNotifyChanged(final Notification event) {
 		super.handleNotifyChanged(event);
-		Object feature = event.getFeature();
+		final Object feature = event.getFeature();
 		if (DiPackage.eINSTANCE.getShape_Bounds() == feature) {
 			refreshBounds();
 		} else if (DiPackage.eINSTANCE.getShape_Background() == feature) {
@@ -104,11 +104,11 @@ public abstract class ShapeEditPart<T extends Shape> extends
 	}
 
 	final protected IFigure createFigure() {
-		IFigure primaryFigure = getPrimaryFigure();
+		final IFigure primaryFigure = getPrimaryFigure();
 		return createNodeFigure(primaryFigure);
 	}
 
-	protected NodeFigure createNodeFigure(IFigure primaryFigure) {
+	protected NodeFigure createNodeFigure(final IFigure primaryFigure) {
 		return new NodeFigure(primaryFigure);
 	}
 
@@ -130,9 +130,9 @@ public abstract class ShapeEditPart<T extends Shape> extends
 	}
 
 	public ConnectionAnchor getSourceConnectionAnchor(
-			ConnectionEditPart connection) {
+			final ConnectionEditPart connection) {
 		String terminal = NodeFigure.DEFAULT_TERMINAL;
-		Object model = connection.getModel();
+		final Object model = connection.getModel();
 		if (model instanceof Line) {
 			terminal = ((Line) model).getSourceAnchor();
 		}
@@ -140,16 +140,16 @@ public abstract class ShapeEditPart<T extends Shape> extends
 	}
 
 	public ConnectionAnchor getTargetConnectionAnchor(
-			ConnectionEditPart connection) {
+			final ConnectionEditPart connection) {
 		String terminal = NodeFigure.DEFAULT_TERMINAL;
-		Object model = connection.getModel();
+		final Object model = connection.getModel();
 		if (model instanceof Line) {
 			terminal = ((Line) model).getTargetAnchor();
 		}
 		return getFigure().getConnectionAnchor(terminal);
 	}
 
-	public ConnectionAnchor getSourceConnectionAnchor(Request request) {
+	public ConnectionAnchor getSourceConnectionAnchor(final Request request) {
 		Point location = null;
 		if (request instanceof DropRequest) {
 			location = ((DropRequest) request).getLocation();
@@ -157,7 +157,7 @@ public abstract class ShapeEditPart<T extends Shape> extends
 		return getFigure().getSourceConnectionAnchor(location);
 	}
 
-	public ConnectionAnchor getTargetConnectionAnchor(Request request) {
+	public ConnectionAnchor getTargetConnectionAnchor(final Request request) {
 		Point location = null;
 		if (request instanceof DropRequest) {
 			location = ((DropRequest) request).getLocation();
@@ -173,8 +173,8 @@ public abstract class ShapeEditPart<T extends Shape> extends
 	}
 
 	@SuppressWarnings({ "unchecked", "rawtypes" })
-	protected void reorderSourceConnection(ConnectionEditPart connection,
-			int index) {
+	protected void reorderSourceConnection(final ConnectionEditPart connection,
+			final int index) {
 		primRemoveSourceConnection(connection);
 		if (sourceConnections == null) {
 			sourceConnections = new ArrayList();
@@ -183,8 +183,8 @@ public abstract class ShapeEditPart<T extends Shape> extends
 	}
 
 	@SuppressWarnings({ "rawtypes", "unchecked" })
-	protected void reorderTargetConnection(ConnectionEditPart connection,
-			int index) {
+	protected void reorderTargetConnection(final ConnectionEditPart connection,
+			final int index) {
 		primRemoveTargetConnection(connection);
 		if (targetConnections == null) {
 			targetConnections = new ArrayList();

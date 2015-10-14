@@ -22,8 +22,8 @@ import org.soyatec.tooling.gef.utils.EditingDomainUtils;
 
 public class LineEditPolicy extends ConnectionEditPolicy {
 
-	protected Command getDeleteCommand(GroupRequest request) {
-		EditingDomain editingDomain = EditingDomainUtils
+	protected Command getDeleteCommand(final GroupRequest request) {
+		final EditingDomain editingDomain = EditingDomainUtils
 				.getEditingDomain(getHost());
 		return new CommandWrap2GEF(DeleteCommand.create(editingDomain,
 				Collections.singleton(getHost().getModel())));

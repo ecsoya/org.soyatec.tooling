@@ -41,7 +41,7 @@ public interface GradientShape extends Shape {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Using Gradient</em>' attribute.
 	 * @see #setUsingGradient(boolean)
 	 * @see org.soyatec.tooling.di.DiPackage#getGradientShape_UsingGradient()
@@ -55,7 +55,7 @@ public interface GradientShape extends Shape {
 	 * {@link org.soyatec.tooling.di.GradientShape#isUsingGradient
 	 * <em>Using Gradient</em>}' attribute. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Using Gradient</em>' attribute.
 	 * @see #isUsingGradient()
@@ -71,7 +71,7 @@ public interface GradientShape extends Shape {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Gradient Color</em>' attribute.
 	 * @see #setGradientColor(int)
 	 * @see org.soyatec.tooling.di.DiPackage#getGradientShape_GradientColor()
@@ -85,7 +85,7 @@ public interface GradientShape extends Shape {
 	 * {@link org.soyatec.tooling.di.GradientShape#getGradientColor
 	 * <em>Gradient Color</em>}' attribute. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Gradient Color</em>' attribute.
 	 * @see #getGradientColor()
@@ -101,7 +101,7 @@ public interface GradientShape extends Shape {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Vertical Gradient</em>' attribute.
 	 * @see #setVerticalGradient(boolean)
 	 * @see org.soyatec.tooling.di.DiPackage#getGradientShape_VerticalGradient()
@@ -115,7 +115,7 @@ public interface GradientShape extends Shape {
 	 * {@link org.soyatec.tooling.di.GradientShape#isVerticalGradient
 	 * <em>Vertical Gradient</em>}' attribute. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Vertical Gradient</em>' attribute.
 	 * @see #isVerticalGradient()

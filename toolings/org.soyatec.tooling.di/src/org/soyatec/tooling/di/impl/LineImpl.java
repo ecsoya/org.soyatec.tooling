@@ -56,7 +56,7 @@ public abstract class LineImpl extends NodeImpl implements Line {
 	/**
 	 * The default value of the '{@link #getColor() <em>Color</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getColor()
 	 * @generated
 	 * @ordered
@@ -66,7 +66,7 @@ public abstract class LineImpl extends NodeImpl implements Line {
 	/**
 	 * The cached value of the '{@link #getColor() <em>Color</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getColor()
 	 * @generated
 	 * @ordered
@@ -76,7 +76,7 @@ public abstract class LineImpl extends NodeImpl implements Line {
 	/**
 	 * The default value of the '{@link #getWidth() <em>Width</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getWidth()
 	 * @generated
 	 * @ordered
@@ -86,7 +86,7 @@ public abstract class LineImpl extends NodeImpl implements Line {
 	/**
 	 * The cached value of the '{@link #getWidth() <em>Width</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getWidth()
 	 * @generated
 	 * @ordered
@@ -97,7 +97,7 @@ public abstract class LineImpl extends NodeImpl implements Line {
 	 * The default value of the '{@link #getSourceAnchor()
 	 * <em>Source Anchor</em>}' attribute. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @see #getSourceAnchor()
 	 * @generated
 	 * @ordered
@@ -108,7 +108,7 @@ public abstract class LineImpl extends NodeImpl implements Line {
 	 * The cached value of the '{@link #getSourceAnchor()
 	 * <em>Source Anchor</em>}' attribute. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @see #getSourceAnchor()
 	 * @generated
 	 * @ordered
@@ -119,7 +119,7 @@ public abstract class LineImpl extends NodeImpl implements Line {
 	 * The default value of the '{@link #getTargetAnchor()
 	 * <em>Target Anchor</em>}' attribute. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @see #getTargetAnchor()
 	 * @generated
 	 * @ordered
@@ -130,7 +130,7 @@ public abstract class LineImpl extends NodeImpl implements Line {
 	 * The cached value of the '{@link #getTargetAnchor()
 	 * <em>Target Anchor</em>}' attribute. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @see #getTargetAnchor()
 	 * @generated
 	 * @ordered
@@ -140,7 +140,7 @@ public abstract class LineImpl extends NodeImpl implements Line {
 	/**
 	 * The cached value of the '{@link #getSourceNode() <em>Source Node</em>}'
 	 * attribute list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSourceNode()
 	 * @generated
 	 * @ordered
@@ -150,7 +150,7 @@ public abstract class LineImpl extends NodeImpl implements Line {
 	/**
 	 * The cached value of the '{@link #getTargetNode() <em>Target Node</em>}'
 	 * attribute list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getTargetNode()
 	 * @generated
 	 * @ordered
@@ -160,7 +160,7 @@ public abstract class LineImpl extends NodeImpl implements Line {
 	/**
 	 * The default value of the '{@link #getStyle() <em>Style</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getStyle()
 	 * @generated
 	 * @ordered
@@ -170,7 +170,7 @@ public abstract class LineImpl extends NodeImpl implements Line {
 	/**
 	 * The cached value of the '{@link #getStyle() <em>Style</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getStyle()
 	 * @generated
 	 * @ordered
@@ -180,7 +180,7 @@ public abstract class LineImpl extends NodeImpl implements Line {
 	/**
 	 * The cached value of the '{@link #getLineDash() <em>Line Dash</em>}'
 	 * attribute list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getLineDash()
 	 * @generated
 	 * @ordered
@@ -189,7 +189,7 @@ public abstract class LineImpl extends NodeImpl implements Line {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected LineImpl() {
@@ -198,7 +198,7 @@ public abstract class LineImpl extends NodeImpl implements Line {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -208,7 +208,7 @@ public abstract class LineImpl extends NodeImpl implements Line {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public int getColor() {
@@ -217,20 +217,21 @@ public abstract class LineImpl extends NodeImpl implements Line {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	public void setColor(int newColor) {
-		int oldColor = color;
+	public void setColor(final int newColor) {
+		final int oldColor = color;
 		color = newColor;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET,
 					DiPackage.LINE__COLOR, oldColor, color));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public int getWidth() {
@@ -239,20 +240,21 @@ public abstract class LineImpl extends NodeImpl implements Line {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	public void setWidth(int newWidth) {
-		int oldWidth = width;
+	public void setWidth(final int newWidth) {
+		final int oldWidth = width;
 		width = newWidth;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET,
 					DiPackage.LINE__WIDTH, oldWidth, width));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getSourceAnchor() {
@@ -261,21 +263,22 @@ public abstract class LineImpl extends NodeImpl implements Line {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	public void setSourceAnchor(String newSourceAnchor) {
-		String oldSourceAnchor = sourceAnchor;
+	public void setSourceAnchor(final String newSourceAnchor) {
+		final String oldSourceAnchor = sourceAnchor;
 		sourceAnchor = newSourceAnchor;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET,
 					DiPackage.LINE__SOURCE_ANCHOR, oldSourceAnchor,
 					sourceAnchor));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public String getTargetAnchor() {
@@ -284,21 +287,22 @@ public abstract class LineImpl extends NodeImpl implements Line {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	public void setTargetAnchor(String newTargetAnchor) {
-		String oldTargetAnchor = targetAnchor;
+	public void setTargetAnchor(final String newTargetAnchor) {
+		final String oldTargetAnchor = targetAnchor;
 		targetAnchor = newTargetAnchor;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET,
 					DiPackage.LINE__TARGET_ANCHOR, oldTargetAnchor,
 					targetAnchor));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public FeatureMap getSourceNode() {
@@ -310,7 +314,7 @@ public abstract class LineImpl extends NodeImpl implements Line {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public FeatureMap getTargetNode() {
@@ -322,7 +326,7 @@ public abstract class LineImpl extends NodeImpl implements Line {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public LineStyle getStyle() {
@@ -331,20 +335,21 @@ public abstract class LineImpl extends NodeImpl implements Line {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	public void setStyle(LineStyle newStyle) {
-		LineStyle oldStyle = style;
+	public void setStyle(final LineStyle newStyle) {
+		final LineStyle oldStyle = style;
 		style = newStyle == null ? STYLE_EDEFAULT : newStyle;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET,
 					DiPackage.LINE__STYLE, oldStyle, style));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<Integer> getLineDash() {
@@ -357,12 +362,12 @@ public abstract class LineImpl extends NodeImpl implements Line {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd,
-			int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseRemove(final InternalEObject otherEnd,
+			final int featureID, final NotificationChain msgs) {
 		switch (featureID) {
 		case DiPackage.LINE__SOURCE_NODE:
 			return ((InternalEList<?>) getSourceNode()).basicRemove(otherEnd,
@@ -376,11 +381,12 @@ public abstract class LineImpl extends NodeImpl implements Line {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+	public Object eGet(final int featureID, final boolean resolve,
+			final boolean coreType) {
 		switch (featureID) {
 		case DiPackage.LINE__COLOR:
 			return getColor();
@@ -391,12 +397,14 @@ public abstract class LineImpl extends NodeImpl implements Line {
 		case DiPackage.LINE__TARGET_ANCHOR:
 			return getTargetAnchor();
 		case DiPackage.LINE__SOURCE_NODE:
-			if (coreType)
+			if (coreType) {
 				return getSourceNode();
+			}
 			return ((FeatureMap.Internal) getSourceNode()).getWrapper();
 		case DiPackage.LINE__TARGET_NODE:
-			if (coreType)
+			if (coreType) {
 				return getTargetNode();
+			}
 			return ((FeatureMap.Internal) getTargetNode()).getWrapper();
 		case DiPackage.LINE__STYLE:
 			return getStyle();
@@ -408,12 +416,12 @@ public abstract class LineImpl extends NodeImpl implements Line {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public void eSet(int featureID, Object newValue) {
+	public void eSet(final int featureID, final Object newValue) {
 		switch (featureID) {
 		case DiPackage.LINE__COLOR:
 			setColor((Integer) newValue);
@@ -446,11 +454,11 @@ public abstract class LineImpl extends NodeImpl implements Line {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public void eUnset(int featureID) {
+	public void eUnset(final int featureID) {
 		switch (featureID) {
 		case DiPackage.LINE__COLOR:
 			setColor(COLOR_EDEFAULT);
@@ -482,11 +490,11 @@ public abstract class LineImpl extends NodeImpl implements Line {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public boolean eIsSet(int featureID) {
+	public boolean eIsSet(final int featureID) {
 		switch (featureID) {
 		case DiPackage.LINE__COLOR:
 			return color != COLOR_EDEFAULT;
@@ -512,15 +520,16 @@ public abstract class LineImpl extends NodeImpl implements Line {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy())
+		if (eIsProxy()) {
 			return super.toString();
+		}
 
-		StringBuffer result = new StringBuffer(super.toString());
+		final StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (color: ");
 		result.append(color);
 		result.append(", width: ");

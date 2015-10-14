@@ -36,7 +36,7 @@ public interface EXAttribute extends EXNode {
 	 * really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Value</em>' attribute.
 	 * @see #setValue(String)
 	 * @see org.soyatec.tooling.exml.EXMLPackage#getAttribute_Value()
@@ -49,7 +49,7 @@ public interface EXAttribute extends EXNode {
 	 * Sets the value of the '
 	 * {@link org.soyatec.tooling.exml.EXAttribute#getValue <em>Value</em>}'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Value</em>' attribute.
 	 * @see #getValue()

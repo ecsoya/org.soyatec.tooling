@@ -61,7 +61,7 @@ public class ShapeImpl extends ContainerImpl implements Shape {
 	 * The cached value of the '{@link #getAllOutgoingLines()
 	 * <em>All Outgoing Lines</em>}' attribute list. <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAllOutgoingLines()
 	 * @generated
 	 * @ordered
@@ -72,7 +72,7 @@ public class ShapeImpl extends ContainerImpl implements Shape {
 	 * The cached value of the '{@link #getAllIncomingLines()
 	 * <em>All Incoming Lines</em>}' attribute list. <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAllIncomingLines()
 	 * @generated
 	 * @ordered
@@ -82,7 +82,7 @@ public class ShapeImpl extends ContainerImpl implements Shape {
 	/**
 	 * The default value of the '{@link #getBackground() <em>Background</em>}'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBackground()
 	 * @generated
 	 * @ordered
@@ -92,7 +92,7 @@ public class ShapeImpl extends ContainerImpl implements Shape {
 	/**
 	 * The cached value of the '{@link #getBackground() <em>Background</em>}'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBackground()
 	 * @generated
 	 * @ordered
@@ -102,7 +102,7 @@ public class ShapeImpl extends ContainerImpl implements Shape {
 	/**
 	 * The default value of the '{@link #getForeground() <em>Foreground</em>}'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getForeground()
 	 * @generated
 	 * @ordered
@@ -112,7 +112,7 @@ public class ShapeImpl extends ContainerImpl implements Shape {
 	/**
 	 * The cached value of the '{@link #getForeground() <em>Foreground</em>}'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getForeground()
 	 * @generated
 	 * @ordered
@@ -122,7 +122,7 @@ public class ShapeImpl extends ContainerImpl implements Shape {
 	/**
 	 * The default value of the '{@link #getBounds() <em>Bounds</em>}'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBounds()
 	 * @generated
 	 * @ordered
@@ -132,7 +132,7 @@ public class ShapeImpl extends ContainerImpl implements Shape {
 	/**
 	 * The cached value of the '{@link #getBounds() <em>Bounds</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getBounds()
 	 * @generated
 	 * @ordered
@@ -141,7 +141,7 @@ public class ShapeImpl extends ContainerImpl implements Shape {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ShapeImpl() {
@@ -150,7 +150,7 @@ public class ShapeImpl extends ContainerImpl implements Shape {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -160,7 +160,7 @@ public class ShapeImpl extends ContainerImpl implements Shape {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public FeatureMap getAllOutgoingLines() {
@@ -173,7 +173,7 @@ public class ShapeImpl extends ContainerImpl implements Shape {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public FeatureMap getAllIncomingLines() {
@@ -186,7 +186,7 @@ public class ShapeImpl extends ContainerImpl implements Shape {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<CommentLink> getCommentLinks() {
@@ -196,7 +196,7 @@ public class ShapeImpl extends ContainerImpl implements Shape {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<Connector> getOutgoingLines() {
@@ -206,7 +206,7 @@ public class ShapeImpl extends ContainerImpl implements Shape {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<Connector> getIncomingLines() {
@@ -216,7 +216,7 @@ public class ShapeImpl extends ContainerImpl implements Shape {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public int getBackground() {
@@ -225,20 +225,21 @@ public class ShapeImpl extends ContainerImpl implements Shape {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	public void setBackground(int newBackground) {
-		int oldBackground = background;
+	public void setBackground(final int newBackground) {
+		final int oldBackground = background;
 		background = newBackground;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET,
 					DiPackage.SHAPE__BACKGROUND, oldBackground, background));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public int getForeground() {
@@ -247,20 +248,21 @@ public class ShapeImpl extends ContainerImpl implements Shape {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	public void setForeground(int newForeground) {
-		int oldForeground = foreground;
+	public void setForeground(final int newForeground) {
+		final int oldForeground = foreground;
 		foreground = newForeground;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET,
 					DiPackage.SHAPE__FOREGROUND, oldForeground, foreground));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Rectangle getBounds() {
@@ -269,26 +271,27 @@ public class ShapeImpl extends ContainerImpl implements Shape {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	public void setBounds(Rectangle newBounds) {
-		Rectangle oldBounds = bounds;
+	public void setBounds(final Rectangle newBounds) {
+		final Rectangle oldBounds = bounds;
 		bounds = newBounds;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET,
 					DiPackage.SHAPE__BOUNDS, oldBounds, bounds));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public NotificationChain eInverseAdd(InternalEObject otherEnd,
-			int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseAdd(final InternalEObject otherEnd,
+			final int featureID, final NotificationChain msgs) {
 		switch (featureID) {
 		case DiPackage.SHAPE__COMMENT_LINKS:
 			return ((InternalEList<InternalEObject>) (InternalEList<?>) getCommentLinks())
@@ -305,12 +308,12 @@ public class ShapeImpl extends ContainerImpl implements Shape {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd,
-			int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseRemove(final InternalEObject otherEnd,
+			final int featureID, final NotificationChain msgs) {
 		switch (featureID) {
 		case DiPackage.SHAPE__ALL_OUTGOING_LINES:
 			return ((InternalEList<?>) getAllOutgoingLines()).basicRemove(
@@ -333,19 +336,22 @@ public class ShapeImpl extends ContainerImpl implements Shape {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+	public Object eGet(final int featureID, final boolean resolve,
+			final boolean coreType) {
 		switch (featureID) {
 		case DiPackage.SHAPE__ALL_OUTGOING_LINES:
-			if (coreType)
+			if (coreType) {
 				return getAllOutgoingLines();
+			}
 			return ((FeatureMap.Internal) getAllOutgoingLines()).getWrapper();
 		case DiPackage.SHAPE__ALL_INCOMING_LINES:
-			if (coreType)
+			if (coreType) {
 				return getAllIncomingLines();
+			}
 			return ((FeatureMap.Internal) getAllIncomingLines()).getWrapper();
 		case DiPackage.SHAPE__COMMENT_LINKS:
 			return getCommentLinks();
@@ -365,12 +371,12 @@ public class ShapeImpl extends ContainerImpl implements Shape {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public void eSet(int featureID, Object newValue) {
+	public void eSet(final int featureID, final Object newValue) {
 		switch (featureID) {
 		case DiPackage.SHAPE__ALL_OUTGOING_LINES:
 			((FeatureMap.Internal) getAllOutgoingLines()).set(newValue);
@@ -408,11 +414,11 @@ public class ShapeImpl extends ContainerImpl implements Shape {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public void eUnset(int featureID) {
+	public void eUnset(final int featureID) {
 		switch (featureID) {
 		case DiPackage.SHAPE__ALL_OUTGOING_LINES:
 			getAllOutgoingLines().clear();
@@ -444,11 +450,11 @@ public class ShapeImpl extends ContainerImpl implements Shape {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public boolean eIsSet(int featureID) {
+	public boolean eIsSet(final int featureID) {
 		switch (featureID) {
 		case DiPackage.SHAPE__ALL_OUTGOING_LINES:
 			return allOutgoingLines != null && !allOutgoingLines.isEmpty();
@@ -473,11 +479,12 @@ public class ShapeImpl extends ContainerImpl implements Shape {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public int eBaseStructuralFeatureID(int derivedFeatureID, Class<?> baseClass) {
+	public int eBaseStructuralFeatureID(final int derivedFeatureID,
+			final Class<?> baseClass) {
 		if (baseClass == Node.class) {
 			switch (derivedFeatureID) {
 			case DiPackage.SHAPE__ALL_OUTGOING_LINES:
@@ -499,11 +506,12 @@ public class ShapeImpl extends ContainerImpl implements Shape {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public int eDerivedStructuralFeatureID(int baseFeatureID, Class<?> baseClass) {
+	public int eDerivedStructuralFeatureID(final int baseFeatureID,
+			final Class<?> baseClass) {
 		if (baseClass == Node.class) {
 			switch (baseFeatureID) {
 			case DiPackage.NODE__ALL_OUTGOING_LINES:
@@ -525,15 +533,16 @@ public class ShapeImpl extends ContainerImpl implements Shape {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy())
+		if (eIsProxy()) {
 			return super.toString();
+		}
 
-		StringBuffer result = new StringBuffer(super.toString());
+		final StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (allOutgoingLines: ");
 		result.append(allOutgoingLines);
 		result.append(", allIncomingLines: ");

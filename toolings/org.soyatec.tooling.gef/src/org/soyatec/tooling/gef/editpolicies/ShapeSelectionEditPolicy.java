@@ -22,7 +22,7 @@ public class ShapeSelectionEditPolicy extends SelectionEditPolicy {
 	public static final String ROLE = ShapeSelectionEditPolicy.class.getName();
 
 	protected ShapeEditPart<?> getShapeEditPart() {
-		EditPart host = getHost();
+		final EditPart host = getHost();
 		if (host instanceof ShapeEditPart<?>) {
 			return (ShapeEditPart<?>) host;
 		}
@@ -30,12 +30,12 @@ public class ShapeSelectionEditPolicy extends SelectionEditPolicy {
 	}
 
 	protected void hideSelection() {
-		ShapeEditPart<?> shapeEditPart = getShapeEditPart();
+		final ShapeEditPart<?> shapeEditPart = getShapeEditPart();
 		if (shapeEditPart == null) {
 			return;
 		}
 
-		IFigure primaryFigure = shapeEditPart.getPrimaryFigure();
+		final IFigure primaryFigure = shapeEditPart.getPrimaryFigure();
 		if (primaryFigure instanceof IShapeStyle) {
 			((IShapeStyle) primaryFigure).setLineWidth(1);
 		}
@@ -43,12 +43,12 @@ public class ShapeSelectionEditPolicy extends SelectionEditPolicy {
 	}
 
 	protected void showSelection() {
-		ShapeEditPart<?> shapeEditPart = getShapeEditPart();
+		final ShapeEditPart<?> shapeEditPart = getShapeEditPart();
 		if (shapeEditPart == null) {
 			return;
 		}
 
-		IFigure primaryFigure = shapeEditPart.getPrimaryFigure();
+		final IFigure primaryFigure = shapeEditPart.getPrimaryFigure();
 		if (primaryFigure instanceof IShapeStyle) {
 			((IShapeStyle) primaryFigure).setLineWidth(2);
 		}

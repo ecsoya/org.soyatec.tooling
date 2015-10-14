@@ -38,7 +38,7 @@ import org.soyatec.tooling.exml.EXNode;
 /**
  * <!-- begin-user-doc --> The <b>Resource </b> associated with the package.
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.soyatec.tooling.exml.util.EXMLResourceFactoryImpl
  * @generated
  */
@@ -46,19 +46,19 @@ public class EXMLResourceImpl extends XMLResourceImpl {
 
 	private static final String TAB_NAME_KEY = "Node.tagName";
 
-	public EXMLResourceImpl(URI uri) {
+	public EXMLResourceImpl(final URI uri) {
 		super(uri);
-		BasicExtendedMetaData value = new BasicExtendedMetaData() {
+		final BasicExtendedMetaData value = new BasicExtendedMetaData() {
 			@Override
-			public EClass getDocumentRoot(EPackage ePackage) {
+			public EClass getDocumentRoot(final EPackage ePackage) {
 				return EXMLPackage.eINSTANCE.getDocument();
 			}
 
 			@Override
-			public String getName(EStructuralFeature feature) {
-				EAnnotation a = feature.getEAnnotation(TAB_NAME_KEY);
+			public String getName(final EStructuralFeature feature) {
+				final EAnnotation a = feature.getEAnnotation(TAB_NAME_KEY);
 				if (a != null) {
-					String tagName = a.getDetails().get(TAB_NAME_KEY);
+					final String tagName = a.getDetails().get(TAB_NAME_KEY);
 					if (tagName != null) {
 						return tagName;
 					}
@@ -67,7 +67,8 @@ public class EXMLResourceImpl extends XMLResourceImpl {
 			}
 
 			@Override
-			public int getFeatureKind(EStructuralFeature eStructuralFeature) {
+			public int getFeatureKind(
+					final EStructuralFeature eStructuralFeature) {
 				if (EXMLPackage.eINSTANCE.getElement_Attributes() == eStructuralFeature) {
 					return ATTRIBUTE_FEATURE;
 				}
@@ -96,10 +97,11 @@ public class EXMLResourceImpl extends XMLResourceImpl {
 
 	@Override
 	protected XMLHelper createXMLHelper() {
-		XMLHelperImpl helper = new XMLHelperImpl(this) {
+		final XMLHelperImpl helper = new XMLHelperImpl(this) {
 			@Override
-			public EStructuralFeature getFeature(EClass eClass,
-					String namespaceURI, String name, boolean isElement) {
+			public EStructuralFeature getFeature(final EClass eClass,
+					final String namespaceURI, final String name,
+					final boolean isElement) {
 				EStructuralFeature feature = null;
 				if (isElement) {
 					if (EXMLPackage.eINSTANCE.getDocument() == eClass) {
@@ -111,7 +113,7 @@ public class EXMLResourceImpl extends XMLResourceImpl {
 					feature = EXMLPackage.eINSTANCE.getElement_Attributes();
 				}
 				if (feature != null) {
-					Integer featureKind = getFeatureKind(feature);
+					final Integer featureKind = getFeatureKind(feature);
 					feature = EcoreUtil.copy(feature);
 					featuresToKinds.put(feature, featureKind);
 					EAnnotation a = feature.getEAnnotation(TAB_NAME_KEY);
@@ -126,21 +128,22 @@ public class EXMLResourceImpl extends XMLResourceImpl {
 			}
 
 			@Override
-			public void setValue(EObject object, EStructuralFeature feature,
-					Object value, int position) {
+			public void setValue(final EObject object,
+					EStructuralFeature feature, final Object value,
+					final int position) {
 				if (object instanceof EXNode) {
 					String tagName = null;
-					EAnnotation a = feature.getEAnnotation(TAB_NAME_KEY);
+					final EAnnotation a = feature.getEAnnotation(TAB_NAME_KEY);
 					if (a != null) {
 						tagName = a.getDetails().get(TAB_NAME_KEY);
 					}
-					String featureName = feature.getName();
+					final String featureName = feature.getName();
 					if (tagName != null) {
 						if (object instanceof EXElement
 								&& EXMLPackage.eINSTANCE
 										.getElement_Attributes().getName()
 										.equals(featureName)) {
-							EXElement element = (EXElement) object;
+							final EXElement element = (EXElement) object;
 							EXAttribute attr = element.getAttribute(tagName);
 							if (attr == null) {
 								attr = EXMLFactory.eINSTANCE.createAttribute();
@@ -165,7 +168,7 @@ public class EXMLResourceImpl extends XMLResourceImpl {
 			}
 
 			@Override
-			public int getFeatureKind(EStructuralFeature feature) {
+			public int getFeatureKind(final EStructuralFeature feature) {
 				if (EXMLPackage.eINSTANCE.getElement_Attributes().getName()
 						.equals(feature.getName())) {
 					return DATATYPE_SINGLE;
@@ -182,7 +185,8 @@ public class EXMLResourceImpl extends XMLResourceImpl {
 	protected XMLSave createXMLSave() {
 		return new XMLSaveImpl(createXMLHelper()) {
 			@Override
-			protected void saveElement(EObject o, EStructuralFeature f) {
+			protected void saveElement(final EObject o,
+					final EStructuralFeature f) {
 				EAnnotation a = null;
 				if (o instanceof EXNode) {
 					a = EcoreFactory.eINSTANCE.createEAnnotation();
@@ -197,12 +201,12 @@ public class EXMLResourceImpl extends XMLResourceImpl {
 			}
 
 			@Override
-			protected void processAttributeExtensions(EObject object) {
+			protected void processAttributeExtensions(final EObject object) {
 				if (object instanceof EXElement) {
-					EList<EXAttribute> attributes = ((EXElement) object)
+					final EList<EXAttribute> attributes = ((EXElement) object)
 							.getAttributes();
-					for (EXAttribute attr : attributes) {
-						EAttribute feature = EXMLPackage.eINSTANCE
+					for (final EXAttribute attr : attributes) {
+						final EAttribute feature = EXMLPackage.eINSTANCE
 								.getAttribute_Value();
 						EAnnotation a = null;
 						a = EcoreFactory.eINSTANCE.createEAnnotation();
@@ -217,7 +221,8 @@ public class EXMLResourceImpl extends XMLResourceImpl {
 			}
 
 			@Override
-			protected boolean shouldSaveFeature(EObject o, EStructuralFeature f) {
+			protected boolean shouldSaveFeature(final EObject o,
+					final EStructuralFeature f) {
 				if (EXMLPackage.eINSTANCE.getNode_Name() == f
 						|| EXMLPackage.eINSTANCE.getElement_Attributes() == f
 				/* || XMLTypePackage.Literals.XML_TYPE_DOCUMENT_ROOT__MIXED == f */) {

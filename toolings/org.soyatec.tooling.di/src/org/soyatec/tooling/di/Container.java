@@ -44,7 +44,7 @@ public interface Container extends View {
 	 * isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Children</em>' containment reference list.
 	 * @see org.soyatec.tooling.di.DiPackage#getContainer_Children()
 	 * @model containment="true" transient="true" volatile="true"
@@ -62,7 +62,7 @@ public interface Container extends View {
 	 * clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Lines</em>' containment reference list.
 	 * @see org.soyatec.tooling.di.DiPackage#getContainer_Lines()
 	 * @model containment="true" transient="true" volatile="true"
@@ -81,7 +81,7 @@ public interface Container extends View {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>All Lines</em>' attribute list.
 	 * @see org.soyatec.tooling.di.DiPackage#getContainer_AllLines()
 	 * @model dataType="org.eclipse.emf.ecore.EFeatureMapEntry" many="true"
@@ -100,7 +100,7 @@ public interface Container extends View {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>All Shapes</em>' attribute list.
 	 * @see org.soyatec.tooling.di.DiPackage#getContainer_AllShapes()
 	 * @model dataType="org.eclipse.emf.ecore.EFeatureMapEntry" many="true"

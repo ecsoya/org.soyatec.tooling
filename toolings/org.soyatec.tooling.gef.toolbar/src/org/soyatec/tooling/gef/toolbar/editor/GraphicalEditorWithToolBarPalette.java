@@ -34,15 +34,15 @@ public abstract class GraphicalEditorWithToolBarPalette extends GraphicalEditor 
 		return (ToolBarEditDomain) super.getEditDomain();
 	}
 
-	final public void createPartControl(Composite parent) {
+	final public void createPartControl(final Composite parent) {
 		partControl = new ViewForm(parent, SWT.NONE);
 
-		ToolBarPalette palette = new ToolBarPalette(partControl, SWT.NONE);
+		final ToolBarPalette palette = new ToolBarPalette(partControl, SWT.NONE);
 		palette.setLayoutData(new GridData(SWT.FILL, SWT.BEGINNING, true, false));
 		configurePalette(palette);
 
 		partControl.setTopLeft(palette);
-		RulerComposite content = new RulerComposite(partControl, SWT.NONE);
+		final RulerComposite content = new RulerComposite(partControl, SWT.NONE);
 		super.createPartControl(content);
 		content.setGraphicalViewer((ScrollingGraphicalViewer) getGraphicalViewer());
 		partControl.setContent(content);
@@ -54,9 +54,9 @@ public abstract class GraphicalEditorWithToolBarPalette extends GraphicalEditor 
 		}
 	}
 
-	private void configurePalette(ToolBarPalette palette) {
-		ToolBarEditDomain editDomain = getEditDomain();
-		PaletteRoot paletteRoot = createPaletteRoot();
+	private void configurePalette(final ToolBarPalette palette) {
+		final ToolBarEditDomain editDomain = getEditDomain();
+		final PaletteRoot paletteRoot = createPaletteRoot();
 
 		editDomain.setPaletteRoot(paletteRoot);
 		editDomain.setPalette(palette);

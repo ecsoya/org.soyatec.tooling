@@ -25,14 +25,14 @@ import org.soyatec.tooling.exml.EXNode;
  * <!-- begin-user-doc --> The <b>Adapter Factory</b> for the model. It provides
  * an adapter <code>createXXX</code> method for each class of the model. <!--
  * end-user-doc -->
- * 
+ *
  * @see org.soyatec.tooling.exml.EXMLPackage
  * @generated
  */
 public class MLAdapterFactory extends AdapterFactoryImpl {
 	/**
 	 * The cached model package. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected static EXMLPackage modelPackage;
@@ -40,7 +40,7 @@ public class MLAdapterFactory extends AdapterFactoryImpl {
 	/**
 	 * Creates an instance of the adapter factory. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public MLAdapterFactory() {
@@ -54,12 +54,12 @@ public class MLAdapterFactory extends AdapterFactoryImpl {
 	 * <!-- begin-user-doc --> This implementation returns <code>true</code> if
 	 * the object is either the model's package or is an instance object of the
 	 * model. <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return whether this factory is applicable for the type of the object.
 	 * @generated
 	 */
 	@Override
-	public boolean isFactoryForType(Object object) {
+	public boolean isFactoryForType(final Object object) {
 		if (object == modelPackage) {
 			return true;
 		}
@@ -72,37 +72,37 @@ public class MLAdapterFactory extends AdapterFactoryImpl {
 	/**
 	 * The switch that delegates to the <code>createXXX</code> methods. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected MLSwitch<Adapter> modelSwitch = new MLSwitch<Adapter>() {
 		@Override
-		public Adapter caseDocument(EXDocument object) {
+		public Adapter caseDocument(final EXDocument object) {
 			return createDocumentAdapter();
 		}
 
 		@Override
-		public Adapter caseElement(EXElement object) {
+		public Adapter caseElement(final EXElement object) {
 			return createElementAdapter();
 		}
 
 		@Override
-		public Adapter caseAttribute(EXAttribute object) {
+		public Adapter caseAttribute(final EXAttribute object) {
 			return createAttributeAdapter();
 		}
 
 		@Override
-		public Adapter caseNode(EXNode object) {
+		public Adapter caseNode(final EXNode object) {
 			return createNodeAdapter();
 		}
 
 		@Override
-		public Adapter caseXMLTypeDocumentRoot(XMLTypeDocumentRoot object) {
+		public Adapter caseXMLTypeDocumentRoot(final XMLTypeDocumentRoot object) {
 			return createXMLTypeDocumentRootAdapter();
 		}
 
 		@Override
-		public Adapter defaultCase(EObject object) {
+		public Adapter defaultCase(final EObject object) {
 			return createEObjectAdapter();
 		}
 	};
@@ -110,14 +110,14 @@ public class MLAdapterFactory extends AdapterFactoryImpl {
 	/**
 	 * Creates an adapter for the <code>target</code>. <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param target
 	 *            the object to adapt.
 	 * @return the adapter for the <code>target</code>.
 	 * @generated
 	 */
 	@Override
-	public Adapter createAdapter(Notifier target) {
+	public Adapter createAdapter(final Notifier target) {
 		return modelSwitch.doSwitch((EObject) target);
 	}
 
@@ -127,7 +127,7 @@ public class MLAdapterFactory extends AdapterFactoryImpl {
 	 * begin-user-doc --> This default implementation returns null so that we
 	 * can easily ignore cases; it's useful to ignore a case when inheritance
 	 * will catch all the cases anyway. <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.soyatec.tooling.exml.EXDocument
 	 * @generated
@@ -142,7 +142,7 @@ public class MLAdapterFactory extends AdapterFactoryImpl {
 	 * begin-user-doc --> This default implementation returns null so that we
 	 * can easily ignore cases; it's useful to ignore a case when inheritance
 	 * will catch all the cases anyway. <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.soyatec.tooling.exml.EXElement
 	 * @generated
@@ -157,7 +157,7 @@ public class MLAdapterFactory extends AdapterFactoryImpl {
 	 * begin-user-doc --> This default implementation returns null so that we
 	 * can easily ignore cases; it's useful to ignore a case when inheritance
 	 * will catch all the cases anyway. <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.soyatec.tooling.exml.EXAttribute
 	 * @generated
@@ -172,7 +172,7 @@ public class MLAdapterFactory extends AdapterFactoryImpl {
 	 * begin-user-doc --> This default implementation returns null so that we
 	 * can easily ignore cases; it's useful to ignore a case when inheritance
 	 * will catch all the cases anyway. <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.soyatec.tooling.exml.EXNode
 	 * @generated
@@ -188,7 +188,7 @@ public class MLAdapterFactory extends AdapterFactoryImpl {
 	 * implementation returns null so that we can easily ignore cases; it's
 	 * useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @see org.eclipse.emf.ecore.xml.type.XMLTypeDocumentRoot
 	 * @generated
@@ -200,7 +200,7 @@ public class MLAdapterFactory extends AdapterFactoryImpl {
 	/**
 	 * Creates a new adapter for the default case. <!-- begin-user-doc --> This
 	 * default implementation returns null. <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the new adapter.
 	 * @generated
 	 */

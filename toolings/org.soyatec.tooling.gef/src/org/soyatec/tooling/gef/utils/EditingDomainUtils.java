@@ -22,13 +22,13 @@ public class EditingDomainUtils {
 	private EditingDomainUtils() {
 	}
 
-	public static EditingDomain getEditingDomain(EditPart editPart) {
+	public static EditingDomain getEditingDomain(final EditPart editPart) {
 		if (editPart == null) {
 			return null;
 		}
-		EditPartViewer viewer = editPart.getViewer();
+		final EditPartViewer viewer = editPart.getViewer();
 		if (viewer != null) {
-			EditDomain ed = viewer.getEditDomain();
+			final EditDomain ed = viewer.getEditDomain();
 			if (ed instanceof IEditingDomainProvider) {
 				return ((IEditingDomainProvider) ed).getEditingDomain();
 			}
@@ -39,7 +39,7 @@ public class EditingDomainUtils {
 		return getEditingDomain(editPart.getModel());
 	}
 
-	public static EditingDomain getEditingDomain(Object object) {
+	public static EditingDomain getEditingDomain(final Object object) {
 		return AdapterFactoryEditingDomain.getEditingDomainFor(object);
 	}
 }

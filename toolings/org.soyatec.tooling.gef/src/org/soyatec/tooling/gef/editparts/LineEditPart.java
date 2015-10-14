@@ -48,7 +48,7 @@ public abstract class LineEditPart<T extends Line> extends ViewEditPart<Line>
 			new Point(100, 100));
 	private EditPart sourceEditPart, targetEditPart;
 
-	public LineEditPart(Line model) {
+	public LineEditPart(final Line model) {
 		super(model);
 	}
 
@@ -71,9 +71,10 @@ public abstract class LineEditPart<T extends Line> extends ViewEditPart<Line>
 		getConnectionFigure().setTargetAnchor(null);
 	}
 
-	public Object getAdapter(@SuppressWarnings("rawtypes") Class adapter) {
-		if (adapter == AccessibleAnchorProvider.class)
+	public Object getAdapter(@SuppressWarnings("rawtypes") final Class adapter) {
+		if (adapter == AccessibleAnchorProvider.class) {
 			return new DefaultAccessibleAnchorProvider();
+		}
 		return super.getAdapter(adapter);
 	}
 
@@ -81,7 +82,7 @@ public abstract class LineEditPart<T extends Line> extends ViewEditPart<Line>
 		return (Connection) getFigure();
 	}
 
-	public DragTracker getDragTracker(Request req) {
+	public DragTracker getDragTracker(final Request req) {
 		return new SelectEditPartTracker(this);
 	}
 
@@ -96,10 +97,10 @@ public abstract class LineEditPart<T extends Line> extends ViewEditPart<Line>
 	protected ConnectionAnchor getSourceConnectionAnchor() {
 		if (getSource() != null) {
 			if (getSource() instanceof NodeEditPart) {
-				NodeEditPart editPart = (NodeEditPart) getSource();
+				final NodeEditPart editPart = (NodeEditPart) getSource();
 				return editPart.getSourceConnectionAnchor(this);
 			}
-			IFigure f = ((GraphicalEditPart) getSource()).getFigure();
+			final IFigure f = ((GraphicalEditPart) getSource()).getFigure();
 			return new ChopboxAnchor(f);
 		}
 		return DEFAULT_SOURCE_ANCHOR;
@@ -108,10 +109,10 @@ public abstract class LineEditPart<T extends Line> extends ViewEditPart<Line>
 	protected ConnectionAnchor getTargetConnectionAnchor() {
 		if (getTarget() != null) {
 			if (getTarget() instanceof NodeEditPart) {
-				NodeEditPart editPart = (NodeEditPart) getTarget();
+				final NodeEditPart editPart = (NodeEditPart) getTarget();
 				return editPart.getTargetConnectionAnchor(this);
 			}
-			IFigure f = ((GraphicalEditPart) getTarget()).getFigure();
+			final IFigure f = ((GraphicalEditPart) getTarget()).getFigure();
 			return new ChopboxAnchor(f);
 		}
 		return DEFAULT_TARGET_ANCHOR;
@@ -136,38 +137,46 @@ public abstract class LineEditPart<T extends Line> extends ViewEditPart<Line>
 		super.removeNotify();
 	}
 
-	public void setParent(EditPart parent) {
-		boolean wasNull = getParent() == null;
-		boolean becomingNull = parent == null;
-		if (becomingNull && !wasNull)
+	public void setParent(final EditPart parent) {
+		final boolean wasNull = getParent() == null;
+		final boolean becomingNull = parent == null;
+		if (becomingNull && !wasNull) {
 			removeNotify();
+		}
 		super.setParent(parent);
-		if (wasNull && !becomingNull)
+		if (wasNull && !becomingNull) {
 			addNotify();
+		}
 	}
 
-	public void setSource(EditPart editPart) {
-		if (sourceEditPart == editPart)
+	public void setSource(final EditPart editPart) {
+		if (sourceEditPart == editPart) {
 			return;
+		}
 		sourceEditPart = editPart;
-		if (sourceEditPart != null)
+		if (sourceEditPart != null) {
 			setParent(sourceEditPart.getRoot());
-		else if (getTarget() == null)
+		} else if (getTarget() == null) {
 			setParent(null);
-		if (sourceEditPart != null && targetEditPart != null)
+		}
+		if (sourceEditPart != null && targetEditPart != null) {
 			refresh();
+		}
 	}
 
-	public void setTarget(EditPart editPart) {
-		if (targetEditPart == editPart)
+	public void setTarget(final EditPart editPart) {
+		if (targetEditPart == editPart) {
 			return;
+		}
 		targetEditPart = editPart;
-		if (editPart != null)
+		if (editPart != null) {
 			setParent(editPart.getRoot());
-		else if (getSource() == null)
+		} else if (getSource() == null) {
 			setParent(null);
-		if (sourceEditPart != null && targetEditPart != null)
+		}
+		if (sourceEditPart != null && targetEditPart != null) {
 			refresh();
+		}
 	}
 
 	public Line getView() {
@@ -197,17 +206,17 @@ public abstract class LineEditPart<T extends Line> extends ViewEditPart<Line>
 		return 1;
 	}
 
-	protected void setLineWidth(int width) {
-		Connection conn = getConnectionFigure();
+	protected void setLineWidth(final int width) {
+		final Connection conn = getConnectionFigure();
 		if (conn instanceof Polyline) {
 			((Polyline) conn).setLineWidth(width);
 		}
 	}
 
 	private void refreshLineColor() {
-		int value = getView().getColor();
-		Color color = value == -1 ? getDefaultLineColor() : ResourcesFactory
-				.getColor(value);
+		final int value = getView().getColor();
+		final Color color = value == -1 ? getDefaultLineColor()
+				: ResourcesFactory.getColor(value);
 		setLineColor(color);
 	}
 
@@ -215,13 +224,13 @@ public abstract class LineEditPart<T extends Line> extends ViewEditPart<Line>
 		return ColorConstants.black;
 	}
 
-	protected void setLineColor(Color color) {
+	protected void setLineColor(final Color color) {
 		getConnectionFigure().setForegroundColor(color);
 	}
 
-	protected void handleNotifyChanged(Notification event) {
+	protected void handleNotifyChanged(final Notification event) {
 		super.handleNotifyChanged(event);
-		Object feature = event.getFeature();
+		final Object feature = event.getFeature();
 		if (DiPackage.eINSTANCE.getLine_Color() == feature) {
 			refreshLineColor();
 		} else if (DiPackage.eINSTANCE.getLine_Width() == feature) {
@@ -253,9 +262,10 @@ public abstract class LineEditPart<T extends Line> extends ViewEditPart<Line>
 		 * @see AccessibleAnchorProvider#getSourceAnchorLocations()
 		 */
 		public List<Point> getSourceAnchorLocations() {
-			List<Point> list = new ArrayList<Point>();
+			final List<Point> list = new ArrayList<Point>();
 			if (getFigure() instanceof Connection) {
-				Point p = ((Connection) getFigure()).getPoints().getMidpoint();
+				final Point p = ((Connection) getFigure()).getPoints()
+						.getMidpoint();
 				getFigure().translateToAbsolute(p);
 				list.add(p);
 			}

@@ -40,7 +40,7 @@ public interface View extends EObject {
 	 * really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Label</em>' attribute.
 	 * @see #setLabel(String)
 	 * @see org.soyatec.tooling.di.DiPackage#getView_Label()
@@ -52,7 +52,7 @@ public interface View extends EObject {
 	/**
 	 * Sets the value of the '{@link org.soyatec.tooling.di.View#getLabel
 	 * <em>Label</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Label</em>' attribute.
 	 * @see #getLabel()
@@ -68,7 +68,7 @@ public interface View extends EObject {
 	 * should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Id</em>' attribute.
 	 * @see #setId(String)
 	 * @see org.soyatec.tooling.di.DiPackage#getView_Id()
@@ -80,7 +80,7 @@ public interface View extends EObject {
 	/**
 	 * Sets the value of the '{@link org.soyatec.tooling.di.View#getId
 	 * <em>Id</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Id</em>' attribute.
 	 * @see #getId()
@@ -96,7 +96,7 @@ public interface View extends EObject {
 	 * really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Element</em>' reference.
 	 * @see #setElement(EObject)
 	 * @see org.soyatec.tooling.di.DiPackage#getView_Element()
@@ -109,7 +109,7 @@ public interface View extends EObject {
 	 * Sets the value of the '{@link org.soyatec.tooling.di.View#getElement
 	 * <em>Element</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Element</em>' reference.
 	 * @see #getElement()

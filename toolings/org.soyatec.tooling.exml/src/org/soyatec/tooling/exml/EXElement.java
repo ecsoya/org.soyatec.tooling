@@ -41,7 +41,7 @@ public interface EXElement extends EXNode {
 	 * isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Elements</em>' containment reference list.
 	 * @see org.soyatec.tooling.exml.EXMLPackage#getElement_Elements()
 	 * @model containment="true"
@@ -58,7 +58,7 @@ public interface EXElement extends EXNode {
 	 * isn't clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Attributes</em>' containment reference
 	 *         list.
 	 * @see org.soyatec.tooling.exml.EXMLPackage#getElement_Attributes()
@@ -69,7 +69,7 @@ public interface EXElement extends EXNode {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @model annotation=
 	 *        "http://www.eclipse.org/emf/2002/GenModel body='if (name != null) {\r\n\tEList<EXAttribute> attributes = getAttributes();\r\n\tfor (EXAttribute attr : attributes) {\r\n\t\tif (name.equals(attr.getName())) {\r\n\t\t\treturn attr;\r\n\t\t}\r\n\t}\r\n}\r\nreturn null;'"
 	 * @generated
@@ -78,7 +78,7 @@ public interface EXElement extends EXNode {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @model unique="false" ordered="false" annotation=
 	 *        "http://www.eclipse.org/emf/2002/GenModel body='BasicEList<EXElement> elements = new BasicEList<EXElement>();\r\nif (name != null){\r\n\tEList<EXElement> children = getElements();\r\n\tfor (EXElement e : children) {\r\n\t\tif (name.equals(e.getName())) {\r\n\t\t\telements.add(e);\r\n\t\t}\r\n\t}\r\n}\r\nreturn elements;'"
 	 * @generated

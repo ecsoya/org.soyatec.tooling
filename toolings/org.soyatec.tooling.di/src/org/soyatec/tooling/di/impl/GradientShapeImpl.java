@@ -40,7 +40,7 @@ public class GradientShapeImpl extends ShapeImpl implements GradientShape {
 	 * The default value of the '{@link #isUsingGradient()
 	 * <em>Using Gradient</em>}' attribute. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @see #isUsingGradient()
 	 * @generated
 	 * @ordered
@@ -51,7 +51,7 @@ public class GradientShapeImpl extends ShapeImpl implements GradientShape {
 	 * The cached value of the '{@link #isUsingGradient()
 	 * <em>Using Gradient</em>}' attribute. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @see #isUsingGradient()
 	 * @generated
 	 * @ordered
@@ -62,7 +62,7 @@ public class GradientShapeImpl extends ShapeImpl implements GradientShape {
 	 * The default value of the '{@link #getGradientColor()
 	 * <em>Gradient Color</em>}' attribute. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @see #getGradientColor()
 	 * @generated
 	 * @ordered
@@ -73,7 +73,7 @@ public class GradientShapeImpl extends ShapeImpl implements GradientShape {
 	 * The cached value of the '{@link #getGradientColor()
 	 * <em>Gradient Color</em>}' attribute. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @see #getGradientColor()
 	 * @generated
 	 * @ordered
@@ -84,7 +84,7 @@ public class GradientShapeImpl extends ShapeImpl implements GradientShape {
 	 * The default value of the '{@link #isVerticalGradient()
 	 * <em>Vertical Gradient</em>}' attribute. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @see #isVerticalGradient()
 	 * @generated
 	 * @ordered
@@ -95,7 +95,7 @@ public class GradientShapeImpl extends ShapeImpl implements GradientShape {
 	 * The cached value of the '{@link #isVerticalGradient()
 	 * <em>Vertical Gradient</em>}' attribute. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @see #isVerticalGradient()
 	 * @generated
 	 * @ordered
@@ -104,7 +104,7 @@ public class GradientShapeImpl extends ShapeImpl implements GradientShape {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected GradientShapeImpl() {
@@ -113,7 +113,7 @@ public class GradientShapeImpl extends ShapeImpl implements GradientShape {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -123,7 +123,7 @@ public class GradientShapeImpl extends ShapeImpl implements GradientShape {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public boolean isUsingGradient() {
@@ -132,21 +132,22 @@ public class GradientShapeImpl extends ShapeImpl implements GradientShape {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	public void setUsingGradient(boolean newUsingGradient) {
-		boolean oldUsingGradient = usingGradient;
+	public void setUsingGradient(final boolean newUsingGradient) {
+		final boolean oldUsingGradient = usingGradient;
 		usingGradient = newUsingGradient;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET,
 					DiPackage.GRADIENT_SHAPE__USING_GRADIENT, oldUsingGradient,
 					usingGradient));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public int getGradientColor() {
@@ -155,21 +156,22 @@ public class GradientShapeImpl extends ShapeImpl implements GradientShape {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	public void setGradientColor(int newGradientColor) {
-		int oldGradientColor = gradientColor;
+	public void setGradientColor(final int newGradientColor) {
+		final int oldGradientColor = gradientColor;
 		gradientColor = newGradientColor;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET,
 					DiPackage.GRADIENT_SHAPE__GRADIENT_COLOR, oldGradientColor,
 					gradientColor));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public boolean isVerticalGradient() {
@@ -178,25 +180,27 @@ public class GradientShapeImpl extends ShapeImpl implements GradientShape {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	public void setVerticalGradient(boolean newVerticalGradient) {
-		boolean oldVerticalGradient = verticalGradient;
+	public void setVerticalGradient(final boolean newVerticalGradient) {
+		final boolean oldVerticalGradient = verticalGradient;
 		verticalGradient = newVerticalGradient;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET,
 					DiPackage.GRADIENT_SHAPE__VERTICAL_GRADIENT,
 					oldVerticalGradient, verticalGradient));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+	public Object eGet(final int featureID, final boolean resolve,
+			final boolean coreType) {
 		switch (featureID) {
 		case DiPackage.GRADIENT_SHAPE__USING_GRADIENT:
 			return isUsingGradient();
@@ -210,11 +214,11 @@ public class GradientShapeImpl extends ShapeImpl implements GradientShape {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public void eSet(int featureID, Object newValue) {
+	public void eSet(final int featureID, final Object newValue) {
 		switch (featureID) {
 		case DiPackage.GRADIENT_SHAPE__USING_GRADIENT:
 			setUsingGradient((Boolean) newValue);
@@ -231,11 +235,11 @@ public class GradientShapeImpl extends ShapeImpl implements GradientShape {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public void eUnset(int featureID) {
+	public void eUnset(final int featureID) {
 		switch (featureID) {
 		case DiPackage.GRADIENT_SHAPE__USING_GRADIENT:
 			setUsingGradient(USING_GRADIENT_EDEFAULT);
@@ -252,11 +256,11 @@ public class GradientShapeImpl extends ShapeImpl implements GradientShape {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public boolean eIsSet(int featureID) {
+	public boolean eIsSet(final int featureID) {
 		switch (featureID) {
 		case DiPackage.GRADIENT_SHAPE__USING_GRADIENT:
 			return usingGradient != USING_GRADIENT_EDEFAULT;
@@ -270,15 +274,16 @@ public class GradientShapeImpl extends ShapeImpl implements GradientShape {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy())
+		if (eIsProxy()) {
 			return super.toString();
+		}
 
-		StringBuffer result = new StringBuffer(super.toString());
+		final StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (usingGradient: ");
 		result.append(usingGradient);
 		result.append(", gradientColor: ");

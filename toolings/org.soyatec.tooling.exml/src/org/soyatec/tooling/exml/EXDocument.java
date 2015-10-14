@@ -36,7 +36,7 @@ public interface EXDocument extends EXNode {
 	 * clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Element</em>' containment reference.
 	 * @see #setElement(EXElement)
 	 * @see org.soyatec.tooling.exml.EXMLPackage#getDocument_Element()
@@ -49,7 +49,7 @@ public interface EXDocument extends EXNode {
 	 * Sets the value of the '
 	 * {@link org.soyatec.tooling.exml.EXDocument#getElement <em>Element</em>}'
 	 * containment reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Element</em>' containment reference.
 	 * @see #getElement()

@@ -43,7 +43,7 @@ public interface Guide extends EObject {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Ruler</em>' container reference.
 	 * @see #setRuler(Ruler)
 	 * @see org.soyatec.tooling.di.DiPackage#getGuide_Ruler()
@@ -57,7 +57,7 @@ public interface Guide extends EObject {
 	 * Sets the value of the '{@link org.soyatec.tooling.di.Guide#getRuler
 	 * <em>Ruler</em>}' container reference. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Ruler</em>' container reference.
 	 * @see #getRuler()
@@ -73,7 +73,7 @@ public interface Guide extends EObject {
 	 * really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Position</em>' attribute.
 	 * @see #setPosition(int)
 	 * @see org.soyatec.tooling.di.DiPackage#getGuide_Position()
@@ -86,7 +86,7 @@ public interface Guide extends EObject {
 	 * Sets the value of the '{@link org.soyatec.tooling.di.Guide#getPosition
 	 * <em>Position</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Position</em>' attribute.
 	 * @see #getPosition()
@@ -103,7 +103,7 @@ public interface Guide extends EObject {
 	 * really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Element Map</em>' map.
 	 * @see org.soyatec.tooling.di.DiPackage#getGuide_ElementMap()
 	 * @model mapType=

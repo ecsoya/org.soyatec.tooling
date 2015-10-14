@@ -23,7 +23,7 @@ import org.soyatec.tooling.gef.resources.ResourcesFactory;
 public abstract class GradientShapeEditPart<T extends GradientShape> extends
 		ShapeEditPart<Shape> {
 
-	public GradientShapeEditPart(GradientShape model) {
+	public GradientShapeEditPart(final GradientShape model) {
 		super(model);
 	}
 
@@ -38,15 +38,15 @@ public abstract class GradientShapeEditPart<T extends GradientShape> extends
 	}
 
 	protected void refreshGradientStyle() {
-		IFigure figure = getPrimaryFigure();
-		T model = getGradientShape();
+		final IFigure figure = getPrimaryFigure();
+		final T model = getGradientShape();
 		if (figure instanceof IGradientFigure) {
-			IGradientFigure gf = (IGradientFigure) figure;
+			final IGradientFigure gf = (IGradientFigure) figure;
 			gf.setUsingGradient(model.isUsingGradient());
 			gf.setGradientOrientation(model.isVerticalGradient() ? SWT.VERTICAL
 					: SWT.HORIZONTAL);
-			int gradientColor = model.getGradientColor();
-			Color color = gradientColor == -1 ? getDefaultGradientColor()
+			final int gradientColor = model.getGradientColor();
+			final Color color = gradientColor == -1 ? getDefaultGradientColor()
 					: ResourcesFactory.getColor(gradientColor);
 			gf.setGradientColor(color);
 		}
@@ -56,9 +56,9 @@ public abstract class GradientShapeEditPart<T extends GradientShape> extends
 		return ResourcesFactory.getColor(ResourcesFactory.COLOR_WHITE);
 	}
 
-	protected void handleNotifyChanged(Notification event) {
+	protected void handleNotifyChanged(final Notification event) {
 		super.handleNotifyChanged(event);
-		Object feature = event.getFeature();
+		final Object feature = event.getFeature();
 		if (DiPackage.eINSTANCE.getGradientShape_UsingGradient() == feature
 				|| DiPackage.eINSTANCE.getGradientShape_GradientColor() == feature
 				|| DiPackage.eINSTANCE.getGradientShape_VerticalGradient() == feature) {

@@ -38,7 +38,7 @@ public class GridImpl extends MinimalEObjectImpl.Container implements Grid {
 	/**
 	 * The default value of the '{@link #getColor() <em>Color</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getColor()
 	 * @generated
 	 * @ordered
@@ -48,7 +48,7 @@ public class GridImpl extends MinimalEObjectImpl.Container implements Grid {
 	/**
 	 * The cached value of the '{@link #getColor() <em>Color</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getColor()
 	 * @generated
 	 * @ordered
@@ -58,7 +58,7 @@ public class GridImpl extends MinimalEObjectImpl.Container implements Grid {
 	/**
 	 * The default value of the '{@link #getSpacing() <em>Spacing</em>}'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSpacing()
 	 * @generated
 	 * @ordered
@@ -68,7 +68,7 @@ public class GridImpl extends MinimalEObjectImpl.Container implements Grid {
 	/**
 	 * The cached value of the '{@link #getSpacing() <em>Spacing</em>}'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getSpacing()
 	 * @generated
 	 * @ordered
@@ -78,7 +78,7 @@ public class GridImpl extends MinimalEObjectImpl.Container implements Grid {
 	/**
 	 * The default value of the '{@link #getStyle() <em>Style</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getStyle()
 	 * @generated
 	 * @ordered
@@ -88,7 +88,7 @@ public class GridImpl extends MinimalEObjectImpl.Container implements Grid {
 	/**
 	 * The cached value of the '{@link #getStyle() <em>Style</em>}' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getStyle()
 	 * @generated
 	 * @ordered
@@ -97,7 +97,7 @@ public class GridImpl extends MinimalEObjectImpl.Container implements Grid {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected GridImpl() {
@@ -106,7 +106,7 @@ public class GridImpl extends MinimalEObjectImpl.Container implements Grid {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -116,7 +116,7 @@ public class GridImpl extends MinimalEObjectImpl.Container implements Grid {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public int getColor() {
@@ -125,20 +125,21 @@ public class GridImpl extends MinimalEObjectImpl.Container implements Grid {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	public void setColor(int newColor) {
-		int oldColor = color;
+	public void setColor(final int newColor) {
+		final int oldColor = color;
 		color = newColor;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET,
 					DiPackage.GRID__COLOR, oldColor, color));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public int getSpacing() {
@@ -147,20 +148,21 @@ public class GridImpl extends MinimalEObjectImpl.Container implements Grid {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	public void setSpacing(int newSpacing) {
-		int oldSpacing = spacing;
+	public void setSpacing(final int newSpacing) {
+		final int oldSpacing = spacing;
 		spacing = newSpacing;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET,
 					DiPackage.GRID__SPACING, oldSpacing, spacing));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public LineStyle getStyle() {
@@ -169,24 +171,26 @@ public class GridImpl extends MinimalEObjectImpl.Container implements Grid {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	public void setStyle(LineStyle newStyle) {
-		LineStyle oldStyle = style;
+	public void setStyle(final LineStyle newStyle) {
+		final LineStyle oldStyle = style;
 		style = newStyle == null ? STYLE_EDEFAULT : newStyle;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET,
 					DiPackage.GRID__STYLE, oldStyle, style));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+	public Object eGet(final int featureID, final boolean resolve,
+			final boolean coreType) {
 		switch (featureID) {
 		case DiPackage.GRID__COLOR:
 			return getColor();
@@ -200,11 +204,11 @@ public class GridImpl extends MinimalEObjectImpl.Container implements Grid {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public void eSet(int featureID, Object newValue) {
+	public void eSet(final int featureID, final Object newValue) {
 		switch (featureID) {
 		case DiPackage.GRID__COLOR:
 			setColor((Integer) newValue);
@@ -221,11 +225,11 @@ public class GridImpl extends MinimalEObjectImpl.Container implements Grid {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public void eUnset(int featureID) {
+	public void eUnset(final int featureID) {
 		switch (featureID) {
 		case DiPackage.GRID__COLOR:
 			setColor(COLOR_EDEFAULT);
@@ -242,11 +246,11 @@ public class GridImpl extends MinimalEObjectImpl.Container implements Grid {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public boolean eIsSet(int featureID) {
+	public boolean eIsSet(final int featureID) {
 		switch (featureID) {
 		case DiPackage.GRID__COLOR:
 			return color != COLOR_EDEFAULT;
@@ -260,15 +264,16 @@ public class GridImpl extends MinimalEObjectImpl.Container implements Grid {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy())
+		if (eIsProxy()) {
 			return super.toString();
+		}
 
-		StringBuffer result = new StringBuffer(super.toString());
+		final StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (color: ");
 		result.append(color);
 		result.append(", spacing: ");

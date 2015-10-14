@@ -81,14 +81,14 @@ public class ResourcesFactory {
 		}
 		resources = null;
 
-		Collection<Color> values = colorRegistry.values();
-		for (Color color : values) {
+		final Collection<Color> values = colorRegistry.values();
+		for (final Color color : values) {
 			color.dispose();
 		}
 		colorRegistry.clear();
 	}
 
-	public static ImageDescriptor getImageDescriptor(String key) {
+	public static ImageDescriptor getImageDescriptor(final String key) {
 		ImageDescriptor descriptor = getImageRegistry().getDescriptor(key);
 		if (descriptor == null) {
 			descriptor = Activator.getImageDescriptor(key);
@@ -99,7 +99,7 @@ public class ResourcesFactory {
 		return descriptor;
 	}
 
-	public static Image getImage(String key) {
+	public static Image getImage(final String key) {
 		Image image = getImageRegistry().get(key);
 		if (image == null) {
 			getImageDescriptor(key);
@@ -108,51 +108,51 @@ public class ResourcesFactory {
 		return image;
 	}
 
-	public static String format(String key, Object[] args) {
+	public static String format(final String key, final Object[] args) {
 		return MessageFormat.format(getString(key), args);
 	}
 
-	public static Font getFont(String symbolicName) {
+	public static Font getFont(final String symbolicName) {
 		return getFontRegistry().get(symbolicName);
 	}
 
-	public static Color getColor(Integer value) {
+	public static Color getColor(final Integer value) {
 		Color color = colorRegistry.get(value);
 		if (color == null) {
-			RGB rgb = integerToRGB(value);
+			final RGB rgb = integerToRGB(value);
 			color = new Color(null, rgb);
 			colorRegistry.put(value, color);
 		}
 		return color;
 	}
 
-	public static Color getColor(RGB rgb) {
-		Integer value = RGBToInteger(rgb);
+	public static Color getColor(final RGB rgb) {
+		final Integer value = RGBToInteger(rgb);
 		return getColor(value);
 	}
 
-	public static Integer RGBToInteger(RGB rgb) {
+	public static Integer RGBToInteger(final RGB rgb) {
 		return new Integer((rgb.blue << 16) | (rgb.green << 8) | rgb.red);
 	}
 
-	public static RGB integerToRGB(Integer color) {
-		int n = color.intValue();
+	public static RGB integerToRGB(final Integer color) {
+		final int n = color.intValue();
 		return new RGB((n & 0x000000FF), (n & 0x0000FF00) >> 8,
 				(n & 0x00FF0000) >> 16);
 	}
 
-	public static String getString(String key) {
+	public static String getString(final String key) {
 		try {
 			return bundle.getString(key);
-		} catch (MissingResourceException e) {
+		} catch (final MissingResourceException e) {
 			return key;
 		}
 	}
 
-	public static String[] getStrings(String[] keys) {
+	public static String[] getStrings(final String[] keys) {
 		Assert.isNotNull(keys);
-		int length = keys.length;
-		String[] result = new String[length];
+		final int length = keys.length;
+		final String[] result = new String[length];
 		for (int i = 0; i < length; i++) {
 			result[i] = getString(keys[i]);
 		}

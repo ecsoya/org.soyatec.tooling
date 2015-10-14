@@ -29,17 +29,17 @@ import org.eclipse.swt.widgets.Display;
 
 public class AddImageActionEx extends AddImageAction {
 
-	private IFile file;
+	private final IFile file;
 
-	public AddImageActionEx(IRichText richText, IFile file) {
+	public AddImageActionEx(final IRichText richText, final IFile file) {
 		super(richText);
 		this.file = file;
 	}
 
-	public void execute(IRichText richText) {
+	public void execute(final IRichText richText) {
 		if (richText != null) {
-			AddImageDialog dialog = new AddImageDialog(Display.getCurrent()
-					.getActiveShell());
+			final AddImageDialog dialog = new AddImageDialog(Display
+					.getCurrent().getActiveShell());
 			dialog.open();
 			if (dialog.getReturnCode() == Window.OK) {
 				String imageURL = dialog.getImage().getURL();
@@ -47,7 +47,7 @@ public class AddImageActionEx extends AddImageAction {
 					boolean isFile = false;
 					try {
 						isFile = "file".equals(new URL(imageURL).getProtocol());
-					} catch (MalformedURLException e) {
+					} catch (final MalformedURLException e) {
 					}
 					if (file != null && isFile) {
 						imageURL = makeRelative(imageURL);
@@ -58,28 +58,28 @@ public class AddImageActionEx extends AddImageAction {
 		}
 	}
 
-	private String makeRelative(String imageURL) {
+	private String makeRelative(final String imageURL) {
 		if (file == null || imageURL == null) {
 			return null;
 		}
 		if (file.exists()) {
-			IFolder folder = file.getProject().getFolder("images");
-			File image = new File(imageURL.replace("file:/", ""));
-			IFile imageFile = folder.getFile(image.getName());
+			final IFolder folder = file.getProject().getFolder("images");
+			final File image = new File(imageURL.replace("file:/", ""));
+			final IFile imageFile = folder.getFile(image.getName());
 			if (!imageFile.exists()) {
 				try {
 					if (!folder.exists()) {
 						folder.create(true, true, null);
 					}
 					imageFile.create(new FileInputStream(image), true, null);
-				} catch (FileNotFoundException e) {
+				} catch (final FileNotFoundException e) {
 					e.printStackTrace();
-				} catch (CoreException e) {
+				} catch (final CoreException e) {
 					e.printStackTrace();
 				}
 			}
-			IPath path = imageFile.getProjectRelativePath();
-			IPath makeRelativeTo = path.makeRelativeTo(file.getParent()
+			final IPath path = imageFile.getProjectRelativePath();
+			final IPath makeRelativeTo = path.makeRelativeTo(file.getParent()
 					.getProjectRelativePath());
 			return makeRelativeTo.toString();
 		}

@@ -26,23 +26,23 @@ public class NodeFigure extends Figure {
 
 	public static final String DEFAULT_TERMINAL = ""; //$NON-NLS-1$
 
-	private Hashtable<String, ConnectionAnchor> connectionAnchors = new Hashtable<String, ConnectionAnchor>(
+	private final Hashtable<String, ConnectionAnchor> connectionAnchors = new Hashtable<String, ConnectionAnchor>(
 			7);
 
-	private IFigure primaryFigure;
+	private final IFigure primaryFigure;
 
-	public NodeFigure(IFigure primaryFigure) {
+	public NodeFigure(final IFigure primaryFigure) {
 		Assert.isNotNull(primaryFigure);
 		this.primaryFigure = primaryFigure;
 		setLayoutManager(new StackLayout());
 		add(primaryFigure);
 	}
 
-	public ConnectionAnchor getSourceConnectionAnchor(Point location) {
+	public ConnectionAnchor getSourceConnectionAnchor(final Point location) {
 		return getConnectionAnchor(location);
 	}
 
-	public ConnectionAnchor getTargetConnectionAnchor(Point location) {
+	public ConnectionAnchor getTargetConnectionAnchor(final Point location) {
 		return getConnectionAnchor(location);
 	}
 
@@ -65,12 +65,12 @@ public class NodeFigure extends Figure {
 		return primaryFigure;
 	}
 
-	private ConnectionAnchor getConnectionAnchor(Point location) {
-		String terminal = locationToTerminal(location);
+	private ConnectionAnchor getConnectionAnchor(final Point location) {
+		final String terminal = locationToTerminal(location);
 		return getConnectionAnchor(terminal);
 	}
 
-	protected ConnectionAnchor createAnchor(String terminal) {
+	protected ConnectionAnchor createAnchor(final String terminal) {
 		ConnectionAnchor anchor = null;
 		if (primaryFigure instanceof IAnchorFigure) {
 			anchor = ((IAnchorFigure) primaryFigure).createAnchor(terminal);
@@ -81,25 +81,25 @@ public class NodeFigure extends Figure {
 		return anchor;
 	}
 
-	protected String locationToTerminal(Point location) {
+	protected String locationToTerminal(final Point location) {
 		if (primaryFigure instanceof IAnchorFigure) {
-			String terminal = ((IAnchorFigure) primaryFigure)
+			final String terminal = ((IAnchorFigure) primaryFigure)
 					.getTerminal(location);
 			if (terminal != null) {
 				return terminal;
 			}
 		}
-		Point p = getLocation(location.getCopy());
+		final Point p = getLocation(location.getCopy());
 		primaryFigure.translateToRelative(p);
-		Rectangle r = primaryFigure.getBounds();
-		PrecisionPoint pp = new PrecisionPoint();
+		final Rectangle r = primaryFigure.getBounds();
+		final PrecisionPoint pp = new PrecisionPoint();
 		pp.setPreciseX((p.x - r.x) * 1d / r.width);
 		pp.setPreciseY((p.y - r.y) * 1d / r.height);
 		return BaseConnectionAnchor.composeTerminalString(pp);
 	}
 
-	private Point getLocation(Point reference) {
-		Rectangle r = Rectangle.SINGLETON;
+	private Point getLocation(final Point reference) {
+		final Rectangle r = Rectangle.SINGLETON;
 		r.setBounds(primaryFigure.getBounds());
 		r.translate(-1, -1);
 		r.resize(1, 1);
@@ -109,16 +109,17 @@ public class NodeFigure extends Figure {
 		float centerY = r.y + 0.5f * r.height;
 
 		if (r.isEmpty()
-				|| (reference.x == (int) centerX && reference.y == (int) centerY))
+				|| (reference.x == (int) centerX && reference.y == (int) centerY)) {
 			return new Point((int) centerX, (int) centerY); // This avoids
 															// divide-by-zero
+		}
 
 		float dx = reference.x - centerX;
 		float dy = reference.y - centerY;
 
 		// r.width, r.height, dx, and dy are guaranteed to be non-zero.
-		float scale = 0.5f / Math.max(Math.abs(dx) / r.width, Math.abs(dy)
-				/ r.height);
+		final float scale = 0.5f / Math.max(Math.abs(dx) / r.width,
+				Math.abs(dy) / r.height);
 
 		dx *= scale;
 		dy *= scale;
@@ -128,7 +129,7 @@ public class NodeFigure extends Figure {
 		return new Point(Math.round(centerX), Math.round(centerY));
 	}
 
-	public boolean containsPoint(int x, int y) {
+	public boolean containsPoint(final int x, final int y) {
 		return primaryFigure.containsPoint(x, y);
 	}
 }

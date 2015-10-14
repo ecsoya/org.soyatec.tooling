@@ -43,7 +43,7 @@ public interface Connector extends Line {
 	 * really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Target</em>' reference.
 	 * @see #setTarget(Node)
 	 * @see org.soyatec.tooling.di.DiPackage#getConnector_Target()
@@ -58,7 +58,7 @@ public interface Connector extends Line {
 	 * Sets the value of the '{@link org.soyatec.tooling.di.Connector#getTarget
 	 * <em>Target</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Target</em>' reference.
 	 * @see #getTarget()
@@ -76,7 +76,7 @@ public interface Connector extends Line {
 	 * really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Source</em>' reference.
 	 * @see #setSource(Node)
 	 * @see org.soyatec.tooling.di.DiPackage#getConnector_Source()
@@ -91,7 +91,7 @@ public interface Connector extends Line {
 	 * Sets the value of the '{@link org.soyatec.tooling.di.Connector#getSource
 	 * <em>Source</em>}' reference. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Source</em>' reference.
 	 * @see #getSource()
@@ -107,7 +107,7 @@ public interface Connector extends Line {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Reverse Element</em>' reference.
 	 * @see #setReverseElement(EObject)
 	 * @see org.soyatec.tooling.di.DiPackage#getConnector_ReverseElement()
@@ -121,7 +121,7 @@ public interface Connector extends Line {
 	 * {@link org.soyatec.tooling.di.Connector#getReverseElement
 	 * <em>Reverse Element</em>}' reference. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Reverse Element</em>' reference.
 	 * @see #getReverseElement()

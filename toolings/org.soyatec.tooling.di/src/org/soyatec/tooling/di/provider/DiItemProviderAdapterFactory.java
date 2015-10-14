@@ -38,7 +38,7 @@ import org.soyatec.tooling.di.util.DiAdapterFactory;
  * adapters also support Eclipse property sheets. Note that most of the adapters
  * are shared among multiple instances. <!-- begin-user-doc --> <!--
  * end-user-doc -->
- * 
+ *
  * @generated
  */
 public class DiItemProviderAdapterFactory extends DiAdapterFactory implements
@@ -46,7 +46,7 @@ public class DiItemProviderAdapterFactory extends DiAdapterFactory implements
 	/**
 	 * This keeps track of the root adapter factory that delegates to this
 	 * adapter factory. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ComposedAdapterFactory parentAdapterFactory;
@@ -55,7 +55,7 @@ public class DiItemProviderAdapterFactory extends DiAdapterFactory implements
 	 * This is used to implement
 	 * {@link org.eclipse.emf.edit.provider.IChangeNotifier}. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected IChangeNotifier changeNotifier = new ChangeNotifier();
@@ -64,7 +64,7 @@ public class DiItemProviderAdapterFactory extends DiAdapterFactory implements
 	 * This keeps track of all the supported types checked by
 	 * {@link #isFactoryForType isFactoryForType}. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected Collection<Object> supportedTypes = new ArrayList<Object>();
@@ -72,7 +72,7 @@ public class DiItemProviderAdapterFactory extends DiAdapterFactory implements
 	/**
 	 * This constructs an instance. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public DiItemProviderAdapterFactory() {
@@ -87,7 +87,7 @@ public class DiItemProviderAdapterFactory extends DiAdapterFactory implements
 	 * This keeps track of the one adapter used for all
 	 * {@link org.soyatec.tooling.di.Diagram} instances. <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected DiagramItemProvider diagramItemProvider;
@@ -95,7 +95,7 @@ public class DiItemProviderAdapterFactory extends DiAdapterFactory implements
 	/**
 	 * This creates an adapter for a {@link org.soyatec.tooling.di.Diagram}.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -111,7 +111,7 @@ public class DiItemProviderAdapterFactory extends DiAdapterFactory implements
 	 * This keeps track of the one adapter used for all
 	 * {@link org.soyatec.tooling.di.Shape} instances. <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ShapeItemProvider shapeItemProvider;
@@ -119,7 +119,7 @@ public class DiItemProviderAdapterFactory extends DiAdapterFactory implements
 	/**
 	 * This creates an adapter for a {@link org.soyatec.tooling.di.Shape}. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -135,7 +135,7 @@ public class DiItemProviderAdapterFactory extends DiAdapterFactory implements
 	 * This keeps track of the one adapter used for all
 	 * {@link org.soyatec.tooling.di.GradientShape} instances. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected GradientShapeItemProvider gradientShapeItemProvider;
@@ -144,7 +144,7 @@ public class DiItemProviderAdapterFactory extends DiAdapterFactory implements
 	 * This creates an adapter for a
 	 * {@link org.soyatec.tooling.di.GradientShape}. <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -160,7 +160,7 @@ public class DiItemProviderAdapterFactory extends DiAdapterFactory implements
 	 * This keeps track of the one adapter used for all
 	 * {@link org.soyatec.tooling.di.Connector} instances. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ConnectorItemProvider connectorItemProvider;
@@ -168,7 +168,7 @@ public class DiItemProviderAdapterFactory extends DiAdapterFactory implements
 	/**
 	 * This creates an adapter for a {@link org.soyatec.tooling.di.Connector}.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -184,7 +184,7 @@ public class DiItemProviderAdapterFactory extends DiAdapterFactory implements
 	 * This keeps track of the one adapter used for all
 	 * {@link org.soyatec.tooling.di.Comment} instances. <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected CommentItemProvider commentItemProvider;
@@ -192,7 +192,7 @@ public class DiItemProviderAdapterFactory extends DiAdapterFactory implements
 	/**
 	 * This creates an adapter for a {@link org.soyatec.tooling.di.Comment}.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -208,7 +208,7 @@ public class DiItemProviderAdapterFactory extends DiAdapterFactory implements
 	 * This keeps track of the one adapter used for all
 	 * {@link org.soyatec.tooling.di.CommentLink} instances. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected CommentLinkItemProvider commentLinkItemProvider;
@@ -216,7 +216,7 @@ public class DiItemProviderAdapterFactory extends DiAdapterFactory implements
 	/**
 	 * This creates an adapter for a {@link org.soyatec.tooling.di.CommentLink}.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -232,7 +232,7 @@ public class DiItemProviderAdapterFactory extends DiAdapterFactory implements
 	 * This keeps track of the one adapter used for all
 	 * {@link org.soyatec.tooling.di.Grid} instances. <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected GridItemProvider gridItemProvider;
@@ -240,7 +240,7 @@ public class DiItemProviderAdapterFactory extends DiAdapterFactory implements
 	/**
 	 * This creates an adapter for a {@link org.soyatec.tooling.di.Grid}. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -256,7 +256,7 @@ public class DiItemProviderAdapterFactory extends DiAdapterFactory implements
 	 * This keeps track of the one adapter used for all
 	 * {@link org.soyatec.tooling.di.Ruler} instances. <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected RulerItemProvider rulerItemProvider;
@@ -264,7 +264,7 @@ public class DiItemProviderAdapterFactory extends DiAdapterFactory implements
 	/**
 	 * This creates an adapter for a {@link org.soyatec.tooling.di.Ruler}. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -280,7 +280,7 @@ public class DiItemProviderAdapterFactory extends DiAdapterFactory implements
 	 * This keeps track of the one adapter used for all
 	 * {@link org.soyatec.tooling.di.Guide} instances. <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected GuideItemProvider guideItemProvider;
@@ -288,7 +288,7 @@ public class DiItemProviderAdapterFactory extends DiAdapterFactory implements
 	/**
 	 * This creates an adapter for a {@link org.soyatec.tooling.di.Guide}. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -304,7 +304,7 @@ public class DiItemProviderAdapterFactory extends DiAdapterFactory implements
 	 * This keeps track of the one adapter used for all
 	 * {@link java.util.Map.Entry} instances. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ElementEntryItemProvider elementEntryItemProvider;
@@ -312,7 +312,7 @@ public class DiItemProviderAdapterFactory extends DiAdapterFactory implements
 	/**
 	 * This creates an adapter for a {@link java.util.Map.Entry}. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -327,7 +327,7 @@ public class DiItemProviderAdapterFactory extends DiAdapterFactory implements
 	/**
 	 * This returns the root adapter factory that contains this factory. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public ComposeableAdapterFactory getRootAdapterFactory() {
@@ -338,44 +338,44 @@ public class DiItemProviderAdapterFactory extends DiAdapterFactory implements
 	/**
 	 * This sets the composed adapter factory that contains this factory. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void setParentAdapterFactory(
-			ComposedAdapterFactory parentAdapterFactory) {
+			final ComposedAdapterFactory parentAdapterFactory) {
 		this.parentAdapterFactory = parentAdapterFactory;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public boolean isFactoryForType(Object type) {
+	public boolean isFactoryForType(final Object type) {
 		return supportedTypes.contains(type) || super.isFactoryForType(type);
 	}
 
 	/**
 	 * This implementation substitutes the factory itself as the key for the
 	 * adapter. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public Adapter adapt(Notifier notifier, Object type) {
+	public Adapter adapt(final Notifier notifier, final Object type) {
 		return super.adapt(notifier, this);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public Object adapt(Object object, Object type) {
+	public Object adapt(final Object object, final Object type) {
 		if (isFactoryForType(type)) {
-			Object adapter = super.adapt(object, type);
+			final Object adapter = super.adapt(object, type);
 			if (!(type instanceof Class<?>)
 					|| (((Class<?>) type).isInstance(adapter))) {
 				return adapter;
@@ -387,19 +387,20 @@ public class DiItemProviderAdapterFactory extends DiAdapterFactory implements
 
 	/**
 	 * This adds a listener. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	public void addListener(INotifyChangedListener notifyChangedListener) {
+	public void addListener(final INotifyChangedListener notifyChangedListener) {
 		changeNotifier.addListener(notifyChangedListener);
 	}
 
 	/**
 	 * This removes a listener. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	public void removeListener(INotifyChangedListener notifyChangedListener) {
+	public void removeListener(
+			final INotifyChangedListener notifyChangedListener) {
 		changeNotifier.removeListener(notifyChangedListener);
 	}
 
@@ -407,10 +408,10 @@ public class DiItemProviderAdapterFactory extends DiAdapterFactory implements
 	 * This delegates to {@link #changeNotifier} and to
 	 * {@link #parentAdapterFactory}. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 * 
+	 *
 	 * @generated
 	 */
-	public void fireNotifyChanged(Notification notification) {
+	public void fireNotifyChanged(final Notification notification) {
 		changeNotifier.fireNotifyChanged(notification);
 
 		if (parentAdapterFactory != null) {
@@ -421,30 +422,40 @@ public class DiItemProviderAdapterFactory extends DiAdapterFactory implements
 	/**
 	 * This disposes all of the item providers created by this factory. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public void dispose() {
-		if (diagramItemProvider != null)
+		if (diagramItemProvider != null) {
 			diagramItemProvider.dispose();
-		if (shapeItemProvider != null)
+		}
+		if (shapeItemProvider != null) {
 			shapeItemProvider.dispose();
-		if (gradientShapeItemProvider != null)
+		}
+		if (gradientShapeItemProvider != null) {
 			gradientShapeItemProvider.dispose();
-		if (connectorItemProvider != null)
+		}
+		if (connectorItemProvider != null) {
 			connectorItemProvider.dispose();
-		if (commentItemProvider != null)
+		}
+		if (commentItemProvider != null) {
 			commentItemProvider.dispose();
-		if (commentLinkItemProvider != null)
+		}
+		if (commentLinkItemProvider != null) {
 			commentLinkItemProvider.dispose();
-		if (gridItemProvider != null)
+		}
+		if (gridItemProvider != null) {
 			gridItemProvider.dispose();
-		if (rulerItemProvider != null)
+		}
+		if (rulerItemProvider != null) {
 			rulerItemProvider.dispose();
-		if (guideItemProvider != null)
+		}
+		if (guideItemProvider != null) {
 			guideItemProvider.dispose();
-		if (elementEntryItemProvider != null)
+		}
+		if (elementEntryItemProvider != null) {
 			elementEntryItemProvider.dispose();
+		}
 	}
 
 }

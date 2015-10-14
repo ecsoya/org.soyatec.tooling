@@ -41,6 +41,7 @@ import org.eclipse.swt.widgets.Menu;
 import org.eclipse.swt.widgets.MenuItem;
 import org.eclipse.swt.widgets.ToolBar;
 import org.eclipse.swt.widgets.ToolItem;
+import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.soyatec.tooling.gef.toolbar.Activator;
 import org.soyatec.tooling.gef.toolbar.Messages;
 
@@ -52,8 +53,8 @@ public class ToolBarPalette extends Composite {
 	private static final String DATA_DROP_DOWN = "ToolBarPalette_DropDown"; //$NON-NLS-1$
 	private static final int WIDTH_DROP_DOWN = 25;
 
-	private ToolBar toolBar;
-	private ToolBar settingsToolBar;
+	private final ToolBar toolBar;
+	private final ToolBar settingsToolBar;
 
 	private EditDomain domain;
 	private PaletteRoot paletteRoot;
@@ -68,14 +69,14 @@ public class ToolBarPalette extends Composite {
 	private MenuItem useLargeIconsItem;
 
 	private final Map<ImageDescriptor, Image> imageMap;
-	private Image image;
+	private final Image image;
 
 	private PropertyChangeListener paletteListListener;
 
-	public ToolBarPalette(Composite parent, int style) {
+	public ToolBarPalette(final Composite parent, final int style) {
 		super(parent, style);
 		imageMap = new HashMap<ImageDescriptor, Image>(1);
-		GridLayout layout = new GridLayout(2, false);
+		final GridLayout layout = new GridLayout(2, false);
 		layout.marginWidth = 1;
 		layout.marginHeight = 1;
 		_setLayout(layout);
@@ -87,17 +88,18 @@ public class ToolBarPalette extends Composite {
 		new ToolItem(settingsToolBar, SWT.SEPARATOR);
 		final ToolItem settingsItem = new ToolItem(settingsToolBar,
 				SWT.DROP_DOWN);
-		ImageDescriptor desc = Activator.imageDescriptorFromPlugin(
-				Activator.PLUGIN_ID, "icons/setting.png"); //$NON-NLS-1$
+		final ImageDescriptor desc = AbstractUIPlugin
+				.imageDescriptorFromPlugin(Activator.PLUGIN_ID,
+						"icons/setting.png"); //$NON-NLS-1$
 		image = desc.createImage(getDisplay());
 		settingsItem.setImage(image);
 		settingsItem.addListener(SWT.Selection, new Listener() {
 
-			public void handleEvent(Event event) {
+			public void handleEvent(final Event event) {
 				if (event.detail == SWT.ARROW) {
-					Menu menu = getSettingsMenu();
+					final Menu menu = getSettingsMenu();
 					if (menu != null) {
-						Rectangle rect = settingsItem.getBounds();
+						final Rectangle rect = settingsItem.getBounds();
 						Point pt = new Point(rect.x, rect.y + rect.height);
 						pt = settingsToolBar.toDisplay(pt);
 						menu.setLocation(pt.x, pt.y);
@@ -111,7 +113,7 @@ public class ToolBarPalette extends Composite {
 
 		addListener(SWT.Resize, new Listener() {
 
-			public void handleEvent(Event event) {
+			public void handleEvent(final Event event) {
 				updatePalette();
 			}
 		});
@@ -124,7 +126,7 @@ public class ToolBarPalette extends Composite {
 	}
 
 	private void packToolBar() {
-		Point parentSize = getSize();
+		final Point parentSize = getSize();
 		if (parentSize.x == 0 || parentSize.y == 0) {
 			return;
 		}
@@ -132,21 +134,23 @@ public class ToolBarPalette extends Composite {
 			return;
 		}
 		@SuppressWarnings("unchecked")
-		List<PaletteEntry> entries = (List<PaletteEntry>) toolBar.getData();
+		final List<PaletteEntry> entries = (List<PaletteEntry>) toolBar
+				.getData();
 		if (entries == null || entries.isEmpty()) {
 			return;
 		}
 		toolBar.pack();
-		Point size = toolBar.getSize();
-		Point extraSize = settingsToolBar.computeSize(SWT.DEFAULT, SWT.DEFAULT);
+		final Point size = toolBar.getSize();
+		final Point extraSize = settingsToolBar.computeSize(SWT.DEFAULT,
+				SWT.DEFAULT);
 		if (size.x > (parentSize.x - extraSize.x - 5)) {
-			int visibleWidth = parentSize.x - extraSize.x - 5;
+			final int visibleWidth = parentSize.x - extraSize.x - 5;
 			ToolItem lastVisibleItem = toolBar.getItem(new Point(visibleWidth,
 					size.y / 2));
 			if (lastVisibleItem == null) {
 				return;
 			}
-			Rectangle lastVisibleItemRect = lastVisibleItem.getBounds();
+			final Rectangle lastVisibleItemRect = lastVisibleItem.getBounds();
 			int lastVisibleItemIndex = toolBar.indexOf(lastVisibleItem);
 			if ((lastVisibleItemRect.x + lastVisibleItemRect.width) > visibleWidth) {
 				lastVisibleItemIndex--;
@@ -157,7 +161,7 @@ public class ToolBarPalette extends Composite {
 
 			// If the drop down was created, and a new item comes show.
 			for (int i = lastVisibleItemIndex; i >= 0; i--) {
-				ToolItem item = toolBar.getItem(i);
+				final ToolItem item = toolBar.getItem(i);
 				if (Boolean.TRUE.equals(item.getData(DATA_DROP_DOWN))) {
 					lastVisibleItemIndex = i;
 					lastVisibleItem = item;
@@ -167,27 +171,27 @@ public class ToolBarPalette extends Composite {
 
 			if (Boolean.TRUE.equals(lastVisibleItem.getData(DATA_DROP_DOWN))) {
 
-				int index = lastVisibleItemIndex;
+				final int index = lastVisibleItemIndex;
 				final Menu menu = new Menu(getShell(), SWT.POP_UP);
 				for (int i = index; i < entries.size(); i++) {
-					PaletteEntry paletteEntry = entries.get(i);
+					final PaletteEntry paletteEntry = entries.get(i);
 					createMenuItem(menu, paletteEntry);
 				}
 				lastVisibleItem.setData(menu);
 
-				ToolItem[] items = toolBar.getItems();
+				final ToolItem[] items = toolBar.getItems();
 				for (int i = index; i < items.length; i++) {
 					disposeItem(items[i]);
 				}
 			} else {
-				int index = lastVisibleItemIndex;
+				final int index = lastVisibleItemIndex;
 
 				final Menu menu = new Menu(getShell(), SWT.POP_UP);
 				for (int i = index; i < entries.size(); i++) {
-					PaletteEntry paletteEntry = entries.get(i);
+					final PaletteEntry paletteEntry = entries.get(i);
 					createMenuItem(menu, paletteEntry);
 				}
-				ToolItem[] items = toolBar.getItems();
+				final ToolItem[] items = toolBar.getItems();
 				for (int i = index; i < items.length; i++) {
 					disposeItem(items[i]);
 				}
@@ -195,17 +199,17 @@ public class ToolBarPalette extends Composite {
 						index);
 				dropDown.setData(DATA_DROP_DOWN, Boolean.TRUE);
 				dropDown.setData(menu);
-				Button button = new Button(toolBar, SWT.ARROW | SWT.DOWN);
+				final Button button = new Button(toolBar, SWT.ARROW | SWT.DOWN);
 				dropDown.setControl(button);
 				dropDown.setWidth(WIDTH_DROP_DOWN);
 				button.addListener(SWT.Selection, new Listener() {
 
-					public void handleEvent(Event event) {
-						Menu menu = (Menu) dropDown.getData();
+					public void handleEvent(final Event event) {
+						final Menu menu = (Menu) dropDown.getData();
 						if (menu == null || menu.isDisposed()) {
 							return;
 						}
-						Rectangle rect = dropDown.getBounds();
+						final Rectangle rect = dropDown.getBounds();
 						Point pt = new Point(rect.x, rect.y + rect.height);
 						pt = toolBar.toDisplay(pt);
 						menu.setLocation(pt.x, pt.y);
@@ -226,7 +230,7 @@ public class ToolBarPalette extends Composite {
 			iconsOnlyItem.setText(Messages.tooling_palette_icons_only);
 			iconsOnlyItem.setSelection(iconsOnly);
 			iconsOnlyItem.addListener(SWT.Selection, new Listener() {
-				public void handleEvent(Event event) {
+				public void handleEvent(final Event event) {
 					iconsOnly = iconsOnlyItem.getSelection();
 					updatePalette();
 				}
@@ -237,7 +241,7 @@ public class ToolBarPalette extends Composite {
 			useLargeIconsItem.setSelection(useLargeIcons);
 			useLargeIconsItem.addListener(SWT.Selection, new Listener() {
 
-				public void handleEvent(Event event) {
+				public void handleEvent(final Event event) {
 					useLargeIcons = useLargeIconsItem.getSelection();
 					updatePalette();
 				}
@@ -251,14 +255,14 @@ public class ToolBarPalette extends Composite {
 
 	}
 
-	public void _setLayout(Layout layout) {
+	public void _setLayout(final Layout layout) {
 		super.setLayout(layout);
 	}
 
-	public void setLayout(Layout layout) {
+	public void setLayout(final Layout layout) {
 	}
 
-	public void init(EditDomain domain, PaletteRoot paletteRoot) {
+	public void init(final EditDomain domain, final PaletteRoot paletteRoot) {
 		this.domain = domain;
 		this.paletteRoot = paletteRoot;
 		if (domain != null) {
@@ -267,7 +271,7 @@ public class ToolBarPalette extends Composite {
 		if (toolBar == null || toolBar.isDisposed()) {
 			return;
 		}
-		List<PaletteEntry> entries = new ArrayList<PaletteEntry>();
+		final List<PaletteEntry> entries = new ArrayList<PaletteEntry>();
 		collectPaletteItems(entries, paletteRoot);
 		toolBar.setData(entries);
 
@@ -279,7 +283,7 @@ public class ToolBarPalette extends Composite {
 		if (paletteListListener == null) {
 			paletteListListener = new PropertyChangeListener() {
 
-				public void propertyChange(PropertyChangeEvent evt) {
+				public void propertyChange(final PropertyChangeEvent evt) {
 					if (PaletteContainer.PROPERTY_CHILDREN.equals(evt
 							.getPropertyName())) {
 						if (paletteRoot == null || toolBar == null
@@ -302,7 +306,7 @@ public class ToolBarPalette extends Composite {
 		return paletteListListener;
 	}
 
-	private void listenPaletteContainers(PaletteEntry entry) {
+	private void listenPaletteContainers(final PaletteEntry entry) {
 		if (entry == null) {
 			return;
 		}
@@ -310,14 +314,14 @@ public class ToolBarPalette extends Composite {
 			((PaletteContainer) entry)
 					.addPropertyChangeListener(getPaletteListListener());
 			@SuppressWarnings("rawtypes")
-			List children = ((PaletteContainer) entry).getChildren();
-			for (Object object : children) {
+			final List children = ((PaletteContainer) entry).getChildren();
+			for (final Object object : children) {
 				listenPaletteContainers((PaletteEntry) object);
 			}
 		}
 	}
 
-	private void unlistenPaletteContainers(PaletteEntry entry) {
+	private void unlistenPaletteContainers(final PaletteEntry entry) {
 		if (entry == null) {
 			return;
 		}
@@ -325,8 +329,8 @@ public class ToolBarPalette extends Composite {
 			((PaletteContainer) entry)
 					.removePropertyChangeListener(getPaletteListListener());
 			@SuppressWarnings("rawtypes")
-			List children = ((PaletteContainer) entry).getChildren();
-			for (Object object : children) {
+			final List children = ((PaletteContainer) entry).getChildren();
+			for (final Object object : children) {
 				unlistenPaletteContainers((PaletteEntry) object);
 			}
 		}
@@ -337,16 +341,17 @@ public class ToolBarPalette extends Composite {
 			return;
 		}
 		@SuppressWarnings("unchecked")
-		List<PaletteEntry> entries = (List<PaletteEntry>) toolBar.getData();
-		ToolItem[] items = toolBar.getItems();
+		final List<PaletteEntry> entries = (List<PaletteEntry>) toolBar
+				.getData();
+		final ToolItem[] items = toolBar.getItems();
 
 		if (entries == null || entries.isEmpty()) {
-			for (ToolItem toolItem : items) {
+			for (final ToolItem toolItem : items) {
 				disposeItem(toolItem);
 			}
 		} else {
 			for (int i = 0; i < entries.size(); i++) {
-				PaletteEntry entry = entries.get(i);
+				final PaletteEntry entry = entries.get(i);
 				ToolItem item = null;
 				if (i < toolBar.getItemCount()) {
 					item = toolBar.getItem(i);
@@ -369,39 +374,39 @@ public class ToolBarPalette extends Composite {
 		layoutToolBar();
 	}
 
-	private void disposeItem(ToolItem item) {
+	private void disposeItem(final ToolItem item) {
 		if (item == null || item.isDisposed()) {
 			return;
 		}
-		Control ctr = item.getControl();
+		final Control ctr = item.getControl();
 		if (ctr != null) {
 			ctr.dispose();
 		}
 		item.dispose();
 	}
 
-	private void createMenuItem(final Menu menu, PaletteEntry entry) {
-		Object type = entry.getType();
-		int style = PaletteSeparator.PALETTE_TYPE_SEPARATOR.equals(type) ? SWT.SEPARATOR
+	private void createMenuItem(final Menu menu, final PaletteEntry entry) {
+		final Object type = entry.getType();
+		final int style = PaletteSeparator.PALETTE_TYPE_SEPARATOR.equals(type) ? SWT.SEPARATOR
 				: SWT.RADIO;
-		MenuItem menuItem = new MenuItem(menu, style);
+		final MenuItem menuItem = new MenuItem(menu, style);
 		menuItem.setData(entry);
 		menuItem.setImage(getImage(entry.getSmallIcon()));
 		menuItem.setText(getText(entry.getDescription()));
 		if (!PaletteSeparator.PALETTE_TYPE_SEPARATOR.equals(type)) {
 			menuItem.addListener(SWT.Selection, new Listener() {
 
-				public void handleEvent(Event event) {
-					MenuItem widget = (MenuItem) event.widget;
+				public void handleEvent(final Event event) {
+					final MenuItem widget = (MenuItem) event.widget;
 					if (widget.getSelection()) {
 						setActiveEntry((PaletteEntry) widget.getData());
-						ToolItem[] items = toolBar.getItems();
-						for (ToolItem toolItem : items) {
+						final ToolItem[] items = toolBar.getItems();
+						for (final ToolItem toolItem : items) {
 							toolItem.setSelection(false);
 						}
 
-						MenuItem[] mis = menu.getItems();
-						for (MenuItem i : mis) {
+						final MenuItem[] mis = menu.getItems();
+						for (final MenuItem i : mis) {
 							if (i != widget) {
 								i.setSelection(false);
 							}
@@ -412,7 +417,7 @@ public class ToolBarPalette extends Composite {
 		}
 	}
 
-	protected void setActiveEntry(PaletteEntry entry) {
+	protected void setActiveEntry(final PaletteEntry entry) {
 		if (domain == null) {
 			return;
 		}
@@ -421,34 +426,34 @@ public class ToolBarPalette extends Composite {
 		}
 	}
 
-	private ToolItem createPaletteItem(PaletteEntry entry, int index) {
-		Object type = entry.getType();
-		int style = PaletteSeparator.PALETTE_TYPE_SEPARATOR.equals(type) ? SWT.SEPARATOR
+	private ToolItem createPaletteItem(final PaletteEntry entry, final int index) {
+		final Object type = entry.getType();
+		final int style = PaletteSeparator.PALETTE_TYPE_SEPARATOR.equals(type) ? SWT.SEPARATOR
 				: SWT.RADIO;
-		ToolItem item = new ToolItem(toolBar, style, index);
+		final ToolItem item = new ToolItem(toolBar, style, index);
 
 		updatePaletteItem(item, entry);
 
 		if (!PaletteSeparator.PALETTE_TYPE_SEPARATOR.equals(type)) {
 			item.addListener(SWT.Selection, new Listener() {
 
-				public void handleEvent(Event event) {
-					ToolItem widget = (ToolItem) event.widget;
+				public void handleEvent(final Event event) {
+					final ToolItem widget = (ToolItem) event.widget;
 					if (widget.getSelection()) {
 						setActiveEntry((PaletteEntry) widget.getData());
-						ToolItem[] items = toolBar.getItems();
-						for (ToolItem toolItem : items) {
+						final ToolItem[] items = toolBar.getItems();
+						for (final ToolItem toolItem : items) {
 							if (widget == toolItem) {
 								continue;
 							}
 							toolItem.setSelection(false);
 							if (Boolean.TRUE.equals(toolItem
 									.getData(DATA_DROP_DOWN))) {
-								Object data = toolItem.getData();
+								final Object data = toolItem.getData();
 								if (data instanceof Menu) {
-									MenuItem[] menuItems = ((Menu) data)
+									final MenuItem[] menuItems = ((Menu) data)
 											.getItems();
-									for (MenuItem menuItem : menuItems) {
+									for (final MenuItem menuItem : menuItems) {
 										menuItem.setSelection(false);
 									}
 								}
@@ -460,7 +465,7 @@ public class ToolBarPalette extends Composite {
 
 			entry.addPropertyChangeListener(new PropertyChangeListener() {
 
-				public void propertyChange(PropertyChangeEvent arg0) {
+				public void propertyChange(final PropertyChangeEvent arg0) {
 
 				}
 			});
@@ -469,14 +474,15 @@ public class ToolBarPalette extends Composite {
 		return item;
 	}
 
-	private String getText(String label) {
+	private String getText(final String label) {
 		if (label == null) {
 			return ""; //$NON-NLS-1$
 		}
 		return label;
 	}
 
-	private ToolItem updatePaletteItem(ToolItem item, PaletteEntry entry) {
+	private ToolItem updatePaletteItem(final ToolItem item,
+			final PaletteEntry entry) {
 		if (item == null || item.isDisposed() || entry == null) {
 			return null;
 		}
@@ -500,16 +506,16 @@ public class ToolBarPalette extends Composite {
 		return item;
 	}
 
-	private void collectPaletteItems(List<PaletteEntry> entries,
-			PaletteEntry entry) {
+	private void collectPaletteItems(final List<PaletteEntry> entries,
+			final PaletteEntry entry) {
 		if (entry == null) {
 			return;
 		}
 		if (entry instanceof PaletteContainer) {
-			PaletteContainer container = (PaletteContainer) entry;
-			List<?> children = container.getChildren();
-			List<PaletteEntry> newEntries = new ArrayList<PaletteEntry>();
-			for (Object child : children) {
+			final PaletteContainer container = (PaletteContainer) entry;
+			final List<?> children = container.getChildren();
+			final List<PaletteEntry> newEntries = new ArrayList<PaletteEntry>();
+			for (final Object child : children) {
 				collectPaletteItems(newEntries, (PaletteEntry) child);
 			}
 			if (!newEntries.isEmpty()) {
@@ -523,7 +529,7 @@ public class ToolBarPalette extends Composite {
 		}
 	}
 
-	private Image getImage(ImageDescriptor desc) {
+	private Image getImage(final ImageDescriptor desc) {
 		if (desc == null) {
 			return null;
 		}
@@ -538,8 +544,8 @@ public class ToolBarPalette extends Composite {
 	public void dispose() {
 		unlistenPaletteContainers(paletteRoot);
 		super.dispose();
-		Collection<Image> values = imageMap.values();
-		for (Image image : values) {
+		final Collection<Image> values = imageMap.values();
+		for (final Image image : values) {
 			image.dispose();
 		}
 		imageMap.clear();
@@ -559,16 +565,17 @@ public class ToolBarPalette extends Composite {
 		toolBar.getDisplay().asyncExec(new Runnable() {
 
 			public void run() {
-				ToolItem[] items = toolBar.getItems();
-				for (ToolItem toolItem : items) {
-					Object data = toolItem.getData();
+				final ToolItem[] items = toolBar.getItems();
+				for (final ToolItem toolItem : items) {
+					final Object data = toolItem.getData();
 					if (defaultEntry.equals(data)) {
 						toolItem.setSelection(true);
 					} else if (Boolean.TRUE.equals(toolItem
 							.getData(DATA_DROP_DOWN))) {
 						if (data instanceof Menu) {
-							MenuItem[] menuItems = ((Menu) data).getItems();
-							for (MenuItem menuItem : menuItems) {
+							final MenuItem[] menuItems = ((Menu) data)
+									.getItems();
+							for (final MenuItem menuItem : menuItems) {
 								if (defaultEntry.equals(menuItem.getData())) {
 									menuItem.setSelection(true);
 								} else {

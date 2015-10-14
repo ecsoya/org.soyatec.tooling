@@ -60,7 +60,7 @@ public class DiagramImpl extends ContainerImpl implements Diagram {
 	/**
 	 * The cached value of the '{@link #getRulers() <em>Rulers</em>}' attribute
 	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getRulers()
 	 * @generated
 	 * @ordered
@@ -70,7 +70,7 @@ public class DiagramImpl extends ContainerImpl implements Diagram {
 	/**
 	 * The cached value of the '{@link #getGrid() <em>Grid</em>}' containment
 	 * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getGrid()
 	 * @generated
 	 * @ordered
@@ -80,7 +80,7 @@ public class DiagramImpl extends ContainerImpl implements Diagram {
 	/**
 	 * The default value of the '{@link #isSnapToGrid() <em>Snap To Grid</em>}'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isSnapToGrid()
 	 * @generated
 	 * @ordered
@@ -90,7 +90,7 @@ public class DiagramImpl extends ContainerImpl implements Diagram {
 	/**
 	 * The cached value of the '{@link #isSnapToGrid() <em>Snap To Grid</em>}'
 	 * attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #isSnapToGrid()
 	 * @generated
 	 * @ordered
@@ -101,7 +101,7 @@ public class DiagramImpl extends ContainerImpl implements Diagram {
 	 * The default value of the '{@link #isSnapToGeometry()
 	 * <em>Snap To Geometry</em>}' attribute. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @see #isSnapToGeometry()
 	 * @generated
 	 * @ordered
@@ -112,7 +112,7 @@ public class DiagramImpl extends ContainerImpl implements Diagram {
 	 * The cached value of the '{@link #isSnapToGeometry()
 	 * <em>Snap To Geometry</em>}' attribute. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @see #isSnapToGeometry()
 	 * @generated
 	 * @ordered
@@ -121,7 +121,7 @@ public class DiagramImpl extends ContainerImpl implements Diagram {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected DiagramImpl() {
@@ -130,7 +130,7 @@ public class DiagramImpl extends ContainerImpl implements Diagram {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -140,7 +140,7 @@ public class DiagramImpl extends ContainerImpl implements Diagram {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<Comment> getComments() {
@@ -149,7 +149,7 @@ public class DiagramImpl extends ContainerImpl implements Diagram {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<CommentLink> getCommentLinks() {
@@ -158,7 +158,7 @@ public class DiagramImpl extends ContainerImpl implements Diagram {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public FeatureMap getRulers() {
@@ -170,7 +170,7 @@ public class DiagramImpl extends ContainerImpl implements Diagram {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Ruler getHorizontalRuler() {
@@ -180,11 +180,11 @@ public class DiagramImpl extends ContainerImpl implements Diagram {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	public NotificationChain basicSetHorizontalRuler(Ruler newHorizontalRuler,
-			NotificationChain msgs) {
+	public NotificationChain basicSetHorizontalRuler(
+			final Ruler newHorizontalRuler, final NotificationChain msgs) {
 		return ((FeatureMap.Internal) getRulers()).basicAdd(
 				DiPackage.Literals.DIAGRAM__HORIZONTAL_RULER,
 				newHorizontalRuler, msgs);
@@ -192,10 +192,10 @@ public class DiagramImpl extends ContainerImpl implements Diagram {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	public void setHorizontalRuler(Ruler newHorizontalRuler) {
+	public void setHorizontalRuler(final Ruler newHorizontalRuler) {
 		((FeatureMap.Internal) getRulers()).set(
 				DiPackage.Literals.DIAGRAM__HORIZONTAL_RULER,
 				newHorizontalRuler);
@@ -203,7 +203,7 @@ public class DiagramImpl extends ContainerImpl implements Diagram {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Ruler getVerticalRuler() {
@@ -213,11 +213,11 @@ public class DiagramImpl extends ContainerImpl implements Diagram {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	public NotificationChain basicSetVerticalRuler(Ruler newVerticalRuler,
-			NotificationChain msgs) {
+	public NotificationChain basicSetVerticalRuler(
+			final Ruler newVerticalRuler, final NotificationChain msgs) {
 		return ((FeatureMap.Internal) getRulers()).basicAdd(
 				DiPackage.Literals.DIAGRAM__VERTICAL_RULER, newVerticalRuler,
 				msgs);
@@ -225,17 +225,17 @@ public class DiagramImpl extends ContainerImpl implements Diagram {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	public void setVerticalRuler(Ruler newVerticalRuler) {
+	public void setVerticalRuler(final Ruler newVerticalRuler) {
 		((FeatureMap.Internal) getRulers()).set(
 				DiPackage.Literals.DIAGRAM__VERTICAL_RULER, newVerticalRuler);
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public Grid getGrid() {
@@ -244,50 +244,56 @@ public class DiagramImpl extends ContainerImpl implements Diagram {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	public NotificationChain basicSetGrid(Grid newGrid, NotificationChain msgs) {
-		Grid oldGrid = grid;
+	public NotificationChain basicSetGrid(final Grid newGrid,
+			NotificationChain msgs) {
+		final Grid oldGrid = grid;
 		grid = newGrid;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this,
+			final ENotificationImpl notification = new ENotificationImpl(this,
 					Notification.SET, DiPackage.DIAGRAM__GRID, oldGrid, newGrid);
-			if (msgs == null)
+			if (msgs == null) {
 				msgs = notification;
-			else
+			} else {
 				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	public void setGrid(Grid newGrid) {
+	public void setGrid(final Grid newGrid) {
 		if (newGrid != grid) {
 			NotificationChain msgs = null;
-			if (grid != null)
+			if (grid != null) {
 				msgs = ((InternalEObject) grid).eInverseRemove(this,
 						EOPPOSITE_FEATURE_BASE - DiPackage.DIAGRAM__GRID, null,
 						msgs);
-			if (newGrid != null)
+			}
+			if (newGrid != null) {
 				msgs = ((InternalEObject) newGrid).eInverseAdd(this,
 						EOPPOSITE_FEATURE_BASE - DiPackage.DIAGRAM__GRID, null,
 						msgs);
+			}
 			msgs = basicSetGrid(newGrid, msgs);
-			if (msgs != null)
+			if (msgs != null) {
 				msgs.dispatch();
-		} else if (eNotificationRequired())
+			}
+		} else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET,
 					DiPackage.DIAGRAM__GRID, newGrid, newGrid));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public boolean isSnapToGrid() {
@@ -296,20 +302,21 @@ public class DiagramImpl extends ContainerImpl implements Diagram {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	public void setSnapToGrid(boolean newSnapToGrid) {
-		boolean oldSnapToGrid = snapToGrid;
+	public void setSnapToGrid(final boolean newSnapToGrid) {
+		final boolean oldSnapToGrid = snapToGrid;
 		snapToGrid = newSnapToGrid;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET,
 					DiPackage.DIAGRAM__SNAP_TO_GRID, oldSnapToGrid, snapToGrid));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public boolean isSnapToGeometry() {
@@ -318,26 +325,27 @@ public class DiagramImpl extends ContainerImpl implements Diagram {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	public void setSnapToGeometry(boolean newSnapToGeometry) {
-		boolean oldSnapToGeometry = snapToGeometry;
+	public void setSnapToGeometry(final boolean newSnapToGeometry) {
+		final boolean oldSnapToGeometry = snapToGeometry;
 		snapToGeometry = newSnapToGeometry;
-		if (eNotificationRequired())
+		if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET,
 					DiPackage.DIAGRAM__SNAP_TO_GEOMETRY, oldSnapToGeometry,
 					snapToGeometry));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd,
-			int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseRemove(final InternalEObject otherEnd,
+			final int featureID, final NotificationChain msgs) {
 		switch (featureID) {
 		case DiPackage.DIAGRAM__COMMENTS:
 			return ((InternalEList<?>) getComments()).basicRemove(otherEnd,
@@ -359,19 +367,21 @@ public class DiagramImpl extends ContainerImpl implements Diagram {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+	public Object eGet(final int featureID, final boolean resolve,
+			final boolean coreType) {
 		switch (featureID) {
 		case DiPackage.DIAGRAM__COMMENTS:
 			return getComments();
 		case DiPackage.DIAGRAM__COMMENT_LINKS:
 			return getCommentLinks();
 		case DiPackage.DIAGRAM__RULERS:
-			if (coreType)
+			if (coreType) {
 				return getRulers();
+			}
 			return ((FeatureMap.Internal) getRulers()).getWrapper();
 		case DiPackage.DIAGRAM__HORIZONTAL_RULER:
 			return getHorizontalRuler();
@@ -389,12 +399,12 @@ public class DiagramImpl extends ContainerImpl implements Diagram {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public void eSet(int featureID, Object newValue) {
+	public void eSet(final int featureID, final Object newValue) {
 		switch (featureID) {
 		case DiPackage.DIAGRAM__COMMENTS:
 			getComments().clear();
@@ -429,11 +439,11 @@ public class DiagramImpl extends ContainerImpl implements Diagram {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public void eUnset(int featureID) {
+	public void eUnset(final int featureID) {
 		switch (featureID) {
 		case DiPackage.DIAGRAM__COMMENTS:
 			getComments().clear();
@@ -465,11 +475,11 @@ public class DiagramImpl extends ContainerImpl implements Diagram {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public boolean eIsSet(int featureID) {
+	public boolean eIsSet(final int featureID) {
 		switch (featureID) {
 		case DiPackage.DIAGRAM__COMMENTS:
 			return !getComments().isEmpty();
@@ -493,15 +503,16 @@ public class DiagramImpl extends ContainerImpl implements Diagram {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy())
+		if (eIsProxy()) {
 			return super.toString();
+		}
 
-		StringBuffer result = new StringBuffer(super.toString());
+		final StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (rulers: ");
 		result.append(rulers);
 		result.append(", snapToGrid: ");

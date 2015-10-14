@@ -49,7 +49,7 @@ public abstract class ContainerImpl extends ViewImpl implements
 	/**
 	 * The cached value of the '{@link #getAllLines() <em>All Lines</em>}'
 	 * attribute list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAllLines()
 	 * @generated
 	 * @ordered
@@ -58,7 +58,7 @@ public abstract class ContainerImpl extends ViewImpl implements
 	/**
 	 * The cached value of the '{@link #getAllShapes() <em>All Shapes</em>}'
 	 * attribute list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getAllShapes()
 	 * @generated
 	 * @ordered
@@ -67,7 +67,7 @@ public abstract class ContainerImpl extends ViewImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected ContainerImpl() {
@@ -76,7 +76,7 @@ public abstract class ContainerImpl extends ViewImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -86,7 +86,7 @@ public abstract class ContainerImpl extends ViewImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<Shape> getChildren() {
@@ -95,7 +95,7 @@ public abstract class ContainerImpl extends ViewImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public EList<Line> getLines() {
@@ -104,7 +104,7 @@ public abstract class ContainerImpl extends ViewImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public FeatureMap getAllLines() {
@@ -116,7 +116,7 @@ public abstract class ContainerImpl extends ViewImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	public FeatureMap getAllShapes() {
@@ -129,12 +129,12 @@ public abstract class ContainerImpl extends ViewImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd,
-			int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseRemove(final InternalEObject otherEnd,
+			final int featureID, final NotificationChain msgs) {
 		switch (featureID) {
 		case DiPackage.CONTAINER__CHILDREN:
 			return ((InternalEList<?>) getChildren()).basicRemove(otherEnd,
@@ -153,23 +153,26 @@ public abstract class ContainerImpl extends ViewImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+	public Object eGet(final int featureID, final boolean resolve,
+			final boolean coreType) {
 		switch (featureID) {
 		case DiPackage.CONTAINER__CHILDREN:
 			return getChildren();
 		case DiPackage.CONTAINER__LINES:
 			return getLines();
 		case DiPackage.CONTAINER__ALL_LINES:
-			if (coreType)
+			if (coreType) {
 				return getAllLines();
+			}
 			return ((FeatureMap.Internal) getAllLines()).getWrapper();
 		case DiPackage.CONTAINER__ALL_SHAPES:
-			if (coreType)
+			if (coreType) {
 				return getAllShapes();
+			}
 			return ((FeatureMap.Internal) getAllShapes()).getWrapper();
 		}
 		return super.eGet(featureID, resolve, coreType);
@@ -177,12 +180,12 @@ public abstract class ContainerImpl extends ViewImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@SuppressWarnings("unchecked")
 	@Override
-	public void eSet(int featureID, Object newValue) {
+	public void eSet(final int featureID, final Object newValue) {
 		switch (featureID) {
 		case DiPackage.CONTAINER__CHILDREN:
 			getChildren().clear();
@@ -204,11 +207,11 @@ public abstract class ContainerImpl extends ViewImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public void eUnset(int featureID) {
+	public void eUnset(final int featureID) {
 		switch (featureID) {
 		case DiPackage.CONTAINER__CHILDREN:
 			getChildren().clear();
@@ -228,11 +231,11 @@ public abstract class ContainerImpl extends ViewImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public boolean eIsSet(int featureID) {
+	public boolean eIsSet(final int featureID) {
 		switch (featureID) {
 		case DiPackage.CONTAINER__CHILDREN:
 			return !getChildren().isEmpty();
@@ -248,15 +251,16 @@ public abstract class ContainerImpl extends ViewImpl implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public String toString() {
-		if (eIsProxy())
+		if (eIsProxy()) {
 			return super.toString();
+		}
 
-		StringBuffer result = new StringBuffer(super.toString());
+		final StringBuffer result = new StringBuffer(super.toString());
 		result.append(" (allLines: ");
 		result.append(allLines);
 		result.append(", allShapes: ");

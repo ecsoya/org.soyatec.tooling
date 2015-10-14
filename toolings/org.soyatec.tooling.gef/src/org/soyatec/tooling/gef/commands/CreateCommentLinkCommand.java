@@ -22,7 +22,8 @@ public class CreateCommentLinkCommand extends CreateLineCommand {
 	private Node commentSource;
 	private Comment commentTarget;
 
-	public CreateCommentLinkCommand(Diagram diagram, CommentLink lineObject) {
+	public CreateCommentLinkCommand(final Diagram diagram,
+			final CommentLink lineObject) {
 		super(diagram, lineObject);
 	}
 
@@ -30,8 +31,8 @@ public class CreateCommentLinkCommand extends CreateLineCommand {
 		if (source == null || target == null || source == target) {
 			return false;
 		}
-		Object sourceModel = source.getModel();
-		Object targetModel = target.getModel();
+		final Object sourceModel = source.getModel();
+		final Object targetModel = target.getModel();
 		if (!(sourceModel instanceof Node) || !(targetModel instanceof Comment)) {
 			return false;
 		}
@@ -40,7 +41,7 @@ public class CreateCommentLinkCommand extends CreateLineCommand {
 		return true;
 	}
 
-	protected void doCreateLine(Diagram diagram, Line line) {
+	protected void doCreateLine(final Diagram diagram, final Line line) {
 		CommentLink commentLink = (CommentLink) line;
 		if (commentLink == null) {
 			commentLink = DiFactory.eINSTANCE.createCommentLink();
@@ -54,11 +55,11 @@ public class CreateCommentLinkCommand extends CreateLineCommand {
 		diagram.getCommentLinks().add(commentLink);
 	}
 
-	protected void doRemoveLine(Diagram diagram, Line line) {
+	protected void doRemoveLine(final Diagram diagram, final Line line) {
 		if (diagram == null || line == null) {
 			return;
 		}
-		CommentLink commentLink = (CommentLink) line;
+		final CommentLink commentLink = (CommentLink) line;
 		commentLink.setSource(null);
 		commentLink.setTarget(null);
 

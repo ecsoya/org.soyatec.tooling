@@ -21,20 +21,21 @@ public abstract class ColorAction extends RichTextAction {
 
 	private RGB color = null;
 
-	public ColorAction(IRichText richText) {
+	public ColorAction(final IRichText richText) {
 		super(richText, AS_DROP_DOWN_MENU);
 	}
 
-	public void runWithEvent(Event event) {
+	public void runWithEvent(final Event event) {
 		if (event.detail == SWT.ARROW || color == null) {
-			ColorDialog dlg = new ColorDialog(event.display.getActiveShell());
+			final ColorDialog dlg = new ColorDialog(
+					event.display.getActiveShell());
 			dlg.setRGB(color);
 			color = dlg.open();
 		}
 		super.runWithEvent(event);
 	}
 
-	public void execute(IRichText richText) {
+	public void execute(final IRichText richText) {
 		if (richText != null) {
 			richText.executeCommand(getCommandName(), getColorValue());
 		}
@@ -46,7 +47,7 @@ public abstract class ColorAction extends RichTextAction {
 		if (color == null) {
 			return null;
 		}
-		StringBuilder stringBuilder = new StringBuilder();
+		final StringBuilder stringBuilder = new StringBuilder();
 		stringBuilder.append("rgb(");
 		stringBuilder.append(color.red);
 		stringBuilder.append(",");

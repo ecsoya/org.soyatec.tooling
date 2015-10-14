@@ -27,7 +27,7 @@ public abstract class CreateLineCommand extends Command {
 	protected Line lineObject;
 	protected Diagram diagram;
 
-	public CreateLineCommand(Diagram diagram, Line lineObject) {
+	public CreateLineCommand(final Diagram diagram, final Line lineObject) {
 		Assert.isNotNull(diagram, "Container for lines."); //$NON-NLS-1$
 		this.diagram = diagram;
 		this.lineObject = lineObject;
@@ -37,7 +37,7 @@ public abstract class CreateLineCommand extends Command {
 		return source;
 	}
 
-	public void setSource(EditPart source) {
+	public void setSource(final EditPart source) {
 		this.source = source;
 	}
 
@@ -45,7 +45,7 @@ public abstract class CreateLineCommand extends Command {
 		return target;
 	}
 
-	public void setTarget(EditPart target) {
+	public void setTarget(final EditPart target) {
 		this.target = target;
 	}
 
@@ -53,7 +53,7 @@ public abstract class CreateLineCommand extends Command {
 		return sourceAnchor;
 	}
 
-	public void setSourceAnchor(String sourceAnchor) {
+	public void setSourceAnchor(final String sourceAnchor) {
 		this.sourceAnchor = sourceAnchor;
 	}
 
@@ -61,11 +61,11 @@ public abstract class CreateLineCommand extends Command {
 		return targetAnchor;
 	}
 
-	public void setTargetAnchor(String targetAnchor) {
+	public void setTargetAnchor(final String targetAnchor) {
 		this.targetAnchor = targetAnchor;
 	}
 
-	public void setLineObject(Line lineObject) {
+	public void setLineObject(final Line lineObject) {
 		this.lineObject = lineObject;
 	}
 

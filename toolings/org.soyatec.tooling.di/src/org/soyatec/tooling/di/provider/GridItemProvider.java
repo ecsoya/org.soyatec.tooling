@@ -34,7 +34,7 @@ import org.soyatec.tooling.di.Grid;
 /**
  * This is the item provider adapter for a {@link org.soyatec.tooling.di.Grid}
  * object. <!-- begin-user-doc --> <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class GridItemProvider extends ItemProviderAdapter implements
@@ -43,21 +43,22 @@ public class GridItemProvider extends ItemProviderAdapter implements
 	/**
 	 * This constructs an instance from a factory and a notifier. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	public GridItemProvider(AdapterFactory adapterFactory) {
+	public GridItemProvider(final AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
 	/**
 	 * This returns the property descriptors for the adapted class. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
+	public List<IItemPropertyDescriptor> getPropertyDescriptors(
+			final Object object) {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
@@ -71,10 +72,10 @@ public class GridItemProvider extends ItemProviderAdapter implements
 	/**
 	 * This adds a property descriptor for the Color feature. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	protected void addColorPropertyDescriptor(Object object) {
+	protected void addColorPropertyDescriptor(final Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(
 				((ComposeableAdapterFactory) adapterFactory)
 						.getRootAdapterFactory(),
@@ -89,10 +90,10 @@ public class GridItemProvider extends ItemProviderAdapter implements
 	/**
 	 * This adds a property descriptor for the Spacing feature. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	protected void addSpacingPropertyDescriptor(Object object) {
+	protected void addSpacingPropertyDescriptor(final Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(
 				((ComposeableAdapterFactory) adapterFactory)
 						.getRootAdapterFactory(),
@@ -107,10 +108,10 @@ public class GridItemProvider extends ItemProviderAdapter implements
 	/**
 	 * This adds a property descriptor for the Style feature. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	protected void addStylePropertyDescriptor(Object object) {
+	protected void addStylePropertyDescriptor(final Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(
 				((ComposeableAdapterFactory) adapterFactory)
 						.getRootAdapterFactory(),
@@ -124,11 +125,11 @@ public class GridItemProvider extends ItemProviderAdapter implements
 
 	/**
 	 * This returns Grid.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public Object getImage(Object object) {
+	public Object getImage(final Object object) {
 		return overlayImage(object,
 				getResourceLocator().getImage("full/obj16/Grid"));
 	}
@@ -136,12 +137,12 @@ public class GridItemProvider extends ItemProviderAdapter implements
 	/**
 	 * This returns the label text for the adapted class. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public String getText(Object object) {
-		Grid grid = (Grid) object;
+	public String getText(final Object object) {
+		final Grid grid = (Grid) object;
 		return getString("_UI_Grid_type") + " " + grid.getColor();
 	}
 
@@ -150,11 +151,11 @@ public class GridItemProvider extends ItemProviderAdapter implements
 	 * update any cached children and by creating a viewer notification, which
 	 * it passes to {@link #fireNotifyChanged}. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public void notifyChanged(Notification notification) {
+	public void notifyChanged(final Notification notification) {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Grid.class)) {
@@ -172,19 +173,19 @@ public class GridItemProvider extends ItemProviderAdapter implements
 	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s
 	 * describing the children that can be created under this object. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	protected void collectNewChildDescriptors(
-			Collection<Object> newChildDescriptors, Object object) {
+			final Collection<Object> newChildDescriptors, final Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 	}
 
 	/**
 	 * Return the resource locator for this item provider's resources. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

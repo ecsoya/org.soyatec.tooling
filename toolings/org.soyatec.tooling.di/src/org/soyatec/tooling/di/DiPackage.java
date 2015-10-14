@@ -30,7 +30,7 @@ import org.eclipse.emf.ecore.EReference;
  * <li>and each data type</li>
  * </ul>
  * <!-- end-user-doc -->
- * 
+ *
  * @see org.soyatec.tooling.di.DiFactory
  * @model kind="package"
  * @generated
@@ -38,21 +38,21 @@ import org.eclipse.emf.ecore.EReference;
 public interface DiPackage extends EPackage {
 	/**
 	 * The package name. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNAME = "di";
 
 	/**
 	 * The package namespace URI. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_URI = "http://www.soyatec.org/2015/DiagramInterchangeSpecification";
 
 	/**
 	 * The package namespace name. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	String eNS_PREFIX = "di";
@@ -60,7 +60,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The singleton instance of the package. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	DiPackage eINSTANCE = org.soyatec.tooling.di.impl.DiPackageImpl.init();
@@ -68,7 +68,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The meta object id for the '{@link org.soyatec.tooling.di.impl.ViewImpl
 	 * <em>View</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.soyatec.tooling.di.impl.ViewImpl
 	 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getView()
 	 * @generated
@@ -78,7 +78,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Label</b></em>' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -87,7 +87,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -96,7 +96,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Element</b></em>' reference. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -105,7 +105,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The number of structural features of the '<em>View</em>' class. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -114,7 +114,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The number of operations of the '<em>View</em>' class. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -123,7 +123,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The meta object id for the '{@link org.soyatec.tooling.di.impl.NodeImpl
 	 * <em>Node</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.soyatec.tooling.di.impl.NodeImpl
 	 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getNode()
 	 * @generated
@@ -133,7 +133,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Label</b></em>' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -142,7 +142,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -151,7 +151,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Element</b></em>' reference. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -160,7 +160,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>All Outgoing Lines</b></em>' attribute
 	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -169,7 +169,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>All Incoming Lines</b></em>' attribute
 	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -178,7 +178,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Comment Links</b></em>' reference list.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -187,7 +187,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Outgoing Lines</b></em>' reference list.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -196,7 +196,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Incoming Lines</b></em>' reference list.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -205,7 +205,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The number of structural features of the '<em>Node</em>' class. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -214,7 +214,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The number of operations of the '<em>Node</em>' class. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -224,7 +224,7 @@ public interface DiPackage extends EPackage {
 	 * The meta object id for the '
 	 * {@link org.soyatec.tooling.di.impl.ContainerImpl <em>Container</em>}'
 	 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.soyatec.tooling.di.impl.ContainerImpl
 	 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getContainer()
 	 * @generated
@@ -234,7 +234,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Label</b></em>' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -243,7 +243,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -252,7 +252,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Element</b></em>' reference. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -261,7 +261,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Children</b></em>' containment reference
 	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -270,7 +270,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Lines</b></em>' containment reference
 	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -279,7 +279,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>All Lines</b></em>' attribute list. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -288,7 +288,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>All Shapes</b></em>' attribute list. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -297,7 +297,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The number of structural features of the '<em>Container</em>' class. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -306,7 +306,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The number of operations of the '<em>Container</em>' class. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -316,7 +316,7 @@ public interface DiPackage extends EPackage {
 	 * The meta object id for the '
 	 * {@link org.soyatec.tooling.di.impl.DiagramImpl <em>Diagram</em>}' class.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.soyatec.tooling.di.impl.DiagramImpl
 	 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getDiagram()
 	 * @generated
@@ -326,7 +326,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Label</b></em>' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -335,7 +335,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -344,7 +344,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Element</b></em>' reference. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -353,7 +353,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Children</b></em>' containment reference
 	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -362,7 +362,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Lines</b></em>' attribute list. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -371,7 +371,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>All Lines</b></em>' attribute list. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -380,7 +380,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>All Shapes</b></em>' attribute list. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -389,7 +389,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Comments</b></em>' containment reference
 	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -398,7 +398,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Comment Links</b></em>' containment
 	 * reference list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -407,7 +407,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Rulers</b></em>' attribute list. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -416,7 +416,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Horizontal Ruler</b></em>' containment
 	 * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -425,7 +425,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Vertical Ruler</b></em>' containment
 	 * reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -434,7 +434,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Grid</b></em>' containment reference. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -443,7 +443,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Snap To Grid</b></em>' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -452,7 +452,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Snap To Geometry</b></em>' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -461,7 +461,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The number of structural features of the '<em>Diagram</em>' class. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -470,7 +470,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The number of operations of the '<em>Diagram</em>' class. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -479,7 +479,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The meta object id for the '{@link org.soyatec.tooling.di.impl.ShapeImpl
 	 * <em>Shape</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.soyatec.tooling.di.impl.ShapeImpl
 	 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getShape()
 	 * @generated
@@ -489,7 +489,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Label</b></em>' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -498,7 +498,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -507,7 +507,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Element</b></em>' reference. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -516,7 +516,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Children</b></em>' containment reference
 	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -525,7 +525,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Lines</b></em>' containment reference
 	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -534,7 +534,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>All Lines</b></em>' attribute list. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -543,7 +543,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>All Shapes</b></em>' attribute list. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -552,7 +552,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>All Outgoing Lines</b></em>' attribute
 	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -561,7 +561,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>All Incoming Lines</b></em>' attribute
 	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -570,7 +570,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Comment Links</b></em>' reference list.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -579,7 +579,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Outgoing Lines</b></em>' reference list.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -588,7 +588,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Incoming Lines</b></em>' reference list.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -597,7 +597,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Background</b></em>' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -606,7 +606,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Foreground</b></em>' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -615,7 +615,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Bounds</b></em>' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -624,7 +624,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The number of structural features of the '<em>Shape</em>' class. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -633,7 +633,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The number of operations of the '<em>Shape</em>' class. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -644,7 +644,7 @@ public interface DiPackage extends EPackage {
 	 * {@link org.soyatec.tooling.di.impl.GradientShapeImpl
 	 * <em>Gradient Shape</em>}' class. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @see org.soyatec.tooling.di.impl.GradientShapeImpl
 	 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getGradientShape()
 	 * @generated
@@ -654,7 +654,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Label</b></em>' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -663,7 +663,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -672,7 +672,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Element</b></em>' reference. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -681,7 +681,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Children</b></em>' containment reference
 	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -690,7 +690,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Lines</b></em>' containment reference
 	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -699,7 +699,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>All Lines</b></em>' attribute list. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -708,7 +708,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>All Shapes</b></em>' attribute list. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -717,7 +717,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>All Outgoing Lines</b></em>' attribute
 	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -726,7 +726,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>All Incoming Lines</b></em>' attribute
 	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -735,7 +735,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Comment Links</b></em>' reference list.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -744,7 +744,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Outgoing Lines</b></em>' reference list.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -753,7 +753,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Incoming Lines</b></em>' reference list.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -762,7 +762,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Background</b></em>' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -771,7 +771,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Foreground</b></em>' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -780,7 +780,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Bounds</b></em>' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -789,7 +789,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Using Gradient</b></em>' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -798,7 +798,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Gradient Color</b></em>' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -807,7 +807,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Vertical Gradient</b></em>' attribute.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -816,7 +816,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The number of structural features of the '<em>Gradient Shape</em>' class.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -825,7 +825,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The number of operations of the '<em>Gradient Shape</em>' class. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -834,7 +834,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The meta object id for the '{@link org.soyatec.tooling.di.impl.LineImpl
 	 * <em>Line</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.soyatec.tooling.di.impl.LineImpl
 	 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getLine()
 	 * @generated
@@ -844,7 +844,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Label</b></em>' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -853,7 +853,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -862,7 +862,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Element</b></em>' reference. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -871,7 +871,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>All Outgoing Lines</b></em>' attribute
 	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -880,7 +880,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>All Incoming Lines</b></em>' attribute
 	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -889,7 +889,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Comment Links</b></em>' reference list.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -898,7 +898,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Outgoing Lines</b></em>' reference list.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -907,7 +907,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Incoming Lines</b></em>' reference list.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -916,7 +916,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Color</b></em>' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -925,7 +925,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Width</b></em>' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -934,7 +934,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Source Anchor</b></em>' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -943,7 +943,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Target Anchor</b></em>' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -952,7 +952,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Source Node</b></em>' attribute list. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -961,7 +961,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Target Node</b></em>' attribute list. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -970,7 +970,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -979,7 +979,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Line Dash</b></em>' attribute list. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -988,7 +988,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The number of structural features of the '<em>Line</em>' class. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -997,7 +997,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The number of operations of the '<em>Line</em>' class. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1007,7 +1007,7 @@ public interface DiPackage extends EPackage {
 	 * The meta object id for the '
 	 * {@link org.soyatec.tooling.di.impl.ConnectorImpl <em>Connector</em>}'
 	 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.soyatec.tooling.di.impl.ConnectorImpl
 	 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getConnector()
 	 * @generated
@@ -1017,7 +1017,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Label</b></em>' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1026,7 +1026,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1035,7 +1035,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Element</b></em>' reference. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1044,7 +1044,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>All Outgoing Lines</b></em>' attribute
 	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1053,7 +1053,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>All Incoming Lines</b></em>' attribute
 	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1062,7 +1062,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Comment Links</b></em>' reference list.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1071,7 +1071,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Outgoing Lines</b></em>' reference list.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1080,7 +1080,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Incoming Lines</b></em>' reference list.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1089,7 +1089,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Color</b></em>' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1098,7 +1098,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Width</b></em>' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1107,7 +1107,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Source Anchor</b></em>' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1116,7 +1116,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Target Anchor</b></em>' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1125,7 +1125,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Source Node</b></em>' attribute list. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1134,7 +1134,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Target Node</b></em>' attribute list. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1143,7 +1143,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1152,7 +1152,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Line Dash</b></em>' attribute list. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1161,7 +1161,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Target</b></em>' reference. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1170,7 +1170,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Source</b></em>' reference. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1179,7 +1179,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Reverse Element</b></em>' reference. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1188,7 +1188,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The number of structural features of the '<em>Connector</em>' class. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1197,7 +1197,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The number of operations of the '<em>Connector</em>' class. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1207,7 +1207,7 @@ public interface DiPackage extends EPackage {
 	 * The meta object id for the '
 	 * {@link org.soyatec.tooling.di.impl.CommentImpl <em>Comment</em>}' class.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.soyatec.tooling.di.impl.CommentImpl
 	 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getComment()
 	 * @generated
@@ -1217,7 +1217,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Label</b></em>' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1226,7 +1226,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1235,7 +1235,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Element</b></em>' reference. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1244,7 +1244,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Children</b></em>' containment reference
 	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1253,7 +1253,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Lines</b></em>' containment reference
 	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1262,7 +1262,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>All Lines</b></em>' attribute list. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1271,7 +1271,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>All Shapes</b></em>' attribute list. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1280,7 +1280,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>All Outgoing Lines</b></em>' attribute
 	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1289,7 +1289,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>All Incoming Lines</b></em>' attribute
 	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1298,7 +1298,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Comment Links</b></em>' reference list.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1307,7 +1307,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Outgoing Lines</b></em>' reference list.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1316,7 +1316,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Incoming Lines</b></em>' reference list.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1325,7 +1325,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Background</b></em>' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1334,7 +1334,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Foreground</b></em>' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1343,7 +1343,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Bounds</b></em>' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1352,7 +1352,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Inputs</b></em>' reference list. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1361,7 +1361,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The number of structural features of the '<em>Comment</em>' class. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1370,7 +1370,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The number of operations of the '<em>Comment</em>' class. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1380,7 +1380,7 @@ public interface DiPackage extends EPackage {
 	 * The meta object id for the '
 	 * {@link org.soyatec.tooling.di.impl.CommentLinkImpl <em>Comment Link</em>}
 	 * ' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.soyatec.tooling.di.impl.CommentLinkImpl
 	 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getCommentLink()
 	 * @generated
@@ -1390,7 +1390,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Label</b></em>' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1399,7 +1399,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Id</b></em>' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1408,7 +1408,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Element</b></em>' reference. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1417,7 +1417,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>All Outgoing Lines</b></em>' attribute
 	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1426,7 +1426,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>All Incoming Lines</b></em>' attribute
 	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1435,7 +1435,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Comment Links</b></em>' reference list.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1444,7 +1444,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Outgoing Lines</b></em>' reference list.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1453,7 +1453,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Incoming Lines</b></em>' reference list.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1462,7 +1462,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Color</b></em>' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1471,7 +1471,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Width</b></em>' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1480,7 +1480,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Source Anchor</b></em>' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1489,7 +1489,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Target Anchor</b></em>' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1498,7 +1498,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Source Node</b></em>' attribute list. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1507,7 +1507,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Target Node</b></em>' attribute list. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1516,7 +1516,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1525,7 +1525,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Line Dash</b></em>' attribute list. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1534,7 +1534,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Source</b></em>' reference. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1543,7 +1543,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Target</b></em>' reference. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1552,7 +1552,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The number of structural features of the '<em>Comment Link</em>' class.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1561,7 +1561,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The number of operations of the '<em>Comment Link</em>' class. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1570,7 +1570,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The meta object id for the '{@link org.soyatec.tooling.di.impl.GridImpl
 	 * <em>Grid</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.soyatec.tooling.di.impl.GridImpl
 	 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getGrid()
 	 * @generated
@@ -1580,7 +1580,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Color</b></em>' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1589,7 +1589,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Spacing</b></em>' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1598,7 +1598,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Style</b></em>' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1607,7 +1607,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The number of structural features of the '<em>Grid</em>' class. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1616,7 +1616,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The number of operations of the '<em>Grid</em>' class. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1625,7 +1625,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The meta object id for the '{@link org.soyatec.tooling.di.impl.RulerImpl
 	 * <em>Ruler</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.soyatec.tooling.di.impl.RulerImpl
 	 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getRuler()
 	 * @generated
@@ -1635,7 +1635,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Unit</b></em>' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1644,7 +1644,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Guides</b></em>' containment reference
 	 * list. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1653,7 +1653,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The number of structural features of the '<em>Ruler</em>' class. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1662,7 +1662,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The number of operations of the '<em>Ruler</em>' class. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1671,7 +1671,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The meta object id for the '{@link org.soyatec.tooling.di.impl.GuideImpl
 	 * <em>Guide</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.soyatec.tooling.di.impl.GuideImpl
 	 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getGuide()
 	 * @generated
@@ -1681,7 +1681,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Ruler</b></em>' container reference. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1690,7 +1690,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Position</b></em>' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1699,7 +1699,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Element Map</b></em>' map. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1708,7 +1708,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The number of structural features of the '<em>Guide</em>' class. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1717,7 +1717,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The number of operations of the '<em>Guide</em>' class. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1728,7 +1728,7 @@ public interface DiPackage extends EPackage {
 	 * {@link org.soyatec.tooling.di.impl.ElementEntryImpl
 	 * <em>Element Entry</em>}' class. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 * 
+	 *
 	 * @see org.soyatec.tooling.di.impl.ElementEntryImpl
 	 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getElementEntry()
 	 * @generated
@@ -1738,7 +1738,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Key</b></em>' reference. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1747,7 +1747,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' attribute. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1756,7 +1756,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The number of structural features of the '<em>Element Entry</em>' class.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1765,7 +1765,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The number of operations of the '<em>Element Entry</em>' class. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 * @ordered
 	 */
@@ -1774,7 +1774,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The meta object id for the '{@link org.soyatec.tooling.di.LineStyle
 	 * <em>Line Style</em>}' enum. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.soyatec.tooling.di.LineStyle
 	 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getLineStyle()
 	 * @generated
@@ -1784,7 +1784,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The meta object id for the '{@link org.soyatec.tooling.di.RulerUnit
 	 * <em>Ruler Unit</em>}' enum. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.soyatec.tooling.di.RulerUnit
 	 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getRulerUnit()
 	 * @generated
@@ -1794,7 +1794,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The meta object id for the '{@link org.soyatec.tooling.di.Alignment
 	 * <em>Alignment</em>}' enum. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.soyatec.tooling.di.Alignment
 	 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getAlignment()
 	 * @generated
@@ -1804,7 +1804,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * The meta object id for the '<em>Rectangle</em>' data type. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see org.eclipse.draw2d.geometry.Rectangle
 	 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getRectangle()
 	 * @generated
@@ -1814,7 +1814,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * Returns the meta object for class '{@link org.soyatec.tooling.di.View
 	 * <em>View</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>View</em>'.
 	 * @see org.soyatec.tooling.di.View
 	 * @generated
@@ -1825,7 +1825,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for the attribute '
 	 * {@link org.soyatec.tooling.di.View#getLabel <em>Label</em>}'. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Label</em>'.
 	 * @see org.soyatec.tooling.di.View#getLabel()
 	 * @see #getView()
@@ -1837,7 +1837,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for the attribute '
 	 * {@link org.soyatec.tooling.di.View#getId <em>Id</em>}'. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Id</em>'.
 	 * @see org.soyatec.tooling.di.View#getId()
 	 * @see #getView()
@@ -1849,7 +1849,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for the reference '
 	 * {@link org.soyatec.tooling.di.View#getElement <em>Element</em>}'. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Element</em>'.
 	 * @see org.soyatec.tooling.di.View#getElement()
 	 * @see #getView()
@@ -1860,7 +1860,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * Returns the meta object for class '{@link org.soyatec.tooling.di.Node
 	 * <em>Node</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Node</em>'.
 	 * @see org.soyatec.tooling.di.Node
 	 * @generated
@@ -1872,7 +1872,7 @@ public interface DiPackage extends EPackage {
 	 * {@link org.soyatec.tooling.di.Node#getAllOutgoingLines
 	 * <em>All Outgoing Lines</em>}'. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 * 
+	 *
 	 * @return the meta object for the attribute list '
 	 *         <em>All Outgoing Lines</em>'.
 	 * @see org.soyatec.tooling.di.Node#getAllOutgoingLines()
@@ -1886,7 +1886,7 @@ public interface DiPackage extends EPackage {
 	 * {@link org.soyatec.tooling.di.Node#getAllIncomingLines
 	 * <em>All Incoming Lines</em>}'. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 * 
+	 *
 	 * @return the meta object for the attribute list '
 	 *         <em>All Incoming Lines</em>'.
 	 * @see org.soyatec.tooling.di.Node#getAllIncomingLines()
@@ -1899,7 +1899,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for the reference list '
 	 * {@link org.soyatec.tooling.di.Node#getCommentLinks
 	 * <em>Comment Links</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Comment Links</em>'.
 	 * @see org.soyatec.tooling.di.Node#getCommentLinks()
 	 * @see #getNode()
@@ -1911,7 +1911,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for the reference list '
 	 * {@link org.soyatec.tooling.di.Node#getOutgoingLines
 	 * <em>Outgoing Lines</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Outgoing Lines</em>'.
 	 * @see org.soyatec.tooling.di.Node#getOutgoingLines()
 	 * @see #getNode()
@@ -1923,7 +1923,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for the reference list '
 	 * {@link org.soyatec.tooling.di.Node#getIncomingLines
 	 * <em>Incoming Lines</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Incoming Lines</em>'.
 	 * @see org.soyatec.tooling.di.Node#getIncomingLines()
 	 * @see #getNode()
@@ -1935,7 +1935,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for class '
 	 * {@link org.soyatec.tooling.di.Container <em>Container</em>}'. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Container</em>'.
 	 * @see org.soyatec.tooling.di.Container
 	 * @generated
@@ -1946,7 +1946,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '
 	 * {@link org.soyatec.tooling.di.Container#getChildren <em>Children</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '
 	 *         <em>Children</em>'.
 	 * @see org.soyatec.tooling.di.Container#getChildren()
@@ -1959,7 +1959,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '
 	 * {@link org.soyatec.tooling.di.Container#getLines <em>Lines</em>}'. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '
 	 *         <em>Lines</em>'.
 	 * @see org.soyatec.tooling.di.Container#getLines()
@@ -1972,7 +1972,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for the attribute list '
 	 * {@link org.soyatec.tooling.di.Container#getAllLines <em>All Lines</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute list '<em>All Lines</em>'.
 	 * @see org.soyatec.tooling.di.Container#getAllLines()
 	 * @see #getContainer()
@@ -1984,7 +1984,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for the attribute list '
 	 * {@link org.soyatec.tooling.di.Container#getAllShapes <em>All Shapes</em>}
 	 * '. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute list '<em>All Shapes</em>'.
 	 * @see org.soyatec.tooling.di.Container#getAllShapes()
 	 * @see #getContainer()
@@ -1995,7 +1995,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * Returns the meta object for class '{@link org.soyatec.tooling.di.Diagram
 	 * <em>Diagram</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Diagram</em>'.
 	 * @see org.soyatec.tooling.di.Diagram
 	 * @generated
@@ -2006,7 +2006,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '
 	 * {@link org.soyatec.tooling.di.Diagram#getComments <em>Comments</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '
 	 *         <em>Comments</em>'.
 	 * @see org.soyatec.tooling.di.Diagram#getComments()
@@ -2019,7 +2019,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '
 	 * {@link org.soyatec.tooling.di.Diagram#getCommentLinks
 	 * <em>Comment Links</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '
 	 *         <em>Comment Links</em>'.
 	 * @see org.soyatec.tooling.di.Diagram#getCommentLinks()
@@ -2032,7 +2032,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for the attribute list '
 	 * {@link org.soyatec.tooling.di.Diagram#getRulers <em>Rulers</em>}'. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute list '<em>Rulers</em>'.
 	 * @see org.soyatec.tooling.di.Diagram#getRulers()
 	 * @see #getDiagram()
@@ -2045,7 +2045,7 @@ public interface DiPackage extends EPackage {
 	 * {@link org.soyatec.tooling.di.Diagram#getHorizontalRuler
 	 * <em>Horizontal Ruler</em>}'. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '
 	 *         <em>Horizontal Ruler</em>'.
 	 * @see org.soyatec.tooling.di.Diagram#getHorizontalRuler()
@@ -2058,7 +2058,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for the containment reference '
 	 * {@link org.soyatec.tooling.di.Diagram#getVerticalRuler
 	 * <em>Vertical Ruler</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '
 	 *         <em>Vertical Ruler</em>'.
 	 * @see org.soyatec.tooling.di.Diagram#getVerticalRuler()
@@ -2071,7 +2071,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for the containment reference '
 	 * {@link org.soyatec.tooling.di.Diagram#getGrid <em>Grid</em>}'. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference '<em>Grid</em>'.
 	 * @see org.soyatec.tooling.di.Diagram#getGrid()
 	 * @see #getDiagram()
@@ -2083,7 +2083,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for the attribute '
 	 * {@link org.soyatec.tooling.di.Diagram#isSnapToGrid <em>Snap To Grid</em>}
 	 * '. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Snap To Grid</em>'.
 	 * @see org.soyatec.tooling.di.Diagram#isSnapToGrid()
 	 * @see #getDiagram()
@@ -2096,7 +2096,7 @@ public interface DiPackage extends EPackage {
 	 * {@link org.soyatec.tooling.di.Diagram#isSnapToGeometry
 	 * <em>Snap To Geometry</em>}'. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Snap To Geometry</em>'.
 	 * @see org.soyatec.tooling.di.Diagram#isSnapToGeometry()
 	 * @see #getDiagram()
@@ -2107,7 +2107,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * Returns the meta object for class '{@link org.soyatec.tooling.di.Shape
 	 * <em>Shape</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Shape</em>'.
 	 * @see org.soyatec.tooling.di.Shape
 	 * @generated
@@ -2118,7 +2118,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for the attribute '
 	 * {@link org.soyatec.tooling.di.Shape#getBackground <em>Background</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Background</em>'.
 	 * @see org.soyatec.tooling.di.Shape#getBackground()
 	 * @see #getShape()
@@ -2130,7 +2130,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for the attribute '
 	 * {@link org.soyatec.tooling.di.Shape#getForeground <em>Foreground</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Foreground</em>'.
 	 * @see org.soyatec.tooling.di.Shape#getForeground()
 	 * @see #getShape()
@@ -2142,7 +2142,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for the attribute '
 	 * {@link org.soyatec.tooling.di.Shape#getBounds <em>Bounds</em>}'. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Bounds</em>'.
 	 * @see org.soyatec.tooling.di.Shape#getBounds()
 	 * @see #getShape()
@@ -2154,7 +2154,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for class '
 	 * {@link org.soyatec.tooling.di.GradientShape <em>Gradient Shape</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Gradient Shape</em>'.
 	 * @see org.soyatec.tooling.di.GradientShape
 	 * @generated
@@ -2165,7 +2165,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for the attribute '
 	 * {@link org.soyatec.tooling.di.GradientShape#isUsingGradient
 	 * <em>Using Gradient</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Using Gradient</em>'.
 	 * @see org.soyatec.tooling.di.GradientShape#isUsingGradient()
 	 * @see #getGradientShape()
@@ -2177,7 +2177,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for the attribute '
 	 * {@link org.soyatec.tooling.di.GradientShape#getGradientColor
 	 * <em>Gradient Color</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Gradient Color</em>'.
 	 * @see org.soyatec.tooling.di.GradientShape#getGradientColor()
 	 * @see #getGradientShape()
@@ -2190,7 +2190,7 @@ public interface DiPackage extends EPackage {
 	 * {@link org.soyatec.tooling.di.GradientShape#isVerticalGradient
 	 * <em>Vertical Gradient</em>}'. <!-- begin-user-doc --> <!-- end-user-doc
 	 * -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Vertical Gradient</em>'.
 	 * @see org.soyatec.tooling.di.GradientShape#isVerticalGradient()
 	 * @see #getGradientShape()
@@ -2201,7 +2201,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * Returns the meta object for class '{@link org.soyatec.tooling.di.Line
 	 * <em>Line</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Line</em>'.
 	 * @see org.soyatec.tooling.di.Line
 	 * @generated
@@ -2212,7 +2212,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for the attribute '
 	 * {@link org.soyatec.tooling.di.Line#getColor <em>Color</em>}'. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Color</em>'.
 	 * @see org.soyatec.tooling.di.Line#getColor()
 	 * @see #getLine()
@@ -2224,7 +2224,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for the attribute '
 	 * {@link org.soyatec.tooling.di.Line#getWidth <em>Width</em>}'. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Width</em>'.
 	 * @see org.soyatec.tooling.di.Line#getWidth()
 	 * @see #getLine()
@@ -2236,7 +2236,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for the attribute '
 	 * {@link org.soyatec.tooling.di.Line#getSourceAnchor
 	 * <em>Source Anchor</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Source Anchor</em>'.
 	 * @see org.soyatec.tooling.di.Line#getSourceAnchor()
 	 * @see #getLine()
@@ -2248,7 +2248,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for the attribute '
 	 * {@link org.soyatec.tooling.di.Line#getTargetAnchor
 	 * <em>Target Anchor</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Target Anchor</em>'.
 	 * @see org.soyatec.tooling.di.Line#getTargetAnchor()
 	 * @see #getLine()
@@ -2260,7 +2260,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for the attribute list '
 	 * {@link org.soyatec.tooling.di.Line#getSourceNode <em>Source Node</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute list '<em>Source Node</em>'.
 	 * @see org.soyatec.tooling.di.Line#getSourceNode()
 	 * @see #getLine()
@@ -2272,7 +2272,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for the attribute list '
 	 * {@link org.soyatec.tooling.di.Line#getTargetNode <em>Target Node</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute list '<em>Target Node</em>'.
 	 * @see org.soyatec.tooling.di.Line#getTargetNode()
 	 * @see #getLine()
@@ -2284,7 +2284,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for the attribute '
 	 * {@link org.soyatec.tooling.di.Line#getStyle <em>Style</em>}'. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Style</em>'.
 	 * @see org.soyatec.tooling.di.Line#getStyle()
 	 * @see #getLine()
@@ -2296,7 +2296,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for the attribute list '
 	 * {@link org.soyatec.tooling.di.Line#getLineDash <em>Line Dash</em>}'. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute list '<em>Line Dash</em>'.
 	 * @see org.soyatec.tooling.di.Line#getLineDash()
 	 * @see #getLine()
@@ -2308,7 +2308,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for class '
 	 * {@link org.soyatec.tooling.di.Connector <em>Connector</em>}'. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Connector</em>'.
 	 * @see org.soyatec.tooling.di.Connector
 	 * @generated
@@ -2319,7 +2319,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for the reference '
 	 * {@link org.soyatec.tooling.di.Connector#getTarget <em>Target</em>}'. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Target</em>'.
 	 * @see org.soyatec.tooling.di.Connector#getTarget()
 	 * @see #getConnector()
@@ -2331,7 +2331,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for the reference '
 	 * {@link org.soyatec.tooling.di.Connector#getSource <em>Source</em>}'. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Source</em>'.
 	 * @see org.soyatec.tooling.di.Connector#getSource()
 	 * @see #getConnector()
@@ -2343,7 +2343,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for the reference '
 	 * {@link org.soyatec.tooling.di.Connector#getReverseElement
 	 * <em>Reverse Element</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Reverse Element</em>'.
 	 * @see org.soyatec.tooling.di.Connector#getReverseElement()
 	 * @see #getConnector()
@@ -2354,7 +2354,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * Returns the meta object for class '{@link org.soyatec.tooling.di.Comment
 	 * <em>Comment</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Comment</em>'.
 	 * @see org.soyatec.tooling.di.Comment
 	 * @generated
@@ -2365,7 +2365,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for the reference list '
 	 * {@link org.soyatec.tooling.di.Comment#getInputs <em>Inputs</em>}'. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference list '<em>Inputs</em>'.
 	 * @see org.soyatec.tooling.di.Comment#getInputs()
 	 * @see #getComment()
@@ -2377,7 +2377,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for class '
 	 * {@link org.soyatec.tooling.di.CommentLink <em>Comment Link</em>}'. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Comment Link</em>'.
 	 * @see org.soyatec.tooling.di.CommentLink
 	 * @generated
@@ -2388,7 +2388,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for the reference '
 	 * {@link org.soyatec.tooling.di.CommentLink#getSource <em>Source</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Source</em>'.
 	 * @see org.soyatec.tooling.di.CommentLink#getSource()
 	 * @see #getCommentLink()
@@ -2400,7 +2400,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for the reference '
 	 * {@link org.soyatec.tooling.di.CommentLink#getTarget <em>Target</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Target</em>'.
 	 * @see org.soyatec.tooling.di.CommentLink#getTarget()
 	 * @see #getCommentLink()
@@ -2411,7 +2411,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * Returns the meta object for class '{@link org.soyatec.tooling.di.Grid
 	 * <em>Grid</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Grid</em>'.
 	 * @see org.soyatec.tooling.di.Grid
 	 * @generated
@@ -2422,7 +2422,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for the attribute '
 	 * {@link org.soyatec.tooling.di.Grid#getColor <em>Color</em>}'. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Color</em>'.
 	 * @see org.soyatec.tooling.di.Grid#getColor()
 	 * @see #getGrid()
@@ -2434,7 +2434,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for the attribute '
 	 * {@link org.soyatec.tooling.di.Grid#getSpacing <em>Spacing</em>}'. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Spacing</em>'.
 	 * @see org.soyatec.tooling.di.Grid#getSpacing()
 	 * @see #getGrid()
@@ -2446,7 +2446,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for the attribute '
 	 * {@link org.soyatec.tooling.di.Grid#getStyle <em>Style</em>}'. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Style</em>'.
 	 * @see org.soyatec.tooling.di.Grid#getStyle()
 	 * @see #getGrid()
@@ -2457,7 +2457,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * Returns the meta object for class '{@link org.soyatec.tooling.di.Ruler
 	 * <em>Ruler</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Ruler</em>'.
 	 * @see org.soyatec.tooling.di.Ruler
 	 * @generated
@@ -2468,7 +2468,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for the attribute '
 	 * {@link org.soyatec.tooling.di.Ruler#getUnit <em>Unit</em>}'. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Unit</em>'.
 	 * @see org.soyatec.tooling.di.Ruler#getUnit()
 	 * @see #getRuler()
@@ -2480,7 +2480,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for the containment reference list '
 	 * {@link org.soyatec.tooling.di.Ruler#getGuides <em>Guides</em>}'. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the containment reference list '
 	 *         <em>Guides</em>'.
 	 * @see org.soyatec.tooling.di.Ruler#getGuides()
@@ -2492,7 +2492,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * Returns the meta object for class '{@link org.soyatec.tooling.di.Guide
 	 * <em>Guide</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Guide</em>'.
 	 * @see org.soyatec.tooling.di.Guide
 	 * @generated
@@ -2503,7 +2503,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for the container reference '
 	 * {@link org.soyatec.tooling.di.Guide#getRuler <em>Ruler</em>}'. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the container reference '<em>Ruler</em>'.
 	 * @see org.soyatec.tooling.di.Guide#getRuler()
 	 * @see #getGuide()
@@ -2515,7 +2515,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for the attribute '
 	 * {@link org.soyatec.tooling.di.Guide#getPosition <em>Position</em>}'. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Position</em>'.
 	 * @see org.soyatec.tooling.di.Guide#getPosition()
 	 * @see #getGuide()
@@ -2527,7 +2527,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for the map '
 	 * {@link org.soyatec.tooling.di.Guide#getElementMap <em>Element Map</em>}'.
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the map '<em>Element Map</em>'.
 	 * @see org.soyatec.tooling.di.Guide#getElementMap()
 	 * @see #getGuide()
@@ -2538,7 +2538,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * Returns the meta object for class '{@link java.util.Map.Entry
 	 * <em>Element Entry</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for class '<em>Element Entry</em>'.
 	 * @see java.util.Map.Entry
 	 * @model keyType="org.soyatec.tooling.di.View" keyRequired="true"
@@ -2550,7 +2550,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * Returns the meta object for the reference '{@link java.util.Map.Entry
 	 * <em>Key</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the reference '<em>Key</em>'.
 	 * @see java.util.Map.Entry
 	 * @see #getElementEntry()
@@ -2561,7 +2561,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * Returns the meta object for the attribute '{@link java.util.Map.Entry
 	 * <em>Value</em>}'. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for the attribute '<em>Value</em>'.
 	 * @see java.util.Map.Entry
 	 * @see #getElementEntry()
@@ -2573,7 +2573,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for enum '
 	 * {@link org.soyatec.tooling.di.LineStyle <em>Line Style</em>}'. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for enum '<em>Line Style</em>'.
 	 * @see org.soyatec.tooling.di.LineStyle
 	 * @generated
@@ -2584,7 +2584,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for enum '
 	 * {@link org.soyatec.tooling.di.RulerUnit <em>Ruler Unit</em>}'. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for enum '<em>Ruler Unit</em>'.
 	 * @see org.soyatec.tooling.di.RulerUnit
 	 * @generated
@@ -2595,7 +2595,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for enum '
 	 * {@link org.soyatec.tooling.di.Alignment <em>Alignment</em>}'. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for enum '<em>Alignment</em>'.
 	 * @see org.soyatec.tooling.di.Alignment
 	 * @generated
@@ -2606,7 +2606,7 @@ public interface DiPackage extends EPackage {
 	 * Returns the meta object for data type '
 	 * {@link org.eclipse.draw2d.geometry.Rectangle <em>Rectangle</em>}'. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the meta object for data type '<em>Rectangle</em>'.
 	 * @see org.eclipse.draw2d.geometry.Rectangle
 	 * @model instanceClass="org.eclipse.draw2d.geometry.Rectangle"
@@ -2617,7 +2617,7 @@ public interface DiPackage extends EPackage {
 	/**
 	 * Returns the factory that creates the instances of the model. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the factory that creates the instances of the model.
 	 * @generated
 	 */
@@ -2634,7 +2634,7 @@ public interface DiPackage extends EPackage {
 	 * <li>and each data type</li>
 	 * </ul>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	interface Literals {
@@ -2642,7 +2642,7 @@ public interface DiPackage extends EPackage {
 		 * The meta object literal for the '
 		 * {@link org.soyatec.tooling.di.impl.ViewImpl <em>View</em>}' class.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.soyatec.tooling.di.impl.ViewImpl
 		 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getView()
 		 * @generated
@@ -2652,7 +2652,7 @@ public interface DiPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Label</b></em>' attribute
 		 * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute VIEW__LABEL = eINSTANCE.getView_Label();
@@ -2660,7 +2660,7 @@ public interface DiPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Id</b></em>' attribute
 		 * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute VIEW__ID = eINSTANCE.getView_Id();
@@ -2668,7 +2668,7 @@ public interface DiPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Element</b></em>' reference
 		 * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference VIEW__ELEMENT = eINSTANCE.getView_Element();
@@ -2677,7 +2677,7 @@ public interface DiPackage extends EPackage {
 		 * The meta object literal for the '
 		 * {@link org.soyatec.tooling.di.impl.NodeImpl <em>Node</em>}' class.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.soyatec.tooling.di.impl.NodeImpl
 		 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getNode()
 		 * @generated
@@ -2687,7 +2687,7 @@ public interface DiPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>All Outgoing Lines</b></em>'
 		 * attribute list feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute NODE__ALL_OUTGOING_LINES = eINSTANCE
@@ -2696,7 +2696,7 @@ public interface DiPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>All Incoming Lines</b></em>'
 		 * attribute list feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute NODE__ALL_INCOMING_LINES = eINSTANCE
@@ -2705,7 +2705,7 @@ public interface DiPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Comment Links</b></em>'
 		 * reference list feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference NODE__COMMENT_LINKS = eINSTANCE.getNode_CommentLinks();
@@ -2713,7 +2713,7 @@ public interface DiPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Outgoing Lines</b></em>'
 		 * reference list feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference NODE__OUTGOING_LINES = eINSTANCE.getNode_OutgoingLines();
@@ -2721,7 +2721,7 @@ public interface DiPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Incoming Lines</b></em>'
 		 * reference list feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference NODE__INCOMING_LINES = eINSTANCE.getNode_IncomingLines();
@@ -2730,7 +2730,7 @@ public interface DiPackage extends EPackage {
 		 * The meta object literal for the '
 		 * {@link org.soyatec.tooling.di.impl.ContainerImpl <em>Container</em>}'
 		 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.soyatec.tooling.di.impl.ContainerImpl
 		 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getContainer()
 		 * @generated
@@ -2741,7 +2741,7 @@ public interface DiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Children</b></em>'
 		 * containment reference list feature. <!-- begin-user-doc --> <!--
 		 * end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference CONTAINER__CHILDREN = eINSTANCE.getContainer_Children();
@@ -2749,7 +2749,7 @@ public interface DiPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Lines</b></em>' containment
 		 * reference list feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference CONTAINER__LINES = eINSTANCE.getContainer_Lines();
@@ -2757,7 +2757,7 @@ public interface DiPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>All Lines</b></em>' attribute
 		 * list feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute CONTAINER__ALL_LINES = eINSTANCE.getContainer_AllLines();
@@ -2765,7 +2765,7 @@ public interface DiPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>All Shapes</b></em>'
 		 * attribute list feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute CONTAINER__ALL_SHAPES = eINSTANCE.getContainer_AllShapes();
@@ -2774,7 +2774,7 @@ public interface DiPackage extends EPackage {
 		 * The meta object literal for the '
 		 * {@link org.soyatec.tooling.di.impl.DiagramImpl <em>Diagram</em>}'
 		 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.soyatec.tooling.di.impl.DiagramImpl
 		 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getDiagram()
 		 * @generated
@@ -2785,7 +2785,7 @@ public interface DiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Comments</b></em>'
 		 * containment reference list feature. <!-- begin-user-doc --> <!--
 		 * end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference DIAGRAM__COMMENTS = eINSTANCE.getDiagram_Comments();
@@ -2794,7 +2794,7 @@ public interface DiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Comment Links</b></em>'
 		 * containment reference list feature. <!-- begin-user-doc --> <!--
 		 * end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference DIAGRAM__COMMENT_LINKS = eINSTANCE.getDiagram_CommentLinks();
@@ -2802,7 +2802,7 @@ public interface DiPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Rulers</b></em>' attribute
 		 * list feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute DIAGRAM__RULERS = eINSTANCE.getDiagram_Rulers();
@@ -2811,7 +2811,7 @@ public interface DiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Horizontal Ruler</b></em>'
 		 * containment reference feature. <!-- begin-user-doc --> <!--
 		 * end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference DIAGRAM__HORIZONTAL_RULER = eINSTANCE
@@ -2821,7 +2821,7 @@ public interface DiPackage extends EPackage {
 		 * The meta object literal for the '<em><b>Vertical Ruler</b></em>'
 		 * containment reference feature. <!-- begin-user-doc --> <!--
 		 * end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference DIAGRAM__VERTICAL_RULER = eINSTANCE
@@ -2830,7 +2830,7 @@ public interface DiPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Grid</b></em>' containment
 		 * reference feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference DIAGRAM__GRID = eINSTANCE.getDiagram_Grid();
@@ -2838,7 +2838,7 @@ public interface DiPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Snap To Grid</b></em>'
 		 * attribute feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute DIAGRAM__SNAP_TO_GRID = eINSTANCE.getDiagram_SnapToGrid();
@@ -2846,7 +2846,7 @@ public interface DiPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Snap To Geometry</b></em>'
 		 * attribute feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute DIAGRAM__SNAP_TO_GEOMETRY = eINSTANCE
@@ -2856,7 +2856,7 @@ public interface DiPackage extends EPackage {
 		 * The meta object literal for the '
 		 * {@link org.soyatec.tooling.di.impl.ShapeImpl <em>Shape</em>}' class.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.soyatec.tooling.di.impl.ShapeImpl
 		 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getShape()
 		 * @generated
@@ -2866,7 +2866,7 @@ public interface DiPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Background</b></em>'
 		 * attribute feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute SHAPE__BACKGROUND = eINSTANCE.getShape_Background();
@@ -2874,7 +2874,7 @@ public interface DiPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Foreground</b></em>'
 		 * attribute feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute SHAPE__FOREGROUND = eINSTANCE.getShape_Foreground();
@@ -2882,7 +2882,7 @@ public interface DiPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Bounds</b></em>' attribute
 		 * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute SHAPE__BOUNDS = eINSTANCE.getShape_Bounds();
@@ -2892,7 +2892,7 @@ public interface DiPackage extends EPackage {
 		 * {@link org.soyatec.tooling.di.impl.GradientShapeImpl
 		 * <em>Gradient Shape</em>}' class. <!-- begin-user-doc --> <!--
 		 * end-user-doc -->
-		 * 
+		 *
 		 * @see org.soyatec.tooling.di.impl.GradientShapeImpl
 		 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getGradientShape()
 		 * @generated
@@ -2902,7 +2902,7 @@ public interface DiPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Using Gradient</b></em>'
 		 * attribute feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute GRADIENT_SHAPE__USING_GRADIENT = eINSTANCE
@@ -2911,7 +2911,7 @@ public interface DiPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Gradient Color</b></em>'
 		 * attribute feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute GRADIENT_SHAPE__GRADIENT_COLOR = eINSTANCE
@@ -2920,7 +2920,7 @@ public interface DiPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Vertical Gradient</b></em>'
 		 * attribute feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute GRADIENT_SHAPE__VERTICAL_GRADIENT = eINSTANCE
@@ -2930,7 +2930,7 @@ public interface DiPackage extends EPackage {
 		 * The meta object literal for the '
 		 * {@link org.soyatec.tooling.di.impl.LineImpl <em>Line</em>}' class.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.soyatec.tooling.di.impl.LineImpl
 		 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getLine()
 		 * @generated
@@ -2940,7 +2940,7 @@ public interface DiPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Color</b></em>' attribute
 		 * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute LINE__COLOR = eINSTANCE.getLine_Color();
@@ -2948,7 +2948,7 @@ public interface DiPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Width</b></em>' attribute
 		 * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute LINE__WIDTH = eINSTANCE.getLine_Width();
@@ -2956,7 +2956,7 @@ public interface DiPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Source Anchor</b></em>'
 		 * attribute feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute LINE__SOURCE_ANCHOR = eINSTANCE.getLine_SourceAnchor();
@@ -2964,7 +2964,7 @@ public interface DiPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Target Anchor</b></em>'
 		 * attribute feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute LINE__TARGET_ANCHOR = eINSTANCE.getLine_TargetAnchor();
@@ -2972,7 +2972,7 @@ public interface DiPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Source Node</b></em>'
 		 * attribute list feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute LINE__SOURCE_NODE = eINSTANCE.getLine_SourceNode();
@@ -2980,7 +2980,7 @@ public interface DiPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Target Node</b></em>'
 		 * attribute list feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute LINE__TARGET_NODE = eINSTANCE.getLine_TargetNode();
@@ -2988,7 +2988,7 @@ public interface DiPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Style</b></em>' attribute
 		 * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute LINE__STYLE = eINSTANCE.getLine_Style();
@@ -2996,7 +2996,7 @@ public interface DiPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Line Dash</b></em>' attribute
 		 * list feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute LINE__LINE_DASH = eINSTANCE.getLine_LineDash();
@@ -3005,7 +3005,7 @@ public interface DiPackage extends EPackage {
 		 * The meta object literal for the '
 		 * {@link org.soyatec.tooling.di.impl.ConnectorImpl <em>Connector</em>}'
 		 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.soyatec.tooling.di.impl.ConnectorImpl
 		 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getConnector()
 		 * @generated
@@ -3015,7 +3015,7 @@ public interface DiPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Target</b></em>' reference
 		 * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference CONNECTOR__TARGET = eINSTANCE.getConnector_Target();
@@ -3023,7 +3023,7 @@ public interface DiPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Source</b></em>' reference
 		 * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference CONNECTOR__SOURCE = eINSTANCE.getConnector_Source();
@@ -3031,7 +3031,7 @@ public interface DiPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Reverse Element</b></em>'
 		 * reference feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference CONNECTOR__REVERSE_ELEMENT = eINSTANCE
@@ -3041,7 +3041,7 @@ public interface DiPackage extends EPackage {
 		 * The meta object literal for the '
 		 * {@link org.soyatec.tooling.di.impl.CommentImpl <em>Comment</em>}'
 		 * class. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.soyatec.tooling.di.impl.CommentImpl
 		 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getComment()
 		 * @generated
@@ -3051,7 +3051,7 @@ public interface DiPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Inputs</b></em>' reference
 		 * list feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference COMMENT__INPUTS = eINSTANCE.getComment_Inputs();
@@ -3061,7 +3061,7 @@ public interface DiPackage extends EPackage {
 		 * {@link org.soyatec.tooling.di.impl.CommentLinkImpl
 		 * <em>Comment Link</em>}' class. <!-- begin-user-doc --> <!--
 		 * end-user-doc -->
-		 * 
+		 *
 		 * @see org.soyatec.tooling.di.impl.CommentLinkImpl
 		 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getCommentLink()
 		 * @generated
@@ -3071,7 +3071,7 @@ public interface DiPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Source</b></em>' reference
 		 * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference COMMENT_LINK__SOURCE = eINSTANCE.getCommentLink_Source();
@@ -3079,7 +3079,7 @@ public interface DiPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Target</b></em>' reference
 		 * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference COMMENT_LINK__TARGET = eINSTANCE.getCommentLink_Target();
@@ -3088,7 +3088,7 @@ public interface DiPackage extends EPackage {
 		 * The meta object literal for the '
 		 * {@link org.soyatec.tooling.di.impl.GridImpl <em>Grid</em>}' class.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.soyatec.tooling.di.impl.GridImpl
 		 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getGrid()
 		 * @generated
@@ -3098,7 +3098,7 @@ public interface DiPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Color</b></em>' attribute
 		 * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute GRID__COLOR = eINSTANCE.getGrid_Color();
@@ -3106,7 +3106,7 @@ public interface DiPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Spacing</b></em>' attribute
 		 * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute GRID__SPACING = eINSTANCE.getGrid_Spacing();
@@ -3114,7 +3114,7 @@ public interface DiPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Style</b></em>' attribute
 		 * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute GRID__STYLE = eINSTANCE.getGrid_Style();
@@ -3123,7 +3123,7 @@ public interface DiPackage extends EPackage {
 		 * The meta object literal for the '
 		 * {@link org.soyatec.tooling.di.impl.RulerImpl <em>Ruler</em>}' class.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.soyatec.tooling.di.impl.RulerImpl
 		 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getRuler()
 		 * @generated
@@ -3133,7 +3133,7 @@ public interface DiPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Unit</b></em>' attribute
 		 * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute RULER__UNIT = eINSTANCE.getRuler_Unit();
@@ -3141,7 +3141,7 @@ public interface DiPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Guides</b></em>' containment
 		 * reference list feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference RULER__GUIDES = eINSTANCE.getRuler_Guides();
@@ -3150,7 +3150,7 @@ public interface DiPackage extends EPackage {
 		 * The meta object literal for the '
 		 * {@link org.soyatec.tooling.di.impl.GuideImpl <em>Guide</em>}' class.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.soyatec.tooling.di.impl.GuideImpl
 		 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getGuide()
 		 * @generated
@@ -3160,7 +3160,7 @@ public interface DiPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Ruler</b></em>' container
 		 * reference feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference GUIDE__RULER = eINSTANCE.getGuide_Ruler();
@@ -3168,7 +3168,7 @@ public interface DiPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Position</b></em>' attribute
 		 * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute GUIDE__POSITION = eINSTANCE.getGuide_Position();
@@ -3176,7 +3176,7 @@ public interface DiPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Element Map</b></em>' map
 		 * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference GUIDE__ELEMENT_MAP = eINSTANCE.getGuide_ElementMap();
@@ -3186,7 +3186,7 @@ public interface DiPackage extends EPackage {
 		 * {@link org.soyatec.tooling.di.impl.ElementEntryImpl
 		 * <em>Element Entry</em>}' class. <!-- begin-user-doc --> <!--
 		 * end-user-doc -->
-		 * 
+		 *
 		 * @see org.soyatec.tooling.di.impl.ElementEntryImpl
 		 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getElementEntry()
 		 * @generated
@@ -3196,7 +3196,7 @@ public interface DiPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Key</b></em>' reference
 		 * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EReference ELEMENT_ENTRY__KEY = eINSTANCE.getElementEntry_Key();
@@ -3204,7 +3204,7 @@ public interface DiPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em><b>Value</b></em>' attribute
 		 * feature. <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @generated
 		 */
 		EAttribute ELEMENT_ENTRY__VALUE = eINSTANCE.getElementEntry_Value();
@@ -3213,7 +3213,7 @@ public interface DiPackage extends EPackage {
 		 * The meta object literal for the '
 		 * {@link org.soyatec.tooling.di.LineStyle <em>Line Style</em>}' enum.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.soyatec.tooling.di.LineStyle
 		 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getLineStyle()
 		 * @generated
@@ -3224,7 +3224,7 @@ public interface DiPackage extends EPackage {
 		 * The meta object literal for the '
 		 * {@link org.soyatec.tooling.di.RulerUnit <em>Ruler Unit</em>}' enum.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.soyatec.tooling.di.RulerUnit
 		 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getRulerUnit()
 		 * @generated
@@ -3235,7 +3235,7 @@ public interface DiPackage extends EPackage {
 		 * The meta object literal for the '
 		 * {@link org.soyatec.tooling.di.Alignment <em>Alignment</em>}' enum.
 		 * <!-- begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.soyatec.tooling.di.Alignment
 		 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getAlignment()
 		 * @generated
@@ -3245,7 +3245,7 @@ public interface DiPackage extends EPackage {
 		/**
 		 * The meta object literal for the '<em>Rectangle</em>' data type. <!--
 		 * begin-user-doc --> <!-- end-user-doc -->
-		 * 
+		 *
 		 * @see org.eclipse.draw2d.geometry.Rectangle
 		 * @see org.soyatec.tooling.di.impl.DiPackageImpl#getRectangle()
 		 * @generated

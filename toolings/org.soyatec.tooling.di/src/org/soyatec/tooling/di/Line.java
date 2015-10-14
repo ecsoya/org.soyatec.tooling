@@ -48,7 +48,7 @@ public interface Line extends Node {
 	 * really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Color</em>' attribute.
 	 * @see #setColor(int)
 	 * @see org.soyatec.tooling.di.DiPackage#getLine_Color()
@@ -60,7 +60,7 @@ public interface Line extends Node {
 	/**
 	 * Sets the value of the '{@link org.soyatec.tooling.di.Line#getColor
 	 * <em>Color</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Color</em>' attribute.
 	 * @see #getColor()
@@ -76,7 +76,7 @@ public interface Line extends Node {
 	 * really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Width</em>' attribute.
 	 * @see #setWidth(int)
 	 * @see org.soyatec.tooling.di.DiPackage#getLine_Width()
@@ -88,7 +88,7 @@ public interface Line extends Node {
 	/**
 	 * Sets the value of the '{@link org.soyatec.tooling.di.Line#getWidth
 	 * <em>Width</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Width</em>' attribute.
 	 * @see #getWidth()
@@ -104,7 +104,7 @@ public interface Line extends Node {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Source Anchor</em>' attribute.
 	 * @see #setSourceAnchor(String)
 	 * @see org.soyatec.tooling.di.DiPackage#getLine_SourceAnchor()
@@ -118,7 +118,7 @@ public interface Line extends Node {
 	 * {@link org.soyatec.tooling.di.Line#getSourceAnchor
 	 * <em>Source Anchor</em>}' attribute. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Source Anchor</em>' attribute.
 	 * @see #getSourceAnchor()
@@ -134,7 +134,7 @@ public interface Line extends Node {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Target Anchor</em>' attribute.
 	 * @see #setTargetAnchor(String)
 	 * @see org.soyatec.tooling.di.DiPackage#getLine_TargetAnchor()
@@ -148,7 +148,7 @@ public interface Line extends Node {
 	 * {@link org.soyatec.tooling.di.Line#getTargetAnchor
 	 * <em>Target Anchor</em>}' attribute. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Target Anchor</em>' attribute.
 	 * @see #getTargetAnchor()
@@ -166,7 +166,7 @@ public interface Line extends Node {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Source Node</em>' attribute list.
 	 * @see org.soyatec.tooling.di.DiPackage#getLine_SourceNode()
 	 * @model dataType="org.eclipse.emf.ecore.EFeatureMapEntry" many="false"
@@ -185,7 +185,7 @@ public interface Line extends Node {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Target Node</em>' attribute list.
 	 * @see org.soyatec.tooling.di.DiPackage#getLine_TargetNode()
 	 * @model dataType="org.eclipse.emf.ecore.EFeatureMapEntry" many="false"
@@ -203,7 +203,7 @@ public interface Line extends Node {
 	 * really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Style</em>' attribute.
 	 * @see org.soyatec.tooling.di.LineStyle
 	 * @see #setStyle(LineStyle)
@@ -216,7 +216,7 @@ public interface Line extends Node {
 	/**
 	 * Sets the value of the '{@link org.soyatec.tooling.di.Line#getStyle
 	 * <em>Style</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Style</em>' attribute.
 	 * @see org.soyatec.tooling.di.LineStyle
@@ -234,7 +234,7 @@ public interface Line extends Node {
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Line Dash</em>' attribute list.
 	 * @see org.soyatec.tooling.di.DiPackage#getLine_LineDash()
 	 * @model

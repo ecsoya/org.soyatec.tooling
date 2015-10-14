@@ -21,7 +21,8 @@ public abstract class AbstractPropertyTab implements IPropertyTab {
 	protected ISelection selection;
 	protected Object input;
 
-	public void selectionChanged(IWorkbenchPart part, ISelection selection) {
+	public void selectionChanged(final IWorkbenchPart part,
+			final ISelection selection) {
 		this.activePart = part;
 		this.selection = selection;
 		Object input = null;
@@ -32,7 +33,7 @@ public abstract class AbstractPropertyTab implements IPropertyTab {
 		refresh();
 	}
 
-	protected void setInput(Object newInput) {
+	protected void setInput(final Object newInput) {
 		this.input = newInput;
 	}
 

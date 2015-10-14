@@ -38,10 +38,10 @@ public abstract class TreeViewerViewPart extends ViewPart implements
 	protected TreeViewer treeViewer;
 	private ViewActionBarContributor actionContributor;
 
-	public void init(IViewSite site) throws PartInitException {
+	public void init(final IViewSite site) throws PartInitException {
 		super.init(site);
-		IActionBars actionBars = site.getActionBars();
-		ViewActionBarContributor actionContributor = getActionContributor();
+		final IActionBars actionBars = site.getActionBars();
+		final ViewActionBarContributor actionContributor = getActionContributor();
 		if (actionContributor != null) {
 			actionContributor.contributeActionBars(actionBars);
 		}
@@ -65,7 +65,7 @@ public abstract class TreeViewerViewPart extends ViewPart implements
 		return null;
 	}
 
-	public void selectReveal(ISelection selection) {
+	public void selectReveal(final ISelection selection) {
 		if (treeViewer == null || treeViewer.getControl() == null
 				|| treeViewer.getControl().isDisposed()) {
 			return;
@@ -73,17 +73,17 @@ public abstract class TreeViewerViewPart extends ViewPart implements
 		treeViewer.setSelection(convertSelection(selection), true);
 	}
 
-	protected ISelection convertSelection(ISelection selection) {
+	protected ISelection convertSelection(final ISelection selection) {
 		return selection;
 	}
 
-	final public void createPartControl(Composite parent) {
+	final public void createPartControl(final Composite parent) {
 		treeViewer = new TreeViewer(parent, getTreeStyle());
 
 		treeViewer.addDoubleClickListener(new IDoubleClickListener() {
 
-			public void doubleClick(DoubleClickEvent event) {
-				IStructuredSelection selection = (IStructuredSelection) treeViewer
+			public void doubleClick(final DoubleClickEvent event) {
+				final IStructuredSelection selection = (IStructuredSelection) treeViewer
 						.getSelection();
 				final Object element = selection.getFirstElement();
 				treeViewer.setExpandedState(element,
@@ -95,37 +95,37 @@ public abstract class TreeViewerViewPart extends ViewPart implements
 		configureTreeViewer();
 
 		getSite().setSelectionProvider(treeViewer);
-		ViewActionBarContributor actionContributor = getActionContributor();
+		final ViewActionBarContributor actionContributor = getActionContributor();
 		if (actionContributor != null) {
 			actionContributor.setSelectionProvider(treeViewer);
 		}
 		registerContextMenu();
 	}
 
-	protected void perfromOpen(IStructuredSelection selection) {
+	protected void perfromOpen(final IStructuredSelection selection) {
 
 	}
 
 	private void registerContextMenu() {
-		MenuManager manager = new MenuManager("#Menu"); //$NON-NLS-1$
+		final MenuManager manager = new MenuManager("#Menu"); //$NON-NLS-1$
 		final MenuManager standardMenu = new MenuManager("#Standard"); //$NON-NLS-1$
-		ViewActionBarContributor actionContributor = getActionContributor();
+		final ViewActionBarContributor actionContributor = getActionContributor();
 		if (actionContributor != null) {
 			actionContributor.createContextMenu(standardMenu);
 		}
 		manager.setRemoveAllWhenShown(true);
 		manager.addMenuListener(new IMenuListener() {
 
-			public void menuAboutToShow(IMenuManager manager) {
-				IContributionItem[] items = standardMenu.getItems();
-				for (IContributionItem item : items) {
+			public void menuAboutToShow(final IMenuManager manager) {
+				final IContributionItem[] items = standardMenu.getItems();
+				for (final IContributionItem item : items) {
 					manager.add(item);
 				}
 				createDynamicMenus(manager);
 			}
 		});
-		Control control = treeViewer.getControl();
-		Menu menu = manager.createContextMenu(control);
+		final Control control = treeViewer.getControl();
+		final Menu menu = manager.createContextMenu(control);
 		control.setMenu(menu);
 
 		// We do NOT want others to contribute menus.
@@ -133,7 +133,7 @@ public abstract class TreeViewerViewPart extends ViewPart implements
 		// manager, treeViewer);
 	}
 
-	protected void createDynamicMenus(IMenuManager manager) {
+	protected void createDynamicMenus(final IMenuManager manager) {
 	}
 
 	protected void configureTreeViewer() {
@@ -156,7 +156,7 @@ public abstract class TreeViewerViewPart extends ViewPart implements
 		treeViewer.getControl().setFocus();
 	}
 
-	public Object getAdapter(@SuppressWarnings("rawtypes") Class adapter) {
+	public Object getAdapter(@SuppressWarnings("rawtypes") final Class adapter) {
 		if (ISetSelectionTarget.class == adapter) {
 			return this;
 		} else if (StructuredViewer.class == adapter) {

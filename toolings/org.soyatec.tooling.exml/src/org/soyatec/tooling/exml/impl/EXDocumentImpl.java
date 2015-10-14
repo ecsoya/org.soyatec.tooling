@@ -38,7 +38,7 @@ public class EXDocumentImpl extends EXNodeImpl implements EXDocument {
 	/**
 	 * The cached value of the '{@link #getElement() <em>Element</em>}'
 	 * containment reference. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @see #getElement()
 	 * @generated
 	 * @ordered
@@ -47,7 +47,7 @@ public class EXDocumentImpl extends EXNodeImpl implements EXDocument {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	protected EXDocumentImpl() {
@@ -56,7 +56,7 @@ public class EXDocumentImpl extends EXNodeImpl implements EXDocument {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -66,7 +66,7 @@ public class EXDocumentImpl extends EXNodeImpl implements EXDocument {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
@@ -76,58 +76,63 @@ public class EXDocumentImpl extends EXNodeImpl implements EXDocument {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	public NotificationChain basicSetElement(EXElement newElement,
+	public NotificationChain basicSetElement(final EXElement newElement,
 			NotificationChain msgs) {
-		EXElement oldElement = element;
+		final EXElement oldElement = element;
 		element = newElement;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this,
+			final ENotificationImpl notification = new ENotificationImpl(this,
 					Notification.SET, EXMLPackage.DOCUMENT__ELEMENT,
 					oldElement, newElement);
-			if (msgs == null)
+			if (msgs == null) {
 				msgs = notification;
-			else
+			} else {
 				msgs.add(notification);
+			}
 		}
 		return msgs;
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public void setElement(EXElement newElement) {
+	public void setElement(final EXElement newElement) {
 		if (newElement != element) {
 			NotificationChain msgs = null;
-			if (element != null)
+			if (element != null) {
 				msgs = ((InternalEObject) element).eInverseRemove(this,
 						EOPPOSITE_FEATURE_BASE - EXMLPackage.DOCUMENT__ELEMENT,
 						null, msgs);
-			if (newElement != null)
+			}
+			if (newElement != null) {
 				msgs = ((InternalEObject) newElement).eInverseAdd(this,
 						EOPPOSITE_FEATURE_BASE - EXMLPackage.DOCUMENT__ELEMENT,
 						null, msgs);
+			}
 			msgs = basicSetElement(newElement, msgs);
-			if (msgs != null)
+			if (msgs != null) {
 				msgs.dispatch();
-		} else if (eNotificationRequired())
+			}
+		} else if (eNotificationRequired()) {
 			eNotify(new ENotificationImpl(this, Notification.SET,
 					EXMLPackage.DOCUMENT__ELEMENT, newElement, newElement));
+		}
 	}
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(InternalEObject otherEnd,
-			int featureID, NotificationChain msgs) {
+	public NotificationChain eInverseRemove(final InternalEObject otherEnd,
+			final int featureID, final NotificationChain msgs) {
 		switch (featureID) {
 		case EXMLPackage.DOCUMENT__ELEMENT:
 			return basicSetElement(null, msgs);
@@ -137,11 +142,12 @@ public class EXDocumentImpl extends EXNodeImpl implements EXDocument {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public Object eGet(int featureID, boolean resolve, boolean coreType) {
+	public Object eGet(final int featureID, final boolean resolve,
+			final boolean coreType) {
 		switch (featureID) {
 		case EXMLPackage.DOCUMENT__ELEMENT:
 			return getElement();
@@ -151,11 +157,11 @@ public class EXDocumentImpl extends EXNodeImpl implements EXDocument {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public void eSet(int featureID, Object newValue) {
+	public void eSet(final int featureID, final Object newValue) {
 		switch (featureID) {
 		case EXMLPackage.DOCUMENT__ELEMENT:
 			setElement((EXElement) newValue);
@@ -166,11 +172,11 @@ public class EXDocumentImpl extends EXNodeImpl implements EXDocument {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public void eUnset(int featureID) {
+	public void eUnset(final int featureID) {
 		switch (featureID) {
 		case EXMLPackage.DOCUMENT__ELEMENT:
 			setElement((EXElement) null);
@@ -181,11 +187,11 @@ public class EXDocumentImpl extends EXNodeImpl implements EXDocument {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public boolean eIsSet(int featureID) {
+	public boolean eIsSet(final int featureID) {
 		switch (featureID) {
 		case EXMLPackage.DOCUMENT__ELEMENT:
 			return element != null;

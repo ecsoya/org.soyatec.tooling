@@ -39,7 +39,7 @@ public interface EXNode extends XMLTypeDocumentRoot {
 	 * should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Name</em>' attribute.
 	 * @see #setName(String)
 	 * @see org.soyatec.tooling.exml.EXMLPackage#getNode_Name()
@@ -51,7 +51,7 @@ public interface EXNode extends XMLTypeDocumentRoot {
 	/**
 	 * Sets the value of the '{@link org.soyatec.tooling.exml.EXNode#getName
 	 * <em>Name</em>}' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @param value
 	 *            the new value of the '<em>Name</em>' attribute.
 	 * @see #getName()
@@ -61,7 +61,7 @@ public interface EXNode extends XMLTypeDocumentRoot {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @model kind="operation" annotation=
 	 *        "http://www.eclipse.org/emf/2002/GenModel body='return super.getComment();'"
 	 * @generated
@@ -70,7 +70,7 @@ public interface EXNode extends XMLTypeDocumentRoot {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @model kind="operation" annotation=
 	 *        "http://www.eclipse.org/emf/2002/GenModel body='return super.getText();'"
 	 * @generated
@@ -79,7 +79,7 @@ public interface EXNode extends XMLTypeDocumentRoot {
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @model kind="operation" annotation=
 	 *        "http://www.eclipse.org/emf/2002/GenModel body='return super.getCDATA();'"
 	 * @generated

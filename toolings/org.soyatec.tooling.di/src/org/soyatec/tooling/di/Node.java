@@ -50,7 +50,7 @@ public interface Node extends View {
 	 * clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>All Outgoing Lines</em>' attribute list.
 	 * @see org.soyatec.tooling.di.DiPackage#getNode_AllOutgoingLines()
 	 * @model dataType="org.eclipse.emf.ecore.EFeatureMapEntry" many="true"
@@ -69,7 +69,7 @@ public interface Node extends View {
 	 * clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>All Incoming Lines</em>' attribute list.
 	 * @see org.soyatec.tooling.di.DiPackage#getNode_AllIncomingLines()
 	 * @model dataType="org.eclipse.emf.ecore.EFeatureMapEntry" many="true"
@@ -89,7 +89,7 @@ public interface Node extends View {
 	 * clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Comment Links</em>' reference list.
 	 * @see org.soyatec.tooling.di.DiPackage#getNode_CommentLinks()
 	 * @see org.soyatec.tooling.di.CommentLink#getSource
@@ -110,7 +110,7 @@ public interface Node extends View {
 	 * clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Outgoing Lines</em>' reference list.
 	 * @see org.soyatec.tooling.di.DiPackage#getNode_OutgoingLines()
 	 * @see org.soyatec.tooling.di.Connector#getSource
@@ -131,7 +131,7 @@ public interface Node extends View {
 	 * clear, there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * 
+	 *
 	 * @return the value of the '<em>Incoming Lines</em>' reference list.
 	 * @see org.soyatec.tooling.di.DiPackage#getNode_IncomingLines()
 	 * @see org.soyatec.tooling.di.Connector#getTarget

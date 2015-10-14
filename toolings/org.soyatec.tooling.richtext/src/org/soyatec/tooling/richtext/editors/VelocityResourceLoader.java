@@ -17,11 +17,11 @@ import org.apache.velocity.runtime.resource.loader.ClasspathResourceLoader;
 
 public class VelocityResourceLoader extends ClasspathResourceLoader {
 
-	public InputStream getResourceStream(String name)
+	public InputStream getResourceStream(final String name)
 			throws ResourceNotFoundException {
 		try {
 			return VelocityResourceLoader.class.getResourceAsStream(name);
-		} catch (Exception e) {
+		} catch (final Exception e) {
 			return super.getResourceStream(name);
 		}
 	}

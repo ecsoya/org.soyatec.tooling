@@ -26,7 +26,7 @@ import org.eclipse.swt.graphics.Image;
 public class CommentFigure extends Figure implements ILabelFigure, IShapeStyle {
 	static public final int CLIP_HINT = 12;
 
-	private int clipHint;
+	private final int clipHint;
 
 	private TextFlow textFlow;
 
@@ -36,25 +36,25 @@ public class CommentFigure extends Figure implements ILabelFigure, IShapeStyle {
 		this(CLIP_HINT);
 	}
 
-	public CommentFigure(int clipHint) {
+	public CommentFigure(final int clipHint) {
 		this.clipHint = clipHint;
 		setBorder(new NoteFigureBorder(new Insets(clipHint + 1, clipHint / 2,
 				clipHint / 2, clipHint / 2)));
 		setOpaque(true);
 		setLayoutManager(new BorderLayout());
-		FlowPage figure = new FlowPage();
+		final FlowPage figure = new FlowPage();
 		figure.setOpaque(true);
 		figure.add(textFlow = new TextFlow());
 		textFlow.setOpaque(true);
 		add(figure, BorderLayout.CENTER);
 	}
 
-	protected void paintFigure(Graphics graphics) {
+	protected void paintFigure(final Graphics graphics) {
 		// super.paintFigure(graphics);
 		graphics.fillPolygon(getPointList(getBounds()));
 	}
 
-	public void setImage(Image newImage) {
+	public void setImage(final Image newImage) {
 
 	}
 
@@ -62,7 +62,7 @@ public class CommentFigure extends Figure implements ILabelFigure, IShapeStyle {
 		return null;
 	}
 
-	public void setText(String text) {
+	public void setText(final String text) {
 		if (textFlow != null) {
 			textFlow.setText(text);
 		}
@@ -90,7 +90,7 @@ public class CommentFigure extends Figure implements ILabelFigure, IShapeStyle {
 		return lineWidth;
 	}
 
-	public void setLineWidth(int lineWidth) {
+	public void setLineWidth(final int lineWidth) {
 		this.lineWidth = lineWidth;
 	}
 
@@ -98,8 +98,8 @@ public class CommentFigure extends Figure implements ILabelFigure, IShapeStyle {
 		return SWT.LINE_SOLID;
 	}
 
-	public PointList getPointList(Rectangle r) {
-		PointList p = new PointList();
+	public PointList getPointList(final Rectangle r) {
+		final PointList p = new PointList();
 
 		p.addPoint(r.x, r.y);
 		p.addPoint(r.x + r.width - getClipWidth(), r.y);
@@ -118,7 +118,7 @@ public class CommentFigure extends Figure implements ILabelFigure, IShapeStyle {
 	public class NoteFigureBorder extends AbstractBorder {
 		private Insets margin;
 
-		NoteFigureBorder(Insets insets) {
+		NoteFigureBorder(final Insets insets) {
 			margin = insets;
 		}
 
@@ -126,30 +126,31 @@ public class CommentFigure extends Figure implements ILabelFigure, IShapeStyle {
 			return margin;
 		}
 
-		public void setMargin(Insets margin) {
+		public void setMargin(final Insets margin) {
 			this.margin = margin;
 		}
 
-		public Insets getInsets(IFigure figure) {
-			CommentFigure noteFigure = (CommentFigure) figure;
-			int width = noteFigure.getLineWidth();
+		public Insets getInsets(final IFigure figure) {
+			final CommentFigure noteFigure = (CommentFigure) figure;
+			final int width = noteFigure.getLineWidth();
 			return new Insets(width + margin.top, width + margin.left, width
 					+ margin.bottom, width + margin.right);
 		}
 
-		public void paint(IFigure figure, Graphics g, Insets insets) {
-			CommentFigure noteFigure = (CommentFigure) figure;
-			Rectangle r = noteFigure.getBounds().getCopy();
+		public void paint(final IFigure figure, final Graphics g,
+				final Insets insets) {
+			final CommentFigure noteFigure = (CommentFigure) figure;
+			final Rectangle r = noteFigure.getBounds().getCopy();
 			r.shrink(noteFigure.getLineWidth() / 2,
 					noteFigure.getLineWidth() / 2);
 
-			PointList p = noteFigure.getPointList(r);
+			final PointList p = noteFigure.getPointList(r);
 			p.addPoint(r.x, r.y - noteFigure.getLineWidth() / 2);
 			g.setLineWidth(noteFigure.getLineWidth());
 			g.setLineStyle(noteFigure.getLineStyle());
 			g.drawPolyline(p);
 
-			PointList corner = new PointList();
+			final PointList corner = new PointList();
 			corner.addPoint(r.x + r.width - getClipWidth(), r.y);
 			corner.addPoint(r.x + r.width - getClipWidth(), r.y
 					+ getClipHeight());

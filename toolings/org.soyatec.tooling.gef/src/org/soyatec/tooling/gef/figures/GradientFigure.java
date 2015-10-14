@@ -34,22 +34,23 @@ public class GradientFigure extends Figure implements IGradientFigure {
 		return usingGradient;
 	}
 
-	public void setUsingGradient(boolean value) {
-		boolean oldValue = this.usingGradient;
+	public void setUsingGradient(final boolean value) {
+		final boolean oldValue = this.usingGradient;
 		this.usingGradient = value;
 		if (oldValue != value) {
 			repaint();
 		}
 	}
 
-	protected void paintFigure(Graphics graphics) {
+	protected void paintFigure(final Graphics graphics) {
 		super.paintFigure(graphics);
 		paintBackground(graphics, getBounds());
 	}
 
-	protected void paintBackground(Graphics graphics, Rectangle rectangle) {
+	protected void paintBackground(final Graphics graphics,
+			final Rectangle rectangle) {
 		if (isUsingGradient()) {
-			boolean isVertical = SWT.VERTICAL == orientation;
+			final boolean isVertical = SWT.VERTICAL == orientation;
 			graphics.setBackgroundColor(getBackgroundColor());
 			graphics.setForegroundColor(getGradientColor());
 			graphics.fillGradient(rectangle, isVertical);
@@ -64,8 +65,8 @@ public class GradientFigure extends Figure implements IGradientFigure {
 		return orientation;
 	}
 
-	public void setGradientOrientation(int orientation) {
-		int oldValue = this.orientation;
+	public void setGradientOrientation(final int orientation) {
+		final int oldValue = this.orientation;
 		this.orientation = orientation;
 		if (oldValue != orientation) {
 			repaint();
@@ -79,8 +80,8 @@ public class GradientFigure extends Figure implements IGradientFigure {
 		return gradientColor;
 	}
 
-	public void setGradientColor(Color color) {
-		Color oldValue = this.gradientColor;
+	public void setGradientColor(final Color color) {
+		final Color oldValue = this.gradientColor;
 		this.gradientColor = color;
 		if (oldValue != null && !oldValue.equals(color)) {
 			repaint();

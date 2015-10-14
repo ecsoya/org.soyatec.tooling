@@ -36,7 +36,7 @@ import org.soyatec.tooling.di.Guide;
 /**
  * This is the item provider adapter for a {@link org.soyatec.tooling.di.Guide}
  * object. <!-- begin-user-doc --> <!-- end-user-doc -->
- * 
+ *
  * @generated
  */
 public class GuideItemProvider extends ItemProviderAdapter implements
@@ -45,21 +45,22 @@ public class GuideItemProvider extends ItemProviderAdapter implements
 	/**
 	 * This constructs an instance from a factory and a notifier. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	public GuideItemProvider(AdapterFactory adapterFactory) {
+	public GuideItemProvider(final AdapterFactory adapterFactory) {
 		super(adapterFactory);
 	}
 
 	/**
 	 * This returns the property descriptors for the adapted class. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
+	public List<IItemPropertyDescriptor> getPropertyDescriptors(
+			final Object object) {
 		if (itemPropertyDescriptors == null) {
 			super.getPropertyDescriptors(object);
 
@@ -71,10 +72,10 @@ public class GuideItemProvider extends ItemProviderAdapter implements
 	/**
 	 * This adds a property descriptor for the Position feature. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
-	protected void addPositionPropertyDescriptor(Object object) {
+	protected void addPositionPropertyDescriptor(final Object object) {
 		itemPropertyDescriptors.add(createItemPropertyDescriptor(
 				((ComposeableAdapterFactory) adapterFactory)
 						.getRootAdapterFactory(),
@@ -93,12 +94,12 @@ public class GuideItemProvider extends ItemProviderAdapter implements
 	 * {@link org.eclipse.emf.edit.command.RemoveCommand} or
 	 * {@link org.eclipse.emf.edit.command.MoveCommand} in
 	 * {@link #createCommand}. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	public Collection<? extends EStructuralFeature> getChildrenFeatures(
-			Object object) {
+			final Object object) {
 		if (childrenFeatures == null) {
 			super.getChildrenFeatures(object);
 			childrenFeatures.add(DiPackage.Literals.GUIDE__ELEMENT_MAP);
@@ -108,11 +109,12 @@ public class GuideItemProvider extends ItemProviderAdapter implements
 
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	protected EStructuralFeature getChildFeature(Object object, Object child) {
+	protected EStructuralFeature getChildFeature(final Object object,
+			final Object child) {
 		// Check the type of the specified child object and return the proper
 		// feature to use for
 		// adding (see {@link AddCommand}) it as a child.
@@ -122,11 +124,11 @@ public class GuideItemProvider extends ItemProviderAdapter implements
 
 	/**
 	 * This returns Guide.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public Object getImage(Object object) {
+	public Object getImage(final Object object) {
 		return overlayImage(object,
 				getResourceLocator().getImage("full/obj16/Guide"));
 	}
@@ -134,12 +136,12 @@ public class GuideItemProvider extends ItemProviderAdapter implements
 	/**
 	 * This returns the label text for the adapted class. <!-- begin-user-doc
 	 * --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public String getText(Object object) {
-		Guide guide = (Guide) object;
+	public String getText(final Object object) {
+		final Guide guide = (Guide) object;
 		return getString("_UI_Guide_type") + " " + guide.getPosition();
 	}
 
@@ -148,11 +150,11 @@ public class GuideItemProvider extends ItemProviderAdapter implements
 	 * update any cached children and by creating a viewer notification, which
 	 * it passes to {@link #fireNotifyChanged}. <!-- begin-user-doc --> <!--
 	 * end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
-	public void notifyChanged(Notification notification) {
+	public void notifyChanged(final Notification notification) {
 		updateChildren(notification);
 
 		switch (notification.getFeatureID(Guide.class)) {
@@ -172,12 +174,12 @@ public class GuideItemProvider extends ItemProviderAdapter implements
 	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s
 	 * describing the children that can be created under this object. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override
 	protected void collectNewChildDescriptors(
-			Collection<Object> newChildDescriptors, Object object) {
+			final Collection<Object> newChildDescriptors, final Object object) {
 		super.collectNewChildDescriptors(newChildDescriptors, object);
 
 		newChildDescriptors.add(createChildParameter(
@@ -188,7 +190,7 @@ public class GuideItemProvider extends ItemProviderAdapter implements
 	/**
 	 * Return the resource locator for this item provider's resources. <!--
 	 * begin-user-doc --> <!-- end-user-doc -->
-	 * 
+	 *
 	 * @generated
 	 */
 	@Override

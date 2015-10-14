@@ -64,6 +64,7 @@ import org.eclipse.ui.IEditorSite;
 import org.eclipse.ui.IFileEditorInput;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.part.EditorPart;
+import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.soyatec.tooling.richtext.Activator;
 import org.soyatec.tooling.richtext.actions.AddImageActionEx;
 import org.soyatec.tooling.richtext.actions.BackgroundAction;
@@ -80,23 +81,23 @@ public class HTMLEditor extends EditorPart {
 	private IFile file;
 	private boolean isDirty;
 
-	public void doSave(IProgressMonitor monitor) {
+	public void doSave(final IProgressMonitor monitor) {
 		if (richText.getModified() && file != null) {
-			String text = richText.getText();
-			Properties properties = new Properties();
+			final String text = richText.getText();
+			final Properties properties = new Properties();
 			properties.put(RuntimeConstants.RESOURCE_LOADER, "class, file");
 			properties.put("class.resource.loader.class",
 					VelocityResourceLoader.class.getName());
 			Velocity.init(properties);
-			Template template = Velocity.getTemplate("template.vm");
-			VelocityContext context = new VelocityContext();
+			final Template template = Velocity.getTemplate("template.vm");
+			final VelocityContext context = new VelocityContext();
 			context.put("content", text);
-			StringWriter writer = new StringWriter();
+			final StringWriter writer = new StringWriter();
 			template.merge(context, writer);
-			String newValue = new String(writer.getBuffer());
+			final String newValue = new String(writer.getBuffer());
 			try {
 				FileUtils.saveFromString(file, newValue, monitor);
-			} catch (Exception e) {
+			} catch (final Exception e) {
 				Activator
 						.getDefault()
 						.getLog()
@@ -112,7 +113,7 @@ public class HTMLEditor extends EditorPart {
 
 	}
 
-	public void init(IEditorSite site, IEditorInput input)
+	public void init(final IEditorSite site, final IEditorInput input)
 			throws PartInitException {
 		setSite(site);
 		setInput(input);
@@ -129,9 +130,9 @@ public class HTMLEditor extends EditorPart {
 		return false;
 	}
 
-	public void createPartControl(Composite parent) {
+	public void createPartControl(final Composite parent) {
 		partControl = new ViewForm(parent, SWT.NONE);
-		Composite content = new Composite(partControl, SWT.NONE);
+		final Composite content = new Composite(partControl, SWT.NONE);
 		content.setLayout(new FillLayout());
 		richText = new RichText(content, SWT.NONE);
 		partControl.setContent(content);
@@ -139,12 +140,12 @@ public class HTMLEditor extends EditorPart {
 		final CoolBar coolBar = new CoolBar(partControl, SWT.HORIZONTAL
 				| SWT.FLAT);
 		toolBar = new RichTextToolBar(coolBar, SWT.FLAT, richText);
-		ToolBar normalItems = toolBar.getToolbarMgr().getControl();
-		ToolBar comboItems = toolBar.getToolbarMgrCombo().getControl();
-		CoolItem item1 = new CoolItem(coolBar, SWT.NONE);
+		final ToolBar normalItems = toolBar.getToolbarMgr().getControl();
+		final ToolBar comboItems = toolBar.getToolbarMgrCombo().getControl();
+		final CoolItem item1 = new CoolItem(coolBar, SWT.NONE);
 		item1.setControl(comboItems);
 		item1.setMinimumSize(comboItems.computeSize(SWT.DEFAULT, SWT.DEFAULT));
-		CoolItem item2 = new CoolItem(coolBar, SWT.NONE);
+		final CoolItem item2 = new CoolItem(coolBar, SWT.NONE);
 		item2.setMinimumSize(normalItems.computeSize(SWT.DEFAULT, SWT.DEFAULT));
 		item2.setControl(normalItems);
 		coolBar.setWrapIndices(new int[] { 1 });
@@ -152,14 +153,14 @@ public class HTMLEditor extends EditorPart {
 
 		partControl.addListener(SWT.Resize, new Listener() {
 
-			public void handleEvent(Event event) {
-				CoolItem[] coolItems = coolBar.getItems();
-				Point parentSize = partControl.getSize();
-				for (CoolItem coolItem : coolItems) {
-					Control control = coolItem.getControl();
-					Point size = control.computeSize(parentSize.x - 4,
+			public void handleEvent(final Event event) {
+				final CoolItem[] coolItems = coolBar.getItems();
+				final Point parentSize = partControl.getSize();
+				for (final CoolItem coolItem : coolItems) {
+					final Control control = coolItem.getControl();
+					final Point size = control.computeSize(parentSize.x - 4,
 							SWT.DEFAULT);
-					Point coolSize = coolItem.computeSize(size.x, size.y);
+					final Point coolSize = coolItem.computeSize(size.x, size.y);
 					coolItem.setMinimumSize(size);
 					coolItem.setPreferredSize(coolSize);
 					coolItem.setSize(coolSize);
@@ -187,7 +188,7 @@ public class HTMLEditor extends EditorPart {
 		}
 		richText.addModifyListener(new ModifyListener() {
 
-			public void modifyText(ModifyEvent e) {
+			public void modifyText(final ModifyEvent e) {
 				isDirty = true;
 				firePropertyChange(PROP_DIRTY);
 			}
@@ -198,10 +199,10 @@ public class HTMLEditor extends EditorPart {
 		}
 	}
 
-	protected String getText(IFile file) {
+	protected String getText(final IFile file) {
 		try {
 			return FileUtils.readAsString(file);
-		} catch (Exception e) {
+		} catch (final Exception e) {
 			Activator
 					.getDefault()
 					.getLog()
@@ -235,14 +236,16 @@ public class HTMLEditor extends EditorPart {
 		// toolBar.addAction(new TidyActionGroup(richText));
 		// toolBar.addSeparator();
 		toolBar.addAction(new AddTableAction(richText));
-		AddColumnAction addColumnAction = new AddColumnAction(richText);
-		addColumnAction.setImageDescriptor(Activator.imageDescriptorFromPlugin(
-				Activator.PLUGIN_ID, "icons/addColumn.gif"));
+		final AddColumnAction addColumnAction = new AddColumnAction(richText);
+		addColumnAction.setImageDescriptor(AbstractUIPlugin
+				.imageDescriptorFromPlugin(Activator.PLUGIN_ID,
+						"icons/addColumn.gif"));
 		addColumnAction.setToolTipText("Add column");
 		toolBar.addAction(addColumnAction);
-		AddRowAction addRowAction = new AddRowAction(richText);
-		addRowAction.setImageDescriptor(Activator.imageDescriptorFromPlugin(
-				Activator.PLUGIN_ID, "icons/addRow.gif"));
+		final AddRowAction addRowAction = new AddRowAction(richText);
+		addRowAction.setImageDescriptor(AbstractUIPlugin
+				.imageDescriptorFromPlugin(Activator.PLUGIN_ID,
+						"icons/addRow.gif"));
 		addRowAction.setToolTipText("Add row.");
 		toolBar.addAction(addRowAction);
 		toolBar.addSeparator();
