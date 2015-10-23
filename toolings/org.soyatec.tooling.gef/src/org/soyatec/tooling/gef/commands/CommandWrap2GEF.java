@@ -32,7 +32,7 @@ public class CommandWrap2GEF extends Command implements ICancelCommand {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.eclipse.gef.commands.Command#canExecute()
 	 */
 	@Override
@@ -42,7 +42,7 @@ public class CommandWrap2GEF extends Command implements ICancelCommand {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.eclipse.gef.commands.Command#canUndo()
 	 */
 	@Override
@@ -52,7 +52,7 @@ public class CommandWrap2GEF extends Command implements ICancelCommand {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.eclipse.gef.commands.Command#chain(Command)
 	 */
 	@Override
@@ -79,7 +79,7 @@ public class CommandWrap2GEF extends Command implements ICancelCommand {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.eclipse.gef.commands.Command#dispose()
 	 */
 	@Override
@@ -91,7 +91,7 @@ public class CommandWrap2GEF extends Command implements ICancelCommand {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.eclipse.gef.commands.Command#execute()
 	 */
 	@Override
@@ -103,7 +103,7 @@ public class CommandWrap2GEF extends Command implements ICancelCommand {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.eclipse.gef.commands.Command#getLabel()
 	 */
 	@Override
@@ -113,7 +113,7 @@ public class CommandWrap2GEF extends Command implements ICancelCommand {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.eclipse.gef.commands.Command#redo()
 	 */
 	@Override
@@ -125,7 +125,7 @@ public class CommandWrap2GEF extends Command implements ICancelCommand {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.eclipse.gef.commands.Command#undo()
 	 */
 	@Override
@@ -137,7 +137,7 @@ public class CommandWrap2GEF extends Command implements ICancelCommand {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.eclipse.gef.commands.Command#getAffectedObjects()
 	 */
 	public Collection<?> getAffectedObjects() {
@@ -147,7 +147,7 @@ public class CommandWrap2GEF extends Command implements ICancelCommand {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.eclipse.gef.commands.Command#getDescription()
 	 */
 	public String getDescription() {
@@ -156,7 +156,7 @@ public class CommandWrap2GEF extends Command implements ICancelCommand {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.eclipse.gef.commands.Command#getResult()
 	 */
 	public Collection<?> getResult() {

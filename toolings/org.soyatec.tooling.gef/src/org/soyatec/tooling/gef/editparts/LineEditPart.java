@@ -194,7 +194,7 @@ public abstract class LineEditPart<T extends Line> extends ViewEditPart<Line>
 		refreshLineWidth();
 	}
 
-	private void refreshLineWidth() {
+	protected void refreshLineWidth() {
 		int width = getView().getWidth();
 		if (width == -1) {
 			width = getDefaultLineWidth();
@@ -213,7 +213,7 @@ public abstract class LineEditPart<T extends Line> extends ViewEditPart<Line>
 		}
 	}
 
-	private void refreshLineColor() {
+	protected void refreshLineColor() {
 		final int value = getView().getColor();
 		final Color color = value == -1 ? getDefaultLineColor()
 				: ResourcesFactory.getColor(value);

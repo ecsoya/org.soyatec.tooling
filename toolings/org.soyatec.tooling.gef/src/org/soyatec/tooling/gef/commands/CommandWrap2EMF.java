@@ -32,7 +32,7 @@ public class CommandWrap2EMF implements Command, ICancelCommand {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.eclipse.emf.common.command.Command#canExecute()
 	 */
 	public boolean canExecute() {
@@ -41,7 +41,7 @@ public class CommandWrap2EMF implements Command, ICancelCommand {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.eclipse.emf.common.command.Command#canUndo()
 	 */
 	public boolean canUndo() {
@@ -50,7 +50,7 @@ public class CommandWrap2EMF implements Command, ICancelCommand {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.eclipse.emf.common.command.Command#chain(Command)
 	 */
 	public Command chain(final Command command) {
@@ -76,7 +76,7 @@ public class CommandWrap2EMF implements Command, ICancelCommand {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.eclipse.emf.common.command.Command#dispose()
 	 */
 	public void dispose() {
@@ -87,7 +87,7 @@ public class CommandWrap2EMF implements Command, ICancelCommand {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.eclipse.emf.common.command.Command#execute()
 	 */
 	public void execute() {
@@ -98,7 +98,7 @@ public class CommandWrap2EMF implements Command, ICancelCommand {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.eclipse.emf.common.command.Command#getAffectedObjects()
 	 */
 	public Collection<?> getAffectedObjects() {
@@ -107,7 +107,7 @@ public class CommandWrap2EMF implements Command, ICancelCommand {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.eclipse.emf.common.command.Command#getDescription()
 	 */
 	public String getDescription() {
@@ -116,7 +116,7 @@ public class CommandWrap2EMF implements Command, ICancelCommand {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.eclipse.emf.common.command.Command#getLabel()
 	 */
 	public String getLabel() {
@@ -125,7 +125,7 @@ public class CommandWrap2EMF implements Command, ICancelCommand {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.eclipse.emf.common.command.Command#getResult()
 	 */
 	public Collection<?> getResult() {
@@ -134,7 +134,7 @@ public class CommandWrap2EMF implements Command, ICancelCommand {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.eclipse.emf.common.command.Command#redo()
 	 */
 	public void redo() {
@@ -145,7 +145,7 @@ public class CommandWrap2EMF implements Command, ICancelCommand {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.eclipse.emf.common.command.Command#undo()
 	 */
 	public void undo() {

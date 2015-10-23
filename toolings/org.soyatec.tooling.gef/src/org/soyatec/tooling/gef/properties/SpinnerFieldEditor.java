@@ -101,7 +101,7 @@ public class SpinnerFieldEditor extends FieldEditor {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.eclipse.jface.preference.FieldEditor#adjustForNumColumns(int)
 	 */
 	@Override
@@ -111,7 +111,7 @@ public class SpinnerFieldEditor extends FieldEditor {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see
 	 * org.eclipse.jface.preference.FieldEditor#doFillIntoGrid(org.eclipse.swt
 	 * .widgets.Composite, int)
@@ -133,7 +133,7 @@ public class SpinnerFieldEditor extends FieldEditor {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.eclipse.jface.preference.FieldEditor#doLoad()
 	 */
 	@Override
@@ -147,7 +147,7 @@ public class SpinnerFieldEditor extends FieldEditor {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.eclipse.jface.preference.FieldEditor#doLoadDefault()
 	 */
 	@Override
@@ -162,7 +162,7 @@ public class SpinnerFieldEditor extends FieldEditor {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.eclipse.jface.preference.FieldEditor#doStore()
 	 */
 	@Override
@@ -203,7 +203,7 @@ public class SpinnerFieldEditor extends FieldEditor {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.eclipse.jface.preference.FieldEditor#getNumberOfControls()
 	 */
 	@Override
@@ -274,7 +274,7 @@ public class SpinnerFieldEditor extends FieldEditor {
 
 	/*
 	 * (non-Javadoc)
-	 *
+	 * 
 	 * @see org.eclipse.jface.preference.FieldEditor#setFocus()
 	 */
 	@Override
