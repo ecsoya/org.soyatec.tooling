@@ -34,8 +34,7 @@ public class FormPropertySheetPage implements IPropertySheetPage {
 	private final IPropertyTabProvider tabProvider;
 
 	public FormPropertySheetPage(final IPropertyTabProvider tabProvider) {
-		Assert.isNotNull(tabProvider,
-				"IPropertyTabProvider instance can not be null."); //$NON-NLS-1$
+		Assert.isNotNull(tabProvider, "IPropertyTabProvider instance can not be null."); //$NON-NLS-1$
 		this.tabProvider = tabProvider;
 	}
 
@@ -77,8 +76,7 @@ public class FormPropertySheetPage implements IPropertySheetPage {
 						section.setTextClient(toolbar);
 					}
 				}
-				final GridData layoutData = new GridData(
-						GridData.FILL_HORIZONTAL);
+				final GridData layoutData = new GridData(GridData.FILL_HORIZONTAL);
 				layoutData.exclude = true;
 				section.setVisible(false);
 				section.setLayoutData(layoutData);
@@ -112,19 +110,27 @@ public class FormPropertySheetPage implements IPropertySheetPage {
 		}
 	}
 
-	public void selectionChanged(final IWorkbenchPart part,
-			final ISelection selection) {
-		final IPropertyTab[] propertyTabs = tabProvider.getPropertyTabs();
-		if (propertyTabs != null) {
-			for (final IPropertyTab tab : propertyTabs) {
-				if (!tab.isVisibleFor(part, selection)) {
-					hideTab(tab);
-				} else {
-					tab.selectionChanged(part, selection);
-					showTab(tab);
+	public void selectionChanged(final IWorkbenchPart part, final ISelection selection) {
+		if (control == null || control.isDisposed()) {
+			return;
+		}
+		control.getDisplay().asyncExec(new Runnable() {
+
+			@Override
+			public void run() {
+				final IPropertyTab[] propertyTabs = tabProvider.getPropertyTabs();
+				if (propertyTabs != null) {
+					for (final IPropertyTab tab : propertyTabs) {
+						if (!tab.isVisibleFor(part, selection)) {
+							hideTab(tab);
+						} else {
+							tab.selectionChanged(part, selection);
+							showTab(tab);
+						}
+					}
 				}
 			}
-		}
+		});
 	}
 
 	private void showTab(final IPropertyTab tab) {
