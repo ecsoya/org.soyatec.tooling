@@ -2,7 +2,7 @@
 <feature
       id="org.soyatec.tooling.gef.feature"
       label="Soyatec GEF Tooling"
-      version="4.4.2.qualifier"
+      version="1.0.1.qualifier"
       provider-name="Soyatec">
 
    <description url="http://ecsoya.github.io/org.soyatec.tooling/stp_gef.html">

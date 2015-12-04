@@ -9,7 +9,7 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.eclipse.epf.richtext;visibility:=reexport,
  org.eclipse.ui.ide;visibility:=reexport
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Export-Package: org.soyatec.tooling.richtext.editors
 Bundle-ClassPath: lib/velocity-1.7.jar,

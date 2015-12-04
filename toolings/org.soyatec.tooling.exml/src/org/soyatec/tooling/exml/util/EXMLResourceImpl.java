@@ -115,6 +115,7 @@ public class EXMLResourceImpl extends XMLResourceImpl {
 				if (feature != null) {
 					final Integer featureKind = getFeatureKind(feature);
 					feature = EcoreUtil.copy(feature);
+					feature.getEAnnotations().clear();
 					featuresToKinds.put(feature, featureKind);
 					EAnnotation a = feature.getEAnnotation(TAB_NAME_KEY);
 					if (a == null) {

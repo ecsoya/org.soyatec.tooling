@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %Bundle-Name
 Bundle-SymbolicName: org.soyatec.tooling.gef;singleton:=true
-Bundle-Version: 4.4.2.qualifier
+Bundle-Version: 1.0.1.qualifier
 Bundle-Activator: org.soyatec.tooling.gef.Activator
 Bundle-Vendor: %Bundle-Vendor
 Require-Bundle: org.eclipse.ui,
@@ -10,7 +10,7 @@ Require-Bundle: org.eclipse.ui,
  org.eclipse.gef;visibility:=reexport,
  org.soyatec.tooling.di;visibility:=reexport,
  org.soyatec.tooling.views;visibility:=reexport
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Export-Package: org.soyatec.tooling.gef.anchor,
  org.soyatec.tooling.gef.commands,

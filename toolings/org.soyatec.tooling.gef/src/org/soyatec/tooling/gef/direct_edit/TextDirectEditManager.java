@@ -39,12 +39,18 @@ public class TextDirectEditManager extends DirectEditManager {
 	private Font scaledFont;
 	private VerifyListener verifyListener;
 	private final ILabelFigure labelFigure;
+	private final String initialvalue;
 
-	public TextDirectEditManager(final ViewEditPart<?> source,
-			final ILabelFigure labelFigure) {
-		super(source, TextCellEditor.class, new TextCellEditorLocator(
-				labelFigure), DiPackage.eINSTANCE.getView_Label());
+	public TextDirectEditManager(final ViewEditPart<?> source, final ILabelFigure labelFigure) {
+		this(source, labelFigure, null);
+	}
+
+	public TextDirectEditManager(final ViewEditPart<?> source, final ILabelFigure labelFigure,
+			final String initialvalue) {
+		super(source, TextCellEditor.class, new TextCellEditorLocator(labelFigure),
+				DiPackage.eINSTANCE.getView_Label());
 		this.labelFigure = labelFigure;
+		this.initialvalue = initialvalue;
 	}
 
 	protected void bringDown() {
@@ -64,8 +70,7 @@ public class TextDirectEditManager extends DirectEditManager {
 				final Text text = (Text) getCellEditor().getControl();
 				final String oldText = text.getText();
 				final String leftText = oldText.substring(0, event.start);
-				final String rightText = oldText.substring(event.end,
-						oldText.length());
+				final String rightText = oldText.substring(event.end, oldText.length());
 				final GC gc = new GC(text);
 				Point size = gc.textExtent(leftText + event.text + rightText);
 				gc.dispose();
@@ -77,7 +82,7 @@ public class TextDirectEditManager extends DirectEditManager {
 		};
 		text.addVerifyListener(verifyListener);
 
-		final String initialLabelText = labelFigure.getText();
+		final String initialLabelText = getInitialValue();
 		getCellEditor().setValue(initialLabelText);
 		final IFigure figure = getEditPart().getFigure();
 		scaledFont = figure.getFont();
@@ -88,6 +93,15 @@ public class TextDirectEditManager extends DirectEditManager {
 		scaledFont = new Font(null, data);
 
 		text.setFont(scaledFont);
+	}
+
+	protected String getInitialValue() {
+		if (initialvalue != null) {
+			return initialvalue;
+		} else if (labelFigure != null) {
+			return labelFigure.getText();
+		}
+		return "";
 	}
 
 	protected void unhookListeners() {

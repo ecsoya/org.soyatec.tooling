@@ -105,9 +105,8 @@ public abstract class LineImpl extends NodeImpl implements Line {
 	protected static final String SOURCE_ANCHOR_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getSourceAnchor()
-	 * <em>Source Anchor</em>}' attribute. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
+	 * The cached value of the '{@link #getSourceAnchor() <em>Source Anchor</em>
+	 * }' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @see #getSourceAnchor()
 	 * @generated
@@ -127,9 +126,8 @@ public abstract class LineImpl extends NodeImpl implements Line {
 	protected static final String TARGET_ANCHOR_EDEFAULT = null;
 
 	/**
-	 * The cached value of the '{@link #getTargetAnchor()
-	 * <em>Target Anchor</em>}' attribute. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
+	 * The cached value of the '{@link #getTargetAnchor() <em>Target Anchor</em>
+	 * }' attribute. <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
 	 * @see #getTargetAnchor()
 	 * @generated
@@ -224,8 +222,7 @@ public abstract class LineImpl extends NodeImpl implements Line {
 		final int oldColor = color;
 		color = newColor;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					DiPackage.LINE__COLOR, oldColor, color));
+			eNotify(new ENotificationImpl(this, Notification.SET, DiPackage.LINE__COLOR, oldColor, color));
 		}
 	}
 
@@ -247,8 +244,7 @@ public abstract class LineImpl extends NodeImpl implements Line {
 		final int oldWidth = width;
 		width = newWidth;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					DiPackage.LINE__WIDTH, oldWidth, width));
+			eNotify(new ENotificationImpl(this, Notification.SET, DiPackage.LINE__WIDTH, oldWidth, width));
 		}
 	}
 
@@ -270,8 +266,7 @@ public abstract class LineImpl extends NodeImpl implements Line {
 		final String oldSourceAnchor = sourceAnchor;
 		sourceAnchor = newSourceAnchor;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					DiPackage.LINE__SOURCE_ANCHOR, oldSourceAnchor,
+			eNotify(new ENotificationImpl(this, Notification.SET, DiPackage.LINE__SOURCE_ANCHOR, oldSourceAnchor,
 					sourceAnchor));
 		}
 	}
@@ -294,8 +289,7 @@ public abstract class LineImpl extends NodeImpl implements Line {
 		final String oldTargetAnchor = targetAnchor;
 		targetAnchor = newTargetAnchor;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					DiPackage.LINE__TARGET_ANCHOR, oldTargetAnchor,
+			eNotify(new ENotificationImpl(this, Notification.SET, DiPackage.LINE__TARGET_ANCHOR, oldTargetAnchor,
 					targetAnchor));
 		}
 	}
@@ -342,8 +336,7 @@ public abstract class LineImpl extends NodeImpl implements Line {
 		final LineStyle oldStyle = style;
 		style = newStyle == null ? STYLE_EDEFAULT : newStyle;
 		if (eNotificationRequired()) {
-			eNotify(new ENotificationImpl(this, Notification.SET,
-					DiPackage.LINE__STYLE, oldStyle, style));
+			eNotify(new ENotificationImpl(this, Notification.SET, DiPackage.LINE__STYLE, oldStyle, style));
 		}
 	}
 
@@ -354,8 +347,7 @@ public abstract class LineImpl extends NodeImpl implements Line {
 	 */
 	public EList<Integer> getLineDash() {
 		if (lineDash == null) {
-			lineDash = new EDataTypeUniqueEList<Integer>(Integer.class, this,
-					DiPackage.LINE__LINE_DASH);
+			lineDash = new EDataTypeUniqueEList<Integer>(Integer.class, this, DiPackage.LINE__LINE_DASH);
 		}
 		return lineDash;
 	}
@@ -366,15 +358,13 @@ public abstract class LineImpl extends NodeImpl implements Line {
 	 * @generated
 	 */
 	@Override
-	public NotificationChain eInverseRemove(final InternalEObject otherEnd,
-			final int featureID, final NotificationChain msgs) {
+	public NotificationChain eInverseRemove(final InternalEObject otherEnd, final int featureID,
+			final NotificationChain msgs) {
 		switch (featureID) {
 		case DiPackage.LINE__SOURCE_NODE:
-			return ((InternalEList<?>) getSourceNode()).basicRemove(otherEnd,
-					msgs);
+			return ((InternalEList<?>) getSourceNode()).basicRemove(otherEnd, msgs);
 		case DiPackage.LINE__TARGET_NODE:
-			return ((InternalEList<?>) getTargetNode()).basicRemove(otherEnd,
-					msgs);
+			return ((InternalEList<?>) getTargetNode()).basicRemove(otherEnd, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -385,8 +375,7 @@ public abstract class LineImpl extends NodeImpl implements Line {
 	 * @generated
 	 */
 	@Override
-	public Object eGet(final int featureID, final boolean resolve,
-			final boolean coreType) {
+	public Object eGet(final int featureID, final boolean resolve, final boolean coreType) {
 		switch (featureID) {
 		case DiPackage.LINE__COLOR:
 			return getColor();
@@ -501,11 +490,9 @@ public abstract class LineImpl extends NodeImpl implements Line {
 		case DiPackage.LINE__WIDTH:
 			return width != WIDTH_EDEFAULT;
 		case DiPackage.LINE__SOURCE_ANCHOR:
-			return SOURCE_ANCHOR_EDEFAULT == null ? sourceAnchor != null
-					: !SOURCE_ANCHOR_EDEFAULT.equals(sourceAnchor);
+			return SOURCE_ANCHOR_EDEFAULT == null ? sourceAnchor != null : !SOURCE_ANCHOR_EDEFAULT.equals(sourceAnchor);
 		case DiPackage.LINE__TARGET_ANCHOR:
-			return TARGET_ANCHOR_EDEFAULT == null ? targetAnchor != null
-					: !TARGET_ANCHOR_EDEFAULT.equals(targetAnchor);
+			return TARGET_ANCHOR_EDEFAULT == null ? targetAnchor != null : !TARGET_ANCHOR_EDEFAULT.equals(targetAnchor);
 		case DiPackage.LINE__SOURCE_NODE:
 			return sourceNode != null && !sourceNode.isEmpty();
 		case DiPackage.LINE__TARGET_NODE:
@@ -521,7 +508,7 @@ public abstract class LineImpl extends NodeImpl implements Line {
 	/**
 	 * <!-- begin-user-doc --> <!-- end-user-doc -->
 	 *
-	 * @generated
+	 * @generated NOT
 	 */
 	@Override
 	public String toString() {
@@ -538,10 +525,10 @@ public abstract class LineImpl extends NodeImpl implements Line {
 		result.append(sourceAnchor);
 		result.append(", targetAnchor: ");
 		result.append(targetAnchor);
-		result.append(", sourceNode: ");
-		result.append(sourceNode);
-		result.append(", targetNode: ");
-		result.append(targetNode);
+		// result.append(", sourceNode: ");
+		// result.append(sourceNode);
+		// result.append(", targetNode: ");
+		// result.append(targetNode);
 		result.append(", style: ");
 		result.append(style);
 		result.append(", lineDash: ");

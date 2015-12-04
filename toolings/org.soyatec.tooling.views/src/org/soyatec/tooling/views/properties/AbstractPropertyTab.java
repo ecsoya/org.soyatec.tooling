@@ -21,8 +21,10 @@ public abstract class AbstractPropertyTab implements IPropertyTab {
 	protected ISelection selection;
 	protected Object input;
 
-	public void selectionChanged(final IWorkbenchPart part,
-			final ISelection selection) {
+	public void selectionChanged(final IWorkbenchPart part, final ISelection selection) {
+		if (activePart != null && activePart == part && this.selection != null && this.selection.equals(selection)) {
+			return;
+		}
 		this.activePart = part;
 		this.selection = selection;
 		Object input = null;

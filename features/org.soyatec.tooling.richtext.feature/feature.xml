@@ -2,7 +2,7 @@
 <feature
       id="org.soyatec.tooling.richtext.feature"
       label="Soyatec RichText"
-      version="1.0.0.qualifier"
+      version="1.0.1.qualifier"
       provider-name="Soyatec">
 
    <description url="http://ecsoya.github.io/org.soyatec.tooling/stp_htmleditor.html">

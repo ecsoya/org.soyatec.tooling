@@ -141,6 +141,9 @@ public class FormPropertySheetPage implements IPropertySheetPage {
 		final Control[] children = body.getChildren();
 		for (final Control control : children) {
 			if (tab.equals(control.getData())) {
+				if (control.isVisible()) {
+					continue;
+				}
 				final GridData layoutData = (GridData) control.getLayoutData();
 				layoutData.exclude = false;
 				control.setVisible(true);

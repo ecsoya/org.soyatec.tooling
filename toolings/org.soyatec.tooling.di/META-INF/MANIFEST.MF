@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: %pluginName
 Bundle-SymbolicName: org.soyatec.tooling.di;singleton:=true
-Bundle-Version: 4.4.2.qualifier
+Bundle-Version: 1.0.1.qualifier
 Bundle-ClassPath: .
 Bundle-Activator: org.soyatec.tooling.di.provider.DiEditPlugin$Implementation
 Require-Bundle: org.eclipse.core.runtime,
@@ -13,7 +13,7 @@ Require-Bundle: org.eclipse.core.runtime,
 Bundle-ActivationPolicy: lazy
 Bundle-Vendor: %providerName
 Bundle-Localization: plugin
-Bundle-RequiredExecutionEnvironment: JavaSE-1.7
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Export-Package: org.soyatec.tooling.di,
  org.soyatec.tooling.di.impl,
  org.soyatec.tooling.di.provider,
