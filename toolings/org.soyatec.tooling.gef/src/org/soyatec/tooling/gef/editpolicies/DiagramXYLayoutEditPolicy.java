@@ -52,6 +52,14 @@ public class DiagramXYLayoutEditPolicy extends XYLayoutEditPolicy {
 			comment.setBounds(bounds);
 			return CommandFactory.add(diagram,
 					DiPackage.eINSTANCE.getDiagram_Comments(), comment);
+		} else if (newObject instanceof Shape) {
+			final Rectangle bounds = rect.getCopy();
+			if (bounds.isEmpty()) {
+				bounds.setSize(SIZE_COMMENT_DEFAULT);
+			}
+			((Shape) newObject).setBounds(bounds);
+			return CommandFactory.add(diagram,
+					DiPackage.eINSTANCE.getContainer_Children(), newObject);
 		}
 		return null;
 	}

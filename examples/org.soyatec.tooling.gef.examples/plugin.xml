@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.0"?>
+
+<!--
+-->
+
+<plugin>
+
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated shapes -->
+      <package
+            uri="http://www.soyatec.org/2016/Tooling/Examples/Shapes"
+            class="org.soyatec.tooling.gef.examples.shapes.ShapesPackage"
+            genModel="model/shapes.genmodel"/>
+   </extension>
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            class="org.soyatec.tooling.gef.examples.editor.ShapesGraphicalEditor"
+            default="true"
+            extensions="ecsoya"
+            id="org.soyatec.tooling.gef.examples.editor.ShapesGraphicalEditor"
+            name="Ecsoya Shapes Editor">
+      </editor>
+   </extension>
+   <extension
+         point="org.eclipse.ui.newWizards">
+      <category
+            id="ecsoya"
+            name="Ecsoya">
+      </category>
+      <wizard
+            category="ecsoya"
+            class="org.soyatec.tooling.gef.examples.wizards.NewShapeDiagramWizard"
+            id="org.soyatec.tooling.gef.examples.wizard1"
+            name="Shapes Diagram">
+      </wizard>
+   </extension>
+
+</plugin>
