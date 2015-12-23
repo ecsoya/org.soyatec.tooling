@@ -95,7 +95,7 @@ This Agreement is governed by the laws of the State of New York and the intellec
    </requires>
 
    <plugin
-         id="org.soyatec.translations.ch.gef"
+         id="org.soyatec.localizations.ch.gef"
          download-size="0"
          install-size="0"
          version="0.0.0"
@@ -103,7 +103,7 @@ This Agreement is governed by the laws of the State of New York and the intellec
          unpack="false"/>
 
    <plugin
-         id="org.soyatec.translations.ch.ide"
+         id="org.soyatec.localizations.ch.ide"
          download-size="0"
          install-size="0"
          version="0.0.0"
@@ -111,7 +111,7 @@ This Agreement is governed by the laws of the State of New York and the intellec
          unpack="false"/>
 
    <plugin
-         id="org.soyatec.translations.ch.jface"
+         id="org.soyatec.localizations.ch.jface"
          download-size="0"
          install-size="0"
          version="0.0.0"
@@ -119,7 +119,7 @@ This Agreement is governed by the laws of the State of New York and the intellec
          unpack="false"/>
 
    <plugin
-         id="org.soyatec.translations.ch.views"
+         id="org.soyatec.localizations.ch.views"
          download-size="0"
          install-size="0"
          version="0.0.0"
