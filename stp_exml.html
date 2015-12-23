@@ -1,34 +1,42 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
-    <meta charset="UTF-8">
-    <title>Soyatec Tooling Project by ecsoya</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-  </head>
-  <body>
-    <section class="page-header">
-      <h1 class="project-name">Soyatec Tooling Project</h1>
-      <h2 class="project-tagline">XML Tooling based on EMF</h2>
-      <a href="https://ecsoya.github.io/" class="btn">Ecsoya</a>
-      <a href="https://github.com/ecsoya/org.soyatec.tooling" class="btn">View on GitHub</a>
-<a href="https://ecsoya.github.io/org.soyatec.tooling/" class="btn">Soyatec Tooling Project</a>
-    </section>
+<head>
+<meta charset="UTF-8">
+<title>Soyatec Tooling Project by ecsoya</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="stylesheets/normalize.css"
+	media="screen">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700'
+	rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css"
+	media="screen">
+<link rel="stylesheet" type="text/css"
+	href="stylesheets/github-light.css" media="screen">
+</head>
+<body>
+	<section class="page-header">
+		<h1 class="project-name">Soyatec Tooling Project</h1>
+		<h2 class="project-tagline">XML Tooling based on EMF</h2>
+		<a href="https://ecsoya.github.io/" class="btn">Ecsoya</a> <a
+			href="https://github.com/ecsoya/org.soyatec.tooling" class="btn">View
+			on GitHub</a> <a href="https://ecsoya.github.io/org.soyatec.tooling/"
+			class="btn">Soyatec Tooling Project</a>
+	</section>
 
-    <section class="main-content">
-      <h3>Overview</h3>
-      <p>XML Tooling based on EMF (EXML) used to Load/Save XML with EMF models.</p>
-      <h3>Simple EMF Model </h3>
-      <p><img src="images/exml_model.gif"></p>
-      <h3>Easy Loading</h3>
-      <div align="left">
-        <pre>EXMLResourceFactoryImpl fac = new EXMLResourceFactoryImpl();<br>XMLResource resource = (XMLResource) fac.createResource(uri);<br>HashMap&lt;String, Object&gt; options = new HashMap&lt;String, Object&gt;();<br>options.put(XMLResource.OPTION_ENCODING, &quot;UTF-8&quot;);<br>resource.load(inputStream, options);</pre>
-      </div>
-      <h3>Saving XML</h3>
-      <pre>EXMLResourceFactoryImpl fac = new EXMLResourceFactoryImpl();
+	<section class="main-content">
+		<h3>Overview</h3>
+		<p>XML Tooling based on EMF (EXML) used to Load/Save XML with EMF
+			models.</p>
+		<h3>Simple EMF Model</h3>
+		<p>
+			<img src="images/exml_model.gif">
+		</p>
+		<h3>Easy Loading</h3>
+		<div align="left">
+			<pre>EXMLResourceFactoryImpl fac = new EXMLResourceFactoryImpl();<br>XMLResource resource = (XMLResource) fac.createResource(uri);<br>HashMap&lt;String, Object&gt; options = new HashMap&lt;String, Object&gt;();<br>options.put(XMLResource.OPTION_ENCODING, &quot;UTF-8&quot;);<br>resource.load(inputStream, options);</pre>
+		</div>
+		<h3>Saving XML</h3>
+		<pre>EXMLResourceFactoryImpl fac = new EXMLResourceFactoryImpl();
 Resource resource = fac.createResource(URI.createFileURI(&quot;Sample-save.xml&quot;));
 EXDocument doc = EXMLFactory.eINSTANCE.createDocument();
 EXElement root = EXMLFactory.eINSTANCE.createElement();
@@ -51,24 +59,34 @@ try {
 } catch (IOException e) {
    	e.printStackTrace();
 }</pre>
-      
-        
-        <pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;ASCII&quot;?&gt;<br>&lt;Company name=&quot;Soyatec&quot;&gt;<br>	&lt;Employee&gt;Robot0&lt;/Employee&gt;<br>	&lt;Employee&gt;Robot1&lt;/Employee&gt;<br>	&lt;Employee&gt;Robot2&lt;/Employee&gt;<br>	&lt;Employee&gt;Robot3&lt;/Employee&gt;<br>	&lt;Employee&gt;Robot4&lt;/Employee&gt;<br>&lt;/Company&gt;</pre>
-        <h3>Update Site</h3>
-        <ul>
-          <li>Release: <a href="http://ecsoya.github.io/org.soyatec.tooling/update/">http://ecsoya.github.io/org.soyatec.tooling/update/</a></li>
-        </ul> 
-    
-      <h3><a href="http://ecsoya.github.io/org.soyatec.tooling/" >&lt;&lt; Back</a></h3>
-<footer class="site-footer">
- <div align="center">
-        <span class="site-footer-owner"><a href="https://github.com/ecsoya/org.soyatec.tooling">Soyatec Tooling Project</a> is maintained by <a href="https://github.com/ecsoya">ecsoya</a>.</span>
-        <span class="site-footer-credits">Ecsoya (<a href="mailto:jin.liu@soyatec.com">jin.liu@soyatec.com</a>)</span>
-        </div>    </footer>
 
-    </section>
 
-  
-  </body>
+		<pre>&lt;?xml version=&quot;1.0&quot; encoding=&quot;ASCII&quot;?&gt;<br>&lt;Company name=&quot;Soyatec&quot;&gt;<br>	&lt;Employee&gt;Robot0&lt;/Employee&gt;<br>	&lt;Employee&gt;Robot1&lt;/Employee&gt;<br>	&lt;Employee&gt;Robot2&lt;/Employee&gt;<br>	&lt;Employee&gt;Robot3&lt;/Employee&gt;<br>	&lt;Employee&gt;Robot4&lt;/Employee&gt;<br>&lt;/Company&gt;</pre>
+		<h3>Update Site</h3>
+		<ul>
+			<li>Release: <a
+				href="http://ecsoya.github.io/org.soyatec.tooling/update/">http://ecsoya.github.io/org.soyatec.tooling/update/</a></li>
+		</ul>
+
+		<h3>
+			<a href="http://ecsoya.github.io/org.soyatec.tooling/">&lt;&lt;
+				Back</a>
+		</h3>
+		<footer class="site-footer">
+			<div align="center">
+				<span class="site-footer-owner"><a
+					href="https://github.com/ecsoya/org.soyatec.tooling">Soyatec
+						Tooling Project</a> is maintained by <a
+					href="https://github.com/ecsoya">ecsoya</a>.</span> <span
+					class="site-footer-credits">Ecsoya (<a
+					href="mailto:jin.liu@soyatec.com">jin.liu@soyatec.com</a>)
+				</span>
+			</div>
+		</footer>
+
+	</section>
+
+
+</body>
 </html>
 
