@@ -9,7 +9,7 @@ Soyatec Tooling Project provided some very useful toolings for developing `Eclip
 3. `org.soyatec.tooling.gef.toolbar` Provided a new graphical editor with a `ToolBar` Palette.
 4. `org.soyatec.tooling.views` Provided a `TreeViewer` `ViewPart` and a `Form` based `PropertySheetPage`.
 
-### Part 2. Translations to Chinese (translations)
+### Part 2. Chinese Localization for Eclipse RCP (localizations)
 
 1. `org.soyatec.translations.ch.ide` -> `org.eclipse.ui.ide`
 2. `org.soyatec.translations.ch.workbench` -> `org.eclipse.ui.workbench`
