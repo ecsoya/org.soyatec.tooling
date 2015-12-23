@@ -14,29 +14,29 @@ import org.soyatec.tooling.gef.examples.shapes.SolidLine;
 
 public class ShapesEditPartFactory implements EditPartFactory {
 
-	@Override
-	public EditPart createEditPart(EditPart context, Object model) {
-		if (model instanceof Diagram) {
-			return new GraphDiagramEditPart((Diagram) model);
-		} else if (model instanceof GradientShape) {
-			EObject element = ((GradientShape) model).getElement();
-			if (element instanceof Rectangle) {
-				return new RectangleEditPart((GradientShape) model);
-			}
-		} else if (model instanceof Shape) {
-			EObject element = ((Shape) model).getElement();
-			if (element instanceof Ellipse) {
-				return new EllipseEditPart((Shape) model);
-			}
-		} else if (model instanceof Connector) {
-			EObject element = ((Connector) model).getElement();
-			if (element instanceof SolidLine) {
-				return new SolidLineEditPart((Connector) model);
-			} else if (element instanceof DashedLine) {
-				return new DashedLineEditPart((Connector) model);
-			}
-		}
-		return null;
-	}
+    @Override
+    public EditPart createEditPart(EditPart context, Object model) {
+        if (model instanceof Diagram) {
+            return new GraphDiagramEditPart((Diagram) model);
+        } else if (model instanceof GradientShape) {
+            EObject element = ((GradientShape) model).getElement();
+            if (element instanceof Rectangle) {
+                return new RectangleEditPart((GradientShape) model);
+            }
+        } else if (model instanceof Shape) {
+            EObject element = ((Shape) model).getElement();
+            if (element instanceof Ellipse) {
+                return new EllipseEditPart((Shape) model);
+            }
+        } else if (model instanceof Connector) {
+            EObject element = ((Connector) model).getElement();
+            if (element instanceof SolidLine) {
+                return new SolidLineEditPart((Connector) model);
+            } else if (element instanceof DashedLine) {
+                return new DashedLineEditPart((Connector) model);
+            }
+        }
+        return null;
+    }
 
 }

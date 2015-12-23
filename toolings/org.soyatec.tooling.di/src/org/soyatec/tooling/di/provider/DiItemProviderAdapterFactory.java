@@ -42,420 +42,420 @@ import org.soyatec.tooling.di.util.DiAdapterFactory;
  * @generated
  */
 public class DiItemProviderAdapterFactory extends DiAdapterFactory implements
-		ComposeableAdapterFactory, IChangeNotifier, IDisposable {
-	/**
-	 * This keeps track of the root adapter factory that delegates to this
-	 * adapter factory. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	protected ComposedAdapterFactory parentAdapterFactory;
+        ComposeableAdapterFactory, IChangeNotifier, IDisposable {
+    /**
+     * This keeps track of the root adapter factory that delegates to this
+     * adapter factory. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    protected ComposedAdapterFactory parentAdapterFactory;
 
-	/**
-	 * This is used to implement
-	 * {@link org.eclipse.emf.edit.provider.IChangeNotifier}. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	protected IChangeNotifier changeNotifier = new ChangeNotifier();
+    /**
+     * This is used to implement
+     * {@link org.eclipse.emf.edit.provider.IChangeNotifier}. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    protected IChangeNotifier changeNotifier = new ChangeNotifier();
 
-	/**
-	 * This keeps track of all the supported types checked by
-	 * {@link #isFactoryForType isFactoryForType}. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 *
-	 * @generated
-	 */
-	protected Collection<Object> supportedTypes = new ArrayList<Object>();
+    /**
+     * This keeps track of all the supported types checked by
+     * {@link #isFactoryForType isFactoryForType}. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     *
+     * @generated
+     */
+    protected Collection<Object> supportedTypes = new ArrayList<Object>();
 
-	/**
-	 * This constructs an instance. <!-- begin-user-doc --> <!-- end-user-doc
-	 * -->
-	 *
-	 * @generated
-	 */
-	public DiItemProviderAdapterFactory() {
-		supportedTypes.add(IEditingDomainItemProvider.class);
-		supportedTypes.add(IStructuredItemContentProvider.class);
-		supportedTypes.add(ITreeItemContentProvider.class);
-		supportedTypes.add(IItemLabelProvider.class);
-		supportedTypes.add(IItemPropertySource.class);
-	}
+    /**
+     * This constructs an instance. <!-- begin-user-doc --> <!-- end-user-doc
+     * -->
+     *
+     * @generated
+     */
+    public DiItemProviderAdapterFactory() {
+        supportedTypes.add(IEditingDomainItemProvider.class);
+        supportedTypes.add(IStructuredItemContentProvider.class);
+        supportedTypes.add(ITreeItemContentProvider.class);
+        supportedTypes.add(IItemLabelProvider.class);
+        supportedTypes.add(IItemPropertySource.class);
+    }
 
-	/**
-	 * This keeps track of the one adapter used for all
-	 * {@link org.soyatec.tooling.di.Diagram} instances. <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	protected DiagramItemProvider diagramItemProvider;
+    /**
+     * This keeps track of the one adapter used for all
+     * {@link org.soyatec.tooling.di.Diagram} instances. <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    protected DiagramItemProvider diagramItemProvider;
 
-	/**
-	 * This creates an adapter for a {@link org.soyatec.tooling.di.Diagram}.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public Adapter createDiagramAdapter() {
-		if (diagramItemProvider == null) {
-			diagramItemProvider = new DiagramItemProvider(this);
-		}
+    /**
+     * This creates an adapter for a {@link org.soyatec.tooling.di.Diagram}.
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public Adapter createDiagramAdapter() {
+        if (diagramItemProvider == null) {
+            diagramItemProvider = new DiagramItemProvider(this);
+        }
 
-		return diagramItemProvider;
-	}
+        return diagramItemProvider;
+    }
 
-	/**
-	 * This keeps track of the one adapter used for all
-	 * {@link org.soyatec.tooling.di.Shape} instances. <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	protected ShapeItemProvider shapeItemProvider;
+    /**
+     * This keeps track of the one adapter used for all
+     * {@link org.soyatec.tooling.di.Shape} instances. <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    protected ShapeItemProvider shapeItemProvider;
 
-	/**
-	 * This creates an adapter for a {@link org.soyatec.tooling.di.Shape}. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public Adapter createShapeAdapter() {
-		if (shapeItemProvider == null) {
-			shapeItemProvider = new ShapeItemProvider(this);
-		}
+    /**
+     * This creates an adapter for a {@link org.soyatec.tooling.di.Shape}. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public Adapter createShapeAdapter() {
+        if (shapeItemProvider == null) {
+            shapeItemProvider = new ShapeItemProvider(this);
+        }
 
-		return shapeItemProvider;
-	}
+        return shapeItemProvider;
+    }
 
-	/**
-	 * This keeps track of the one adapter used for all
-	 * {@link org.soyatec.tooling.di.GradientShape} instances. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	protected GradientShapeItemProvider gradientShapeItemProvider;
+    /**
+     * This keeps track of the one adapter used for all
+     * {@link org.soyatec.tooling.di.GradientShape} instances. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    protected GradientShapeItemProvider gradientShapeItemProvider;
 
-	/**
-	 * This creates an adapter for a
-	 * {@link org.soyatec.tooling.di.GradientShape}. <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public Adapter createGradientShapeAdapter() {
-		if (gradientShapeItemProvider == null) {
-			gradientShapeItemProvider = new GradientShapeItemProvider(this);
-		}
+    /**
+     * This creates an adapter for a
+     * {@link org.soyatec.tooling.di.GradientShape}. <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public Adapter createGradientShapeAdapter() {
+        if (gradientShapeItemProvider == null) {
+            gradientShapeItemProvider = new GradientShapeItemProvider(this);
+        }
 
-		return gradientShapeItemProvider;
-	}
+        return gradientShapeItemProvider;
+    }
 
-	/**
-	 * This keeps track of the one adapter used for all
-	 * {@link org.soyatec.tooling.di.Connector} instances. <!-- begin-user-doc
-	 * --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	protected ConnectorItemProvider connectorItemProvider;
+    /**
+     * This keeps track of the one adapter used for all
+     * {@link org.soyatec.tooling.di.Connector} instances. <!-- begin-user-doc
+     * --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    protected ConnectorItemProvider connectorItemProvider;
 
-	/**
-	 * This creates an adapter for a {@link org.soyatec.tooling.di.Connector}.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public Adapter createConnectorAdapter() {
-		if (connectorItemProvider == null) {
-			connectorItemProvider = new ConnectorItemProvider(this);
-		}
+    /**
+     * This creates an adapter for a {@link org.soyatec.tooling.di.Connector}.
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public Adapter createConnectorAdapter() {
+        if (connectorItemProvider == null) {
+            connectorItemProvider = new ConnectorItemProvider(this);
+        }
 
-		return connectorItemProvider;
-	}
+        return connectorItemProvider;
+    }
 
-	/**
-	 * This keeps track of the one adapter used for all
-	 * {@link org.soyatec.tooling.di.Comment} instances. <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	protected CommentItemProvider commentItemProvider;
+    /**
+     * This keeps track of the one adapter used for all
+     * {@link org.soyatec.tooling.di.Comment} instances. <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    protected CommentItemProvider commentItemProvider;
 
-	/**
-	 * This creates an adapter for a {@link org.soyatec.tooling.di.Comment}.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public Adapter createCommentAdapter() {
-		if (commentItemProvider == null) {
-			commentItemProvider = new CommentItemProvider(this);
-		}
+    /**
+     * This creates an adapter for a {@link org.soyatec.tooling.di.Comment}.
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public Adapter createCommentAdapter() {
+        if (commentItemProvider == null) {
+            commentItemProvider = new CommentItemProvider(this);
+        }
 
-		return commentItemProvider;
-	}
+        return commentItemProvider;
+    }
 
-	/**
-	 * This keeps track of the one adapter used for all
-	 * {@link org.soyatec.tooling.di.CommentLink} instances. <!-- begin-user-doc
-	 * --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	protected CommentLinkItemProvider commentLinkItemProvider;
+    /**
+     * This keeps track of the one adapter used for all
+     * {@link org.soyatec.tooling.di.CommentLink} instances. <!-- begin-user-doc
+     * --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    protected CommentLinkItemProvider commentLinkItemProvider;
 
-	/**
-	 * This creates an adapter for a {@link org.soyatec.tooling.di.CommentLink}.
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public Adapter createCommentLinkAdapter() {
-		if (commentLinkItemProvider == null) {
-			commentLinkItemProvider = new CommentLinkItemProvider(this);
-		}
+    /**
+     * This creates an adapter for a {@link org.soyatec.tooling.di.CommentLink}.
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public Adapter createCommentLinkAdapter() {
+        if (commentLinkItemProvider == null) {
+            commentLinkItemProvider = new CommentLinkItemProvider(this);
+        }
 
-		return commentLinkItemProvider;
-	}
+        return commentLinkItemProvider;
+    }
 
-	/**
-	 * This keeps track of the one adapter used for all
-	 * {@link org.soyatec.tooling.di.Grid} instances. <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	protected GridItemProvider gridItemProvider;
+    /**
+     * This keeps track of the one adapter used for all
+     * {@link org.soyatec.tooling.di.Grid} instances. <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    protected GridItemProvider gridItemProvider;
 
-	/**
-	 * This creates an adapter for a {@link org.soyatec.tooling.di.Grid}. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public Adapter createGridAdapter() {
-		if (gridItemProvider == null) {
-			gridItemProvider = new GridItemProvider(this);
-		}
+    /**
+     * This creates an adapter for a {@link org.soyatec.tooling.di.Grid}. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public Adapter createGridAdapter() {
+        if (gridItemProvider == null) {
+            gridItemProvider = new GridItemProvider(this);
+        }
 
-		return gridItemProvider;
-	}
+        return gridItemProvider;
+    }
 
-	/**
-	 * This keeps track of the one adapter used for all
-	 * {@link org.soyatec.tooling.di.Ruler} instances. <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	protected RulerItemProvider rulerItemProvider;
+    /**
+     * This keeps track of the one adapter used for all
+     * {@link org.soyatec.tooling.di.Ruler} instances. <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    protected RulerItemProvider rulerItemProvider;
 
-	/**
-	 * This creates an adapter for a {@link org.soyatec.tooling.di.Ruler}. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public Adapter createRulerAdapter() {
-		if (rulerItemProvider == null) {
-			rulerItemProvider = new RulerItemProvider(this);
-		}
+    /**
+     * This creates an adapter for a {@link org.soyatec.tooling.di.Ruler}. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public Adapter createRulerAdapter() {
+        if (rulerItemProvider == null) {
+            rulerItemProvider = new RulerItemProvider(this);
+        }
 
-		return rulerItemProvider;
-	}
+        return rulerItemProvider;
+    }
 
-	/**
-	 * This keeps track of the one adapter used for all
-	 * {@link org.soyatec.tooling.di.Guide} instances. <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	protected GuideItemProvider guideItemProvider;
+    /**
+     * This keeps track of the one adapter used for all
+     * {@link org.soyatec.tooling.di.Guide} instances. <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    protected GuideItemProvider guideItemProvider;
 
-	/**
-	 * This creates an adapter for a {@link org.soyatec.tooling.di.Guide}. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public Adapter createGuideAdapter() {
-		if (guideItemProvider == null) {
-			guideItemProvider = new GuideItemProvider(this);
-		}
+    /**
+     * This creates an adapter for a {@link org.soyatec.tooling.di.Guide}. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public Adapter createGuideAdapter() {
+        if (guideItemProvider == null) {
+            guideItemProvider = new GuideItemProvider(this);
+        }
 
-		return guideItemProvider;
-	}
+        return guideItemProvider;
+    }
 
-	/**
-	 * This keeps track of the one adapter used for all
-	 * {@link java.util.Map.Entry} instances. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 *
-	 * @generated
-	 */
-	protected ElementEntryItemProvider elementEntryItemProvider;
+    /**
+     * This keeps track of the one adapter used for all
+     * {@link java.util.Map.Entry} instances. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     *
+     * @generated
+     */
+    protected ElementEntryItemProvider elementEntryItemProvider;
 
-	/**
-	 * This creates an adapter for a {@link java.util.Map.Entry}. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public Adapter createElementEntryAdapter() {
-		if (elementEntryItemProvider == null) {
-			elementEntryItemProvider = new ElementEntryItemProvider(this);
-		}
+    /**
+     * This creates an adapter for a {@link java.util.Map.Entry}. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public Adapter createElementEntryAdapter() {
+        if (elementEntryItemProvider == null) {
+            elementEntryItemProvider = new ElementEntryItemProvider(this);
+        }
 
-		return elementEntryItemProvider;
-	}
+        return elementEntryItemProvider;
+    }
 
-	/**
-	 * This returns the root adapter factory that contains this factory. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	public ComposeableAdapterFactory getRootAdapterFactory() {
-		return parentAdapterFactory == null ? this : parentAdapterFactory
-				.getRootAdapterFactory();
-	}
+    /**
+     * This returns the root adapter factory that contains this factory. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    public ComposeableAdapterFactory getRootAdapterFactory() {
+        return parentAdapterFactory == null ? this : parentAdapterFactory
+                .getRootAdapterFactory();
+    }
 
-	/**
-	 * This sets the composed adapter factory that contains this factory. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	public void setParentAdapterFactory(
-			final ComposedAdapterFactory parentAdapterFactory) {
-		this.parentAdapterFactory = parentAdapterFactory;
-	}
+    /**
+     * This sets the composed adapter factory that contains this factory. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    public void setParentAdapterFactory(
+            final ComposedAdapterFactory parentAdapterFactory) {
+        this.parentAdapterFactory = parentAdapterFactory;
+    }
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public boolean isFactoryForType(final Object type) {
-		return supportedTypes.contains(type) || super.isFactoryForType(type);
-	}
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public boolean isFactoryForType(final Object type) {
+        return supportedTypes.contains(type) || super.isFactoryForType(type);
+    }
 
-	/**
-	 * This implementation substitutes the factory itself as the key for the
-	 * adapter. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public Adapter adapt(final Notifier notifier, final Object type) {
-		return super.adapt(notifier, this);
-	}
+    /**
+     * This implementation substitutes the factory itself as the key for the
+     * adapter. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public Adapter adapt(final Notifier notifier, final Object type) {
+        return super.adapt(notifier, this);
+    }
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public Object adapt(final Object object, final Object type) {
-		if (isFactoryForType(type)) {
-			final Object adapter = super.adapt(object, type);
-			if (!(type instanceof Class<?>)
-					|| (((Class<?>) type).isInstance(adapter))) {
-				return adapter;
-			}
-		}
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public Object adapt(final Object object, final Object type) {
+        if (isFactoryForType(type)) {
+            final Object adapter = super.adapt(object, type);
+            if (!(type instanceof Class<?>)
+                    || (((Class<?>) type).isInstance(adapter))) {
+                return adapter;
+            }
+        }
 
-		return null;
-	}
+        return null;
+    }
 
-	/**
-	 * This adds a listener. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	public void addListener(final INotifyChangedListener notifyChangedListener) {
-		changeNotifier.addListener(notifyChangedListener);
-	}
+    /**
+     * This adds a listener. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    public void addListener(final INotifyChangedListener notifyChangedListener) {
+        changeNotifier.addListener(notifyChangedListener);
+    }
 
-	/**
-	 * This removes a listener. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	public void removeListener(
-			final INotifyChangedListener notifyChangedListener) {
-		changeNotifier.removeListener(notifyChangedListener);
-	}
+    /**
+     * This removes a listener. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    public void removeListener(
+            final INotifyChangedListener notifyChangedListener) {
+        changeNotifier.removeListener(notifyChangedListener);
+    }
 
-	/**
-	 * This delegates to {@link #changeNotifier} and to
-	 * {@link #parentAdapterFactory}. <!-- begin-user-doc --> <!-- end-user-doc
-	 * -->
-	 *
-	 * @generated
-	 */
-	public void fireNotifyChanged(final Notification notification) {
-		changeNotifier.fireNotifyChanged(notification);
+    /**
+     * This delegates to {@link #changeNotifier} and to
+     * {@link #parentAdapterFactory}. <!-- begin-user-doc --> <!-- end-user-doc
+     * -->
+     *
+     * @generated
+     */
+    public void fireNotifyChanged(final Notification notification) {
+        changeNotifier.fireNotifyChanged(notification);
 
-		if (parentAdapterFactory != null) {
-			parentAdapterFactory.fireNotifyChanged(notification);
-		}
-	}
+        if (parentAdapterFactory != null) {
+            parentAdapterFactory.fireNotifyChanged(notification);
+        }
+    }
 
-	/**
-	 * This disposes all of the item providers created by this factory. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	public void dispose() {
-		if (diagramItemProvider != null) {
-			diagramItemProvider.dispose();
-		}
-		if (shapeItemProvider != null) {
-			shapeItemProvider.dispose();
-		}
-		if (gradientShapeItemProvider != null) {
-			gradientShapeItemProvider.dispose();
-		}
-		if (connectorItemProvider != null) {
-			connectorItemProvider.dispose();
-		}
-		if (commentItemProvider != null) {
-			commentItemProvider.dispose();
-		}
-		if (commentLinkItemProvider != null) {
-			commentLinkItemProvider.dispose();
-		}
-		if (gridItemProvider != null) {
-			gridItemProvider.dispose();
-		}
-		if (rulerItemProvider != null) {
-			rulerItemProvider.dispose();
-		}
-		if (guideItemProvider != null) {
-			guideItemProvider.dispose();
-		}
-		if (elementEntryItemProvider != null) {
-			elementEntryItemProvider.dispose();
-		}
-	}
+    /**
+     * This disposes all of the item providers created by this factory. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    public void dispose() {
+        if (diagramItemProvider != null) {
+            diagramItemProvider.dispose();
+        }
+        if (shapeItemProvider != null) {
+            shapeItemProvider.dispose();
+        }
+        if (gradientShapeItemProvider != null) {
+            gradientShapeItemProvider.dispose();
+        }
+        if (connectorItemProvider != null) {
+            connectorItemProvider.dispose();
+        }
+        if (commentItemProvider != null) {
+            commentItemProvider.dispose();
+        }
+        if (commentLinkItemProvider != null) {
+            commentLinkItemProvider.dispose();
+        }
+        if (gridItemProvider != null) {
+            gridItemProvider.dispose();
+        }
+        if (rulerItemProvider != null) {
+            rulerItemProvider.dispose();
+        }
+        if (guideItemProvider != null) {
+            guideItemProvider.dispose();
+        }
+        if (elementEntryItemProvider != null) {
+            elementEntryItemProvider.dispose();
+        }
+    }
 
 }

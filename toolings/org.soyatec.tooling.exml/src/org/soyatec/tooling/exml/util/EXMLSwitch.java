@@ -34,209 +34,209 @@ import org.soyatec.tooling.exml.EXNode;
  * @generated
  */
 public class EXMLSwitch<T> extends Switch<T> {
-	/**
-	 * The cached model package <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	protected static EXMLPackage modelPackage;
+    /**
+     * The cached model package <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    protected static EXMLPackage modelPackage;
 
-	/**
-	 * Creates an instance of the switch. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 *
-	 * @generated
-	 */
-	public EXMLSwitch() {
-		if (modelPackage == null) {
-			modelPackage = EXMLPackage.eINSTANCE;
-		}
-	}
+    /**
+     * Creates an instance of the switch. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     *
+     * @generated
+     */
+    public EXMLSwitch() {
+        if (modelPackage == null) {
+            modelPackage = EXMLPackage.eINSTANCE;
+        }
+    }
 
-	/**
-	 * Checks whether this is a switch for the given package. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @parameter ePackage the package in question.
-	 * @return whether this is a switch for the given package.
-	 * @generated
-	 */
-	@Override
-	protected boolean isSwitchFor(final EPackage ePackage) {
-		return ePackage == modelPackage;
-	}
+    /**
+     * Checks whether this is a switch for the given package. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @parameter ePackage the package in question.
+     * @return whether this is a switch for the given package.
+     * @generated
+     */
+    @Override
+    protected boolean isSwitchFor(final EPackage ePackage) {
+        return ePackage == modelPackage;
+    }
 
-	/**
-	 * Calls <code>caseXXX</code> for each class of the model until one returns
-	 * a non null result; it yields that result. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 *
-	 * @return the first non-null result returned by a <code>caseXXX</code>
-	 *         call.
-	 * @generated
-	 */
-	@Override
-	protected T doSwitch(final int classifierID, final EObject theEObject) {
-		switch (classifierID) {
-		case EXMLPackage.DOCUMENT: {
-			final EXDocument document = (EXDocument) theEObject;
-			T result = caseDocument(document);
-			if (result == null) {
-				result = caseNode(document);
-			}
-			if (result == null) {
-				result = caseXMLTypeDocumentRoot(document);
-			}
-			if (result == null) {
-				result = defaultCase(theEObject);
-			}
-			return result;
-		}
-		case EXMLPackage.ELEMENT: {
-			final EXElement element = (EXElement) theEObject;
-			T result = caseElement(element);
-			if (result == null) {
-				result = caseNode(element);
-			}
-			if (result == null) {
-				result = caseXMLTypeDocumentRoot(element);
-			}
-			if (result == null) {
-				result = defaultCase(theEObject);
-			}
-			return result;
-		}
-		case EXMLPackage.ATTRIBUTE: {
-			final EXAttribute attribute = (EXAttribute) theEObject;
-			T result = caseAttribute(attribute);
-			if (result == null) {
-				result = caseNode(attribute);
-			}
-			if (result == null) {
-				result = caseXMLTypeDocumentRoot(attribute);
-			}
-			if (result == null) {
-				result = defaultCase(theEObject);
-			}
-			return result;
-		}
-		case EXMLPackage.NODE: {
-			final EXNode node = (EXNode) theEObject;
-			T result = caseNode(node);
-			if (result == null) {
-				result = caseXMLTypeDocumentRoot(node);
-			}
-			if (result == null) {
-				result = defaultCase(theEObject);
-			}
-			return result;
-		}
-		default:
-			return defaultCase(theEObject);
-		}
-	}
+    /**
+     * Calls <code>caseXXX</code> for each class of the model until one returns
+     * a non null result; it yields that result. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     *
+     * @return the first non-null result returned by a <code>caseXXX</code>
+     *         call.
+     * @generated
+     */
+    @Override
+    protected T doSwitch(final int classifierID, final EObject theEObject) {
+        switch (classifierID) {
+        case EXMLPackage.DOCUMENT: {
+            final EXDocument document = (EXDocument) theEObject;
+            T result = caseDocument(document);
+            if (result == null) {
+                result = caseNode(document);
+            }
+            if (result == null) {
+                result = caseXMLTypeDocumentRoot(document);
+            }
+            if (result == null) {
+                result = defaultCase(theEObject);
+            }
+            return result;
+        }
+        case EXMLPackage.ELEMENT: {
+            final EXElement element = (EXElement) theEObject;
+            T result = caseElement(element);
+            if (result == null) {
+                result = caseNode(element);
+            }
+            if (result == null) {
+                result = caseXMLTypeDocumentRoot(element);
+            }
+            if (result == null) {
+                result = defaultCase(theEObject);
+            }
+            return result;
+        }
+        case EXMLPackage.ATTRIBUTE: {
+            final EXAttribute attribute = (EXAttribute) theEObject;
+            T result = caseAttribute(attribute);
+            if (result == null) {
+                result = caseNode(attribute);
+            }
+            if (result == null) {
+                result = caseXMLTypeDocumentRoot(attribute);
+            }
+            if (result == null) {
+                result = defaultCase(theEObject);
+            }
+            return result;
+        }
+        case EXMLPackage.NODE: {
+            final EXNode node = (EXNode) theEObject;
+            T result = caseNode(node);
+            if (result == null) {
+                result = caseXMLTypeDocumentRoot(node);
+            }
+            if (result == null) {
+                result = defaultCase(theEObject);
+            }
+            return result;
+        }
+        default:
+            return defaultCase(theEObject);
+        }
+    }
 
-	/**
-	 * Returns the result of interpreting the object as an instance of '
-	 * <em>Document</em>'. <!-- begin-user-doc --> This implementation returns
-	 * null; returning a non-null result will terminate the switch. <!--
-	 * end-user-doc -->
-	 *
-	 * @param object
-	 *            the target of the switch.
-	 * @return the result of interpreting the object as an instance of '
-	 *         <em>Document</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseDocument(final EXDocument object) {
-		return null;
-	}
+    /**
+     * Returns the result of interpreting the object as an instance of '
+     * <em>Document</em>'. <!-- begin-user-doc --> This implementation returns
+     * null; returning a non-null result will terminate the switch. <!--
+     * end-user-doc -->
+     *
+     * @param object
+     *            the target of the switch.
+     * @return the result of interpreting the object as an instance of '
+     *         <em>Document</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseDocument(final EXDocument object) {
+        return null;
+    }
 
-	/**
-	 * Returns the result of interpreting the object as an instance of '
-	 * <em>Element</em>'. <!-- begin-user-doc --> This implementation returns
-	 * null; returning a non-null result will terminate the switch. <!--
-	 * end-user-doc -->
-	 *
-	 * @param object
-	 *            the target of the switch.
-	 * @return the result of interpreting the object as an instance of '
-	 *         <em>Element</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseElement(final EXElement object) {
-		return null;
-	}
+    /**
+     * Returns the result of interpreting the object as an instance of '
+     * <em>Element</em>'. <!-- begin-user-doc --> This implementation returns
+     * null; returning a non-null result will terminate the switch. <!--
+     * end-user-doc -->
+     *
+     * @param object
+     *            the target of the switch.
+     * @return the result of interpreting the object as an instance of '
+     *         <em>Element</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseElement(final EXElement object) {
+        return null;
+    }
 
-	/**
-	 * Returns the result of interpreting the object as an instance of '
-	 * <em>Attribute</em>'. <!-- begin-user-doc --> This implementation returns
-	 * null; returning a non-null result will terminate the switch. <!--
-	 * end-user-doc -->
-	 *
-	 * @param object
-	 *            the target of the switch.
-	 * @return the result of interpreting the object as an instance of '
-	 *         <em>Attribute</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseAttribute(final EXAttribute object) {
-		return null;
-	}
+    /**
+     * Returns the result of interpreting the object as an instance of '
+     * <em>Attribute</em>'. <!-- begin-user-doc --> This implementation returns
+     * null; returning a non-null result will terminate the switch. <!--
+     * end-user-doc -->
+     *
+     * @param object
+     *            the target of the switch.
+     * @return the result of interpreting the object as an instance of '
+     *         <em>Attribute</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseAttribute(final EXAttribute object) {
+        return null;
+    }
 
-	/**
-	 * Returns the result of interpreting the object as an instance of '
-	 * <em>Node</em>'. <!-- begin-user-doc --> This implementation returns null;
-	 * returning a non-null result will terminate the switch. <!-- end-user-doc
-	 * -->
-	 *
-	 * @param object
-	 *            the target of the switch.
-	 * @return the result of interpreting the object as an instance of '
-	 *         <em>Node</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseNode(final EXNode object) {
-		return null;
-	}
+    /**
+     * Returns the result of interpreting the object as an instance of '
+     * <em>Node</em>'. <!-- begin-user-doc --> This implementation returns null;
+     * returning a non-null result will terminate the switch. <!-- end-user-doc
+     * -->
+     *
+     * @param object
+     *            the target of the switch.
+     * @return the result of interpreting the object as an instance of '
+     *         <em>Node</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseNode(final EXNode object) {
+        return null;
+    }
 
-	/**
-	 * Returns the result of interpreting the object as an instance of '
-	 * <em>Document Root</em>'. <!-- begin-user-doc --> This implementation
-	 * returns null; returning a non-null result will terminate the switch. <!--
-	 * end-user-doc -->
-	 *
-	 * @param object
-	 *            the target of the switch.
-	 * @return the result of interpreting the object as an instance of '
-	 *         <em>Document Root</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseXMLTypeDocumentRoot(final XMLTypeDocumentRoot object) {
-		return null;
-	}
+    /**
+     * Returns the result of interpreting the object as an instance of '
+     * <em>Document Root</em>'. <!-- begin-user-doc --> This implementation
+     * returns null; returning a non-null result will terminate the switch. <!--
+     * end-user-doc -->
+     *
+     * @param object
+     *            the target of the switch.
+     * @return the result of interpreting the object as an instance of '
+     *         <em>Document Root</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
+     * @generated
+     */
+    public T caseXMLTypeDocumentRoot(final XMLTypeDocumentRoot object) {
+        return null;
+    }
 
-	/**
-	 * Returns the result of interpreting the object as an instance of '
-	 * <em>EObject</em>'. <!-- begin-user-doc --> This implementation returns
-	 * null; returning a non-null result will terminate the switch, but this is
-	 * the last case anyway. <!-- end-user-doc -->
-	 *
-	 * @param object
-	 *            the target of the switch.
-	 * @return the result of interpreting the object as an instance of '
-	 *         <em>EObject</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject)
-	 * @generated
-	 */
-	@Override
-	public T defaultCase(final EObject object) {
-		return null;
-	}
+    /**
+     * Returns the result of interpreting the object as an instance of '
+     * <em>EObject</em>'. <!-- begin-user-doc --> This implementation returns
+     * null; returning a non-null result will terminate the switch, but this is
+     * the last case anyway. <!-- end-user-doc -->
+     *
+     * @param object
+     *            the target of the switch.
+     * @return the result of interpreting the object as an instance of '
+     *         <em>EObject</em>'.
+     * @see #doSwitch(org.eclipse.emf.ecore.EObject)
+     * @generated
+     */
+    @Override
+    public T defaultCase(final EObject object) {
+        return null;
+    }
 
 } // MLSwitch

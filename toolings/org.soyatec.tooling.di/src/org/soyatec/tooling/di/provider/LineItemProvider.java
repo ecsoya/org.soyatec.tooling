@@ -32,237 +32,237 @@ import org.soyatec.tooling.di.Line;
  * @generated
  */
 public class LineItemProvider extends NodeItemProvider {
-	/**
-	 * This constructs an instance from a factory and a notifier. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	public LineItemProvider(final AdapterFactory adapterFactory) {
-		super(adapterFactory);
-	}
+    /**
+     * This constructs an instance from a factory and a notifier. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    public LineItemProvider(final AdapterFactory adapterFactory) {
+        super(adapterFactory);
+    }
 
-	/**
-	 * This returns the property descriptors for the adapted class. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public List<IItemPropertyDescriptor> getPropertyDescriptors(
-			final Object object) {
-		if (itemPropertyDescriptors == null) {
-			super.getPropertyDescriptors(object);
+    /**
+     * This returns the property descriptors for the adapted class. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public List<IItemPropertyDescriptor> getPropertyDescriptors(
+            final Object object) {
+        if (itemPropertyDescriptors == null) {
+            super.getPropertyDescriptors(object);
 
-			addColorPropertyDescriptor(object);
-			addWidthPropertyDescriptor(object);
-			addSourceAnchorPropertyDescriptor(object);
-			addTargetAnchorPropertyDescriptor(object);
-			addStylePropertyDescriptor(object);
-			addLineDashPropertyDescriptor(object);
-		}
-		return itemPropertyDescriptors;
-	}
+            addColorPropertyDescriptor(object);
+            addWidthPropertyDescriptor(object);
+            addSourceAnchorPropertyDescriptor(object);
+            addTargetAnchorPropertyDescriptor(object);
+            addStylePropertyDescriptor(object);
+            addLineDashPropertyDescriptor(object);
+        }
+        return itemPropertyDescriptors;
+    }
 
-	/**
-	 * This adds a property descriptor for the Color feature. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	protected void addColorPropertyDescriptor(final Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_Line_color_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_Line_color_feature", "_UI_Line_type"),
-				DiPackage.Literals.LINE__COLOR, true, false, false,
-				ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
-	}
+    /**
+     * This adds a property descriptor for the Color feature. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    protected void addColorPropertyDescriptor(final Object object) {
+        itemPropertyDescriptors.add(createItemPropertyDescriptor(
+                ((ComposeableAdapterFactory) adapterFactory)
+                        .getRootAdapterFactory(),
+                getResourceLocator(),
+                getString("_UI_Line_color_feature"),
+                getString("_UI_PropertyDescriptor_description",
+                        "_UI_Line_color_feature", "_UI_Line_type"),
+                DiPackage.Literals.LINE__COLOR, true, false, false,
+                ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
+    }
 
-	/**
-	 * This adds a property descriptor for the Width feature. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	protected void addWidthPropertyDescriptor(final Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_Line_width_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_Line_width_feature", "_UI_Line_type"),
-				DiPackage.Literals.LINE__WIDTH, true, false, false,
-				ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
-	}
+    /**
+     * This adds a property descriptor for the Width feature. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    protected void addWidthPropertyDescriptor(final Object object) {
+        itemPropertyDescriptors.add(createItemPropertyDescriptor(
+                ((ComposeableAdapterFactory) adapterFactory)
+                        .getRootAdapterFactory(),
+                getResourceLocator(),
+                getString("_UI_Line_width_feature"),
+                getString("_UI_PropertyDescriptor_description",
+                        "_UI_Line_width_feature", "_UI_Line_type"),
+                DiPackage.Literals.LINE__WIDTH, true, false, false,
+                ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
+    }
 
-	/**
-	 * This adds a property descriptor for the Source Anchor feature. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	protected void addSourceAnchorPropertyDescriptor(final Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_Line_sourceAnchor_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_Line_sourceAnchor_feature", "_UI_Line_type"),
-				DiPackage.Literals.LINE__SOURCE_ANCHOR, true, false, false,
-				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
-	}
+    /**
+     * This adds a property descriptor for the Source Anchor feature. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    protected void addSourceAnchorPropertyDescriptor(final Object object) {
+        itemPropertyDescriptors.add(createItemPropertyDescriptor(
+                ((ComposeableAdapterFactory) adapterFactory)
+                        .getRootAdapterFactory(),
+                getResourceLocator(),
+                getString("_UI_Line_sourceAnchor_feature"),
+                getString("_UI_PropertyDescriptor_description",
+                        "_UI_Line_sourceAnchor_feature", "_UI_Line_type"),
+                DiPackage.Literals.LINE__SOURCE_ANCHOR, true, false, false,
+                ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+    }
 
-	/**
-	 * This adds a property descriptor for the Target Anchor feature. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	protected void addTargetAnchorPropertyDescriptor(final Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_Line_targetAnchor_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_Line_targetAnchor_feature", "_UI_Line_type"),
-				DiPackage.Literals.LINE__TARGET_ANCHOR, true, false, false,
-				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
-	}
+    /**
+     * This adds a property descriptor for the Target Anchor feature. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    protected void addTargetAnchorPropertyDescriptor(final Object object) {
+        itemPropertyDescriptors.add(createItemPropertyDescriptor(
+                ((ComposeableAdapterFactory) adapterFactory)
+                        .getRootAdapterFactory(),
+                getResourceLocator(),
+                getString("_UI_Line_targetAnchor_feature"),
+                getString("_UI_PropertyDescriptor_description",
+                        "_UI_Line_targetAnchor_feature", "_UI_Line_type"),
+                DiPackage.Literals.LINE__TARGET_ANCHOR, true, false, false,
+                ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+    }
 
-	/**
-	 * This adds a property descriptor for the Style feature. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	protected void addStylePropertyDescriptor(final Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_Line_style_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_Line_style_feature", "_UI_Line_type"),
-				DiPackage.Literals.LINE__STYLE, true, false, false,
-				ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
-	}
+    /**
+     * This adds a property descriptor for the Style feature. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    protected void addStylePropertyDescriptor(final Object object) {
+        itemPropertyDescriptors.add(createItemPropertyDescriptor(
+                ((ComposeableAdapterFactory) adapterFactory)
+                        .getRootAdapterFactory(),
+                getResourceLocator(),
+                getString("_UI_Line_style_feature"),
+                getString("_UI_PropertyDescriptor_description",
+                        "_UI_Line_style_feature", "_UI_Line_type"),
+                DiPackage.Literals.LINE__STYLE, true, false, false,
+                ItemPropertyDescriptor.GENERIC_VALUE_IMAGE, null, null));
+    }
 
-	/**
-	 * This adds a property descriptor for the Line Dash feature. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	protected void addLineDashPropertyDescriptor(final Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_Line_lineDash_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_Line_lineDash_feature", "_UI_Line_type"),
-				DiPackage.Literals.LINE__LINE_DASH, true, false, false,
-				ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
-	}
+    /**
+     * This adds a property descriptor for the Line Dash feature. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    protected void addLineDashPropertyDescriptor(final Object object) {
+        itemPropertyDescriptors.add(createItemPropertyDescriptor(
+                ((ComposeableAdapterFactory) adapterFactory)
+                        .getRootAdapterFactory(),
+                getResourceLocator(),
+                getString("_UI_Line_lineDash_feature"),
+                getString("_UI_PropertyDescriptor_description",
+                        "_UI_Line_lineDash_feature", "_UI_Line_type"),
+                DiPackage.Literals.LINE__LINE_DASH, true, false, false,
+                ItemPropertyDescriptor.INTEGRAL_VALUE_IMAGE, null, null));
+    }
 
-	/**
-	 * This specifies how to implement {@link #getChildren} and is used to
-	 * deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand},
-	 * {@link org.eclipse.emf.edit.command.RemoveCommand} or
-	 * {@link org.eclipse.emf.edit.command.MoveCommand} in
-	 * {@link #createCommand}. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(
-			final Object object) {
-		if (childrenFeatures == null) {
-			super.getChildrenFeatures(object);
-			childrenFeatures.add(DiPackage.Literals.LINE__SOURCE_NODE);
-			childrenFeatures.add(DiPackage.Literals.LINE__TARGET_NODE);
-		}
-		return childrenFeatures;
-	}
+    /**
+     * This specifies how to implement {@link #getChildren} and is used to
+     * deduce an appropriate feature for an
+     * {@link org.eclipse.emf.edit.command.AddCommand},
+     * {@link org.eclipse.emf.edit.command.RemoveCommand} or
+     * {@link org.eclipse.emf.edit.command.MoveCommand} in
+     * {@link #createCommand}. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public Collection<? extends EStructuralFeature> getChildrenFeatures(
+            final Object object) {
+        if (childrenFeatures == null) {
+            super.getChildrenFeatures(object);
+            childrenFeatures.add(DiPackage.Literals.LINE__SOURCE_NODE);
+            childrenFeatures.add(DiPackage.Literals.LINE__TARGET_NODE);
+        }
+        return childrenFeatures;
+    }
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	protected EStructuralFeature getChildFeature(final Object object,
-			final Object child) {
-		// Check the type of the specified child object and return the proper
-		// feature to use for
-		// adding (see {@link AddCommand}) it as a child.
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    protected EStructuralFeature getChildFeature(final Object object,
+            final Object child) {
+        // Check the type of the specified child object and return the proper
+        // feature to use for
+        // adding (see {@link AddCommand}) it as a child.
 
-		return super.getChildFeature(object, child);
-	}
+        return super.getChildFeature(object, child);
+    }
 
-	/**
-	 * This returns the label text for the adapted class. <!-- begin-user-doc
-	 * --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public String getText(final Object object) {
-		final String label = ((Line) object).getId();
-		return label == null || label.length() == 0 ? getString("_UI_Line_type")
-				: getString("_UI_Line_type") + " " + label;
-	}
+    /**
+     * This returns the label text for the adapted class. <!-- begin-user-doc
+     * --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public String getText(final Object object) {
+        final String label = ((Line) object).getId();
+        return label == null || label.length() == 0 ? getString("_UI_Line_type")
+                : getString("_UI_Line_type") + " " + label;
+    }
 
-	/**
-	 * This handles model notifications by calling {@link #updateChildren} to
-	 * update any cached children and by creating a viewer notification, which
-	 * it passes to {@link #fireNotifyChanged}. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public void notifyChanged(final Notification notification) {
-		updateChildren(notification);
+    /**
+     * This handles model notifications by calling {@link #updateChildren} to
+     * update any cached children and by creating a viewer notification, which
+     * it passes to {@link #fireNotifyChanged}. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public void notifyChanged(final Notification notification) {
+        updateChildren(notification);
 
-		switch (notification.getFeatureID(Line.class)) {
-		case DiPackage.LINE__COLOR:
-		case DiPackage.LINE__WIDTH:
-		case DiPackage.LINE__SOURCE_ANCHOR:
-		case DiPackage.LINE__TARGET_ANCHOR:
-		case DiPackage.LINE__STYLE:
-		case DiPackage.LINE__LINE_DASH:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), false, true));
-			return;
-		case DiPackage.LINE__SOURCE_NODE:
-		case DiPackage.LINE__TARGET_NODE:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), true, false));
-			return;
-		}
-		super.notifyChanged(notification);
-	}
+        switch (notification.getFeatureID(Line.class)) {
+        case DiPackage.LINE__COLOR:
+        case DiPackage.LINE__WIDTH:
+        case DiPackage.LINE__SOURCE_ANCHOR:
+        case DiPackage.LINE__TARGET_ANCHOR:
+        case DiPackage.LINE__STYLE:
+        case DiPackage.LINE__LINE_DASH:
+            fireNotifyChanged(new ViewerNotification(notification,
+                    notification.getNotifier(), false, true));
+            return;
+        case DiPackage.LINE__SOURCE_NODE:
+        case DiPackage.LINE__TARGET_NODE:
+            fireNotifyChanged(new ViewerNotification(notification,
+                    notification.getNotifier(), true, false));
+            return;
+        }
+        super.notifyChanged(notification);
+    }
 
-	/**
-	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s
-	 * describing the children that can be created under this object. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	protected void collectNewChildDescriptors(
-			final Collection<Object> newChildDescriptors, final Object object) {
-		super.collectNewChildDescriptors(newChildDescriptors, object);
-	}
+    /**
+     * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s
+     * describing the children that can be created under this object. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    protected void collectNewChildDescriptors(
+            final Collection<Object> newChildDescriptors, final Object object) {
+        super.collectNewChildDescriptors(newChildDescriptors, object);
+    }
 
 }

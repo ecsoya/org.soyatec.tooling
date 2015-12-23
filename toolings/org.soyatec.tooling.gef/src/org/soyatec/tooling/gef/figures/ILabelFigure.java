@@ -15,13 +15,13 @@ import org.eclipse.swt.graphics.Image;
 
 public interface ILabelFigure extends IFigure {
 
-	void setText(String newText);
+    void setText(String newText);
 
-	String getText();
+    String getText();
 
-	void setImage(Image newImage);
+    void setImage(Image newImage);
 
-	Image getImage();
+    Image getImage();
 
-	IFigure getLabelFigure();
+    IFigure getLabelFigure();
 }

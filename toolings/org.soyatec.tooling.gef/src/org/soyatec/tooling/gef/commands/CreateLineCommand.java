@@ -18,79 +18,79 @@ import org.soyatec.tooling.di.Line;
 
 public abstract class CreateLineCommand extends Command {
 
-	protected EditPart source;
-	protected EditPart target;
+    protected EditPart source;
+    protected EditPart target;
 
-	protected String sourceAnchor;
-	protected String targetAnchor;
+    protected String sourceAnchor;
+    protected String targetAnchor;
 
-	protected Line lineObject;
-	protected Diagram diagram;
+    protected Line lineObject;
+    protected Diagram diagram;
 
-	public CreateLineCommand(final Diagram diagram, final Line lineObject) {
-		Assert.isNotNull(diagram, "Container for lines."); //$NON-NLS-1$
-		this.diagram = diagram;
-		this.lineObject = lineObject;
-	}
+    public CreateLineCommand(final Diagram diagram, final Line lineObject) {
+        Assert.isNotNull(diagram, "Container for lines."); //$NON-NLS-1$
+        this.diagram = diagram;
+        this.lineObject = lineObject;
+    }
 
-	public EditPart getSource() {
-		return source;
-	}
+    public EditPart getSource() {
+        return source;
+    }
 
-	public void setSource(final EditPart source) {
-		this.source = source;
-	}
+    public void setSource(final EditPart source) {
+        this.source = source;
+    }
 
-	public EditPart getTarget() {
-		return target;
-	}
+    public EditPart getTarget() {
+        return target;
+    }
 
-	public void setTarget(final EditPart target) {
-		this.target = target;
-	}
+    public void setTarget(final EditPart target) {
+        this.target = target;
+    }
 
-	public String getSourceAnchor() {
-		return sourceAnchor;
-	}
+    public String getSourceAnchor() {
+        return sourceAnchor;
+    }
 
-	public void setSourceAnchor(final String sourceAnchor) {
-		this.sourceAnchor = sourceAnchor;
-	}
+    public void setSourceAnchor(final String sourceAnchor) {
+        this.sourceAnchor = sourceAnchor;
+    }
 
-	public String getTargetAnchor() {
-		return targetAnchor;
-	}
+    public String getTargetAnchor() {
+        return targetAnchor;
+    }
 
-	public void setTargetAnchor(final String targetAnchor) {
-		this.targetAnchor = targetAnchor;
-	}
+    public void setTargetAnchor(final String targetAnchor) {
+        this.targetAnchor = targetAnchor;
+    }
 
-	public void setLineObject(final Line lineObject) {
-		this.lineObject = lineObject;
-	}
+    public void setLineObject(final Line lineObject) {
+        this.lineObject = lineObject;
+    }
 
-	public Line getLineObject() {
-		return lineObject;
-	}
+    public Line getLineObject() {
+        return lineObject;
+    }
 
-	public Diagram getDiagram() {
-		return diagram;
-	}
+    public Diagram getDiagram() {
+        return diagram;
+    }
 
-	public void execute() {
-		doCreateLine(diagram, lineObject);
-	}
+    public void execute() {
+        doCreateLine(diagram, lineObject);
+    }
 
-	public boolean canUndo() {
-		return lineObject != null && diagram != null
-				&& lineObject.eContainer() == diagram;
-	}
+    public boolean canUndo() {
+        return lineObject != null && diagram != null
+                && lineObject.eContainer() == diagram;
+    }
 
-	public void undo() {
-		doRemoveLine(diagram, lineObject);
-	}
+    public void undo() {
+        doRemoveLine(diagram, lineObject);
+    }
 
-	protected abstract void doCreateLine(Diagram diagram, Line line);
+    protected abstract void doCreateLine(Diagram diagram, Line line);
 
-	protected abstract void doRemoveLine(Diagram diagram, Line line);
+    protected abstract void doRemoveLine(Diagram diagram, Line line);
 }

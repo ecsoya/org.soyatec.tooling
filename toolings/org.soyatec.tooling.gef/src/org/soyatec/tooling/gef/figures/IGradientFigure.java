@@ -15,18 +15,18 @@ import org.eclipse.swt.graphics.Color;
 
 public interface IGradientFigure extends IFigure {
 
-	boolean isUsingGradient();
+    boolean isUsingGradient();
 
-	void setUsingGradient(boolean value);
+    void setUsingGradient(boolean value);
 
-	/**
-	 * SWT.VERTICAL or SWT.HORIZONTAL
-	 */
-	int getGradientOrientation();
+    /**
+     * SWT.VERTICAL or SWT.HORIZONTAL
+     */
+    int getGradientOrientation();
 
-	void setGradientOrientation(int orientation);
+    void setGradientOrientation(int orientation);
 
-	Color getGradientColor();
+    Color getGradientColor();
 
-	void setGradientColor(Color color);
+    void setGradientColor(Color color);
 }

@@ -12,8 +12,8 @@ package org.soyatec.tooling.gef.figures;
 
 public interface IShapeStyle {
 
-	void setLineWidth(int lineWidth);
+    void setLineWidth(int lineWidth);
 
-	int getLineWidth();
+    int getLineWidth();
 
 }

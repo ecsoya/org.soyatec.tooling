@@ -37,125 +37,125 @@ import org.soyatec.tooling.di.DiPackage;
  * @generated
  */
 public class CommentImpl extends ShapeImpl implements Comment {
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	protected CommentImpl() {
-		super();
-	}
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    protected CommentImpl() {
+        super();
+    }
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	protected EClass eStaticClass() {
-		return DiPackage.Literals.COMMENT;
-	}
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    protected EClass eStaticClass() {
+        return DiPackage.Literals.COMMENT;
+    }
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	public EList<CommentLink> getInputs() {
-		return getAllIncomingLines().list(DiPackage.Literals.COMMENT__INPUTS);
-	}
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    public EList<CommentLink> getInputs() {
+        return getAllIncomingLines().list(DiPackage.Literals.COMMENT__INPUTS);
+    }
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public NotificationChain eInverseAdd(final InternalEObject otherEnd,
-			final int featureID, final NotificationChain msgs) {
-		switch (featureID) {
-		case DiPackage.COMMENT__INPUTS:
-			return ((InternalEList<InternalEObject>) (InternalEList<?>) getInputs())
-					.basicAdd(otherEnd, msgs);
-		}
-		return super.eInverseAdd(otherEnd, featureID, msgs);
-	}
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @SuppressWarnings("unchecked")
+    @Override
+    public NotificationChain eInverseAdd(final InternalEObject otherEnd,
+            final int featureID, final NotificationChain msgs) {
+        switch (featureID) {
+        case DiPackage.COMMENT__INPUTS:
+            return ((InternalEList<InternalEObject>) (InternalEList<?>) getInputs())
+                    .basicAdd(otherEnd, msgs);
+        }
+        return super.eInverseAdd(otherEnd, featureID, msgs);
+    }
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public NotificationChain eInverseRemove(final InternalEObject otherEnd,
-			final int featureID, final NotificationChain msgs) {
-		switch (featureID) {
-		case DiPackage.COMMENT__INPUTS:
-			return ((InternalEList<?>) getInputs()).basicRemove(otherEnd, msgs);
-		}
-		return super.eInverseRemove(otherEnd, featureID, msgs);
-	}
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public NotificationChain eInverseRemove(final InternalEObject otherEnd,
+            final int featureID, final NotificationChain msgs) {
+        switch (featureID) {
+        case DiPackage.COMMENT__INPUTS:
+            return ((InternalEList<?>) getInputs()).basicRemove(otherEnd, msgs);
+        }
+        return super.eInverseRemove(otherEnd, featureID, msgs);
+    }
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public Object eGet(final int featureID, final boolean resolve,
-			final boolean coreType) {
-		switch (featureID) {
-		case DiPackage.COMMENT__INPUTS:
-			return getInputs();
-		}
-		return super.eGet(featureID, resolve, coreType);
-	}
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public Object eGet(final int featureID, final boolean resolve,
+            final boolean coreType) {
+        switch (featureID) {
+        case DiPackage.COMMENT__INPUTS:
+            return getInputs();
+        }
+        return super.eGet(featureID, resolve, coreType);
+    }
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@SuppressWarnings("unchecked")
-	@Override
-	public void eSet(final int featureID, final Object newValue) {
-		switch (featureID) {
-		case DiPackage.COMMENT__INPUTS:
-			getInputs().clear();
-			getInputs().addAll((Collection<? extends CommentLink>) newValue);
-			return;
-		}
-		super.eSet(featureID, newValue);
-	}
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @SuppressWarnings("unchecked")
+    @Override
+    public void eSet(final int featureID, final Object newValue) {
+        switch (featureID) {
+        case DiPackage.COMMENT__INPUTS:
+            getInputs().clear();
+            getInputs().addAll((Collection<? extends CommentLink>) newValue);
+            return;
+        }
+        super.eSet(featureID, newValue);
+    }
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public void eUnset(final int featureID) {
-		switch (featureID) {
-		case DiPackage.COMMENT__INPUTS:
-			getInputs().clear();
-			return;
-		}
-		super.eUnset(featureID);
-	}
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public void eUnset(final int featureID) {
+        switch (featureID) {
+        case DiPackage.COMMENT__INPUTS:
+            getInputs().clear();
+            return;
+        }
+        super.eUnset(featureID);
+    }
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public boolean eIsSet(final int featureID) {
-		switch (featureID) {
-		case DiPackage.COMMENT__INPUTS:
-			return !getInputs().isEmpty();
-		}
-		return super.eIsSet(featureID);
-	}
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public boolean eIsSet(final int featureID) {
+        switch (featureID) {
+        case DiPackage.COMMENT__INPUTS:
+            return !getInputs().isEmpty();
+        }
+        return super.eIsSet(featureID);
+    }
 
 } // CommentImpl

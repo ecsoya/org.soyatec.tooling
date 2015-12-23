@@ -22,49 +22,49 @@ import org.eclipse.emf.ecore.EFactory;
  * @generated
  */
 public interface EXMLFactory extends EFactory {
-	/**
-	 * The singleton instance of the factory. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 *
-	 * @generated
-	 */
-	EXMLFactory eINSTANCE = org.soyatec.tooling.exml.impl.EXMLFactoryImpl
-			.init();
+    /**
+     * The singleton instance of the factory. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     *
+     * @generated
+     */
+    EXMLFactory eINSTANCE = org.soyatec.tooling.exml.impl.EXMLFactoryImpl
+            .init();
 
-	/**
-	 * Returns a new object of class '<em>Document</em>'. <!-- begin-user-doc
-	 * --> <!-- end-user-doc -->
-	 *
-	 * @return a new object of class '<em>Document</em>'.
-	 * @generated
-	 */
-	EXDocument createDocument();
+    /**
+     * Returns a new object of class '<em>Document</em>'. <!-- begin-user-doc
+     * --> <!-- end-user-doc -->
+     *
+     * @return a new object of class '<em>Document</em>'.
+     * @generated
+     */
+    EXDocument createDocument();
 
-	/**
-	 * Returns a new object of class '<em>Element</em>'. <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @return a new object of class '<em>Element</em>'.
-	 * @generated
-	 */
-	EXElement createElement();
+    /**
+     * Returns a new object of class '<em>Element</em>'. <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     *
+     * @return a new object of class '<em>Element</em>'.
+     * @generated
+     */
+    EXElement createElement();
 
-	/**
-	 * Returns a new object of class '<em>Attribute</em>'. <!-- begin-user-doc
-	 * --> <!-- end-user-doc -->
-	 *
-	 * @return a new object of class '<em>Attribute</em>'.
-	 * @generated
-	 */
-	EXAttribute createAttribute();
+    /**
+     * Returns a new object of class '<em>Attribute</em>'. <!-- begin-user-doc
+     * --> <!-- end-user-doc -->
+     *
+     * @return a new object of class '<em>Attribute</em>'.
+     * @generated
+     */
+    EXAttribute createAttribute();
 
-	/**
-	 * Returns the package supported by this factory. <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 *
-	 * @return the package supported by this factory.
-	 * @generated
-	 */
-	EXMLPackage getMLPackage();
+    /**
+     * Returns the package supported by this factory. <!-- begin-user-doc -->
+     * <!-- end-user-doc -->
+     *
+     * @return the package supported by this factory.
+     * @generated
+     */
+    EXMLPackage getMLPackage();
 
 } // EXMLFactory

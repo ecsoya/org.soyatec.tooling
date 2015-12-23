@@ -21,146 +21,146 @@ import org.eclipse.emf.common.command.Command;
  * @author Ecsoya
  */
 public class CommandWrap2EMF implements Command, ICancelCommand {
-	private final org.eclipse.gef.commands.Command _command;
+    private final org.eclipse.gef.commands.Command _command;
 
-	/**
-	 * Constructor for CommandWrap2EMF.
-	 */
-	public CommandWrap2EMF(final org.eclipse.gef.commands.Command command) {
-		this._command = command;
-	}
+    /**
+     * Constructor for CommandWrap2EMF.
+     */
+    public CommandWrap2EMF(final org.eclipse.gef.commands.Command command) {
+        this._command = command;
+    }
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see org.eclipse.emf.common.command.Command#canExecute()
-	 */
-	public boolean canExecute() {
-		return _command == null ? false : _command.canExecute();
-	}
+    /*
+     * (non-Javadoc)
+     * 
+     * @see org.eclipse.emf.common.command.Command#canExecute()
+     */
+    public boolean canExecute() {
+        return _command == null ? false : _command.canExecute();
+    }
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see org.eclipse.emf.common.command.Command#canUndo()
-	 */
-	public boolean canUndo() {
-		return _command == null ? false : _command.canUndo();
-	}
+    /*
+     * (non-Javadoc)
+     * 
+     * @see org.eclipse.emf.common.command.Command#canUndo()
+     */
+    public boolean canUndo() {
+        return _command == null ? false : _command.canUndo();
+    }
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see org.eclipse.emf.common.command.Command#chain(Command)
-	 */
-	public Command chain(final Command command) {
-		Command chained = this;
-		if (command != null) {
-			org.eclipse.gef.commands.Command gefCommand = null;
-			if (command instanceof CommandWrap2EMF) {
-				gefCommand = ((CommandWrap2EMF) command).unwrap();
-			} else {
-				gefCommand = new CommandWrap2GEF(command);
-			}
-			gefCommand = this._command.chain(gefCommand);
-			if (gefCommand != null) {
-				if (gefCommand instanceof CommandWrap2GEF) {
-					chained = ((CommandWrap2GEF) gefCommand).unwrap();
-				} else {
-					chained = new CommandWrap2EMF(gefCommand);
-				}
-			}
-		}
-		return chained;
-	}
+    /*
+     * (non-Javadoc)
+     * 
+     * @see org.eclipse.emf.common.command.Command#chain(Command)
+     */
+    public Command chain(final Command command) {
+        Command chained = this;
+        if (command != null) {
+            org.eclipse.gef.commands.Command gefCommand = null;
+            if (command instanceof CommandWrap2EMF) {
+                gefCommand = ((CommandWrap2EMF) command).unwrap();
+            } else {
+                gefCommand = new CommandWrap2GEF(command);
+            }
+            gefCommand = this._command.chain(gefCommand);
+            if (gefCommand != null) {
+                if (gefCommand instanceof CommandWrap2GEF) {
+                    chained = ((CommandWrap2GEF) gefCommand).unwrap();
+                } else {
+                    chained = new CommandWrap2EMF(gefCommand);
+                }
+            }
+        }
+        return chained;
+    }
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see org.eclipse.emf.common.command.Command#dispose()
-	 */
-	public void dispose() {
-		if (_command != null) {
-			_command.dispose();
-		}
-	}
+    /*
+     * (non-Javadoc)
+     * 
+     * @see org.eclipse.emf.common.command.Command#dispose()
+     */
+    public void dispose() {
+        if (_command != null) {
+            _command.dispose();
+        }
+    }
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see org.eclipse.emf.common.command.Command#execute()
-	 */
-	public void execute() {
-		if (_command != null) {
-			_command.execute();
-		}
-	}
+    /*
+     * (non-Javadoc)
+     * 
+     * @see org.eclipse.emf.common.command.Command#execute()
+     */
+    public void execute() {
+        if (_command != null) {
+            _command.execute();
+        }
+    }
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see org.eclipse.emf.common.command.Command#getAffectedObjects()
-	 */
-	public Collection<?> getAffectedObjects() {
-		return Collections.EMPTY_LIST;
-	}
+    /*
+     * (non-Javadoc)
+     * 
+     * @see org.eclipse.emf.common.command.Command#getAffectedObjects()
+     */
+    public Collection<?> getAffectedObjects() {
+        return Collections.EMPTY_LIST;
+    }
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see org.eclipse.emf.common.command.Command#getDescription()
-	 */
-	public String getDescription() {
-		return "CommandWrap4GEF"; //$NON-NLS-1$
-	}
+    /*
+     * (non-Javadoc)
+     * 
+     * @see org.eclipse.emf.common.command.Command#getDescription()
+     */
+    public String getDescription() {
+        return "CommandWrap4GEF"; //$NON-NLS-1$
+    }
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see org.eclipse.emf.common.command.Command#getLabel()
-	 */
-	public String getLabel() {
-		return _command == null ? "CommandWrap4GEF" : _command.getLabel(); //$NON-NLS-1$
-	}
+    /*
+     * (non-Javadoc)
+     * 
+     * @see org.eclipse.emf.common.command.Command#getLabel()
+     */
+    public String getLabel() {
+        return _command == null ? "CommandWrap4GEF" : _command.getLabel(); //$NON-NLS-1$
+    }
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see org.eclipse.emf.common.command.Command#getResult()
-	 */
-	public Collection<?> getResult() {
-		return Collections.EMPTY_LIST;
-	}
+    /*
+     * (non-Javadoc)
+     * 
+     * @see org.eclipse.emf.common.command.Command#getResult()
+     */
+    public Collection<?> getResult() {
+        return Collections.EMPTY_LIST;
+    }
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see org.eclipse.emf.common.command.Command#redo()
-	 */
-	public void redo() {
-		if (_command != null) {
-			_command.redo();
-		}
-	}
+    /*
+     * (non-Javadoc)
+     * 
+     * @see org.eclipse.emf.common.command.Command#redo()
+     */
+    public void redo() {
+        if (_command != null) {
+            _command.redo();
+        }
+    }
 
-	/*
-	 * (non-Javadoc)
-	 * 
-	 * @see org.eclipse.emf.common.command.Command#undo()
-	 */
-	public void undo() {
-		if (_command != null) {
-			_command.undo();
-		}
-	}
+    /*
+     * (non-Javadoc)
+     * 
+     * @see org.eclipse.emf.common.command.Command#undo()
+     */
+    public void undo() {
+        if (_command != null) {
+            _command.undo();
+        }
+    }
 
-	public org.eclipse.gef.commands.Command unwrap() {
-		return _command;
-	}
+    public org.eclipse.gef.commands.Command unwrap() {
+        return _command;
+    }
 
-	@Override
-	public boolean isCanceled() {
-		return _command instanceof ICancelCommand
-				&& ((ICancelCommand) _command).isCanceled();
-	}
+    @Override
+    public boolean isCanceled() {
+        return _command instanceof ICancelCommand
+                && ((ICancelCommand) _command).isCanceled();
+    }
 }

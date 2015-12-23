@@ -17,15 +17,15 @@ import org.soyatec.tooling.richtext.Activator;
 
 public class ForegroundAction extends ColorAction {
 
-	public ForegroundAction(final IRichText richText) {
-		super(richText);
-		setImageDescriptor(AbstractUIPlugin.imageDescriptorFromPlugin(
-				Activator.PLUGIN_ID, "icons/textForeground.ico"));
-		setToolTipText("Text Foreground");
-	}
+    public ForegroundAction(final IRichText richText) {
+        super(richText);
+        setImageDescriptor(AbstractUIPlugin.imageDescriptorFromPlugin(
+                Activator.PLUGIN_ID, "icons/textForeground.ico"));
+        setToolTipText("Text Foreground");
+    }
 
-	protected String getCommandName() {
-		return RichTextCommand.FORGROUND_COLOR;
-	}
+    protected String getCommandName() {
+        return RichTextCommand.FORGROUND_COLOR;
+    }
 
 }

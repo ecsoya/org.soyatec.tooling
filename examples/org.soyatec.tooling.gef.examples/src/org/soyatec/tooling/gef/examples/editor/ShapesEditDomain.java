@@ -8,31 +8,31 @@ import org.soyatec.tooling.gef.commands.CombinedCommandStack;
 import org.soyatec.tooling.gef.toolbar.editor.ToolBarEditDomain;
 
 public class ShapesEditDomain extends ToolBarEditDomain implements
-		IEditingDomainProvider {
+        IEditingDomainProvider {
 
-	private EditingDomain editingDomain;
+    private EditingDomain editingDomain;
 
-	public ShapesEditDomain(final IEditorPart editorPart,
-			final EditingDomain editingDomain) {
-		super(editorPart);
-		this.editingDomain = editingDomain;
-	}
+    public ShapesEditDomain(final IEditorPart editorPart,
+            final EditingDomain editingDomain) {
+        super(editorPart);
+        this.editingDomain = editingDomain;
+    }
 
-	@Override
-	public CommandStack getCommandStack() {
-		if (editingDomain != null) {
-			final org.eclipse.emf.common.command.CommandStack commandStack = editingDomain
-					.getCommandStack();
-			if (commandStack instanceof CombinedCommandStack) {
-				return ((CombinedCommandStack) commandStack)
-						.getGefCommandStack();
-			}
-		}
-		return super.getCommandStack();
-	}
+    @Override
+    public CommandStack getCommandStack() {
+        if (editingDomain != null) {
+            final org.eclipse.emf.common.command.CommandStack commandStack = editingDomain
+                    .getCommandStack();
+            if (commandStack instanceof CombinedCommandStack) {
+                return ((CombinedCommandStack) commandStack)
+                        .getGefCommandStack();
+            }
+        }
+        return super.getCommandStack();
+    }
 
-	public EditingDomain getEditingDomain() {
-		return editingDomain;
-	}
+    public EditingDomain getEditingDomain() {
+        return editingDomain;
+    }
 
 }

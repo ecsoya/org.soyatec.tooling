@@ -23,19 +23,19 @@ import org.soyatec.tooling.gef.utils.EditingDomainUtils;
  */
 public class LabelDirectEditPolicy extends DirectEditPolicy {
 
-	protected Command getDirectEditCommand(final DirectEditRequest request) {
-		final EditPart host = getHost();
-		final Object model = host.getModel();
-		final Object value = request.getCellEditor().getValue();
-		final Object feature = request.getDirectEditFeature();
-		final org.eclipse.emf.common.command.Command cmd = SetCommand.create(
-				EditingDomainUtils.getEditingDomain(host), model, feature,
-				value);
-		return new CommandWrap2GEF(cmd);
-	}
+    protected Command getDirectEditCommand(final DirectEditRequest request) {
+        final EditPart host = getHost();
+        final Object model = host.getModel();
+        final Object value = request.getCellEditor().getValue();
+        final Object feature = request.getDirectEditFeature();
+        final org.eclipse.emf.common.command.Command cmd = SetCommand.create(
+                EditingDomainUtils.getEditingDomain(host), model, feature,
+                value);
+        return new CommandWrap2GEF(cmd);
+    }
 
-	protected void showCurrentEditValue(final DirectEditRequest request) {
+    protected void showCurrentEditValue(final DirectEditRequest request) {
 
-	}
+    }
 
 }

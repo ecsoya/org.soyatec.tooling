@@ -34,162 +34,162 @@ import org.soyatec.tooling.di.Diagram;
  * @generated
  */
 public class DiagramItemProvider extends ContainerItemProvider {
-	/**
-	 * This constructs an instance from a factory and a notifier. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	public DiagramItemProvider(final AdapterFactory adapterFactory) {
-		super(adapterFactory);
-	}
+    /**
+     * This constructs an instance from a factory and a notifier. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    public DiagramItemProvider(final AdapterFactory adapterFactory) {
+        super(adapterFactory);
+    }
 
-	/**
-	 * This returns the property descriptors for the adapted class. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public List<IItemPropertyDescriptor> getPropertyDescriptors(
-			final Object object) {
-		if (itemPropertyDescriptors == null) {
-			super.getPropertyDescriptors(object);
+    /**
+     * This returns the property descriptors for the adapted class. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public List<IItemPropertyDescriptor> getPropertyDescriptors(
+            final Object object) {
+        if (itemPropertyDescriptors == null) {
+            super.getPropertyDescriptors(object);
 
-			addSnapToGridPropertyDescriptor(object);
-			addSnapToGeometryPropertyDescriptor(object);
-		}
-		return itemPropertyDescriptors;
-	}
+            addSnapToGridPropertyDescriptor(object);
+            addSnapToGeometryPropertyDescriptor(object);
+        }
+        return itemPropertyDescriptors;
+    }
 
-	/**
-	 * This adds a property descriptor for the Snap To Grid feature. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	protected void addSnapToGridPropertyDescriptor(final Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_Diagram_snapToGrid_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_Diagram_snapToGrid_feature", "_UI_Diagram_type"),
-				DiPackage.Literals.DIAGRAM__SNAP_TO_GRID, true, false, false,
-				ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
-	}
+    /**
+     * This adds a property descriptor for the Snap To Grid feature. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    protected void addSnapToGridPropertyDescriptor(final Object object) {
+        itemPropertyDescriptors.add(createItemPropertyDescriptor(
+                ((ComposeableAdapterFactory) adapterFactory)
+                        .getRootAdapterFactory(),
+                getResourceLocator(),
+                getString("_UI_Diagram_snapToGrid_feature"),
+                getString("_UI_PropertyDescriptor_description",
+                        "_UI_Diagram_snapToGrid_feature", "_UI_Diagram_type"),
+                DiPackage.Literals.DIAGRAM__SNAP_TO_GRID, true, false, false,
+                ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
+    }
 
-	/**
-	 * This adds a property descriptor for the Snap To Geometry feature. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	protected void addSnapToGeometryPropertyDescriptor(final Object object) {
-		itemPropertyDescriptors.add(createItemPropertyDescriptor(
-				((ComposeableAdapterFactory) adapterFactory)
-						.getRootAdapterFactory(),
-				getResourceLocator(),
-				getString("_UI_Diagram_snapToGeometry_feature"),
-				getString("_UI_PropertyDescriptor_description",
-						"_UI_Diagram_snapToGeometry_feature",
-						"_UI_Diagram_type"),
-				DiPackage.Literals.DIAGRAM__SNAP_TO_GEOMETRY, true, false,
-				false, ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
-	}
+    /**
+     * This adds a property descriptor for the Snap To Geometry feature. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    protected void addSnapToGeometryPropertyDescriptor(final Object object) {
+        itemPropertyDescriptors.add(createItemPropertyDescriptor(
+                ((ComposeableAdapterFactory) adapterFactory)
+                        .getRootAdapterFactory(),
+                getResourceLocator(),
+                getString("_UI_Diagram_snapToGeometry_feature"),
+                getString("_UI_PropertyDescriptor_description",
+                        "_UI_Diagram_snapToGeometry_feature",
+                        "_UI_Diagram_type"),
+                DiPackage.Literals.DIAGRAM__SNAP_TO_GEOMETRY, true, false,
+                false, ItemPropertyDescriptor.BOOLEAN_VALUE_IMAGE, null, null));
+    }
 
-	/**
-	 * This specifies how to implement {@link #getChildren} and is used to
-	 * deduce an appropriate feature for an
-	 * {@link org.eclipse.emf.edit.command.AddCommand},
-	 * {@link org.eclipse.emf.edit.command.RemoveCommand} or
-	 * {@link org.eclipse.emf.edit.command.MoveCommand} in
-	 * {@link #createCommand}. <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public Collection<? extends EStructuralFeature> getChildrenFeatures(
-			final Object object) {
-		if (childrenFeatures == null) {
-			super.getChildrenFeatures(object);
-			childrenFeatures.add(DiPackage.Literals.DIAGRAM__RULERS);
-			childrenFeatures.add(DiPackage.Literals.DIAGRAM__GRID);
-		}
-		return childrenFeatures;
-	}
+    /**
+     * This specifies how to implement {@link #getChildren} and is used to
+     * deduce an appropriate feature for an
+     * {@link org.eclipse.emf.edit.command.AddCommand},
+     * {@link org.eclipse.emf.edit.command.RemoveCommand} or
+     * {@link org.eclipse.emf.edit.command.MoveCommand} in
+     * {@link #createCommand}. <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public Collection<? extends EStructuralFeature> getChildrenFeatures(
+            final Object object) {
+        if (childrenFeatures == null) {
+            super.getChildrenFeatures(object);
+            childrenFeatures.add(DiPackage.Literals.DIAGRAM__RULERS);
+            childrenFeatures.add(DiPackage.Literals.DIAGRAM__GRID);
+        }
+        return childrenFeatures;
+    }
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	protected EStructuralFeature getChildFeature(final Object object,
-			final Object child) {
-		// Check the type of the specified child object and return the proper
-		// feature to use for
-		// adding (see {@link AddCommand}) it as a child.
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    protected EStructuralFeature getChildFeature(final Object object,
+            final Object child) {
+        // Check the type of the specified child object and return the proper
+        // feature to use for
+        // adding (see {@link AddCommand}) it as a child.
 
-		return super.getChildFeature(object, child);
-	}
+        return super.getChildFeature(object, child);
+    }
 
-	/**
-	 * This returns the label text for the adapted class. <!-- begin-user-doc
-	 * --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public String getText(final Object object) {
-		final String label = ((Diagram) object).getId();
-		return label == null || label.length() == 0 ? getString("_UI_Diagram_type")
-				: getString("_UI_Diagram_type") + " " + label;
-	}
+    /**
+     * This returns the label text for the adapted class. <!-- begin-user-doc
+     * --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public String getText(final Object object) {
+        final String label = ((Diagram) object).getId();
+        return label == null || label.length() == 0 ? getString("_UI_Diagram_type")
+                : getString("_UI_Diagram_type") + " " + label;
+    }
 
-	/**
-	 * This handles model notifications by calling {@link #updateChildren} to
-	 * update any cached children and by creating a viewer notification, which
-	 * it passes to {@link #fireNotifyChanged}. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public void notifyChanged(final Notification notification) {
-		updateChildren(notification);
+    /**
+     * This handles model notifications by calling {@link #updateChildren} to
+     * update any cached children and by creating a viewer notification, which
+     * it passes to {@link #fireNotifyChanged}. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public void notifyChanged(final Notification notification) {
+        updateChildren(notification);
 
-		switch (notification.getFeatureID(Diagram.class)) {
-		case DiPackage.DIAGRAM__SNAP_TO_GRID:
-		case DiPackage.DIAGRAM__SNAP_TO_GEOMETRY:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), false, true));
-			return;
-		case DiPackage.DIAGRAM__RULERS:
-		case DiPackage.DIAGRAM__GRID:
-			fireNotifyChanged(new ViewerNotification(notification,
-					notification.getNotifier(), true, false));
-			return;
-		}
-		super.notifyChanged(notification);
-	}
+        switch (notification.getFeatureID(Diagram.class)) {
+        case DiPackage.DIAGRAM__SNAP_TO_GRID:
+        case DiPackage.DIAGRAM__SNAP_TO_GEOMETRY:
+            fireNotifyChanged(new ViewerNotification(notification,
+                    notification.getNotifier(), false, true));
+            return;
+        case DiPackage.DIAGRAM__RULERS:
+        case DiPackage.DIAGRAM__GRID:
+            fireNotifyChanged(new ViewerNotification(notification,
+                    notification.getNotifier(), true, false));
+            return;
+        }
+        super.notifyChanged(notification);
+    }
 
-	/**
-	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s
-	 * describing the children that can be created under this object. <!--
-	 * begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	protected void collectNewChildDescriptors(
-			final Collection<Object> newChildDescriptors, final Object object) {
-		super.collectNewChildDescriptors(newChildDescriptors, object);
+    /**
+     * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s
+     * describing the children that can be created under this object. <!--
+     * begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    protected void collectNewChildDescriptors(
+            final Collection<Object> newChildDescriptors, final Object object) {
+        super.collectNewChildDescriptors(newChildDescriptors, object);
 
-		newChildDescriptors.add(createChildParameter(
-				DiPackage.Literals.DIAGRAM__GRID,
-				DiFactory.eINSTANCE.createGrid()));
-	}
+        newChildDescriptors.add(createChildParameter(
+                DiPackage.Literals.DIAGRAM__GRID,
+                DiFactory.eINSTANCE.createGrid()));
+    }
 
 }

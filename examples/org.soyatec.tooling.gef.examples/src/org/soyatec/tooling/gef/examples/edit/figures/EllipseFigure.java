@@ -11,49 +11,49 @@ import org.soyatec.tooling.gef.figures.IAnchorFigure;
 import org.soyatec.tooling.gef.figures.ILabelFigure;
 
 public class EllipseFigure extends org.eclipse.draw2d.Ellipse implements
-		IAnchorFigure, ILabelFigure {
+        IAnchorFigure, ILabelFigure {
 
-	private Label label;
+    private Label label;
 
-	public EllipseFigure() {
-		setLayoutManager(new BorderLayout());
+    public EllipseFigure() {
+        setLayoutManager(new BorderLayout());
 
-		add(label = new Label(), BorderLayout.CENTER);
-	}
+        add(label = new Label(), BorderLayout.CENTER);
+    }
 
-	@Override
-	public ConnectionAnchor createAnchor(String terminal) {
-		return new EllipseAnchor(this);
-	}
+    @Override
+    public ConnectionAnchor createAnchor(String terminal) {
+        return new EllipseAnchor(this);
+    }
 
-	@Override
-	public String getTerminal(Point location) {
-		return "";
-	}
+    @Override
+    public String getTerminal(Point location) {
+        return "";
+    }
 
-	@Override
-	public void setText(String newText) {
-		label.setText(newText);
-	}
+    @Override
+    public void setText(String newText) {
+        label.setText(newText);
+    }
 
-	@Override
-	public String getText() {
-		return label.getText();
-	}
+    @Override
+    public String getText() {
+        return label.getText();
+    }
 
-	@Override
-	public void setImage(Image newImage) {
-		label.setIcon(newImage);
-	}
+    @Override
+    public void setImage(Image newImage) {
+        label.setIcon(newImage);
+    }
 
-	@Override
-	public Image getImage() {
-		return label.getIcon();
-	}
+    @Override
+    public Image getImage() {
+        return label.getIcon();
+    }
 
-	@Override
-	public IFigure getLabelFigure() {
-		return label;
-	}
+    @Override
+    public IFigure getLabelFigure() {
+        return label;
+    }
 
 }

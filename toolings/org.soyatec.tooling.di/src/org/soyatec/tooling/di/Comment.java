@@ -30,25 +30,25 @@ import org.eclipse.emf.common.util.EList;
  * @generated
  */
 public interface Comment extends Shape {
-	/**
-	 * Returns the value of the '<em><b>Inputs</b></em>' reference list. The
-	 * list contents are of type {@link org.soyatec.tooling.di.CommentLink}. It
-	 * is bidirectional and its opposite is '
-	 * {@link org.soyatec.tooling.di.CommentLink#getTarget <em>Target</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Inputs</em>' reference list isn't clear, there
-	 * really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 *
-	 * @return the value of the '<em>Inputs</em>' reference list.
-	 * @see org.soyatec.tooling.di.DiPackage#getComment_Inputs()
-	 * @see org.soyatec.tooling.di.CommentLink#getTarget
-	 * @model opposite="target" transient="true" volatile="true"
-	 *        extendedMetaData="group='#allIncomingLines'"
-	 * @generated
-	 */
-	EList<CommentLink> getInputs();
+    /**
+     * Returns the value of the '<em><b>Inputs</b></em>' reference list. The
+     * list contents are of type {@link org.soyatec.tooling.di.CommentLink}. It
+     * is bidirectional and its opposite is '
+     * {@link org.soyatec.tooling.di.CommentLink#getTarget <em>Target</em>}'.
+     * <!-- begin-user-doc -->
+     * <p>
+     * If the meaning of the '<em>Inputs</em>' reference list isn't clear, there
+     * really should be more of a description here...
+     * </p>
+     * <!-- end-user-doc -->
+     *
+     * @return the value of the '<em>Inputs</em>' reference list.
+     * @see org.soyatec.tooling.di.DiPackage#getComment_Inputs()
+     * @see org.soyatec.tooling.di.CommentLink#getTarget
+     * @model opposite="target" transient="true" volatile="true"
+     *        extendedMetaData="group='#allIncomingLines'"
+     * @generated
+     */
+    EList<CommentLink> getInputs();
 
 } // Comment

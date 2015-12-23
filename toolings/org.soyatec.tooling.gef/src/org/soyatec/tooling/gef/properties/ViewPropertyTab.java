@@ -55,339 +55,339 @@ import org.soyatec.tooling.gef.resources.ResourcesFactory;
  * @author Ecsoya
  */
 public class ViewPropertyTab extends CommandPropertyTab implements
-		IPropertyChangeListener {
+        IPropertyChangeListener {
 
-	protected static final EStructuralFeature ES_LABEL = DiPackage.eINSTANCE
-			.getView_Label();
-	protected static final EStructuralFeature ES_BACKGROUND = DiPackage.eINSTANCE
-			.getShape_Background();
-	protected static final EStructuralFeature ES_FOREGROUND = DiPackage.eINSTANCE
-			.getShape_Foreground();
-	protected static final EStructuralFeature ES_GRADIENT_ACTIVED = DiPackage.eINSTANCE
-			.getGradientShape_UsingGradient();
-	protected static final EStructuralFeature ES_GRADIENT_COLOR = DiPackage.eINSTANCE
-			.getGradientShape_GradientColor();
-	protected static final EStructuralFeature ES_GRADIENT_VERTICAL = DiPackage.eINSTANCE
-			.getGradientShape_VerticalGradient();
-	protected static final EStructuralFeature ES_LINE_COLOR = DiPackage.eINSTANCE
-			.getLine_Color();
-	protected static final EStructuralFeature ES_LINE_WIDTH = DiPackage.eINSTANCE
-			.getLine_Width();
-	protected static final List<EStructuralFeature> common_features = new ArrayList<EStructuralFeature>();
-	static {
-		common_features.add(ES_LABEL);
-		common_features.add(ES_BACKGROUND);
-		common_features.add(ES_FOREGROUND);
-		common_features.add(ES_LINE_COLOR);
-		common_features.add(ES_LINE_WIDTH);
-	}
-	private static final List<EStructuralFeature> gradient_features = new ArrayList<EStructuralFeature>();
-	static {
-		gradient_features.add(ES_GRADIENT_ACTIVED);
-		gradient_features.add(ES_GRADIENT_COLOR);
-		gradient_features.add(ES_GRADIENT_VERTICAL);
-	}
+    protected static final EStructuralFeature ES_LABEL = DiPackage.eINSTANCE
+            .getView_Label();
+    protected static final EStructuralFeature ES_BACKGROUND = DiPackage.eINSTANCE
+            .getShape_Background();
+    protected static final EStructuralFeature ES_FOREGROUND = DiPackage.eINSTANCE
+            .getShape_Foreground();
+    protected static final EStructuralFeature ES_GRADIENT_ACTIVED = DiPackage.eINSTANCE
+            .getGradientShape_UsingGradient();
+    protected static final EStructuralFeature ES_GRADIENT_COLOR = DiPackage.eINSTANCE
+            .getGradientShape_GradientColor();
+    protected static final EStructuralFeature ES_GRADIENT_VERTICAL = DiPackage.eINSTANCE
+            .getGradientShape_VerticalGradient();
+    protected static final EStructuralFeature ES_LINE_COLOR = DiPackage.eINSTANCE
+            .getLine_Color();
+    protected static final EStructuralFeature ES_LINE_WIDTH = DiPackage.eINSTANCE
+            .getLine_Width();
+    protected static final List<EStructuralFeature> common_features = new ArrayList<EStructuralFeature>();
+    static {
+        common_features.add(ES_LABEL);
+        common_features.add(ES_BACKGROUND);
+        common_features.add(ES_FOREGROUND);
+        common_features.add(ES_LINE_COLOR);
+        common_features.add(ES_LINE_WIDTH);
+    }
+    private static final List<EStructuralFeature> gradient_features = new ArrayList<EStructuralFeature>();
+    static {
+        gradient_features.add(ES_GRADIENT_ACTIVED);
+        gradient_features.add(ES_GRADIENT_COLOR);
+        gradient_features.add(ES_GRADIENT_VERTICAL);
+    }
 
-	private final Map<EStructuralFeature, FieldEditor> editorMap = new HashMap<EStructuralFeature, FieldEditor>(
-			1);
-	private Group gradientGroup;
-	private Composite control;
-	private View model;
+    private final Map<EStructuralFeature, FieldEditor> editorMap = new HashMap<EStructuralFeature, FieldEditor>(
+            1);
+    private Group gradientGroup;
+    private Composite control;
+    private View model;
 
-	private final PreferenceStore store;
+    private final PreferenceStore store;
 
-	public ViewPropertyTab() {
-		store = new PreferenceStore();
-	}
+    public ViewPropertyTab() {
+        store = new PreferenceStore();
+    }
 
-	public void propertyChange(final PropertyChangeEvent event) {
-		final String property = event.getProperty();
-		if (FieldEditor.IS_VALID.equals(property)) {
-			// valid
-		} else if (model != null) {
-			final Object source = event.getSource();
-			if (!(source instanceof FieldEditor)) {
-				return;
-			}
-			final String name = ((FieldEditor) source).getPreferenceName();
-			final EStructuralFeature feature = model.eClass()
-					.getEStructuralFeature(name);
-			if (feature == null) {
-				return;
-			}
-			Object newValue = event.getNewValue();
-			if (ES_GRADIENT_VERTICAL == feature) {
-				newValue = "true".equals(newValue); //$NON-NLS-1$
-			}
-			if (newValue instanceof RGB) {
-				newValue = ResourcesFactory.RGBToInteger((RGB) newValue);
-			}
-			final EditingDomain domain = getEditingDomain();
-			if (domain != null) {
-				final Command command = SetCommand.create(domain, model,
-						feature, newValue);
-				executeCommand(command);
-			}
-		}
-	}
+    public void propertyChange(final PropertyChangeEvent event) {
+        final String property = event.getProperty();
+        if (FieldEditor.IS_VALID.equals(property)) {
+            // valid
+        } else if (model != null) {
+            final Object source = event.getSource();
+            if (!(source instanceof FieldEditor)) {
+                return;
+            }
+            final String name = ((FieldEditor) source).getPreferenceName();
+            final EStructuralFeature feature = model.eClass()
+                    .getEStructuralFeature(name);
+            if (feature == null) {
+                return;
+            }
+            Object newValue = event.getNewValue();
+            if (ES_GRADIENT_VERTICAL == feature) {
+                newValue = "true".equals(newValue); //$NON-NLS-1$
+            }
+            if (newValue instanceof RGB) {
+                newValue = ResourcesFactory.RGBToInteger((RGB) newValue);
+            }
+            final EditingDomain domain = getEditingDomain();
+            if (domain != null) {
+                final Command command = SetCommand.create(domain, model,
+                        feature, newValue);
+                executeCommand(command);
+            }
+        }
+    }
 
-	public String getName() {
-		return ResourcesFactory.getString("properties_appearance"); //$NON-NLS-1$
-	}
+    public String getName() {
+        return ResourcesFactory.getString("properties_appearance"); //$NON-NLS-1$
+    }
 
-	public String getDescription() {
-		return ResourcesFactory.getString("properties_appearance_desc"); //$NON-NLS-1$
-	}
+    public String getDescription() {
+        return ResourcesFactory.getString("properties_appearance_desc"); //$NON-NLS-1$
+    }
 
-	protected void setInput(final Object newInput) {
-		super.setInput(newInput);
-		model = null;
-		if (newInput instanceof View) {
-			model = ((View) newInput);
-		} else if (newInput instanceof EditPart) {
-			final Object mm = ((EditPart) newInput).getModel();
-			if (mm instanceof View) {
-				model = (View) mm;
-			}
-		}
-		prepareStore();
-	}
+    protected void setInput(final Object newInput) {
+        super.setInput(newInput);
+        model = null;
+        if (newInput instanceof View) {
+            model = ((View) newInput);
+        } else if (newInput instanceof EditPart) {
+            final Object mm = ((EditPart) newInput).getModel();
+            if (mm instanceof View) {
+                model = (View) mm;
+            }
+        }
+        prepareStore();
+    }
 
-	private void prepareStore() {
-		final List<EStructuralFeature> all = new ArrayList<EStructuralFeature>(
-				common_features);
-		all.addAll(gradient_features);
-		for (final EStructuralFeature sf : all) {
-			if (!isFeatureVisible(model, sf)) {
-				continue;
-			}
-			final String key = sf.getName();
-			final Object defaultValue = sf.getDefaultValue();
-			final EDataType eType = (EDataType) sf.getEType();
-			final Class<?> instanceType = eType.getInstanceClass();
-			final boolean eIsSet = model.eIsSet(sf);
-			final Object value = model.eGet(sf);
+    private void prepareStore() {
+        final List<EStructuralFeature> all = new ArrayList<EStructuralFeature>(
+                common_features);
+        all.addAll(gradient_features);
+        for (final EStructuralFeature sf : all) {
+            if (!isFeatureVisible(model, sf)) {
+                continue;
+            }
+            final String key = sf.getName();
+            final Object defaultValue = sf.getDefaultValue();
+            final EDataType eType = (EDataType) sf.getEType();
+            final Class<?> instanceType = eType.getInstanceClass();
+            final boolean eIsSet = model.eIsSet(sf);
+            final Object value = model.eGet(sf);
 
-			if (ES_BACKGROUND == sf || ES_FOREGROUND == sf
-					|| ES_GRADIENT_COLOR == sf || ES_LINE_COLOR == sf) {
-				if (ES_BACKGROUND == sf || ES_GRADIENT_COLOR == sf) {
-					PreferenceConverter.setDefault(store, key, ResourcesFactory
-							.integerToRGB(ResourcesFactory.COLOR_WHITE));
-				} else {
-					PreferenceConverter.setDefault(store, key, ResourcesFactory
-							.integerToRGB(ResourcesFactory.COLOR_BLACK));
-				}
-				if (eIsSet) {
-					PreferenceConverter.setValue(store, key,
-							ResourcesFactory.integerToRGB((Integer) value));
-				} else {
-					if (ES_BACKGROUND == sf || ES_GRADIENT_COLOR == sf) {
-						PreferenceConverter
-								.setValue(
-										store,
-										key,
-										ResourcesFactory
-												.integerToRGB(ResourcesFactory.COLOR_WHITE));
-					} else {
-						PreferenceConverter
-								.setValue(
-										store,
-										key,
-										ResourcesFactory
-												.integerToRGB(ResourcesFactory.COLOR_BLACK));
-					}
-				}
-			} else if (String.class == instanceType) {
-				store.setDefault(key, defaultValue == null ? "" //$NON-NLS-1$
-						: (String) defaultValue);
-				if (eIsSet) {
-					store.setValue(key, value == null ? "" : (String) value); //$NON-NLS-1$
-				} else {
-					store.setValue(key, defaultValue == null ? "" //$NON-NLS-1$
-							: (String) defaultValue);
-				}
-			} else if (boolean.class == instanceType) {
-				store.setDefault(key, (Boolean) defaultValue);
-				if (eIsSet) {
-					store.setValue(key, (Boolean) value);
-				} else {
-					store.setValue(key, (Boolean) defaultValue);
-				}
-			}
-		}
+            if (ES_BACKGROUND == sf || ES_FOREGROUND == sf
+                    || ES_GRADIENT_COLOR == sf || ES_LINE_COLOR == sf) {
+                if (ES_BACKGROUND == sf || ES_GRADIENT_COLOR == sf) {
+                    PreferenceConverter.setDefault(store, key, ResourcesFactory
+                            .integerToRGB(ResourcesFactory.COLOR_WHITE));
+                } else {
+                    PreferenceConverter.setDefault(store, key, ResourcesFactory
+                            .integerToRGB(ResourcesFactory.COLOR_BLACK));
+                }
+                if (eIsSet) {
+                    PreferenceConverter.setValue(store, key,
+                            ResourcesFactory.integerToRGB((Integer) value));
+                } else {
+                    if (ES_BACKGROUND == sf || ES_GRADIENT_COLOR == sf) {
+                        PreferenceConverter
+                                .setValue(
+                                        store,
+                                        key,
+                                        ResourcesFactory
+                                                .integerToRGB(ResourcesFactory.COLOR_WHITE));
+                    } else {
+                        PreferenceConverter
+                                .setValue(
+                                        store,
+                                        key,
+                                        ResourcesFactory
+                                                .integerToRGB(ResourcesFactory.COLOR_BLACK));
+                    }
+                }
+            } else if (String.class == instanceType) {
+                store.setDefault(key, defaultValue == null ? "" //$NON-NLS-1$
+                        : (String) defaultValue);
+                if (eIsSet) {
+                    store.setValue(key, value == null ? "" : (String) value); //$NON-NLS-1$
+                } else {
+                    store.setValue(key, defaultValue == null ? "" //$NON-NLS-1$
+                            : (String) defaultValue);
+                }
+            } else if (boolean.class == instanceType) {
+                store.setDefault(key, (Boolean) defaultValue);
+                if (eIsSet) {
+                    store.setValue(key, (Boolean) value);
+                } else {
+                    store.setValue(key, (Boolean) defaultValue);
+                }
+            }
+        }
 
-	}
+    }
 
-	protected boolean isFeatureVisible(final View model,
-			final EStructuralFeature sf) {
-		if (model == null || sf == null) {
-			return false;
-		}
-		if ((model instanceof CommentLink) && ES_LABEL == sf) {
-			return false;
-		}
-		return model.eClass().getFeatureID(sf) != -1;
-	}
+    protected boolean isFeatureVisible(final View model,
+            final EStructuralFeature sf) {
+        if (model == null || sf == null) {
+            return false;
+        }
+        if ((model instanceof CommentLink) && ES_LABEL == sf) {
+            return false;
+        }
+        return model.eClass().getFeatureID(sf) != -1;
+    }
 
-	protected void refresh() {
-		super.refresh();
-		if (control == null || control.isDisposed()) {
-			return;
-		}
-		if (model == null) {
-			final Control[] children = control.getChildren();
-			for (final Control child : children) {
-				child.setVisible(false);
-				final Object layoutData = child.getLayoutData();
-				if (layoutData instanceof GridData) {
-					((GridData) layoutData).exclude = true;
-				}
-			}
-		} else {
-			final Set<Entry<EStructuralFeature, FieldEditor>> entrySet = editorMap
-					.entrySet();
-			final List<FieldEditor> visibleEditors = new ArrayList<FieldEditor>();
-			for (final Entry<EStructuralFeature, FieldEditor> entry : entrySet) {
-				final EStructuralFeature feature = entry.getKey();
-				final FieldEditor editor = entry.getValue();
-				final boolean enabled = isFeatureVisible(model, feature);
-				editor.setEnabled(enabled, getEditorParent(feature));
-				if (enabled) {
-					visibleEditors.add(editor);
-				}
-			}
+    protected void refresh() {
+        super.refresh();
+        if (control == null || control.isDisposed()) {
+            return;
+        }
+        if (model == null) {
+            final Control[] children = control.getChildren();
+            for (final Control child : children) {
+                child.setVisible(false);
+                final Object layoutData = child.getLayoutData();
+                if (layoutData instanceof GridData) {
+                    ((GridData) layoutData).exclude = true;
+                }
+            }
+        } else {
+            final Set<Entry<EStructuralFeature, FieldEditor>> entrySet = editorMap
+                    .entrySet();
+            final List<FieldEditor> visibleEditors = new ArrayList<FieldEditor>();
+            for (final Entry<EStructuralFeature, FieldEditor> entry : entrySet) {
+                final EStructuralFeature feature = entry.getKey();
+                final FieldEditor editor = entry.getValue();
+                final boolean enabled = isFeatureVisible(model, feature);
+                editor.setEnabled(enabled, getEditorParent(feature));
+                if (enabled) {
+                    visibleEditors.add(editor);
+                }
+            }
 
-			final Control[] children = control.getChildren();
-			for (final Control child : children) {
-				child.setVisible(child.isEnabled());
-				final Object layoutData = child.getLayoutData();
-				if (layoutData instanceof GridData) {
-					((GridData) layoutData).exclude = !child.isVisible();
-				}
-			}
-			gradientGroup.setVisible(model instanceof GradientShape);
-			((GridData) gradientGroup.getLayoutData()).exclude = !(model instanceof GradientShape);
+            final Control[] children = control.getChildren();
+            for (final Control child : children) {
+                child.setVisible(child.isEnabled());
+                final Object layoutData = child.getLayoutData();
+                if (layoutData instanceof GridData) {
+                    ((GridData) layoutData).exclude = !child.isVisible();
+                }
+            }
+            gradientGroup.setVisible(model instanceof GradientShape);
+            ((GridData) gradientGroup.getLayoutData()).exclude = !(model instanceof GradientShape);
 
-			// load values for editors
-			for (final FieldEditor editor : visibleEditors) {
-				editor.load();
-			}
-		}
-		control.layout();
-		control.getParent().layout();
-		control.getParent().getParent().layout();
-	}
+            // load values for editors
+            for (final FieldEditor editor : visibleEditors) {
+                editor.load();
+            }
+        }
+        control.layout();
+        control.getParent().layout();
+        control.getParent().getParent().layout();
+    }
 
-	private Composite getEditorParent(final EStructuralFeature feature) {
-		if (gradient_features.contains(feature)) {
-			return gradientGroup;
-		}
-		return control;
-	}
+    private Composite getEditorParent(final EStructuralFeature feature) {
+        if (gradient_features.contains(feature)) {
+            return gradientGroup;
+        }
+        return control;
+    }
 
-	public Control createControl(final FormToolkit factory,
-			final Composite parent) {
-		control = factory.createComposite(parent, SWT.NONE);
-		final int numColumns = 2;
-		control.setLayout(new GridLayout(numColumns, false));
+    public Control createControl(final FormToolkit factory,
+            final Composite parent) {
+        control = factory.createComposite(parent, SWT.NONE);
+        final int numColumns = 2;
+        control.setLayout(new GridLayout(numColumns, false));
 
-		for (final EStructuralFeature sf : common_features) {
-			final FieldEditor editor = createFieldEditor(control, sf);
-			if (editor != null) {
-				editorMap.put(sf, editor);
-			}
-		}
-		gradientGroup = new Group(control, SWT.NONE);
-		gradientGroup
-				.setText(ResourcesFactory.getString("properties_gradient")); //$NON-NLS-1$
-		gradientGroup.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true,
-				false, numColumns, 1));
-		for (final EStructuralFeature sf : gradient_features) {
-			final FieldEditor editor = createFieldEditor(gradientGroup, sf);
-			if (editor != null) {
-				editorMap.put(sf, editor);
-			}
-		}
-		gradientGroup.setLayout(new GridLayout(numColumns, false));
+        for (final EStructuralFeature sf : common_features) {
+            final FieldEditor editor = createFieldEditor(control, sf);
+            if (editor != null) {
+                editorMap.put(sf, editor);
+            }
+        }
+        gradientGroup = new Group(control, SWT.NONE);
+        gradientGroup
+                .setText(ResourcesFactory.getString("properties_gradient")); //$NON-NLS-1$
+        gradientGroup.setLayoutData(new GridData(SWT.FILL, SWT.FILL, true,
+                false, numColumns, 1));
+        for (final EStructuralFeature sf : gradient_features) {
+            final FieldEditor editor = createFieldEditor(gradientGroup, sf);
+            if (editor != null) {
+                editorMap.put(sf, editor);
+            }
+        }
+        gradientGroup.setLayout(new GridLayout(numColumns, false));
 
-		final Set<Entry<EStructuralFeature, FieldEditor>> entrySet = editorMap
-				.entrySet();
-		for (final Entry<EStructuralFeature, FieldEditor> entry : entrySet) {
-			final EStructuralFeature feature = entry.getKey();
-			final FieldEditor editor = entry.getValue();
-			editor.fillIntoGrid(getEditorParent(feature), numColumns);
-			editor.setPreferenceStore(store);
-			editor.setPropertyChangeListener(this);
-		}
-		final Control[] children = control.getChildren();
-		for (final Control child : children) {
-			factory.adapt(child, true, true);
-		}
-		// control.layout();
-		refresh();
-		return control;
-	}
+        final Set<Entry<EStructuralFeature, FieldEditor>> entrySet = editorMap
+                .entrySet();
+        for (final Entry<EStructuralFeature, FieldEditor> entry : entrySet) {
+            final EStructuralFeature feature = entry.getKey();
+            final FieldEditor editor = entry.getValue();
+            editor.fillIntoGrid(getEditorParent(feature), numColumns);
+            editor.setPreferenceStore(store);
+            editor.setPropertyChangeListener(this);
+        }
+        final Control[] children = control.getChildren();
+        for (final Control child : children) {
+            factory.adapt(child, true, true);
+        }
+        // control.layout();
+        refresh();
+        return control;
+    }
 
-	private FieldEditor createFieldEditor(final Composite parent,
-			final EStructuralFeature feature) {
-		final String name = feature.getName();
-		final String label = getFeatureLabel(feature);
-		if (ES_BACKGROUND == feature || ES_FOREGROUND == feature
-				|| ES_GRADIENT_COLOR == feature || ES_LINE_COLOR == feature) {
-			return new ColorFieldEditor(name, label, parent);
-		} else if (ES_GRADIENT_VERTICAL == feature) {
-			return new ComboFieldEditor(
-					name,
-					label,
-					new String[][] {
-							{
-									ResourcesFactory
-											.getString("properties_vertical"), "true" }, { ResourcesFactory.getString("properties_horizontal"), "false" } }, parent); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
-		} else {
-			final Class<?> instanceClass = feature.getEType()
-					.getInstanceClass();
-			if (boolean.class == instanceClass) {
-				return new BooleanFieldEditor(name, label, parent);
-			} else if (int.class == instanceClass) {
-				return new SpinnerFieldEditor(name, label, parent, 1, 10, 1, 1);
-			}
-		}
-		return new StringFieldEditor(name, label, StringFieldEditor.UNLIMITED,
-				StringFieldEditor.VALIDATE_ON_KEY_STROKE, parent);
-	}
+    private FieldEditor createFieldEditor(final Composite parent,
+            final EStructuralFeature feature) {
+        final String name = feature.getName();
+        final String label = getFeatureLabel(feature);
+        if (ES_BACKGROUND == feature || ES_FOREGROUND == feature
+                || ES_GRADIENT_COLOR == feature || ES_LINE_COLOR == feature) {
+            return new ColorFieldEditor(name, label, parent);
+        } else if (ES_GRADIENT_VERTICAL == feature) {
+            return new ComboFieldEditor(
+                    name,
+                    label,
+                    new String[][] {
+                            {
+                                    ResourcesFactory
+                                            .getString("properties_vertical"), "true" }, { ResourcesFactory.getString("properties_horizontal"), "false" } }, parent); //$NON-NLS-1$ //$NON-NLS-2$ //$NON-NLS-3$ //$NON-NLS-4$
+        } else {
+            final Class<?> instanceClass = feature.getEType()
+                    .getInstanceClass();
+            if (boolean.class == instanceClass) {
+                return new BooleanFieldEditor(name, label, parent);
+            } else if (int.class == instanceClass) {
+                return new SpinnerFieldEditor(name, label, parent, 1, 10, 1, 1);
+            }
+        }
+        return new StringFieldEditor(name, label, StringFieldEditor.UNLIMITED,
+                StringFieldEditor.VALIDATE_ON_KEY_STROKE, parent);
+    }
 
-	private String getFeatureLabel(final EStructuralFeature feature) {
-		if (ES_LABEL == feature) {
-			return ResourcesFactory.getString("properties_label"); //$NON-NLS-1$
-		} else if (ES_BACKGROUND == feature) {
-			return ResourcesFactory.getString("properties_background"); //$NON-NLS-1$
-		} else if (ES_FOREGROUND == feature) {
-			return ResourcesFactory.getString("properties_foreground"); //$NON-NLS-1$
-		} else if (ES_GRADIENT_ACTIVED == feature) {
-			return ResourcesFactory.getString("properties_active"); //$NON-NLS-1$
-		} else if (ES_GRADIENT_COLOR == feature) {
-			return ResourcesFactory.getString("properties_gradient_color"); //$NON-NLS-1$
-		} else if (ES_GRADIENT_VERTICAL == feature) {
-			return ResourcesFactory.getString("properties_gradient_style"); //$NON-NLS-1$
-		} else if (ES_LINE_COLOR == feature) {
-			return ResourcesFactory.getString("properties_line_color"); //$NON-NLS-1$
-		} else if (ES_LINE_WIDTH == feature) {
-			return ResourcesFactory.getString("properties_line_width"); //$NON-NLS-1$
-		}
-		return feature.getName();
-	}
+    private String getFeatureLabel(final EStructuralFeature feature) {
+        if (ES_LABEL == feature) {
+            return ResourcesFactory.getString("properties_label"); //$NON-NLS-1$
+        } else if (ES_BACKGROUND == feature) {
+            return ResourcesFactory.getString("properties_background"); //$NON-NLS-1$
+        } else if (ES_FOREGROUND == feature) {
+            return ResourcesFactory.getString("properties_foreground"); //$NON-NLS-1$
+        } else if (ES_GRADIENT_ACTIVED == feature) {
+            return ResourcesFactory.getString("properties_active"); //$NON-NLS-1$
+        } else if (ES_GRADIENT_COLOR == feature) {
+            return ResourcesFactory.getString("properties_gradient_color"); //$NON-NLS-1$
+        } else if (ES_GRADIENT_VERTICAL == feature) {
+            return ResourcesFactory.getString("properties_gradient_style"); //$NON-NLS-1$
+        } else if (ES_LINE_COLOR == feature) {
+            return ResourcesFactory.getString("properties_line_color"); //$NON-NLS-1$
+        } else if (ES_LINE_WIDTH == feature) {
+            return ResourcesFactory.getString("properties_line_width"); //$NON-NLS-1$
+        }
+        return feature.getName();
+    }
 
-	public boolean isExpanded() {
-		return false;
-	}
+    public boolean isExpanded() {
+        return false;
+    }
 
-	@Override
-	public boolean isVisibleFor(final IWorkbenchPart part,
-			final ISelection selection) {
-		Object element = ((IStructuredSelection) selection).getFirstElement();
-		if (element instanceof EditPart) {
-			element = ((EditPart) element).getModel();
-		}
-		return element instanceof View;
-	}
+    @Override
+    public boolean isVisibleFor(final IWorkbenchPart part,
+            final ISelection selection) {
+        Object element = ((IStructuredSelection) selection).getFirstElement();
+        if (element instanceof EditPart) {
+            element = ((EditPart) element).getModel();
+        }
+        return element instanceof View;
+    }
 }

@@ -36,79 +36,81 @@ import org.soyatec.tooling.gef.figures.ILabelFigure;
  */
 public class TextDirectEditManager extends DirectEditManager {
 
-	private Font scaledFont;
-	private VerifyListener verifyListener;
-	private final ILabelFigure labelFigure;
-	private final String initialvalue;
+    private Font scaledFont;
+    private VerifyListener verifyListener;
+    private final ILabelFigure labelFigure;
+    private final String initialvalue;
 
-	public TextDirectEditManager(final ViewEditPart<?> source, final ILabelFigure labelFigure) {
-		this(source, labelFigure, null);
-	}
+    public TextDirectEditManager(final ViewEditPart<?> source,
+            final ILabelFigure labelFigure) {
+        this(source, labelFigure, null);
+    }
 
-	public TextDirectEditManager(final ViewEditPart<?> source, final ILabelFigure labelFigure,
-			final String initialvalue) {
-		super(source, TextCellEditor.class, new TextCellEditorLocator(labelFigure),
-				DiPackage.eINSTANCE.getView_Label());
-		this.labelFigure = labelFigure;
-		this.initialvalue = initialvalue;
-	}
+    public TextDirectEditManager(final ViewEditPart<?> source,
+            final ILabelFigure labelFigure, final String initialvalue) {
+        super(source, TextCellEditor.class, new TextCellEditorLocator(
+                labelFigure), DiPackage.eINSTANCE.getView_Label());
+        this.labelFigure = labelFigure;
+        this.initialvalue = initialvalue;
+    }
 
-	protected void bringDown() {
-		// This method might be re-entered when super.bringDown() is called.
-		final Font disposeFont = scaledFont;
-		scaledFont = null;
-		super.bringDown();
-		if (disposeFont != null) {
-			disposeFont.dispose();
-		}
-	}
+    protected void bringDown() {
+        // This method might be re-entered when super.bringDown() is called.
+        final Font disposeFont = scaledFont;
+        scaledFont = null;
+        super.bringDown();
+        if (disposeFont != null) {
+            disposeFont.dispose();
+        }
+    }
 
-	protected void initCellEditor() {
-		final Text text = (Text) getCellEditor().getControl();
-		verifyListener = new VerifyListener() {
-			public void verifyText(final VerifyEvent event) {
-				final Text text = (Text) getCellEditor().getControl();
-				final String oldText = text.getText();
-				final String leftText = oldText.substring(0, event.start);
-				final String rightText = oldText.substring(event.end, oldText.length());
-				final GC gc = new GC(text);
-				Point size = gc.textExtent(leftText + event.text + rightText);
-				gc.dispose();
-				if (size.x != 0) {
-					size = text.computeSize(size.x, SWT.DEFAULT);
-				}
-				getCellEditor().getControl().setSize(size.x, size.y);
-			}
-		};
-		text.addVerifyListener(verifyListener);
+    protected void initCellEditor() {
+        final Text text = (Text) getCellEditor().getControl();
+        verifyListener = new VerifyListener() {
+            public void verifyText(final VerifyEvent event) {
+                final Text text = (Text) getCellEditor().getControl();
+                final String oldText = text.getText();
+                final String leftText = oldText.substring(0, event.start);
+                final String rightText = oldText.substring(event.end,
+                        oldText.length());
+                final GC gc = new GC(text);
+                Point size = gc.textExtent(leftText + event.text + rightText);
+                gc.dispose();
+                if (size.x != 0) {
+                    size = text.computeSize(size.x, SWT.DEFAULT);
+                }
+                getCellEditor().getControl().setSize(size.x, size.y);
+            }
+        };
+        text.addVerifyListener(verifyListener);
 
-		final String initialLabelText = getInitialValue();
-		getCellEditor().setValue(initialLabelText);
-		final IFigure figure = getEditPart().getFigure();
-		scaledFont = figure.getFont();
-		final FontData data = scaledFont.getFontData()[0];
-		final Dimension fontSize = new Dimension(0, data.getHeight());
-		labelFigure.getLabelFigure().translateToAbsolute(fontSize);
-		data.setHeight(fontSize.height);
-		scaledFont = new Font(null, data);
+        final String initialLabelText = getInitialValue();
+        getCellEditor().setValue(initialLabelText);
+        final IFigure figure = getEditPart().getFigure();
+        scaledFont = figure.getFont();
+        final FontData data = scaledFont.getFontData()[0];
+        final Dimension fontSize = new Dimension(0, data.getHeight());
+        labelFigure.getLabelFigure().translateToAbsolute(fontSize);
+        data.setHeight(fontSize.height);
+        scaledFont = new Font(null, data);
 
-		text.setFont(scaledFont);
-	}
+        text.setFont(scaledFont);
+    }
 
-	protected String getInitialValue() {
-		if (initialvalue != null) {
-			return initialvalue;
-		} else if (labelFigure != null) {
-			return labelFigure.getText();
-		}
-		return "";
-	}
+    protected String getInitialValue() {
+        if (initialvalue != null) {
+            return initialvalue;
+        } else if (labelFigure != null) {
+            return labelFigure.getText();
+        }
+        return "";
+    }
 
-	protected void unhookListeners() {
-		super.unhookListeners();
-		final Text text = (Text) getCellEditor().getControl();
-		text.removeVerifyListener(verifyListener);
-		verifyListener = null;
-	}
+    protected void unhookListeners() {
+        super.unhookListeners();
+        final Text text = (Text) getCellEditor().getControl();
+        text.removeVerifyListener(verifyListener);
+        verifyListener = null;
+    }
 
 }

@@ -12,5 +12,5 @@ package org.soyatec.tooling.views.properties;
 
 public interface IPropertyTabProvider {
 
-	IPropertyTab[] getPropertyTabs();
+    IPropertyTab[] getPropertyTabs();
 }

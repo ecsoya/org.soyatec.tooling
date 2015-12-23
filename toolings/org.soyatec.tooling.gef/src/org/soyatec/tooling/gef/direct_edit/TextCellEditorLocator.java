@@ -27,28 +27,28 @@ import org.soyatec.tooling.gef.figures.ILabelFigure;
  */
 public class TextCellEditorLocator implements CellEditorLocator {
 
-	private final ILabelFigure labelFigure;
+    private final ILabelFigure labelFigure;
 
-	public TextCellEditorLocator(final ILabelFigure labelFigure) {
-		this.labelFigure = labelFigure;
-	}
+    public TextCellEditorLocator(final ILabelFigure labelFigure) {
+        this.labelFigure = labelFigure;
+    }
 
-	public void relocate(final CellEditor celleditor) {
-		final Text text = (Text) celleditor.getControl();
-		final Point pref = text.computeSize(-1, -1);
-		final IFigure label = labelFigure.getLabelFigure();
-		Rectangle rect = null;
-		if (label instanceof Label) {
-			rect = ((Label) label).getTextBounds().getCopy();
-		} else {
-			rect = label.getBounds().getCopy();
-		}
-		label.translateToAbsolute(rect);
-		text.setBounds(rect.x - 1, rect.y - 1, pref.x + 1, pref.y + 1);
-	}
+    public void relocate(final CellEditor celleditor) {
+        final Text text = (Text) celleditor.getControl();
+        final Point pref = text.computeSize(-1, -1);
+        final IFigure label = labelFigure.getLabelFigure();
+        Rectangle rect = null;
+        if (label instanceof Label) {
+            rect = ((Label) label).getTextBounds().getCopy();
+        } else {
+            rect = label.getBounds().getCopy();
+        }
+        label.translateToAbsolute(rect);
+        text.setBounds(rect.x - 1, rect.y - 1, pref.x + 1, pref.y + 1);
+    }
 
-	public ILabelFigure getLabelFigure() {
-		return labelFigure;
-	}
+    public ILabelFigure getLabelFigure() {
+        return labelFigure;
+    }
 
 }

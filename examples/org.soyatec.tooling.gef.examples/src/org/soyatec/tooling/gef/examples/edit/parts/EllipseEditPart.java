@@ -14,48 +14,48 @@ import org.soyatec.tooling.gef.figures.ILabelFigure;
 
 public class EllipseEditPart extends ShapeEditPart<Shape> {
 
-	public EllipseEditPart(Shape model) {
-		super(model);
-	}
+    public EllipseEditPart(Shape model) {
+        super(model);
+    }
 
-	@Override
-	protected IFigure createPrimaryFigure() {
-		return new EllipseFigure();
-	}
+    @Override
+    protected IFigure createPrimaryFigure() {
+        return new EllipseFigure();
+    }
 
-	@Override
-	protected void refreshVisuals() {
-		super.refreshVisuals();
-		refreshLabel();
-	}
+    @Override
+    protected void refreshVisuals() {
+        super.refreshVisuals();
+        refreshLabel();
+    }
 
-	@Override
-	protected void createEditPolicies() {
-		super.createEditPolicies();
-		installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE,
-				new ConnectionCreationEditPolicy());
-		installEditPolicy(EditPolicy.DIRECT_EDIT_ROLE,
-				new ShapeDirectEditPolicy());
-	}
+    @Override
+    protected void createEditPolicies() {
+        super.createEditPolicies();
+        installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE,
+                new ConnectionCreationEditPolicy());
+        installEditPolicy(EditPolicy.DIRECT_EDIT_ROLE,
+                new ShapeDirectEditPolicy());
+    }
 
-	protected void handleNotifyChanged(Notification event) {
-		super.handleNotifyChanged(event);
-		if (ShapesPackage.eINSTANCE.getShape_Label() == event.getFeature()) {
-			refreshLabel();
-		}
-	}
+    protected void handleNotifyChanged(Notification event) {
+        super.handleNotifyChanged(event);
+        if (ShapesPackage.eINSTANCE.getShape_Label() == event.getFeature()) {
+            refreshLabel();
+        }
+    }
 
-	private void refreshLabel() {
-		ILabelFigure figure = (ILabelFigure) getPrimaryFigure();
-		String label = ((Ellipse) getElement()).getLabel();
-		if (label == null) {
-			label = "Ellipse";
-		}
-		figure.setText(label);
-	}
+    private void refreshLabel() {
+        ILabelFigure figure = (ILabelFigure) getPrimaryFigure();
+        String label = ((Ellipse) getElement()).getLabel();
+        if (label == null) {
+            label = "Ellipse";
+        }
+        figure.setText(label);
+    }
 
-	@Override
-	protected ILabelFigure getDirectEditLabel() {
-		return (ILabelFigure) getPrimaryFigure();
-	}
+    @Override
+    protected ILabelFigure getDirectEditLabel() {
+        return (ILabelFigure) getPrimaryFigure();
+    }
 }

@@ -19,51 +19,51 @@ import org.soyatec.tooling.di.Node;
 
 public class CreateCommentLinkCommand extends CreateLineCommand {
 
-	private Node commentSource;
-	private Comment commentTarget;
+    private Node commentSource;
+    private Comment commentTarget;
 
-	public CreateCommentLinkCommand(final Diagram diagram,
-			final CommentLink lineObject) {
-		super(diagram, lineObject);
-	}
+    public CreateCommentLinkCommand(final Diagram diagram,
+            final CommentLink lineObject) {
+        super(diagram, lineObject);
+    }
 
-	public boolean canExecute() {
-		if (source == null || target == null || source == target) {
-			return false;
-		}
-		final Object sourceModel = source.getModel();
-		final Object targetModel = target.getModel();
-		if (!(sourceModel instanceof Node) || !(targetModel instanceof Comment)) {
-			return false;
-		}
-		commentSource = (Node) sourceModel;
-		commentTarget = (Comment) targetModel;
-		return true;
-	}
+    public boolean canExecute() {
+        if (source == null || target == null || source == target) {
+            return false;
+        }
+        final Object sourceModel = source.getModel();
+        final Object targetModel = target.getModel();
+        if (!(sourceModel instanceof Node) || !(targetModel instanceof Comment)) {
+            return false;
+        }
+        commentSource = (Node) sourceModel;
+        commentTarget = (Comment) targetModel;
+        return true;
+    }
 
-	protected void doCreateLine(final Diagram diagram, final Line line) {
-		CommentLink commentLink = (CommentLink) line;
-		if (commentLink == null) {
-			commentLink = DiFactory.eINSTANCE.createCommentLink();
-		}
-		commentLink.setSourceAnchor(sourceAnchor);
-		commentLink.setTargetAnchor(targetAnchor);
+    protected void doCreateLine(final Diagram diagram, final Line line) {
+        CommentLink commentLink = (CommentLink) line;
+        if (commentLink == null) {
+            commentLink = DiFactory.eINSTANCE.createCommentLink();
+        }
+        commentLink.setSourceAnchor(sourceAnchor);
+        commentLink.setTargetAnchor(targetAnchor);
 
-		commentLink.setSource(commentSource);
-		commentLink.setTarget(commentTarget);
+        commentLink.setSource(commentSource);
+        commentLink.setTarget(commentTarget);
 
-		diagram.getCommentLinks().add(commentLink);
-	}
+        diagram.getCommentLinks().add(commentLink);
+    }
 
-	protected void doRemoveLine(final Diagram diagram, final Line line) {
-		if (diagram == null || line == null) {
-			return;
-		}
-		final CommentLink commentLink = (CommentLink) line;
-		commentLink.setSource(null);
-		commentLink.setTarget(null);
+    protected void doRemoveLine(final Diagram diagram, final Line line) {
+        if (diagram == null || line == null) {
+            return;
+        }
+        final CommentLink commentLink = (CommentLink) line;
+        commentLink.setSource(null);
+        commentLink.setTarget(null);
 
-		diagram.getCommentLinks().remove(commentLink);
-	}
+        diagram.getCommentLinks().remove(commentLink);
+    }
 
 }

@@ -24,44 +24,44 @@ import org.eclipse.swt.widgets.Composite;
  */
 public abstract class GraphicalEditorWithToolBarPalette extends GraphicalEditor {
 
-	private ViewForm partControl;
+    private ViewForm partControl;
 
-	public GraphicalEditorWithToolBarPalette() {
-		setEditDomain(new ToolBarEditDomain(this));
-	}
+    public GraphicalEditorWithToolBarPalette() {
+        setEditDomain(new ToolBarEditDomain(this));
+    }
 
-	protected ToolBarEditDomain getEditDomain() {
-		return (ToolBarEditDomain) super.getEditDomain();
-	}
+    protected ToolBarEditDomain getEditDomain() {
+        return (ToolBarEditDomain) super.getEditDomain();
+    }
 
-	final public void createPartControl(final Composite parent) {
-		partControl = new ViewForm(parent, SWT.NONE);
+    final public void createPartControl(final Composite parent) {
+        partControl = new ViewForm(parent, SWT.NONE);
 
-		final ToolBarPalette palette = new ToolBarPalette(partControl, SWT.NONE);
-		palette.setLayoutData(new GridData(SWT.FILL, SWT.BEGINNING, true, false));
-		configurePalette(palette);
+        final ToolBarPalette palette = new ToolBarPalette(partControl, SWT.NONE);
+        palette.setLayoutData(new GridData(SWT.FILL, SWT.BEGINNING, true, false));
+        configurePalette(palette);
 
-		partControl.setTopLeft(palette);
-		final RulerComposite content = new RulerComposite(partControl, SWT.NONE);
-		super.createPartControl(content);
-		content.setGraphicalViewer((ScrollingGraphicalViewer) getGraphicalViewer());
-		partControl.setContent(content);
-	}
+        partControl.setTopLeft(palette);
+        final RulerComposite content = new RulerComposite(partControl, SWT.NONE);
+        super.createPartControl(content);
+        content.setGraphicalViewer((ScrollingGraphicalViewer) getGraphicalViewer());
+        partControl.setContent(content);
+    }
 
-	public void setFocus() {
-		if (partControl != null && !partControl.isDisposed()) {
-			partControl.setFocus();
-		}
-	}
+    public void setFocus() {
+        if (partControl != null && !partControl.isDisposed()) {
+            partControl.setFocus();
+        }
+    }
 
-	private void configurePalette(final ToolBarPalette palette) {
-		final ToolBarEditDomain editDomain = getEditDomain();
-		final PaletteRoot paletteRoot = createPaletteRoot();
+    private void configurePalette(final ToolBarPalette palette) {
+        final ToolBarEditDomain editDomain = getEditDomain();
+        final PaletteRoot paletteRoot = createPaletteRoot();
 
-		editDomain.setPaletteRoot(paletteRoot);
-		editDomain.setPalette(palette);
-		palette.init(editDomain, paletteRoot);
-	}
+        editDomain.setPaletteRoot(paletteRoot);
+        editDomain.setPalette(palette);
+        palette.init(editDomain, paletteRoot);
+    }
 
-	protected abstract PaletteRoot createPaletteRoot();
+    protected abstract PaletteRoot createPaletteRoot();
 }

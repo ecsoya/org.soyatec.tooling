@@ -17,15 +17,15 @@ import org.soyatec.tooling.richtext.Activator;
 
 public class BackgroundAction extends ColorAction {
 
-	public BackgroundAction(final IRichText richText) {
-		super(richText);
-		setImageDescriptor(AbstractUIPlugin.imageDescriptorFromPlugin(
-				Activator.PLUGIN_ID, "icons/textBackground.ico"));
-		setToolTipText("Text Background");
-	}
+    public BackgroundAction(final IRichText richText) {
+        super(richText);
+        setImageDescriptor(AbstractUIPlugin.imageDescriptorFromPlugin(
+                Activator.PLUGIN_ID, "icons/textBackground.ico"));
+        setToolTipText("Text Background");
+    }
 
-	protected String getCommandName() {
-		return RichTextCommand.BACKGROUND_COLOR;
-	}
+    protected String getCommandName() {
+        return RichTextCommand.BACKGROUND_COLOR;
+    }
 
 }

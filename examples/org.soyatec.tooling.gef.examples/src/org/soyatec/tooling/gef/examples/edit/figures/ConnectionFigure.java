@@ -13,55 +13,55 @@ import org.eclipse.swt.graphics.Image;
 import org.soyatec.tooling.gef.figures.ILabelFigure;
 
 public class ConnectionFigure extends PolylineConnection implements
-		ILabelFigure {
+        ILabelFigure {
 
-	private final Label label;
+    private final Label label;
 
-	public ConnectionFigure() {
-		setAntialias(SWT.ON);
-		setLayoutManager(new DelegatingLayout());
-		label = new Label("Connection"); //$NON-NLS-1$
-		add(label, new LabelLocator(this));
-	}
+    public ConnectionFigure() {
+        setAntialias(SWT.ON);
+        setLayoutManager(new DelegatingLayout());
+        label = new Label("Connection"); //$NON-NLS-1$
+        add(label, new LabelLocator(this));
+    }
 
-	public void setText(final String newText) {
-		label.setText(newText);
-	}
+    public void setText(final String newText) {
+        label.setText(newText);
+    }
 
-	public String getText() {
-		return label.getText();
-	}
+    public String getText() {
+        return label.getText();
+    }
 
-	public void setImage(final Image newImage) {
-		label.setIcon(newImage);
-	}
+    public void setImage(final Image newImage) {
+        label.setIcon(newImage);
+    }
 
-	public Image getImage() {
-		return label.getIcon();
-	}
+    public Image getImage() {
+        return label.getIcon();
+    }
 
-	public Label getLabel() {
-		return label;
-	}
+    public Label getLabel() {
+        return label;
+    }
 
-	public IFigure getLabelFigure() {
-		return label;
-	}
+    public IFigure getLabelFigure() {
+        return label;
+    }
 
-	private static class LabelLocator extends ConnectionLocator {
+    private static class LabelLocator extends ConnectionLocator {
 
-		public LabelLocator(final Connection connection) {
-			super(connection, MIDDLE);
-		}
+        public LabelLocator(final Connection connection) {
+            super(connection, MIDDLE);
+        }
 
-		@Override
-		public void relocate(final IFigure target) {
-			final Dimension prefSize = target.getPreferredSize();
-			final Point center = getReferencePoint();
-			center.translate(0, -(prefSize.height / 2 + 2));
-			target.translateToRelative(center);
-			target.setBounds(getNewBounds(prefSize, center));
-		}
-	}
+        @Override
+        public void relocate(final IFigure target) {
+            final Dimension prefSize = target.getPreferredSize();
+            final Point center = getReferencePoint();
+            center.translate(0, -(prefSize.height / 2 + 2));
+            target.translateToRelative(center);
+            target.setBounds(getNewBounds(prefSize, center));
+        }
+    }
 
 }

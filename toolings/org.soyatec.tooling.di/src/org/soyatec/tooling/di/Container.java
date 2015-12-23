@@ -35,78 +35,78 @@ import org.eclipse.emf.ecore.util.FeatureMap;
  * @generated
  */
 public interface Container extends View {
-	/**
-	 * Returns the value of the '<em><b>Children</b></em>' containment reference
-	 * list. The list contents are of type {@link org.soyatec.tooling.di.Shape}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Children</em>' containment reference list
-	 * isn't clear, there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 *
-	 * @return the value of the '<em>Children</em>' containment reference list.
-	 * @see org.soyatec.tooling.di.DiPackage#getContainer_Children()
-	 * @model containment="true" transient="true" volatile="true"
-	 *        extendedMetaData="group='#allShapes'"
-	 * @generated
-	 */
-	EList<Shape> getChildren();
+    /**
+     * Returns the value of the '<em><b>Children</b></em>' containment reference
+     * list. The list contents are of type {@link org.soyatec.tooling.di.Shape}.
+     * <!-- begin-user-doc -->
+     * <p>
+     * If the meaning of the '<em>Children</em>' containment reference list
+     * isn't clear, there really should be more of a description here...
+     * </p>
+     * <!-- end-user-doc -->
+     *
+     * @return the value of the '<em>Children</em>' containment reference list.
+     * @see org.soyatec.tooling.di.DiPackage#getContainer_Children()
+     * @model containment="true" transient="true" volatile="true"
+     *        extendedMetaData="group='#allShapes'"
+     * @generated
+     */
+    EList<Shape> getChildren();
 
-	/**
-	 * Returns the value of the '<em><b>Lines</b></em>' containment reference
-	 * list. The list contents are of type {@link org.soyatec.tooling.di.Line}.
-	 * <!-- begin-user-doc -->
-	 * <p>
-	 * If the meaning of the '<em>Lines</em>' containment reference list isn't
-	 * clear, there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 *
-	 * @return the value of the '<em>Lines</em>' containment reference list.
-	 * @see org.soyatec.tooling.di.DiPackage#getContainer_Lines()
-	 * @model containment="true" transient="true" volatile="true"
-	 *        extendedMetaData="group='#allLines'"
-	 * @generated
-	 */
-	EList<Line> getLines();
+    /**
+     * Returns the value of the '<em><b>Lines</b></em>' containment reference
+     * list. The list contents are of type {@link org.soyatec.tooling.di.Line}.
+     * <!-- begin-user-doc -->
+     * <p>
+     * If the meaning of the '<em>Lines</em>' containment reference list isn't
+     * clear, there really should be more of a description here...
+     * </p>
+     * <!-- end-user-doc -->
+     *
+     * @return the value of the '<em>Lines</em>' containment reference list.
+     * @see org.soyatec.tooling.di.DiPackage#getContainer_Lines()
+     * @model containment="true" transient="true" volatile="true"
+     *        extendedMetaData="group='#allLines'"
+     * @generated
+     */
+    EList<Line> getLines();
 
-	/**
-	 * Returns the value of the '<em><b>All Lines</b></em>' attribute list. The
-	 * list contents are of type
-	 * {@link org.eclipse.emf.ecore.util.FeatureMap.Entry}. <!-- begin-user-doc
-	 * -->
-	 * <p>
-	 * If the meaning of the '<em>All Lines</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 *
-	 * @return the value of the '<em>All Lines</em>' attribute list.
-	 * @see org.soyatec.tooling.di.DiPackage#getContainer_AllLines()
-	 * @model dataType="org.eclipse.emf.ecore.EFeatureMapEntry" many="true"
-	 *        extendedMetaData="kind='group'"
-	 * @generated
-	 */
-	FeatureMap getAllLines();
+    /**
+     * Returns the value of the '<em><b>All Lines</b></em>' attribute list. The
+     * list contents are of type
+     * {@link org.eclipse.emf.ecore.util.FeatureMap.Entry}. <!-- begin-user-doc
+     * -->
+     * <p>
+     * If the meaning of the '<em>All Lines</em>' attribute list isn't clear,
+     * there really should be more of a description here...
+     * </p>
+     * <!-- end-user-doc -->
+     *
+     * @return the value of the '<em>All Lines</em>' attribute list.
+     * @see org.soyatec.tooling.di.DiPackage#getContainer_AllLines()
+     * @model dataType="org.eclipse.emf.ecore.EFeatureMapEntry" many="true"
+     *        extendedMetaData="kind='group'"
+     * @generated
+     */
+    FeatureMap getAllLines();
 
-	/**
-	 * Returns the value of the '<em><b>All Shapes</b></em>' attribute list. The
-	 * list contents are of type
-	 * {@link org.eclipse.emf.ecore.util.FeatureMap.Entry}. <!-- begin-user-doc
-	 * -->
-	 * <p>
-	 * If the meaning of the '<em>All Shapes</em>' attribute list isn't clear,
-	 * there really should be more of a description here...
-	 * </p>
-	 * <!-- end-user-doc -->
-	 *
-	 * @return the value of the '<em>All Shapes</em>' attribute list.
-	 * @see org.soyatec.tooling.di.DiPackage#getContainer_AllShapes()
-	 * @model dataType="org.eclipse.emf.ecore.EFeatureMapEntry" many="true"
-	 *        extendedMetaData="kind='group'"
-	 * @generated
-	 */
-	FeatureMap getAllShapes();
+    /**
+     * Returns the value of the '<em><b>All Shapes</b></em>' attribute list. The
+     * list contents are of type
+     * {@link org.eclipse.emf.ecore.util.FeatureMap.Entry}. <!-- begin-user-doc
+     * -->
+     * <p>
+     * If the meaning of the '<em>All Shapes</em>' attribute list isn't clear,
+     * there really should be more of a description here...
+     * </p>
+     * <!-- end-user-doc -->
+     *
+     * @return the value of the '<em>All Shapes</em>' attribute list.
+     * @see org.soyatec.tooling.di.DiPackage#getContainer_AllShapes()
+     * @model dataType="org.eclipse.emf.ecore.EFeatureMapEntry" many="true"
+     *        extendedMetaData="kind='group'"
+     * @generated
+     */
+    FeatureMap getAllShapes();
 
 } // Container

@@ -74,195 +74,195 @@ import org.soyatec.tooling.richtext.utils.FileUtils;
 
 public class HTMLEditor extends EditorPart {
 
-	private ViewForm partControl;
-	private RichTextToolBar toolBar;
-	private IRichText richText;
+    private ViewForm partControl;
+    private RichTextToolBar toolBar;
+    private IRichText richText;
 
-	private IFile file;
-	private boolean isDirty;
+    private IFile file;
+    private boolean isDirty;
 
-	public void doSave(final IProgressMonitor monitor) {
-		if (richText.getModified() && file != null) {
-			final String text = richText.getText();
-			final Properties properties = new Properties();
-			properties.put(RuntimeConstants.RESOURCE_LOADER, "class, file");
-			properties.put("class.resource.loader.class",
-					VelocityResourceLoader.class.getName());
-			Velocity.init(properties);
-			final Template template = Velocity.getTemplate("template.vm");
-			final VelocityContext context = new VelocityContext();
-			context.put("content", text);
-			final StringWriter writer = new StringWriter();
-			template.merge(context, writer);
-			final String newValue = new String(writer.getBuffer());
-			try {
-				FileUtils.saveFromString(file, newValue, monitor);
-			} catch (final Exception e) {
-				Activator
-						.getDefault()
-						.getLog()
-						.log(new Status(IStatus.ERROR, Activator.PLUGIN_ID,
-								"Save file content"));
-			}
-		}
-		isDirty = false;
-		firePropertyChange(PROP_DIRTY);
-	}
+    public void doSave(final IProgressMonitor monitor) {
+        if (richText.getModified() && file != null) {
+            final String text = richText.getText();
+            final Properties properties = new Properties();
+            properties.put(RuntimeConstants.RESOURCE_LOADER, "class, file");
+            properties.put("class.resource.loader.class",
+                    VelocityResourceLoader.class.getName());
+            Velocity.init(properties);
+            final Template template = Velocity.getTemplate("template.vm");
+            final VelocityContext context = new VelocityContext();
+            context.put("content", text);
+            final StringWriter writer = new StringWriter();
+            template.merge(context, writer);
+            final String newValue = new String(writer.getBuffer());
+            try {
+                FileUtils.saveFromString(file, newValue, monitor);
+            } catch (final Exception e) {
+                Activator
+                        .getDefault()
+                        .getLog()
+                        .log(new Status(IStatus.ERROR, Activator.PLUGIN_ID,
+                                "Save file content"));
+            }
+        }
+        isDirty = false;
+        firePropertyChange(PROP_DIRTY);
+    }
 
-	public void doSaveAs() {
+    public void doSaveAs() {
 
-	}
+    }
 
-	public void init(final IEditorSite site, final IEditorInput input)
-			throws PartInitException {
-		setSite(site);
-		setInput(input);
-		if (input instanceof IFileEditorInput) {
-			file = ((IFileEditorInput) input).getFile();
-		}
-	}
+    public void init(final IEditorSite site, final IEditorInput input)
+            throws PartInitException {
+        setSite(site);
+        setInput(input);
+        if (input instanceof IFileEditorInput) {
+            file = ((IFileEditorInput) input).getFile();
+        }
+    }
 
-	public boolean isDirty() {
-		return isDirty;
-	}
+    public boolean isDirty() {
+        return isDirty;
+    }
 
-	public boolean isSaveAsAllowed() {
-		return false;
-	}
+    public boolean isSaveAsAllowed() {
+        return false;
+    }
 
-	public void createPartControl(final Composite parent) {
-		partControl = new ViewForm(parent, SWT.NONE);
-		final Composite content = new Composite(partControl, SWT.NONE);
-		content.setLayout(new FillLayout());
-		richText = new RichText(content, SWT.NONE);
-		partControl.setContent(content);
+    public void createPartControl(final Composite parent) {
+        partControl = new ViewForm(parent, SWT.NONE);
+        final Composite content = new Composite(partControl, SWT.NONE);
+        content.setLayout(new FillLayout());
+        richText = new RichText(content, SWT.NONE);
+        partControl.setContent(content);
 
-		final CoolBar coolBar = new CoolBar(partControl, SWT.HORIZONTAL
-				| SWT.FLAT);
-		toolBar = new RichTextToolBar(coolBar, SWT.FLAT, richText);
-		final ToolBar normalItems = toolBar.getToolbarMgr().getControl();
-		final ToolBar comboItems = toolBar.getToolbarMgrCombo().getControl();
-		final CoolItem item1 = new CoolItem(coolBar, SWT.NONE);
-		item1.setControl(comboItems);
-		item1.setMinimumSize(comboItems.computeSize(SWT.DEFAULT, SWT.DEFAULT));
-		final CoolItem item2 = new CoolItem(coolBar, SWT.NONE);
-		item2.setMinimumSize(normalItems.computeSize(SWT.DEFAULT, SWT.DEFAULT));
-		item2.setControl(normalItems);
-		coolBar.setWrapIndices(new int[] { 1 });
-		partControl.setTopLeft(coolBar);
+        final CoolBar coolBar = new CoolBar(partControl, SWT.HORIZONTAL
+                | SWT.FLAT);
+        toolBar = new RichTextToolBar(coolBar, SWT.FLAT, richText);
+        final ToolBar normalItems = toolBar.getToolbarMgr().getControl();
+        final ToolBar comboItems = toolBar.getToolbarMgrCombo().getControl();
+        final CoolItem item1 = new CoolItem(coolBar, SWT.NONE);
+        item1.setControl(comboItems);
+        item1.setMinimumSize(comboItems.computeSize(SWT.DEFAULT, SWT.DEFAULT));
+        final CoolItem item2 = new CoolItem(coolBar, SWT.NONE);
+        item2.setMinimumSize(normalItems.computeSize(SWT.DEFAULT, SWT.DEFAULT));
+        item2.setControl(normalItems);
+        coolBar.setWrapIndices(new int[] { 1 });
+        partControl.setTopLeft(coolBar);
 
-		partControl.addListener(SWT.Resize, new Listener() {
+        partControl.addListener(SWT.Resize, new Listener() {
 
-			public void handleEvent(final Event event) {
-				final CoolItem[] coolItems = coolBar.getItems();
-				final Point parentSize = partControl.getSize();
-				for (final CoolItem coolItem : coolItems) {
-					final Control control = coolItem.getControl();
-					final Point size = control.computeSize(parentSize.x - 4,
-							SWT.DEFAULT);
-					final Point coolSize = coolItem.computeSize(size.x, size.y);
-					coolItem.setMinimumSize(size);
-					coolItem.setPreferredSize(coolSize);
-					coolItem.setSize(coolSize);
-				}
-				coolBar.getParent().layout();
-			}
-		});
+            public void handleEvent(final Event event) {
+                final CoolItem[] coolItems = coolBar.getItems();
+                final Point parentSize = partControl.getSize();
+                for (final CoolItem coolItem : coolItems) {
+                    final Control control = coolItem.getControl();
+                    final Point size = control.computeSize(parentSize.x - 4,
+                            SWT.DEFAULT);
+                    final Point coolSize = coolItem.computeSize(size.x, size.y);
+                    coolItem.setMinimumSize(size);
+                    coolItem.setPreferredSize(coolSize);
+                    coolItem.setSize(coolSize);
+                }
+                coolBar.getParent().layout();
+            }
+        });
 
-		configureActions();
-		configureRichText();
+        configureActions();
+        configureRichText();
 
-	}
+    }
 
-	protected IRichText getRichText() {
-		return richText;
-	}
+    protected IRichText getRichText() {
+        return richText;
+    }
 
-	protected RichTextToolBar getToolBar() {
-		return toolBar;
-	}
+    protected RichTextToolBar getToolBar() {
+        return toolBar;
+    }
 
-	protected void configureRichText() {
-		if (richText == null || richText.isDisposed()) {
-			return;
-		}
-		richText.addModifyListener(new ModifyListener() {
+    protected void configureRichText() {
+        if (richText == null || richText.isDisposed()) {
+            return;
+        }
+        richText.addModifyListener(new ModifyListener() {
 
-			public void modifyText(final ModifyEvent e) {
-				isDirty = true;
-				firePropertyChange(PROP_DIRTY);
-			}
-		});
+            public void modifyText(final ModifyEvent e) {
+                isDirty = true;
+                firePropertyChange(PROP_DIRTY);
+            }
+        });
 
-		if (file != null && file.exists()) {
-			richText.setText(getText(file));
-		}
-	}
+        if (file != null && file.exists()) {
+            richText.setText(getText(file));
+        }
+    }
 
-	protected String getText(final IFile file) {
-		try {
-			return FileUtils.readAsString(file);
-		} catch (final Exception e) {
-			Activator
-					.getDefault()
-					.getLog()
-					.log(new Status(IStatus.ERROR, Activator.PLUGIN_ID,
-							"Load file content"));
-			return null;
-		}
-	}
+    protected String getText(final IFile file) {
+        try {
+            return FileUtils.readAsString(file);
+        } catch (final Exception e) {
+            Activator
+                    .getDefault()
+                    .getLog()
+                    .log(new Status(IStatus.ERROR, Activator.PLUGIN_ID,
+                            "Load file content"));
+            return null;
+        }
+    }
 
-	protected void configureActions() {
-		final IRichText richText = getRichText();
-		toolBar.addAction(new BoldAction(richText));
-		toolBar.addAction(new ItalicAction(richText));
-		toolBar.addAction(new UnderlineAction(richText));
-		toolBar.addAction(new ForegroundAction(richText));
-		toolBar.addAction(new BackgroundAction(richText));
-		toolBar.addAction(new SubscriptAction(richText));
-		toolBar.addAction(new SuperscriptAction(richText));
-		toolBar.addSeparator();
-		toolBar.addAction(new AddOrderedListAction(richText));
-		toolBar.addAction(new AddUnorderedListAction(richText));
-		toolBar.addAction(new JustifyLeftAction(richText));
-		toolBar.addAction(new JustifyCenterAction(richText));
-		toolBar.addAction(new JustifyRightAction(richText));
-		toolBar.addAction(new JustifyFullAction(richText));
-		toolBar.addSeparator();
-		toolBar.addAction(new IndentAction(richText));
-		toolBar.addAction(new OutdentAction(richText));
-		toolBar.addSeparator();
+    protected void configureActions() {
+        final IRichText richText = getRichText();
+        toolBar.addAction(new BoldAction(richText));
+        toolBar.addAction(new ItalicAction(richText));
+        toolBar.addAction(new UnderlineAction(richText));
+        toolBar.addAction(new ForegroundAction(richText));
+        toolBar.addAction(new BackgroundAction(richText));
+        toolBar.addAction(new SubscriptAction(richText));
+        toolBar.addAction(new SuperscriptAction(richText));
+        toolBar.addSeparator();
+        toolBar.addAction(new AddOrderedListAction(richText));
+        toolBar.addAction(new AddUnorderedListAction(richText));
+        toolBar.addAction(new JustifyLeftAction(richText));
+        toolBar.addAction(new JustifyCenterAction(richText));
+        toolBar.addAction(new JustifyRightAction(richText));
+        toolBar.addAction(new JustifyFullAction(richText));
+        toolBar.addSeparator();
+        toolBar.addAction(new IndentAction(richText));
+        toolBar.addAction(new OutdentAction(richText));
+        toolBar.addSeparator();
 
-		// toolBar.addAction(new TidyActionGroup(richText));
-		// toolBar.addSeparator();
-		toolBar.addAction(new AddTableAction(richText));
-		final AddColumnAction addColumnAction = new AddColumnAction(richText);
-		addColumnAction.setImageDescriptor(AbstractUIPlugin
-				.imageDescriptorFromPlugin(Activator.PLUGIN_ID,
-						"icons/addColumn.gif"));
-		addColumnAction.setToolTipText("Add column");
-		toolBar.addAction(addColumnAction);
-		final AddRowAction addRowAction = new AddRowAction(richText);
-		addRowAction.setImageDescriptor(AbstractUIPlugin
-				.imageDescriptorFromPlugin(Activator.PLUGIN_ID,
-						"icons/addRow.gif"));
-		addRowAction.setToolTipText("Add row.");
-		toolBar.addAction(addRowAction);
-		toolBar.addSeparator();
-		toolBar.addAction(new AddLinkAction(richText));
-		toolBar.addAction(new AddImageActionEx(richText, file));
-		toolBar.addAction(new AddCodeAction(richText));
-		toolBar.addSeparator();
-		toolBar.addAction(new AddLineAction(richText));
+        // toolBar.addAction(new TidyActionGroup(richText));
+        // toolBar.addSeparator();
+        toolBar.addAction(new AddTableAction(richText));
+        final AddColumnAction addColumnAction = new AddColumnAction(richText);
+        addColumnAction.setImageDescriptor(AbstractUIPlugin
+                .imageDescriptorFromPlugin(Activator.PLUGIN_ID,
+                        "icons/addColumn.gif"));
+        addColumnAction.setToolTipText("Add column");
+        toolBar.addAction(addColumnAction);
+        final AddRowAction addRowAction = new AddRowAction(richText);
+        addRowAction.setImageDescriptor(AbstractUIPlugin
+                .imageDescriptorFromPlugin(Activator.PLUGIN_ID,
+                        "icons/addRow.gif"));
+        addRowAction.setToolTipText("Add row.");
+        toolBar.addAction(addRowAction);
+        toolBar.addSeparator();
+        toolBar.addAction(new AddLinkAction(richText));
+        toolBar.addAction(new AddImageActionEx(richText, file));
+        toolBar.addAction(new AddCodeAction(richText));
+        toolBar.addSeparator();
+        toolBar.addAction(new AddLineAction(richText));
 
-		toolBar.addAction(new BlockTagActionEx(richText));
-		toolBar.addAction(new FontNameAction(richText));
-		toolBar.addAction(new FontSizeAction(richText));
-		toolBar.addAction(new FontStyleAction(richText));
-	}
+        toolBar.addAction(new BlockTagActionEx(richText));
+        toolBar.addAction(new FontNameAction(richText));
+        toolBar.addAction(new FontSizeAction(richText));
+        toolBar.addAction(new FontStyleAction(richText));
+    }
 
-	public void setFocus() {
-		partControl.setFocus();
-	}
+    public void setFocus() {
+        partControl.setFocus();
+    }
 
 }

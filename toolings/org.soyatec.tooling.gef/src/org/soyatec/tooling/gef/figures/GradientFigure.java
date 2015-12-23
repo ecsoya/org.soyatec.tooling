@@ -19,73 +19,73 @@ import org.eclipse.swt.graphics.Color;
 
 public class GradientFigure extends Figure implements IGradientFigure {
 
-	private boolean usingGradient;
+    private boolean usingGradient;
 
-	private int orientation;
+    private int orientation;
 
-	private Color gradientColor;
+    private Color gradientColor;
 
-	public GradientFigure() {
-		setUsingGradient(true);
-		setGradientOrientation(SWT.VERTICAL);
-	}
+    public GradientFigure() {
+        setUsingGradient(true);
+        setGradientOrientation(SWT.VERTICAL);
+    }
 
-	public boolean isUsingGradient() {
-		return usingGradient;
-	}
+    public boolean isUsingGradient() {
+        return usingGradient;
+    }
 
-	public void setUsingGradient(final boolean value) {
-		final boolean oldValue = this.usingGradient;
-		this.usingGradient = value;
-		if (oldValue != value) {
-			repaint();
-		}
-	}
+    public void setUsingGradient(final boolean value) {
+        final boolean oldValue = this.usingGradient;
+        this.usingGradient = value;
+        if (oldValue != value) {
+            repaint();
+        }
+    }
 
-	protected void paintFigure(final Graphics graphics) {
-		super.paintFigure(graphics);
-		paintBackground(graphics, getBounds());
-	}
+    protected void paintFigure(final Graphics graphics) {
+        super.paintFigure(graphics);
+        paintBackground(graphics, getBounds());
+    }
 
-	protected void paintBackground(final Graphics graphics,
-			final Rectangle rectangle) {
-		if (isUsingGradient()) {
-			final boolean isVertical = SWT.VERTICAL == orientation;
-			graphics.setBackgroundColor(getBackgroundColor());
-			graphics.setForegroundColor(getGradientColor());
-			graphics.fillGradient(rectangle, isVertical);
-		} else {
-			graphics.setBackgroundColor(getBackgroundColor());
-			graphics.setForegroundColor(getForegroundColor());
-			graphics.fillRectangle(rectangle);
-		}
-	}
+    protected void paintBackground(final Graphics graphics,
+            final Rectangle rectangle) {
+        if (isUsingGradient()) {
+            final boolean isVertical = SWT.VERTICAL == orientation;
+            graphics.setBackgroundColor(getBackgroundColor());
+            graphics.setForegroundColor(getGradientColor());
+            graphics.fillGradient(rectangle, isVertical);
+        } else {
+            graphics.setBackgroundColor(getBackgroundColor());
+            graphics.setForegroundColor(getForegroundColor());
+            graphics.fillRectangle(rectangle);
+        }
+    }
 
-	public int getGradientOrientation() {
-		return orientation;
-	}
+    public int getGradientOrientation() {
+        return orientation;
+    }
 
-	public void setGradientOrientation(final int orientation) {
-		final int oldValue = this.orientation;
-		this.orientation = orientation;
-		if (oldValue != orientation) {
-			repaint();
-		}
-	}
+    public void setGradientOrientation(final int orientation) {
+        final int oldValue = this.orientation;
+        this.orientation = orientation;
+        if (oldValue != orientation) {
+            repaint();
+        }
+    }
 
-	public Color getGradientColor() {
-		if (gradientColor == null) {
-			gradientColor = ColorConstants.white;
-		}
-		return gradientColor;
-	}
+    public Color getGradientColor() {
+        if (gradientColor == null) {
+            gradientColor = ColorConstants.white;
+        }
+        return gradientColor;
+    }
 
-	public void setGradientColor(final Color color) {
-		final Color oldValue = this.gradientColor;
-		this.gradientColor = color;
-		if (oldValue != null && !oldValue.equals(color)) {
-			repaint();
-		}
-	}
+    public void setGradientColor(final Color color) {
+        final Color oldValue = this.gradientColor;
+        this.gradientColor = color;
+        if (oldValue != null && !oldValue.equals(color)) {
+            repaint();
+        }
+    }
 
 }

@@ -23,43 +23,43 @@ import org.soyatec.tooling.gef.resources.ResourcesFactory;
 
 public class CommentEditPart extends ShapeEditPart<Comment> {
 
-	public CommentEditPart(final Comment model) {
-		super(model);
-	}
+    public CommentEditPart(final Comment model) {
+        super(model);
+    }
 
-	protected IFigure createPrimaryFigure() {
-		return new CommentFigure();
-	}
+    protected IFigure createPrimaryFigure() {
+        return new CommentFigure();
+    }
 
-	protected Color getDefaultBackgroundColor() {
-		return ResourcesFactory.getColor(ResourcesFactory.COLOR_COMMENT);
-	}
+    protected Color getDefaultBackgroundColor() {
+        return ResourcesFactory.getColor(ResourcesFactory.COLOR_COMMENT);
+    }
 
-	protected void refreshVisuals() {
-		super.refreshVisuals();
-		refreshLabel();
-	}
+    protected void refreshVisuals() {
+        super.refreshVisuals();
+        refreshLabel();
+    }
 
-	protected void refreshLabel() {
-		final CommentFigure primaryFigure = (CommentFigure) getPrimaryFigure();
-		final Comment model = (Comment) getModel();
-		primaryFigure.setText(model.getLabel());
-	}
+    protected void refreshLabel() {
+        final CommentFigure primaryFigure = (CommentFigure) getPrimaryFigure();
+        final Comment model = (Comment) getModel();
+        primaryFigure.setText(model.getLabel());
+    }
 
-	protected void handleNotifyChanged(final Notification event) {
-		super.handleNotifyChanged(event);
-		if (DiPackage.eINSTANCE.getView_Label() == event.getFeature()) {
-			refreshLabel();
-		}
-	}
+    protected void handleNotifyChanged(final Notification event) {
+        super.handleNotifyChanged(event);
+        if (DiPackage.eINSTANCE.getView_Label() == event.getFeature()) {
+            refreshLabel();
+        }
+    }
 
-	protected ILabelFigure getDirectEditLabel() {
-		return (ILabelFigure) getPrimaryFigure();
-	}
+    protected ILabelFigure getDirectEditLabel() {
+        return (ILabelFigure) getPrimaryFigure();
+    }
 
-	protected void createEditPolicies() {
-		super.createEditPolicies();
-		installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE,
-				new CommentLinkCreationEditPolicy());
-	}
+    protected void createEditPolicies() {
+        super.createEditPolicies();
+        installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE,
+                new CommentLinkCreationEditPolicy());
+    }
 }

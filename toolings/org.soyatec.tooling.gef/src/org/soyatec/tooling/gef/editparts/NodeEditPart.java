@@ -22,47 +22,47 @@ import org.soyatec.tooling.gef.editpolicies.CommentLinkCreationEditPolicy;
 
 public abstract class NodeEditPart<T extends Node> extends ViewEditPart<Node> {
 
-	public NodeEditPart(final Node model) {
-		super(model);
-	}
+    public NodeEditPart(final Node model) {
+        super(model);
+    }
 
-	@Override
-	protected void handleNotifyChanged(final Notification event) {
-		super.handleNotifyChanged(event);
-		final Object feature = event.getFeature();
-		if (DiPackage.eINSTANCE.getNode_AllIncomingLines() == feature) {
-			refreshTargetConnections();
-		} else if (DiPackage.eINSTANCE.getNode_AllOutgoingLines() == feature) {
-			refreshSourceConnections();
-		}
-	}
+    @Override
+    protected void handleNotifyChanged(final Notification event) {
+        super.handleNotifyChanged(event);
+        final Object feature = event.getFeature();
+        if (DiPackage.eINSTANCE.getNode_AllIncomingLines() == feature) {
+            refreshTargetConnections();
+        } else if (DiPackage.eINSTANCE.getNode_AllOutgoingLines() == feature) {
+            refreshSourceConnections();
+        }
+    }
 
-	@SuppressWarnings("rawtypes")
-	protected List getModelSourceConnections() {
-		final ValueListIterator<Object> valueListIterator = getView()
-				.getAllOutgoingLines().valueListIterator();
-		final List<Object> modelSourceConnections = new ArrayList<Object>();
-		while (valueListIterator.hasNext()) {
-			modelSourceConnections.add(valueListIterator.next());
-		}
-		return modelSourceConnections;
-	}
+    @SuppressWarnings("rawtypes")
+    protected List getModelSourceConnections() {
+        final ValueListIterator<Object> valueListIterator = getView()
+                .getAllOutgoingLines().valueListIterator();
+        final List<Object> modelSourceConnections = new ArrayList<Object>();
+        while (valueListIterator.hasNext()) {
+            modelSourceConnections.add(valueListIterator.next());
+        }
+        return modelSourceConnections;
+    }
 
-	@SuppressWarnings("rawtypes")
-	protected List getModelTargetConnections() {
-		final ValueListIterator<Object> valueListIterator = getView()
-				.getAllIncomingLines().valueListIterator();
-		final List<Object> modelTargetConnections = new ArrayList<Object>();
-		while (valueListIterator.hasNext()) {
-			modelTargetConnections.add(valueListIterator.next());
-		}
-		return modelTargetConnections;
-	}
+    @SuppressWarnings("rawtypes")
+    protected List getModelTargetConnections() {
+        final ValueListIterator<Object> valueListIterator = getView()
+                .getAllIncomingLines().valueListIterator();
+        final List<Object> modelTargetConnections = new ArrayList<Object>();
+        while (valueListIterator.hasNext()) {
+            modelTargetConnections.add(valueListIterator.next());
+        }
+        return modelTargetConnections;
+    }
 
-	@Override
-	protected void createEditPolicies() {
-		super.createEditPolicies();
-		installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE,
-				new CommentLinkCreationEditPolicy());
-	}
+    @Override
+    protected void createEditPolicies() {
+        super.createEditPolicies();
+        installEditPolicy(EditPolicy.GRAPHICAL_NODE_ROLE,
+                new CommentLinkCreationEditPolicy());
+    }
 }

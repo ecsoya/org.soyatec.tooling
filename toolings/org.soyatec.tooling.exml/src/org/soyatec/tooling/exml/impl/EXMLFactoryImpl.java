@@ -30,107 +30,107 @@ import org.soyatec.tooling.exml.EXMLPackage;
  * @generated
  */
 public class EXMLFactoryImpl extends EFactoryImpl implements EXMLFactory {
-	/**
-	 * Creates the default factory implementation. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 *
-	 * @generated
-	 */
-	public static EXMLFactory init() {
-		try {
-			final EXMLFactory theMLFactory = (EXMLFactory) EPackage.Registry.INSTANCE
-					.getEFactory(EXMLPackage.eNS_URI);
-			if (theMLFactory != null) {
-				return theMLFactory;
-			}
-		} catch (final Exception exception) {
-			EcorePlugin.INSTANCE.log(exception);
-		}
-		return new EXMLFactoryImpl();
-	}
+    /**
+     * Creates the default factory implementation. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     *
+     * @generated
+     */
+    public static EXMLFactory init() {
+        try {
+            final EXMLFactory theMLFactory = (EXMLFactory) EPackage.Registry.INSTANCE
+                    .getEFactory(EXMLPackage.eNS_URI);
+            if (theMLFactory != null) {
+                return theMLFactory;
+            }
+        } catch (final Exception exception) {
+            EcorePlugin.INSTANCE.log(exception);
+        }
+        return new EXMLFactoryImpl();
+    }
 
-	/**
-	 * Creates an instance of the factory. <!-- begin-user-doc --> <!--
-	 * end-user-doc -->
-	 *
-	 * @generated
-	 */
-	public EXMLFactoryImpl() {
-		super();
-	}
+    /**
+     * Creates an instance of the factory. <!-- begin-user-doc --> <!--
+     * end-user-doc -->
+     *
+     * @generated
+     */
+    public EXMLFactoryImpl() {
+        super();
+    }
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public EObject create(final EClass eClass) {
-		switch (eClass.getClassifierID()) {
-		case EXMLPackage.DOCUMENT:
-			return createDocument();
-		case EXMLPackage.ELEMENT:
-			return createElement();
-		case EXMLPackage.ATTRIBUTE:
-			return createAttribute();
-		default:
-			throw new IllegalArgumentException("The class '" + eClass.getName()
-					+ "' is not a valid classifier");
-		}
-	}
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public EObject create(final EClass eClass) {
+        switch (eClass.getClassifierID()) {
+        case EXMLPackage.DOCUMENT:
+            return createDocument();
+        case EXMLPackage.ELEMENT:
+            return createElement();
+        case EXMLPackage.ATTRIBUTE:
+            return createAttribute();
+        default:
+            throw new IllegalArgumentException("The class '" + eClass.getName()
+                    + "' is not a valid classifier");
+        }
+    }
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public EXDocument createDocument() {
-		final EXDocumentImpl document = new EXDocumentImpl();
-		return document;
-	}
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public EXDocument createDocument() {
+        final EXDocumentImpl document = new EXDocumentImpl();
+        return document;
+    }
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public EXElement createElement() {
-		final EXElementImpl element = new EXElementImpl();
-		return element;
-	}
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public EXElement createElement() {
+        final EXElementImpl element = new EXElementImpl();
+        return element;
+    }
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public EXAttribute createAttribute() {
-		final EXAttributeImpl attribute = new EXAttributeImpl();
-		return attribute;
-	}
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public EXAttribute createAttribute() {
+        final EXAttributeImpl attribute = new EXAttributeImpl();
+        return attribute;
+    }
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @generated
-	 */
-	@Override
-	public EXMLPackage getMLPackage() {
-		return (EXMLPackage) getEPackage();
-	}
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @generated
+     */
+    @Override
+    public EXMLPackage getMLPackage() {
+        return (EXMLPackage) getEPackage();
+    }
 
-	/**
-	 * <!-- begin-user-doc --> <!-- end-user-doc -->
-	 *
-	 * @deprecated
-	 * @generated
-	 */
-	@Deprecated
-	public static EXMLPackage getPackage() {
-		return EXMLPackage.eINSTANCE;
-	}
+    /**
+     * <!-- begin-user-doc --> <!-- end-user-doc -->
+     *
+     * @deprecated
+     * @generated
+     */
+    @Deprecated
+    public static EXMLPackage getPackage() {
+        return EXMLPackage.eINSTANCE;
+    }
 
 } // EXMLFactoryImpl

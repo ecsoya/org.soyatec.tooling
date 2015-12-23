@@ -28,125 +28,125 @@ import org.soyatec.tooling.gef.editpolicies.LabelDirectEditPolicy;
 import org.soyatec.tooling.gef.figures.ILabelFigure;
 
 public abstract class ViewEditPart<T extends View> extends
-		AbstractGraphicalEditPart {
+        AbstractGraphicalEditPart {
 
-	private Adapter notifier;
+    private Adapter notifier;
 
-	public ViewEditPart(final T model) {
-		setModel(model);
-	}
+    public ViewEditPart(final T model) {
+        setModel(model);
+    }
 
-	@SuppressWarnings("unchecked")
-	public T getModel() {
-		return (T) super.getModel();
-	}
+    @SuppressWarnings("unchecked")
+    public T getModel() {
+        return (T) super.getModel();
+    }
 
-	public T getView() {
-		return getModel();
-	}
+    public T getView() {
+        return getModel();
+    }
 
-	public EObject getElement() {
-		return getView().getElement();
-	}
+    public EObject getElement() {
+        return getView().getElement();
+    }
 
-	protected Adapter getViewNotifier() {
-		if (notifier == null) {
-			notifier = new AdapterImpl() {
-				public void notifyChanged(final Notification event) {
-					// super.notifyChanged(event);
-					if (event.isTouch()) {
-						return;
-					}
-					final EditPartViewer viewer = getViewer();
-					if (viewer == null || viewer.getControl() == null
-							|| viewer.getControl().isDisposed()) {
-						return;
-					}
-					final Display display = viewer.getControl().getDisplay();
-					if (display.getThread() == Thread.currentThread()) {
-						handleNotifyChanged(event);
-					} else {
-						display.asyncExec(new Runnable() {
+    protected Adapter getViewNotifier() {
+        if (notifier == null) {
+            notifier = new AdapterImpl() {
+                public void notifyChanged(final Notification event) {
+                    // super.notifyChanged(event);
+                    if (event.isTouch()) {
+                        return;
+                    }
+                    final EditPartViewer viewer = getViewer();
+                    if (viewer == null || viewer.getControl() == null
+                            || viewer.getControl().isDisposed()) {
+                        return;
+                    }
+                    final Display display = viewer.getControl().getDisplay();
+                    if (display.getThread() == Thread.currentThread()) {
+                        handleNotifyChanged(event);
+                    } else {
+                        display.asyncExec(new Runnable() {
 
-							@Override
-							public void run() {
-								handleNotifyChanged(event);
-							}
-						});
-					}
-				}
-			};
-		}
-		return notifier;
-	}
+                            @Override
+                            public void run() {
+                                handleNotifyChanged(event);
+                            }
+                        });
+                    }
+                }
+            };
+        }
+        return notifier;
+    }
 
-	protected void addViewNotifier(final Notifier model) {
-		final Adapter adapter = getViewNotifier();
-		if (model == null || model.eAdapters().contains(adapter)) {
-			return;
-		}
-		model.eAdapters().add(adapter);
-	}
+    protected void addViewNotifier(final Notifier model) {
+        final Adapter adapter = getViewNotifier();
+        if (model == null || model.eAdapters().contains(adapter)) {
+            return;
+        }
+        model.eAdapters().add(adapter);
+    }
 
-	protected void removeViewNotifier(final Notifier model) {
-		if (model == null || notifier == null) {
-			return;
-		}
-		model.eAdapters().remove(notifier);
-	}
+    protected void removeViewNotifier(final Notifier model) {
+        if (model == null || notifier == null) {
+            return;
+        }
+        model.eAdapters().remove(notifier);
+    }
 
-	public void activate() {
-		super.activate();
-		addViewNotifier(getModel());
-		addViewNotifier(getElement());
-	}
+    public void activate() {
+        super.activate();
+        addViewNotifier(getModel());
+        addViewNotifier(getElement());
+    }
 
-	protected void handleNotifyChanged(final Notification event) {
+    protected void handleNotifyChanged(final Notification event) {
 
-	}
+    }
 
-	public void deactivate() {
-		removeViewNotifier(getElement());
-		removeViewNotifier(getModel());
-		super.deactivate();
-	}
+    public void deactivate() {
+        removeViewNotifier(getElement());
+        removeViewNotifier(getModel());
+        super.deactivate();
+    }
 
-	protected void createEditPolicies() {
-		installEditPolicy(EditPolicy.DIRECT_EDIT_ROLE,
-				new LabelDirectEditPolicy());
-		installEditPolicy(SnapToHelper.class.getName(),
-				new SnapFeedbackPolicy());
-	}
+    protected void createEditPolicies() {
+        installEditPolicy(EditPolicy.DIRECT_EDIT_ROLE,
+                new LabelDirectEditPolicy());
+        installEditPolicy(SnapToHelper.class.getName(),
+                new SnapFeedbackPolicy());
+    }
 
-	public void performRequest(final Request req) {
-		super.performRequest(req);
-		if (REQ_OPEN.equals(req.getType())) {
-			performOpen();
-		} else if (REQ_DIRECT_EDIT.equals(req.getType())) {
-			performDirectEdit();
-		}
-	}
+    public void performRequest(final Request req) {
+        super.performRequest(req);
+        if (REQ_OPEN.equals(req.getType())) {
+            performOpen();
+        } else if (REQ_DIRECT_EDIT.equals(req.getType())) {
+            performDirectEdit();
+        }
+    }
 
-	protected void performOpen() {
-		performDirectEdit();
-	}
+    protected void performOpen() {
+        performDirectEdit();
+    }
 
-	protected void performDirectEdit() {
-		final ILabelFigure directEditLabel = getDirectEditLabel();
-		if (directEditLabel == null) {
-			return;
-		}
-		new TextDirectEditManager(this, directEditLabel).show();
-	}
+    protected void performDirectEdit() {
+        final ILabelFigure directEditLabel = getDirectEditLabel();
+        if (directEditLabel == null) {
+            return;
+        }
+        new TextDirectEditManager(this, directEditLabel).show();
+    }
 
-	protected ILabelFigure getDirectEditLabel() {
-		return null;
-	}
+    protected ILabelFigure getDirectEditLabel() {
+        return null;
+    }
 
-	public Object getAdapter(@SuppressWarnings("rawtypes") final Class key) {
-		if (SnapToHelper.class == key) {
-			return getParent().getAdapter(key);
-		}
-		return super.getAdapter(key);
-	}
+    public Object getAdapter(@SuppressWarnings("rawtypes") final Class key) {
+        if (SnapToHelper.class == key) {
+            return getParent().getAdapter(key);
+        }
+        return super.getAdapter(key);
+    }
 }

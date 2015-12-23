@@ -12,56 +12,56 @@ import org.soyatec.tooling.gef.examples.edit.commands.CreateConnectionCommand;
 
 public class ConnectionCreationEditPolicy extends GraphicalNodeEditPolicy {
 
-	@Override
-	protected Command getConnectionCompleteCommand(
-			CreateConnectionRequest request) {
-		Command startCommand = request.getStartCommand();
-		if (startCommand instanceof CreateConnectionCommand) {
-			CreateConnectionCommand command = (CreateConnectionCommand) startCommand;
-			command.setTargetEditPart(getHost());
-			final ConnectionAnchor anchor = getNodeEditPart()
-					.getTargetConnectionAnchor(request);
-			if (anchor instanceof BaseConnectionAnchor) {
-				command.setTargetAnchor(((BaseConnectionAnchor) anchor)
-						.getTerminal());
-			}
-			return command;
-		}
-		return null;
-	}
+    @Override
+    protected Command getConnectionCompleteCommand(
+            CreateConnectionRequest request) {
+        Command startCommand = request.getStartCommand();
+        if (startCommand instanceof CreateConnectionCommand) {
+            CreateConnectionCommand command = (CreateConnectionCommand) startCommand;
+            command.setTargetEditPart(getHost());
+            final ConnectionAnchor anchor = getNodeEditPart()
+                    .getTargetConnectionAnchor(request);
+            if (anchor instanceof BaseConnectionAnchor) {
+                command.setTargetAnchor(((BaseConnectionAnchor) anchor)
+                        .getTerminal());
+            }
+            return command;
+        }
+        return null;
+    }
 
-	@Override
-	protected Command getConnectionCreateCommand(CreateConnectionRequest request) {
-		Object newObject = request.getNewObject();
-		if (newObject instanceof Connector) {
-			CreateConnectionCommand command = new CreateConnectionCommand(
-					(Connector) newObject);
-			command.setSourceEditPart(getHost());
-			final ConnectionAnchor anchor = getNodeEditPart()
-					.getSourceConnectionAnchor(request);
-			if (anchor instanceof BaseConnectionAnchor) {
-				command.setSourceAnchor(((BaseConnectionAnchor) anchor)
-						.getTerminal());
-			}
+    @Override
+    protected Command getConnectionCreateCommand(CreateConnectionRequest request) {
+        Object newObject = request.getNewObject();
+        if (newObject instanceof Connector) {
+            CreateConnectionCommand command = new CreateConnectionCommand(
+                    (Connector) newObject);
+            command.setSourceEditPart(getHost());
+            final ConnectionAnchor anchor = getNodeEditPart()
+                    .getSourceConnectionAnchor(request);
+            if (anchor instanceof BaseConnectionAnchor) {
+                command.setSourceAnchor(((BaseConnectionAnchor) anchor)
+                        .getTerminal());
+            }
 
-			request.setStartCommand(command);
-			return command;
-		}
-		return null;
-	}
+            request.setStartCommand(command);
+            return command;
+        }
+        return null;
+    }
 
-	protected NodeEditPart getNodeEditPart() {
-		return (NodeEditPart) getHost();
-	}
+    protected NodeEditPart getNodeEditPart() {
+        return (NodeEditPart) getHost();
+    }
 
-	@Override
-	protected Command getReconnectTargetCommand(ReconnectRequest request) {
-		return null;
-	}
+    @Override
+    protected Command getReconnectTargetCommand(ReconnectRequest request) {
+        return null;
+    }
 
-	@Override
-	protected Command getReconnectSourceCommand(ReconnectRequest request) {
-		return null;
-	}
+    @Override
+    protected Command getReconnectSourceCommand(ReconnectRequest request) {
+        return null;
+    }
 
 }

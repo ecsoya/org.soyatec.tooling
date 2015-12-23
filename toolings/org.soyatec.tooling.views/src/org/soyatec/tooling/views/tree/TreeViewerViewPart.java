@@ -33,139 +33,139 @@ import org.eclipse.ui.part.ISetSelectionTarget;
 import org.eclipse.ui.part.ViewPart;
 
 public abstract class TreeViewerViewPart extends ViewPart implements
-		ISetSelectionTarget, IShellProvider {
+        ISetSelectionTarget, IShellProvider {
 
-	protected TreeViewer treeViewer;
-	private ViewActionBarContributor actionContributor;
+    protected TreeViewer treeViewer;
+    private ViewActionBarContributor actionContributor;
 
-	public void init(final IViewSite site) throws PartInitException {
-		super.init(site);
-		final IActionBars actionBars = site.getActionBars();
-		final ViewActionBarContributor actionContributor = getActionContributor();
-		if (actionContributor != null) {
-			actionContributor.contributeActionBars(actionBars);
-		}
-	}
+    public void init(final IViewSite site) throws PartInitException {
+        super.init(site);
+        final IActionBars actionBars = site.getActionBars();
+        final ViewActionBarContributor actionContributor = getActionContributor();
+        if (actionContributor != null) {
+            actionContributor.contributeActionBars(actionBars);
+        }
+    }
 
-	public void dispose() {
-		if (actionContributor != null) {
-			actionContributor.dispose();
-		}
-		super.dispose();
-	}
+    public void dispose() {
+        if (actionContributor != null) {
+            actionContributor.dispose();
+        }
+        super.dispose();
+    }
 
-	private ViewActionBarContributor getActionContributor() {
-		if (actionContributor == null) {
-			actionContributor = createActionContributor();
-		}
-		return actionContributor;
-	}
+    private ViewActionBarContributor getActionContributor() {
+        if (actionContributor == null) {
+            actionContributor = createActionContributor();
+        }
+        return actionContributor;
+    }
 
-	protected ViewActionBarContributor createActionContributor() {
-		return null;
-	}
+    protected ViewActionBarContributor createActionContributor() {
+        return null;
+    }
 
-	public void selectReveal(final ISelection selection) {
-		if (treeViewer == null || treeViewer.getControl() == null
-				|| treeViewer.getControl().isDisposed()) {
-			return;
-		}
-		treeViewer.setSelection(convertSelection(selection), true);
-	}
+    public void selectReveal(final ISelection selection) {
+        if (treeViewer == null || treeViewer.getControl() == null
+                || treeViewer.getControl().isDisposed()) {
+            return;
+        }
+        treeViewer.setSelection(convertSelection(selection), true);
+    }
 
-	protected ISelection convertSelection(final ISelection selection) {
-		return selection;
-	}
+    protected ISelection convertSelection(final ISelection selection) {
+        return selection;
+    }
 
-	final public void createPartControl(final Composite parent) {
-		treeViewer = new TreeViewer(parent, getTreeStyle());
+    final public void createPartControl(final Composite parent) {
+        treeViewer = new TreeViewer(parent, getTreeStyle());
 
-		treeViewer.addDoubleClickListener(new IDoubleClickListener() {
+        treeViewer.addDoubleClickListener(new IDoubleClickListener() {
 
-			public void doubleClick(final DoubleClickEvent event) {
-				final IStructuredSelection selection = (IStructuredSelection) treeViewer
-						.getSelection();
-				final Object element = selection.getFirstElement();
-				treeViewer.setExpandedState(element,
-						!treeViewer.getExpandedState(element));
-				perfromOpen(selection);
-			}
-		});
+            public void doubleClick(final DoubleClickEvent event) {
+                final IStructuredSelection selection = (IStructuredSelection) treeViewer
+                        .getSelection();
+                final Object element = selection.getFirstElement();
+                treeViewer.setExpandedState(element,
+                        !treeViewer.getExpandedState(element));
+                perfromOpen(selection);
+            }
+        });
 
-		configureTreeViewer();
+        configureTreeViewer();
 
-		getSite().setSelectionProvider(treeViewer);
-		final ViewActionBarContributor actionContributor = getActionContributor();
-		if (actionContributor != null) {
-			actionContributor.setSelectionProvider(treeViewer);
-		}
-		registerContextMenu();
-	}
+        getSite().setSelectionProvider(treeViewer);
+        final ViewActionBarContributor actionContributor = getActionContributor();
+        if (actionContributor != null) {
+            actionContributor.setSelectionProvider(treeViewer);
+        }
+        registerContextMenu();
+    }
 
-	protected void perfromOpen(final IStructuredSelection selection) {
+    protected void perfromOpen(final IStructuredSelection selection) {
 
-	}
+    }
 
-	private void registerContextMenu() {
-		final MenuManager manager = new MenuManager("#Menu"); //$NON-NLS-1$
-		final MenuManager standardMenu = new MenuManager("#Standard"); //$NON-NLS-1$
-		final ViewActionBarContributor actionContributor = getActionContributor();
-		if (actionContributor != null) {
-			actionContributor.createContextMenu(standardMenu);
-		}
-		manager.setRemoveAllWhenShown(true);
-		manager.addMenuListener(new IMenuListener() {
+    private void registerContextMenu() {
+        final MenuManager manager = new MenuManager("#Menu"); //$NON-NLS-1$
+        final MenuManager standardMenu = new MenuManager("#Standard"); //$NON-NLS-1$
+        final ViewActionBarContributor actionContributor = getActionContributor();
+        if (actionContributor != null) {
+            actionContributor.createContextMenu(standardMenu);
+        }
+        manager.setRemoveAllWhenShown(true);
+        manager.addMenuListener(new IMenuListener() {
 
-			public void menuAboutToShow(final IMenuManager manager) {
-				final IContributionItem[] items = standardMenu.getItems();
-				for (final IContributionItem item : items) {
-					manager.add(item);
-				}
-				createDynamicMenus(manager);
-			}
-		});
-		final Control control = treeViewer.getControl();
-		final Menu menu = manager.createContextMenu(control);
-		control.setMenu(menu);
+            public void menuAboutToShow(final IMenuManager manager) {
+                final IContributionItem[] items = standardMenu.getItems();
+                for (final IContributionItem item : items) {
+                    manager.add(item);
+                }
+                createDynamicMenus(manager);
+            }
+        });
+        final Control control = treeViewer.getControl();
+        final Menu menu = manager.createContextMenu(control);
+        control.setMenu(menu);
 
-		// We do NOT want others to contribute menus.
-		// getSite().registerContextMenu(IConstants.VIEW_NAVIGATOR + "#Menu",
-		// manager, treeViewer);
-	}
+        // We do NOT want others to contribute menus.
+        // getSite().registerContextMenu(IConstants.VIEW_NAVIGATOR + "#Menu",
+        // manager, treeViewer);
+    }
 
-	protected void createDynamicMenus(final IMenuManager manager) {
-	}
+    protected void createDynamicMenus(final IMenuManager manager) {
+    }
 
-	protected void configureTreeViewer() {
+    protected void configureTreeViewer() {
 
-	}
+    }
 
-	public TreeViewer getTreeViewer() {
-		return treeViewer;
-	}
+    public TreeViewer getTreeViewer() {
+        return treeViewer;
+    }
 
-	protected int getTreeStyle() {
-		return SWT.MULTI | SWT.H_SCROLL | SWT.V_SCROLL;
-	}
+    protected int getTreeStyle() {
+        return SWT.MULTI | SWT.H_SCROLL | SWT.V_SCROLL;
+    }
 
-	public void setFocus() {
-		if (treeViewer == null || treeViewer.getControl() == null
-				|| treeViewer.getControl().isDisposed()) {
-			return;
-		}
-		treeViewer.getControl().setFocus();
-	}
+    public void setFocus() {
+        if (treeViewer == null || treeViewer.getControl() == null
+                || treeViewer.getControl().isDisposed()) {
+            return;
+        }
+        treeViewer.getControl().setFocus();
+    }
 
-	public Object getAdapter(@SuppressWarnings("rawtypes") final Class adapter) {
-		if (ISetSelectionTarget.class == adapter) {
-			return this;
-		} else if (StructuredViewer.class == adapter) {
-			return getTreeViewer();
-		}
-		return super.getAdapter(adapter);
-	}
+    public Object getAdapter(@SuppressWarnings("rawtypes") final Class adapter) {
+        if (ISetSelectionTarget.class == adapter) {
+            return this;
+        } else if (StructuredViewer.class == adapter) {
+            return getTreeViewer();
+        }
+        return super.getAdapter(adapter);
+    }
 
-	public Shell getShell() {
-		return getSite().getShell();
-	}
+    public Shell getShell() {
+        return getSite().getShell();
+    }
 }

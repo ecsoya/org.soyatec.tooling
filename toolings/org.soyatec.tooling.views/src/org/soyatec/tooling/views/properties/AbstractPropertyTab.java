@@ -17,53 +17,55 @@ import org.eclipse.ui.IWorkbenchPart;
 
 public abstract class AbstractPropertyTab implements IPropertyTab {
 
-	protected IWorkbenchPart activePart;
-	protected ISelection selection;
-	protected Object input;
+    protected IWorkbenchPart activePart;
+    protected ISelection selection;
+    protected Object input;
 
-	public void selectionChanged(final IWorkbenchPart part, final ISelection selection) {
-		if (activePart != null && activePart == part && this.selection != null && this.selection.equals(selection)) {
-			return;
-		}
-		this.activePart = part;
-		this.selection = selection;
-		Object input = null;
-		if (selection instanceof IStructuredSelection) {
-			input = ((IStructuredSelection) selection).getFirstElement();
-		}
-		setInput(input);
-		refresh();
-	}
+    public void selectionChanged(final IWorkbenchPart part,
+            final ISelection selection) {
+        if (activePart != null && activePart == part && this.selection != null
+                && this.selection.equals(selection)) {
+            return;
+        }
+        this.activePart = part;
+        this.selection = selection;
+        Object input = null;
+        if (selection instanceof IStructuredSelection) {
+            input = ((IStructuredSelection) selection).getFirstElement();
+        }
+        setInput(input);
+        refresh();
+    }
 
-	protected void setInput(final Object newInput) {
-		this.input = newInput;
-	}
+    protected void setInput(final Object newInput) {
+        this.input = newInput;
+    }
 
-	public Object getInput() {
-		return input;
-	}
+    public Object getInput() {
+        return input;
+    }
 
-	public IWorkbenchPart getActivePart() {
-		return activePart;
-	}
+    public IWorkbenchPart getActivePart() {
+        return activePart;
+    }
 
-	public ISelection getSelection() {
-		return selection;
-	}
+    public ISelection getSelection() {
+        return selection;
+    }
 
-	protected void refresh() {
+    protected void refresh() {
 
-	}
+    }
 
-	public ToolBarManager getToolBarManager() {
-		return null;
-	}
+    public ToolBarManager getToolBarManager() {
+        return null;
+    }
 
-	public void dispose() {
+    public void dispose() {
 
-	}
+    }
 
-	public boolean isExpanded() {
-		return true;
-	}
+    public boolean isExpanded() {
+        return true;
+    }
 }
