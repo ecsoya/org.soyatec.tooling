@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<site>
+   <feature url="features/org.eclipse.epf.common.html.feature_1.5.0.v20150508_0328.jar" id="org.eclipse.epf.common.html.feature" version="1.5.0.v20150508_0328">
+      <category name="epf-richtext"/>
+   </feature>
+   <feature url="features/org.eclipse.epf.richtext.feature_1.6.0.v20150508_0328.jar" id="org.eclipse.epf.richtext.feature" version="1.6.0.v20150508_0328">
+      <category name="epf-richtext"/>
+   </feature>
+   <feature url="features/org.eclipse.epf.richtext.feature.nls1_1.5.0.v20150508_0328.jar" id="org.eclipse.epf.richtext.feature.nls1" version="1.5.0.v20150508_0328">
+      <category name="epf-richtext"/>
+   </feature>
+   <feature url="features/org.eclipse.epf.richtext.feature.nls2_1.5.0.v20150508_0328.jar" id="org.eclipse.epf.richtext.feature.nls2" version="1.5.0.v20150508_0328">
+      <category name="epf-richtext"/>
+   </feature>
+   <feature url="features/org.eclipse.epf.richtext.feature.nls2a_1.5.0.v20150508_0328.jar" id="org.eclipse.epf.richtext.feature.nls2a" version="1.5.0.v20150508_0328">
+      <category name="epf-richtext"/>
+   </feature>
+   <feature url="features/org.eclipse.epf.richtext.feature.nlsBidi_1.5.0.v20150508_0328.jar" id="org.eclipse.epf.richtext.feature.nlsBidi" version="1.5.0.v20150508_0328">
+      <category name="epf-richtext"/>
+   </feature>
+   <category-def name="epf-richtext" label="EPF Richtext"/>
+</site>
