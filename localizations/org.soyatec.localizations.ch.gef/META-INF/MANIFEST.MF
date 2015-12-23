@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Chinese Localizations for GEF
-Bundle-SymbolicName: org.soyatec.translations.ch.gef;singleton:=true
+Bundle-SymbolicName: org.soyatec.localizations.ch.gef;singleton:=true
 Bundle-Version: 1.0.1.qualifier
 Bundle-Vendor: Soyatec
 Fragment-Host: org.eclipse.gef;bundle-version="3.9.0"
