@@ -32,6 +32,12 @@
 			<img src="images/exml_model.gif">
 		</p>
 		<h3>Easy Loading</h3>
+			<ul>
+			<li>Standard XML Supported without schema.</li>
+			<li>Comment and CData supported.</li>
+			<li>Very simple data structure with <span>Element</span> and <span>Attribute</span>.</li>
+			<li>3 lines codes to be done.</li>
+			</ul>
 		<div align="left">
 			<pre>EXMLResourceFactoryImpl fac = new EXMLResourceFactoryImpl();<br>XMLResource resource = (XMLResource) fac.createResource(uri);<br>HashMap&lt;String, Object&gt; options = new HashMap&lt;String, Object&gt;();<br>options.put(XMLResource.OPTION_ENCODING, &quot;UTF-8&quot;);<br>resource.load(inputStream, options);</pre>
 		</div>
