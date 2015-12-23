@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <feature
-      id="org.soyatec.translations"
+      id="org.soyatec.localizations"
       label="Soyatec Chinese Localizations"
       version="1.0.2.qualifier"
       provider-name="Soyatec">
