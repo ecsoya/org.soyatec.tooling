@@ -25,23 +25,29 @@
 
 	<section class="main-content">
 		<h3>Overview</h3>
-		<p>XML Tooling based on EMF (EXML) used to Load/Save XML with EMF
-			models.</p>
+		<p>XML Tooling based on EMF (EXML) used to loading/saving XML with
+			EMF. You can process XML content without pre-defined ecore models in
+			EMF.</p>
 		<h3>Simple EMF Model</h3>
 		<p>
 			<img src="images/exml_model.gif">
 		</p>
 		<h3>Easy Loading</h3>
-			<ul>
+		<ul>
 			<li>Standard XML Supported without schema.</li>
 			<li>Comment and CData supported.</li>
-			<li>Very simple data structure with <span>Element</span> and <span>Attribute</span>.</li>
+			<li>Very simple data structure with <span>Element</span> and <span>Attribute</span>.
+			</li>
 			<li>Only need 3 lines of code.</li>
-			</ul>
+		</ul>
 		<div align="left">
 			<pre>EXMLResourceFactoryImpl fac = new EXMLResourceFactoryImpl();<br>XMLResource resource = (XMLResource) fac.createResource(uri);<br>HashMap&lt;String, Object&gt; options = new HashMap&lt;String, Object&gt;();<br>options.put(XMLResource.OPTION_ENCODING, &quot;UTF-8&quot;);<br>resource.load(inputStream, options);</pre>
 		</div>
 		<h3>Saving XML</h3>
+		<ul>
+			<li>Saving to standard XML files.</li>
+			<li>Comment and CData supported.</li>
+		</ul>
 		<pre>EXMLResourceFactoryImpl fac = new EXMLResourceFactoryImpl();
 Resource resource = fac.createResource(URI.createFileURI(&quot;Sample-save.xml&quot;));
 EXDocument doc = EXMLFactory.eINSTANCE.createDocument();
