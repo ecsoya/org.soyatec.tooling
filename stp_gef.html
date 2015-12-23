@@ -1,70 +1,98 @@
 <!DOCTYPE html>
 <html lang="en-us">
-  <head>
-    <meta charset="UTF-8">
-    <title>Soyatec Tooling Project by ecsoya</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="stylesheets/normalize.css" media="screen">
-    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
-    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
-  </head>
-  <body>
-    <section class="page-header">
-      <h1 class="project-name">Soyatec Tooling Project</h1>
-      <h2 class="project-tagline">Toolings for GEF Graphical Editor</h2>
-      <a href="https://ecsoya.github.io/" class="btn">Ecsoya</a>
-      <a href="https://github.com/ecsoya/org.soyatec.tooling" class="btn">View on GitHub</a>
-      <a href="https://ecsoya.github.io/org.soyatec.tooling/" class="btn">Soyatec Tooling Project</a>
-    </section>
+<head>
+<meta charset="UTF-8">
+<title>Soyatec Tooling Project by ecsoya</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="stylesheets/normalize.css"
+	media="screen">
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,700'
+	rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css"
+	media="screen">
+<link rel="stylesheet" type="text/css"
+	href="stylesheets/github-light.css" media="screen">
+</head>
+<body>
+	<section class="page-header">
+		<h1 class="project-name">Soyatec Tooling Project</h1>
+		<h2 class="project-tagline">Toolings for GEF Graphical Editor</h2>
+		<a href="https://ecsoya.github.io/" class="btn">Ecsoya</a> <a
+			href="https://github.com/ecsoya/org.soyatec.tooling" class="btn">View
+			on GitHub</a> <a href="https://ecsoya.github.io/org.soyatec.tooling/"
+			class="btn">Soyatec Tooling Project</a>
+	</section>
 
-    <section class="main-content">
-      <h3>Overview</h3>
-      <p>GEF Graphical Editor provided toolings includes diagram interchange model based on EMF, ToolBar palette diagram editor.      </p>
-      <h3> EMF based Diagram Intergration model for Graphical Editor.</h3>
-        <p><img src="images/di_overview.gif" ></p>
-        <blockquote>
-          <p><span >Notes</span>: </p>
-          <ol>
-            <li> 'FeatureMap' and 'http:///org/eclipse/emf/ecore/util/ExtendedMetaData'-&gt; 'group' used when define di models.</li>
-            <li>You need to implement them in your real model. For example:</li>
-          </ol>
-       
-        <p><img src="images/di_impl.gif" width="306" height="212"></p>
-        </blockquote>
-      <h3>Provided some useful classes for GEF.</h3>
-        <ul>
-          <ul>
-            <li>Abstract EditParts and EditPolicies classes based on DI models.</li>
-            <li>CommandStack and Commands, combined EMF commands and GEF commands.</li>
-            <li>Figures for displaying Label and drawing gradient.</li>
-            <li>Text direct edit manager based on a labeled figure.</li>
-            <li>Common connection anchor based on a string terminal value.</li>
-            <li>ResourcesFactory for managing images, fonts and colors.</li>
-          </ul>
-        </ul>
-        <h3>Provided a new graphical editor with a ToolBar Palette.</h3>
-        <p><img src="images/toolbar_editor.gif" width="901" height="583"></p>
-        
-        <h3>Examples</h3>
+	<section class="main-content">
+		<h3>Overview</h3>
+		<p>GEF Graphical Editor provided toolings includes diagram
+			interchange model based on EMF, ToolBar palette diagram editor.</p>
+		<h3>EMF based Diagram Intergration model for Graphical Editor.</h3>
+		<p>
+			<img src="images/di_overview.gif">
+		</p>
+		<blockquote>
+			<p>
+				<span>Notes</span>:
+			</p>
+			<ol>
+				<li>'FeatureMap' and
+					'http:///org/eclipse/emf/ecore/util/ExtendedMetaData'-&gt; 'group'
+					used when define di models.</li>
+				<li>You need to implement them in your real model. For example:</li>
+			</ol>
+
+			<p>
+				<img src="images/di_impl.gif" width="306" height="212">
+			</p>
+		</blockquote>
+		<h3>Provided some useful classes for GEF.</h3>
+		<ul>
+			<ul>
+				<li>Abstract EditParts and EditPolicies classes based on DI
+					models.</li>
+				<li>CommandStack and Commands, combined EMF commands and GEF
+					commands.</li>
+				<li>Figures for displaying Label and drawing gradient.</li>
+				<li>Text direct edit manager based on a labeled figure.</li>
+				<li>Common connection anchor based on a string terminal value.</li>
+				<li>ResourcesFactory for managing images, fonts and colors.</li>
+			</ul>
+		</ul>
+		<h3>Provided a new graphical editor with a ToolBar Palette.</h3>
+		<p>
+			<img src="images/toolbar_editor.gif" width="901" height="583">
+		</p>
+
+		<h3>Examples</h3>
 		<p>
 			Please visit <a
 				href="https://github.com/ecsoya/org.soyatec.tooling/tree/master/examples/org.soyatec.tooling.gef.examples">Github</a>
 			to get examples.
 		<h3>Update Site</h3>
-        <ul>
-          <li>Release: <a href="http://ecsoya.github.io/org.soyatec.tooling/update/">http://ecsoya.github.io/org.soyatec.tooling/update/</a></li>
-        </ul> 
-   <h3><a href="http://ecsoya.github.io/org.soyatec.tooling/" >&lt;&lt; Back</a></h3>     
-      <footer class="site-footer">
- <div align="center">
-        <span class="site-footer-owner"><a href="https://github.com/ecsoya/org.soyatec.tooling">Soyatec Tooling Project</a> is maintained by <a href="https://github.com/ecsoya">ecsoya</a>.</span>
-        <span class="site-footer-credits">Ecsoya (<a href="mailto:jin.liu@soyatec.com">jin.liu@soyatec.com</a>)</span>
-        </div>      </footer>
+		<ul>
+			<li>Release: <a
+				href="http://ecsoya.github.io/org.soyatec.tooling/update/">http://ecsoya.github.io/org.soyatec.tooling/update/</a></li>
+		</ul>
+		<h3>
+			<a href="http://ecsoya.github.io/org.soyatec.tooling/">&lt;&lt;
+				Back</a>
+		</h3>
+		<footer class="site-footer">
+			<div align="center">
+				<span class="site-footer-owner"><a
+					href="https://github.com/ecsoya/org.soyatec.tooling">Soyatec
+						Tooling Project</a> is maintained by <a
+					href="https://github.com/ecsoya">ecsoya</a>.</span> <span
+					class="site-footer-credits">Ecsoya (<a
+					href="mailto:jin.liu@soyatec.com">jin.liu@soyatec.com</a>)
+				</span>
+			</div>
+		</footer>
 
-    </section>
+	</section>
 
-  
-  </body>
+
+</body>
 </html>
 
