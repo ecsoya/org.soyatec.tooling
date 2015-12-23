@@ -1,3 +1,5 @@
+[![Build Status](url?branch=master)](url)
+
 ## Soyatec Tooling Project
 
 Soyatec Tooling Project provided some very useful toolings for developing `Eclipse Plug-ins` and `Eclipse RCP`.
