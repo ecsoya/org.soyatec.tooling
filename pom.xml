@@ -1,0 +1,108 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.soyatec.tooling</groupId>
+	<artifactId>parent</artifactId>
+	<version>1.0.1-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>Soyatec Tooling Project</name>
+
+	<properties>
+		<tycho-version>0.24.0</tycho-version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+	</properties>
+
+	<repositories>
+		<repository>
+			<id>luna</id>
+			<layout>p2</layout>
+			<url>http://download.eclipse.org/releases/luna</url>
+		</repository>
+		
+		<repository>
+			<id>epf</id>
+			<layout>p2</layout>
+			<url>http://ecsoya.github.io/org.soyatec.tooling/thirdparty/epf</url>
+		</repository>
+	</repositories>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>tycho-maven-plugin</artifactId>
+				<version>${tycho-version}</version>
+				<extensions>true</extensions>
+			</plugin>
+
+			<plugin>
+				<groupId>org.eclipse.tycho</groupId>
+				<artifactId>target-platform-configuration</artifactId>
+				<version>${tycho-version}</version>
+				<configuration>
+					<environments>
+						<environment>
+							<os>linux</os>
+							<ws>gtk</ws>
+							<arch>x86</arch>
+						</environment>
+						<environment>
+							<os>linux</os>
+							<ws>gtk</ws>
+							<arch>x86_64</arch>
+						</environment>
+						<environment>
+							<os>win32</os>
+							<ws>win32</ws>
+							<arch>x86</arch>
+						</environment>
+						<environment>
+							<os>win32</os>
+							<ws>win32</ws>
+							<arch>x86_64</arch>
+						</environment>
+						<environment>
+							<os>macosx</os>
+							<ws>cocoa</ws>
+							<arch>x86_64</arch>
+						</environment>
+					</environments>
+				</configuration>
+			</plugin>
+		</plugins>
+	</build>
+
+	<modules>
+		<module>toolings/org.soyatec.tooling.di</module>
+		<module>toolings/org.soyatec.tooling.exml</module>
+		<module>toolings/org.soyatec.tooling.gef</module>
+		<module>toolings/org.soyatec.tooling.gef.toolbar</module>
+		<module>toolings/org.soyatec.tooling.richtext</module>
+		<module>toolings/org.soyatec.tooling.views</module>
+
+		<module>localizations/org.soyatec.localizations.ch.gef</module>
+		<module>localizations/org.soyatec.localizations.ch.ide</module>
+		<module>
+			localizations/org.soyatec.localizations.ch.jface
+		</module>
+		<module>
+			localizations/org.soyatec.localizations.ch.views
+		</module>
+		<module>
+			localizations/org.soyatec.localizations.ch.workbench
+		</module>
+
+		<module>examples/org.soyatec.tooling.gef.examples</module>
+
+		<module>features/org.soyatec.localizations.feature</module>
+		<module>features/org.soyatec.tooling.exml.feature</module>
+		<module>features/org.soyatec.tooling.gef.feature</module>
+		<module>
+			features/org.soyatec.tooling.gef.toolbar.feature
+		</module>
+		<module>features/org.soyatec.tooling.richtext.feature</module>
+		<module>features/org.soyatec.tooling.views.feature</module>
+
+		<module>updates/org.soyatec.tooling.update</module>
+	</modules>
+</project>
