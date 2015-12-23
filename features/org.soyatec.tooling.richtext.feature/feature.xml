@@ -87,6 +87,10 @@ This Agreement is governed by the laws of the State of New York and the intellec
       <update label="Soyatec Tooling Project" url="http://ecsoya.github.io/org.soyatec.tooling/update/"/>
    </url>
 
+   <includes
+         id="org.eclipse.epf.richtext.feature"
+         version="0.0.0"/>
+
    <requires>
       <import plugin="org.eclipse.ui"/>
       <import plugin="org.eclipse.core.runtime"/>
