@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/ecsoya/org.soyatec.tooling.svg)](https://travis-ci.org/ecsoya/org.soyatec.tooling)
+[![Build Status](https://travis-ci.org/ecsoya/org.soyatec.tooling.svg)](https://travis-ci.org/ecsoya/org.soyatec.tooling) [![Coverage Status](https://coveralls.io/repos/ecsoya/org.soyatec.tooling/badge.svg?branch=master&service=github)](https://coveralls.io/github/ecsoya/org.soyatec.tooling?branch=master)
 
 ## Soyatec Tooling Project
 
