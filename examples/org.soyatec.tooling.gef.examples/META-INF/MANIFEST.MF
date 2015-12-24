@@ -10,13 +10,21 @@ Bundle-Localization: plugin
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.eclipse.emf.ecore;visibility:=reexport,
- org.soyatec.tooling.di,
- org.soyatec.tooling.gef,
- org.soyatec.tooling.gef.toolbar,
- org.eclipse.core.resources,
- org.eclipse.ui.ide
+ org.soyatec.tooling.di;visibility:=reexport,
+ org.soyatec.tooling.gef;visibility:=reexport,
+ org.soyatec.tooling.gef.toolbar;visibility:=reexport,
+ org.eclipse.core.resources;visibility:=reexport,
+ org.eclipse.ui.ide;visibility:=reexport
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
-Export-Package: org.soyatec.tooling.gef.examples.shapes,
+Export-Package: org.soyatec.tooling.gef.examples,
+ org.soyatec.tooling.gef.examples.edit.commands,
+ org.soyatec.tooling.gef.examples.edit.figures,
+ org.soyatec.tooling.gef.examples.edit.parts,
+ org.soyatec.tooling.gef.examples.edit.policies,
+ org.soyatec.tooling.gef.examples.editor,
+ org.soyatec.tooling.gef.examples.shapes,
  org.soyatec.tooling.gef.examples.shapes.impl,
- org.soyatec.tooling.gef.examples.shapes.util
+ org.soyatec.tooling.gef.examples.shapes.provider,
+ org.soyatec.tooling.gef.examples.shapes.util,
+ org.soyatec.tooling.gef.examples.wizards
 Bundle-ActivationPolicy: lazy

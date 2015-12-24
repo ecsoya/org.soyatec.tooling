@@ -1,0 +1,14 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: GEF Examples Test
+Bundle-SymbolicName: org.soyatec.tooling.gef.examples.test;singleton:=true
+Bundle-Version: 1.0.1.qualifier
+Bundle-Activator: org.soyatec.tooling.gef.examples.test.Activator
+Bundle-Vendor: Ecsoya
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.junit,
+ org.eclipse.core.resources,
+ org.soyatec.tooling.gef.examples
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
+Bundle-ActivationPolicy: lazy

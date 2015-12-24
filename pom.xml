@@ -71,17 +71,56 @@
 			</plugin>
 
 			<!-- cobertura -->
+<!-- 			<plugin> -->
+<!-- 				<groupId>org.codehaus.mojo</groupId> -->
+<!-- 				<artifactId>cobertura-maven-plugin</artifactId> -->
+<!-- 				<version>2.7</version> -->
+<!-- 				<configuration> -->
+<!-- 					<format>xml</format> -->
+<!-- 					<maxmem>256m</maxmem> -->
+<!-- 					aggregated reports for multi-module projects -->
+<!-- 					<aggregate>true</aggregate> -->
+<!-- 				</configuration> -->
+<!-- 			</plugin> -->
+
+
+			<!-- jacoco -->
 			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>cobertura-maven-plugin</artifactId>
-				<version>2.7</version>
-				<configuration>
-					<format>xml</format>
-					<maxmem>256m</maxmem>
-					<!-- aggregated reports for multi-module projects -->
-					<aggregate>true</aggregate>
-				</configuration>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>0.7.5.201505241946</version>
+				<executions>
+					<execution>
+						<id>prepare-agent</id>
+						<goals>
+							<goal>prepare-agent</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
+
+			<!-- saga -->
+<!-- 			<plugin> -->
+<!-- 				<groupId>com.github.timurstrekalov</groupId> -->
+<!-- 				<artifactId>saga-maven-plugin</artifactId> -->
+<!-- 				<version>1.5.5</version> -->
+<!-- 				<executions> -->
+<!-- 					<execution> -->
+<!-- 						<goals> -->
+<!-- 							<goal>coverage</goal> -->
+<!-- 						</goals> -->
+<!-- 					</execution> -->
+<!-- 				</executions> -->
+<!-- 				<configuration> -->
+<!-- 					<baseDir>http://localhost:${jasmine.serverPort}</baseDir> -->
+<!-- 					<outputDir>${project.build.directory}/saga-coverage</outputDir> -->
+<!-- 					<noInstrumentPatterns> -->
+<!-- 						<pattern>.*/spec/.*</pattern> -->
+<!-- 						<pattern>.*/classpath/.*</pattern> -->
+<!-- 						<pattern>.*/webjars/.*</pattern> -->
+<!-- 					</noInstrumentPatterns> -->
+<!-- 				</configuration> -->
+<!-- 			</plugin> -->
 
 			<!-- coveralls -->
 			<plugin>
@@ -127,5 +166,7 @@
 		<module>features/org.soyatec.tooling.views.feature</module>
 
 		<module>updates/org.soyatec.tooling.update</module>
+		
+		<module>tests/org.soyatec.tooling.gef.examples.test</module>
 	</modules>
 </project>
