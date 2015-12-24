@@ -2,7 +2,7 @@
 <feature
       id="org.soyatec.localizations"
       label="Soyatec Chinese Localizations"
-      version="1.0.2.qualifier"
+      version="1.0.1.qualifier"
       provider-name="Soyatec">
 
    <description url="http://ecsoya.github.io/org.soyatec.tooling/stp_trans.html">

@@ -2,7 +2,7 @@
 <feature
       id="org.soyatec.tooling.exml.feature"
       label="Soyatec EXML"
-      version="1.0.0.qualifier"
+      version="1.0.1.qualifier"
       provider-name="Soyatec">
 
    <description url="http://ecsoya.github.io/org.soyatec.tooling/stp_exml.html">

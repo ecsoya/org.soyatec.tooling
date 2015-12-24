@@ -1,4 +1,4 @@
-[![Build Status](url?branch=master)](url)
+[![Build Status](https://travis-ci.org/ecsoya/org.soyatec.tooling.svg)](https://travis-ci.org/ecsoya/org.soyatec.tooling.svg)
 
 ## Soyatec Tooling Project
 

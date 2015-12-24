@@ -3,9 +3,6 @@
    <description url="http://ecsoya.github.io/org.soyatec.tooling/update/luna/site.xml">
       Soyatec Tooling Project at GitHub.
    </description>
-   <feature url="features/org.soyatec.tooling.exml.feature_1.0.0.qualifier.jar" id="org.soyatec.tooling.exml.feature" version="1.0.0.qualifier">
-      <category name="Soyatec Tooling Project"/>
-   </feature>
    <feature url="features/org.soyatec.tooling.gef.feature_1.0.1.qualifier.jar" id="org.soyatec.tooling.gef.feature" version="1.0.1.qualifier">
       <category name="Soyatec Tooling Project"/>
    </feature>
@@ -18,7 +15,10 @@
    <feature url="features/org.soyatec.tooling.views.feature_1.0.1.qualifier.jar" id="org.soyatec.tooling.views.feature" version="1.0.1.qualifier">
       <category name="Soyatec Tooling Project"/>
    </feature>
-   <feature url="features/org.soyatec.localizations_1.0.2.qualifier.jar" id="org.soyatec.localizations" version="1.0.2.qualifier">
+   <feature url="features/org.soyatec.localizations_1.0.1.qualifier.jar" id="org.soyatec.localizations" version="1.0.1.qualifier">
+      <category name="Soyatec Tooling Project"/>
+   </feature>
+   <feature url="features/org.soyatec.tooling.exml.feature_1.0.1.qualifier.jar" id="org.soyatec.tooling.exml.feature" version="1.0.1.qualifier">
       <category name="Soyatec Tooling Project"/>
    </feature>
    <category-def name="Soyatec Tooling Project" label="Soyatec Tooling Project"/>

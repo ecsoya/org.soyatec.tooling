@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Soyatec RichText
 Bundle-SymbolicName: org.soyatec.tooling.richtext
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 1.0.1.qualifier
 Bundle-Activator: org.soyatec.tooling.richtext.Activator
 Bundle-Vendor: Soyatec
 Require-Bundle: org.eclipse.ui,
