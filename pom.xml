@@ -167,6 +167,6 @@
 
 		<module>updates/org.soyatec.tooling.update</module>
 		
-		<module>tests/org.soyatec.tooling.gef.examples.test</module>
+		
 	</modules>
 </project>
