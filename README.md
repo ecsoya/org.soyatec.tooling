@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/ecsoya/org.soyatec.tooling.svg)](https://travis-ci.org/ecsoya/org.soyatec.tooling.svg)
+[![Build Status](https://travis-ci.org/ecsoya/org.soyatec.tooling.svg)](https://travis-ci.org/ecsoya/org.soyatec.tooling)
 
 ## Soyatec Tooling Project
 
