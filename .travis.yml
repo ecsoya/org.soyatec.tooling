@@ -1,6 +1,6 @@
 language: java
 sudo: false
-script: mvn clean install
+script: mvn clean install -X
 
 after_success:
   - mvn clean cobertura:cobertura coveralls:report
