@@ -12,19 +12,19 @@
 <project reference="1.0,https://github.com/ecsoya/org.soyatec.tooling.git,master,features/org.soyatec.tooling.exml.feature"/>
 <project reference="1.0,https://github.com/ecsoya/org.soyatec.tooling.git,master,toolings/org.soyatec.tooling.gef"/>
 <project reference="1.0,https://github.com/ecsoya/org.soyatec.tooling.git,master,examples/org.soyatec.tooling.gef.examples"/>
+<project reference="1.0,https://github.com/ecsoya/org.soyatec.tooling.git,master,tests/org.soyatec.tooling.gef.examples.test"/>
 <project reference="1.0,https://github.com/ecsoya/org.soyatec.tooling.git,master,features/org.soyatec.tooling.gef.feature"/>
 <project reference="1.0,https://github.com/ecsoya/org.soyatec.tooling.git,master,toolings/org.soyatec.tooling.gef.toolbar"/>
 <project reference="1.0,https://github.com/ecsoya/org.soyatec.tooling.git,master,features/org.soyatec.tooling.gef.toolbar.feature"/>
 <project reference="1.0,https://github.com/ecsoya/org.soyatec.tooling.git,master,toolings/org.soyatec.tooling.richtext"/>
 <project reference="1.0,https://github.com/ecsoya/org.soyatec.tooling.git,master,features/org.soyatec.tooling.richtext.feature"/>
-<project reference="1.0,https://github.com/ecsoya/org.soyatec.tooling.git,master,updates/org.soyatec.tooling.update"/>
 <project reference="1.0,https://github.com/ecsoya/org.soyatec.tooling.git,master,toolings/org.soyatec.tooling.views"/>
 <project reference="1.0,https://github.com/ecsoya/org.soyatec.tooling.git,master,features/org.soyatec.tooling.views.feature"/>
 </provider>
-<workingSets editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" id="1450901307497_2" label="examples" name="examples">
+<workingSets editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" id="1450841422798_1" label="examples" name="examples">
 <item elementID="=org.soyatec.tooling.gef.examples" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 </workingSets>
-<workingSets editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" id="1450901323299_3" label="features" name="features">
+<workingSets editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" id="1450841451356_3" label="features" name="features">
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/org.soyatec.tooling.gef.feature" type="4"/>
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/org.soyatec.tooling.gef.toolbar.feature" type="4"/>
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/org.soyatec.localizations.feature" type="4"/>
@@ -32,22 +32,23 @@
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/org.soyatec.tooling.richtext.feature" type="4"/>
 <item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/org.soyatec.tooling.exml.feature" type="4"/>
 </workingSets>
-<workingSets editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" id="1450901329971_4" label="localizations" name="localizations">
-<item elementID="=org.soyatec.localizations.ch.views" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
-<item elementID="=org.soyatec.localizations.ch.workbench" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
-<item elementID="=org.soyatec.localizations.ch.jface" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<workingSets editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" id="1450841506068_5" label="localizations" name="localizations">
 <item elementID="=org.soyatec.localizations.ch.gef" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item elementID="=org.soyatec.localizations.ch.ide" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=org.soyatec.localizations.ch.workbench" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/org.soyatec.localizations.feature" type="4"/>
+<item elementID="=org.soyatec.localizations.ch.views" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=org.soyatec.localizations.ch.jface" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 </workingSets>
-<workingSets editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" id="1450901335123_5" label="toolings" name="toolings">
-<item elementID="=org.soyatec.tooling.exml" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<workingSets editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" id="1451027472123_7" label="test" name="test">
+<item elementID="=org.soyatec.tooling.gef.examples.test" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+</workingSets>
+<workingSets editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" id="1450841473516_4" label="toolings" name="toolings">
+<item elementID="=org.soyatec.tooling.gef" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
+<item elementID="=org.soyatec.tooling.gef.toolbar" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item elementID="=org.soyatec.tooling.di" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item elementID="=org.soyatec.tooling.views" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
-<item elementID="=org.soyatec.tooling.gef" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 <item elementID="=org.soyatec.tooling.richtext" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
-<item elementID="=org.soyatec.tooling.gef.toolbar" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
-</workingSets>
-<workingSets editPageId="org.eclipse.jdt.ui.JavaWorkingSetPage" id="1450901343073_6" label="updates" name="updates">
-<item factoryID="org.eclipse.ui.internal.model.ResourceFactory" path="/org.soyatec.tooling.update" type="4"/>
+<item elementID="=org.soyatec.tooling.exml" factoryID="org.eclipse.jdt.ui.PersistableJavaElementFactory"/>
 </workingSets>
 </psf>
