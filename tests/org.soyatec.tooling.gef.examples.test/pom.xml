@@ -3,7 +3,8 @@
 	<modelVersion>4.0.0</modelVersion>
 	<artifactId>org.soyatec.tooling.gef.examples.test</artifactId>
 	<packaging>eclipse-test-plugin</packaging>
-	<name>GEF Examles Test</name>
+	<name>GEF Examples Test</name>
+
 	<parent>
 		<groupId>org.soyatec.tooling</groupId>
 		<artifactId>parent</artifactId>
@@ -19,15 +20,34 @@
 				<version>${tycho-version}</version>
 				<configuration>
 					<useUIHarness>true</useUIHarness>
-					<dependencies>
-						<dependency>
-							<type>eclipse-plugin</type>
-							<artifactId>org.soyatec.tooling.gef.examples</artifactId>
-							<version>1.0.1</version>
-						</dependency>
-					</dependencies>
 				</configuration>
 			</plugin>
 		</plugins>
 	</build>
+
+	<profiles>
+		<profile>
+			<id>osx</id>
+			<activation>
+				<os>
+					<family>mac</family>
+				</os>
+			</activation>
+			<build>
+				<pluginManagement>
+					<plugins>
+						<plugin>
+							<groupId>org.eclipse.tycho</groupId>
+							<artifactId>tycho-surefire-plugin</artifactId>
+							<version>${tycho-version}</version>
+							<configuration>
+								<argLine>-XstartOnFirstThread</argLine>
+							</configuration>
+						</plugin>
+					</plugins>
+				</pluginManagement>
+			</build>
+		</profile>
+	</profiles>
+
 </project>
