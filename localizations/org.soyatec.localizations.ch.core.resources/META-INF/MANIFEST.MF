@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Eclipse Core Resources Chinese Localization
+Bundle-SymbolicName: org.soyatec.localizations.ch.core.resources
+Bundle-Version: 1.0.0.qualifier
+Bundle-Vendor: SOYATEC
+Fragment-Host: org.eclipse.core.resources
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
