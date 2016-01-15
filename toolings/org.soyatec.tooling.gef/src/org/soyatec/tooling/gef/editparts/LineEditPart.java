@@ -41,242 +41,242 @@ import org.soyatec.tooling.gef.editpolicies.LineEditPolicy;
 import org.soyatec.tooling.gef.resources.ResourcesFactory;
 
 public abstract class LineEditPart<T extends Line> extends ViewEditPart<Line>
-        implements ConnectionEditPart, LayerConstants {
-    private static final ConnectionAnchor DEFAULT_SOURCE_ANCHOR = new XYAnchor(
-            new Point(10, 10));
-    private static final ConnectionAnchor DEFAULT_TARGET_ANCHOR = new XYAnchor(
-            new Point(100, 100));
-    private EditPart sourceEditPart, targetEditPart;
+		implements ConnectionEditPart, LayerConstants {
+	private static final ConnectionAnchor DEFAULT_SOURCE_ANCHOR = new XYAnchor(
+			new Point(10, 10));
+	private static final ConnectionAnchor DEFAULT_TARGET_ANCHOR = new XYAnchor(
+			new Point(100, 100));
+	private EditPart sourceEditPart, targetEditPart;
 
-    public LineEditPart(final Line model) {
-        super(model);
-    }
+	public LineEditPart(final Line model) {
+		super(model);
+	}
 
-    protected void activateFigure() {
-        getLayer(CONNECTION_LAYER).add(getFigure());
-    }
+	protected void activateFigure() {
+		getLayer(CONNECTION_LAYER).add(getFigure());
+	}
 
-    public void addNotify() {
-        activateFigure();
-        super.addNotify();
-    }
+	public void addNotify() {
+		activateFigure();
+		super.addNotify();
+	}
 
-    protected IFigure createFigure() {
-        return new PolylineConnection();
-    }
+	protected IFigure createFigure() {
+		return new PolylineConnection();
+	}
 
-    protected void deactivateFigure() {
-        getLayer(CONNECTION_LAYER).remove(getFigure());
-        getConnectionFigure().setSourceAnchor(null);
-        getConnectionFigure().setTargetAnchor(null);
-    }
+	protected void deactivateFigure() {
+		getLayer(CONNECTION_LAYER).remove(getFigure());
+		getConnectionFigure().setSourceAnchor(null);
+		getConnectionFigure().setTargetAnchor(null);
+	}
 
-    public Object getAdapter(@SuppressWarnings("rawtypes") final Class adapter) {
-        if (adapter == AccessibleAnchorProvider.class) {
-            return new DefaultAccessibleAnchorProvider();
-        }
-        return super.getAdapter(adapter);
-    }
+	public Object getAdapter(@SuppressWarnings("rawtypes") final Class adapter) {
+		if (adapter == AccessibleAnchorProvider.class) {
+			return new DefaultAccessibleAnchorProvider();
+		}
+		return super.getAdapter(adapter);
+	}
 
-    public Connection getConnectionFigure() {
-        return (Connection) getFigure();
-    }
+	public Connection getConnectionFigure() {
+		return (Connection) getFigure();
+	}
 
-    public DragTracker getDragTracker(final Request req) {
-        return new SelectEditPartTracker(this);
-    }
+	public DragTracker getDragTracker(final Request req) {
+		return new SelectEditPartTracker(this);
+	}
 
-    public EditPart getSource() {
-        return sourceEditPart;
-    }
+	public EditPart getSource() {
+		return sourceEditPart;
+	}
 
-    public EditPart getTarget() {
-        return targetEditPart;
-    }
+	public EditPart getTarget() {
+		return targetEditPart;
+	}
 
-    protected ConnectionAnchor getSourceConnectionAnchor() {
-        if (getSource() != null) {
-            if (getSource() instanceof NodeEditPart) {
-                final NodeEditPart editPart = (NodeEditPart) getSource();
-                return editPart.getSourceConnectionAnchor(this);
-            }
-            final IFigure f = ((GraphicalEditPart) getSource()).getFigure();
-            return new ChopboxAnchor(f);
-        }
-        return DEFAULT_SOURCE_ANCHOR;
-    }
+	protected ConnectionAnchor getSourceConnectionAnchor() {
+		if (getSource() != null) {
+			if (getSource() instanceof NodeEditPart) {
+				final NodeEditPart editPart = (NodeEditPart) getSource();
+				return editPart.getSourceConnectionAnchor(this);
+			}
+			final IFigure f = ((GraphicalEditPart) getSource()).getFigure();
+			return new ChopboxAnchor(f);
+		}
+		return DEFAULT_SOURCE_ANCHOR;
+	}
 
-    protected ConnectionAnchor getTargetConnectionAnchor() {
-        if (getTarget() != null) {
-            if (getTarget() instanceof NodeEditPart) {
-                final NodeEditPart editPart = (NodeEditPart) getTarget();
-                return editPart.getTargetConnectionAnchor(this);
-            }
-            final IFigure f = ((GraphicalEditPart) getTarget()).getFigure();
-            return new ChopboxAnchor(f);
-        }
-        return DEFAULT_TARGET_ANCHOR;
-    }
+	protected ConnectionAnchor getTargetConnectionAnchor() {
+		if (getTarget() != null) {
+			if (getTarget() instanceof NodeEditPart) {
+				final NodeEditPart editPart = (NodeEditPart) getTarget();
+				return editPart.getTargetConnectionAnchor(this);
+			}
+			final IFigure f = ((GraphicalEditPart) getTarget()).getFigure();
+			return new ChopboxAnchor(f);
+		}
+		return DEFAULT_TARGET_ANCHOR;
+	}
 
-    public void refresh() {
-        refreshSourceAnchor();
-        refreshTargetAnchor();
-        super.refresh();
-    }
+	public void refresh() {
+		refreshSourceAnchor();
+		refreshTargetAnchor();
+		super.refresh();
+	}
 
-    protected void refreshSourceAnchor() {
-        getConnectionFigure().setSourceAnchor(getSourceConnectionAnchor());
-    }
+	protected void refreshSourceAnchor() {
+		getConnectionFigure().setSourceAnchor(getSourceConnectionAnchor());
+	}
 
-    protected void refreshTargetAnchor() {
-        getConnectionFigure().setTargetAnchor(getTargetConnectionAnchor());
-    }
+	protected void refreshTargetAnchor() {
+		getConnectionFigure().setTargetAnchor(getTargetConnectionAnchor());
+	}
 
-    public void removeNotify() {
-        deactivateFigure();
-        super.removeNotify();
-    }
+	public void removeNotify() {
+		deactivateFigure();
+		super.removeNotify();
+	}
 
-    public void setParent(final EditPart parent) {
-        final boolean wasNull = getParent() == null;
-        final boolean becomingNull = parent == null;
-        if (becomingNull && !wasNull) {
-            removeNotify();
-        }
-        super.setParent(parent);
-        if (wasNull && !becomingNull) {
-            addNotify();
-        }
-    }
+	public void setParent(final EditPart parent) {
+		final boolean wasNull = getParent() == null;
+		final boolean becomingNull = parent == null;
+		if (becomingNull && !wasNull) {
+			removeNotify();
+		}
+		super.setParent(parent);
+		if (wasNull && !becomingNull) {
+			addNotify();
+		}
+	}
 
-    public void setSource(final EditPart editPart) {
-        if (sourceEditPart == editPart) {
-            return;
-        }
-        sourceEditPart = editPart;
-        if (sourceEditPart != null) {
-            setParent(sourceEditPart.getRoot());
-        } else if (getTarget() == null) {
-            setParent(null);
-        }
-        if (sourceEditPart != null && targetEditPart != null) {
-            refresh();
-        }
-    }
+	public void setSource(final EditPart editPart) {
+		if (sourceEditPart == editPart) {
+			return;
+		}
+		sourceEditPart = editPart;
+		if (sourceEditPart != null) {
+			setParent(sourceEditPart.getRoot());
+		} else if (getTarget() == null) {
+			setParent(null);
+		}
+		if (sourceEditPart != null && targetEditPart != null) {
+			refresh();
+		}
+	}
 
-    public void setTarget(final EditPart editPart) {
-        if (targetEditPart == editPart) {
-            return;
-        }
-        targetEditPart = editPart;
-        if (editPart != null) {
-            setParent(editPart.getRoot());
-        } else if (getSource() == null) {
-            setParent(null);
-        }
-        if (sourceEditPart != null && targetEditPart != null) {
-            refresh();
-        }
-    }
+	public void setTarget(final EditPart editPart) {
+		if (targetEditPart == editPart) {
+			return;
+		}
+		targetEditPart = editPart;
+		if (editPart != null) {
+			setParent(editPart.getRoot());
+		} else if (getSource() == null) {
+			setParent(null);
+		}
+		if (sourceEditPart != null && targetEditPart != null) {
+			refresh();
+		}
+	}
 
-    public Line getView() {
-        return super.getView();
-    }
+	public Line getView() {
+		return super.getView();
+	}
 
-    @SuppressWarnings("unchecked")
-    public T getLineModel() {
-        return (T) getModel();
-    }
+	@SuppressWarnings("unchecked")
+	public T getLineModel() {
+		return (T) getModel();
+	}
 
-    protected void refreshVisuals() {
-        super.refreshVisuals();
-        refreshLineColor();
-        refreshLineWidth();
-    }
+	protected void refreshVisuals() {
+		super.refreshVisuals();
+		refreshLineColor();
+		refreshLineWidth();
+	}
 
-    protected void refreshLineWidth() {
-        int width = getView().getWidth();
-        if (width == -1) {
-            width = getDefaultLineWidth();
-        }
-        setLineWidth(width);
-    }
+	protected void refreshLineWidth() {
+		int width = getView().getWidth();
+		if (width == -1) {
+			width = getDefaultLineWidth();
+		}
+		setLineWidth(width);
+	}
 
-    protected int getDefaultLineWidth() {
-        return 1;
-    }
+	protected int getDefaultLineWidth() {
+		return 1;
+	}
 
-    protected void setLineWidth(final int width) {
-        final Connection conn = getConnectionFigure();
-        if (conn instanceof Polyline) {
-            ((Polyline) conn).setLineWidth(width);
-        }
-    }
+	protected void setLineWidth(final int width) {
+		final Connection conn = getConnectionFigure();
+		if (conn instanceof Polyline) {
+			((Polyline) conn).setLineWidth(width);
+		}
+	}
 
-    protected void refreshLineColor() {
-        final int value = getView().getColor();
-        final Color color = value == -1 ? getDefaultLineColor()
-                : ResourcesFactory.getColor(value);
-        setLineColor(color);
-    }
+	protected void refreshLineColor() {
+		final int value = getView().getColor();
+		final Color color = value == -1 ? getDefaultLineColor()
+				: ResourcesFactory.getColor(value);
+		setLineColor(color);
+	}
 
-    protected Color getDefaultLineColor() {
-        return ColorConstants.black;
-    }
+	protected Color getDefaultLineColor() {
+		return ColorConstants.black;
+	}
 
-    protected void setLineColor(final Color color) {
-        getConnectionFigure().setForegroundColor(color);
-    }
+	protected void setLineColor(final Color color) {
+		getConnectionFigure().setForegroundColor(color);
+	}
 
-    protected void handleNotifyChanged(final Notification event) {
-        super.handleNotifyChanged(event);
-        final Object feature = event.getFeature();
-        if (DiPackage.eINSTANCE.getLine_Color() == feature) {
-            refreshLineColor();
-        } else if (DiPackage.eINSTANCE.getLine_Width() == feature) {
-            refreshLineWidth();
-        } else if (DiPackage.eINSTANCE.getLine_SourceAnchor() == feature) {
-            refreshSourceAnchor();
-        } else if (DiPackage.eINSTANCE.getLine_TargetAnchor() == feature) {
-            refreshTargetAnchor();
-        }
-    }
+	protected void handleNotifyChanged(final Notification event) {
+		super.handleNotifyChanged(event);
+		final Object feature = event.getFeature();
+		if (DiPackage.eINSTANCE.getLine_Color() == feature) {
+			refreshLineColor();
+		} else if (DiPackage.eINSTANCE.getLine_Width() == feature) {
+			refreshLineWidth();
+		} else if (DiPackage.eINSTANCE.getLine_SourceAnchor() == feature) {
+			refreshSourceAnchor();
+		} else if (DiPackage.eINSTANCE.getLine_TargetAnchor() == feature) {
+			refreshTargetAnchor();
+		}
+	}
 
-    protected void createEditPolicies() {
-        super.createEditPolicies();
-        installEditPolicy(EditPolicy.CONNECTION_ENDPOINTS_ROLE,
-                new ConnectionEndpointEditPolicy());
-        installEditPolicy(EditPolicy.CONNECTION_ROLE, new LineEditPolicy());
-    }
+	protected void createEditPolicies() {
+		super.createEditPolicies();
+		installEditPolicy(EditPolicy.CONNECTION_ENDPOINTS_ROLE,
+				new ConnectionEndpointEditPolicy());
+		installEditPolicy(EditPolicy.CONNECTION_ROLE, new LineEditPolicy());
+	}
 
-    protected final class DefaultAccessibleAnchorProvider implements
-            AccessibleAnchorProvider {
-        /**
-         * This class is internal, but is made protected so that JavaDoc will
-         * see it.
-         */
-        DefaultAccessibleAnchorProvider() {
-        }
+	protected final class DefaultAccessibleAnchorProvider implements
+			AccessibleAnchorProvider {
+		/**
+		 * This class is internal, but is made protected so that JavaDoc will
+		 * see it.
+		 */
+		DefaultAccessibleAnchorProvider() {
+		}
 
-        /**
-         * @see AccessibleAnchorProvider#getSourceAnchorLocations()
-         */
-        public List<Point> getSourceAnchorLocations() {
-            final List<Point> list = new ArrayList<Point>();
-            if (getFigure() instanceof Connection) {
-                final Point p = ((Connection) getFigure()).getPoints()
-                        .getMidpoint();
-                getFigure().translateToAbsolute(p);
-                list.add(p);
-            }
-            return list;
-        }
+		/**
+		 * @see AccessibleAnchorProvider#getSourceAnchorLocations()
+		 */
+		public List<Point> getSourceAnchorLocations() {
+			final List<Point> list = new ArrayList<Point>();
+			if (getFigure() instanceof Connection) {
+				final Point p = ((Connection) getFigure()).getPoints()
+						.getMidpoint();
+				getFigure().translateToAbsolute(p);
+				list.add(p);
+			}
+			return list;
+		}
 
-        /**
-         * @see AccessibleAnchorProvider#getTargetAnchorLocations()
-         */
-        public List<Point> getTargetAnchorLocations() {
-            return getSourceAnchorLocations();
-        }
-    }
+		/**
+		 * @see AccessibleAnchorProvider#getTargetAnchorLocations()
+		 */
+		public List<Point> getTargetAnchorLocations() {
+			return getSourceAnchorLocations();
+		}
+	}
 }

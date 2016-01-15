@@ -28,48 +28,48 @@ import org.soyatec.tooling.gef.editpolicies.DiagramXYLayoutEditPolicy;
 
 public abstract class DiagramEditPart extends ViewEditPart<Diagram> {
 
-    public DiagramEditPart(final Diagram model) {
-        super(model);
-    }
+	public DiagramEditPart(final Diagram model) {
+		super(model);
+	}
 
-    protected IFigure createFigure() {
-        final FreeformLayer layer = new FreeformLayer();
-        layer.setLayoutManager(new FreeformLayout());
-        layer.setBackgroundColor(ColorConstants.blue);
-        return layer;
-    }
+	protected IFigure createFigure() {
+		final FreeformLayer layer = new FreeformLayer();
+		layer.setLayoutManager(new FreeformLayout());
+		layer.setBackgroundColor(ColorConstants.blue);
+		return layer;
+	}
 
-    @SuppressWarnings("rawtypes")
-    protected List getModelChildren() {
-        final List<Object> modelChildren = new ArrayList<Object>();
-        final ValueListIterator<Object> it = getModel().getAllShapes()
-                .valueListIterator();
-        while (it.hasNext()) {
-            modelChildren.add(it.next());
-        }
-        return modelChildren;
-    }
+	@SuppressWarnings("rawtypes")
+	protected List getModelChildren() {
+		final List<Object> modelChildren = new ArrayList<Object>();
+		final ValueListIterator<Object> it = getModel().getAllShapes()
+				.valueListIterator();
+		while (it.hasNext()) {
+			modelChildren.add(it.next());
+		}
+		return modelChildren;
+	}
 
-    protected void handleNotifyChanged(final Notification event) {
-        super.handleNotifyChanged(event);
-        final Object feature = event.getFeature();
-        if (DiPackage.eINSTANCE.getContainer_AllShapes() == feature) {
-            refreshChildren();
-        } else if (DiPackage.eINSTANCE.getContainer_AllLines() == feature) {
-        }
-    }
+	protected void handleNotifyChanged(final Notification event) {
+		super.handleNotifyChanged(event);
+		final Object feature = event.getFeature();
+		if (DiPackage.eINSTANCE.getContainer_AllShapes() == feature) {
+			refreshChildren();
+		} else if (DiPackage.eINSTANCE.getContainer_AllLines() == feature) {
+		}
+	}
 
-    public Object getAdapter(@SuppressWarnings("rawtypes") final Class key) {
-        if (SnapToHelper.class == key) {
-            return new SnapToGeometry(this);
-        }
-        return super.getAdapter(key);
-    }
+	public Object getAdapter(@SuppressWarnings("rawtypes") final Class key) {
+		if (SnapToHelper.class == key) {
+			return new SnapToGeometry(this);
+		}
+		return super.getAdapter(key);
+	}
 
-    @Override
-    protected void createEditPolicies() {
-        super.createEditPolicies();
-        installEditPolicy(EditPolicy.LAYOUT_ROLE,
-                new DiagramXYLayoutEditPolicy());
-    }
+	@Override
+	protected void createEditPolicies() {
+		super.createEditPolicies();
+		installEditPolicy(EditPolicy.LAYOUT_ROLE,
+				new DiagramXYLayoutEditPolicy());
+	}
 }
