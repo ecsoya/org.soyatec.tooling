@@ -8,7 +8,9 @@ Bundle-Vendor: %Bundle-Vendor
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
  org.eclipse.ui.forms;visibility:=reexport,
- org.eclipse.ui.views;visibility:=reexport
+ org.eclipse.ui.views;visibility:=reexport,
+ org.eclipse.ui.ide,
+ org.eclipse.core.resources
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
 Bundle-ActivationPolicy: lazy
 Export-Package: org.soyatec.tooling.views.properties,
