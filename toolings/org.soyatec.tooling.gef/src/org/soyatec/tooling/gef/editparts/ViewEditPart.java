@@ -30,6 +30,7 @@ import org.eclipse.gef.SnapToHelper;
 import org.eclipse.gef.editparts.AbstractGraphicalEditPart;
 import org.eclipse.gef.editpolicies.SnapFeedbackPolicy;
 import org.eclipse.swt.widgets.Display;
+import org.soyatec.tooling.di.DiPackage;
 import org.soyatec.tooling.di.View;
 import org.soyatec.tooling.gef.direct_edit.TextDirectEditManager;
 import org.soyatec.tooling.gef.editpolicies.LabelDirectEditPolicy;
@@ -144,11 +145,27 @@ public abstract class ViewEditPart<T extends View> extends
 		if (directEditLabel == null) {
 			return;
 		}
-		new TextDirectEditManager(this, directEditLabel).show();
+		final Object directEditFeature = getDirectEditFeature();
+		new TextDirectEditManager(this, directEditLabel,
+				getDirectEditInitialValue(), getDirectEditModel(),
+				directEditFeature).show();
+	}
+
+	protected String getDirectEditInitialValue() {
+		return null;
+	}
+
+	protected Object getDirectEditModel() {
+		// Default is to update Label of View.
+		return null;
 	}
 
 	protected ILabelFigure getDirectEditLabel() {
 		return null;
+	}
+
+	protected Object getDirectEditFeature() {
+		return DiPackage.eINSTANCE.getView_Label();
 	}
 
 	public Object getAdapter(@SuppressWarnings("rawtypes") final Class key) {
