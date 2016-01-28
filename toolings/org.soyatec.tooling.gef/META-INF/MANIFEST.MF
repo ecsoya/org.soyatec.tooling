@@ -20,4 +20,5 @@ Export-Package: org.soyatec.tooling.gef.anchor,
  org.soyatec.tooling.gef.figures,
  org.soyatec.tooling.gef.properties,
  org.soyatec.tooling.gef.resources,
+ org.soyatec.tooling.gef.router,
  org.soyatec.tooling.gef.utils
