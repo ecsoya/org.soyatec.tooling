@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <site>
-   <description url="http://ecsoya.github.io/org.soyatec.tooling/update/luna/site.xml">
+   <description url="http://ecsoya.github.io/org.soyatec.tooling/update/luna">
       Soyatec Tooling Project at GitHub.
    </description>
-   <feature url="features/org.soyatec.tooling.exml.feature_1.0.0.201512231211.jar" id="org.soyatec.tooling.exml.feature" version="1.0.0.201512231211">
+   <feature url="features/org.soyatec.tooling.gef.feature_1.0.1.201601291723.jar" id="org.soyatec.tooling.gef.feature" version="1.0.1.201601291723">
       <category name="Soyatec Tooling Project"/>
    </feature>
-   <feature url="features/org.soyatec.tooling.gef.feature_1.0.1.201512231211.jar" id="org.soyatec.tooling.gef.feature" version="1.0.1.201512231211">
+   <feature url="features/org.soyatec.tooling.gef.toolbar.feature_1.0.1.201601291723.jar" id="org.soyatec.tooling.gef.toolbar.feature" version="1.0.1.201601291723">
       <category name="Soyatec Tooling Project"/>
    </feature>
-   <feature url="features/org.soyatec.tooling.gef.toolbar.feature_1.0.1.201512231211.jar" id="org.soyatec.tooling.gef.toolbar.feature" version="1.0.1.201512231211">
+   <feature url="features/org.soyatec.tooling.richtext.feature_1.0.1.201601291723.jar" id="org.soyatec.tooling.richtext.feature" version="1.0.1.201601291723">
       <category name="Soyatec Tooling Project"/>
    </feature>
-   <feature url="features/org.soyatec.tooling.richtext.feature_1.0.1.201512231211.jar" id="org.soyatec.tooling.richtext.feature" version="1.0.1.201512231211">
+   <feature url="features/org.soyatec.tooling.views.feature_1.0.1.201601291723.jar" id="org.soyatec.tooling.views.feature" version="1.0.1.201601291723">
       <category name="Soyatec Tooling Project"/>
    </feature>
-   <feature url="features/org.soyatec.tooling.views.feature_1.0.1.201512231211.jar" id="org.soyatec.tooling.views.feature" version="1.0.1.201512231211">
+   <feature url="features/org.eclipse.rcp.nl_zh.feature_1.0.1.201601291723.jar" id="org.eclipse.rcp.nl_zh.feature" version="1.0.1.201601291723">
       <category name="Soyatec Tooling Project"/>
    </feature>
-   <feature url="features/org.soyatec.localizations_1.0.2.201512231211.jar" id="org.soyatec.localizations" version="1.0.2.201512231211">
+   <feature url="features/org.soyatec.tooling.exml.feature_1.0.1.201601291723.jar" id="org.soyatec.tooling.exml.feature" version="1.0.1.201601291723">
       <category name="Soyatec Tooling Project"/>
    </feature>
    <category-def name="Soyatec Tooling Project" label="Soyatec Tooling Project"/>
