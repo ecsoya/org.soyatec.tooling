@@ -152,7 +152,7 @@
 
 		<module>examples/org.soyatec.tooling.gef.examples</module>
 
-		<module>features/org.soyatec.localizations.feature</module>
+		<module>features/org.eclipse.rcp.nl_zh.feature</module>
 		<module>features/org.soyatec.tooling.exml.feature</module>
 		<module>features/org.soyatec.tooling.gef.feature</module>
 		<module>
