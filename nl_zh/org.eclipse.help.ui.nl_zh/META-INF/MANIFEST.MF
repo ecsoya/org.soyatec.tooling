@@ -2,7 +2,7 @@ Manifest-Version: 1.0
 Bundle-ManifestVersion: 2
 Bundle-Name: Language Pack for Help in Chinese
 Bundle-SymbolicName: org.eclipse.help.ui.nl_zh
-Bundle-Version: 1.0.0.qualifier
+Bundle-Version: 1.0.1.qualifier
 Bundle-Vendor: Soyatec
 Fragment-Host: org.eclipse.help.ui;bundle-version="4.0.1"
 Bundle-RequiredExecutionEnvironment: JavaSE-1.6
