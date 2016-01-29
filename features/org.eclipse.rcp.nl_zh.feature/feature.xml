@@ -95,7 +95,7 @@ This Agreement is governed by the laws of the State of New York and the intellec
    </requires>
 
    <plugin
-         id="org.soyatec.localizations.ch.gef"
+         id="org.eclipse.core.resources.nl_zh"
          download-size="0"
          install-size="0"
          version="0.0.0"
@@ -103,7 +103,7 @@ This Agreement is governed by the laws of the State of New York and the intellec
          unpack="false"/>
 
    <plugin
-         id="org.soyatec.localizations.ch.ide"
+         id="org.eclipse.gef.nl_zh"
          download-size="0"
          install-size="0"
          version="0.0.0"
@@ -111,7 +111,7 @@ This Agreement is governed by the laws of the State of New York and the intellec
          unpack="false"/>
 
    <plugin
-         id="org.soyatec.localizations.ch.jface"
+         id="org.eclipse.help.ui.nl_zh"
          download-size="0"
          install-size="0"
          version="0.0.0"
@@ -119,7 +119,7 @@ This Agreement is governed by the laws of the State of New York and the intellec
          unpack="false"/>
 
    <plugin
-         id="org.soyatec.localizations.ch.views"
+         id="org.eclipse.jface.nl_zh"
          download-size="0"
          install-size="0"
          version="0.0.0"
@@ -127,7 +127,7 @@ This Agreement is governed by the laws of the State of New York and the intellec
          unpack="false"/>
 
    <plugin
-         id="org.soyatec.localizations.ch.workbench"
+         id="org.eclipse.ui.ide.nl_zh"
          download-size="0"
          install-size="0"
          version="0.0.0"
@@ -135,7 +135,15 @@ This Agreement is governed by the laws of the State of New York and the intellec
          unpack="false"/>
 
    <plugin
-         id="org.soyatec.localizations.ch.core.resources"
+         id="org.eclipse.ui.views.nl_zh"
+         download-size="0"
+         install-size="0"
+         version="0.0.0"
+         fragment="true"
+         unpack="false"/>
+
+   <plugin
+         id="org.eclipse.ui.workbench.nl_zh"
          download-size="0"
          install-size="0"
          version="0.0.0"
