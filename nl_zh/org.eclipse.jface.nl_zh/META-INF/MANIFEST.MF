@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Language Pack for JFace in Chinese
+Bundle-SymbolicName: org.eclipse.jface.nl_zh
+Bundle-Version: 1.0.1.qualifier
+Bundle-Vendor: Soyatec
+Fragment-Host: org.eclipse.jface
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

@@ -1,8 +1,0 @@
-Manifest-Version: 1.0
-Bundle-ManifestVersion: 2
-Bundle-Name: Chinese Localizations for JFace
-Bundle-SymbolicName: org.soyatec.localizations.ch.jface
-Bundle-Version: 1.0.1.qualifier
-Bundle-Vendor: Soyatec
-Fragment-Host: org.eclipse.jface
-Bundle-RequiredExecutionEnvironment: JavaSE-1.6

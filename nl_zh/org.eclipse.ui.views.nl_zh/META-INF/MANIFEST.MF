@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Chinese Localizations for Views
+Bundle-SymbolicName: org.eclipse.ui.views.nl_zh
+Bundle-Version: 1.0.1.qualifier
+Bundle-Vendor: Soyatec
+Fragment-Host: org.eclipse.ui.views
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6

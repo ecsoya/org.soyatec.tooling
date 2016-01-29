@@ -1,0 +1,8 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Language Pack for Workbench in Chinese
+Bundle-SymbolicName: org.eclipse.ui.workbench.nl_zh
+Bundle-Version: 1.0.1.qualifier
+Bundle-Vendor: Soyatec
+Fragment-Host: org.eclipse.ui.workbench
+Bundle-RequiredExecutionEnvironment: JavaSE-1.6
