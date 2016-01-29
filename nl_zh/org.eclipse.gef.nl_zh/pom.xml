@@ -1,8 +1,8 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <artifactId>org.soyatec.localizations.ch.gef</artifactId>
+  <artifactId>org.eclipse.gef.nl_zh</artifactId>
   <packaging>eclipse-plugin</packaging>
-  <name>GEF Chinese Language Pack</name>
+  <name>Language Pack for GEF in Chinese</name>
   <parent>
   	<groupId>org.soyatec.tooling</groupId>
   	<artifactId>parent</artifactId>

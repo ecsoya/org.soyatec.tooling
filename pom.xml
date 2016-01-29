@@ -142,17 +142,13 @@
 		<module>toolings/org.soyatec.tooling.richtext</module>
 		<module>toolings/org.soyatec.tooling.views</module>
 
-		<module>localizations/org.soyatec.localizations.ch.gef</module>
-		<module>localizations/org.soyatec.localizations.ch.ide</module>
-		<module>
-			localizations/org.soyatec.localizations.ch.jface
-		</module>
-		<module>
-			localizations/org.soyatec.localizations.ch.views
-		</module>
-		<module>
-			localizations/org.soyatec.localizations.ch.workbench
-		</module>
+		<module>nl_zh/org.eclipse.core.resources.nl_zh</module>
+		<module>nl_zh/org.eclipse.gef.nl_zh</module>
+		<module>nl_zh/org.eclipse.help.ui.nl_zh</module>
+		<module>nl_zh/org.eclipse.jface.nl_zh</module>
+		<module>nl_zh/org.eclipse.ui.ide.nl_zh</module>
+		<module>nl_zh/org.eclipse.ui.workbench.nl_zh</module>
+		<module>nl_zh/org.eclipse.ui.views.nl_zh</module>
 
 		<module>examples/org.soyatec.tooling.gef.examples</module>
 
