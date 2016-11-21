@@ -7,13 +7,13 @@ import org.soyatec.tooling.gef.examples.edit.policies.GraphLayoutEditPolicy;
 
 public class GraphDiagramEditPart extends DiagramEditPart {
 
-    public GraphDiagramEditPart(Diagram model) {
-        super(model);
-    }
+	public GraphDiagramEditPart(final Diagram model) {
+		super(model);
+	}
 
-    @Override
-    protected void createEditPolicies() {
-        super.createEditPolicies();
-        installEditPolicy(EditPolicy.LAYOUT_ROLE, new GraphLayoutEditPolicy());
-    }
+	@Override
+	protected void createEditPolicies() {
+		super.createEditPolicies();
+		installEditPolicy(EditPolicy.LAYOUT_ROLE, new GraphLayoutEditPolicy());
+	}
 }

@@ -19,27 +19,27 @@ import org.eclipse.gef.EditPartViewer;
 
 public class EditingDomainUtils {
 
-    private EditingDomainUtils() {
-    }
+	private EditingDomainUtils() {
+	}
 
-    public static EditingDomain getEditingDomain(final EditPart editPart) {
-        if (editPart == null) {
-            return null;
-        }
-        final EditPartViewer viewer = editPart.getViewer();
-        if (viewer != null) {
-            final EditDomain ed = viewer.getEditDomain();
-            if (ed instanceof IEditingDomainProvider) {
-                return ((IEditingDomainProvider) ed).getEditingDomain();
-            }
-        }
-        if (editPart instanceof IEditingDomainProvider) {
-            return ((IEditingDomainProvider) editPart).getEditingDomain();
-        }
-        return getEditingDomain(editPart.getModel());
-    }
+	public static EditingDomain getEditingDomain(final EditPart editPart) {
+		if (editPart == null) {
+			return null;
+		}
+		final EditPartViewer viewer = editPart.getViewer();
+		if (viewer != null) {
+			final EditDomain ed = viewer.getEditDomain();
+			if (ed instanceof IEditingDomainProvider) {
+				return ((IEditingDomainProvider) ed).getEditingDomain();
+			}
+		}
+		if (editPart instanceof IEditingDomainProvider) {
+			return ((IEditingDomainProvider) editPart).getEditingDomain();
+		}
+		return getEditingDomain(editPart.getModel());
+	}
 
-    public static EditingDomain getEditingDomain(final Object object) {
-        return AdapterFactoryEditingDomain.getEditingDomainFor(object);
-    }
+	public static EditingDomain getEditingDomain(final Object object) {
+		return AdapterFactoryEditingDomain.getEditingDomainFor(object);
+	}
 }

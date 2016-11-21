@@ -20,53 +20,53 @@ import org.soyatec.tooling.views.properties.IPropertyTab;
 
 /**
  * PropertyTab which based on GEF Commands.
- *
+ * 
  * @author Ecsoya
  */
 public abstract class CommandPropertyTab extends AbstractPropertyTab implements
-        IPropertyTab {
+		IPropertyTab {
 
-    protected EditingDomain getEditingDomain() {
-        EditingDomain domain = null;
-        if (activePart != null) {
-            domain = AdapterFactoryEditingDomain
-                    .getEditingDomainFor(activePart);
-        }
-        if (domain == null && input != null) {
-            domain = AdapterFactoryEditingDomain.getEditingDomainFor(input);
-        }
-        return domain;
-    }
+	protected EditingDomain getEditingDomain() {
+		EditingDomain domain = null;
+		if (activePart != null) {
+			domain = AdapterFactoryEditingDomain
+					.getEditingDomainFor(activePart);
+		}
+		if (domain == null && input != null) {
+			domain = AdapterFactoryEditingDomain.getEditingDomainFor(input);
+		}
+		return domain;
+	}
 
-    protected void executeCommand(final Command command) {
-        if (command == null || !command.canExecute()) {
-            return;
-        }
-        final EditingDomain editingDomain = getEditingDomain();
-        if (editingDomain == null || editingDomain.getCommandStack() == null) {
-            executeCommand(new CommandWrap2GEF(command));
-        } else {
-            editingDomain.getCommandStack().execute(command);
-        }
-    }
+	protected void executeCommand(final Command command) {
+		if (command == null || !command.canExecute()) {
+			return;
+		}
+		final EditingDomain editingDomain = getEditingDomain();
+		if (editingDomain == null || editingDomain.getCommandStack() == null) {
+			executeCommand(new CommandWrap2GEF(command));
+		} else {
+			editingDomain.getCommandStack().execute(command);
+		}
+	}
 
-    protected void executeCommand(final org.eclipse.gef.commands.Command command) {
-        if (command == null || !command.canExecute()) {
-            return;
-        }
-        final CommandStack commandStack = getCommandStack();
-        if (commandStack != null) {
-            commandStack.execute(command);
-        } else {
-            command.execute();
-        }
-    }
+	protected void executeCommand(final org.eclipse.gef.commands.Command command) {
+		if (command == null || !command.canExecute()) {
+			return;
+		}
+		final CommandStack commandStack = getCommandStack();
+		if (commandStack != null) {
+			commandStack.execute(command);
+		} else {
+			command.execute();
+		}
+	}
 
-    protected CommandStack getCommandStack() {
-        if (activePart != null) {
-            return (CommandStack) activePart.getAdapter(CommandStack.class);
-        }
-        return null;
-    }
+	protected CommandStack getCommandStack() {
+		if (activePart != null) {
+			return (CommandStack) activePart.getAdapter(CommandStack.class);
+		}
+		return null;
+	}
 
 }

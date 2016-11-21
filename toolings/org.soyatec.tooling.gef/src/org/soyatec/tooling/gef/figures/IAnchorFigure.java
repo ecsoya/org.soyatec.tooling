@@ -16,8 +16,8 @@ import org.eclipse.draw2d.geometry.Point;
 
 public interface IAnchorFigure extends IFigure {
 
-    ConnectionAnchor createAnchor(String terminal);
+	ConnectionAnchor createAnchor(String terminal);
 
-    String getTerminal(Point location);
+	String getTerminal(Point location);
 
 }

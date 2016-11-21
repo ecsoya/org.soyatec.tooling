@@ -29,9 +29,9 @@ import org.soyatec.tooling.gef.figures.ILabelFigure;
 
 /**
  * <li>Open a <code>TextCellEditor</code> on <code>ILabelFigure</code>.</li>
- *
+ * 
  * <li>Try to modify the <code>label</code> of <code>UIObject</code>.</li>
- *
+ * 
  * @see TextCellEditorLocator
  * @author Ecsoya
  */

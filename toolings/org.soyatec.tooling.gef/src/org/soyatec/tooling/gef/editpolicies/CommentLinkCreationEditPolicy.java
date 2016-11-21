@@ -31,106 +31,106 @@ import org.soyatec.tooling.gef.utils.EditingDomainUtils;
 
 public class CommentLinkCreationEditPolicy extends GraphicalNodeEditPolicy {
 
-    public CommentLinkCreationEditPolicy() {
-    }
+	public CommentLinkCreationEditPolicy() {
+	}
 
-    @Override
-    protected Command getConnectionCompleteCommand(
-            final CreateConnectionRequest request) {
-        final Object newObjectType = request.getNewObjectType();
-        if (DiPackage.eINSTANCE.getCommentLink() == newObjectType) {
+	@Override
+	protected Command getConnectionCompleteCommand(
+			final CreateConnectionRequest request) {
+		final Object newObjectType = request.getNewObjectType();
+		if (DiPackage.eINSTANCE.getCommentLink() == newObjectType) {
 
-            final CreateCommentLinkCommand cmd = (CreateCommentLinkCommand) request
-                    .getStartCommand();
-            cmd.setTarget(getHost());
+			final CreateCommentLinkCommand cmd = (CreateCommentLinkCommand) request
+					.getStartCommand();
+			cmd.setTarget(getHost());
 
-            final ConnectionAnchor targetConnectionAnchor = getNodeEditPart()
-                    .getTargetConnectionAnchor(request);
-            if (targetConnectionAnchor instanceof BaseConnectionAnchor) {
-                cmd.setTargetAnchor(((BaseConnectionAnchor) targetConnectionAnchor)
-                        .getTerminal());
-            }
+			final ConnectionAnchor targetConnectionAnchor = getNodeEditPart()
+					.getTargetConnectionAnchor(request);
+			if (targetConnectionAnchor instanceof BaseConnectionAnchor) {
+				cmd.setTargetAnchor(((BaseConnectionAnchor) targetConnectionAnchor)
+						.getTerminal());
+			}
 
-            return cmd;
-        }
-        return null;
-    }
+			return cmd;
+		}
+		return null;
+	}
 
-    @Override
-    protected Command getConnectionCreateCommand(
-            final CreateConnectionRequest request) {
-        final Object newObjectType = request.getNewObjectType();
-        if (DiPackage.eINSTANCE.getCommentLink() == newObjectType) {
-            final CreateCommentLinkCommand cmd = new CreateCommentLinkCommand(
-                    getDiagram(), (CommentLink) request.getNewObject());
-            cmd.setSource(getHost());
+	@Override
+	protected Command getConnectionCreateCommand(
+			final CreateConnectionRequest request) {
+		final Object newObjectType = request.getNewObjectType();
+		if (DiPackage.eINSTANCE.getCommentLink() == newObjectType) {
+			final CreateCommentLinkCommand cmd = new CreateCommentLinkCommand(
+					getDiagram(), (CommentLink) request.getNewObject());
+			cmd.setSource(getHost());
 
-            final ConnectionAnchor sourceConnectionAnchor = getNodeEditPart()
-                    .getSourceConnectionAnchor(request);
-            if (sourceConnectionAnchor instanceof BaseConnectionAnchor) {
-                cmd.setSourceAnchor(((BaseConnectionAnchor) sourceConnectionAnchor)
-                        .getTerminal());
-            }
-            request.setStartCommand(cmd);
-            return cmd;
-        }
-        return null;
-    }
+			final ConnectionAnchor sourceConnectionAnchor = getNodeEditPart()
+					.getSourceConnectionAnchor(request);
+			if (sourceConnectionAnchor instanceof BaseConnectionAnchor) {
+				cmd.setSourceAnchor(((BaseConnectionAnchor) sourceConnectionAnchor)
+						.getTerminal());
+			}
+			request.setStartCommand(cmd);
+			return cmd;
+		}
+		return null;
+	}
 
-    protected Diagram getDiagram() {
-        final Object model = getHost().getModel();
-        if (!(model instanceof EObject)) {
-            return null;
-        }
-        EObject eObj = (EObject) model;
-        while (eObj != null && !(eObj instanceof Diagram)) {
-            eObj = eObj.eContainer();
-        }
-        return (Diagram) eObj;
-    }
+	protected Diagram getDiagram() {
+		final Object model = getHost().getModel();
+		if (!(model instanceof EObject)) {
+			return null;
+		}
+		EObject eObj = (EObject) model;
+		while (eObj != null && !(eObj instanceof Diagram)) {
+			eObj = eObj.eContainer();
+		}
+		return (Diagram) eObj;
+	}
 
-    protected NodeEditPart getNodeEditPart() {
-        return (NodeEditPart) getHost();
-    }
+	protected NodeEditPart getNodeEditPart() {
+		return (NodeEditPart) getHost();
+	}
 
-    @Override
-    protected Command getReconnectTargetCommand(final ReconnectRequest request) {
-        final ConnectionEditPart conn = request.getConnectionEditPart();
-        final EditPart target = getHost();
-        if (target == conn.getTarget()) {
-            final ConnectionAnchor anchor = getNodeEditPart()
-                    .getTargetConnectionAnchor(request);
-            if (anchor instanceof BaseConnectionAnchor) {
-                final String terminal = ((BaseConnectionAnchor) anchor)
-                        .getTerminal();
-                final EditingDomain domain = EditingDomainUtils
-                        .getEditingDomain(target);
-                return new CommandWrap2GEF(SetCommand.create(domain,
-                        conn.getModel(),
-                        DiPackage.eINSTANCE.getLine_TargetAnchor(), terminal));
-            }
-        }
-        return null;
-    }
+	@Override
+	protected Command getReconnectTargetCommand(final ReconnectRequest request) {
+		final ConnectionEditPart conn = request.getConnectionEditPart();
+		final EditPart target = getHost();
+		if (target == conn.getTarget()) {
+			final ConnectionAnchor anchor = getNodeEditPart()
+					.getTargetConnectionAnchor(request);
+			if (anchor instanceof BaseConnectionAnchor) {
+				final String terminal = ((BaseConnectionAnchor) anchor)
+						.getTerminal();
+				final EditingDomain domain = EditingDomainUtils
+						.getEditingDomain(target);
+				return new CommandWrap2GEF(SetCommand.create(domain,
+						conn.getModel(),
+						DiPackage.eINSTANCE.getLine_TargetAnchor(), terminal));
+			}
+		}
+		return null;
+	}
 
-    @Override
-    protected Command getReconnectSourceCommand(final ReconnectRequest request) {
-        final ConnectionEditPart conn = request.getConnectionEditPart();
-        final EditPart source = getHost();
-        if (source == conn.getSource()) {
-            final ConnectionAnchor anchor = getNodeEditPart()
-                    .getSourceConnectionAnchor(request);
-            if (anchor instanceof BaseConnectionAnchor) {
-                final String terminal = ((BaseConnectionAnchor) anchor)
-                        .getTerminal();
-                final EditingDomain domain = EditingDomainUtils
-                        .getEditingDomain(source);
-                return new CommandWrap2GEF(SetCommand.create(domain,
-                        conn.getModel(),
-                        DiPackage.eINSTANCE.getLine_SourceAnchor(), terminal));
-            }
-        }
-        return null;
-    }
+	@Override
+	protected Command getReconnectSourceCommand(final ReconnectRequest request) {
+		final ConnectionEditPart conn = request.getConnectionEditPart();
+		final EditPart source = getHost();
+		if (source == conn.getSource()) {
+			final ConnectionAnchor anchor = getNodeEditPart()
+					.getSourceConnectionAnchor(request);
+			if (anchor instanceof BaseConnectionAnchor) {
+				final String terminal = ((BaseConnectionAnchor) anchor)
+						.getTerminal();
+				final EditingDomain domain = EditingDomainUtils
+						.getEditingDomain(source);
+				return new CommandWrap2GEF(SetCommand.create(domain,
+						conn.getModel(),
+						DiPackage.eINSTANCE.getLine_SourceAnchor(), terminal));
+			}
+		}
+		return null;
+	}
 
 }

@@ -15,20 +15,20 @@ public class NewShapeDiagramWizardTest extends BasicTestCase {
 
 	@Test
 	public void test() {
-		NewShapeDiagramWizard wizard = new NewShapeDiagramWizard();
-		IProject project = getProject();
+		final NewShapeDiagramWizard wizard = new NewShapeDiagramWizard();
+		final IProject project = getProject();
 		wizard.init(getWorkbench(), new StructuredSelection(project));
-		WizardDialog dialog = new WizardDialog(getActiveShell(), wizard);
+		final WizardDialog dialog = new WizardDialog(getActiveShell(), wizard);
 		dialog.create();
-		IWizardPage[] pages = wizard.getPages();
+		final IWizardPage[] pages = wizard.getPages();
 		Assert.assertEquals(1, pages.length);
 
-		String fileName = "newShapeDiagram";
+		final String fileName = "newShapeDiagram";
 		((WizardNewFileCreationPage) pages[0]).setFileName(fileName);
 
 		Assert.assertTrue(wizard.performFinish());
 
-		IFile file = project.getFile(fileName + ".ecsoya");
+		final IFile file = project.getFile(fileName + ".ecsoya");
 		Assert.assertTrue(file.exists());
 	}
 }

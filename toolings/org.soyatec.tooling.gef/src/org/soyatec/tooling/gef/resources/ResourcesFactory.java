@@ -32,131 +32,131 @@ import org.soyatec.tooling.gef.Activator;
 
 public class ResourcesFactory {
 
-    private static ResourceManager resources;
-    private static final ResourceBundle bundle = ResourceBundle
-            .getBundle("org.soyatec.tooling.gef.resources.messages"); //$NON-NLS-1$
+	private static ResourceManager resources;
+	private static final ResourceBundle bundle = ResourceBundle
+			.getBundle("org.soyatec.tooling.gef.resources.messages"); //$NON-NLS-1$
 
-    private static ImageRegistry imageRegistry;
-    private static FontRegistry fontRegistry;
+	private static ImageRegistry imageRegistry;
+	private static FontRegistry fontRegistry;
 
-    private static final Map<Integer, Color> colorRegistry = new HashMap<Integer, Color>(
-            1);
+	private static final Map<Integer, Color> colorRegistry = new HashMap<Integer, Color>(
+			1);
 
-    public static final int COLOR_WHITE = 16777215;
-    public static final int COLOR_BLACK = 0;
-    public static final int COLOR_COMMENT = 13434879;
-    public static final int COLOR_SHAPE = 14012867;
+	public static final int COLOR_WHITE = 16777215;
+	public static final int COLOR_BLACK = 0;
+	public static final int COLOR_COMMENT = 13434879;
+	public static final int COLOR_SHAPE = 14012867;
 
-    public static final int COLOR_ERROR = 255;
-    public static final int COLOR_WARNING = 13434879;
+	public static final int COLOR_ERROR = 255;
+	public static final int COLOR_WARNING = 13434879;
 
-    public static Display getDisplay() {
-        return Display.getCurrent();
-    }
+	public static Display getDisplay() {
+		return Display.getCurrent();
+	}
 
-    public static FontRegistry getFontRegistry() {
-        if (fontRegistry == null) {
-            fontRegistry = new FontRegistry(getDisplay(), true);
-        }
-        return fontRegistry;
-    }
+	public static FontRegistry getFontRegistry() {
+		if (fontRegistry == null) {
+			fontRegistry = new FontRegistry(getDisplay(), true);
+		}
+		return fontRegistry;
+	}
 
-    public static ImageRegistry getImageRegistry() {
-        if (imageRegistry == null) {
-            imageRegistry = new ImageRegistry(getResources());
-        }
-        return imageRegistry;
-    }
+	public static ImageRegistry getImageRegistry() {
+		if (imageRegistry == null) {
+			imageRegistry = new ImageRegistry(getResources());
+		}
+		return imageRegistry;
+	}
 
-    public static ResourceManager getResources() {
-        if (resources == null) {
-            resources = new DeviceResourceManager(getDisplay());
-        }
-        return resources;
-    }
+	public static ResourceManager getResources() {
+		if (resources == null) {
+			resources = new DeviceResourceManager(getDisplay());
+		}
+		return resources;
+	}
 
-    public static void dispose() {
-        if (resources != null) {
-            resources.dispose();
-        }
-        resources = null;
+	public static void dispose() {
+		if (resources != null) {
+			resources.dispose();
+		}
+		resources = null;
 
-        final Collection<Color> values = colorRegistry.values();
-        for (final Color color : values) {
-            color.dispose();
-        }
-        colorRegistry.clear();
-    }
+		final Collection<Color> values = colorRegistry.values();
+		for (final Color color : values) {
+			color.dispose();
+		}
+		colorRegistry.clear();
+	}
 
-    public static ImageDescriptor getImageDescriptor(final String key) {
-        ImageDescriptor descriptor = getImageRegistry().getDescriptor(key);
-        if (descriptor == null) {
-            descriptor = Activator.getImageDescriptor(key);
-            if (descriptor != null) {
-                getImageRegistry().put(key, descriptor);
-            }
-        }
-        return descriptor;
-    }
+	public static ImageDescriptor getImageDescriptor(final String key) {
+		ImageDescriptor descriptor = getImageRegistry().getDescriptor(key);
+		if (descriptor == null) {
+			descriptor = Activator.getImageDescriptor(key);
+			if (descriptor != null) {
+				getImageRegistry().put(key, descriptor);
+			}
+		}
+		return descriptor;
+	}
 
-    public static Image getImage(final String key) {
-        Image image = getImageRegistry().get(key);
-        if (image == null) {
-            getImageDescriptor(key);
-            image = getImageRegistry().get(key);
-        }
-        return image;
-    }
+	public static Image getImage(final String key) {
+		Image image = getImageRegistry().get(key);
+		if (image == null) {
+			getImageDescriptor(key);
+			image = getImageRegistry().get(key);
+		}
+		return image;
+	}
 
-    public static String format(final String key, final Object[] args) {
-        return MessageFormat.format(getString(key), args);
-    }
+	public static String format(final String key, final Object[] args) {
+		return MessageFormat.format(getString(key), args);
+	}
 
-    public static Font getFont(final String symbolicName) {
-        return getFontRegistry().get(symbolicName);
-    }
+	public static Font getFont(final String symbolicName) {
+		return getFontRegistry().get(symbolicName);
+	}
 
-    public static Color getColor(final Integer value) {
-        Color color = colorRegistry.get(value);
-        if (color == null) {
-            final RGB rgb = integerToRGB(value);
-            color = new Color(null, rgb);
-            colorRegistry.put(value, color);
-        }
-        return color;
-    }
+	public static Color getColor(final Integer value) {
+		Color color = colorRegistry.get(value);
+		if (color == null) {
+			final RGB rgb = integerToRGB(value);
+			color = new Color(null, rgb);
+			colorRegistry.put(value, color);
+		}
+		return color;
+	}
 
-    public static Color getColor(final RGB rgb) {
-        final Integer value = RGBToInteger(rgb);
-        return getColor(value);
-    }
+	public static Color getColor(final RGB rgb) {
+		final Integer value = RGBToInteger(rgb);
+		return getColor(value);
+	}
 
-    public static Integer RGBToInteger(final RGB rgb) {
-        return new Integer((rgb.blue << 16) | (rgb.green << 8) | rgb.red);
-    }
+	public static Integer RGBToInteger(final RGB rgb) {
+		return new Integer((rgb.blue << 16) | (rgb.green << 8) | rgb.red);
+	}
 
-    public static RGB integerToRGB(final Integer color) {
-        final int n = color.intValue();
-        return new RGB((n & 0x000000FF), (n & 0x0000FF00) >> 8,
-                (n & 0x00FF0000) >> 16);
-    }
+	public static RGB integerToRGB(final Integer color) {
+		final int n = color.intValue();
+		return new RGB((n & 0x000000FF), (n & 0x0000FF00) >> 8,
+				(n & 0x00FF0000) >> 16);
+	}
 
-    public static String getString(final String key) {
-        try {
-            return bundle.getString(key);
-        } catch (final MissingResourceException e) {
-            return key;
-        }
-    }
+	public static String getString(final String key) {
+		try {
+			return bundle.getString(key);
+		} catch (final MissingResourceException e) {
+			return key;
+		}
+	}
 
-    public static String[] getStrings(final String[] keys) {
-        Assert.isNotNull(keys);
-        final int length = keys.length;
-        final String[] result = new String[length];
-        for (int i = 0; i < length; i++) {
-            result[i] = getString(keys[i]);
-        }
-        return result;
-    }
+	public static String[] getStrings(final String[] keys) {
+		Assert.isNotNull(keys);
+		final int length = keys.length;
+		final String[] result = new String[length];
+		for (int i = 0; i < length; i++) {
+			result[i] = getString(keys[i]);
+		}
+		return result;
+	}
 
 }

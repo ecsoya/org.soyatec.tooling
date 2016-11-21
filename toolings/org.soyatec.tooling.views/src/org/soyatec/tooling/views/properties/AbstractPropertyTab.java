@@ -17,55 +17,67 @@ import org.eclipse.ui.IWorkbenchPart;
 
 public abstract class AbstractPropertyTab implements IPropertyTab {
 
-    protected IWorkbenchPart activePart;
-    protected ISelection selection;
-    protected Object input;
+	protected IWorkbenchPart activePart;
+	protected ISelection selection;
+	protected Object input;
 
-    public void selectionChanged(final IWorkbenchPart part,
-            final ISelection selection) {
-        if (activePart != null && activePart == part && this.selection != null
-                && this.selection.equals(selection)) {
-            return;
-        }
-        this.activePart = part;
-        this.selection = selection;
-        Object input = null;
-        if (selection instanceof IStructuredSelection) {
-            input = ((IStructuredSelection) selection).getFirstElement();
-        }
-        setInput(input);
-        refresh();
-    }
+	private boolean isManualRefresh;
 
-    protected void setInput(final Object newInput) {
-        this.input = newInput;
-    }
+	public void selectionChanged(final IWorkbenchPart part,
+			final ISelection selection) {
+		if (activePart != null && activePart == part && this.selection != null
+				&& this.selection.equals(selection)) {
+			return;
+		}
+		this.activePart = part;
+		this.selection = selection;
+		Object input = null;
+		if (selection instanceof IStructuredSelection) {
+			input = ((IStructuredSelection) selection).getFirstElement();
+		}
+		setInput(input);
+		refresh();
+	}
 
-    public Object getInput() {
-        return input;
-    }
+	protected void setInput(final Object newInput) {
+		this.input = newInput;
+	}
 
-    public IWorkbenchPart getActivePart() {
-        return activePart;
-    }
+	public Object getInput() {
+		return input;
+	}
 
-    public ISelection getSelection() {
-        return selection;
-    }
+	public IWorkbenchPart getActivePart() {
+		return activePart;
+	}
 
-    protected void refresh() {
+	public ISelection getSelection() {
+		return selection;
+	}
 
-    }
+	public boolean refresh() {
+		return !isManualRefresh();
+	}
 
-    public ToolBarManager getToolBarManager() {
-        return null;
-    }
+	@Override
+	public boolean isManualRefresh() {
+		return isManualRefresh;
+	}
 
-    public void dispose() {
+	@Override
+	public void setManualRefresh(final boolean manualRefresh) {
+		this.isManualRefresh = manualRefresh;
+	}
 
-    }
+	public ToolBarManager getToolBarManager() {
+		return null;
+	}
 
-    public boolean isExpanded() {
-        return true;
-    }
+	public void dispose() {
+
+	}
+
+	public boolean isExpanded() {
+		return true;
+	}
 }

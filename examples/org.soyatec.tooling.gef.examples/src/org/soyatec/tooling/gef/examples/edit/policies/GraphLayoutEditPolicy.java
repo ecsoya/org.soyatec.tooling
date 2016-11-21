@@ -14,26 +14,26 @@ import org.soyatec.tooling.gef.examples.shapes.ShapesPackage;
 
 public class GraphLayoutEditPolicy extends DiagramXYLayoutEditPolicy {
 
-    @Override
-    protected Command getCreateCommand(CreateRequest request) {
-        Command command = super.getCreateCommand(request);
-        if (command == null || !command.canExecute()) {
-            return UnexecutableCommand.INSTANCE;
-        }
-        Object newObject = request.getNewObject();
-        final Diagram diagram = (Diagram) getHost().getModel();
-        EObject eObject = diagram.getElement();
-        if (!(eObject instanceof Graph)) {
-            return UnexecutableCommand.INSTANCE;
-        }
-        final Graph graph = (Graph) eObject;
-        if (newObject instanceof View) {
-            EObject element = ((View) newObject).getElement();
-            if (element instanceof Shape) {
-                return command.chain(CommandFactory.add(graph,
-                        ShapesPackage.eINSTANCE.getGraph_Shapes(), element));
-            }
-        }
-        return command;
-    }
+	@Override
+	protected Command getCreateCommand(final CreateRequest request) {
+		final Command command = super.getCreateCommand(request);
+		if (command == null || !command.canExecute()) {
+			return UnexecutableCommand.INSTANCE;
+		}
+		final Object newObject = request.getNewObject();
+		final Diagram diagram = (Diagram) getHost().getModel();
+		final EObject eObject = diagram.getElement();
+		if (!(eObject instanceof Graph)) {
+			return UnexecutableCommand.INSTANCE;
+		}
+		final Graph graph = (Graph) eObject;
+		if (newObject instanceof View) {
+			final EObject element = ((View) newObject).getElement();
+			if (element instanceof Shape) {
+				return command.chain(CommandFactory.add(graph,
+						ShapesPackage.eINSTANCE.getGraph_Shapes(), element));
+			}
+		}
+		return command;
+	}
 }

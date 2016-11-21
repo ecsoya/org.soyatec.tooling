@@ -19,43 +19,43 @@ import org.eclipse.swt.widgets.Event;
 
 public abstract class ColorAction extends RichTextAction {
 
-    private RGB color = null;
+	private RGB color = null;
 
-    public ColorAction(final IRichText richText) {
-        super(richText, AS_DROP_DOWN_MENU);
-    }
+	public ColorAction(final IRichText richText) {
+		super(richText, AS_DROP_DOWN_MENU);
+	}
 
-    public void runWithEvent(final Event event) {
-        if (event.detail == SWT.ARROW || color == null) {
-            final ColorDialog dlg = new ColorDialog(
-                    event.display.getActiveShell());
-            dlg.setRGB(color);
-            color = dlg.open();
-        }
-        super.runWithEvent(event);
-    }
+	public void runWithEvent(final Event event) {
+		if (event.detail == SWT.ARROW || color == null) {
+			final ColorDialog dlg = new ColorDialog(
+					event.display.getActiveShell());
+			dlg.setRGB(color);
+			color = dlg.open();
+		}
+		super.runWithEvent(event);
+	}
 
-    public void execute(final IRichText richText) {
-        if (richText != null) {
-            richText.executeCommand(getCommandName(), getColorValue());
-        }
-    }
+	public void execute(final IRichText richText) {
+		if (richText != null) {
+			richText.executeCommand(getCommandName(), getColorValue());
+		}
+	}
 
-    protected abstract String getCommandName();
+	protected abstract String getCommandName();
 
-    private String getColorValue() {
-        if (color == null) {
-            return null;
-        }
-        final StringBuilder stringBuilder = new StringBuilder();
-        stringBuilder.append("rgb(");
-        stringBuilder.append(color.red);
-        stringBuilder.append(",");
-        stringBuilder.append(color.green);
-        stringBuilder.append(",");
-        stringBuilder.append(color.blue);
-        stringBuilder.append(")");
-        return stringBuilder.toString();
-    }
+	private String getColorValue() {
+		if (color == null) {
+			return null;
+		}
+		final StringBuilder stringBuilder = new StringBuilder();
+		stringBuilder.append("rgb(");
+		stringBuilder.append(color.red);
+		stringBuilder.append(",");
+		stringBuilder.append(color.green);
+		stringBuilder.append(",");
+		stringBuilder.append(color.blue);
+		stringBuilder.append(")");
+		return stringBuilder.toString();
+	}
 
 }

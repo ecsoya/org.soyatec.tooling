@@ -30,276 +30,276 @@ import org.eclipse.emf.common.util.WrappedException;
  * implementation uses.
  */
 public class CancelableCommandStack implements CommandStack {
-    /**
-     * The list of commands.
-     */
-    protected List<Command> commandList;
+	/**
+	 * The list of commands.
+	 */
+	protected List<Command> commandList;
 
-    /**
-     * The current position within the list from which the next execute, undo,
-     * or redo, will be performed.
-     */
-    protected int top;
+	/**
+	 * The current position within the list from which the next execute, undo,
+	 * or redo, will be performed.
+	 */
+	protected int top;
 
-    /**
-     * The command most recently executed, undone, or redone.
-     */
-    protected Command mostRecentCommand;
+	/**
+	 * The command most recently executed, undone, or redone.
+	 */
+	protected Command mostRecentCommand;
 
-    /**
-     * The {@link CommandStackListener}s.
-     */
-    protected Collection<CommandStackListener> listeners;
+	/**
+	 * The {@link CommandStackListener}s.
+	 */
+	protected Collection<CommandStackListener> listeners;
 
-    /**
-     * The value of {@link #top} when {@link #saveIsDone} is called.
-     */
-    protected int saveIndex = -1;
+	/**
+	 * The value of {@link #top} when {@link #saveIsDone} is called.
+	 */
+	protected int saveIndex = -1;
 
-    /**
-     * Creates a new empty instance.
-     */
-    public CancelableCommandStack() {
-        commandList = new ArrayList<Command>();
-        top = -1;
-        listeners = new ArrayList<CommandStackListener>();
-    }
+	/**
+	 * Creates a new empty instance.
+	 */
+	public CancelableCommandStack() {
+		commandList = new ArrayList<Command>();
+		top = -1;
+		listeners = new ArrayList<CommandStackListener>();
+	}
 
-    /*
-     * Javadoc copied from interface.
-     */
-    public void execute(final Command command) {
-        // If the command is executable, record and execute it.
-        //
-        if (command != null) {
-            if (command.canExecute()) {
-                try {
-                    command.execute();
+	/*
+	 * Javadoc copied from interface.
+	 */
+	public void execute(final Command command) {
+		// If the command is executable, record and execute it.
+		//
+		if (command != null) {
+			if (command.canExecute()) {
+				try {
+					command.execute();
 
-                    if (command instanceof ICancelCommand
-                            && ((ICancelCommand) command).isCanceled()) {
-                        command.dispose();
-                        return;
-                    }
-                    // Clear the list past the top.
-                    //
-                    for (final Iterator<Command> commands = commandList
-                            .listIterator(top + 1); commands.hasNext(); commands
-                            .remove()) {
-                        final Command otherCommand = commands.next();
-                        otherCommand.dispose();
-                    }
+					if (command instanceof ICancelCommand
+							&& ((ICancelCommand) command).isCanceled()) {
+						command.dispose();
+						return;
+					}
+					// Clear the list past the top.
+					//
+					for (final Iterator<Command> commands = commandList
+							.listIterator(top + 1); commands.hasNext(); commands
+							.remove()) {
+						final Command otherCommand = commands.next();
+						otherCommand.dispose();
+					}
 
-                    // Record the successfully executed command.
-                    //
-                    mostRecentCommand = command;
-                    commandList.add(command);
-                    ++top;
+					// Record the successfully executed command.
+					//
+					mostRecentCommand = command;
+					commandList.add(command);
+					++top;
 
-                    // This is kind of tricky.
-                    // If the saveIndex was in the redo part of the command list
-                    // which has now been wiped out,
-                    // then we can never reach a point where a save is not
-                    // necessary, not even if we undo all the way back to the
-                    // beginning.
-                    //
-                    if (saveIndex >= top) {
-                        // This forces isSaveNeded to always be true.
-                        //
-                        saveIndex = -2;
-                    }
-                    notifyListeners();
-                } catch (final AbortExecutionException exception) {
-                    command.dispose();
-                } catch (final RuntimeException exception) {
-                    handleError(exception);
-                    mostRecentCommand = null;
-                    command.dispose();
-                    notifyListeners();
-                }
-            } else {
-                command.dispose();
-            }
-        }
-    }
+					// This is kind of tricky.
+					// If the saveIndex was in the redo part of the command list
+					// which has now been wiped out,
+					// then we can never reach a point where a save is not
+					// necessary, not even if we undo all the way back to the
+					// beginning.
+					//
+					if (saveIndex >= top) {
+						// This forces isSaveNeded to always be true.
+						//
+						saveIndex = -2;
+					}
+					notifyListeners();
+				} catch (final AbortExecutionException exception) {
+					command.dispose();
+				} catch (final RuntimeException exception) {
+					handleError(exception);
+					mostRecentCommand = null;
+					command.dispose();
+					notifyListeners();
+				}
+			} else {
+				command.dispose();
+			}
+		}
+	}
 
-    /*
-     * Javadoc copied from interface.
-     */
-    public boolean canUndo() {
-        return top != -1 && commandList.get(top).canUndo();
-    }
+	/*
+	 * Javadoc copied from interface.
+	 */
+	public boolean canUndo() {
+		return top != -1 && commandList.get(top).canUndo();
+	}
 
-    /*
-     * Javadoc copied from interface.
-     */
-    public void undo() {
-        if (canUndo()) {
-            final Command command = commandList.get(top--);
-            try {
-                command.undo();
-                mostRecentCommand = command;
-            } catch (final RuntimeException exception) {
-                handleError(exception);
+	/*
+	 * Javadoc copied from interface.
+	 */
+	public void undo() {
+		if (canUndo()) {
+			final Command command = commandList.get(top--);
+			try {
+				command.undo();
+				mostRecentCommand = command;
+			} catch (final RuntimeException exception) {
+				handleError(exception);
 
-                mostRecentCommand = null;
-                flush();
-            }
+				mostRecentCommand = null;
+				flush();
+			}
 
-            notifyListeners();
-        }
-    }
+			notifyListeners();
+		}
+	}
 
-    /*
-     * Javadoc copied from interface.
-     */
-    public boolean canRedo() {
-        return top < commandList.size() - 1;
-    }
+	/*
+	 * Javadoc copied from interface.
+	 */
+	public boolean canRedo() {
+		return top < commandList.size() - 1;
+	}
 
-    /*
-     * Javadoc copied from interface.
-     */
-    public void redo() {
-        if (canRedo()) {
-            final Command command = commandList.get(++top);
-            try {
-                command.redo();
-                mostRecentCommand = command;
-            } catch (final RuntimeException exception) {
-                handleError(exception);
+	/*
+	 * Javadoc copied from interface.
+	 */
+	public void redo() {
+		if (canRedo()) {
+			final Command command = commandList.get(++top);
+			try {
+				command.redo();
+				mostRecentCommand = command;
+			} catch (final RuntimeException exception) {
+				handleError(exception);
 
-                mostRecentCommand = null;
+				mostRecentCommand = null;
 
-                // Clear the list past the top.
-                //
-                for (final Iterator<Command> commands = commandList
-                        .listIterator(top--); commands.hasNext(); commands
-                        .remove()) {
-                    final Command otherCommand = commands.next();
-                    otherCommand.dispose();
-                }
-            }
+				// Clear the list past the top.
+				//
+				for (final Iterator<Command> commands = commandList
+						.listIterator(top--); commands.hasNext(); commands
+						.remove()) {
+					final Command otherCommand = commands.next();
+					otherCommand.dispose();
+				}
+			}
 
-            notifyListeners();
-        }
-    }
+			notifyListeners();
+		}
+	}
 
-    /*
-     * Javadoc copied from interface.
-     */
-    public void flush() {
-        // Clear the list.
-        //
-        for (final Iterator<Command> commands = commandList.listIterator(); commands
-                .hasNext(); commands.remove()) {
-            final Command command = commands.next();
-            command.dispose();
-        }
-        commandList.clear();
-        top = -1;
-        saveIndex = -1;
-        mostRecentCommand = null;
-        notifyListeners();
-    }
+	/*
+	 * Javadoc copied from interface.
+	 */
+	public void flush() {
+		// Clear the list.
+		//
+		for (final Iterator<Command> commands = commandList.listIterator(); commands
+				.hasNext(); commands.remove()) {
+			final Command command = commands.next();
+			command.dispose();
+		}
+		commandList.clear();
+		top = -1;
+		saveIndex = -1;
+		mostRecentCommand = null;
+		notifyListeners();
+	}
 
-    /*
-     * Javadoc copied from interface.
-     */
-    public Command getUndoCommand() {
-        return top == -1 || top == commandList.size() ? null
-                : (Command) commandList.get(top);
-    }
+	/*
+	 * Javadoc copied from interface.
+	 */
+	public Command getUndoCommand() {
+		return top == -1 || top == commandList.size() ? null
+				: (Command) commandList.get(top);
+	}
 
-    /*
-     * Javadoc copied from interface.
-     */
-    public Command getRedoCommand() {
-        return top + 1 >= commandList.size() ? null : (Command) commandList
-                .get(top + 1);
-    }
+	/*
+	 * Javadoc copied from interface.
+	 */
+	public Command getRedoCommand() {
+		return top + 1 >= commandList.size() ? null : (Command) commandList
+				.get(top + 1);
+	}
 
-    /*
-     * Javadoc copied from interface.
-     */
-    public Command getMostRecentCommand() {
-        return mostRecentCommand;
-    }
+	/*
+	 * Javadoc copied from interface.
+	 */
+	public Command getMostRecentCommand() {
+		return mostRecentCommand;
+	}
 
-    /*
-     * Javadoc copied from interface.
-     */
-    public void addCommandStackListener(final CommandStackListener listener) {
-        listeners.add(listener);
-    }
+	/*
+	 * Javadoc copied from interface.
+	 */
+	public void addCommandStackListener(final CommandStackListener listener) {
+		listeners.add(listener);
+	}
 
-    /*
-     * Javadoc copied from interface.
-     */
-    public void removeCommandStackListener(final CommandStackListener listener) {
-        listeners.remove(listener);
-    }
+	/*
+	 * Javadoc copied from interface.
+	 */
+	public void removeCommandStackListener(final CommandStackListener listener) {
+		listeners.remove(listener);
+	}
 
-    /**
-     * This is called to ensure that
-     * {@link CommandStackListener#commandStackChanged} is called for each
-     * listener.
-     */
-    protected void notifyListeners() {
-        for (final CommandStackListener commandStackListener : listeners) {
-            commandStackListener.commandStackChanged(new EventObject(this));
-        }
-    }
+	/**
+	 * This is called to ensure that
+	 * {@link CommandStackListener#commandStackChanged} is called for each
+	 * listener.
+	 */
+	protected void notifyListeners() {
+		for (final CommandStackListener commandStackListener : listeners) {
+			commandStackListener.commandStackChanged(new EventObject(this));
+		}
+	}
 
-    /**
-     * Handles an exception thrown during command execution by logging it with
-     * the plugin.
-     */
-    protected void handleError(final Exception exception) {
-        CommonPlugin.INSTANCE.log(new WrappedException(CommonPlugin.INSTANCE
-                .getString("_UI_IgnoreException_exception"), exception) //$NON-NLS-1$
-                .fillInStackTrace());
-    }
+	/**
+	 * Handles an exception thrown during command execution by logging it with
+	 * the plugin.
+	 */
+	protected void handleError(final Exception exception) {
+		CommonPlugin.INSTANCE.log(new WrappedException(CommonPlugin.INSTANCE
+				.getString("_UI_IgnoreException_exception"), exception) //$NON-NLS-1$
+				.fillInStackTrace());
+	}
 
-    /**
-     * Called after a save has been successfully performed.
-     */
-    public void saveIsDone() {
-        // Remember where we are now.
-        //
-        saveIndex = top;
-    }
+	/**
+	 * Called after a save has been successfully performed.
+	 */
+	public void saveIsDone() {
+		// Remember where we are now.
+		//
+		saveIndex = top;
+	}
 
-    /**
-     * Returns whether the model has changes since {@link #saveIsDone} was call
-     * the last.
-     *
-     * @return whether the model has changes since <code>saveIsDone</code> was
-     *         call the last.
-     */
-    public boolean isSaveNeeded() {
-        // Only if we are at the remembered index do we NOT need to save.
-        //
-        // return top != saveIndex;
+	/**
+	 * Returns whether the model has changes since {@link #saveIsDone} was call
+	 * the last.
+	 * 
+	 * @return whether the model has changes since <code>saveIsDone</code> was
+	 *         call the last.
+	 */
+	public boolean isSaveNeeded() {
+		// Only if we are at the remembered index do we NOT need to save.
+		//
+		// return top != saveIndex;
 
-        if (saveIndex < -1) {
-            return true;
-        }
+		if (saveIndex < -1) {
+			return true;
+		}
 
-        if (top > saveIndex) {
-            for (int i = top; i > saveIndex; --i) {
-                if (!(commandList.get(i) instanceof AbstractCommand.NonDirtying)) {
-                    return true;
-                }
-            }
-        } else {
-            for (int i = saveIndex; i > top; --i) {
-                if (!(commandList.get(i) instanceof AbstractCommand.NonDirtying)) {
-                    return true;
-                }
-            }
-        }
+		if (top > saveIndex) {
+			for (int i = top; i > saveIndex; --i) {
+				if (!(commandList.get(i) instanceof AbstractCommand.NonDirtying)) {
+					return true;
+				}
+			}
+		} else {
+			for (int i = saveIndex; i > top; --i) {
+				if (!(commandList.get(i) instanceof AbstractCommand.NonDirtying)) {
+					return true;
+				}
+			}
+		}
 
-        return false;
-    }
+		return false;
+	}
 }

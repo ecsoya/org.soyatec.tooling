@@ -18,20 +18,20 @@ import org.eclipse.ui.IEditorPart;
  */
 public class ToolBarEditDomain extends DefaultEditDomain {
 
-    private ToolBarPalette palette;
+	private ToolBarPalette palette;
 
-    public ToolBarEditDomain(final IEditorPart editorPart) {
-        super(editorPart);
-    }
+	public ToolBarEditDomain(final IEditorPart editorPart) {
+		super(editorPart);
+	}
 
-    public void loadDefaultTool() {
-        super.loadDefaultTool();
-        if (palette != null) {
-            palette.loadDefaultTool();
-        }
-    }
+	public void loadDefaultTool() {
+		super.loadDefaultTool();
+		if (palette != null) {
+			palette.loadDefaultTool();
+		}
+	}
 
-    public void setPalette(final ToolBarPalette palette) {
-        this.palette = palette;
-    }
+	public void setPalette(final ToolBarPalette palette) {
+		this.palette = palette;
+	}
 }

@@ -31,101 +31,101 @@ import org.soyatec.tooling.gef.examples.shapes.provider.ShapesItemProviderAdapte
 import org.soyatec.tooling.gef.toolbar.editor.GraphicalEditorWithToolBarPalette;
 
 public class ShapesGraphicalEditor extends GraphicalEditorWithToolBarPalette
-        implements CommandStackListener {
+		implements CommandStackListener {
 
-    private Diagram diagram;
+	private Diagram diagram;
 
-    private ComposedAdapterFactory factory;
-    private CombinedCommandStack commandStack;
-    private EditingDomain editingDomain;
+	private ComposedAdapterFactory factory;
+	private final CombinedCommandStack commandStack;
+	private final EditingDomain editingDomain;
 
-    public ShapesGraphicalEditor() {
-        commandStack = new CombinedCommandStack();
-        editingDomain = new AdapterFactoryEditingDomain(getFactory(),
-                commandStack);
-        setEditDomain(new ShapesEditDomain(this, editingDomain));
-        commandStack.addCommandStackListener(this);
-    }
+	public ShapesGraphicalEditor() {
+		commandStack = new CombinedCommandStack();
+		editingDomain = new AdapterFactoryEditingDomain(getFactory(),
+				commandStack);
+		setEditDomain(new ShapesEditDomain(this, editingDomain));
+		commandStack.addCommandStackListener(this);
+	}
 
-    private ComposedAdapterFactory getFactory() {
-        if (factory == null) {
-            factory = new ComposedAdapterFactory();
-            factory = new ComposedAdapterFactory(
-                    ComposedAdapterFactory.Descriptor.Registry.INSTANCE);
+	private ComposedAdapterFactory getFactory() {
+		if (factory == null) {
+			factory = new ComposedAdapterFactory();
+			factory = new ComposedAdapterFactory(
+					ComposedAdapterFactory.Descriptor.Registry.INSTANCE);
 
-            factory.addAdapterFactory(new ResourceItemProviderAdapterFactory());
-            factory.addAdapterFactory(new ShapesItemProviderAdapterFactory());
-            factory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
-        }
-        return factory;
-    }
+			factory.addAdapterFactory(new ResourceItemProviderAdapterFactory());
+			factory.addAdapterFactory(new ShapesItemProviderAdapterFactory());
+			factory.addAdapterFactory(new ReflectiveItemProviderAdapterFactory());
+		}
+		return factory;
+	}
 
-    @Override
-    public void init(IEditorSite site, IEditorInput input)
-            throws PartInitException {
-        super.init(site, input);
-        if (input instanceof IFileEditorInput) {
-            IFile file = ((IFileEditorInput) input).getFile();
-            ResourceSet resourceSet = null;
-            if (editingDomain != null) {
-                resourceSet = editingDomain.getResourceSet();
-            } else {
-                resourceSet = new ResourceSetImpl();
-            }
-            Resource resource = resourceSet.getResource(URI
-                    .createPlatformResourceURI(file.getFullPath().toString(),
-                            true), true);
-            EList<EObject> contents = resource.getContents();
-            for (EObject eObject : contents) {
-                if (eObject instanceof Diagram) {
-                    diagram = (Diagram) eObject;
-                }
-            }
-        }
-    }
+	@Override
+	public void init(final IEditorSite site, final IEditorInput input)
+			throws PartInitException {
+		super.init(site, input);
+		if (input instanceof IFileEditorInput) {
+			final IFile file = ((IFileEditorInput) input).getFile();
+			ResourceSet resourceSet = null;
+			if (editingDomain != null) {
+				resourceSet = editingDomain.getResourceSet();
+			} else {
+				resourceSet = new ResourceSetImpl();
+			}
+			final Resource resource = resourceSet.getResource(URI
+					.createPlatformResourceURI(file.getFullPath().toString(),
+							true), true);
+			final EList<EObject> contents = resource.getContents();
+			for (final EObject eObject : contents) {
+				if (eObject instanceof Diagram) {
+					diagram = (Diagram) eObject;
+				}
+			}
+		}
+	}
 
-    @Override
-    protected PaletteRoot createPaletteRoot() {
-        return ShapesPalette.create();
-    }
+	@Override
+	protected PaletteRoot createPaletteRoot() {
+		return ShapesPalette.create();
+	}
 
-    @Override
-    protected void initializeGraphicalViewer() {
-        getGraphicalViewer().setEditPartFactory(new ShapesEditPartFactory());
-        if (diagram != null) {
-            getGraphicalViewer().setContents(diagram);
-        }
-    }
+	@Override
+	protected void initializeGraphicalViewer() {
+		getGraphicalViewer().setEditPartFactory(new ShapesEditPartFactory());
+		if (diagram != null) {
+			getGraphicalViewer().setContents(diagram);
+		}
+	}
 
-    @Override
-    public void doSave(IProgressMonitor monitor) {
-        if (diagram != null) {
-            try {
-                diagram.eResource().save(Collections.emptyMap());
-            } catch (IOException e) {
-                Activator.log(e);
-            }
-        }
-        getModelCommandStack().saveIsDone();
-    }
+	@Override
+	public void doSave(final IProgressMonitor monitor) {
+		if (diagram != null) {
+			try {
+				diagram.eResource().save(Collections.emptyMap());
+			} catch (final IOException e) {
+				Activator.log(e);
+			}
+		}
+		getModelCommandStack().saveIsDone();
+	}
 
-    protected CombinedCommandStack getModelCommandStack() {
-        return commandStack;
-    }
+	protected CombinedCommandStack getModelCommandStack() {
+		return commandStack;
+	}
 
-    public void dispose() {
-        getModelCommandStack().removeCommandStackListener(this);
-        super.dispose();
-    }
+	public void dispose() {
+		getModelCommandStack().removeCommandStackListener(this);
+		super.dispose();
+	}
 
-    @Override
-    public void commandStackChanged(final EventObject event) {
-        super.commandStackChanged(event);
-        firePropertyChange(PROP_DIRTY);
-    }
+	@Override
+	public void commandStackChanged(final EventObject event) {
+		super.commandStackChanged(event);
+		firePropertyChange(PROP_DIRTY);
+	}
 
-    @Override
-    public boolean isDirty() {
-        return getModelCommandStack().isSaveNeeded();
-    }
+	@Override
+	public boolean isDirty() {
+		return getModelCommandStack().isSaveNeeded();
+	}
 }

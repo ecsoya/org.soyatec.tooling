@@ -1,6 +1,7 @@
 package org.soyatec.tooling.gef.examples.test;
 
-import static org.junit.Assert.*;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertNotNull;
 
 import org.eclipse.core.resources.IProject;
 import org.eclipse.core.resources.ResourcesPlugin;
@@ -44,18 +45,18 @@ public class BasicTestCase {
 	}
 
 	public IWorkbench getWorkbench() {
-		IWorkbench workbench = org.soyatec.tooling.gef.examples.Activator
+		final IWorkbench workbench = org.soyatec.tooling.gef.examples.Activator
 				.getDefault().getWorkbench();
 		assertNotNull(workbench);
 		return workbench;
 	}
 
 	public Shell getActiveShell() {
-		IWorkbench workbench = getWorkbench();
-		IWorkbenchWindow activeWorkbenchWindow = workbench
+		final IWorkbench workbench = getWorkbench();
+		final IWorkbenchWindow activeWorkbenchWindow = workbench
 				.getActiveWorkbenchWindow();
 		assertNotNull(activeWorkbenchWindow);
-		Shell shell = activeWorkbenchWindow.getShell();
+		final Shell shell = activeWorkbenchWindow.getShell();
 		assertNotNull(shell);
 		assertEquals(shell.getDisplay(), Display.getCurrent());
 		return shell;

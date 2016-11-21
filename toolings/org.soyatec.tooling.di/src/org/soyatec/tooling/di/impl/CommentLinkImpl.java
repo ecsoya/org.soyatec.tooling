@@ -35,242 +35,242 @@ import org.soyatec.tooling.di.Node;
  * </em>}</li>
  * </ul>
  * </p>
- *
+ * 
  * @generated
  */
 public class CommentLinkImpl extends LineImpl implements CommentLink {
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    protected CommentLinkImpl() {
-        super();
-    }
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	protected CommentLinkImpl() {
+		super();
+	}
 
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    protected EClass eStaticClass() {
-        return DiPackage.Literals.COMMENT_LINK;
-    }
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	protected EClass eStaticClass() {
+		return DiPackage.Literals.COMMENT_LINK;
+	}
 
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    public Node getSource() {
-        final Node source = basicGetSource();
-        return source != null && source.eIsProxy() ? (Node) eResolveProxy((InternalEObject) source)
-                : source;
-    }
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public Node getSource() {
+		final Node source = basicGetSource();
+		return source != null && source.eIsProxy() ? (Node) eResolveProxy((InternalEObject) source)
+				: source;
+	}
 
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    public Node basicGetSource() {
-        return (Node) getSourceNode().get(
-                DiPackage.Literals.COMMENT_LINK__SOURCE, false);
-    }
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public Node basicGetSource() {
+		return (Node) getSourceNode().get(
+				DiPackage.Literals.COMMENT_LINK__SOURCE, false);
+	}
 
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    public void setSource(final Node newSource) {
-        ((FeatureMap.Internal) getSourceNode()).set(
-                DiPackage.Literals.COMMENT_LINK__SOURCE, newSource);
-    }
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setSource(final Node newSource) {
+		((FeatureMap.Internal) getSourceNode()).set(
+				DiPackage.Literals.COMMENT_LINK__SOURCE, newSource);
+	}
 
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    public Comment getTarget() {
-        final Comment target = basicGetTarget();
-        return target != null && target.eIsProxy() ? (Comment) eResolveProxy((InternalEObject) target)
-                : target;
-    }
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public Comment getTarget() {
+		final Comment target = basicGetTarget();
+		return target != null && target.eIsProxy() ? (Comment) eResolveProxy((InternalEObject) target)
+				: target;
+	}
 
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    public Comment basicGetTarget() {
-        return (Comment) getTargetNode().get(
-                DiPackage.Literals.COMMENT_LINK__TARGET, false);
-    }
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public Comment basicGetTarget() {
+		return (Comment) getTargetNode().get(
+				DiPackage.Literals.COMMENT_LINK__TARGET, false);
+	}
 
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    public void setTarget(final Comment newTarget) {
-        ((FeatureMap.Internal) getTargetNode()).set(
-                DiPackage.Literals.COMMENT_LINK__TARGET, newTarget);
-    }
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public void setTarget(final Comment newTarget) {
+		((FeatureMap.Internal) getTargetNode()).set(
+				DiPackage.Literals.COMMENT_LINK__TARGET, newTarget);
+	}
 
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    public NotificationChain eInverseAdd(final InternalEObject otherEnd,
-            final int featureID, NotificationChain msgs) {
-        switch (featureID) {
-        case DiPackage.COMMENT_LINK__SOURCE:
-            final Node source = basicGetSource();
-            if (source != null) {
-                msgs = ((InternalEObject) source).eInverseRemove(this,
-                        DiPackage.NODE__COMMENT_LINKS, Node.class, msgs);
-            }
-            return basicSetSource((Node) otherEnd, msgs);
-        case DiPackage.COMMENT_LINK__TARGET:
-            final Comment target = basicGetTarget();
-            if (target != null) {
-                msgs = ((InternalEObject) target).eInverseRemove(this,
-                        DiPackage.COMMENT__INPUTS, Comment.class, msgs);
-            }
-            return basicSetTarget((Comment) otherEnd, msgs);
-        }
-        return super.eInverseAdd(otherEnd, featureID, msgs);
-    }
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseAdd(final InternalEObject otherEnd,
+			final int featureID, NotificationChain msgs) {
+		switch (featureID) {
+		case DiPackage.COMMENT_LINK__SOURCE:
+			final Node source = basicGetSource();
+			if (source != null) {
+				msgs = ((InternalEObject) source).eInverseRemove(this,
+						DiPackage.NODE__COMMENT_LINKS, Node.class, msgs);
+			}
+			return basicSetSource((Node) otherEnd, msgs);
+		case DiPackage.COMMENT_LINK__TARGET:
+			final Comment target = basicGetTarget();
+			if (target != null) {
+				msgs = ((InternalEObject) target).eInverseRemove(this,
+						DiPackage.COMMENT__INPUTS, Comment.class, msgs);
+			}
+			return basicSetTarget((Comment) otherEnd, msgs);
+		}
+		return super.eInverseAdd(otherEnd, featureID, msgs);
+	}
 
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    public NotificationChain eInverseRemove(final InternalEObject otherEnd,
-            final int featureID, final NotificationChain msgs) {
-        switch (featureID) {
-        case DiPackage.COMMENT_LINK__SOURCE:
-            return basicSetSource(null, msgs);
-        case DiPackage.COMMENT_LINK__TARGET:
-            return basicSetTarget(null, msgs);
-        }
-        return super.eInverseRemove(otherEnd, featureID, msgs);
-    }
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(final InternalEObject otherEnd,
+			final int featureID, final NotificationChain msgs) {
+		switch (featureID) {
+		case DiPackage.COMMENT_LINK__SOURCE:
+			return basicSetSource(null, msgs);
+		case DiPackage.COMMENT_LINK__TARGET:
+			return basicSetTarget(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
+	}
 
-    private NotificationChain basicSetSource(final Node newSource,
-            NotificationChain msgs) {
-        final Node oldSource = basicGetSource();
-        setSource(newSource);
-        if (eNotificationRequired()) {
-            final ENotificationImpl notification = new ENotificationImpl(this,
-                    Notification.SET, DiPackage.COMMENT_LINK__SOURCE,
-                    oldSource, newSource);
-            if (msgs == null) {
-                msgs = notification;
-            } else {
-                msgs.add(notification);
-            }
-        }
-        return msgs;
-    }
+	private NotificationChain basicSetSource(final Node newSource,
+			NotificationChain msgs) {
+		final Node oldSource = basicGetSource();
+		setSource(newSource);
+		if (eNotificationRequired()) {
+			final ENotificationImpl notification = new ENotificationImpl(this,
+					Notification.SET, DiPackage.COMMENT_LINK__SOURCE,
+					oldSource, newSource);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
+		}
+		return msgs;
+	}
 
-    private NotificationChain basicSetTarget(final Comment newTarget,
-            NotificationChain msgs) {
-        final Comment oldTarget = basicGetTarget();
-        setTarget(newTarget);
-        if (eNotificationRequired()) {
-            final ENotificationImpl notification = new ENotificationImpl(this,
-                    Notification.SET, DiPackage.COMMENT_LINK__TARGET,
-                    oldTarget, newTarget);
-            if (msgs == null) {
-                msgs = notification;
-            } else {
-                msgs.add(notification);
-            }
-        }
-        return msgs;
-    }
+	private NotificationChain basicSetTarget(final Comment newTarget,
+			NotificationChain msgs) {
+		final Comment oldTarget = basicGetTarget();
+		setTarget(newTarget);
+		if (eNotificationRequired()) {
+			final ENotificationImpl notification = new ENotificationImpl(this,
+					Notification.SET, DiPackage.COMMENT_LINK__TARGET,
+					oldTarget, newTarget);
+			if (msgs == null) {
+				msgs = notification;
+			} else {
+				msgs.add(notification);
+			}
+		}
+		return msgs;
+	}
 
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    public Object eGet(final int featureID, final boolean resolve,
-            final boolean coreType) {
-        switch (featureID) {
-        case DiPackage.COMMENT_LINK__SOURCE:
-            if (resolve) {
-                return getSource();
-            }
-            return basicGetSource();
-        case DiPackage.COMMENT_LINK__TARGET:
-            if (resolve) {
-                return getTarget();
-            }
-            return basicGetTarget();
-        }
-        return super.eGet(featureID, resolve, coreType);
-    }
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Object eGet(final int featureID, final boolean resolve,
+			final boolean coreType) {
+		switch (featureID) {
+		case DiPackage.COMMENT_LINK__SOURCE:
+			if (resolve) {
+				return getSource();
+			}
+			return basicGetSource();
+		case DiPackage.COMMENT_LINK__TARGET:
+			if (resolve) {
+				return getTarget();
+			}
+			return basicGetTarget();
+		}
+		return super.eGet(featureID, resolve, coreType);
+	}
 
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    public void eSet(final int featureID, final Object newValue) {
-        switch (featureID) {
-        case DiPackage.COMMENT_LINK__SOURCE:
-            setSource((Node) newValue);
-            return;
-        case DiPackage.COMMENT_LINK__TARGET:
-            setTarget((Comment) newValue);
-            return;
-        }
-        super.eSet(featureID, newValue);
-    }
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public void eSet(final int featureID, final Object newValue) {
+		switch (featureID) {
+		case DiPackage.COMMENT_LINK__SOURCE:
+			setSource((Node) newValue);
+			return;
+		case DiPackage.COMMENT_LINK__TARGET:
+			setTarget((Comment) newValue);
+			return;
+		}
+		super.eSet(featureID, newValue);
+	}
 
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    public void eUnset(final int featureID) {
-        switch (featureID) {
-        case DiPackage.COMMENT_LINK__SOURCE:
-            setSource((Node) null);
-            return;
-        case DiPackage.COMMENT_LINK__TARGET:
-            setTarget((Comment) null);
-            return;
-        }
-        super.eUnset(featureID);
-    }
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public void eUnset(final int featureID) {
+		switch (featureID) {
+		case DiPackage.COMMENT_LINK__SOURCE:
+			setSource((Node) null);
+			return;
+		case DiPackage.COMMENT_LINK__TARGET:
+			setTarget((Comment) null);
+			return;
+		}
+		super.eUnset(featureID);
+	}
 
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     *
-     * @generated
-     */
-    @Override
-    public boolean eIsSet(final int featureID) {
-        switch (featureID) {
-        case DiPackage.COMMENT_LINK__SOURCE:
-            return basicGetSource() != null;
-        case DiPackage.COMMENT_LINK__TARGET:
-            return basicGetTarget() != null;
-        }
-        return super.eIsSet(featureID);
-    }
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public boolean eIsSet(final int featureID) {
+		switch (featureID) {
+		case DiPackage.COMMENT_LINK__SOURCE:
+			return basicGetSource() != null;
+		case DiPackage.COMMENT_LINK__TARGET:
+			return basicGetTarget() != null;
+		}
+		return super.eIsSet(featureID);
+	}
 
 } // CommentLinkImpl

@@ -12,6 +12,7 @@ package org.soyatec.tooling.views.tree;
 
 import org.eclipse.core.resources.IFile;
 import org.eclipse.jface.action.Action;
+import org.eclipse.jface.action.IAction;
 import org.eclipse.jface.action.IContributionItem;
 import org.eclipse.jface.action.IMenuListener;
 import org.eclipse.jface.action.IMenuManager;
@@ -43,6 +44,7 @@ import org.eclipse.ui.IWorkbenchWindow;
 import org.eclipse.ui.PartInitException;
 import org.eclipse.ui.part.ISetSelectionTarget;
 import org.eclipse.ui.part.ViewPart;
+import org.eclipse.ui.plugin.AbstractUIPlugin;
 import org.soyatec.tooling.views.Activator;
 import org.soyatec.tooling.views.Messages;
 
@@ -135,13 +137,13 @@ public abstract class TreeViewerViewPart extends ViewPart implements
 	protected void makeActions() {
 		linkWithEditorAction = new Action(
 				Messages.TreeViewerViewPart_LinkWithEditor_Text,
-				Action.AS_CHECK_BOX) {
+				IAction.AS_CHECK_BOX) {
 			@Override
 			public void run() {
 				toggleSelectReveal(isChecked());
 			}
 		};
-		linkWithEditorAction.setImageDescriptor(Activator
+		linkWithEditorAction.setImageDescriptor(AbstractUIPlugin
 				.imageDescriptorFromPlugin(Activator.PLUGIN_ID,
 						"icons/synced.gif")); //$NON-NLS-1$
 		linkWithEditorAction

@@ -29,150 +29,152 @@ import org.soyatec.tooling.gef.examples.shapes.ShapesPackage;
  * @generated
  */
 public class GraphItemProvider extends ItemProviderAdapter implements
-        IEditingDomainItemProvider, IStructuredItemContentProvider,
-        ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
-    /**
-     * This constructs an instance from a factory and a notifier. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     * 
-     * @generated
-     */
-    public GraphItemProvider(AdapterFactory adapterFactory) {
-        super(adapterFactory);
-    }
+		IEditingDomainItemProvider, IStructuredItemContentProvider,
+		ITreeItemContentProvider, IItemLabelProvider, IItemPropertySource {
+	/**
+	 * This constructs an instance from a factory and a notifier. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	public GraphItemProvider(final AdapterFactory adapterFactory) {
+		super(adapterFactory);
+	}
 
-    /**
-     * This returns the property descriptors for the adapted class. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     * 
-     * @generated
-     */
-    @Override
-    public List<IItemPropertyDescriptor> getPropertyDescriptors(Object object) {
-        if (itemPropertyDescriptors == null) {
-            super.getPropertyDescriptors(object);
+	/**
+	 * This returns the property descriptors for the adapted class. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public List<IItemPropertyDescriptor> getPropertyDescriptors(
+			final Object object) {
+		if (itemPropertyDescriptors == null) {
+			super.getPropertyDescriptors(object);
 
-        }
-        return itemPropertyDescriptors;
-    }
+		}
+		return itemPropertyDescriptors;
+	}
 
-    /**
-     * This specifies how to implement {@link #getChildren} and is used to
-     * deduce an appropriate feature for an
-     * {@link org.eclipse.emf.edit.command.AddCommand},
-     * {@link org.eclipse.emf.edit.command.RemoveCommand} or
-     * {@link org.eclipse.emf.edit.command.MoveCommand} in
-     * {@link #createCommand}. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
-     * @generated
-     */
-    @Override
-    public Collection<? extends EStructuralFeature> getChildrenFeatures(
-            Object object) {
-        if (childrenFeatures == null) {
-            super.getChildrenFeatures(object);
-            childrenFeatures.add(ShapesPackage.Literals.GRAPH__SHAPES);
-            childrenFeatures.add(ShapesPackage.Literals.GRAPH__CONNECTIONS);
-        }
-        return childrenFeatures;
-    }
+	/**
+	 * This specifies how to implement {@link #getChildren} and is used to
+	 * deduce an appropriate feature for an
+	 * {@link org.eclipse.emf.edit.command.AddCommand},
+	 * {@link org.eclipse.emf.edit.command.RemoveCommand} or
+	 * {@link org.eclipse.emf.edit.command.MoveCommand} in
+	 * {@link #createCommand}. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Collection<? extends EStructuralFeature> getChildrenFeatures(
+			final Object object) {
+		if (childrenFeatures == null) {
+			super.getChildrenFeatures(object);
+			childrenFeatures.add(ShapesPackage.Literals.GRAPH__SHAPES);
+			childrenFeatures.add(ShapesPackage.Literals.GRAPH__CONNECTIONS);
+		}
+		return childrenFeatures;
+	}
 
-    /**
-     * <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
-     * @generated
-     */
-    @Override
-    protected EStructuralFeature getChildFeature(Object object, Object child) {
-        // Check the type of the specified child object and return the proper
-        // feature to use for
-        // adding (see {@link AddCommand}) it as a child.
+	/**
+	 * <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	protected EStructuralFeature getChildFeature(final Object object,
+			final Object child) {
+		// Check the type of the specified child object and return the proper
+		// feature to use for
+		// adding (see {@link AddCommand}) it as a child.
 
-        return super.getChildFeature(object, child);
-    }
+		return super.getChildFeature(object, child);
+	}
 
-    /**
-     * This returns Graph.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
-     * 
-     * @generated
-     */
-    @Override
-    public Object getImage(Object object) {
-        return overlayImage(object,
-                getResourceLocator().getImage("full/obj16/Graph"));
-    }
+	/**
+	 * This returns Graph.gif. <!-- begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public Object getImage(final Object object) {
+		return overlayImage(object,
+				getResourceLocator().getImage("full/obj16/Graph"));
+	}
 
-    /**
-     * This returns the label text for the adapted class. <!-- begin-user-doc
-     * --> <!-- end-user-doc -->
-     * 
-     * @generated
-     */
-    @Override
-    public String getText(Object object) {
-        return getString("_UI_Graph_type");
-    }
+	/**
+	 * This returns the label text for the adapted class. <!-- begin-user-doc
+	 * --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public String getText(final Object object) {
+		return getString("_UI_Graph_type");
+	}
 
-    /**
-     * This handles model notifications by calling {@link #updateChildren} to
-     * update any cached children and by creating a viewer notification, which
-     * it passes to {@link #fireNotifyChanged}. <!-- begin-user-doc --> <!--
-     * end-user-doc -->
-     * 
-     * @generated
-     */
-    @Override
-    public void notifyChanged(Notification notification) {
-        updateChildren(notification);
+	/**
+	 * This handles model notifications by calling {@link #updateChildren} to
+	 * update any cached children and by creating a viewer notification, which
+	 * it passes to {@link #fireNotifyChanged}. <!-- begin-user-doc --> <!--
+	 * end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public void notifyChanged(final Notification notification) {
+		updateChildren(notification);
 
-        switch (notification.getFeatureID(Graph.class)) {
-        case ShapesPackage.GRAPH__SHAPES:
-        case ShapesPackage.GRAPH__CONNECTIONS:
-            fireNotifyChanged(new ViewerNotification(notification,
-                    notification.getNotifier(), true, false));
-            return;
-        }
-        super.notifyChanged(notification);
-    }
+		switch (notification.getFeatureID(Graph.class)) {
+		case ShapesPackage.GRAPH__SHAPES:
+		case ShapesPackage.GRAPH__CONNECTIONS:
+			fireNotifyChanged(new ViewerNotification(notification,
+					notification.getNotifier(), true, false));
+			return;
+		}
+		super.notifyChanged(notification);
+	}
 
-    /**
-     * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s
-     * describing the children that can be created under this object. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     * 
-     * @generated
-     */
-    @Override
-    protected void collectNewChildDescriptors(
-            Collection<Object> newChildDescriptors, Object object) {
-        super.collectNewChildDescriptors(newChildDescriptors, object);
+	/**
+	 * This adds {@link org.eclipse.emf.edit.command.CommandParameter}s
+	 * describing the children that can be created under this object. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	protected void collectNewChildDescriptors(
+			final Collection<Object> newChildDescriptors, final Object object) {
+		super.collectNewChildDescriptors(newChildDescriptors, object);
 
-        newChildDescriptors.add(createChildParameter(
-                ShapesPackage.Literals.GRAPH__SHAPES,
-                ShapesFactory.eINSTANCE.createEllipse()));
+		newChildDescriptors.add(createChildParameter(
+				ShapesPackage.Literals.GRAPH__SHAPES,
+				ShapesFactory.eINSTANCE.createEllipse()));
 
-        newChildDescriptors.add(createChildParameter(
-                ShapesPackage.Literals.GRAPH__SHAPES,
-                ShapesFactory.eINSTANCE.createRectangle()));
+		newChildDescriptors.add(createChildParameter(
+				ShapesPackage.Literals.GRAPH__SHAPES,
+				ShapesFactory.eINSTANCE.createRectangle()));
 
-        newChildDescriptors.add(createChildParameter(
-                ShapesPackage.Literals.GRAPH__CONNECTIONS,
-                ShapesFactory.eINSTANCE.createSolidLine()));
+		newChildDescriptors.add(createChildParameter(
+				ShapesPackage.Literals.GRAPH__CONNECTIONS,
+				ShapesFactory.eINSTANCE.createSolidLine()));
 
-        newChildDescriptors.add(createChildParameter(
-                ShapesPackage.Literals.GRAPH__CONNECTIONS,
-                ShapesFactory.eINSTANCE.createDashedLine()));
-    }
+		newChildDescriptors.add(createChildParameter(
+				ShapesPackage.Literals.GRAPH__CONNECTIONS,
+				ShapesFactory.eINSTANCE.createDashedLine()));
+	}
 
-    /**
-     * Return the resource locator for this item provider's resources. <!--
-     * begin-user-doc --> <!-- end-user-doc -->
-     * 
-     * @generated
-     */
-    @Override
-    public ResourceLocator getResourceLocator() {
-        return ShapesEditPlugin.INSTANCE;
-    }
+	/**
+	 * Return the resource locator for this item provider's resources. <!--
+	 * begin-user-doc --> <!-- end-user-doc -->
+	 * 
+	 * @generated
+	 */
+	@Override
+	public ResourceLocator getResourceLocator() {
+		return ShapesEditPlugin.INSTANCE;
+	}
 
 }

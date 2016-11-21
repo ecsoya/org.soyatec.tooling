@@ -10,23 +10,37 @@
  *******************************************************************************/
 package org.soyatec.tooling.gef.editpolicies;
 
-import java.util.Collections;
+import java.util.ArrayList;
+import java.util.List;
 
+import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.edit.command.DeleteCommand;
 import org.eclipse.emf.edit.domain.EditingDomain;
 import org.eclipse.gef.commands.Command;
 import org.eclipse.gef.editpolicies.ConnectionEditPolicy;
 import org.eclipse.gef.requests.GroupRequest;
+import org.soyatec.tooling.di.Connector;
+import org.soyatec.tooling.di.Line;
 import org.soyatec.tooling.gef.commands.CommandWrap2GEF;
 import org.soyatec.tooling.gef.utils.EditingDomainUtils;
 
 public class LineEditPolicy extends ConnectionEditPolicy {
 
-    protected Command getDeleteCommand(final GroupRequest request) {
-        final EditingDomain editingDomain = EditingDomainUtils
-                .getEditingDomain(getHost());
-        return new CommandWrap2GEF(DeleteCommand.create(editingDomain,
-                Collections.singleton(getHost().getModel())));
-    }
+	protected Command getDeleteCommand(final GroupRequest request) {
+		final EditingDomain editingDomain = EditingDomainUtils
+				.getEditingDomain(getHost());
+		final List<EObject> deletingObjects = new ArrayList<EObject>();
+		final Line model = (Line) getHost().getModel();
+		deletingObjects.add(model);
+		if (model.getElement() != null) {
+			deletingObjects.add(model.getElement());
+		}
+		if (model instanceof Connector
+				&& ((Connector) model).getReverseElement() != null) {
+			deletingObjects.add(((Connector) model).getReverseElement());
+		}
+		return new CommandWrap2GEF(DeleteCommand.create(editingDomain,
+				deletingObjects));
+	}
 
 }

@@ -13,14 +13,14 @@ package org.soyatec.tooling.gef.toolbar;
 import org.eclipse.osgi.util.NLS;
 
 public class Messages extends NLS {
-    private static final String BUNDLE_NAME = "org.soyatec.tooling.gef.toolbar.messages"; //$NON-NLS-1$
-    public static String tooling_palette_icons_only;
-    public static String tooling_palette_large_icons;
-    static {
-        // initialize resource bundle
-        NLS.initializeMessages(BUNDLE_NAME, Messages.class);
-    }
+	private static final String BUNDLE_NAME = "org.soyatec.tooling.gef.toolbar.messages"; //$NON-NLS-1$
+	public static String tooling_palette_icons_only;
+	public static String tooling_palette_large_icons;
+	static {
+		// initialize resource bundle
+		NLS.initializeMessages(BUNDLE_NAME, Messages.class);
+	}
 
-    private Messages() {
-    }
+	private Messages() {
+	}
 }

@@ -31,58 +31,58 @@ import org.soyatec.tooling.gef.utils.EditingDomainUtils;
 
 public class DiagramXYLayoutEditPolicy extends XYLayoutEditPolicy {
 
-    public static final Dimension SIZE_COMMENT_DEFAULT = new Dimension(100, 80);
+	public static final Dimension SIZE_COMMENT_DEFAULT = new Dimension(100, 80);
 
-    protected Command getCreateCommand(final CreateRequest request) {
-        final Object newObjectType = request.getNewObjectType();
-        final Object newObject = request.getNewObject();
-        final Rectangle rect = (Rectangle) getConstraintFor(request);
-        final Diagram diagram = (Diagram) getHost().getModel();
-        if (DiPackage.eINSTANCE.getComment() == newObjectType) {
-            Comment comment = null;
-            if (newObject instanceof Comment) {
-                comment = (Comment) newObject;
-            } else {
-                comment = DiFactory.eINSTANCE.createComment();
-            }
-            final Rectangle bounds = rect.getCopy();
-            if (bounds.isEmpty()) {
-                bounds.setSize(SIZE_COMMENT_DEFAULT);
-            }
-            comment.setBounds(bounds);
-            return CommandFactory.add(diagram,
-                    DiPackage.eINSTANCE.getDiagram_Comments(), comment);
-        } else if (newObject instanceof Shape) {
-            final Rectangle bounds = rect.getCopy();
-            if (bounds.isEmpty()) {
-                bounds.setSize(SIZE_COMMENT_DEFAULT);
-            }
-            ((Shape) newObject).setBounds(bounds);
-            return CommandFactory.add(diagram,
-                    DiPackage.eINSTANCE.getContainer_Children(), newObject);
-        }
-        return null;
-    }
+	protected Command getCreateCommand(final CreateRequest request) {
+		final Object newObjectType = request.getNewObjectType();
+		final Object newObject = request.getNewObject();
+		final Rectangle rect = (Rectangle) getConstraintFor(request);
+		final Diagram diagram = (Diagram) getHost().getModel();
+		if (DiPackage.eINSTANCE.getComment() == newObjectType) {
+			Comment comment = null;
+			if (newObject instanceof Comment) {
+				comment = (Comment) newObject;
+			} else {
+				comment = DiFactory.eINSTANCE.createComment();
+			}
+			final Rectangle bounds = rect.getCopy();
+			if (bounds.isEmpty()) {
+				bounds.setSize(SIZE_COMMENT_DEFAULT);
+			}
+			comment.setBounds(bounds);
+			return CommandFactory.add(diagram,
+					DiPackage.eINSTANCE.getDiagram_Comments(), comment);
+		} else if (newObject instanceof Shape) {
+			final Rectangle bounds = rect.getCopy();
+			if (bounds.isEmpty()) {
+				bounds.setSize(SIZE_COMMENT_DEFAULT);
+			}
+			((Shape) newObject).setBounds(bounds);
+			return CommandFactory.add(diagram,
+					DiPackage.eINSTANCE.getContainer_Children(), newObject);
+		}
+		return null;
+	}
 
-    protected Command createChangeConstraintCommand(
-            final ChangeBoundsRequest request, final EditPart child,
-            final Object constraint) {
-        final Object model = child.getModel();
-        final Object type = request.getType();
-        if (model instanceof Shape) {
-            final Rectangle r = (Rectangle) constraint;
+	protected Command createChangeConstraintCommand(
+			final ChangeBoundsRequest request, final EditPart child,
+			final Object constraint) {
+		final Object model = child.getModel();
+		final Object type = request.getType();
+		if (model instanceof Shape) {
+			final Rectangle r = (Rectangle) constraint;
 
-            final org.eclipse.emf.common.command.Command cmd = SetCommand
-                    .create(EditingDomainUtils.getEditingDomain(getHost()),
-                            model, DiPackage.Literals.SHAPE__BOUNDS, r);
-            if (cmd instanceof AbstractCommand) {
-                final String label = REQ_MOVE_CHILDREN.equals(type) ? ResourcesFactory
-                        .getString("Move") //$NON-NLS-1$
-                        : ResourcesFactory.getString("Resize"); //$NON-NLS-1$
-                ((AbstractCommand) cmd).setLabel(label);
-            }
-            return new CommandWrap2GEF(cmd);
-        }
-        return super.createChangeConstraintCommand(request, child, constraint);
-    }
+			final org.eclipse.emf.common.command.Command cmd = SetCommand
+					.create(EditingDomainUtils.getEditingDomain(getHost()),
+							model, DiPackage.Literals.SHAPE__BOUNDS, r);
+			if (cmd instanceof AbstractCommand) {
+				final String label = REQ_MOVE_CHILDREN.equals(type) ? ResourcesFactory
+						.getString("Move") //$NON-NLS-1$
+						: ResourcesFactory.getString("Resize"); //$NON-NLS-1$
+				((AbstractCommand) cmd).setLabel(label);
+			}
+			return new CommandWrap2GEF(cmd);
+		}
+		return super.createChangeConstraintCommand(request, child, constraint);
+	}
 }

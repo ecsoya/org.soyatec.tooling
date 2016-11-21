@@ -30,63 +30,63 @@ import org.soyatec.tooling.richtext.Activator;
 
 public class AddImageActionEx extends AddImageAction {
 
-    private final IFile file;
+	private final IFile file;
 
-    public AddImageActionEx(final IRichText richText, final IFile file) {
-        super(richText);
-        this.file = file;
-    }
+	public AddImageActionEx(final IRichText richText, final IFile file) {
+		super(richText);
+		this.file = file;
+	}
 
-    public void execute(final IRichText richText) {
-        if (richText != null) {
-            final AddImageDialog dialog = new AddImageDialog(Display
-                    .getCurrent().getActiveShell());
-            dialog.open();
-            if (dialog.getReturnCode() == Window.OK) {
-                String imageURL = dialog.getImage().getURL();
-                boolean isFile = false;
-                if (imageURL.length() > 0) {
-                    try {
-                        isFile = "file".equals(new URL(imageURL).getProtocol());
-                    } catch (final MalformedURLException e) {
-                        isFile = false;
-                        Activator.log(e);
-                    }
-                }
-                if (file != null && isFile) {
-                    imageURL = makeRelative(imageURL);
-                }
-                richText.executeCommand(RichTextCommand.ADD_IMAGE, imageURL);
-            }
-        }
-    }
+	public void execute(final IRichText richText) {
+		if (richText != null) {
+			final AddImageDialog dialog = new AddImageDialog(Display
+					.getCurrent().getActiveShell());
+			dialog.open();
+			if (dialog.getReturnCode() == Window.OK) {
+				String imageURL = dialog.getImage().getURL();
+				boolean isFile = false;
+				if (imageURL.length() > 0) {
+					try {
+						isFile = "file".equals(new URL(imageURL).getProtocol());
+					} catch (final MalformedURLException e) {
+						isFile = false;
+						Activator.log(e);
+					}
+				}
+				if (file != null && isFile) {
+					imageURL = makeRelative(imageURL);
+				}
+				richText.executeCommand(RichTextCommand.ADD_IMAGE, imageURL);
+			}
+		}
+	}
 
-    private String makeRelative(final String imageURL) {
-        if (file == null || imageURL == null) {
-            return null;
-        }
-        if (file.exists()) {
-            final IFolder folder = file.getProject().getFolder("images");
-            final File image = new File(imageURL.replace("file:/", ""));
-            final IFile imageFile = folder.getFile(image.getName());
-            if (!imageFile.exists()) {
-                try {
-                    if (!folder.exists()) {
-                        folder.create(true, true, null);
-                    }
-                    imageFile.create(new FileInputStream(image), true, null);
-                } catch (final FileNotFoundException e) {
-                    Activator.log(e);
-                } catch (final CoreException e) {
-                    Activator.log(e);
-                }
-            }
-            final IPath path = imageFile.getProjectRelativePath();
-            final IPath makeRelativeTo = path.makeRelativeTo(file.getParent()
-                    .getProjectRelativePath());
-            return makeRelativeTo.toString();
-        }
-        return imageURL;
-    }
+	private String makeRelative(final String imageURL) {
+		if (file == null || imageURL == null) {
+			return null;
+		}
+		if (file.exists()) {
+			final IFolder folder = file.getProject().getFolder("images");
+			final File image = new File(imageURL.replace("file:/", ""));
+			final IFile imageFile = folder.getFile(image.getName());
+			if (!imageFile.exists()) {
+				try {
+					if (!folder.exists()) {
+						folder.create(true, true, null);
+					}
+					imageFile.create(new FileInputStream(image), true, null);
+				} catch (final FileNotFoundException e) {
+					Activator.log(e);
+				} catch (final CoreException e) {
+					Activator.log(e);
+				}
+			}
+			final IPath path = imageFile.getProjectRelativePath();
+			final IPath makeRelativeTo = path.makeRelativeTo(file.getParent()
+					.getProjectRelativePath());
+			return makeRelativeTo.toString();
+		}
+		return imageURL;
+	}
 
 }

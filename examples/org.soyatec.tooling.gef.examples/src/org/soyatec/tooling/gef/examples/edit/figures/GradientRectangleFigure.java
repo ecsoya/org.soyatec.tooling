@@ -11,45 +11,45 @@ import org.soyatec.tooling.gef.figures.GradientFigure;
 import org.soyatec.tooling.gef.figures.ILabelFigure;
 
 public class GradientRectangleFigure extends GradientFigure implements
-        ILabelFigure {
+		ILabelFigure {
 
-    private Label label;
+	private final Label label;
 
-    public GradientRectangleFigure() {
-        setBorder(new LineBorder());
-        setLayoutManager(new BorderLayout());
+	public GradientRectangleFigure() {
+		setBorder(new LineBorder());
+		setLayoutManager(new BorderLayout());
 
-        label = new Label();
-        add(label, BorderLayout.CENTER);
-    }
+		label = new Label();
+		add(label, BorderLayout.CENTER);
+	}
 
-    @Override
-    public void setText(String newText) {
-        label.setText(newText);
-    }
+	@Override
+	public void setText(final String newText) {
+		label.setText(newText);
+	}
 
-    @Override
-    public String getText() {
-        return label.getText();
-    }
+	@Override
+	public String getText() {
+		return label.getText();
+	}
 
-    @Override
-    public void setImage(Image newImage) {
-        label.setIcon(newImage);
-    }
+	@Override
+	public void setImage(final Image newImage) {
+		label.setIcon(newImage);
+	}
 
-    @Override
-    public Image getImage() {
-        return label.getIcon();
-    }
+	@Override
+	public Image getImage() {
+		return label.getIcon();
+	}
 
-    @Override
-    public IFigure getLabelFigure() {
-        return label;
-    }
+	@Override
+	public IFigure getLabelFigure() {
+		return label;
+	}
 
-    @Override
-    public Color getGradientColor() {
-        return ColorConstants.blue;
-    }
+	@Override
+	public Color getGradientColor() {
+		return ColorConstants.blue;
+	}
 }

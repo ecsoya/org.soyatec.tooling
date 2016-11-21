@@ -20,17 +20,23 @@ import org.eclipse.ui.forms.widgets.FormToolkit;
 
 public interface IPropertyTab extends ISelectionListener {
 
-    boolean isExpanded();
+	boolean isExpanded();
 
-    String getName();
+	String getName();
 
-    String getDescription();
+	String getDescription();
 
-    Control createControl(FormToolkit factory, Composite parent);
+	Control createControl(FormToolkit factory, Composite parent);
 
-    ToolBarManager getToolBarManager();
+	ToolBarManager getToolBarManager();
 
-    void dispose();
+	void dispose();
 
-    boolean isVisibleFor(IWorkbenchPart part, ISelection selection);
+	boolean isVisibleFor(IWorkbenchPart part, ISelection selection);
+
+	boolean refresh();
+
+	void setManualRefresh(boolean manualRefresh);
+
+	boolean isManualRefresh();
 }

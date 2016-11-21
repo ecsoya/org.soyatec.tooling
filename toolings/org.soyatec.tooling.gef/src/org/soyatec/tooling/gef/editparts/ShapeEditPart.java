@@ -33,163 +33,163 @@ import org.soyatec.tooling.gef.figures.NodeFigure;
 import org.soyatec.tooling.gef.resources.ResourcesFactory;
 
 public abstract class ShapeEditPart<T extends Shape> extends
-        org.soyatec.tooling.gef.editparts.NodeEditPart<Node> implements
-        NodeEditPart {
+		org.soyatec.tooling.gef.editparts.NodeEditPart<Node> implements
+		NodeEditPart {
 
-    private IFigure primaryFigure;
+	private IFigure primaryFigure;
 
-    public ShapeEditPart(final Shape model) {
-        super(model);
-    }
+	public ShapeEditPart(final Shape model) {
+		super(model);
+	}
 
-    protected void refreshVisuals() {
-        super.refreshVisuals();
-        refreshBounds();
-        refreshBackground();
-        refreshForeground();
-    }
+	protected void refreshVisuals() {
+		super.refreshVisuals();
+		refreshBounds();
+		refreshBackground();
+		refreshForeground();
+	}
 
-    @SuppressWarnings("unchecked")
-    public T getShapeModel() {
-        return (T) getModel();
-    }
+	@SuppressWarnings("unchecked")
+	public T getShapeModel() {
+		return (T) getModel();
+	}
 
-    public void refreshForeground() {
-        final int foreground = getShapeModel().getForeground();
-        final Color color = foreground == -1 ? getDefaultForeground()
-                : ResourcesFactory.getColor(foreground);
-        setForegroundColor(color);
-    }
+	public void refreshForeground() {
+		final int foreground = getShapeModel().getForeground();
+		final Color color = foreground == -1 ? getDefaultForeground()
+				: ResourcesFactory.getColor(foreground);
+		setForegroundColor(color);
+	}
 
-    protected Color getDefaultForeground() {
-        return ColorConstants.black;
-    }
+	protected Color getDefaultForeground() {
+		return ColorConstants.black;
+	}
 
-    public void refreshBackground() {
-        final int background = getShapeModel().getBackground();
-        final Color color = background == -1 ? getDefaultBackgroundColor()
-                : ResourcesFactory.getColor(background);
-        setBackgroundColor(color);
-    }
+	public void refreshBackground() {
+		final int background = getShapeModel().getBackground();
+		final Color color = background == -1 ? getDefaultBackgroundColor()
+				: ResourcesFactory.getColor(background);
+		setBackgroundColor(color);
+	}
 
-    protected Color getDefaultBackgroundColor() {
-        return ResourcesFactory.getColor(ResourcesFactory.COLOR_SHAPE);
-    }
+	protected Color getDefaultBackgroundColor() {
+		return ResourcesFactory.getColor(ResourcesFactory.COLOR_SHAPE);
+	}
 
-    protected void setForegroundColor(final Color color) {
-        getPrimaryFigure().setForegroundColor(color);
-    }
+	protected void setForegroundColor(final Color color) {
+		getPrimaryFigure().setForegroundColor(color);
+	}
 
-    protected void setBackgroundColor(final Color color) {
-        getPrimaryFigure().setBackgroundColor(color);
-    }
+	protected void setBackgroundColor(final Color color) {
+		getPrimaryFigure().setBackgroundColor(color);
+	}
 
-    protected void refreshBounds() {
-        final Rectangle rect = getShapeModel().getBounds();
-        if (rect != null) {
-            setLayoutConstraint(this, getFigure(), rect);
-        }
-    }
+	protected void refreshBounds() {
+		final Rectangle rect = getShapeModel().getBounds();
+		if (rect != null) {
+			setLayoutConstraint(this, getFigure(), rect);
+		}
+	}
 
-    protected void handleNotifyChanged(final Notification event) {
-        super.handleNotifyChanged(event);
-        final Object feature = event.getFeature();
-        if (DiPackage.eINSTANCE.getShape_Bounds() == feature) {
-            refreshBounds();
-        } else if (DiPackage.eINSTANCE.getShape_Background() == feature) {
-            refreshBackground();
-        } else if (DiPackage.eINSTANCE.getShape_Foreground() == feature) {
-            refreshForeground();
-        }
-    }
+	protected void handleNotifyChanged(final Notification event) {
+		super.handleNotifyChanged(event);
+		final Object feature = event.getFeature();
+		if (DiPackage.eINSTANCE.getShape_Bounds() == feature) {
+			refreshBounds();
+		} else if (DiPackage.eINSTANCE.getShape_Background() == feature) {
+			refreshBackground();
+		} else if (DiPackage.eINSTANCE.getShape_Foreground() == feature) {
+			refreshForeground();
+		}
+	}
 
-    final protected IFigure createFigure() {
-        final IFigure primaryFigure = getPrimaryFigure();
-        return createNodeFigure(primaryFigure);
-    }
+	final protected IFigure createFigure() {
+		final IFigure primaryFigure = getPrimaryFigure();
+		return createNodeFigure(primaryFigure);
+	}
 
-    protected NodeFigure createNodeFigure(final IFigure primaryFigure) {
-        return new NodeFigure(primaryFigure);
-    }
+	protected NodeFigure createNodeFigure(final IFigure primaryFigure) {
+		return new NodeFigure(primaryFigure);
+	}
 
-    public IFigure getPrimaryFigure() {
-        if (primaryFigure == null) {
-            primaryFigure = createPrimaryFigure();
-        }
-        return primaryFigure;
-    }
+	public IFigure getPrimaryFigure() {
+		if (primaryFigure == null) {
+			primaryFigure = createPrimaryFigure();
+		}
+		return primaryFigure;
+	}
 
-    protected abstract IFigure createPrimaryFigure();
+	protected abstract IFigure createPrimaryFigure();
 
-    public NodeFigure getFigure() {
-        return (NodeFigure) super.getFigure();
-    }
+	public NodeFigure getFigure() {
+		return (NodeFigure) super.getFigure();
+	}
 
-    public IFigure getContentPane() {
-        return getFigure().getPrimaryFigure();
-    }
+	public IFigure getContentPane() {
+		return getFigure().getPrimaryFigure();
+	}
 
-    public ConnectionAnchor getSourceConnectionAnchor(
-            final ConnectionEditPart connection) {
-        String terminal = NodeFigure.DEFAULT_TERMINAL;
-        final Object model = connection.getModel();
-        if (model instanceof Line) {
-            terminal = ((Line) model).getSourceAnchor();
-        }
-        return getFigure().getConnectionAnchor(terminal);
-    }
+	public ConnectionAnchor getSourceConnectionAnchor(
+			final ConnectionEditPart connection) {
+		String terminal = NodeFigure.DEFAULT_TERMINAL;
+		final Object model = connection.getModel();
+		if (model instanceof Line) {
+			terminal = ((Line) model).getSourceAnchor();
+		}
+		return getFigure().getConnectionAnchor(terminal);
+	}
 
-    public ConnectionAnchor getTargetConnectionAnchor(
-            final ConnectionEditPart connection) {
-        String terminal = NodeFigure.DEFAULT_TERMINAL;
-        final Object model = connection.getModel();
-        if (model instanceof Line) {
-            terminal = ((Line) model).getTargetAnchor();
-        }
-        return getFigure().getConnectionAnchor(terminal);
-    }
+	public ConnectionAnchor getTargetConnectionAnchor(
+			final ConnectionEditPart connection) {
+		String terminal = NodeFigure.DEFAULT_TERMINAL;
+		final Object model = connection.getModel();
+		if (model instanceof Line) {
+			terminal = ((Line) model).getTargetAnchor();
+		}
+		return getFigure().getConnectionAnchor(terminal);
+	}
 
-    public ConnectionAnchor getSourceConnectionAnchor(final Request request) {
-        Point location = null;
-        if (request instanceof DropRequest) {
-            location = ((DropRequest) request).getLocation();
-        }
-        return getFigure().getSourceConnectionAnchor(location);
-    }
+	public ConnectionAnchor getSourceConnectionAnchor(final Request request) {
+		Point location = null;
+		if (request instanceof DropRequest) {
+			location = ((DropRequest) request).getLocation();
+		}
+		return getFigure().getSourceConnectionAnchor(location);
+	}
 
-    public ConnectionAnchor getTargetConnectionAnchor(final Request request) {
-        Point location = null;
-        if (request instanceof DropRequest) {
-            location = ((DropRequest) request).getLocation();
-        }
-        return getFigure().getTargetConnectionAnchor(location);
-    }
+	public ConnectionAnchor getTargetConnectionAnchor(final Request request) {
+		Point location = null;
+		if (request instanceof DropRequest) {
+			location = ((DropRequest) request).getLocation();
+		}
+		return getFigure().getTargetConnectionAnchor(location);
+	}
 
-    @Override
-    protected void createEditPolicies() {
-        super.createEditPolicies();
-        installEditPolicy(EditPolicy.COMPONENT_ROLE,
-                new ShapeComponentEditPolicy());
-    }
+	@Override
+	protected void createEditPolicies() {
+		super.createEditPolicies();
+		installEditPolicy(EditPolicy.COMPONENT_ROLE,
+				new ShapeComponentEditPolicy());
+	}
 
-    @SuppressWarnings({ "unchecked", "rawtypes" })
-    protected void reorderSourceConnection(final ConnectionEditPart connection,
-            final int index) {
-        primRemoveSourceConnection(connection);
-        if (sourceConnections == null) {
-            sourceConnections = new ArrayList();
-        }
-        sourceConnections.add(connection);
-    }
+	@SuppressWarnings({ "unchecked", "rawtypes" })
+	protected void reorderSourceConnection(final ConnectionEditPart connection,
+			final int index) {
+		primRemoveSourceConnection(connection);
+		if (sourceConnections == null) {
+			sourceConnections = new ArrayList();
+		}
+		sourceConnections.add(connection);
+	}
 
-    @SuppressWarnings({ "rawtypes", "unchecked" })
-    protected void reorderTargetConnection(final ConnectionEditPart connection,
-            final int index) {
-        primRemoveTargetConnection(connection);
-        if (targetConnections == null) {
-            targetConnections = new ArrayList();
-        }
-        targetConnections.add(connection);
-        // super.reorderTargetConnection(connection, index);
-    }
+	@SuppressWarnings({ "rawtypes", "unchecked" })
+	protected void reorderTargetConnection(final ConnectionEditPart connection,
+			final int index) {
+		primRemoveTargetConnection(connection);
+		if (targetConnections == null) {
+			targetConnections = new ArrayList();
+		}
+		targetConnections.add(connection);
+		// super.reorderTargetConnection(connection, index);
+	}
 }

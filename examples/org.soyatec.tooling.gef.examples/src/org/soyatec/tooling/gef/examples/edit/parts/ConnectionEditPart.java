@@ -14,49 +14,49 @@ import org.soyatec.tooling.gef.figures.ILabelFigure;
 
 public abstract class ConnectionEditPart extends LineEditPart<Connector> {
 
-    public ConnectionEditPart(Connector model) {
-        super(model);
-    }
+	public ConnectionEditPart(final Connector model) {
+		super(model);
+	}
 
-    @Override
-    protected IFigure createFigure() {
-        return new ConnectionFigure();
-    }
+	@Override
+	protected IFigure createFigure() {
+		return new ConnectionFigure();
+	}
 
-    @Override
-    protected ILabelFigure getDirectEditLabel() {
-        return (ILabelFigure) getFigure();
-    }
+	@Override
+	protected ILabelFigure getDirectEditLabel() {
+		return (ILabelFigure) getFigure();
+	}
 
-    @Override
-    protected void refreshVisuals() {
-        super.refreshVisuals();
-        refreshLabel();
-    }
+	@Override
+	protected void refreshVisuals() {
+		super.refreshVisuals();
+		refreshLabel();
+	}
 
-    private void refreshLabel() {
-        EObject element = getElement();
-        if (element instanceof Connection) {
-            String label = ((Connection) element).getLabel();
-            if (label == null) {
-                label = element.eClass().getName();
-            }
-            getDirectEditLabel().setText(label);
-        }
-    }
+	private void refreshLabel() {
+		final EObject element = getElement();
+		if (element instanceof Connection) {
+			String label = ((Connection) element).getLabel();
+			if (label == null) {
+				label = element.eClass().getName();
+			}
+			getDirectEditLabel().setText(label);
+		}
+	}
 
-    @Override
-    protected void handleNotifyChanged(Notification event) {
-        super.handleNotifyChanged(event);
-        if (ShapesPackage.eINSTANCE.getConnection_Label() == event.getFeature()) {
-            refreshLabel();
-        }
-    }
+	@Override
+	protected void handleNotifyChanged(final Notification event) {
+		super.handleNotifyChanged(event);
+		if (ShapesPackage.eINSTANCE.getConnection_Label() == event.getFeature()) {
+			refreshLabel();
+		}
+	}
 
-    @Override
-    protected void createEditPolicies() {
-        super.createEditPolicies();
-        installEditPolicy(EditPolicy.DIRECT_EDIT_ROLE,
-                new ConnectionDirectEditPolicy());
-    }
+	@Override
+	protected void createEditPolicies() {
+		super.createEditPolicies();
+		installEditPolicy(EditPolicy.DIRECT_EDIT_ROLE,
+				new ConnectionDirectEditPolicy());
+	}
 }

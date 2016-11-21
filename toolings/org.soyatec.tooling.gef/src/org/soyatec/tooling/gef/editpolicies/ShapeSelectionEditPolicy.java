@@ -19,40 +19,40 @@ import org.soyatec.tooling.gef.figures.IShapeStyle;
 
 public class ShapeSelectionEditPolicy extends SelectionEditPolicy {
 
-    public static final String ROLE = ShapeSelectionEditPolicy.class.getName();
+	public static final String ROLE = ShapeSelectionEditPolicy.class.getName();
 
-    protected ShapeEditPart<?> getShapeEditPart() {
-        final EditPart host = getHost();
-        if (host instanceof ShapeEditPart<?>) {
-            return (ShapeEditPart<?>) host;
-        }
-        return null;
-    }
+	protected ShapeEditPart<?> getShapeEditPart() {
+		final EditPart host = getHost();
+		if (host instanceof ShapeEditPart<?>) {
+			return (ShapeEditPart<?>) host;
+		}
+		return null;
+	}
 
-    protected void hideSelection() {
-        final ShapeEditPart<?> shapeEditPart = getShapeEditPart();
-        if (shapeEditPart == null) {
-            return;
-        }
+	protected void hideSelection() {
+		final ShapeEditPart<?> shapeEditPart = getShapeEditPart();
+		if (shapeEditPart == null) {
+			return;
+		}
 
-        final IFigure primaryFigure = shapeEditPart.getPrimaryFigure();
-        if (primaryFigure instanceof IShapeStyle) {
-            ((IShapeStyle) primaryFigure).setLineWidth(1);
-        }
-        shapeEditPart.refreshForeground();
-    }
+		final IFigure primaryFigure = shapeEditPart.getPrimaryFigure();
+		if (primaryFigure instanceof IShapeStyle) {
+			((IShapeStyle) primaryFigure).setLineWidth(1);
+		}
+		shapeEditPart.refreshForeground();
+	}
 
-    protected void showSelection() {
-        final ShapeEditPart<?> shapeEditPart = getShapeEditPart();
-        if (shapeEditPart == null) {
-            return;
-        }
+	protected void showSelection() {
+		final ShapeEditPart<?> shapeEditPart = getShapeEditPart();
+		if (shapeEditPart == null) {
+			return;
+		}
 
-        final IFigure primaryFigure = shapeEditPart.getPrimaryFigure();
-        if (primaryFigure instanceof IShapeStyle) {
-            ((IShapeStyle) primaryFigure).setLineWidth(2);
-        }
-        primaryFigure.setForegroundColor(ColorConstants.blue);
-    }
+		final IFigure primaryFigure = shapeEditPart.getPrimaryFigure();
+		if (primaryFigure instanceof IShapeStyle) {
+			((IShapeStyle) primaryFigure).setLineWidth(2);
+		}
+		primaryFigure.setForegroundColor(ColorConstants.blue);
+	}
 
 }
