@@ -24,14 +24,14 @@ import org.eclipse.swt.widgets.ToolBar;
 import org.eclipse.ui.IActionBars;
 import org.eclipse.ui.IWorkbenchPart;
 import org.eclipse.ui.forms.widgets.ExpandableComposite;
-import org.eclipse.ui.forms.widgets.Form;
 import org.eclipse.ui.forms.widgets.FormToolkit;
+import org.eclipse.ui.forms.widgets.ScrolledForm;
 import org.eclipse.ui.forms.widgets.Section;
 import org.eclipse.ui.views.properties.IPropertySheetPage;
 
 public class FormPropertySheetPage implements IPropertySheetPage {
 
-	private Form control;
+	private ScrolledForm control;
 	private FormToolkit factory;
 
 	private final IPropertyTabProvider tabProvider;
@@ -49,7 +49,7 @@ public class FormPropertySheetPage implements IPropertySheetPage {
 
 	final public void createControl(final Composite parent) {
 		factory = new FormToolkit(parent.getDisplay());
-		final Form form = factory.createForm(parent);
+		final ScrolledForm form = factory.createScrolledForm(parent);
 		final Composite body = form.getBody();
 		final GridLayout layout = new GridLayout();
 		body.setLayout(layout);
